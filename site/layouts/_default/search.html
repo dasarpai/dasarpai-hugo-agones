@@ -1,0 +1,54 @@
+{{ define "main" -}}
+<section class="row td-search-result">
+  <div class="col-12 col-md-8 offset-md-2">
+    <h2 class="ms-4">{{ .Title }}</h2>
+
+    <!-- Lunr.js Search Box -->
+    <input type="search" id="search-box" class="form-control my-4" placeholder="Type to search...">
+    <ul id="search-results" class="list-group"></ul>
+
+    <script>
+      let lunrIndex, pagesIndex;
+
+      async function initLunr() {
+        const response = await fetch('/index.json');
+        pagesIndex = await response.json();
+        lunrIndex = lunr(function () {
+          this.ref('url');
+          this.field('title', { boost: 10 });
+          this.field('content');
+          pagesIndex.forEach(function (doc) {
+            this.add(doc);
+          }, this);
+        });
+      }
+
+      function search(query) {
+        if (!lunrIndex || !query) return [];
+        return lunrIndex.search(query).map(result =>
+          pagesIndex.find(page => page.url === result.ref)
+        );
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        initLunr();
+        document.getElementById('search-box').addEventListener('input', function (e) {
+          const results = search(e.target.value.trim());
+          const resultsList = document.getElementById('search-results');
+          if (!e.target.value.trim()) {
+            resultsList.innerHTML = '';
+            return;
+          }
+          if (results.length === 0) {
+            resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+            return;
+          }
+          resultsList.innerHTML = results.map(page =>
+            `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+          ).join('');
+        });
+      });
+    </script>
+  </div>
+</section>
+{{- end }}

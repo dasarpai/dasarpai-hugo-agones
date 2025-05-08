@@ -1,0 +1,28 @@
+{{- with .Site.Params.author -}}
+  <div class="td-author-box">
+    {{- with .avatar -}}
+      <div class="td-author-box__avatar">
+        <img src="{{ . | relURL }}" alt="{{ $.Site.Params.author.name }}'s avatar" class="author-image" >
+      </div>
+    {{- end -}}
+    <div class="td-author-box__info">
+      <h4 class="td-author-box__name">{{ .name }}</h4>
+      {{- with .bio -}}
+        <p class="td-author-box__bio">{{ . }}</p>
+      {{- end -}}
+      {{- with .links -}}
+        <div class="td-author-box__links">
+          {{- range . -}}
+            <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .label }}">
+              {{- if .icon -}}
+                <i class="{{ .icon }}" aria-hidden="true"></i>
+              {{- else -}}
+                {{ .label }}
+              {{- end -}}
+            </a>
+          {{- end -}}
+        </div>
+      {{- end -}}
+    </div>
+  </div>
+{{- end -}}

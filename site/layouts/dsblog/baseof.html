@@ -1,0 +1,53 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage"
+    {{- with .Site.Language.LanguageDirection }} dir="{{ . }}" {{- end -}}
+    {{ with .Site.Language.Lang }} lang="{{ . }}" {{- end }} {{/**/ -}}
+    class="no-js">
+  <head>
+    {{ partial "head.html" . }}
+    <style>
+      /* Basic styling to prevent image overflow and fix header overlap */
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px; /* Adjust based on your header height */
+      }
+      /* Basic styling for TOC sidebar */
+      .td-sidebar-right {
+          padding-left: 20px; /* Adjust spacing as needed */
+      }
+    </style>
+  </head>
+  <body class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}">
+    <header>
+      {{ partial "navbar.html" . }}
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          {{/* Left sidebar - can be empty or used for other things */}}
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          {{ block "main" . }}{{ end }}
+        </main>
+        <div class="col-md-3">
+          {{/* Right sidebar for TOC */}}
+          {{ if .TableOfContents }}
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  {{ .TableOfContents }}
+                </div>
+              </div>
+            </aside>
+          {{ end }}
+        </div>
+      </div>
+      {{ partial "footer.html" . }}
+    </div>
+    {{ partialCached "scripts.html" . }}
+  </body>
+</html>

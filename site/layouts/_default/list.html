@@ -1,0 +1,17 @@
+{{ define "main" }}
+<main class="section-content">
+  <h1>{{ .Title }}</h1>
+  <p>{{ .Content }}</p>
+
+  <p>🛠️ Total child pages: {{ len .Pages }}</p>
+
+  <ul>
+    {{ range .Pages.ByDate.Reverse }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <small>({{ .Date.Format "Jan 2, 2006" }})</small>
+      </li>
+    {{ end }}
+  </ul>
+</main>
+{{ end }}

@@ -1,0 +1,543 @@
+# Copyright 2023 Google LLC All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+baseURL = "http://localhost:1313/"
+url    = "https://dasarpai.com" 
+repository = "dasarpai/dasarpai.github.io"
+title = "dasarpAI"
+logo = "/assets/images/site-logo.png"
+subtitle  = "Exploring AI with Consciousness" 
+enableRobotsTXT = true
+words_per_minute   = 200
+
+
+# Will give values to .Lastmod etc.
+enableGitInfo = true
+
+# Language settings
+contentDir = "content/en"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+# Useful when translating.
+enableMissingTranslationPlaceholders = true
+
+disableKinds = ["taxonomy"]
+
+# Pagination settings
+[pagination]
+  enabled = true
+  default = 9  # 3x3 grid
+  sections = 9
+  sectionsHome = 9
+  home = 9
+
+# Highlighting config
+pygmentsCodeFences = true
+pygmentsUseClasses = false
+# Use the new Chroma Go highlighter in Hugo.
+pygmentsUseClassic = false
+#pygmentsOptions = "linenos=table"
+# See https://help.farbox.com/pygments.html
+pygmentsStyle = "tango"
+
+ # First one is picked as the Twitter card image if not set on page.
+ #images = ["images/project-illustration.png"]
+
+# Configure how URLs look like per section.
+[permalinks]
+blog = "/:section/:year/:month/:day/:slug/"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+# Image processing configuration.
+[imaging]
+resampleFilter = "CatmullRom"
+quality = 75
+anchor = "smart"
+
+[services]
+[services.googleAnalytics]
+# Comment out the next line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
+id = "G-1R4BY557PZ" ## for dasarpai
+
+# Language configuration
+
+[languages]
+[languages.en]
+title = "Agones"
+languageName ="English"
+# Weight used for sorting.
+weight = 1
+[languages.en.params]
+description = "Agones is a library for hosting, running and scaling dedicated game servers on Kubernetes."
+
+# Everything below this are Site Params
+
+[params]
+copyright = "Copyright Google LLC All Rights Reserved."
+privacy_policy = "https://policies.google.com/privacy"
+github_repo = "https://github.com/googleforgames/agones"
+
+# Google Custom Search Engine ID. Remove or comment out to disable search.
+gcs_engine_id = "016691298986124624340:x7qv2dywdao"
+
+# current release branch. Never is rc.
+release_branch = "release-1.48.0"
+# the main version. Never is rc.
+release_version = "1.48.0"
+
+# shown for production
+supported_k8s = ["1.30", "1.31", "1.32"]
+k8s_api_version = "1.31"
+gke_example_cluster_version = "1.31"
+aks_example_cluster_version = "1.32"
+eks_example_cluster_version = "1.32"
+minikube_example_cluster_version = "1.31.0"
+# shown in development (or the next versions that will be supported)
+dev_supported_k8s = ["1.30", "1.31", "1.32"]
+dev_k8s_api_version = "1.31"
+dev_gke_example_cluster_version = "1.31"
+dev_aks_example_cluster_version = "1.32"
+dev_eks_example_cluster_version = "1.32"
+dev_minikube_example_cluster_version = "1.31.0"
+
+# example tag
+example_image_tag = "us-docker.pkg.dev/agones-images/examples/simple-game-server:0.36"
+
+# Enable syntax highlighting and copy buttons on code blocks with Prism
+prism_syntax_highlighting = true
+
+# User interface configuration
+[params.ui]
+# Enable dark mode toggle
+dark_mode_toggle = true
+# Enable to show the side bar menu in its compact state.
+sidebar_menu_compact= true
+sidebar_menu_foldable= true
+# Enable dark mode toggle in the navbar
+[params.navbar]
+search = true
+dark_mode = true
+#  Set to true to disable breadcrumb navigation.
+breadcrumb_disable = false
+
+# Adds a H2 section titled "Feedback" to the bottom of each doc. The responses are sent to Google Analytics as events.
+# This feature depends on [services.googleAnalytics] and will be disabled if "services.googleAnalytics.id" is not set.
+# If you want this feature, but occasionally need to remove the "Feedback" section from a single page,
+# add "hide_feedback: true" to the page's front matter.
+[params.ui.feedback]
+enable = true
+# The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
+yes = 'Glad to hear it! Please <a href="https://github.com/googleforgames/agones/issues/new">tell us how we can improve</a>.'
+no = 'Sorry to hear that. Please <a href="https://github.com/googleforgames/agones/issues/new">tell us how we can improve</a>.'
+
+[params.links]
+# End user relevant links. These will show up on left side of footer and in the community page if you have one.
+[[params.links.user]]
+	name = "Slack"
+	url = "https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ"
+	icon = "fab fa-slack"
+desc = "Chat with other project users in #users"
+[[params.links.user]]
+	name = "User mailing list"
+	url = "https://groups.google.com/forum/#!forum/agones-discuss"
+	icon = "fa fa-envelope"
+	desc = "Discussion and help from your fellow users"
+[[params.links.user]]
+	name ="Twitter"
+	url = "https://twitter.com/agonesdev"
+	icon = "fab fa-twitter"
+	desc = "Follow us on Twitter to get the latest news!"
+[[params.links.user]]
+	name ="Community Meetings"
+	url = "https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF"
+	icon = "fab fa-youtube"
+	desc = "Live discussion of new features and issues, see the <a href=\"https://github.com/googleforgames/agones/blob/main/CONTRIBUTING.md#community-meetings\">calendar</a> or <a href=\"https://groups.google.com/forum/#!forum/agones-discuss\">mailing list</a> for details"
+# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
+[[params.links.developer]]
+	name = "GitHub"
+	url = "https://github.com/googleforgames/agones"
+	icon = "fab fa-github"
+	desc = "Development takes place here!"
+[[params.links.developer]]
+	name = "Slack"
+	url = "https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ"
+	icon = "fab fa-slack"
+	desc = "Chat with other project developers in #development"
+[[params.links.developer]]
+	name ="Community Meetings"
+	url = "https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF"
+	icon = "fab fa-youtube"
+	desc = "Live discussion of new features and issues, see the <a href=\"https://github.com/googleforgames/agones/blob/main/CONTRIBUTING.md#community-meetings\">calendar</a> or <a href=\"https://groups.google.com/forum/#!forum/agones-discuss\">mailing list</a> for details"
+# [[params.links.developer]]
+# 	name = "Developer mailing list"
+# 	url = "https://example.org/mail"
+# 	icon = "fa fa-envelope"
+#         desc = "Discuss development issues around the project"
+
+
+#### About Author ###
+[params.author]
+  name             = "Hari Thapliyaal"
+  avatar           = "/assets/images/myphotos/Profilephoto1.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              = "Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master's degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.\n\nWith over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16+ years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.\n\n In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.\n\nHari's professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature."
+  short_bio        = "Dr. Hari Thapliyal is a prolific blogger and seasoned professional with an extensive background in Data Science, Project Management, and Advait-Vedanta Philosophy. He holds a Doctorate in AI/NLP from SSBM, Geneva, along with Master’s degrees in Computers, Business Management, Data Science, and Economics. With over three decades of experience in management and leadership, Hari has extensive expertise in training, consulting, and coaching within the technology sector. His specializations include Data Science, AI, Computer Vision, NLP, and machine learning. Hari is also passionate about meditation and nature, often retreating to secluded places for reflection and peace."
+  location         = "Bangalore, India."
+  email            = "hari@dasarpai.com"
+
+#### Commenting ####
+[params.giscus]
+    repo                 = "dasarpai/dasarpai-comments"
+    repo_id              = "R_kgDOOGVFpA"  # Shown during giscus setup at https://giscus.app
+    category_name        = "General" # Full text name of the category
+    category_id          = "DIC_kwDOOGVFpM4CnzHR" # Shown during giscus setup at https://giscus.app
+    discussion_term      = "url" # "pathname" (default), "url", "title", "og:title"
+    reactions_enabled    = 1 # '1' for enabled (default), '0' for disabled
+    theme                = "light" # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
+    strict               = 1 # 1 for enabled, 0 for disabled (default)
+    input_position       = "top" # "top", "bottom" # The comment input box will be placed above or below the comments
+    emit_metadata        = 1 # 1 for enabled, 0 for disabled (default) # https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#imetadatamessage
+    lang                 = "en" # "en" (default)
+    lazy                 = true # true, false # Loading of the comments will be deferred until the user scrolls near the comments container.
+
+
+[security.funcs]
+  getenv = ['^HUGO_', '^CI$', 'RELEASE_BRANCH', 'HUGO_ENV', 'RELEASE_VERSION']
+
+[environments]
+  [environments.development]
+    baseURL = "http://localhost:1314/"
+    port = 1314
+
+[module]
+proxy = "direct"
+[[module.imports]]
+path = "github.com/google/docsy"
+[[module.imports]]
+path = "github.com/google/docsy/dependencies"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+
+
+
+#####################################
+# footer navigation
+#####################################
+
+###### footer navigation ########
+[menu]
+
+# -----------------------
+# importantlinks
+# -----------------------
+[[menu.importantlinks]]
+name = "About Me"
+url = "/aboutme"
+weight = 1
+
+[[menu.importantlinks]]
+name = "My Data Science Courses/Services"
+url = "/dscourses"
+weight = 2
+
+[[menu.importantlinks]]
+name = "MyWork by Business Domain"
+url = "/summary-of-al-ml-projects"
+weight = 3
+
+[[menu.importantlinks]]
+name = "MyWork by Tech Stack"
+url = "/summary-of-my-technology-stacks"
+weight = 4
+
+[[menu.importantlinks]]
+name = "MyWork in Project Management"
+url = "/summary-of-management-projects"
+weight = 5
+
+[[menu.importantlinks]]
+name = "Clients"
+url = "/clients"
+weight = 6
+
+[[menu.importantlinks]]
+name = "Testimonial"
+url = "/testimonials"
+weight = 7
+
+[[menu.importantlinks]]
+name = "Terms & Condition"
+url = "/terms-of-service"
+weight = 8
+
+[[menu.importantlinks]]
+name = "Privacy Policy"
+url = "/privacy"
+weight = 9
+
+[[menu.importantlinks]]
+name = "Comment Policy"
+url = "/comment-policy"
+weight = 10
+
+# -----------------------
+# myblogs
+# -----------------------
+[[menu.myblogs]]
+name = "Data Science Blog"
+url = "/dsblog"
+weight = 1
+
+[[menu.myblogs]]
+name = "Books/Interviews Blog"
+url = "/booksumary"
+weight = 2
+
+[[menu.myblogs]]
+name = "AI and Business News"
+url = "/news"
+weight = 3
+
+[[menu.myblogs]]
+name = "PMLOGY Blog"
+url = "/pmblog"
+weight = 4
+
+[[menu.myblogs]]
+name = "PMBOK6 Hindi Explorer"
+url = "/pmbok6hi"
+weight = 5
+
+[[menu.myblogs]]
+name = "Wisdom in Awareness Blog"
+url = "/wiaposts"
+weight = 6
+
+[[menu.myblogs]]
+name = "Samskrut Blog"
+url = "/samskrutyatra"
+weight = 7
+
+[[menu.myblogs]]
+name = "My Chantings"
+url = "/mychanting"
+weight = 8
+
+[[menu.myblogs]]
+name = "WIA Quotes"
+url = "/quotations-blog"
+weight = 9
+
+[[menu.myblogs]]
+name = "GK Blog"
+url = "/gk"
+weight = 10
+
+# -----------------------
+# allresources
+# -----------------------
+[[menu.allresources]]
+name = "DS Resources"
+url = "/datascience-tags#ds-resources"
+weight = 1
+
+[[menu.allresources]]
+name = "AI Benchmark Explorer"
+url = "https://aibenchmark-explorer.dasarpai.com"
+weight = 2
+
+[[menu.allresources]]
+name = "Data Science-Books"
+url = "/dsblog/ds-ai-ml-books"
+weight = 3
+
+[[menu.allresources]]
+name = "Data Science/AI Cheatsheets"
+url = "/dsblog/data-science-cheatsheets"
+weight = 4
+
+[[menu.allresources]]
+name = "Video Channels to Learn DS/AI"
+url = "/dsblog/best-youtube-channels-for-ds"
+weight = 5
+
+[[menu.allresources]]
+name = "DS/AI Interview Questions"
+url = "/dsblog/ds-ai-ml-interview-resources"
+weight = 6
+
+[[menu.allresources]]
+name = "GitHub DAI-Datasets"
+url = "https://github.com/dasarpai/DAI-Datasets"
+weight = 7
+
+[[menu.allresources]]
+name = "PMBOK6 Templates"
+url = "/pmi-templates"
+weight = 8
+
+[[menu.allresources]]
+name = "PRINCE2 Templates"
+url = "/prince2-templates"
+weight = 9
+
+[[menu.allresources]]
+name = "Microsoft PM Templates"
+url = "/microsoft-pm-templates"
+weight = 10
+
+# -----------------------
+# projectmanagement
+# -----------------------
+[[menu.projectmanagement]]
+name = "PMLOGY Home"
+url = "/pmlogy-home"
+weight = 1
+
+[[menu.projectmanagement]]
+name = "PMLOGY Blog"
+url = "/pmblog"
+weight = 2
+
+[[menu.projectmanagement]]
+name = "PM Glossary"
+url = "/pmglossary"
+weight = 3
+
+[[menu.projectmanagement]]
+name = "PM Topics"
+url = "/pmlogy-tags"
+weight = 4
+
+[[menu.projectmanagement]]
+name = "PMBOK6 Topics"
+url = "/pmbok6-tags"
+weight = 5
+
+[[menu.projectmanagement]]
+name = "PMBOK6"
+url = "/pmbok6-summary"
+weight = 6
+
+[[menu.projectmanagement]]
+name = "PMBOK6 Explorer"
+url = "/pmbok6"
+weight = 7
+
+[[menu.projectmanagement]]
+name = "PMBOK6 Hindi Topics"
+url = "/pmbok6hi-tags"
+weight = 8
+
+[[menu.projectmanagement]]
+name = "PMBoK6 Hindi"
+url = "/pmbok6hi-summary"
+weight = 9
+
+[[menu.projectmanagement]]
+name = "PMBOK6 Hindi Explorer"
+url = "/pmbok6hi"
+weight = 10
+
+# -----------------------
+# wia
+# -----------------------
+[[menu.wia]]
+name = "WIA Home"
+url = "/wia-home"
+weight = 1
+
+[[menu.wia]]
+name = "WIA Blog"
+url = "/wiaposts"
+weight = 2
+
+[[menu.wia]]
+name = "WIA Topics"
+url = "/wia-tags"
+weight = 3
+
+[[menu.wia]]
+name = "WIA Quotes"
+url = "/quotations-blog"
+weight = 4
+
+[[menu.wia]]
+name = "GK Blog"
+url = "/gk"
+weight = 5
+
+[[menu.wia]]
+name = "GK Topic"
+url = "/gk-tags"
+weight = 6
+
+# -----------------------
+# samskrutyatra
+# -----------------------
+[[menu.samskrutyatra]]
+name = "SamskrutYatra Home"
+url = "/samskrutyatra-home"
+weight = 1
+
+[[menu.samskrutyatra]]
+name = "Samskrut Blog"
+url = "/samskrutyatra"
+weight = 2
+
+[[menu.samskrutyatra]]
+name = "Samskrut Topics"
+url = "/samskrutyatra-tags"
+weight = 3
+
+[[menu.samskrutyatra]]
+name = "My Vedic Chantings"
+url = "/mychanting"
+weight = 4
+
+# -----------------------
+# mygallary
+# -----------------------
+[[menu.mygallary]]
+name = "Online AI Classes 1"
+url = "/gallary/slider-online-sessions1"
+weight = 1
+
+[[menu.mygallary]]
+name = "Online AI Classes 2"
+url = "/gallary/slider-online-sessions2"
+weight = 2
+
+[[menu.mygallary]]
+name = "Online AI Classes 3"
+url = "/gallary/slider-online-sessions3"
+weight = 3
+
+[[menu.mygallary]]
+name = "Online AI Classes 4"
+url = "/gallary/slider-online-sessions4"
+weight = 4
+
+[[menu.mygallary]]
+name = "Management Classes"
+url = "/gallary/slider-pm-selected-photos"
+weight = 5
+
+[[menu.mygallary]]
+name = "PM & DS Workshop"
+url = "/gallary/slider-pm-workshops"
+weight = 6

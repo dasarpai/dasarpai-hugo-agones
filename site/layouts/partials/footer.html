@@ -1,0 +1,76 @@
+<footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      {{/* New row for important menu items */}}
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="{{ "assets/images/site-logo.png" | absURL }}" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8">
+        {{- $menuTitles := dict "importantlinks" "Key Links" "myblogs" "My Blogs" 
+                                "allresources" "All Resources" "projectmanagement" "Project Management" 
+                                "wia" "Wisdom in Awareness" "samskrutyatra" "Samskrutyatra" 
+                                "mygallary" "My Gallery"
+        -}}
+
+        <div class="row">
+          {{- range $name := (slice "importantlinks" "myblogs" "allresources" "projectmanagement") -}}
+            {{- with site.Menus -}}
+              {{- with index . $name -}}
+                <div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>{{ index $menuTitles $name | default ($name | humanize) }}</h4>
+                    <ul>
+                      {{- range . -}}
+                        <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+                      {{- end -}}
+                    </ul>
+                  </div>
+                </div>
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+        </div>
+      
+
+
+      <div class="row">
+        {{- range $name := (slice "wia" "samskrutyatra" "mygallary") -}}
+          {{- with site.Menus -}}
+            {{- with index . $name -}}
+              <div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>{{ index $menuTitles $name | default ($name | humanize) }}</h4>
+                  <ul>
+                    {{- range . -}}
+                      <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+                    {{- end -}}
+                  </ul>
+                </div>
+              </div>
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      </div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      {{/* Existing footer sections */}}
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        {{ partial "footer/left.html"  . }}
+      </div>
+      {{- /* Trim WS */ -}}
+      <div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        {{ partial "footer/right.html"  . }}
+      </div>
+      {{- /* Trim WS */ -}}
+      <div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        {{ partial "footer/center.html"  . }}
+      </div>
+    </div>
+  </div>
+</footer>

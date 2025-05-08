@@ -1,0 +1,59 @@
+{{- $p := . -}}
+{{- $pages := $p.Pages -}}
+{{- if $pages -}}
+  {{- $paginator := .Paginate $pages -}}
+  {{- if $paginator -}}
+    {{- $prev := $paginator.Prev -}}
+    {{- $next := $paginator.Next -}}
+    {{- if or $prev $next -}}
+      <nav class="td-pager">
+        <div class="td-pager__content">
+          {{- if $prev -}}
+            <a class="td-pager__link td-pager__link--prev" href="{{ $prev.RelPermalink }}" aria-label="Previous page">
+              <i class="fa-solid fa-angle-left"></i>
+              <div class="td-pager__meta">
+                <span class="td-pager__meta-label">Previous</span>
+                <span class="td-pager__meta-title">{{ $prev.Title }}</span>
+              </div>
+            </a>
+          {{- end -}}
+          {{- if $next -}}
+            <a class="td-pager__link td-pager__link--next" href="{{ $next.RelPermalink }}" aria-label="Next page">
+              <div class="td-pager__meta">
+                <span class="td-pager__meta-label">Next</span>
+                <span class="td-pager__meta-title">{{ $next.Title }}</span>
+              </div>
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          {{- end -}}
+        </div>
+      </nav>
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- $prev := .PrevInSection -}}
+  {{- $next := .NextInSection -}}
+  {{- if or $prev $next -}}
+      <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
+        {{- if $prev -}}
+          <a class="td-pager__link td-pager__link--prev" href="{{ $prev.RelPermalink }}" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">{{ $prev.Title }}</span>
+            </div>
+          </a>
+        {{- end -}}
+        {{- if $next -}}
+          <a class="td-pager__link td-pager__link--next" href="{{ $next.RelPermalink }}" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">{{ $next.Title }}</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a>
+        {{- end -}}
+      </ul>
+  {{- end -}}
+{{- end -}}

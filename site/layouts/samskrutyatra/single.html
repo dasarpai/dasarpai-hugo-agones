@@ -1,0 +1,35 @@
+{{ define "main" -}}
+{{ .Content -}}
+
+{{- with .Page.Params.categories -}}
+
+  <div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges">
+      {{- range . -}}
+        <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="category-badge">{{ . }}</a>
+      {{- end -}}
+    </div>
+  </div>
+{{- end -}}
+
+
+{{- with .Page.Params.tags -}}
+  <div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges">
+      {{- range . -}}
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="category-badge">{{ . }}</a>
+      {{- end -}}
+    </div>
+  </div>
+{{- end -}}
+<div></div>
+{{ partial "about-author.html" . }}
+
+{{ partial "social-share.html" . }}
+
+{{ partial "giscus-comments.html" . }}
+
+{{ partial "dsblog/pager.html" . }}
+{{ end }}

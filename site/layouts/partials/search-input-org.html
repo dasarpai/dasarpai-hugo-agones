@@ -1,0 +1,46 @@
+{{ if .Site.Params.gcs_engine_id -}}
+
+<div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="{{ T "ui_search" }}" aria-label="{{ T "ui_search" }}" autocomplete="off">
+</div>
+<div class="td-search">
+  <input type="search" id="search-box" placeholder="Search...">
+  <ul id="search-results"></ul>
+</div>
+{{- end -}}
+
+<script>
+  let lunrIndex, pagesIndex;
+  
+  async function initLunr() {
+    const response = await fetch('/index.json');
+    pagesIndex = await response.json();
+    lunrIndex = lunr(function () {
+      this.ref('url');
+      this.field('title', { boost: 10 });
+      this.field('content');
+      pagesIndex.forEach(function (doc) {
+        this.add(doc);
+      }, this);
+    });
+  }
+  
+  function search(query) {
+    if (!lunrIndex) return [];
+    return lunrIndex.search(query).map(result =>
+      pagesIndex.find(page => page.url === result.ref)
+    );
+  }
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    initLunr();
+    document.getElementById('search-box').addEventListener('input', function (e) {
+      const results = search(e.target.value);
+      const resultsList = document.getElementById('search-results');
+      resultsList.innerHTML = results.map(page =>
+        `<li><a href="${page.url}">${page.title}</a></li>`
+      ).join('');
+    });
+  });
+  </script>

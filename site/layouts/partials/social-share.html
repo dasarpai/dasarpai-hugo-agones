@@ -1,0 +1,30 @@
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list">
+    {{- with .Permalink -}}
+      {{- $url := . | htmlEscape -}}
+      {{- $title := $.Title | htmlEscape -}}
+      {{- $siteTitle := $.Site.Title | htmlEscape -}}
+
+      <div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text={{ $title }}&url={{ $url }}{{ with $.Site.Params.twitter.username }}&via={{ . }}{{ end }}" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u={{ $url }}" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ $url }}&title={{ $title }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url={{ $url }}&title={{ $title }}" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject={{ $title }}&body={{ $url }}" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      
+
+    {{- end -}}
+  </ul>
+</div>

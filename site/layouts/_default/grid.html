@@ -1,0 +1,158 @@
+{{ define "main" -}}
+{{/* Configuration variables */}}
+{{ $itemsPerPage := .Params.itemsPerPage | default 9 }}
+{{ $columnsMd := .Params.columnsMd | default 2 }}
+{{ $columnsLg := .Params.columnsLg | default 3 }}
+{{ $imageHeight := .Params.imageHeight | default "200px" }}
+{{ $truncateLength := .Params.truncateLength | default 150 }}
+
+{{/* Calculate Bootstrap column classes */}}
+{{ $colClass := printf "row-cols-1 row-cols-md-%d row-cols-lg-%d" $columnsMd $columnsLg }}
+
+{{/* Create paginator with configurable items per page */}}
+{{ $paginator := .Paginate .Pages $itemsPerPage }}
+
+{{/* Get all categories and tags with counts from current section */}}
+{{ $categoryMap := dict }}
+{{ $tagMap := dict }}
+{{ $currentSection := .CurrentSection }}
+{{ range (where .Site.Pages "Section" .Section) }}
+{{ if in .CurrentSection.RelPermalink $currentSection.RelPermalink }}
+{{ with .Params.categories }}
+{{ range . }}
+{{ $count := index $categoryMap . | default 0 }}
+{{ $categoryMap = merge $categoryMap (dict . (add $count 1)) }}
+{{ end }}
+{{ end }}
+{{ with .Params.tags }}
+{{ range . }}
+{{ $count := index $tagMap . | default 0 }}
+{{ $tagMap = merge $tagMap (dict . (add $count 1)) }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{/* Convert maps to slices for sorting */}}
+{{ $categories := slice }}
+{{ range $name, $count := $categoryMap }}
+{{ $categories = $categories | append (dict "name" $name "count" $count) }}
+{{ end }}
+{{ $categories = sort $categories "name" }}
+
+{{ $tags := slice }}
+{{ range $name, $count := $tagMap }}
+{{ $tags = $tags | append (dict "name" $name "count" $count) }}
+{{ end }}
+{{ $tags = sort $tags "name" }}
+
+
+<div class="container-fluid  main-content">
+  <div class="row">
+    <!-- Main Content -->
+    <div class="col-lg-9 col-md-9">
+      <div class="td-content">
+        <h1 class="text-center mb-5">{{ .Title }}</h1>
+        {{ with .Content }}{{ . }}{{ end -}}
+
+        {{ if $paginator.Pages -}}
+        <div class="row {{ $colClass }} g-4">
+          {{ range $paginator.Pages -}}
+          <div class="col">
+            <div class="card h-100">
+              {{ if .Params.header }}
+              {{ if .Params.header.teaser }}
+              {{ $imagePath := strings.TrimPrefix "/" .Params.header.teaser }}
+              <a href="{{ .RelPermalink }}">
+                <img src="{{ $imagePath | absURL }}" class="card-img-top" alt="{{ .Title }}"
+                  style="height: {{ $imageHeight }}; object-fit: cover;">
+              </a>
+              {{ end }}
+              {{ end }}
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">
+                  <a href="{{ .RelPermalink }}" class="text-decoration-none">{{ .Title }}</a>
+                </h5>
+                <div class="text-muted small mb-2">
+                  {{ .Date.Format "January 2, 2006" }}
+                  {{ with .ReadingTime }}
+                  <span class="mx-2">•</span>
+                  <span>{{ . }} min read</span>
+                  {{ end }}
+                </div>
+                </h5>
+                <p class="card-text">
+                  <small class="text-body-secondary">
+                    {{- .Date.Format ($.Param "time_format_blog") }}
+                    {{ if (and (not .Params.hide_readingtime) (.Site.Params.ui.readingtime.enable)) -}}
+                    · {{ partial "reading-time.html" . -}}
+                    {{ end -}}
+                  </small>
+                </p>
+                {{ if .Params.excerpt }}
+                <p class="card-text">{{ .Params.excerpt }}</p>
+                {{ else }}
+                <p class="card-text">{{ .Plain | safeHTML | truncate $truncateLength }}</p>
+                {{ end }}
+              </div>
+              <div class="card-footer bg-transparent">
+                <a href="{{ .RelPermalink }}" class="btn btn-primary btn-sm">{{ T "ui_read_more" }}</a>
+                {{- partial "taxonomy_terms_article_wrapper.html" . -}}
+              </div>
+            </div>
+          </div>
+          {{ end -}}
+        </div>
+
+        {{ if gt $paginator.TotalPages 1 }}
+        <div class="mt-5">
+          {{ template "_internal/pagination.html" . -}}
+        </div>
+        {{ end }}
+        {{ end -}}
+      </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="col-lg-3 col-md-3">
+      <!-- Categories Cloud -->
+      {{ if $categories }}
+      <div class="card">
+        <div class="card-header sidebar-first-card">
+          <h5>Categories</h5>
+        </div>
+        <div class="card-body">
+          <div class="d-flex flex-wrap gap-2">
+            {{ range $category := $categories }}
+            <a href="{{ " categories/" | relLangURL }}{{ .name | urlize }}/"
+              class="badge bg-secondary text-decoration-none" style="margin: 2px; padding: 0.35em 0.65em;">
+              {{ .name }} ({{ .count }})
+            </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+
+      <!-- Tags Cloud -->
+      {{ if $tags }}
+      <div class="card">
+        <div class="card-header">
+          <h5>Tags</h5>
+        </div>
+        <div class="card-body">
+          <div class="d-flex flex-wrap gap-2">
+            {{ range $tag := $tags }}
+            <a href="{{ " tags/" | relLangURL }}{{ .name | urlize }}/" class="badge bg-secondary text-decoration-none">
+              {{ .name }} ({{ .count }})
+            </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <!-- End Right Sidebar -->
+  </div>
+</div>
+{{- end }}

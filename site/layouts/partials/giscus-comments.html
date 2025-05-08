@@ -1,0 +1,24 @@
+{{- with .Site.Params.giscus -}}
+  {{- if and .repo .repo_id .category_name .category_id -}}
+    <div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="{{ .repo }}"
+              data-repo-id="{{ .repo_id }}"
+              data-category="{{ .category_name }}"
+              data-category-id="{{ .category_id }}"
+              data-mapping="{{ with .discussion_term }}{{ . }}{{ else }}pathname{{ end }}"
+              data-reactions-enabled="{{ with .reactions_enabled }}{{ . }}{{ else }}1{{ end }}"
+              data-theme="{{ with .theme }}{{ . }}{{ else }}light{{ end }}"
+              data-strict="{{ with .strict }}{{ . }}{{ else }}0{{ end }}"
+              data-input-position="{{ with .input_position }}{{ . }}{{ else }}bottom{{ end }}"
+              data-emit-metadata="{{ with .emit_metadata }}{{ . }}{{ else }}0{{ end }}"
+              data-lang="{{ with .lang }}{{ . }}{{ else }}en{{ end }}"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+  {{- else -}}
+    {{- warnf "Giscus partial requires repo, repo_id, category_name, and category_id to be set in site config." -}}
+  {{- end -}}
+{{- end -}}

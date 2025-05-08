@@ -1,0 +1,72 @@
+{{ if .Site.Params.gcs_engine_id -}}
+
+<div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="{{ T "ui_search" }}"
+    aria-label="{{ T "ui_search" }}"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  // Hide results on blur
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  // Show results on focus if input has value
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script>
+
+{{- end -}}

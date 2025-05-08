@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Agones</RootNamespace>
+    <PackageId>AgonesSDK</PackageId>
+    <Authors>Google LLC</Authors>
+    <Product>Agones C# SDK</Product>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Description>Game Server SDK for Agones, the open source project for hosting dedicated game servers on Kubernetes</Description>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/googleforgames/agones</RepositoryUrl>
+    <PackageProjectUrl>https://agones.dev</PackageProjectUrl>
+    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <AssemblyName>AgonesSDK</AssemblyName>
+    <Version>1.49.0-dev</Version>
+    <PackageTags>agones, googleforgames, kuberenetes, multiplayer, gameservers</PackageTags>
+    <Company>agones.dev</Company>
+    <Configurations>Debug;Release;DebugProtoGen</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Api.CommonProtos" Version="2.10.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.24.3" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.57.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.58.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="../proto/sdk/sdk.proto;../proto/sdk/alpha/alpha.proto;../proto/sdk/beta/beta.proto" AdditionalImportDirs="../proto/googleapis" GrpcServices="Client" />
+  </ItemGroup>
+</Project>
