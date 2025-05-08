@@ -1,6 +1,6 @@
 https://codepen.io/123unme/pen/BQwZzq
 
-{% include mermaid.html %}
+
 <div class="mermaid">
 sequenceDiagram
     participant User as User
