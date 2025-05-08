@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LLM App Development on Agones</title>
+    <link>http://localhost:1313/tags/llm-app-development/</link>
+    <description>Recent content in LLM App Development on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/llm-app-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring All Dimensions of Application Development</title>
+      <link>http://localhost:1313/dsblog/Exploring-All-Dimensions-of-Application-Development/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Exploring-All-Dimensions-of-Application-Development/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6175-Exploring-All-Dimensions-of-Application-Development.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-all-dimensions-of-application-development&#34;&gt;Exploring All Dimensions of Application Development&lt;/h1&gt;&#xA;&lt;p&gt;These aspects highlight the diverse areas involved in application development beyond just frontend, backend, or mobile/desktop apps. Each plays a critical role in building, deploying, and maintaining robust, scalable, and user-friendly applications.&lt;/p&gt;&#xA;&lt;p&gt;Each of these aspects is crucial to modern software development, covering everything from handling the user interface on the frontend to processing data and requests on the backend, as well as building specialized mobile or desktop applications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exploring LLM Application Development</title>
+      <link>http://localhost:1313/dsblog/Exploring-LLM-App-Development/</link>
+      <pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Exploring-LLM-App-Development/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6174-Exploring-LLM-App-Development.jpg&#34; alt=&#34;Exploring LLM Application Development&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-llm-application-development&#34;&gt;Exploring LLM Application Development&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-llm-application-development&#34;&gt;What is LLM Application Development?&lt;/h2&gt;&#xA;&lt;p&gt;Large Language Model (LLM) application development involves creating applications that leverage pretrained large language models, like GPT (like GPT3.5, GPT4.o), Sonnet, DALLE, SORA, BERT, T5, Gemma, RoBERTa, DINO, Turning-NLG, Phi, Llama, Stable Diffusion, Flang, Einstine, Megatron, StyleGAN, BART,  Granite, or others, to perform natural language processing tasks. Unlike classical applications, which operate on explicit programming logic, LLM-based applications rely on trained models to process human language, make predictions, and respond dynamically based on vast amounts of text data.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oracle Cloud on Agones</title>
+    <link>http://localhost:1313/tags/oracle-cloud/</link>
+    <description>Recent content in Oracle Cloud on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/oracle-cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Container Registry</title>
+      <link>http://localhost:1313/dsblog/Introduction-to-Container-Registry/</link>
+      <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Introduction-to-Container-Registry/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6167-Introduction-to-Container-Registry.jpg&#34; alt=&#34;Introduction to Container Registry&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction-to-container-registry&#34;&gt;Introduction to Container Registry&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-container-registry&#34;&gt;What is Container Registry?&lt;/h2&gt;&#xA;&lt;p&gt;A container registry is a central store or service where container images are stored, managed and distributed. Container images are packaged applications that include the code, dependencies, libraries and configuration to run in any environment that supports containerization, like Docker or Kubernetes.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Key aspects of a Container Registry:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Storing Images: Container registries act as a storage for container images, where developers can push and pull images as needed. These images are often versioned and tagged so you can track different versions of an application.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI/ML with Oracle Cloud</title>
+      <link>http://localhost:1313/dsblog/AI-ML-With-Oracle-Cloud/</link>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/AI-ML-With-Oracle-Cloud/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6166-AI-ML-With-Oracle-Cloud.jpg&#34; alt=&#34;AI/ML with Oracle Cloud&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;aiml-with-oracle-cloud&#34;&gt;AI/ML with Oracle Cloud&lt;/h1&gt;&#xA;&lt;h2 id=&#34;oracle-infrastructure-services&#34;&gt;&lt;a href=&#34;https://docs.oracle.com/en-us/iaas/Content/services.htm&#34;&gt;Oracle Infrastructure Services&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Register for &lt;a href=&#34;https://www.oracle.com/cloud/free/?source=:ow:o:h:po:OHPPanel1nav0625&amp;amp;intcmp=:ow:o:h:po:OHPPanel1nav0625&#34;&gt;Oracle Cloud Free Tier&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;oracle-ai-main-services&#34;&gt;Oracle AI Main services&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cloud.oracle.com/digital-assistant/oda-instances?region=ap-mumbai-1&#34;&gt;Digital Assistant&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://docs.oracle.com/en-us/iaas/Content/document-understanding/using/home.htm&#34;&gt;Document Understanding&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://docs.oracle.com/en-us/iaas/language/using/pretrain-models.htm#lang-detect&#34;&gt;Language&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://docs.oracle.com/en-us/iaas/Content/vision/using/pretrained-model-using-image.htm&#34;&gt;Vision&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://docs.oracle.com/en-us/iaas/Content/speech/home.htm&#34;&gt;Speech&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://docs.oracle.com/en-us/iaas/Content/Streaming/home.htm&#34;&gt;Stream&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://docs.oracle.com/en-us/iaas/process-automation/oci-process-automation/overview-oci-process-automation.html&#34;&gt;Cloud Infra Automation&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;generative-ai&#34;&gt;&lt;a href=&#34;https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm&#34;&gt;Generative AI&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Generative AI is a fully managed Oracle Cloud Infrastructure service that provides a set of state-of-the-art, customizable large language models (LLMs) that cover a wide range of use cases, including chat, text generation, summarization, and creating text embeddings.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

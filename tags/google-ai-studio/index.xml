@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google AI Studio on Agones</title>
+    <link>http://localhost:1313/tags/google-ai-studio/</link>
+    <description>Recent content in Google AI Studio on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/google-ai-studio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google AI Studio vs Vertex AI</title>
+      <link>http://localhost:1313/dsblog/google-ai-studio-vs-vertexai/</link>
+      <pubDate>Fri, 06 Dec 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/google-ai-studio-vs-vertexai/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6183-Google-AI-Studio-vs-VertexAI.jpg&#34; alt=&#34;Google AI Studio vs Vertex AI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;google-ai-studio-vs-vertex-ai&#34;&gt;Google AI Studio vs Vertex AI&lt;/h1&gt;&#xA;&lt;p&gt;The difference between &lt;strong&gt;Vertex AI&lt;/strong&gt; and &lt;strong&gt;Google AI Studio&lt;/strong&gt; lies in their scope, functionality, and target audiences within Google&amp;rsquo;s suite of AI tools.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-vertex-ai&#34;&gt;&lt;strong&gt;1. Vertex AI&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Vertex AI&lt;/strong&gt; is Google&amp;rsquo;s &lt;strong&gt;end-to-end AI platform&lt;/strong&gt; for machine learning (ML) and AI model development, training, deployment, and management. It is designed for developers and data scientists who want a comprehensive environment to build, deploy, and scale ML models.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

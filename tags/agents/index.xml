@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Agents on Agones</title>
+    <link>http://localhost:1313/tags/agents/</link>
+    <description>Recent content in Agents on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/agents/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring AI Agents</title>
+      <link>http://localhost:1313/dsblog/exploring-ai-agents/</link>
+      <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-ai-agents/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6207-Exploring-AI-Agents.jpg&#34; alt=&#34;Exploring AI Agents&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-ai-agents&#34;&gt;Exploring AI Agents&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;As of the start of 2025, we are hearing a lot of buzz around Agents, Workflow, System, AI Employee etc. In this article, we are trying to understand some important concepts around these terms in question answer format. These answers are derived from general AI knowledge, principles, and concepts based on publicly available information about AI agents, workflows, and systems. Specific sources include academic literature, industry whitepapers, and commonly understood practices in AI development and usage.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

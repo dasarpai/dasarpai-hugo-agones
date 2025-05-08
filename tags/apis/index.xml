@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>APIs on Agones</title>
+    <link>http://localhost:1313/tags/apis/</link>
+    <description>Recent content in APIs on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/apis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python APIs for Data</title>
+      <link>http://localhost:1313/dsblog/python-apis-for-data/</link>
+      <pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/python-apis-for-data/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6094-Python-APIs-for-Data.jpg&#34; alt=&#34;Python APIs for Data&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;python-apis-for-data&#34;&gt;Python APIs for Data&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.bing.com/&#34;&gt;Bing&lt;/a&gt; Bing is a search engine that brings together the best of search and people in your social networks to help you spend less time searching and more time doing.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.bing.com/dev/en-us/dev-center&#34;&gt;Api Documentation&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://code.google.com/p/pybing/&#34;&gt;Python wrapper for the Bing search API&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.bitly.com/&#34;&gt;Bitly&lt;/a&gt; URL shortening and bookmarking service&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://dev.bitly.com/get_started.html&#34;&gt;Api Documentation&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://code.google.com/p/python-bitly/&#34;&gt;Python wrapper around the bit.ly API&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blogger.com/&#34;&gt;Blogger&lt;/a&gt; Blog-publishing service&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://developers.google.com/blogger/&#34;&gt;Api Documentation&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://code.google.com/p/python-blogger/&#34;&gt;A python wrapper around the Blogger&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.box.com/&#34;&gt;Box&lt;/a&gt; Online file sharing and Cloud content management service for enterprise companies.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Google Cloud APIs</title>
+      <link>http://localhost:1313/dsblog/Google-Cloud-APIS/</link>
+      <pubDate>Fri, 28 Jul 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Google-Cloud-APIS/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6082-Google-API-Services.jpg&#34; alt=&#34;Google Cloud APIs&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;google-cloud-apis&#34;&gt;Google Cloud APIs&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Hundreds of services from Google are available to consumers as API. Every API has a specific purpose. Over a period of time, google keeps clubbing these API endpoints (a url/place where a service is available), cleaning their code and improving the capabilities of these services. Therefore, sometimes it looks endpoint or pip package is the same, but its API name is different. Recently when google clubbed their many AI APIs they are moved under VertexAI and API endpoint changed to aiplatform.googleapi.com. To bring some clarity for my own sake and some of you may like this, I wrote this article.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

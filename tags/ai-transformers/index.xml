@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Transformers on Agones</title>
+    <link>http://localhost:1313/tags/ai-transformers/</link>
+    <description>Recent content in AI Transformers on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai-transformers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Guide to Model Fine Tuning with OpenAI API</title>
+      <link>http://localhost:1313/dsblog/Model-Fine-Tuning-with-OpenAI-API/</link>
+      <pubDate>Sun, 02 Jul 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Model-Fine-Tuning-with-OpenAI-API/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6068-A-Guide-to-Model-Fine-Tuning-with-OpenAI-API.jpg&#34; alt=&#34;A Guide to Model Fine Tuning with OpenAI API&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;a-guide-to-model-fine-tuning-with-openai-api&#34;&gt;A Guide to Model Fine Tuning with OpenAI API&lt;/h1&gt;&#xA;&lt;h2 id=&#34;account-setup-and-api-key-generation&#34;&gt;Account Setup and API Key Generation&lt;/h2&gt;&#xA;&lt;p&gt;Go to &lt;a href=&#34;https://platform.openai.com/&#34;&gt;openai&lt;/a&gt;, sign up there and create your account. After than you need to create an API using &lt;a href=&#34;https://platform.openai.com/account/api-keys&#34;&gt;API Key Link&lt;/a&gt;. You need to copy the api key and you replace the text below &amp;lt;OPENAI_API_KEY&amp;gt;. Being string the key should be within &amp;ldquo;&amp;rdquo;. Keeping security in mind it is highly recommended that you do not put the API in the code file. Keep it at some secured place and read that file to fetch the API key. OpenAI gives you USD 5 free usage. After that you need to pay. For that you need to setup your credit card details on their system. They are very fair on the charges, just keep track of your usage. If you don&amp;rsquo;t use any of their service they won&amp;rsquo;t charge anything for just having account with them. While doing any model finetuning or prediction openai tells you how much they will charge you for that particular command. My suggestion is if you are just experimenting then keep your dataset small so that you can manage your learning with USD 10-20.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Capabilities of AI Transformers</title>
+      <link>http://localhost:1313/dsblog/Capabilities-of-AI-Transformers/</link>
+      <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Capabilities-of-AI-Transformers/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6067-Capabilities-of-AI-Transformers.jpg&#34; alt=&#34;Capabilities of AI Transformers&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;capabilities-of-ai-transformers&#34;&gt;Capabilities of AI Transformers&lt;/h1&gt;&#xA;&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;&#xA;&lt;p&gt;Whether GPT, ChatGPT, DALL-E, Whisper, Satablity AI or whatever significant you see in the AI worlds nowdays it is because of Transformer Architecture. Transformers are a type of neural network architecture that have several properties that make them effective for modeling data with long-range dependencies. They generally feature a combination of multi-headed attention mechanisms, residual connections, layer normalization, feedforward connections, and positional embeddings.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

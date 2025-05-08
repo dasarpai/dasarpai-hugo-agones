@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ML Automation on Agones</title>
+    <link>http://localhost:1313/tags/ml-automation/</link>
+    <description>Recent content in ML Automation on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ml-automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automated Machine Learning</title>
+      <link>http://localhost:1313/dsblog/AutoML-Tools/</link>
+      <pubDate>Tue, 01 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/AutoML-Tools/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6150-AutoML-Tools.jpg&#34; alt=&#34;What is AutoML&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;automated-machine-learning&#34;&gt;Automated Machine Learning&lt;/h1&gt;&#xA;&lt;h2 id=&#34;is-this-article-for-me&#34;&gt;Is this article for me?&lt;/h2&gt;&#xA;&lt;p&gt;This is article is for you, if you know&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;About Machine learning, ML models building&lt;/li&gt;&#xA;&lt;li&gt;That machines are capable of building these models themselves.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;But you don&amp;rsquo;t know how it happens and what are different libraries available for this work.&lt;/p&gt;&#xA;&lt;h2 id=&#34;question-what-is-automl&#34;&gt;Question: What is AutoML?&lt;/h2&gt;&#xA;&lt;p&gt;AutoML (Automated Machine Learning) is the process of automating the tasks involved in the creation of machine learning models. It aims to make machine learning more accessible by allowing users, including those without deep expertise in machine learning, to build, optimize, and deploy models with minimal manual intervention.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

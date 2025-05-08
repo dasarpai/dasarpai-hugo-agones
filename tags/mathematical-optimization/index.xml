@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mathematical Optimization on Agones</title>
+    <link>http://localhost:1313/tags/mathematical-optimization/</link>
+    <description>Recent content in Mathematical Optimization on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/mathematical-optimization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cost Functions and Optimizers in Machine Learning</title>
+      <link>http://localhost:1313/dsblog/Cost-Functions-and-Optimizers-in-Machine-Learning/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Cost-Functions-and-Optimizers-in-Machine-Learning/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6045-Cost-Functions-and-Optimizers-in-Machine-Learning.jpg&#34; alt=&#34;Cost-Functions-and-Optimizers-in-Machine-Learning&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;cost-functions-and-optimizers-in-machine-learning&#34;&gt;Cost-Functions-and-Optimizers-in-Machine-Learning&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-machine-learning&#34;&gt;What is machine learning?&lt;/h2&gt;&#xA;&lt;p&gt;Machine learning is a subfield of artificial intelligence that focuses on the &lt;strong&gt;development of algorithms and statistical models&lt;/strong&gt; that enable computers to improve their performance on a specific task through experience.&lt;/p&gt;&#xA;&lt;p&gt;In machine learning, the goal is to develop models that can &lt;strong&gt;automatically learn patterns and relationships in data, and use that knowledge to make predictions or take actions&lt;/strong&gt;. The models are trained on a large dataset, and the learning process involves &lt;strong&gt;optimizing the parameters of the model to minimize the prediction error&lt;/strong&gt;. For this purpose every algorithms uses some &lt;strong&gt;cost function or loss function&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

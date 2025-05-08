@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research on Agones</title>
+    <link>http://localhost:1313/tags/research/</link>
+    <description>Recent content in Research on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Power of Chinese AI Models</title>
+      <link>http://localhost:1313/dsblog/power-of-chinese-ai-models/</link>
+      <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/power-of-chinese-ai-models/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6212-Power-of-Chinese-AI-Models.jpg&#34; alt=&#34;Power of Chinese AI Models&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;power-of-chinese-ai-models&#34;&gt;Power of Chinese AI Models&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;After the Deepseek R1 turmoil in the market, there has been a shift in attention towards China. The West is now looking towards the East, and even those in the East are turning their gaze northward.&lt;/p&gt;&#xA;&lt;p&gt;I was tracking these models for sometime so thought to summarize them at one place for my readers.&lt;/p&gt;&#xA;&lt;p&gt;Opensource: 🚀&lt;/p&gt;&#xA;&lt;p&gt;Partially or fully close source: 🔒&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Computer Vision Research Work</title>
+      <link>http://localhost:1313/dsblog/computer-vision-research-work/</link>
+      <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/computer-vision-research-work/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6211-Computer-Vision-Research-Work.jpg&#34; alt=&#34;Computer Vision Research Work&amp;#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;computer-vision-research-work&#34;&gt;Computer Vision Research Work&lt;/h1&gt;&#xA;&lt;p&gt;When we talk about &amp;ldquo;vision&amp;rdquo; capabilities, most people don&amp;rsquo;t understand how complex the brain is in processing the visual spectrum (light signals). What kind of processing happens inside our brain that allows us to understand color, depth, motion, speed, segments, objects, scenes, different kinds of art, drawings, culture, etc.? Until recently, when &amp;ldquo;computer vision&amp;rdquo; became a serious field in AI, only neurology researchers, surgeons, and brain specialists had some insights into these processes. But since 2012 (AlexNet Paper), with new papers being published almost every month, we are constantly learning how far we&amp;rsquo;ve come in computer vision. This article is not only about the chronology of computer vision but also about software engineers, computer scientists, AI engineers, and everyone who wants to understand how their phone performs certain computer visions tasks and becomes intelligent.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

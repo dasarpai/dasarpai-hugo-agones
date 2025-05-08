@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Probabilistic Models on Agones</title>
+    <link>http://localhost:1313/tags/probabilistic-models/</link>
+    <description>Recent content in Probabilistic Models on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/probabilistic-models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How Naive Bayes Classifier Works</title>
+      <link>http://localhost:1313/dsblog/How-Naive-Bayes-Classifier-Works/</link>
+      <pubDate>Wed, 31 Mar 2021 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/How-Naive-Bayes-Classifier-Works/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6005-How-Naive-Bayes-Work-for-Recommendation.jpg&#34; alt=&#34;Naive Bayes&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;how-naive-bayes-classifier-works&#34;&gt;How Naive Bayes Classifier Works?&lt;/h1&gt;&#xA;&lt;h2 id=&#34;naive-bayes-classifier-example&#34;&gt;Naive Bayes classifier example&lt;/h2&gt;&#xA;&lt;p&gt;In this presentation, I am not going into the depth of the Naive Bayes algorithm. I am assuming you have heard this term many times but are not able to visualize it mentally or struggling to comprehend this. If that is the case, then you are on the right page.&lt;/p&gt;&#xA;&lt;p&gt;How does Naive Bayes Classifier work in Machine Learning? There are many good explanations, many ways to explain the conditional probability formula but many times even after many reading, and memorizing the formula it does not help. In this presentation, I am trying to explain How the Naive Bayes Classifier works with a simple example and calculations.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

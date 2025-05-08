@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Best Practices on Agones</title>
+    <link>http://localhost:1313/docs/guides/best-practices/</link>
+    <description>Recent content in Best Practices on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/guides/best-practices/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Kubernetes Engine Best Practices</title>
+      <link>http://localhost:1313/docs/guides/best-practices/gke/</link>
+      <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/guides/best-practices/gke/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;On this page, we&amp;rsquo;ve collected several &lt;a href=&#34;https://cloud.google.com/kubernetes-engine/&#34;&gt;Google Kubernetes Engine (GKE)&lt;/a&gt; best practices.&lt;/p&gt;&#xA;&lt;h2 id=&#34;release-channels&#34;&gt;Release Channels&lt;/h2&gt;&#xA;&lt;h3 id=&#34;why&#34;&gt;Why?&lt;/h3&gt;&#xA;&lt;p&gt;We recommend using &lt;a href=&#34;https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels&#34;&gt;Release Channels&lt;/a&gt; for all GKE clusters. Using Release Channels has several advantages:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Google automatically manages the version and upgrade cadence for your Kubernetes Control Plane and its nodes.&lt;/li&gt;&#xA;&lt;li&gt;Clusters on a Release Channel are allowed to use the &lt;code&gt;No minor upgrades&lt;/code&gt; and &lt;code&gt;No minor or node upgrades&lt;/code&gt; &lt;a href=&#34;https://cloud.google.com/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions#limitations-maint-exclusions&#34;&gt;scope of maintenance exclusions&lt;/a&gt; - in other words, enrolling a cluster in a Release Channel gives you &lt;em&gt;more control&lt;/em&gt; over node upgrades.&lt;/li&gt;&#xA;&lt;li&gt;Clusters enrolled in &lt;code&gt;rapid&lt;/code&gt; channel have access to the newest Kubernetes version first. Agones strives to &lt;a href=&#34;http://localhost:1313/docs/installation/#agones-and-kubernetes-supported-versions&#34;&gt;support the newest release in &lt;code&gt;rapid&lt;/code&gt; channel&lt;/a&gt; to allow you to test the newest Kubernetes soon after it&amp;rsquo;s available in GKE.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&#xA;&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;&#xA;&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;&#xA;&#xA;    GKE Autopilot clusters must be on Release Channels.&#xA;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;h3 id=&#34;what-channel-should-i-use&#34;&gt;What channel should I use?&lt;/h3&gt;&#xA;&lt;p&gt;We recommend the &lt;code&gt;regular&lt;/code&gt; channel, which offers a balance between stability and freshness. See &lt;a href=&#34;https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels#what_channel_should_i_use&#34;&gt;this guide&lt;/a&gt; for more discussion.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

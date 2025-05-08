@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Papers With Code on Agones</title>
+    <link>http://localhost:1313/tags/papers-with-code/</link>
+    <description>Recent content in Papers With Code on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/papers-with-code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Overview of AI Benchmark Explorer Tool</title>
+      <link>http://localhost:1313/dsblog/aibenchmark-explorer/</link>
+      <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/aibenchmark-explorer/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6255-dsr-aibenchmark-explorer.jpg&#34; alt=&#34;AI Benchmark Explorer&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;overview-of-ai-benchmark-explorer-tool&#34;&gt;&lt;strong&gt;Overview of AI Benchmark Explorer Tool&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;AI professionals, including Change Drivers, Managers, and Scientists, often face challenges despite clearly understanding the problems they aim to solve. Key issues include:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Identifying Appropriate Datasets&lt;/strong&gt;: Determining which datasets are best suited for a specific problem can be difficult.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Selecting Evaluation Metrics&lt;/strong&gt;: Choosing the right metrics to assess the performance of a solution is crucial for accurate evaluation.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Benchmarking Against Existing Models&lt;/strong&gt;: Understanding the performance metrics of existing models for the same problem helps in setting realistic expectations.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Exploring Tried Architectures&lt;/strong&gt;: Reviewing architectures that others have implemented for similar problems can provide valuable insights.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Assessing Problem Novelty&lt;/strong&gt;: Determining whether the problem has already been solved or requires novel approaches is essential for resource allocation.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Sourcing Solutions&lt;/strong&gt;: Deciding between utilizing open-source solutions or opting for proprietary alternatives impacts cost and flexibility.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Addressing these challenges is vital for the successful development and implementation of AI solutions.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

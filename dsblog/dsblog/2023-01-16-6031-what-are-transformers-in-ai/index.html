@@ -1,0 +1,3034 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>What Are Transformers in AI | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2023-01-16-6031-what-are-transformers-in-ai/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="What Are Transformers in AI">
+  <meta property="og:description" content="What Are Transformers in AI Transformer Architecture Background Whether GPT, ChatGPT, DALL-E, Whisper, Satablity AI or whatever significant you see in the AI worlds nowdays it is because of Transformer Architecture. Transformers are a type of neural network architecture that have several properties that make them effective for modeling data with long-range dependencies. They generally feature a combination of multi-headed attention mechanisms, residual connections, layer normalization, feedforward connections, and positional embeddings.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2021-08-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2021-08-03T00:00:00+00:00">
+    <meta property="article:tag" content="Natural Language Processing">
+    <meta property="article:tag" content="Transformer Architecture">
+    <meta property="article:tag" content="Deep Learning">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="Neural Networks">
+    <meta property="article:tag" content="Language Models">
+
+  <meta itemprop="name" content="What Are Transformers in AI">
+  <meta itemprop="description" content="What Are Transformers in AI Transformer Architecture Background Whether GPT, ChatGPT, DALL-E, Whisper, Satablity AI or whatever significant you see in the AI worlds nowdays it is because of Transformer Architecture. Transformers are a type of neural network architecture that have several properties that make them effective for modeling data with long-range dependencies. They generally feature a combination of multi-headed attention mechanisms, residual connections, layer normalization, feedforward connections, and positional embeddings.">
+  <meta itemprop="datePublished" content="2021-08-03T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2021-08-03T00:00:00+00:00">
+  <meta itemprop="wordCount" content="7570">
+  <meta itemprop="keywords" content="transformer models,AI transformers,natural language processing,deep learning architecture,attention mechanism,language models,BERT,GPT,neural networks,transformer variants,model architectures,AI research papers,machine learning models,NLP models,transformer timeline,AI model development,language understanding,computer vision transformers,multimodal transformers,state-of-the-art AI">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What Are Transformers in AI">
+  <meta name="twitter:description" content="What Are Transformers in AI Transformer Architecture Background Whether GPT, ChatGPT, DALL-E, Whisper, Satablity AI or whatever significant you see in the AI worlds nowdays it is because of Transformer Architecture. Transformers are a type of neural network architecture that have several properties that make them effective for modeling data with long-range dependencies. They generally feature a combination of multi-headed attention mechanisms, residual connections, layer normalization, feedforward connections, and positional embeddings.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6031-What-are-Transformers-in-AI.jpg" alt="What-are-Transformers-in-AI"></p>
+<h1 id="what-are-transformers-in-ai">What Are Transformers in AI</h1>
+<h2 id="transformer-architecture">Transformer Architecture</h2>
+<p><img src="/assets/images/dspost/transformer/transformer-arch.jpg" alt="Transformer"></p>
+<h2 id="background">Background</h2>
+<p>Whether GPT, ChatGPT, DALL-E, Whisper, Satablity AI or whatever significant you see in the AI worlds nowdays it is because of Transformer Architecture. Transformers are a type of neural network architecture that have several properties that make them effective for modeling data with long-range dependencies. They generally feature a combination of multi-headed attention mechanisms, residual connections, layer normalization, feedforward connections, and positional embeddings.</p>
+<p>Precursors of Transformers were RNN, LSTM, and GRU architecture. Transformers are based on the 2017 research paper <a href="https://arxiv.org/abs/1706.03762">&ldquo;Attention is All You Need&rdquo;</a></p>
+<p>Initially, Transformers were used for NLP-related tasks. Slowly researchers started exploring the power of the Transformer Architectures and as of 2023 these are used for hundreds of tasks in different AI domains of technologies like:</p>
+<ul>
+<li>Text Models (NLP, NLU, NLG)</li>
+<li>Vision Models (Computer Vision)</li>
+<li>Audio Models (Audio Processing, Classification, Audio Generation)</li>
+<li>Reinforcement (RL) Models</li>
+<li>Time-series Models</li>
+<li>Multimodal: OCR (extract information from scanned documents), video classification, visual QA, table data question answering</li>
+<li>Graph Models</li>
+</ul>
+<p>Starting the journey in 2017, as of now (2023) we have approx 200 Transformer based architectures proposed by various researchers for various purposes. Using these architecture and various benchmark datasets thousands of models have been created which give SOTA performance on various tasks. Based on your need you choose which architecture can help you meet your project objective. There are high chances you will get some pre-trained models which you can use without training (Zero-shot) or small finetuning (one-shot or few-shot) efforts. For that you need to explore <a href="huggingface.co">Huggingface</a> and <a href="https://paperswithcode.com/">PaperWithCode</a></p>
+<p>This articles list all the major Transformer related researcher paper, their creators, capability and date of release.</p>
+<h2 id="tasks-which-a-transformer-can-do">Tasks, which a Transformer can do</h2>
+<h3 id="vision-tasks">Vision Tasks</h3>
+<ul>
+<li>Image classification</li>
+<li>Semantic segmentation</li>
+<li>Video classification</li>
+<li>Object detection</li>
+<li>Zero-shot object detection</li>
+<li>Zero-shot image classification</li>
+<li>Depth estimation</li>
+</ul>
+<h3 id="multimodal-tasks">Multimodal Tasks</h3>
+<ul>
+<li>Image captioning</li>
+<li>Document Question Answering</li>
+<li>Image to Text</li>
+<li>Text to Video</li>
+<li>Document Question Answering</li>
+<li>Visual Question Answering</li>
+<li>Text to Image</li>
+<li>Image to Image</li>
+<li>Image Generation</li>
+</ul>
+<h3 id="audio-tasks">Audio Tasks</h3>
+<ul>
+<li>Audio classification</li>
+<li>Automatic speech recognition</li>
+<li>Audio to Audio</li>
+<li>Text to Speech</li>
+<li>Voice Activity Detection</li>
+<li>Audio Generation</li>
+</ul>
+<h3 id="text-tasks">Text Tasks</h3>
+<ul>
+<li>Text classification</li>
+<li>Token classification (NER, POS etc)</li>
+<li>Question answering</li>
+<li>Causal language modeling</li>
+<li>Masked language modeling</li>
+<li>Translation</li>
+<li>Summarization</li>
+<li>Multiple choice</li>
+<li>Sentence Similarity</li>
+<li>Table Question Answering</li>
+<li>Fill in the black (Masking Filling)</li>
+<li>Conversation</li>
+</ul>
+<h2 id="frameworks-used-for-developing-models-using-above-architectures">Frameworks Used for Developing Models using Above Architectures</h2>
+<p>As of May'2023 following frameworks are used for creating models. Tensorflow and Pytorch are two most popular frameworks. Keras is not part of Tensorflow.</p>
+<ul>
+<li>TensorFlow</li>
+<li>Caffe</li>
+<li>Caffe2</li>
+<li>PyTorch</li>
+<li>MXNet</li>
+<li>Keras</li>
+<li>Chainer</li>
+<li>JAX</li>
+</ul>
+<h2 id="number-of-models-in-model-repositories">Number of Models in Model Repositories</h2>
+<p>There are many model repositories but the most famous are as below. These model repositories host pre-trained models. You can download these models and use them for your project.</p>
+<ul>
+<li><a href="https://huggingface.co/models">Huggingface</a> : As of 2-Jul-23 Huggingface has <strong>243,495 models</strong>. In May, 2023, Huggingface has <strong>196,000+ models</strong> in the repository. As of Sep'2021, there were 10,000 models. You can see the exponential growth in the models in the Huggingface model repository.</li>
+<li>Another model repository <a href="https://tfhub.dev/s?subtype=module,placeholder">tfhub</a> has around <strong>132,000+ models</strong> as of May'23. Tfhub hosts tensorflow-based models.</li>
+<li><a href="https://modelzoo.co">Keras Moel Zoo</a> hosts around 3500 models.</li>
+<li><a href="https://pytorch.org/hub/research-models">Pytorch Model Hub</a></li>
+</ul>
+<h2 id="summary-of-200-transformer">Summary of 200+ Transformer</h2>
+<p>Below is the table which summarises these approx 200 transformers.</p>
+<p><strong>Note :</strong> Name starting with * are not Transformers, most of them are pretransformer age architectures.   <br>
+<strong>Help Needed:</strong> If you find any archive paper&rsquo;s link is incorrect then let me know via <a href="mailto:hari.prasad@vedavit-ps.com">hari.prasad@vedavit-ps.com</a></p>
+<table>
+  <thead>
+      <tr>
+          <th>Sno.</th>
+          <th>Transformer</th>
+          <th>Paper Title</th>
+          <th>Type</th>
+          <th>Year</th>
+          <th>Researcher</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1.</td>
+          <td><a href="https://huggingface.co/alexnet">*AlexNet</a> <a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">Paper</a></td>
+          <td>ImageNet Classification with Deep Convolutional Neural Networks</td>
+          <td>CNN</td>
+          <td>Dec-2012</td>
+          <td>University of Toronto, Google</td>
+      </tr>
+      <tr>
+          <td>2.</td>
+          <td><a href="https://huggingface.co/vgg16">*VGG16</a> <a href="https://arxiv.org/abs/1409.1556">Paper</a></td>
+          <td>Very Deep Convolutional Networks for Large-Scale Image Recognition</td>
+          <td>CNN</td>
+          <td>Sep-2014</td>
+          <td>University of Oxford</td>
+      </tr>
+      <tr>
+          <td>3.</td>
+          <td><a href="https://huggingface.co/vgg19">*VGG19</a> <a href="https://arxiv.org/abs/1409.1556">Paper</a></td>
+          <td>Very Deep Convolutional Networks for Large-Scale Image Recognition</td>
+          <td>CNN</td>
+          <td>Apr-2015</td>
+          <td>University of Oxford</td>
+      </tr>
+      <tr>
+          <td>4.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/resnet">*ResNet</a> <a href="https://arxiv.org/abs/2010.12821">Paper</a></td>
+          <td>Deep Residual Learning for Image Recognition</td>
+          <td>CNN</td>
+          <td>Dec-2015</td>
+          <td>Microsoft Research</td>
+      </tr>
+      <tr>
+          <td>5.</td>
+          <td><a href="https://huggingface.co/inception-resnet-v2">*InceptionResNet</a> <a href="https://arxiv.org/abs/1602.07261">Paper</a></td>
+          <td>Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning</td>
+          <td>CNN</td>
+          <td>Aug-2016</td>
+          <td>Google</td>
+      </tr>
+      <tr>
+          <td>6.</td>
+          <td><a href="https://huggingface.co/convnext">*ConvNeXt</a> <a href="https://arxiv.org/abs/1603.07285">Paper</a></td>
+          <td>Convolutional Neural Networks with Alternately Updated Clique</td>
+          <td>CNN</td>
+          <td>Dec-2016</td>
+          <td>Cornell University, Tsinghua University</td>
+      </tr>
+      <tr>
+          <td>7.</td>
+          <td><a href="https://huggingface.co/densenet">*DenseNet</a> <a href="https://arxiv.org/abs/1608.06993">Paper</a></td>
+          <td>Densely Connected Convolutional Networks</td>
+          <td>CNN</td>
+          <td>Jan-2017</td>
+          <td>Cornell University, Tsinghua University</td>
+      </tr>
+      <tr>
+          <td>8.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mobilenet_v1">*MobileNetV1</a> <a href="https://arxiv.org/abs/2004.02984">Paper</a></td>
+          <td>Efficient Convolutional Neural Networks for Mobile Vision Applications</td>
+          <td>Autoencoding</td>
+          <td>Apr-2017</td>
+          <td>Google Inc.</td>
+      </tr>
+      <tr>
+          <td>9.</td>
+          <td><a href="https://huggingface.co/xception">*Xception</a> <a href="https://arxiv.org/abs/1610.02357">Paper</a></td>
+          <td>Xception: Deep Learning with Depthwise Separable Convolutions</td>
+          <td>CNN</td>
+          <td>Apr-2017</td>
+          <td>Google</td>
+      </tr>
+      <tr>
+          <td>10.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/encoder-decoder">EncoderDecoder</a> <a href="https://arxiv.org/abs/1907.12461">Paper</a></td>
+          <td>Leveraging Pre-trained Checkpoints for Sequence Generation Tasks</td>
+          <td>Sequence-to-Sequence</td>
+          <td>May-2017</td>
+          <td>Google Research</td>
+      </tr>
+      <tr>
+          <td>11.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mobilenet_v2">*MobileNetV2</a> <a href="https://arxiv.org/abs/1704.04861">Paper</a></td>
+          <td>Inverted Residuals and Linear Bottlenecks</td>
+          <td>Autoencoding</td>
+          <td>Feb-2018</td>
+          <td>Google Inc.</td>
+      </tr>
+      <tr>
+          <td>12.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/data2vec">Data2Vec</a> <a href="https://arxiv.org/abs/2202.03555">Paper</a></td>
+          <td>A General Framework for Self-supervised Learning in Speech, Vision and Language</td>
+          <td>Language Model</td>
+          <td>Mar-2018</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>13.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/openai-gpt">GPT</a> <a href="https://blog.openai.com/language-unsupervised/">Paper</a></td>
+          <td>Improving Language Understanding by Generative Pre-Training. Auto-regressive model for next token prediction</td>
+          <td>Autoregressive</td>
+          <td>Jun-2018</td>
+          <td>OpenAI</td>
+      </tr>
+      <tr>
+          <td>14.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bert">BERT</a> <a href="https://arxiv.org/abs/1810.04805">Paper</a></td>
+          <td>Pre-training of Deep Bidirectional Transformers for Language Understanding</td>
+          <td>Autoencoding</td>
+          <td>Oct-2018</td>
+          <td>Google</td>
+      </tr>
+      <tr>
+          <td>15.</td>
+          <td><a href="">MarianMT </a> <a href="https://huggingface.co/docs/transformers/model_doc/marian">Paper</a></td>
+          <td>Machine translation models trained using OPUS data</td>
+          <td>Autoencoding</td>
+          <td>Oct-2018</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>16.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bit">BiT</a> <a href="https://arxiv.org/abs/1912.11370">Paper</a></td>
+          <td>General Visual Representation Learning</td>
+          <td>Vision Transformer</td>
+          <td>Jan-2019</td>
+          <td>Google AI</td>
+      </tr>
+      <tr>
+          <td>17.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/transfo-xl">Transformer-XL</a> <a href="https://arxiv.org/abs/1901.02860">Paper</a></td>
+          <td>Attentive Language Models Beyond a Fixed-Length Context</td>
+          <td>Autoregressive</td>
+          <td>Jan-2019</td>
+          <td>Google/CMU</td>
+      </tr>
+      <tr>
+          <td>18.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xlm">XLM</a> <a href="https://arxiv.org/abs/1901.07291">Paper</a></td>
+          <td>Cross-lingual Language Model Pretraining</td>
+          <td>BERT-based</td>
+          <td>Jan-2019</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>19.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/ctrl">CTRL</a> <a href="https://arxiv.org/abs/1909.05858">Paper</a></td>
+          <td>A Conditional Transformer Language Model for Controllable Generation</td>
+          <td>Autoencoding</td>
+          <td>Feb-2019</td>
+          <td>Salesforce</td>
+      </tr>
+      <tr>
+          <td>20.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/gpt2">GPT-2</a> <a href="https://github.com/kingoflolz/mesh-transformer-jax/">Paper</a></td>
+          <td>Language Models are Unsupervised Multitask Learners</td>
+          <td>Autoregressive</td>
+          <td>Feb-2019</td>
+          <td>OpenAI</td>
+      </tr>
+      <tr>
+          <td>21.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/funnel">Funnel Transformer</a> <a href="https://arxiv.org/abs/2006.03236">Paper</a></td>
+          <td>Filtering out Sequential Redundancy for Efficient Language Processing</td>
+          <td>Autoregressive</td>
+          <td>Apr-2019</td>
+          <td>CMU/Google Brain</td>
+      </tr>
+      <tr>
+          <td>22.</td>
+          <td><a href="https://huggingface.co/efficientnet-b0">*EfficientNet B0</a> <a href="https://arxiv.org/abs/1905.11946">Paper</a></td>
+          <td>EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks</td>
+          <td>CNN</td>
+          <td>May-2019</td>
+          <td>Google Research</td>
+      </tr>
+      <tr>
+          <td>23.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/albert">ALBERT</a> <a href="https://arxiv.org/abs/1909.11942">Paper</a></td>
+          <td>A Lite BERT for Self-supervised Learning of Language Representations,</td>
+          <td>Factorized BERT</td>
+          <td>May-2019</td>
+          <td>Google Research and the Toyota Technological Institute at Chicago</td>
+      </tr>
+      <tr>
+          <td>24.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/efficientnet">EfficientNet</a> <a href="https://arxiv.org/abs/1905.11946">Paper</a></td>
+          <td>Rethinking Model Scaling for Convolutional Neural Networks</td>
+          <td>Vision Transformer</td>
+          <td>May-2019</td>
+          <td>Google Brain</td>
+      </tr>
+      <tr>
+          <td>25.</td>
+          <td><a href="https://huggingface.co/mobilev3-large-1.0">MobileNetV3</a> <a href="https://arxiv.org/abs/1905.02244">Paper</a></td>
+          <td>Searching for MobileNetV3</td>
+          <td>Autoencoding</td>
+          <td>May-2019</td>
+          <td>Google</td>
+      </tr>
+      <tr>
+          <td>26.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/nezha">Nezha</a> <a href="https://arxiv.org/abs/2204.07143">Paper</a></td>
+          <td>Neural Contextualized Representation for Chinese Language Understanding</td>
+          <td>Autoencoding</td>
+          <td>May-2019</td>
+          <td>Huawei Noah’s Ark Lab</td>
+      </tr>
+      <tr>
+          <td>27.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bart">BART</a> <a href="https://arxiv.org/abs/1910.13461">Paper</a></td>
+          <td>Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension</td>
+          <td>Sequence-to-Sequence</td>
+          <td>Jun-2019</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>28.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/ernie">ERNIE</a> <a href="https://arxiv.org/abs/1904.09223">Paper</a></td>
+          <td>Enhanced Representation through Knowledge Integration</td>
+          <td>Autoencoding</td>
+          <td>Jun-2019</td>
+          <td>Baidu</td>
+      </tr>
+      <tr>
+          <td>29.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/ernie_m">ErnieM</a> <a href="https://arxiv.org/abs/2012.15674">Paper</a></td>
+          <td>Enhanced Multilingual Representation by Aligning Cross-lingual Semantics with Monolingual Corpora</td>
+          <td>Autoencoding</td>
+          <td>Jun-2019</td>
+          <td>Baidu</td>
+      </tr>
+      <tr>
+          <td>30.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/flaubert">FlauBERT</a> <a href="https://arxiv.org/abs/1912.05372">Paper</a></td>
+          <td>Unsupervised Language Model Pre-training for French</td>
+          <td>Autoencoding</td>
+          <td>Jun-2019</td>
+          <td>CNRS</td>
+      </tr>
+      <tr>
+          <td>31.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/lxmert">LXMERT</a> <a href="https://arxiv.org/abs/1908.07490">Paper</a></td>
+          <td>Learning Cross-Modality Encoder Representations from Transformers for Open-Domain Question Answering</td>
+          <td>Autoencoding</td>
+          <td>Jun-2019</td>
+          <td>UNC Chapel Hill</td>
+      </tr>
+      <tr>
+          <td>32.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/pegasus">Pegasus</a> <a href="https://arxiv.org/abs/2205.06230">Paper</a></td>
+          <td>Pre-training with Extracted Gap-sentences for Abstractive Summarization</td>
+          <td>Autoregressive</td>
+          <td>Jun-2019</td>
+          <td>Google</td>
+      </tr>
+      <tr>
+          <td>33.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xlnet">XLNet</a> <a href="https://arxiv.org/abs/1906.08237">Paper</a></td>
+          <td>Generalized Autoregressive Pretraining for Language Understanding</td>
+          <td>Autoregressive</td>
+          <td>Jun-2019</td>
+          <td>Google/CMU</td>
+      </tr>
+      <tr>
+          <td>34.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/biogpt">BioGpt</a> <a href="https://academic.oup.com/bib/advance-article/doi/10.1093/bib/bbac409/6713511?guestAccessKey=a66d9b5d-4f83-4017-bb52-405815c907b9">Paper</a></td>
+          <td>generative pre-trained transformer for biomedical text generation and mining</td>
+          <td>Autoregressive</td>
+          <td>Jul-2019</td>
+          <td>Microsoft Research AI4Science</td>
+      </tr>
+      <tr>
+          <td>35.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/hubert">Hubert</a> <a href="https://arxiv.org/abs/2106.07447">Paper</a></td>
+          <td>Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units</td>
+          <td>Autoencoding</td>
+          <td>Jul-2019</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>36.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/realm.html">REALM</a> <a href="https://arxiv.org/abs/2005.11401">Paper</a></td>
+          <td>Retrieval-Augmented Language Model Pre-Training</td>
+          <td>Hybrid</td>
+          <td>Jul-2019</td>
+          <td>Google Research</td>
+      </tr>
+      <tr>
+          <td>37.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/speech_to_text">SpeechToTextTransformer</a> <a href="https://arxiv.org/abs/2110.07205">Paper</a></td>
+          <td>Fast Speech-to-Text Modeling with fairseq</td>
+          <td>Hybrid</td>
+          <td>Jul-2019</td>
+          <td>Facebook,</td>
+      </tr>
+      <tr>
+          <td>38.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xlm-v">XLM-V</a> <a href="https://arxiv.org/abs/2301.10472">Paper</a></td>
+          <td>Overcoming the Vocabulary Bottleneck in Multilingual Masked Language Models</td>
+          <td>Multilingual</td>
+          <td>Jul-2019</td>
+          <td>Meta AI</td>
+      </tr>
+      <tr>
+          <td>39.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/roberta">RoBERTa</a> <a href="https://arxiv.org/abs/1512.03385">Paper</a></td>
+          <td>A Robustly Optimized BERT Pretraining Approach</td>
+          <td>BERT-based</td>
+          <td>Aug-2019</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>40.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/gpt_neo">GPT Neo</a> <a href="https://github.com/EleutherAI/gpt-neo">Paper</a></td>
+          <td>EleutherAI/gpt-neo</td>
+          <td>Autoregressive</td>
+          <td>Sep-2019</td>
+          <td>EleutherAI</td>
+      </tr>
+      <tr>
+          <td>41.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/camembert">CamemBERT</a> <a href="https://arxiv.org/abs/1911.03894">Paper</a></td>
+          <td>a Tasty French Language Model</td>
+          <td>Autoencoding</td>
+          <td>Oct-2019</td>
+          <td>Inria/Facebook/Sorbonne</td>
+      </tr>
+      <tr>
+          <td>42.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/dialogpt">DialoGPT</a> <a href="https://arxiv.org/abs/1911.00536">Paper</a></td>
+          <td>Large-Scale Generative Pre-training for Conversational Response Generation</td>
+          <td>Autoregressive</td>
+          <td>Oct-2019</td>
+          <td>Microsoft Research</td>
+      </tr>
+      <tr>
+          <td>43.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/distilbert">DistilBERT</a> <a href="https://arxiv.org/abs/1910.01108">Paper</a></td>
+          <td>smaller, faster, cheaper and lighter</td>
+          <td>Autoencoding</td>
+          <td>Oct-2019</td>
+          <td>HuggingFace</td>
+      </tr>
+      <tr>
+          <td>44.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/lilt">LiLT</a> <a href="https://arxiv.org/abs/2202.13669">Paper</a></td>
+          <td>A Simple yet Effective Language-Independent Layout Transformer for Structured Document Understanding</td>
+          <td>Autoencoding</td>
+          <td>Oct-2019</td>
+          <td>South China University of Technology</td>
+      </tr>
+      <tr>
+          <td>45.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/luke">LUKE</a> <a href="https://arxiv.org/abs/2010.01057">Paper</a></td>
+          <td>Deep Contextualized Entity Representations with Entity-aware Self-attention</td>
+          <td>Autoencoding</td>
+          <td>Oct-2019</td>
+          <td>Studio Ousia</td>
+      </tr>
+      <tr>
+          <td>46.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mobilebert">MobileBERT</a> <a href="https://arxiv.org/abs/2110.08151">Paper</a></td>
+          <td>a Compact Task-Agnostic BERT for Resource-Limited Devices</td>
+          <td>Autoencoding</td>
+          <td>Oct-2019</td>
+          <td>CMU/Google Brain</td>
+      </tr>
+      <tr>
+          <td>47.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mt5">MT5</a> <a href="https://arxiv.org/abs/2004.09297">Paper</a></td>
+          <td>A massively multilingual pre-trained text-to-text transformer</td>
+          <td>Autoregressive</td>
+          <td>Oct-2019</td>
+          <td>Google AI</td>
+      </tr>
+      <tr>
+          <td>48.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/rag">RAG</a> <a href="https://arxiv.org/abs/2004.09602">Paper</a></td>
+          <td>Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</td>
+          <td>Hybrid</td>
+          <td>Oct-2019</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>49.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/convbert">ConvBERT</a> <a href="https://arxiv.org/abs/2201.03545">Paper</a></td>
+          <td>Improving BERT with Span-based Dynamic Convolution</td>
+          <td>Autoencoding</td>
+          <td>Nov-2019</td>
+          <td>YituTech</td>
+      </tr>
+      <tr>
+          <td>50.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/megatron_gpt2">Megatron-GPT2</a> <a href="https://arxiv.org/abs/1909.08053">Paper</a></td>
+          <td>Training Multi-Billion Parameter Language Models Using Model Parallelism</td>
+          <td>Autoregressive</td>
+          <td>Nov-2019</td>
+          <td>NVIDIA</td>
+      </tr>
+      <tr>
+          <td>51.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/phobert">PhoBERT</a> <a href="https://arxiv.org/abs/2107.14795">Paper</a></td>
+          <td>Pre-trained language models for Vietnamese</td>
+          <td>BERT-based</td>
+          <td>Nov-2019</td>
+          <td>VinAI Research</td>
+      </tr>
+      <tr>
+          <td>52.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/roberta-prelayernorm">RoBERTa-PreLayerNorm</a> <a href="https://arxiv.org/abs/1907.11692">Paper</a></td>
+          <td>A Fast, Extensible Toolkit for Sequence Modeling</td>
+          <td>BERT-based</td>
+          <td>Nov-2019</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>53.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bertweet">BERTweet</a> <a href="https://aclanthology.org/2020.emnlp-demos.2/">Paper</a></td>
+          <td>A pre-trained language model for English Tweets</td>
+          <td>Autoencoding</td>
+          <td>Dec-2019</td>
+          <td>VinAI Research</td>
+      </tr>
+      <tr>
+          <td>54.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mbart">mBART</a> <a href="https://arxiv.org/abs/2212.09662">Paper</a></td>
+          <td>Multilingual Denoising Pre-training for Neural Machine Translation</td>
+          <td>Autoregressive</td>
+          <td>Dec-2019</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>55.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/megatron-bert">Megatron-BERT</a> <a href="https://arxiv.org/abs/2209.10655">Paper</a></td>
+          <td>Training Multi-Billion Parameter Language Models Using Model Parallelism</td>
+          <td>Autoregressive</td>
+          <td>Dec-2019</td>
+          <td>NVIDIA</td>
+      </tr>
+      <tr>
+          <td>56.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/speech_to_text_2">SpeechToTextTransformer2</a> <a href="https://arxiv.org/abs/2010.05171">Paper</a></td>
+          <td>Large-Scale Self- and Semi-Supervised Learning for Speech Translation</td>
+          <td>Hybrid</td>
+          <td>Dec-2019</td>
+          <td>Facebook,</td>
+      </tr>
+      <tr>
+          <td>57.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bert-generation">BERT For Sequence Generation</a> <a href="https://arxiv.org/abs/1907.12461">Paper</a></td>
+          <td>Leveraging Pre-trained Checkpoints for Sequence Generation Tasks</td>
+          <td>Autoencoding</td>
+          <td>Feb-2020</td>
+          <td>Google</td>
+      </tr>
+      <tr>
+          <td>58.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/convnext">ConvNeXT</a> <a href="https://arxiv.org/abs/2301.00808">Paper</a></td>
+          <td>A ConvNet for the 2020s</td>
+          <td>Vision Transformer</td>
+          <td>Mar-2020</td>
+          <td>Facebook AI</td>
+      </tr>
+      <tr>
+          <td>59.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/electra">ELECTRA</a> <a href="https://arxiv.org/abs/2003.10555">Paper</a></td>
+          <td>Pre-training text encoders as discriminators rather than generators</td>
+          <td>Autoencoding</td>
+          <td>Apr-2020</td>
+          <td>Google Research/Stanford University</td>
+      </tr>
+      <tr>
+          <td>60.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/longformer">Longformer</a> <a href="https://arxiv.org/abs/2004.05150">Paper</a></td>
+          <td>The Long-Document Transformer</td>
+          <td>Autoregressive</td>
+          <td>Apr-2020</td>
+          <td>AllenAI</td>
+      </tr>
+      <tr>
+          <td>61.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/regnet">RegNet</a> <a href="https://arxiv.org/abs/2001.04451">Paper</a></td>
+          <td>Designing Network Design Space</td>
+          <td>CNN</td>
+          <td>Apr-2020</td>
+          <td>META Platforms</td>
+      </tr>
+      <tr>
+          <td>62.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/squeezebert">SqueezeBERT</a> <a href="https://arxiv.org/abs/2101.00438">Paper</a></td>
+          <td>What can computer vision teach NLP about efficient neural networks?</td>
+          <td>BERT-based</td>
+          <td>Apr-2020</td>
+          <td>Berkeley</td>
+      </tr>
+      <tr>
+          <td>63.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/layoutlm">LayoutLM</a> <a href="https://arxiv.org/abs/1912.13318">Paper</a></td>
+          <td>Pre-training of Text and Layout for Document Image Understanding</td>
+          <td>Autoencoding</td>
+          <td>May-2020</td>
+          <td>Microsoft Research Asia</td>
+      </tr>
+      <tr>
+          <td>64.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mpnet">MPNet</a> <a href="https://arxiv.org/abs/2110.02178">Paper</a></td>
+          <td>Masked and Permuted Pre-training for Language Understanding</td>
+          <td>Autoencoding</td>
+          <td>May-2020</td>
+          <td>Microsoft Research</td>
+      </tr>
+      <tr>
+          <td>65.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/visual_bert">VisualBERT</a> <a href="https://arxiv.org/pdf/1908.03557">Paper</a></td>
+          <td>A Simple and Performant Baseline for Vision and Language</td>
+          <td>BERT-based</td>
+          <td>May-2020</td>
+          <td>UCLA NLP</td>
+      </tr>
+      <tr>
+          <td>66.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/conditional_detr">Conditional DETR</a> <a href="https://arxiv.org/abs/2008.02496">Paper</a></td>
+          <td>Conditional DETR for Fast Training Convergence</td>
+          <td>Vision Transformer</td>
+          <td>Jun-2020</td>
+          <td>Microsoft Research Asia</td>
+      </tr>
+      <tr>
+          <td>67.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/gpt_bigcode">GPTBigCode</a> <a href="https://huggingface.co/docs/transformers/model_doc/gptsan-japanese">Paper</a></td>
+          <td>don’t reach for the stars!</td>
+          <td>Autoregressive</td>
+          <td>Jun-2020</td>
+          <td>BigCode</td>
+      </tr>
+      <tr>
+          <td>68.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mctct">M-CTC-T</a> <a href="https://arxiv.org/abs/2111.00161">Paper</a></td>
+          <td>Pseudo-Labeling For Massively Multilingual Speech Recognition</td>
+          <td>Autoencoding</td>
+          <td>Jun-2020</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>69.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/pix2struct">Pix2Struct</a> <a href="https://www.aclweb.org/anthology/2020.findings-emnlp.92/">Paper</a></td>
+          <td>Screenshot Parsing as Pretraining for Visual Language Understanding</td>
+          <td>Hybrid</td>
+          <td>Jun-2020</td>
+          <td>Google</td>
+      </tr>
+      <tr>
+          <td>70.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/prophetnet">ProphetNet</a> <a href="https://arxiv.org/abs/2111.11418">Paper</a></td>
+          <td>Predicting Future N-gram for Sequence-to-Sequence Pre-training</td>
+          <td>Autoregressive</td>
+          <td>Jun-2020</td>
+          <td>Microsoft Research</td>
+      </tr>
+      <tr>
+          <td>71.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/sew">SEW</a> <a href="https://arxiv.org/abs/2105.15203">Paper</a></td>
+          <td>Performance-Efficiency Trade-offs in Unsupervised Pre-training for Speech Recognition</td>
+          <td>Vision Transformer (ViT)</td>
+          <td>Jun-2020</td>
+          <td>ASAPP</td>
+      </tr>
+      <tr>
+          <td>72.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/t5">T5</a> <a href="https://arxiv.org/abs/2101.03961">Paper</a></td>
+          <td>Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer</td>
+          <td>Autoregressive</td>
+          <td>Jun-2020</td>
+          <td>Google AI</td>
+      </tr>
+      <tr>
+          <td>73.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/deberta">DeBERTa</a> <a href="https://arxiv.org/abs/2006.03654">Paper</a></td>
+          <td>Decoding-enhanced BERT with Disentangled Attention</td>
+          <td>Autoencoding</td>
+          <td>Jul-2020</td>
+          <td>Microsoft</td>
+      </tr>
+      <tr>
+          <td>74.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/informer">Informer</a> <a href="https://arxiv.org/abs/2012.07436">Paper</a></td>
+          <td>Beyond Efficient Transformer for Long Sequence Time-Series Forecasting</td>
+          <td>Autoencoding</td>
+          <td>Jul-2020</td>
+          <td>Beihang University, UC Berkeley, Rutgers University, SEDD Company</td>
+      </tr>
+      <tr>
+          <td>75.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/led">LED</a> <a href="https://arxiv.org/abs/2004.05150">Paper</a></td>
+          <td>The Long-Document Transformer</td>
+          <td>Autoregressive</td>
+          <td>Jul-2020</td>
+          <td>AllenAI</td>
+      </tr>
+      <tr>
+          <td>76.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/switch_transformers">SwitchTransformers</a> <a href="https://arxiv.org/abs/2209.11345">Paper</a></td>
+          <td>Scaling to Trillion Parameter Models with Simple and Efficient Sparsity</td>
+          <td>Hybrid</td>
+          <td>Jul-2020</td>
+          <td>Google</td>
+      </tr>
+      <tr>
+          <td>77.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/whisper">Whisper</a> <a href="https://cdn.openai.com/papers/whisper.pdf">Paper</a></td>
+          <td>Robust Speech Recognition via Large-Scale Weak Supervision</td>
+          <td>Autoregressive</td>
+          <td>Jul-2020</td>
+          <td>OpenAI</td>
+      </tr>
+      <tr>
+          <td>78.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xlm-prophetnet">XLM-ProphetNet</a> <a href="https://arxiv.org/abs/2001.04063">Paper</a></td>
+          <td>Predicting Future N-gram for Sequence-to-Sequence Pre-training</td>
+          <td>Hybrid</td>
+          <td>Jul-2020</td>
+          <td>Microsoft Research</td>
+      </tr>
+      <tr>
+          <td>79.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xlm-roberta">XLM-RoBERTa</a> <a href="https://arxiv.org/abs/1911.02116">Paper</a></td>
+          <td>Unsupervised Cross-lingual Representation Learning at Scale</td>
+          <td>BERT-based</td>
+          <td>Jul-2020</td>
+          <td>Facebook AI,</td>
+      </tr>
+      <tr>
+          <td>80.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/deformable_detr">Deformable DETR</a> <a href="https://arxiv.org/abs/2010.04159">Paper</a></td>
+          <td>Deformable Transformers for End-to-End Object Detection</td>
+          <td>Vision Transformer</td>
+          <td>Aug-2020</td>
+          <td>SenseTime Research</td>
+      </tr>
+      <tr>
+          <td>81.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/fnet">FNet</a> <a href="https://arxiv.org/abs/2105.03824">Paper</a></td>
+          <td>Mixing Tokens with Fourier Transforms</td>
+          <td>Autoencoding</td>
+          <td>Aug-2020</td>
+          <td>Google Research</td>
+      </tr>
+      <tr>
+          <td>82.</td>
+          <td><a href="">GPTSAN-japanese </a> <a href="https://github.com/tanreinama/GPTSAN/blob/main/report/model.md">Paper</a></td>
+          <td>released in the repository tanreinama/GPTSAN</td>
+          <td>Autoregressive</td>
+          <td>Aug-2020</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>83.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/sew_d">SEW-D</a> <a href="https://arxiv.org/abs/2109.06870">Paper</a></td>
+          <td>Performance-Efficiency Trade-offs in Unsupervised Pre-training for Speech Recognition</td>
+          <td>Vision Transformer (ViT)</td>
+          <td>Aug-2020</td>
+          <td>ASAPP</td>
+      </tr>
+      <tr>
+          <td>84.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/cpm">CPM</a> <a href="https://arxiv.org/abs/2012.00413">Paper</a></td>
+          <td>A Large-scale Generative Chinese Pre-trained Language Model</td>
+          <td>Sequence-to-Sequence</td>
+          <td>Sep-2020</td>
+          <td>Tsinghua University</td>
+      </tr>
+      <tr>
+          <td>85.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/git">GIT</a> <a href="https://arxiv.org/abs/2205.14100">Paper</a></td>
+          <td>A Generative Image-to-text Transformer for Vision and Language</td>
+          <td>Autoencoding</td>
+          <td>Sep-2020</td>
+          <td>Microsoft Research</td>
+      </tr>
+      <tr>
+          <td>86.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/layoutxlm">LayoutXLM</a> <a href="https://arxiv.org/abs/2104.08836">Paper</a></td>
+          <td>Multimodal Pre-training for Multilingual Visually-rich Document Understanding</td>
+          <td>Autoencoding</td>
+          <td>Sep-2020</td>
+          <td>Microsoft Research Asia</td>
+      </tr>
+      <tr>
+          <td>87.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/detr">DETR</a> <a href="https://arxiv.org/abs/2005.12872">Paper</a></td>
+          <td>End-to-End Object Detection with Transformers</td>
+          <td>Vision Transformer</td>
+          <td>Oct-2020</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>88.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/gpt_neox">GPT NeoX</a> <a href="https://arxiv.org/abs/2204.06745">Paper</a></td>
+          <td>An Open-Source Autoregressive Language Model</td>
+          <td>Autoregressive</td>
+          <td>Oct-2020</td>
+          <td>EleutherAI</td>
+      </tr>
+      <tr>
+          <td>89.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/rembert">RemBERT</a> <a href="https://arxiv.org/abs/2003.13678">Paper</a></td>
+          <td>Rethinking embedding coupling in pre-trained language models</td>
+          <td>BERT-based</td>
+          <td>Oct-2020</td>
+          <td>Google Research</td>
+      </tr>
+      <tr>
+          <td>90.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/roc_bert">RoCBert</a> <a href="https://arxiv.org/abs/1904.01038">Paper</a></td>
+          <td>Robust Chinese Bert with Multimodal Contrastive Pretraining</td>
+          <td>BERT-based</td>
+          <td>Oct-2020</td>
+          <td>WeChatAI</td>
+      </tr>
+      <tr>
+          <td>91.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/tapas">TAPAS</a> <a href="https://arxiv.org/abs/2110.00061">Paper</a></td>
+          <td>Weakly Supervised Table Parsing via Pre-training</td>
+          <td>Hybrid</td>
+          <td>Oct-2020</td>
+          <td>Google AI</td>
+      </tr>
+      <tr>
+          <td>92.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/upernet">UPerNet</a> <a href="https://arxiv.org/abs/1807.10221">Paper</a></td>
+          <td>Unified Perceptual Parsing for Scene Understanding</td>
+          <td>Vision Transformer (ViT)</td>
+          <td>Oct-2020</td>
+          <td>Peking University</td>
+      </tr>
+      <tr>
+          <td>93.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/vit">Vision Transformer (ViT)</a> <a href="https://arxiv.org/abs/2010.11929">Paper</a></td>
+          <td>Transformers for Image Recognition at Scale</td>
+          <td>Vision Transformer (ViT)</td>
+          <td>Oct-2020</td>
+          <td>Google AI</td>
+      </tr>
+      <tr>
+          <td>94.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/wav2vec2">Wav2Vec2</a> <a href="https://arxiv.org/abs/2006.11477">Paper</a></td>
+          <td>A Framework for Self-Supervised Learning of Speech Representations</td>
+          <td>Autoregressive</td>
+          <td>Oct-2020</td>
+          <td>Facebook AI</td>
+      </tr>
+      <tr>
+          <td>95.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/plbart">PLBart</a> <a href="https://arxiv.org/abs/2210.03347">Paper</a></td>
+          <td>Unified Pre-training for Program Understanding and Generation</td>
+          <td>Hybrid</td>
+          <td>Nov-2020</td>
+          <td>UCLA NLP</td>
+      </tr>
+      <tr>
+          <td>96.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/dit">DiT</a> <a href="https://arxiv.org/abs/2203.02378">Paper</a></td>
+          <td>Self-supervised Pre-training for Document Image Transformer</td>
+          <td>Vision Transformer</td>
+          <td>Dec-2020</td>
+          <td>Microsoft Research</td>
+      </tr>
+      <tr>
+          <td>97.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/dpr">DPR</a> <a href="https://arxiv.org/abs/2004.04906">Paper</a></td>
+          <td>Dense Passage Retrieval for Open-Domain Question Answering</td>
+          <td>Sequence-to-Sequence</td>
+          <td>Dec-2020</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>98.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/glpn">GLPN</a> <a href="https://arxiv.org/abs/2201.07436">Paper</a></td>
+          <td>Global-Local Path Networks for Monocular Depth Estimation with Vertical CutDepth</td>
+          <td>Autoencoding</td>
+          <td>Dec-2020</td>
+          <td>KAIST</td>
+      </tr>
+      <tr>
+          <td>99.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/levit">LeViT</a> <a href="https://arxiv.org/abs/2104.01136">Paper</a></td>
+          <td>A Vision Transformer in ConvNet’s Clothing for Faster Inference</td>
+          <td>Autoencoding</td>
+          <td>Dec-2020</td>
+          <td>Meta AI</td>
+      </tr>
+      <tr>
+          <td>100.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/nat">NAT</a> <a href="https://arxiv.org/abs/2206.12131">Paper</a></td>
+          <td>Neighborhood Attention Transformer</td>
+          <td>Autoencoding</td>
+          <td>Dec-2020</td>
+          <td>SHI Labs</td>
+      </tr>
+      <tr>
+          <td>101.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/tapex">TAPEX</a> <a href="https://arxiv.org/abs/2004.02349">Paper</a></td>
+          <td>Table Pre-training via Learning a Neural SQL Executor</td>
+          <td>Hybrid</td>
+          <td>Dec-2020</td>
+          <td>Microsoft Research</td>
+      </tr>
+      <tr>
+          <td>102.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/videomae">VideoMAE</a> <a href="https://arxiv.org/abs/2203.12602">Paper</a></td>
+          <td>Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training</td>
+          <td>Hybrid</td>
+          <td>Dec-2020</td>
+          <td>Multimedia Computing Group, Nanjing University</td>
+      </tr>
+      <tr>
+          <td>103.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/wav2vec2-conformer">Wav2Vec2-Conformer</a> <a href="https://arxiv.org/abs/2010.05171">Paper</a></td>
+          <td>Fast Speech-to-Text Modeling with FAIRSEQ</td>
+          <td>Autoregressive</td>
+          <td>Dec-2020</td>
+          <td>Facebook AI</td>
+      </tr>
+      <tr>
+          <td>104.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/clip">CLIP</a> <a href="https://arxiv.org/abs/2112.10003">Paper</a></td>
+          <td>Learning Transferable Visual Models From Natural Language Supervision</td>
+          <td>Vision-Language Pretraining</td>
+          <td>Jan-2021</td>
+          <td>OpenAI</td>
+      </tr>
+      <tr>
+          <td>105.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xls_r">XLS-R</a> <a href="https://arxiv.org/abs/2111.09296">Paper</a></td>
+          <td>Self-supervised Cross-lingual Speech Representation Learning at Scale</td>
+          <td>Autoregressive</td>
+          <td>Jan-2021</td>
+          <td>Facebook AI</td>
+      </tr>
+      <tr>
+          <td>106.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/audio-spectrogram-transformer">Audio Spectrogram Transformer</a> <a href="https://arxiv.org/abs/2104.01778">Paper</a></td>
+          <td>Audio Spectrogram Transformer</td>
+          <td>Audio Transformer</td>
+          <td>Feb-2021</td>
+          <td>MIT</td>
+      </tr>
+      <tr>
+          <td>107.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/m2m_100">M2M100</a> <a href="https://arxiv.org/abs/2010.11125">Paper</a></td>
+          <td>Beyond English-Centric Multilingual Machine Translation</td>
+          <td>Autoregressive</td>
+          <td>Feb-2021</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>108.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mega">MEGA</a> <a href="https://arxiv.org/abs/2008.00401">Paper</a></td>
+          <td>Moving Average Equipped Gated Attention</td>
+          <td>Autoencoding</td>
+          <td>Feb-2021</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>109.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/beit">BEiT</a> <a href="https://arxiv.org/abs/2106.08254">Paper</a></td>
+          <td>BERT Pre-Training of Image Transformers</td>
+          <td>Vision Transformer</td>
+          <td>Mar-2021</td>
+          <td>Microsoft</td>
+      </tr>
+      <tr>
+          <td>110.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bigbird_pegasus">BigBird-Pegasus</a> <a href="https://aclanthology.org/2020.emnlp-demos.2/">Paper</a></td>
+          <td>Transformers for Longer Sequences</td>
+          <td>Sequence-to-Sequence</td>
+          <td>Mar-2021</td>
+          <td>Google Research</td>
+      </tr>
+      <tr>
+          <td>111.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/big_bird">BigBird-RoBERTa</a> <a href="https://arxiv.org/abs/2007.14062">Paper</a></td>
+          <td>Transformers for Longer Sequences</td>
+          <td>Autoencoding</td>
+          <td>Mar-2021</td>
+          <td>Google Research</td>
+      </tr>
+      <tr>
+          <td>112.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/clipseg">CLIPSeg</a> <a href="https://arxiv.org/abs/2203.13474">Paper</a></td>
+          <td>Image Segmentation Using Text and Image Prompts</td>
+          <td>Vision-Language Pretraining</td>
+          <td>Mar-2021</td>
+          <td>University of Göttingen</td>
+      </tr>
+      <tr>
+          <td>113.</td>
+          <td><a href="https://huggingface.co/docs/transformers/master/model_doc/dpt">DPT</a> <a href="https://arxiv.org/abs/2103.13413">Paper</a></td>
+          <td>Vision Transformers for Dense Prediction</td>
+          <td>Vision Transformer</td>
+          <td>Mar-2021</td>
+          <td>Intel Labs</td>
+      </tr>
+      <tr>
+          <td>114.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/perceiver">Perceiver IO</a> <a href="https://arxiv.org/abs/2208.04347">Paper</a></td>
+          <td>A General Architecture for Structured Inputs &amp; Outputs</td>
+          <td>Hybrid</td>
+          <td>Mar-2021</td>
+          <td>Deepmind</td>
+      </tr>
+      <tr>
+          <td>115.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/reformer">Reformer</a> <a href="https://arxiv.org/abs/2002.08909">Paper</a></td>
+          <td>The Efficient Transformer</td>
+          <td>Hybrid</td>
+          <td>Mar-2021</td>
+          <td>Google Research</td>
+      </tr>
+      <tr>
+          <td>116.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/roformer">RoFormer</a> <a href="https://aclanthology.org/2022.acl-long.65.pdf">Paper</a></td>
+          <td>Enhanced Transformer with Rotary Position Embedding</td>
+          <td>Hybrid</td>
+          <td>Mar-2021</td>
+          <td>ZhuiyiTechnology</td>
+      </tr>
+      <tr>
+          <td>117.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/swin">Swin Transformer</a> <a href="https://arxiv.org/abs/2006.11316">Paper</a></td>
+          <td>Hierarchical Vision Transformer using Shifted Windows</td>
+          <td>Vision Transformer (ViT)</td>
+          <td>Mar-2021</td>
+          <td>Microsoft</td>
+      </tr>
+      <tr>
+          <td>118.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/trocr">TrOCR</a> <a href="https://arxiv.org/abs/2109.10282">Paper</a></td>
+          <td>Transformer-based Optical Character Recognition with Pre-trained Models</td>
+          <td>Hybrid</td>
+          <td>Mar-2021</td>
+          <td>Microsoft,</td>
+      </tr>
+      <tr>
+          <td>119.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/wav2vec2_phoneme">Wav2Vec2Phoneme</a> <a href="https://arxiv.org/abs/2109.11680">Paper</a></td>
+          <td>Simple and Effective Zero-shot Cross-lingual Phoneme Recognition</td>
+          <td>Autoregressive</td>
+          <td>Mar-2021</td>
+          <td>Facebook AI</td>
+      </tr>
+      <tr>
+          <td>120.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xclip">X-CLIP</a> <a href="https://arxiv.org/abs/2208.02816">Paper</a></td>
+          <td>Expanding Language-Image Pretrained Models for General Video Recognition</td>
+          <td>Hybrid</td>
+          <td>Mar-2021</td>
+          <td>Microsoft Research</td>
+      </tr>
+      <tr>
+          <td>121.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xlsr_wav2vec2">XLSR-Wav2Vec2</a> <a href="https://arxiv.org/abs/2006.13979">Paper</a></td>
+          <td>Unsupervised Cross-Lingual Representation Learning For Speech Recognition</td>
+          <td>Autoregressive</td>
+          <td>Mar-2021</td>
+          <td>Facebook AI</td>
+      </tr>
+      <tr>
+          <td>122.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/blenderbot">Blenderbot</a> <a href="https://arxiv.org/abs/2004.13637">Paper</a></td>
+          <td>Recipes for building an open-domain chatbot</td>
+          <td>Sequence-to-Sequence</td>
+          <td>Apr-2021</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>123.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/blenderbot-small">BlenderbotSmall</a> <a href="https://arxiv.org/abs/2004.13637">Paper</a></td>
+          <td>Recipes for building an open-domain chatbot</td>
+          <td>Sequence-to-Sequence</td>
+          <td>Apr-2021</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>124.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/blip">BLIP</a> <a href="https://arxiv.org/abs/2201.12086">Paper</a></td>
+          <td>Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation</td>
+          <td>Vision Transformer</td>
+          <td>Apr-2021</td>
+          <td>Salesforce</td>
+      </tr>
+      <tr>
+          <td>125.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/byt5">ByT5</a> <a href="https://arxiv.org/abs/2105.13626">Paper</a></td>
+          <td>Towards a token-free future with pre-trained byte-to-byte models</td>
+          <td>Sequence-to-Sequence</td>
+          <td>Apr-2021</td>
+          <td>Google Research</td>
+      </tr>
+      <tr>
+          <td>126.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/cvt">CvT</a> <a href="https://arxiv.org/abs/2103.15808">Paper</a></td>
+          <td>Introducing Convolutions to Vision Transformers</td>
+          <td>Vision Transformer</td>
+          <td>Apr-2021</td>
+          <td>Microsoft</td>
+      </tr>
+      <tr>
+          <td>127.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/deberta-v2">DeBERTa-v2</a> <a href="https://arxiv.org/abs/2006.03654">Paper</a></td>
+          <td>Decoding-enhanced BERT with Disentangled Attention</td>
+          <td>Autoencoding</td>
+          <td>Apr-2021</td>
+          <td>Microsoft</td>
+      </tr>
+      <tr>
+          <td>128.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/deit">DeiT</a> <a href="https://arxiv.org/abs/2012.12877">Paper</a></td>
+          <td>Training data-efficient image transformers &amp; distillation through attention</td>
+          <td>Vision Transformer</td>
+          <td>Apr-2021</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>129.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/groupvit">GroupViT</a> <a href="https://arxiv.org/abs/2202.11094">Paper</a></td>
+          <td>Semantic Segmentation Emerges from Text Supervision</td>
+          <td>Autoencoding</td>
+          <td>Apr-2021</td>
+          <td>UCSD, NVIDIA</td>
+      </tr>
+      <tr>
+          <td>130.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/layoutlmv2">LayoutLMv2</a> <a href="https://arxiv.org/abs/2012.14740">Paper</a></td>
+          <td>Multi-modal Pre-training for Visually-Rich Document Understanding</td>
+          <td>Autoencoding</td>
+          <td>Apr-2021</td>
+          <td>Microsoft Research Asia</td>
+      </tr>
+      <tr>
+          <td>131.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/maskformer">MaskFormer</a> <a href="https://arxiv.org/abs/2112.01527">Paper</a></td>
+          <td>Per-Pixel Classification is Not All You Need for Semantic Segmentation</td>
+          <td>Autoencoding</td>
+          <td>Apr-2021</td>
+          <td>Meta and UIUC</td>
+      </tr>
+      <tr>
+          <td>132.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/segformer">SegFormer</a> <a href="https://arxiv.org/abs/2104.09864">Paper</a></td>
+          <td>Simple and Efficient Design for Semantic Segmentation with Transformers</td>
+          <td>Hybrid</td>
+          <td>Apr-2021</td>
+          <td>NVIDIA</td>
+      </tr>
+      <tr>
+          <td>133.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/time_series_transformer">Time Series Transformer</a> <a href="https://arxiv.org/abs/2107.07653">Paper</a></td>
+          <td></td>
+          <td>Hybrid</td>
+          <td>Apr-2021</td>
+          <td>HuggingFace.</td>
+      </tr>
+      <tr>
+          <td>134.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/timesformer">TimeSformer</a> <a href="https://arxiv.org/abs/2102.05095">Paper</a></td>
+          <td>Space-Time Attention All You Need for Video Understanding?</td>
+          <td>Hybrid</td>
+          <td>Apr-2021</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>135.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/trajectory_transformers">Trajectory Transformer</a> <a href="https://arxiv.org/abs/2106.02039">Paper</a></td>
+          <td>Offline Reinforcement Learning as One Big Sequence Modeling Problem</td>
+          <td>Hybrid</td>
+          <td>Apr-2021</td>
+          <td>the University of California at Berkeley</td>
+      </tr>
+      <tr>
+          <td>136.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/unispeech">UniSpeech</a> <a href="https://arxiv.org/abs/2101.07597">Paper</a></td>
+          <td>Unified Speech Representation Learning with Labeled and Unlabeled Data</td>
+          <td>Hybrid</td>
+          <td>Apr-2021</td>
+          <td>Microsoft Research</td>
+      </tr>
+      <tr>
+          <td>137.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/unispeech-sat">UniSpeechSat</a> <a href="https://arxiv.org/abs/2110.05752">Paper</a></td>
+          <td>UNIVERSAL SPEECH REPRESENTATION LEARNING WITH SPEAKER AWARE PRE-TRAINING</td>
+          <td>Hybrid</td>
+          <td>Apr-2021</td>
+          <td>Microsoft Research</td>
+      </tr>
+      <tr>
+          <td>138.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/align">ALIGN</a> <a href="https://arxiv.org/abs/2102.05918">Paper</a></td>
+          <td>Scaling Up Visual and Vision-Language. Representation Learning With Noisy Text Supervision</td>
+          <td>Vision Transformer</td>
+          <td>May-2021</td>
+          <td>Google Research</td>
+      </tr>
+      <tr>
+          <td>139.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bort">BORT</a> <a href="">Paper</a></td>
+          <td>Optimal Subarchitecture Extraction For BERT</td>
+          <td>Sequence-to-Sequence</td>
+          <td>May-2021</td>
+          <td>Alexa</td>
+      </tr>
+      <tr>
+          <td>140.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/deplot">DePlot</a> <a href="https://arxiv.org/abs/2212.10505">Paper</a></td>
+          <td>One-shot visual language reasoning by plot-to-table translation</td>
+          <td>Vision Transformer</td>
+          <td>May-2021</td>
+          <td>Google AI</td>
+      </tr>
+      <tr>
+          <td>141.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/deta">DETA</a> <a href="https://arxiv.org/abs/2212.06137">Paper</a></td>
+          <td>NMS Strikes Back</td>
+          <td>Sequence-to-Sequence</td>
+          <td>May-2021</td>
+          <td>The University of Texas at Austin</td>
+      </tr>
+      <tr>
+          <td>142.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/dinat">DiNAT</a> <a href="https://arxiv.org/abs/2209.15001">Paper</a></td>
+          <td>Dilated Neighborhood Attention Transformer</td>
+          <td>Vision Transformer</td>
+          <td>May-2021</td>
+          <td>SHI Labs</td>
+      </tr>
+      <tr>
+          <td>143.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/jukebox">Jukebox</a> <a href="https://arxiv.org/pdf/2005.00341.pdf">Paper</a></td>
+          <td>A Generative Model for Music</td>
+          <td>Autoencoding</td>
+          <td>May-2021</td>
+          <td>OpenAI</td>
+      </tr>
+      <tr>
+          <td>144.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mbart">mBART-50</a> <a href="https://arxiv.org/abs/2001.08210">Paper</a></td>
+          <td>Multilingual Translation with Extensible Multilingual Pretraining and Finetuning</td>
+          <td>Autoregressive</td>
+          <td>May-2021</td>
+          <td>Facebook</td>
+      </tr>
+      <tr>
+          <td>145.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/nystromformer">Nyströmformer</a> <a href="https://arxiv.org/abs/2207.04672">Paper</a></td>
+          <td>A Nyström-Based Algorithm for Approximating Self-Attention</td>
+          <td>Autoencoding</td>
+          <td>May-2021</td>
+          <td>the University of Wisconsin - Madison</td>
+      </tr>
+      <tr>
+          <td>146.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/vit_hybrid">ViT Hybrid</a> <a href="https://arxiv.org/abs/2010.11929">Paper</a></td>
+          <td>Transformers for Image Recognition at Scale</td>
+          <td>Hybrid</td>
+          <td>May-2021</td>
+          <td>Google AI</td>
+      </tr>
+      <tr>
+          <td>147.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xmod">X-MOD</a> <a href="http://dx.doi.org/10.18653/v1/2022.naacl-main.255">Paper</a></td>
+          <td>Lifting the Curse of Multilinguality by Pre-training Modular Transformers</td>
+          <td>Hybrid</td>
+          <td>May-2021</td>
+          <td>Meta AI</td>
+      </tr>
+      <tr>
+          <td>148.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bartpho">BARTpho</a> <a href="https://arxiv.org/abs/2109.09701">Paper</a></td>
+          <td>Pre-trained Sequence-to-Sequence Models for Vietnamese</td>
+          <td>Autoregressive</td>
+          <td>Jun-2021</td>
+          <td>VinAI Research</td>
+      </tr>
+      <tr>
+          <td>149.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bridgetower">BridgeTower</a> <a href="https://arxiv.org/abs/2206.08657">Paper</a></td>
+          <td>Building Bridges Between Encoders in Vision-Language Representation Learning</td>
+          <td>Vision Transformer</td>
+          <td>Jun-2021</td>
+          <td>Harbin Institute of Technology/Microsoft Research Asia/Intel Labs</td>
+      </tr>
+      <tr>
+          <td>150.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/codegen">CodeGen</a> <a href="https://arxiv.org/abs/2108.06152">Paper</a></td>
+          <td>A Conversational Paradigm for Program Synthesis</td>
+          <td>Vision Transformer</td>
+          <td>Jun-2021</td>
+          <td>Salesforce</td>
+      </tr>
+      <tr>
+          <td>151.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/gptj">GPT-J</a> <a href="http://www.lrec-conf.org/proceedings/lrec2022/pdf/2022.lrec-1.376.pdf">Paper</a></td>
+          <td>released in the repository kingoflolz/mesh-transformer-jax</td>
+          <td>Autoregressive</td>
+          <td>Jun-2021</td>
+          <td>EleutherAI</td>
+      </tr>
+      <tr>
+          <td>152.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/llama">LLaMA</a> <a href="https://arxiv.org/abs/2302.13971">Paper</a></td>
+          <td>Open and Efficient Foundation Language Models</td>
+          <td>Autoencoding</td>
+          <td>Jun-2021</td>
+          <td>The FAIR team of Meta AI</td>
+      </tr>
+      <tr>
+          <td>153.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/markuplm">MarkupLM</a> <a href="http://opus.nlpl.eu/">Paper</a></td>
+          <td>Pre-training of Text and Markup Language for Visually-rich Document Understanding</td>
+          <td>Autoencoding</td>
+          <td>Jun-2021</td>
+          <td>Microsoft Research Asia</td>
+      </tr>
+      <tr>
+          <td>154.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/poolformer">PoolFormer</a> <a href="https://arxiv.org/abs/2103.06333">Paper</a></td>
+          <td>MetaFormer is Actually What You Need for Vision</td>
+          <td>Autoregressive</td>
+          <td>Jun-2021</td>
+          <td>Sea AI Labs</td>
+      </tr>
+      <tr>
+          <td>155.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/qdqbert">QDQBert</a> <a href="https://arxiv.org/abs/2001.04063">Paper</a></td>
+          <td>Principles and Empirical Evaluation</td>
+          <td>BERT-based</td>
+          <td>Jun-2021</td>
+          <td>NVIDIA</td>
+      </tr>
+      <tr>
+          <td>156.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/vilt">ViLT</a> <a href="https://arxiv.org/abs/2102.03334">Paper</a></td>
+          <td>Vision-and-Language Transformer Without Convolution or Region Supervision</td>
+          <td>Vision Transformer (ViT)</td>
+          <td>Jun-2021</td>
+          <td>NAVER AI Lab/Kakao Enterprise/Kakao Brain</td>
+      </tr>
+      <tr>
+          <td>157.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/barthez">BARThez</a> <a href="https://arxiv.org/abs/2010.12321">Paper</a></td>
+          <td>a Skilled Pretrained French Sequence-to-Sequence Model</td>
+          <td>Autoregressive</td>
+          <td>Jul-2021</td>
+          <td>École polytechnique</td>
+      </tr>
+      <tr>
+          <td>158.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/donut">Donut</a> <a href="https://arxiv.org/abs/2111.15664">Paper</a></td>
+          <td>OCR-free Document Understanding Transformer</td>
+          <td>Time Series Transformer</td>
+          <td>Jul-2021</td>
+          <td>NAVER</td>
+      </tr>
+      <tr>
+          <td>159.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/imagegpt">ImageGPT</a> <a href="https://openai.com/blog/image-gpt/">Paper</a></td>
+          <td>Generative Pretraining from Pixels</td>
+          <td>Autoregressive</td>
+          <td>Jul-2021</td>
+          <td>OpenAI</td>
+      </tr>
+      <tr>
+          <td>160.</td>
+          <td><a href="https://huggingface.co/docs/transformers/master/model_doc/opt">OPT</a> <a href="https://arxiv.org/abs/2211.06220">Paper</a></td>
+          <td>Open Pre-trained Transformer Language Models</td>
+          <td>Hybrid</td>
+          <td>Jul-2021</td>
+          <td>Meta AI</td>
+      </tr>
+      <tr>
+          <td>161.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/splinter">Splinter</a> <a href="https://arxiv.org/abs/2104.06678">Paper</a></td>
+          <td>Few-Shot Question Answering by Pretraining Span Selection</td>
+          <td>Hybrid</td>
+          <td>Jul-2021</td>
+          <td>Tel Aviv University,</td>
+      </tr>
+      <tr>
+          <td>162.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xglm">XGLM</a> <a href="https://arxiv.org/abs/2112.10668">Paper</a></td>
+          <td>Few-shot Learning with Multilingual Language Models</td>
+          <td>Hybrid</td>
+          <td>Jul-2021</td>
+          <td>Facebook AI</td>
+      </tr>
+      <tr>
+          <td>163.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/yoso">YOSO</a> <a href="https://arxiv.org/abs/2111.09714">Paper</a></td>
+          <td>You Only Sample (Almost)</td>
+          <td>Object Detection</td>
+          <td>Jul-2021</td>
+          <td>the University of Wisconsin - Madison</td>
+      </tr>
+      <tr>
+          <td>164.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/efficientformer">EfficientFormer</a> <a href="https://arxiv.org/abs/2206.01191">Paper</a></td>
+          <td>Vision Transformers at MobileNetSpeed</td>
+          <td>Vision Transformer</td>
+          <td>Aug-2021</td>
+          <td>Snap Research</td>
+      </tr>
+      <tr>
+          <td>165.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/esm">ESM</a> <a href="https://doi.org/10.1101/2022.07.20.500902">Paper</a></td>
+          <td>ESM-1b. Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences. ESM-1v was released with the paper Language models enable zero-shot prediction of the effects of mutations on protein function. ESM-2 and ESMFold were released with the paper Language models of protein sequences at the scale of evolution enable accurate structure prediction</td>
+          <td>Protein Transformer</td>
+          <td>Aug-2021</td>
+          <td>Meta AI</td>
+      </tr>
+      <tr>
+          <td>166.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mask2former">Mask2Former</a> <a href="https://arxiv.org/abs/2110.08518">Paper</a></td>
+          <td>Masked-attention Mask Transformer for Universal Image Segmentation</td>
+          <td>Autoencoding</td>
+          <td>Aug-2021</td>
+          <td>FAIR and UIUC</td>
+      </tr>
+      <tr>
+          <td>167.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mgp-str">MGP-STR</a> <a href="https://arxiv.org/abs/1909.08053">Paper</a></td>
+          <td>Multi-Granularity Prediction for Scene Text Recognition</td>
+          <td>Autoencoding</td>
+          <td>Aug-2021</td>
+          <td>Alibaba Research</td>
+      </tr>
+      <tr>
+          <td>168.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/nllb">NLLB</a> <a href="https://arxiv.org/abs/1909.00204">Paper</a></td>
+          <td>Scaling Human-Centered Machine Translation</td>
+          <td>Autoencoding</td>
+          <td>Aug-2021</td>
+          <td>Meta</td>
+      </tr>
+      <tr>
+          <td>169.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/t5v1.1">T5v1.1</a> <a href="https://arxiv.org/abs/1910.10683">Paper</a></td>
+          <td>released in the repository google-research/text-to-text-transfer-transformer</td>
+          <td>Autoregressive</td>
+          <td>Aug-2021</td>
+          <td>Google AI</td>
+      </tr>
+      <tr>
+          <td>170.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/tvlt">TVLT</a> <a href="https://arxiv.org/abs/2209.14156">Paper</a></td>
+          <td>Textless Vision-Language Transformer</td>
+          <td>Hybrid</td>
+          <td>Aug-2021</td>
+          <td>UNC Chapel Hill</td>
+      </tr>
+      <tr>
+          <td>171.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/wavlm">WavLM</a> <a href="https://arxiv.org/abs/2110.13900">Paper</a></td>
+          <td>Large-Scale Self-Supervised Pre-Training for Full Stack Speech Processing</td>
+          <td>Autoregressive</td>
+          <td>Aug-2021</td>
+          <td>Microsoft Research</td>
+      </tr>
+      <tr>
+          <td>172.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xlm-roberta-xl">XLM-RoBERTa-XL</a> <a href="https://arxiv.org/abs/2105.00572">Paper</a></td>
+          <td>Larger-Scale Transformers for Multilingual Masked Language Modeling</td>
+          <td>BERT-based</td>
+          <td>Aug-2021</td>
+          <td>Facebook AI,</td>
+      </tr>
+      <tr>
+          <td>173.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/chinese_clip">Chinese-CLIP</a> <a href="https://arxiv.org/abs/2211.01335">Paper</a></td>
+          <td>Contrastive Vision-Language Pretraining in Chinese</td>
+          <td>Vision-Language Pretraining</td>
+          <td>Sep-2021</td>
+          <td>OFA-Sys</td>
+      </tr>
+      <tr>
+          <td>174.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/clap">CLAP</a> <a href="https://arxiv.org/abs/2103.00020">Paper</a></td>
+          <td>[Large-scale Contrastive Language-Audio Pretraining with Feature Fusion and Keyword-to-Caption Augmentation]https //arxiv.org/abs/2211.06687)</td>
+          <td>Vision Transformer</td>
+          <td>Sep-2021</td>
+          <td>LAION-AI</td>
+      </tr>
+      <tr>
+          <td>175.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/decision_transformer">Decision Transformer</a> <a href="https://arxiv.org/abs/2106.01345">Paper</a></td>
+          <td>Reinforcement Learning via Sequence Modeling</td>
+          <td>Vision Transformer</td>
+          <td>Sep-2021</td>
+          <td>Berkeley/Facebook/Google</td>
+      </tr>
+      <tr>
+          <td>176.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/blip-2">BLIP-2</a> <a href="https://arxiv.org/abs/2301.12597">Paper</a></td>
+          <td>Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models</td>
+          <td>Vision Transformer</td>
+          <td>Oct-2021</td>
+          <td>Salesforce</td>
+      </tr>
+      <tr>
+          <td>177.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/canine">CANINE</a> <a href="https://arxiv.org/abs/2103.06874">Paper</a></td>
+          <td>Pre-training an Efficient Tokenization-Free Encoder for Language Representation</td>
+          <td>Vision Transformer</td>
+          <td>Oct-2021</td>
+          <td>Google Research</td>
+      </tr>
+      <tr>
+          <td>178.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/graphormer">Graphormer</a> <a href="https://arxiv.org/abs/2106.05234">Paper</a></td>
+          <td>Do Transformers Really Perform Bad for Graph Representation?</td>
+          <td>Autoencoding</td>
+          <td>Oct-2021</td>
+          <td>Microsoft</td>
+      </tr>
+      <tr>
+          <td>179.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/ibert">I-BERT</a> <a href="https://arxiv.org/abs/2101.01321">Paper</a></td>
+          <td>Integer-only BERT Quantization</td>
+          <td>Autoencoding</td>
+          <td>Oct-2021</td>
+          <td>Berkeley</td>
+      </tr>
+      <tr>
+          <td>180.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/matcha">MatCha</a> <a href="https://arxiv.org/abs/2107.06278">Paper</a></td>
+          <td>Enhancing Visual Language Pretraining with Math Reasoning and Chart Derendering</td>
+          <td>Autoencoding</td>
+          <td>Oct-2021</td>
+          <td>Google AI</td>
+      </tr>
+      <tr>
+          <td>181.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mluke">mLUKE</a> <a href="https://arxiv.org/abs/2209.03592">Paper</a></td>
+          <td>The Power of Entity Representations in Multilingual Pretrained Language Models</td>
+          <td>Autoencoding</td>
+          <td>Oct-2021</td>
+          <td>Studio Ousia</td>
+      </tr>
+      <tr>
+          <td>182.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mobilevit">MobileViT</a> <a href="https://arxiv.org/abs/1801.04381">Paper</a></td>
+          <td>Light-weight, General-purpose, and Mobile-friendly Vision Transformer</td>
+          <td>Autoencoding</td>
+          <td>Oct-2021</td>
+          <td>Apple</td>
+      </tr>
+      <tr>
+          <td>183.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/owlvit">OWL-ViT</a> <a href="https://arxiv.org/abs/2205.01068">Paper</a></td>
+          <td>Simple Open-Vocabulary Object Detection with Vision Transformers</td>
+          <td>Vision Transformer (ViT)</td>
+          <td>Oct-2021</td>
+          <td>Google AI</td>
+      </tr>
+      <tr>
+          <td>184.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/speecht5">SpeechT5</a> <a href="https://arxiv.org/abs/2109.06870">Paper</a></td>
+          <td>Unified-Modal Encoder-Decoder Pre-Training for Spoken Language Processing</td>
+          <td>Autoregressive</td>
+          <td>Oct-2021</td>
+          <td>Microsoft Research</td>
+      </tr>
+      <tr>
+          <td>185.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/swinv2">Swin Transformer V2</a> <a href="https://arxiv.org/abs/2103.14030">Paper</a></td>
+          <td>Scaling Up Capacity and Resolution</td>
+          <td>Vision Transformer (ViT)</td>
+          <td>Oct-2021</td>
+          <td>Microsoft</td>
+      </tr>
+      <tr>
+          <td>186.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/vit_mae">ViTMAE</a> <a href="https://arxiv.org/abs/2111.06377">Paper</a></td>
+          <td>Masked Autoencoders Are Scalable Vision Learners</td>
+          <td>Vision Transformer (ViT)</td>
+          <td>Oct-2021</td>
+          <td>Meta AI</td>
+      </tr>
+      <tr>
+          <td>187.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bloom">BLOOM</a> <a href="https://arxiv.org/abs/2010.10499">Paper</a></td>
+          <td>The architecture of BLOOM is essentially similar to GPT3, but has been trained on 46 different languages and 13 programming languages.</td>
+          <td>Vision Transformer</td>
+          <td>Nov-2021</td>
+          <td>BigScience workshop</td>
+      </tr>
+      <tr>
+          <td>188.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/convnextv2">ConvNeXTV2</a> <a href="">Paper</a></td>
+          <td>Co-designing and Scaling ConvNets with Masked Autoencoders</td>
+          <td>Vision Transformer</td>
+          <td>Nov-2021</td>
+          <td>Facebook AI</td>
+      </tr>
+      <tr>
+          <td>189.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/cpmant">CPM-Ant</a> <a href="">Paper</a></td>
+          <td></td>
+          <td>Sequence-to-Sequence</td>
+          <td>Nov-2021</td>
+          <td>OpenBMB</td>
+      </tr>
+      <tr>
+          <td>190.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/gpt-sw3">GPT-Sw3</a> <a href="https://arxiv.org/abs/2301.03988">Paper</a></td>
+          <td>Building the First Large-Scale Generative Language Model for Swedish</td>
+          <td>Autoregressive</td>
+          <td>Nov-2021</td>
+          <td>AI-Sweden</td>
+      </tr>
+      <tr>
+          <td>191.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/longt5">LongT5</a> <a href="https://arxiv.org/abs/2112.07916">Paper</a></td>
+          <td>Efficient Text-To-Text Transformer for Long Sequences</td>
+          <td>Autoregressive</td>
+          <td>Nov-2021</td>
+          <td>Google AI</td>
+      </tr>
+      <tr>
+          <td>192.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/oneformer">OneFormer</a> <a href="https://arxiv.org/abs/2102.03902">Paper</a></td>
+          <td>One Transformer to Rule Universal Image Segmentation</td>
+          <td>Autoregressive</td>
+          <td>Nov-2021</td>
+          <td>SHI Labs</td>
+      </tr>
+      <tr>
+          <td>193.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/table-transformer">Table Transformer</a> <a href="https://github.com/google-research/text-to-text-transfer-transformer/blob/main/released_checkpoints.md#t511">Paper</a></td>
+          <td>Towards Comprehensive Table Extraction From Unstructured Documents</td>
+          <td>Hybrid</td>
+          <td>Nov-2021</td>
+          <td>Microsoft Research</td>
+      </tr>
+      <tr>
+          <td>194.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/van">VAN</a> <a href="https://arxiv.org/abs/2202.09741">Paper</a></td>
+          <td>Visual Attention Network</td>
+          <td>Vision Transformer (ViT)</td>
+          <td>Nov-2021</td>
+          <td>Tsinghua University and Nankai University</td>
+      </tr>
+      <tr>
+          <td>195.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/altclip">AltCLIP</a> <a href="https://arxiv.org/abs/2211.06679">Paper</a></td>
+          <td>Altering the Language Encoder in CLIP for Extended Language Capabilities</td>
+          <td>Vision-Language Pretraining</td>
+          <td>Dec-2021</td>
+          <td>BAAI</td>
+      </tr>
+      <tr>
+          <td>196.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mvp">MVP</a> <a href="https://arxiv.org/abs/2010.11934">Paper</a></td>
+          <td>Multi-task Supervised Pre-training for Natural Language Generation</td>
+          <td>Autoencoding</td>
+          <td>Dec-2021</td>
+          <td>RUC AI Box</td>
+      </tr>
+      <tr>
+          <td>197.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/nllb-moe">NLLB-MOE</a> <a href="https://arxiv.org/abs/2207.04672">Paper</a></td>
+          <td>Scaling Human-Centered Machine Translation</td>
+          <td>Autoencoding</td>
+          <td>Dec-2021</td>
+          <td>Meta</td>
+      </tr>
+      <tr>
+          <td>198.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/pegasus_x">PEGASUS-X</a> <a href="https://arxiv.org/abs/1912.08777">Paper</a></td>
+          <td>Investigating Efficiently Extending Transformers for Long Input Summarization</td>
+          <td>Autoregressive</td>
+          <td>Dec-2021</td>
+          <td>Google</td>
+      </tr>
+      <tr>
+          <td>199.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/swin2sr">Swin2SR</a> <a href="https://arxiv.org/abs/2111.09883">Paper</a></td>
+          <td>SwinV2 Transformer for Compressed Image Super-Resolution and Restoration</td>
+          <td>Vision Transformer (ViT)</td>
+          <td>Dec-2021</td>
+          <td>University of Würzburg</td>
+      </tr>
+      <tr>
+          <td>200.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/ul2">UL2</a> <a href="https://arxiv.org/abs/2205.05131v1">Paper</a></td>
+          <td>Unifying Language Learning Paradigms</td>
+          <td>Hybrid</td>
+          <td>Dec-2021</td>
+          <td>Google Research</td>
+      </tr>
+      <tr>
+          <td>201.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/vit_msn">ViTMSN</a> <a href="https://arxiv.org/abs/2204.07141">Paper</a></td>
+          <td>Masked Siamese Networks for Label-Efficient Learning</td>
+          <td>Vision Transformer (ViT)</td>
+          <td>Dec-2021</td>
+          <td>Meta AI</td>
+      </tr>
+      <tr>
+          <td>202.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/yolos">YOLOS</a> <a href="https://arxiv.org/abs/2106.00666">Paper</a></td>
+          <td>Rethinking Transformer in Vision through Object Detection</td>
+          <td>Object Detection</td>
+          <td>Dec-2021</td>
+          <td>Huazhong University of Science &amp; Technology</td>
+      </tr>
+      <tr>
+          <td>203.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/flan-t5">FLAN-T5</a> <a href="https://github.com/google-research/t5x/blob/main/docs/models.md#flan-t5-checkpoints">Paper</a></td>
+          <td>released in the repository google-research/t5x</td>
+          <td>Autoregressive</td>
+          <td>Feb-2022</td>
+          <td>Google AI</td>
+      </tr>
+      <tr>
+          <td>204.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/gpt_neox_japanese">GPT NeoX Japanese</a> <a href="https://blog.openai.com/better-language-models/">Paper</a></td>
+          <td>by Shinya Otani, Takayoshi Makabe, Anuj Arora, and Kyo Hattori.</td>
+          <td>Autoregressive</td>
+          <td>Feb-2022</td>
+          <td>ABEJA</td>
+      </tr>
+      <tr>
+          <td>205.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/layoutlmv3">LayoutLMv3</a> <a href="https://arxiv.org/abs/2204.08387">Paper</a></td>
+          <td>Pre-training for Document AI with Unified Text and Image Masking</td>
+          <td>Autoencoding</td>
+          <td>Mar-2022</td>
+          <td>Microsoft Research Asia</td>
+      </tr>
+      <tr>
+          <td>206.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/flan-ul2">FLAN-UL2</a> <a href="https://github.com/google-research/t5x/blob/main/docs/models.md#flan-ul2-checkpoints">Paper</a></td>
+          <td>released in the repository google-research/t5x</td>
+          <td>Autoregressive</td>
+          <td>Apr-2022</td>
+          <td>Google AI</td>
+      </tr>
+      <tr>
+          <td>207.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/flava">FLAVA</a> <a href="https://arxiv.org/abs/2112.04482">Paper</a></td>
+          <td>A Foundational Language And Vision Alignment Model</td>
+          <td>Autoencoding</td>
+          <td>Apr-2022</td>
+          <td>Facebook AI</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="authors-of-above-papers">Authors of Above Papers</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Sno.</th>
+          <th>Paper</th>
+          <th>Author</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1.</td>
+          <td><a href="https://huggingface.co/alexnet">*AlexNet</a> <a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">Paper</a></td>
+          <td>Alex Krizhevsky, Ilya Sutskever, Geoffrey Hinton</td>
+      </tr>
+      <tr>
+          <td>2.</td>
+          <td><a href="https://huggingface.co/vgg16">*VGG16</a> <a href="https://arxiv.org/abs/1409.1556">Paper</a></td>
+          <td>Karen Simonyan, Andrew Zisserman</td>
+      </tr>
+      <tr>
+          <td>3.</td>
+          <td><a href="https://huggingface.co/vgg19">*VGG19</a> <a href="https://arxiv.org/abs/1409.1556">Paper</a></td>
+          <td>Karen Simonyan, Andrew Zisserman</td>
+      </tr>
+      <tr>
+          <td>4.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/resnet">*ResNet</a> <a href="https://arxiv.org/abs/2010.12821">Paper</a></td>
+          <td>by Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun.</td>
+      </tr>
+      <tr>
+          <td>5.</td>
+          <td><a href="https://huggingface.co/inception-resnet-v2">*InceptionResNet</a> <a href="https://arxiv.org/abs/1602.07261">Paper</a></td>
+          <td>Christian Szegedy, Sergey Ioffe, Vincent Vanhoucke, Alex Alemi</td>
+      </tr>
+      <tr>
+          <td>6.</td>
+          <td><a href="https://huggingface.co/convnext">*ConvNeXt</a> <a href="https://arxiv.org/abs/1603.07285">Paper</a></td>
+          <td>Gao Huang, Yu Sun, Zhuang Liu, Daniel Sedra, Kilian Weinberger</td>
+      </tr>
+      <tr>
+          <td>7.</td>
+          <td><a href="https://huggingface.co/densenet">*DenseNet</a> <a href="https://arxiv.org/abs/1608.06993">Paper</a></td>
+          <td>Gao Huang, Zhuang Liu, Laurens van der Maaten, Kilian Q. Weinberger</td>
+      </tr>
+      <tr>
+          <td>8.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mobilenet_v1">*MobileNetV1</a> <a href="https://arxiv.org/abs/2004.02984">Paper</a></td>
+          <td>by Andrew G. Howard, Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, Hartwig Adam.</td>
+      </tr>
+      <tr>
+          <td>9.</td>
+          <td><a href="https://huggingface.co/xception">*Xception</a> <a href="https://arxiv.org/abs/1610.02357">Paper</a></td>
+          <td>François Chollet</td>
+      </tr>
+      <tr>
+          <td>10.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/encoder-decoder">EncoderDecoder</a> <a href="https://arxiv.org/abs/1907.12461">Paper</a></td>
+          <td>by Sascha Rothe, Shashi Narayan, Aliaksei Severyn.</td>
+      </tr>
+      <tr>
+          <td>11.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mobilenet_v2">*MobileNetV2</a> <a href="https://arxiv.org/abs/1704.04861">Paper</a></td>
+          <td>by Mark Sandler, Andrew Howard, Menglong Zhu, Andrey Zhmoginov, Liang-Chieh Chen.</td>
+      </tr>
+      <tr>
+          <td>12.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/data2vec">Data2Vec</a> <a href="https://arxiv.org/abs/2202.03555">Paper</a></td>
+          <td>by Alexei Baevski, Wei-Ning Hsu, Qiantong Xu, Arun Babu, Jiatao Gu, Michael Auli.</td>
+      </tr>
+      <tr>
+          <td>13.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/openai-gpt">GPT</a> <a href="https://blog.openai.com/language-unsupervised/">Paper</a></td>
+          <td>by Alec Radford, Karthik Narasimhan, Tim Salimans and Ilya Sutskever.</td>
+      </tr>
+      <tr>
+          <td>14.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bert">BERT</a> <a href="https://arxiv.org/abs/1810.04805">Paper</a></td>
+          <td>by Jacob Devlin, Ming-Wei Chang, Kenton Lee and Kristina Toutanova.</td>
+      </tr>
+      <tr>
+          <td>15.</td>
+          <td><a href="">MarianMT </a> <a href="https://huggingface.co/docs/transformers/model_doc/marian">Paper</a></td>
+          <td>by Jörg Tiedemann. The Marian Framework is being developed by the Microsoft Translator Team.</td>
+      </tr>
+      <tr>
+          <td>16.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bit">BiT</a> <a href="https://arxiv.org/abs/1912.11370">Paper</a></td>
+          <td>by Alexander Kolesnikov, Lucas Beyer, Xiaohua Zhai, Joan Puigcerver, Jessica Yung, Sylvain Gelly, Neil Houlsby.</td>
+      </tr>
+      <tr>
+          <td>17.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/transfo-xl">Transformer-XL</a> <a href="https://arxiv.org/abs/1901.02860">Paper</a></td>
+          <td>by Zihang Dai, Zhilin Yang, Yiming Yang, Jaime Carbonell, Quoc V. Le, Ruslan Salakhutdinov.</td>
+      </tr>
+      <tr>
+          <td>18.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xlm">XLM</a> <a href="https://arxiv.org/abs/1901.07291">Paper</a></td>
+          <td>by Guillaume Lample and Alexis Conneau.</td>
+      </tr>
+      <tr>
+          <td>19.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/ctrl">CTRL</a> <a href="https://arxiv.org/abs/1909.05858">Paper</a></td>
+          <td>by Nitish Shirish Keskar, Bryan McCann, Lav R. Varshney, Caiming Xiong and Richard Socher.</td>
+      </tr>
+      <tr>
+          <td>20.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/gpt2">GPT-2</a> <a href="https://github.com/kingoflolz/mesh-transformer-jax/">Paper</a></td>
+          <td>by Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodeiand Ilya Sutskever.</td>
+      </tr>
+      <tr>
+          <td>21.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/funnel">Funnel Transformer</a> <a href="https://arxiv.org/abs/2006.03236">Paper</a></td>
+          <td>by Zihang Dai, Guokun Lai, Yiming Yang, Quoc V. Le.</td>
+      </tr>
+      <tr>
+          <td>22.</td>
+          <td><a href="https://huggingface.co/efficientnet-b0">*EfficientNet B0</a> <a href="https://arxiv.org/abs/1905.11946">Paper</a></td>
+          <td>Mingxing Tan, Quoc V. Le</td>
+      </tr>
+      <tr>
+          <td>23.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/albert">ALBERT</a> <a href="https://arxiv.org/abs/1909.11942">Paper</a></td>
+          <td>by Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, Radu Soricut.</td>
+      </tr>
+      <tr>
+          <td>24.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/efficientnet">EfficientNet</a> <a href="https://arxiv.org/abs/1905.11946">Paper</a></td>
+          <td>by Mingxing Tan, Quoc V. Le.</td>
+      </tr>
+      <tr>
+          <td>25.</td>
+          <td><a href="https://huggingface.co/mobilev3-large-1.0">MobileNetV3</a> <a href="https://arxiv.org/abs/1905.02244">Paper</a></td>
+          <td>Andrew Howard, Mark Sandler, Grace Chu, Liang-Chieh Chen, Bo Chen, Mingxing Tan, Weijun Wang, Yukun Zhu, Ruoming Pang, Vijay Vasudevan, Quoc V. Le, Hartwig Adam</td>
+      </tr>
+      <tr>
+          <td>26.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/nezha">Nezha</a> <a href="https://arxiv.org/abs/2204.07143">Paper</a></td>
+          <td>by Junqiu Wei, Xiaozhe Ren, Xiaoguang Li, Wenyong Huang, Yi Liao, Yasheng Wang, Jiashu Lin, Xin Jiang, Xiao Chen and Qun Liu.</td>
+      </tr>
+      <tr>
+          <td>27.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bart">BART</a> <a href="https://arxiv.org/abs/1910.13461">Paper</a></td>
+          <td>by Mike Lewis, Yinhan Liu, Naman Goyal, Marjan Ghazvininejad, Abdelrahman Mohamed, Omer Levy, Ves Stoyanov and Luke Zettlemoyer.</td>
+      </tr>
+      <tr>
+          <td>28.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/ernie">ERNIE</a> <a href="https://arxiv.org/abs/1904.09223">Paper</a></td>
+          <td>by Yu Sun, Shuohuan Wang, Yukun Li, Shikun Feng, Xuyi Chen, Han Zhang, Xin Tian, Danxiang Zhu, Hao Tian, Hua Wu.</td>
+      </tr>
+      <tr>
+          <td>29.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/ernie_m">ErnieM</a> <a href="https://arxiv.org/abs/2012.15674">Paper</a></td>
+          <td>by Xuan Ouyang, Shuohuan Wang, Chao Pang, Yu Sun, Hao Tian, Hua Wu, Haifeng Wang.</td>
+      </tr>
+      <tr>
+          <td>30.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/flaubert">FlauBERT</a> <a href="https://arxiv.org/abs/1912.05372">Paper</a></td>
+          <td>by Hang Le, Loïc Vial, Jibril Frej, Vincent Segonne, Maximin Coavoux, Benjamin Lecouteux, Alexandre Allauzen, Benoît Crabbé, Laurent Besacier, Didier Schwab.</td>
+      </tr>
+      <tr>
+          <td>31.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/lxmert">LXMERT</a> <a href="https://arxiv.org/abs/1908.07490">Paper</a></td>
+          <td>by Hao Tan and Mohit Bansal.</td>
+      </tr>
+      <tr>
+          <td>32.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/pegasus">Pegasus</a> <a href="https://arxiv.org/abs/2205.06230">Paper</a></td>
+          <td>by Jingqing Zhang, Yao Zhao, Mohammad Saleh and Peter J. Liu.</td>
+      </tr>
+      <tr>
+          <td>33.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xlnet">XLNet</a> <a href="https://arxiv.org/abs/1906.08237">Paper</a></td>
+          <td>by Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Ruslan Salakhutdinov, Quoc V. Le.</td>
+      </tr>
+      <tr>
+          <td>34.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/biogpt">BioGpt</a> <a href="https://academic.oup.com/bib/advance-article/doi/10.1093/bib/bbac409/6713511?guestAccessKey=a66d9b5d-4f83-4017-bb52-405815c907b9">Paper</a></td>
+          <td>by Renqian Luo, Liai Sun, Yingce Xia, Tao Qin, Sheng Zhang, Hoifung Poon and Tie-Yan Liu.</td>
+      </tr>
+      <tr>
+          <td>35.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/hubert">Hubert</a> <a href="https://arxiv.org/abs/2106.07447">Paper</a></td>
+          <td>by Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai, Kushal Lakhotia, Ruslan Salakhutdinov, Abdelrahman Mohamed.</td>
+      </tr>
+      <tr>
+          <td>36.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/realm.html">REALM</a> <a href="https://arxiv.org/abs/2005.11401">Paper</a></td>
+          <td>by Kelvin Guu, Kenton Lee, Zora Tung, Panupong Pasupat and Ming-Wei Chang.</td>
+      </tr>
+      <tr>
+          <td>37.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/speech_to_text">SpeechToTextTransformer</a> <a href="https://arxiv.org/abs/2110.07205">Paper</a></td>
+          <td>by Changhan Wang, Yun Tang, Xutai Ma, Anne Wu, Dmytro Okhonko, Juan Pino.</td>
+      </tr>
+      <tr>
+          <td>38.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xlm-v">XLM-V</a> <a href="https://arxiv.org/abs/2301.10472">Paper</a></td>
+          <td>by Davis Liang, Hila Gonen, Yuning Mao, Rui Hou, Naman Goyal, Marjan Ghazvininejad, Luke Zettlemoyer, Madian Khabsa.</td>
+      </tr>
+      <tr>
+          <td>39.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/roberta">RoBERTa</a> <a href="https://arxiv.org/abs/1512.03385">Paper</a></td>
+          <td>by Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, Veselin Stoyanov.</td>
+      </tr>
+      <tr>
+          <td>40.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/gpt_neo">GPT Neo</a> <a href="https://github.com/EleutherAI/gpt-neo">Paper</a></td>
+          <td>by Sid Black, Stella Biderman, Leo Gao, Phil Wang and Connor Leahy.</td>
+      </tr>
+      <tr>
+          <td>41.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/camembert">CamemBERT</a> <a href="https://arxiv.org/abs/1911.03894">Paper</a></td>
+          <td>by Louis Martin, Benjamin Muller, Pedro Javier Ortiz Suárez*, Yoann Dupont, Laurent Romary, Éric Villemonte de la Clergerie, Djamé Seddah and Benoît Sagot.</td>
+      </tr>
+      <tr>
+          <td>42.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/dialogpt">DialoGPT</a> <a href="https://arxiv.org/abs/1911.00536">Paper</a></td>
+          <td>by Yizhe Zhang, Siqi Sun, Michel Galley, Yen-Chun Chen, Chris Brockett, Xiang Gao, Jianfeng Gao, Jingjing Liu, Bill Dolan.</td>
+      </tr>
+      <tr>
+          <td>43.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/distilbert">DistilBERT</a> <a href="https://arxiv.org/abs/1910.01108">Paper</a></td>
+          <td>by Victor Sanh, Lysandre Debut and Thomas Wolf. The same method has been applied to compress GPT2 into DistilGPT2, RoBERTa into DistilRoBERTa, Multilingual BERT into DistilmBERT and a German version of DistilBERT.</td>
+      </tr>
+      <tr>
+          <td>44.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/lilt">LiLT</a> <a href="https://arxiv.org/abs/2202.13669">Paper</a></td>
+          <td>by Jiapeng Wang, Lianwen Jin, Kai Ding.</td>
+      </tr>
+      <tr>
+          <td>45.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/luke">LUKE</a> <a href="https://arxiv.org/abs/2010.01057">Paper</a></td>
+          <td>by Ikuya Yamada, Akari Asai, Hiroyuki Shindo, Hideaki Takeda, Yuji Matsumoto.</td>
+      </tr>
+      <tr>
+          <td>46.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mobilebert">MobileBERT</a> <a href="https://arxiv.org/abs/2110.08151">Paper</a></td>
+          <td>by Zhiqing Sun, Hongkun Yu, Xiaodan Song, Renjie Liu, Yiming Yang, and Denny Zhou.</td>
+      </tr>
+      <tr>
+          <td>47.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mt5">MT5</a> <a href="https://arxiv.org/abs/2004.09297">Paper</a></td>
+          <td>by Linting Xue, Noah Constant, Adam Roberts, Mihir Kale, Rami Al-Rfou, Aditya Siddhant, Aditya Barua, Colin Raffel.</td>
+      </tr>
+      <tr>
+          <td>48.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/rag">RAG</a> <a href="https://arxiv.org/abs/2004.09602">Paper</a></td>
+          <td>by Patrick Lewis, Ethan Perez, Aleksandara Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, Douwe Kiela.</td>
+      </tr>
+      <tr>
+          <td>49.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/convbert">ConvBERT</a> <a href="https://arxiv.org/abs/2201.03545">Paper</a></td>
+          <td>by Zihang Jiang, Weihao Yu, Daquan Zhou, Yunpeng Chen, Jiashi Feng, Shuicheng Yan.</td>
+      </tr>
+      <tr>
+          <td>50.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/megatron_gpt2">Megatron-GPT2</a> <a href="https://arxiv.org/abs/1909.08053">Paper</a></td>
+          <td>by Mohammad Shoeybi, Mostofa Patwary, Raul Puri, Patrick LeGresley, Jared Casper and Bryan Catanzaro.</td>
+      </tr>
+      <tr>
+          <td>51.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/phobert">PhoBERT</a> <a href="https://arxiv.org/abs/2107.14795">Paper</a></td>
+          <td>by Dat Quoc Nguyen and Anh Tuan Nguyen.</td>
+      </tr>
+      <tr>
+          <td>52.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/roberta-prelayernorm">RoBERTa-PreLayerNorm</a> <a href="https://arxiv.org/abs/1907.11692">Paper</a></td>
+          <td>by Myle Ott, Sergey Edunov, Alexei Baevski, Angela Fan, Sam Gross, Nathan Ng, David Grangier, Michael Auli.</td>
+      </tr>
+      <tr>
+          <td>53.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bertweet">BERTweet</a> <a href="https://aclanthology.org/2020.emnlp-demos.2/">Paper</a></td>
+          <td>by Dat Quoc Nguyen, Thanh Vu and Anh Tuan Nguyen.</td>
+      </tr>
+      <tr>
+          <td>54.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mbart">mBART</a> <a href="https://arxiv.org/abs/2212.09662">Paper</a></td>
+          <td>by Yinhan Liu, Jiatao Gu, Naman Goyal, Xian Li, Sergey Edunov, Marjan Ghazvininejad, Mike Lewis, Luke Zettlemoyer.</td>
+      </tr>
+      <tr>
+          <td>55.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/megatron-bert">Megatron-BERT</a> <a href="https://arxiv.org/abs/2209.10655">Paper</a></td>
+          <td>by Mohammad Shoeybi, Mostofa Patwary, Raul Puri, Patrick LeGresley, Jared Casper and Bryan Catanzaro.</td>
+      </tr>
+      <tr>
+          <td>56.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/speech_to_text_2">SpeechToTextTransformer2</a> <a href="https://arxiv.org/abs/2010.05171">Paper</a></td>
+          <td>by Changhan Wang, Anne Wu, Juan Pino, Alexei Baevski, Michael Auli, Alexis Conneau.</td>
+      </tr>
+      <tr>
+          <td>57.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bert-generation">BERT For Sequence Generation</a> <a href="https://arxiv.org/abs/1907.12461">Paper</a></td>
+          <td>by Sascha Rothe, Shashi Narayan, Aliaksei Severyn.</td>
+      </tr>
+      <tr>
+          <td>58.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/convnext">ConvNeXT</a> <a href="https://arxiv.org/abs/2301.00808">Paper</a></td>
+          <td>by Zhuang Liu, Hanzi Mao, Chao-Yuan Wu, Christoph Feichtenhofer, Trevor Darrell, Saining Xie.</td>
+      </tr>
+      <tr>
+          <td>59.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/electra">ELECTRA</a> <a href="https://arxiv.org/abs/2003.10555">Paper</a></td>
+          <td>by Kevin Clark, Minh-Thang Luong, Quoc V. Le, Christopher D. Manning.</td>
+      </tr>
+      <tr>
+          <td>60.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/longformer">Longformer</a> <a href="https://arxiv.org/abs/2004.05150">Paper</a></td>
+          <td>by Iz Beltagy, Matthew E. Peters, Arman Cohan.</td>
+      </tr>
+      <tr>
+          <td>61.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/regnet">RegNet</a> <a href="https://arxiv.org/abs/2001.04451">Paper</a></td>
+          <td>by Ilija Radosavovic, Raj Prateek Kosaraju, Ross Girshick, Kaiming He, Piotr Dollár.</td>
+      </tr>
+      <tr>
+          <td>62.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/squeezebert">SqueezeBERT</a> <a href="https://arxiv.org/abs/2101.00438">Paper</a></td>
+          <td>by Forrest N. Iandola, Albert E. Shaw, Ravi Krishna, and Kurt W. Keutzer.</td>
+      </tr>
+      <tr>
+          <td>63.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/layoutlm">LayoutLM</a> <a href="https://arxiv.org/abs/1912.13318">Paper</a></td>
+          <td>by Yiheng Xu, Minghao Li, Lei Cui, Shaohan Huang, Furu Wei, Ming Zhou.</td>
+      </tr>
+      <tr>
+          <td>64.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mpnet">MPNet</a> <a href="https://arxiv.org/abs/2110.02178">Paper</a></td>
+          <td>by Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, Tie-Yan Liu.</td>
+      </tr>
+      <tr>
+          <td>65.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/visual_bert">VisualBERT</a> <a href="https://arxiv.org/pdf/1908.03557">Paper</a></td>
+          <td>by Liunian Harold Li, Mark Yatskar, Da Yin, Cho-Jui Hsieh, Kai-Wei Chang.</td>
+      </tr>
+      <tr>
+          <td>66.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/conditional_detr">Conditional DETR</a> <a href="https://arxiv.org/abs/2008.02496">Paper</a></td>
+          <td>by Depu Meng, Xiaokang Chen, Zejia Fan, Gang Zeng, Houqiang Li, Yuhui Yuan, Lei Sun, Jingdong Wang.</td>
+      </tr>
+      <tr>
+          <td>67.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/gpt_bigcode">GPTBigCode</a> <a href="https://huggingface.co/docs/transformers/model_doc/gptsan-japanese">Paper</a></td>
+          <td>by Loubna Ben Allal, Raymond Li, Denis Kocetkov, Chenghao Mou, Christopher Akiki, Carlos Munoz Ferrandis, Niklas Muennighoff, Mayank Mishra, Alex Gu, Manan Dey, Logesh Kumar Umapathi, Carolyn Jane Anderson, Yangtian Zi, Joel Lamy Poirier, Hailey Schoelkopf, Sergey Troshin, Dmitry Abulkhanov, Manuel Romero, Michael Lappert, Francesco De Toni, Bernardo García del Río, Qian Liu, Shamik Bose, Urvashi Bhattacharyya, Terry Yue Zhuo, Ian Yu, Paulo Villegas, Marco Zocca, Sourab Mangrulkar, David Lansky, Huu Nguyen, Danish Contractor, Luis Villa, Jia Li, Dzmitry Bahdanau, Yacine Jernite, Sean Hughes, Daniel Fried, Arjun Guha, Harm de Vries, Leandro von Werra.</td>
+      </tr>
+      <tr>
+          <td>68.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mctct">M-CTC-T</a> <a href="https://arxiv.org/abs/2111.00161">Paper</a></td>
+          <td>by Loren Lugosch, Tatiana Likhomanenko, Gabriel Synnaeve, and Ronan Collobert.</td>
+      </tr>
+      <tr>
+          <td>69.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/pix2struct">Pix2Struct</a> <a href="https://www.aclweb.org/anthology/2020.findings-emnlp.92/">Paper</a></td>
+          <td>by Kenton Lee, Mandar Joshi, Iulia Turc, Hexiang Hu, Fangyu Liu, Julian Eisenschlos, Urvashi Khandelwal, Peter Shaw, Ming-Wei Chang, Kristina Toutanova.</td>
+      </tr>
+      <tr>
+          <td>70.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/prophetnet">ProphetNet</a> <a href="https://arxiv.org/abs/2111.11418">Paper</a></td>
+          <td>by Yu Yan, Weizhen Qi, Yeyun Gong, Dayiheng Liu, Nan Duan, Jiusheng Chen, Ruofei Zhang and Ming Zhou.</td>
+      </tr>
+      <tr>
+          <td>71.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/sew">SEW</a> <a href="https://arxiv.org/abs/2105.15203">Paper</a></td>
+          <td>by Felix Wu, Kwangyoun Kim, Jing Pan, Kyu Han, Kilian Q. Weinberger, Yoav Artzi.</td>
+      </tr>
+      <tr>
+          <td>72.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/t5">T5</a> <a href="https://arxiv.org/abs/2101.03961">Paper</a></td>
+          <td>by Colin Raffel and Noam Shazeer and Adam Roberts and Katherine Lee and Sharan Narang and Michael Matena and Yanqi Zhou and Wei Li and Peter J. Liu.</td>
+      </tr>
+      <tr>
+          <td>73.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/deberta">DeBERTa</a> <a href="https://arxiv.org/abs/2006.03654">Paper</a></td>
+          <td>by Pengcheng He, Xiaodong Liu, Jianfeng Gao, Weizhu Chen.</td>
+      </tr>
+      <tr>
+          <td>74.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/informer">Informer</a> <a href="https://arxiv.org/abs/2012.07436">Paper</a></td>
+          <td>by Haoyi Zhou, Shanghang Zhang, Jieqi Peng, Shuai Zhang, Jianxin Li, Hui Xiong, and Wancai Zhang.</td>
+      </tr>
+      <tr>
+          <td>75.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/led">LED</a> <a href="https://arxiv.org/abs/2004.05150">Paper</a></td>
+          <td>by Iz Beltagy, Matthew E. Peters, Arman Cohan.</td>
+      </tr>
+      <tr>
+          <td>76.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/switch_transformers">SwitchTransformers</a> <a href="https://arxiv.org/abs/2209.11345">Paper</a></td>
+          <td>by William Fedus, Barret Zoph, Noam Shazeer.</td>
+      </tr>
+      <tr>
+          <td>77.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/whisper">Whisper</a> <a href="https://cdn.openai.com/papers/whisper.pdf">Paper</a></td>
+          <td>by Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, Ilya Sutskever.</td>
+      </tr>
+      <tr>
+          <td>78.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xlm-prophetnet">XLM-ProphetNet</a> <a href="https://arxiv.org/abs/2001.04063">Paper</a></td>
+          <td>by Yu Yan, Weizhen Qi, Yeyun Gong, Dayiheng Liu, Nan Duan, Jiusheng Chen, Ruofei Zhang and Ming Zhou.</td>
+      </tr>
+      <tr>
+          <td>79.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xlm-roberta">XLM-RoBERTa</a> <a href="https://arxiv.org/abs/1911.02116">Paper</a></td>
+          <td>by Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume Wenzek, Francisco Guzmán, Edouard Grave, Myle Ott, Luke Zettlemoyer and Veselin Stoyanov.</td>
+      </tr>
+      <tr>
+          <td>80.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/deformable_detr">Deformable DETR</a> <a href="https://arxiv.org/abs/2010.04159">Paper</a></td>
+          <td>by Xizhou Zhu, Weijie Su, Lewei Lu, Bin Li, Xiaogang Wang, Jifeng Dai.</td>
+      </tr>
+      <tr>
+          <td>81.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/fnet">FNet</a> <a href="https://arxiv.org/abs/2105.03824">Paper</a></td>
+          <td>by James Lee-Thorp, Joshua Ainslie, Ilya Eckstein, Santiago Ontanon.</td>
+      </tr>
+      <tr>
+          <td>82.</td>
+          <td><a href="">GPTSAN-japanese </a> <a href="https://github.com/tanreinama/GPTSAN/blob/main/report/model.md">Paper</a></td>
+          <td>by Toshiyuki Sakamoto(tanreinama).</td>
+      </tr>
+      <tr>
+          <td>83.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/sew_d">SEW-D</a> <a href="https://arxiv.org/abs/2109.06870">Paper</a></td>
+          <td>by Felix Wu, Kwangyoun Kim, Jing Pan, Kyu Han, Kilian Q. Weinberger, Yoav Artzi.</td>
+      </tr>
+      <tr>
+          <td>84.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/cpm">CPM</a> <a href="https://arxiv.org/abs/2012.00413">Paper</a></td>
+          <td>by Zhengyan Zhang, Xu Han, Hao Zhou, Pei Ke, Yuxian Gu, Deming Ye, Yujia Qin, Yusheng Su, Haozhe Ji, Jian Guan, Fanchao Qi, Xiaozhi Wang, Yanan Zheng, Guoyang Zeng, Huanqi Cao, Shengqi Chen, Daixuan Li, Zhenbo Sun, Zhiyuan Liu, Minlie Huang, Wentao Han, Jie Tang, Juanzi Li, Xiaoyan Zhu, Maosong Sun.</td>
+      </tr>
+      <tr>
+          <td>85.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/git">GIT</a> <a href="https://arxiv.org/abs/2205.14100">Paper</a></td>
+          <td>by Jianfeng Wang, Zhengyuan Yang, Xiaowei Hu, Linjie Li, Kevin Lin, Zhe Gan, Zicheng Liu, Ce Liu, Lijuan Wang.</td>
+      </tr>
+      <tr>
+          <td>86.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/layoutxlm">LayoutXLM</a> <a href="https://arxiv.org/abs/2104.08836">Paper</a></td>
+          <td>by Yiheng Xu, Tengchao Lv, Lei Cui, Guoxin Wang, Yijuan Lu, Dinei Florencio, Cha Zhang, Furu Wei.</td>
+      </tr>
+      <tr>
+          <td>87.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/detr">DETR</a> <a href="https://arxiv.org/abs/2005.12872">Paper</a></td>
+          <td>by Nicolas Carion, Francisco Massa, Gabriel Synnaeve, Nicolas Usunier, Alexander Kirillov, Sergey Zagoruyko.</td>
+      </tr>
+      <tr>
+          <td>88.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/gpt_neox">GPT NeoX</a> <a href="https://arxiv.org/abs/2204.06745">Paper</a></td>
+          <td>by Sid Black, Stella Biderman, Eric Hallahan, Quentin Anthony, Leo Gao, Laurence Golding, Horace He, Connor Leahy, Kyle McDonell, Jason Phang, Michael Pieler, USVSN Sai Prashanth, Shivanshu Purohit, Laria Reynolds, Jonathan Tow, Ben Wang, Samuel Weinbach</td>
+      </tr>
+      <tr>
+          <td>89.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/rembert">RemBERT</a> <a href="https://arxiv.org/abs/2003.13678">Paper</a></td>
+          <td>by Hyung Won Chung, Thibault Févry, Henry Tsai, M. Johnson, Sebastian Ruder.</td>
+      </tr>
+      <tr>
+          <td>90.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/roc_bert">RoCBert</a> <a href="https://arxiv.org/abs/1904.01038">Paper</a></td>
+          <td>by HuiSu, WeiweiShi, XiaoyuShen, XiaoZhou, TuoJi, JiaruiFang, JieZhou.</td>
+      </tr>
+      <tr>
+          <td>91.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/tapas">TAPAS</a> <a href="https://arxiv.org/abs/2110.00061">Paper</a></td>
+          <td>by Jonathan Herzig, Paweł Krzysztof Nowak, Thomas Müller, Francesco Piccinno and Julian Martin Eisenschlos.</td>
+      </tr>
+      <tr>
+          <td>92.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/upernet">UPerNet</a> <a href="https://arxiv.org/abs/1807.10221">Paper</a></td>
+          <td>by Tete Xiao, Yingcheng Liu, Bolei Zhou, Yuning Jiang, Jian Sun.</td>
+      </tr>
+      <tr>
+          <td>93.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/vit">Vision Transformer (ViT)</a> <a href="https://arxiv.org/abs/2010.11929">Paper</a></td>
+          <td>by Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, Neil Houlsby.</td>
+      </tr>
+      <tr>
+          <td>94.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/wav2vec2">Wav2Vec2</a> <a href="https://arxiv.org/abs/2006.11477">Paper</a></td>
+          <td>by Alexei Baevski, Henry Zhou, Abdelrahman Mohamed, Michael Auli.</td>
+      </tr>
+      <tr>
+          <td>95.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/plbart">PLBart</a> <a href="https://arxiv.org/abs/2210.03347">Paper</a></td>
+          <td>by Wasi Uddin Ahmad, Saikat Chakraborty, Baishakhi Ray, Kai-Wei Chang.</td>
+      </tr>
+      <tr>
+          <td>96.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/dit">DiT</a> <a href="https://arxiv.org/abs/2203.02378">Paper</a></td>
+          <td>by Junlong Li, Yiheng Xu, Tengchao Lv, Lei Cui, Cha Zhang, Furu Wei.</td>
+      </tr>
+      <tr>
+          <td>97.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/dpr">DPR</a> <a href="https://arxiv.org/abs/2004.04906">Paper</a></td>
+          <td>by Vladimir Karpukhin, Barlas Oğuz, Sewon Min, Patrick Lewis, Ledell Wu, Sergey Edunov, Danqi Chen, and Wen-tau Yih.</td>
+      </tr>
+      <tr>
+          <td>98.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/glpn">GLPN</a> <a href="https://arxiv.org/abs/2201.07436">Paper</a></td>
+          <td>by Doyeon Kim, Woonghyun Ga, Pyungwhan Ahn, Donggyu Joo, Sehwan Chun, Junmo Kim.</td>
+      </tr>
+      <tr>
+          <td>99.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/levit">LeViT</a> <a href="https://arxiv.org/abs/2104.01136">Paper</a></td>
+          <td>by Ben Graham, Alaaeldin El-Nouby, Hugo Touvron, Pierre Stock, Armand Joulin, Hervé Jégou, Matthijs Douze.</td>
+      </tr>
+      <tr>
+          <td>100.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/nat">NAT</a> <a href="https://arxiv.org/abs/2206.12131">Paper</a></td>
+          <td>by Ali Hassani, Steven Walton, Jiachen Li, Shen Li, and Humphrey Shi.</td>
+      </tr>
+      <tr>
+          <td>101.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/tapex">TAPEX</a> <a href="https://arxiv.org/abs/2004.02349">Paper</a></td>
+          <td>by Qian Liu, Bei Chen, Jiaqi Guo, Morteza Ziyadi, Zeqi Lin, Weizhu Chen, Jian-Guang Lou.</td>
+      </tr>
+      <tr>
+          <td>102.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/videomae">VideoMAE</a> <a href="https://arxiv.org/abs/2203.12602">Paper</a></td>
+          <td>by Zhan Tong, Yibing Song, Jue Wang, Limin Wang.</td>
+      </tr>
+      <tr>
+          <td>103.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/wav2vec2-conformer">Wav2Vec2-Conformer</a> <a href="https://arxiv.org/abs/2010.05171">Paper</a></td>
+          <td>by Changhan Wang, Yun Tang, Xutai Ma, Anne Wu, Sravya Popuri, Dmytro Okhonko, Juan Pino.</td>
+      </tr>
+      <tr>
+          <td>104.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/clip">CLIP</a> <a href="https://arxiv.org/abs/2112.10003">Paper</a></td>
+          <td>by Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever.</td>
+      </tr>
+      <tr>
+          <td>105.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xls_r">XLS-R</a> <a href="https://arxiv.org/abs/2111.09296">Paper</a></td>
+          <td>by Arun Babu, Changhan Wang, Andros Tjandra, Kushal Lakhotia, Qiantong Xu, Naman Goyal, Kritika Singh, Patrick von Platen, Yatharth Saraf, Juan Pino, Alexei Baevski, Alexis Conneau, Michael Auli.</td>
+      </tr>
+      <tr>
+          <td>106.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/audio-spectrogram-transformer">Audio Spectrogram Transformer</a> <a href="https://arxiv.org/abs/2104.01778">Paper</a></td>
+          <td>by Yuan Gong, Yu-An Chung, James Glass.</td>
+      </tr>
+      <tr>
+          <td>107.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/m2m_100">M2M100</a> <a href="https://arxiv.org/abs/2010.11125">Paper</a></td>
+          <td>by Angela Fan, Shruti Bhosale, Holger Schwenk, Zhiyi Ma, Ahmed El-Kishky, Siddharth Goyal, Mandeep Baines, Onur Celebi, Guillaume Wenzek, Vishrav Chaudhary, Naman Goyal, Tom Birch, Vitaliy Liptchinsky, Sergey Edunov, Edouard Grave, Michael Auli, Armand Joulin.</td>
+      </tr>
+      <tr>
+          <td>108.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mega">MEGA</a> <a href="https://arxiv.org/abs/2008.00401">Paper</a></td>
+          <td>by Xuezhe Ma, Chunting Zhou, Xiang Kong, Junxian He, Liangke Gui, Graham Neubig, Jonathan May, and Luke Zettlemoyer.</td>
+      </tr>
+      <tr>
+          <td>109.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/beit">BEiT</a> <a href="https://arxiv.org/abs/2106.08254">Paper</a></td>
+          <td>by Hangbo Bao, Li Dong, Furu Wei.</td>
+      </tr>
+      <tr>
+          <td>110.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bigbird_pegasus">BigBird-Pegasus</a> <a href="https://aclanthology.org/2020.emnlp-demos.2/">Paper</a></td>
+          <td>by Manzil Zaheer, Guru Guruganesh, Avinava Dubey, Joshua Ainslie, Chris Alberti, Santiago Ontanon, Philip Pham, Anirudh Ravula, Qifan Wang, Li Yang, Amr Ahmed.</td>
+      </tr>
+      <tr>
+          <td>111.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/big_bird">BigBird-RoBERTa</a> <a href="https://arxiv.org/abs/2007.14062">Paper</a></td>
+          <td>by Manzil Zaheer, Guru Guruganesh, Avinava Dubey, Joshua Ainslie, Chris Alberti, Santiago Ontanon, Philip Pham, Anirudh Ravula, Qifan Wang, Li Yang, Amr Ahmed.</td>
+      </tr>
+      <tr>
+          <td>112.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/clipseg">CLIPSeg</a> <a href="https://arxiv.org/abs/2203.13474">Paper</a></td>
+          <td>by Timo Lüddecke and Alexander Ecker.</td>
+      </tr>
+      <tr>
+          <td>113.</td>
+          <td><a href="https://huggingface.co/docs/transformers/master/model_doc/dpt">DPT</a> <a href="https://arxiv.org/abs/2103.13413">Paper</a></td>
+          <td>by René Ranftl, Alexey Bochkovskiy, Vladlen Koltun.</td>
+      </tr>
+      <tr>
+          <td>114.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/perceiver">Perceiver IO</a> <a href="https://arxiv.org/abs/2208.04347">Paper</a></td>
+          <td>by Andrew Jaegle, Sebastian Borgeaud, Jean-Baptiste Alayrac, Carl Doersch, Catalin Ionescu, David Ding, Skanda Koppula, Daniel Zoran, Andrew Brock, Evan Shelhamer, Olivier Hénaff, Matthew M. Botvinick, Andrew Zisserman, Oriol Vinyals, João Carreira.</td>
+      </tr>
+      <tr>
+          <td>115.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/reformer">Reformer</a> <a href="https://arxiv.org/abs/2002.08909">Paper</a></td>
+          <td>by Nikita Kitaev, Łukasz Kaiser, Anselm Levskaya.</td>
+      </tr>
+      <tr>
+          <td>116.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/roformer">RoFormer</a> <a href="https://aclanthology.org/2022.acl-long.65.pdf">Paper</a></td>
+          <td>by Jianlin Su and Yu Lu and Shengfeng Pan and Bo Wen and Yunfeng Liu.</td>
+      </tr>
+      <tr>
+          <td>117.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/swin">Swin Transformer</a> <a href="https://arxiv.org/abs/2006.11316">Paper</a></td>
+          <td>by Ze Liu, Yutong Lin, Yue Cao, Han Hu, Yixuan Wei, Zheng Zhang, Stephen Lin, Baining Guo.</td>
+      </tr>
+      <tr>
+          <td>118.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/trocr">TrOCR</a> <a href="https://arxiv.org/abs/2109.10282">Paper</a></td>
+          <td>by Minghao Li, Tengchao Lv, Lei Cui, Yijuan Lu, Dinei Florencio, Cha Zhang, Zhoujun Li, Furu Wei.</td>
+      </tr>
+      <tr>
+          <td>119.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/wav2vec2_phoneme">Wav2Vec2Phoneme</a> <a href="https://arxiv.org/abs/2109.11680">Paper</a></td>
+          <td>by Qiantong Xu, Alexei Baevski, Michael Auli.</td>
+      </tr>
+      <tr>
+          <td>120.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xclip">X-CLIP</a> <a href="https://arxiv.org/abs/2208.02816">Paper</a></td>
+          <td>by Bolin Ni, Houwen Peng, Minghao Chen, Songyang Zhang, Gaofeng Meng, Jianlong Fu, Shiming Xiang, Haibin Ling.</td>
+      </tr>
+      <tr>
+          <td>121.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xlsr_wav2vec2">XLSR-Wav2Vec2</a> <a href="https://arxiv.org/abs/2006.13979">Paper</a></td>
+          <td>by Alexis Conneau, Alexei Baevski, Ronan Collobert, Abdelrahman Mohamed, Michael Auli.</td>
+      </tr>
+      <tr>
+          <td>122.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/blenderbot">Blenderbot</a> <a href="https://arxiv.org/abs/2004.13637">Paper</a></td>
+          <td>by Stephen Roller, Emily Dinan, Naman Goyal, Da Ju, Mary Williamson, Yinhan Liu, Jing Xu, Myle Ott, Kurt Shuster, Eric M. Smith, Y-Lan Boureau, Jason Weston.</td>
+      </tr>
+      <tr>
+          <td>123.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/blenderbot-small">BlenderbotSmall</a> <a href="https://arxiv.org/abs/2004.13637">Paper</a></td>
+          <td>by Stephen Roller, Emily Dinan, Naman Goyal, Da Ju, Mary Williamson, Yinhan Liu, Jing Xu, Myle Ott, Kurt Shuster, Eric M. Smith, Y-Lan Boureau, Jason Weston.</td>
+      </tr>
+      <tr>
+          <td>124.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/blip">BLIP</a> <a href="https://arxiv.org/abs/2201.12086">Paper</a></td>
+          <td>by Junnan Li, Dongxu Li, Caiming Xiong, Steven Hoi.</td>
+      </tr>
+      <tr>
+          <td>125.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/byt5">ByT5</a> <a href="https://arxiv.org/abs/2105.13626">Paper</a></td>
+          <td>by Linting Xue, Aditya Barua, Noah Constant, Rami Al-Rfou, Sharan Narang, Mihir Kale, Adam Roberts, Colin Raffel.</td>
+      </tr>
+      <tr>
+          <td>126.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/cvt">CvT</a> <a href="https://arxiv.org/abs/2103.15808">Paper</a></td>
+          <td>by Haiping Wu, Bin Xiao, Noel Codella, Mengchen Liu, Xiyang Dai, Lu Yuan, Lei Zhang.</td>
+      </tr>
+      <tr>
+          <td>127.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/deberta-v2">DeBERTa-v2</a> <a href="https://arxiv.org/abs/2006.03654">Paper</a></td>
+          <td>by Pengcheng He, Xiaodong Liu, Jianfeng Gao, Weizhu Chen.</td>
+      </tr>
+      <tr>
+          <td>128.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/deit">DeiT</a> <a href="https://arxiv.org/abs/2012.12877">Paper</a></td>
+          <td>by Hugo Touvron, Matthieu Cord, Matthijs Douze, Francisco Massa, Alexandre Sablayrolles, Hervé Jégou.</td>
+      </tr>
+      <tr>
+          <td>129.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/groupvit">GroupViT</a> <a href="https://arxiv.org/abs/2202.11094">Paper</a></td>
+          <td>by Jiarui Xu, Shalini De Mello, Sifei Liu, Wonmin Byeon, Thomas Breuel, Jan Kautz, Xiaolong Wang.</td>
+      </tr>
+      <tr>
+          <td>130.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/layoutlmv2">LayoutLMv2</a> <a href="https://arxiv.org/abs/2012.14740">Paper</a></td>
+          <td>by Yang Xu, Yiheng Xu, Tengchao Lv, Lei Cui, Furu Wei, Guoxin Wang, Yijuan Lu, Dinei Florencio, Cha Zhang, Wanxiang Che, Min Zhang, Lidong Zhou.</td>
+      </tr>
+      <tr>
+          <td>131.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/maskformer">MaskFormer</a> <a href="https://arxiv.org/abs/2112.01527">Paper</a></td>
+          <td>by Bowen Cheng, Alexander G. Schwing, Alexander Kirillov.</td>
+      </tr>
+      <tr>
+          <td>132.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/segformer">SegFormer</a> <a href="https://arxiv.org/abs/2104.09864">Paper</a></td>
+          <td>by Enze Xie, Wenhai Wang, Zhiding Yu, Anima Anandkumar, Jose M. Alvarez, Ping Luo.</td>
+      </tr>
+      <tr>
+          <td>133.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/time_series_transformer">Time Series Transformer</a> <a href="https://arxiv.org/abs/2107.07653">Paper</a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>134.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/timesformer">TimeSformer</a> <a href="https://arxiv.org/abs/2102.05095">Paper</a></td>
+          <td>by Gedas Bertasius, Heng Wang, Lorenzo Torresani.</td>
+      </tr>
+      <tr>
+          <td>135.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/trajectory_transformers">Trajectory Transformer</a> <a href="https://arxiv.org/abs/2106.02039">Paper</a></td>
+          <td>by Michael Janner, Qiyang Li, Sergey Levine</td>
+      </tr>
+      <tr>
+          <td>136.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/unispeech">UniSpeech</a> <a href="https://arxiv.org/abs/2101.07597">Paper</a></td>
+          <td>by Chengyi Wang, Yu Wu, Yao Qian, Kenichi Kumatani, Shujie Liu, Furu Wei, Michael Zeng, Xuedong Huang.</td>
+      </tr>
+      <tr>
+          <td>137.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/unispeech-sat">UniSpeechSat</a> <a href="https://arxiv.org/abs/2110.05752">Paper</a></td>
+          <td>by Sanyuan Chen, Yu Wu, Chengyi Wang, Zhengyang Chen, Zhuo Chen, Shujie Liu, Jian Wu, Yao Qian, Furu Wei, Jinyu Li, Xiangzhan Yu.</td>
+      </tr>
+      <tr>
+          <td>138.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/align">ALIGN</a> <a href="https://arxiv.org/abs/2102.05918">Paper</a></td>
+          <td>by Chao Jia, Yinfei Yang, Ye Xia, Yi-Ting Chen, Zarana Parekh, Hieu Pham, Quoc V. Le, Yunhsuan Sung, Zhen Li, Tom Duerig.</td>
+      </tr>
+      <tr>
+          <td>139.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bort">BORT</a> <a href="">Paper</a></td>
+          <td>by Adrian de Wynter and Daniel J. Perry.</td>
+      </tr>
+      <tr>
+          <td>140.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/deplot">DePlot</a> <a href="https://arxiv.org/abs/2212.10505">Paper</a></td>
+          <td>by Fangyu Liu, Julian Martin Eisenschlos, Francesco Piccinno, Syrine Krichene, Chenxi Pang, Kenton Lee, Mandar Joshi, Wenhu Chen, Nigel Collier, Yasemin Altun.</td>
+      </tr>
+      <tr>
+          <td>141.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/deta">DETA</a> <a href="https://arxiv.org/abs/2212.06137">Paper</a></td>
+          <td>by Jeffrey Ouyang-Zhang, Jang Hyun Cho, Xingyi Zhou, Philipp Krähenbühl.</td>
+      </tr>
+      <tr>
+          <td>142.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/dinat">DiNAT</a> <a href="https://arxiv.org/abs/2209.15001">Paper</a></td>
+          <td>by Ali Hassani and Humphrey Shi.</td>
+      </tr>
+      <tr>
+          <td>143.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/jukebox">Jukebox</a> <a href="https://arxiv.org/pdf/2005.00341.pdf">Paper</a></td>
+          <td>by Prafulla Dhariwal, Heewoo Jun, Christine Payne, Jong Wook Kim, Alec Radford, Ilya Sutskever.</td>
+      </tr>
+      <tr>
+          <td>144.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mbart">mBART-50</a> <a href="https://arxiv.org/abs/2001.08210">Paper</a></td>
+          <td>by Yuqing Tang, Chau Tran, Xian Li, Peng-Jen Chen, Naman Goyal, Vishrav Chaudhary, Jiatao Gu, Angela Fan.</td>
+      </tr>
+      <tr>
+          <td>145.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/nystromformer">Nyströmformer</a> <a href="https://arxiv.org/abs/2207.04672">Paper</a></td>
+          <td>by Yunyang Xiong, Zhanpeng Zeng, Rudrasis Chakraborty, Mingxing Tan, Glenn Fung, Yin Li, Vikas Singh.</td>
+      </tr>
+      <tr>
+          <td>146.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/vit_hybrid">ViT Hybrid</a> <a href="https://arxiv.org/abs/2010.11929">Paper</a></td>
+          <td>by Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, Neil Houlsby.</td>
+      </tr>
+      <tr>
+          <td>147.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xmod">X-MOD</a> <a href="http://dx.doi.org/10.18653/v1/2022.naacl-main.255">Paper</a></td>
+          <td>by Jonas Pfeiffer, Naman Goyal, Xi Lin, Xian Li, James Cross, Sebastian Riedel, Mikel Artetxe.</td>
+      </tr>
+      <tr>
+          <td>148.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bartpho">BARTpho</a> <a href="https://arxiv.org/abs/2109.09701">Paper</a></td>
+          <td>by Nguyen Luong Tran, Duong Minh Le and Dat Quoc Nguyen.</td>
+      </tr>
+      <tr>
+          <td>149.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bridgetower">BridgeTower</a> <a href="https://arxiv.org/abs/2206.08657">Paper</a></td>
+          <td>by Xiao Xu, Chenfei Wu, Shachar Rosenman, Vasudev Lal, Wanxiang Che, Nan Duan.</td>
+      </tr>
+      <tr>
+          <td>150.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/codegen">CodeGen</a> <a href="https://arxiv.org/abs/2108.06152">Paper</a></td>
+          <td>by Erik Nijkamp, Bo Pang, Hiroaki Hayashi, Lifu Tu, Huan Wang, Yingbo Zhou, Silvio Savarese, Caiming Xiong.</td>
+      </tr>
+      <tr>
+          <td>151.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/gptj">GPT-J</a> <a href="http://www.lrec-conf.org/proceedings/lrec2022/pdf/2022.lrec-1.376.pdf">Paper</a></td>
+          <td>by Ben Wang and Aran Komatsuzaki.</td>
+      </tr>
+      <tr>
+          <td>152.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/llama">LLaMA</a> <a href="https://arxiv.org/abs/2302.13971">Paper</a></td>
+          <td>by Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, Aurelien Rodriguez, Armand Joulin, Edouard Grave, Guillaume Lample.</td>
+      </tr>
+      <tr>
+          <td>153.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/markuplm">MarkupLM</a> <a href="http://opus.nlpl.eu/">Paper</a></td>
+          <td>by Junlong Li, Yiheng Xu, Lei Cui, Furu Wei.</td>
+      </tr>
+      <tr>
+          <td>154.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/poolformer">PoolFormer</a> <a href="https://arxiv.org/abs/2103.06333">Paper</a></td>
+          <td>by Yu, Weihao and Luo, Mi and Zhou, Pan and Si, Chenyang and Zhou, Yichen and Wang, Xinchao and Feng, Jiashi and Yan, Shuicheng.</td>
+      </tr>
+      <tr>
+          <td>155.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/qdqbert">QDQBert</a> <a href="https://arxiv.org/abs/2001.04063">Paper</a></td>
+          <td>by Hao Wu, Patrick Judd, Xiaojie Zhang, Mikhail Isaev and Paulius Micikevicius.</td>
+      </tr>
+      <tr>
+          <td>156.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/vilt">ViLT</a> <a href="https://arxiv.org/abs/2102.03334">Paper</a></td>
+          <td>by Wonjae Kim, Bokyung Son, Ildoo Kim.</td>
+      </tr>
+      <tr>
+          <td>157.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/barthez">BARThez</a> <a href="https://arxiv.org/abs/2010.12321">Paper</a></td>
+          <td>by Moussa Kamal Eddine, Antoine J.-P. Tixier, Michalis Vazirgiannis.</td>
+      </tr>
+      <tr>
+          <td>158.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/donut">Donut</a> <a href="https://arxiv.org/abs/2111.15664">Paper</a></td>
+          <td>by Geewook Kim, Teakgyu Hong, Moonbin Yim, Jeongyeon Nam, Jinyoung Park, Jinyeong Yim, Wonseok Hwang, Sangdoo Yun, Dongyoon Han, Seunghyun Park.</td>
+      </tr>
+      <tr>
+          <td>159.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/imagegpt">ImageGPT</a> <a href="https://openai.com/blog/image-gpt/">Paper</a></td>
+          <td>by Mark Chen, Alec Radford, Rewon Child, Jeffrey Wu, Heewoo Jun, David Luan, Ilya Sutskever.</td>
+      </tr>
+      <tr>
+          <td>160.</td>
+          <td><a href="https://huggingface.co/docs/transformers/master/model_doc/opt">OPT</a> <a href="https://arxiv.org/abs/2211.06220">Paper</a></td>
+          <td>by Susan Zhang, Stephen Roller, Naman Goyal, Mikel Artetxe, Moya Chen, Shuohui Chen et al.</td>
+      </tr>
+      <tr>
+          <td>161.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/splinter">Splinter</a> <a href="https://arxiv.org/abs/2104.06678">Paper</a></td>
+          <td>by Ori Ram, Yuval Kirstain, Jonathan Berant, Amir Globerson, Omer Levy.</td>
+      </tr>
+      <tr>
+          <td>162.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xglm">XGLM</a> <a href="https://arxiv.org/abs/2112.10668">Paper</a></td>
+          <td>by Xi Victoria Lin, Todor Mihaylov, Mikel Artetxe, Tianlu Wang, Shuohui Chen, Daniel Simig, Myle Ott, Naman Goyal, Shruti Bhosale, Jingfei Du, Ramakanth Pasunuru, Sam Shleifer, Punit Singh Koura, Vishrav Chaudhary, Brian O’Horo, Jeff Wang, Luke Zettlemoyer, Zornitsa Kozareva, Mona Diab, Veselin Stoyanov, Xian Li.</td>
+      </tr>
+      <tr>
+          <td>163.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/yoso">YOSO</a> <a href="https://arxiv.org/abs/2111.09714">Paper</a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>164.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/efficientformer">EfficientFormer</a> <a href="https://arxiv.org/abs/2206.01191">Paper</a></td>
+          <td>by Yanyu Li, Geng Yuan, Yang Wen, Ju Hu, Georgios Evangelidis, Sergey Tulyakov, Yanzhi Wang, Jian Ren.</td>
+      </tr>
+      <tr>
+          <td>165.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/esm">ESM</a> <a href="https://doi.org/10.1101/2022.07.20.500902">Paper</a></td>
+          <td>by Alexander Rives, Joshua Meier, Tom Sercu, Siddharth Goyal, Zeming Lin, Jason Liu, Demi Guo, Myle Ott, C. Lawrence Zitnick, Jerry Ma, and Rob Fergus.</td>
+      </tr>
+      <tr>
+          <td>166.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mask2former">Mask2Former</a> <a href="https://arxiv.org/abs/2110.08518">Paper</a></td>
+          <td>by Bowen Cheng, Ishan Misra, Alexander G. Schwing, Alexander Kirillov, Rohit Girdhar.</td>
+      </tr>
+      <tr>
+          <td>167.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mgp-str">MGP-STR</a> <a href="https://arxiv.org/abs/1909.08053">Paper</a></td>
+          <td>by Peng Wang, Cheng Da, and Cong Yao.</td>
+      </tr>
+      <tr>
+          <td>168.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/nllb">NLLB</a> <a href="https://arxiv.org/abs/1909.00204">Paper</a></td>
+          <td>by the NLLB team.</td>
+      </tr>
+      <tr>
+          <td>169.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/t5v1.1">T5v1.1</a> <a href="https://arxiv.org/abs/1910.10683">Paper</a></td>
+          <td>by Colin Raffel and Noam Shazeer and Adam Roberts and Katherine Lee and Sharan Narang and Michael Matena and Yanqi Zhou and Wei Li and Peter J. Liu.</td>
+      </tr>
+      <tr>
+          <td>170.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/tvlt">TVLT</a> <a href="https://arxiv.org/abs/2209.14156">Paper</a></td>
+          <td>by Zineng Tang, Jaemin Cho, Yixin Nie, Mohit Bansal.</td>
+      </tr>
+      <tr>
+          <td>171.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/wavlm">WavLM</a> <a href="https://arxiv.org/abs/2110.13900">Paper</a></td>
+          <td>by Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, Jian Wu, Long Zhou, Shuo Ren, Yanmin Qian, Yao Qian, Jian Wu, Michael Zeng, Furu Wei.</td>
+      </tr>
+      <tr>
+          <td>172.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/xlm-roberta-xl">XLM-RoBERTa-XL</a> <a href="https://arxiv.org/abs/2105.00572">Paper</a></td>
+          <td>by Naman Goyal, Jingfei Du, Myle Ott, Giri Anantharaman, Alexis Conneau.</td>
+      </tr>
+      <tr>
+          <td>173.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/chinese_clip">Chinese-CLIP</a> <a href="https://arxiv.org/abs/2211.01335">Paper</a></td>
+          <td>by An Yang, Junshu Pan, Junyang Lin, Rui Men, Yichang Zhang, Jingren Zhou, Chang Zhou.</td>
+      </tr>
+      <tr>
+          <td>174.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/clap">CLAP</a> <a href="https://arxiv.org/abs/2103.00020">Paper</a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>175.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/decision_transformer">Decision Transformer</a> <a href="https://arxiv.org/abs/2106.01345">Paper</a></td>
+          <td>by Lili Chen, Kevin Lu, Aravind Rajeswaran, Kimin Lee, Aditya Grover, Michael Laskin, Pieter Abbeel, Aravind Srinivas, Igor Mordatch.</td>
+      </tr>
+      <tr>
+          <td>176.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/blip-2">BLIP-2</a> <a href="https://arxiv.org/abs/2301.12597">Paper</a></td>
+          <td>by Junnan Li, Dongxu Li, Silvio Savarese, Steven Hoi.</td>
+      </tr>
+      <tr>
+          <td>177.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/canine">CANINE</a> <a href="https://arxiv.org/abs/2103.06874">Paper</a></td>
+          <td>by Jonathan H. Clark, Dan Garrette, Iulia Turc, John Wieting.</td>
+      </tr>
+      <tr>
+          <td>178.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/graphormer">Graphormer</a> <a href="https://arxiv.org/abs/2106.05234">Paper</a></td>
+          <td>by Chengxuan Ying, Tianle Cai, Shengjie Luo, Shuxin Zheng, Guolin Ke, Di He, Yanming Shen, Tie-Yan Liu.</td>
+      </tr>
+      <tr>
+          <td>179.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/ibert">I-BERT</a> <a href="https://arxiv.org/abs/2101.01321">Paper</a></td>
+          <td>by Sehoon Kim, Amir Gholami, Zhewei Yao, Michael W. Mahoney, Kurt Keutzer.</td>
+      </tr>
+      <tr>
+          <td>180.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/matcha">MatCha</a> <a href="https://arxiv.org/abs/2107.06278">Paper</a></td>
+          <td>by Fangyu Liu, Francesco Piccinno, Syrine Krichene, Chenxi Pang, Kenton Lee, Mandar Joshi, Yasemin Altun, Nigel Collier, Julian Martin Eisenschlos.</td>
+      </tr>
+      <tr>
+          <td>181.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mluke">mLUKE</a> <a href="https://arxiv.org/abs/2209.03592">Paper</a></td>
+          <td>by Ryokan Ri, Ikuya Yamada, and Yoshimasa Tsuruoka.</td>
+      </tr>
+      <tr>
+          <td>182.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mobilevit">MobileViT</a> <a href="https://arxiv.org/abs/1801.04381">Paper</a></td>
+          <td>by Sachin Mehta and Mohammad Rastegari.</td>
+      </tr>
+      <tr>
+          <td>183.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/owlvit">OWL-ViT</a> <a href="https://arxiv.org/abs/2205.01068">Paper</a></td>
+          <td>by Matthias Minderer, Alexey Gritsenko, Austin Stone, Maxim Neumann, Dirk Weissenborn, Alexey Dosovitskiy, Aravindh Mahendran, Anurag Arnab, Mostafa Dehghani, Zhuoran Shen, Xiao Wang, Xiaohua Zhai, Thomas Kipf, and Neil Houlsby.</td>
+      </tr>
+      <tr>
+          <td>184.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/speecht5">SpeechT5</a> <a href="https://arxiv.org/abs/2109.06870">Paper</a></td>
+          <td>by Junyi Ao, Rui Wang, Long Zhou, Chengyi Wang, Shuo Ren, Yu Wu, Shujie Liu, Tom Ko, Qing Li, Yu Zhang, Zhihua Wei, Yao Qian, Jinyu Li, Furu Wei.</td>
+      </tr>
+      <tr>
+          <td>185.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/swinv2">Swin Transformer V2</a> <a href="https://arxiv.org/abs/2103.14030">Paper</a></td>
+          <td>by Ze Liu, Han Hu, Yutong Lin, Zhuliang Yao, Zhenda Xie, Yixuan Wei, Jia Ning, Yue Cao, Zheng Zhang, Li Dong, Furu Wei, Baining Guo.</td>
+      </tr>
+      <tr>
+          <td>186.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/vit_mae">ViTMAE</a> <a href="https://arxiv.org/abs/2111.06377">Paper</a></td>
+          <td>by Kaiming He, Xinlei Chen, Saining Xie, Yanghao Li, Piotr Dollár, Ross Girshick.</td>
+      </tr>
+      <tr>
+          <td>187.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/bloom">BLOOM</a> <a href="https://arxiv.org/abs/2010.10499">Paper</a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>188.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/convnextv2">ConvNeXTV2</a> <a href="">Paper</a></td>
+          <td>by Sanghyun Woo, Shoubhik Debnath, Ronghang Hu, Xinlei Chen, Zhuang Liu, In So Kweon, Saining Xie.</td>
+      </tr>
+      <tr>
+          <td>189.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/cpmant">CPM-Ant</a> <a href="">Paper</a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>190.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/gpt-sw3">GPT-Sw3</a> <a href="https://arxiv.org/abs/2301.03988">Paper</a></td>
+          <td>by Ariel Ekgren, Amaru Cuba Gyllensten, Evangelia Gogoulou, Alice Heiman, Severine Verlinden, Joey Öhman, Fredrik Carlsson, Magnus Sahlgren.</td>
+      </tr>
+      <tr>
+          <td>191.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/longt5">LongT5</a> <a href="https://arxiv.org/abs/2112.07916">Paper</a></td>
+          <td>by Mandy Guo, Joshua Ainslie, David Uthus, Santiago Ontanon, Jianmo Ni, Yun-Hsuan Sung, Yinfei Yang.</td>
+      </tr>
+      <tr>
+          <td>192.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/oneformer">OneFormer</a> <a href="https://arxiv.org/abs/2102.03902">Paper</a></td>
+          <td>by Jitesh Jain, Jiachen Li, MangTik Chiu, Ali Hassani, Nikita Orlov, Humphrey Shi.</td>
+      </tr>
+      <tr>
+          <td>193.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/table-transformer">Table Transformer</a> <a href="https://github.com/google-research/text-to-text-transfer-transformer/blob/main/released_checkpoints.md#t511">Paper</a></td>
+          <td>by Brandon Smock, Rohith Pesala, Robin Abraham.</td>
+      </tr>
+      <tr>
+          <td>194.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/van">VAN</a> <a href="https://arxiv.org/abs/2202.09741">Paper</a></td>
+          <td>by Meng-Hao Guo, Cheng-Ze Lu, Zheng-Ning Liu, Ming-Ming Cheng, Shi-Min Hu.</td>
+      </tr>
+      <tr>
+          <td>195.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/altclip">AltCLIP</a> <a href="https://arxiv.org/abs/2211.06679">Paper</a></td>
+          <td>by Chen, Zhongzhi and Liu, Guang and Zhang, Bo-Wen and Ye, Fulong and Yang, Qinghong and Wu, Ledell.</td>
+      </tr>
+      <tr>
+          <td>196.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/mvp">MVP</a> <a href="https://arxiv.org/abs/2010.11934">Paper</a></td>
+          <td>by Tianyi Tang, Junyi Li, Wayne Xin Zhao and Ji-Rong Wen.</td>
+      </tr>
+      <tr>
+          <td>197.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/nllb-moe">NLLB-MOE</a> <a href="https://arxiv.org/abs/2207.04672">Paper</a></td>
+          <td>by the NLLB team.</td>
+      </tr>
+      <tr>
+          <td>198.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/pegasus_x">PEGASUS-X</a> <a href="https://arxiv.org/abs/1912.08777">Paper</a></td>
+          <td>by Jason Phang, Yao Zhao, and Peter J. Liu.</td>
+      </tr>
+      <tr>
+          <td>199.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/swin2sr">Swin2SR</a> <a href="https://arxiv.org/abs/2111.09883">Paper</a></td>
+          <td>by Marcos V. Conde, Ui-Jin Choi, Maxime Burchi, Radu Timofte.</td>
+      </tr>
+      <tr>
+          <td>200.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/ul2">UL2</a> <a href="https://arxiv.org/abs/2205.05131v1">Paper</a></td>
+          <td>by Yi Tay, Mostafa Dehghani, Vinh Q. Tran, Xavier Garcia, Dara Bahri, Tal Schuster, Huaixiu Steven Zheng, Neil Houlsby, Donald Metzler</td>
+      </tr>
+      <tr>
+          <td>201.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/vit_msn">ViTMSN</a> <a href="https://arxiv.org/abs/2204.07141">Paper</a></td>
+          <td>by Mahmoud Assran, Mathilde Caron, Ishan Misra, Piotr Bojanowski, Florian Bordes, Pascal Vincent, Armand Joulin, Michael Rabbat, Nicolas Ballas.</td>
+      </tr>
+      <tr>
+          <td>202.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/yolos">YOLOS</a> <a href="https://arxiv.org/abs/2106.00666">Paper</a></td>
+          <td>by Yuxin Fang, Bencheng Liao, Xinggang Wang, Jiemin Fang, Jiyang Qi, Rui Wu, Jianwei Niu, Wenyu Liu.</td>
+      </tr>
+      <tr>
+          <td>203.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/flan-t5">FLAN-T5</a> <a href="https://github.com/google-research/t5x/blob/main/docs/models.md#flan-t5-checkpoints">Paper</a></td>
+          <td>by Hyung Won Chung, Le Hou, Shayne Longpre, Barret Zoph, Yi Tay, William Fedus, Eric Li, Xuezhi Wang, Mostafa Dehghani, Siddhartha Brahma, Albert Webson, Shixiang Shane Gu, Zhuyun Dai, Mirac Suzgun, Xinyun Chen, Aakanksha Chowdhery, Sharan Narang, Gaurav Mishra, Adams Yu, Vincent Zhao, Yanping Huang, Andrew Dai, Hongkun Yu, Slav Petrov, Ed H. Chi, Jeff Dean, Jacob Devlin, Adam Roberts, Denny Zhou, Quoc V. Le, and Jason Wei</td>
+      </tr>
+      <tr>
+          <td>204.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/gpt_neox_japanese">GPT NeoX Japanese</a> <a href="https://blog.openai.com/better-language-models/">Paper</a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>205.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/layoutlmv3">LayoutLMv3</a> <a href="https://arxiv.org/abs/2204.08387">Paper</a></td>
+          <td>by Yupan Huang, Tengchao Lv, Lei Cui, Yutong Lu, Furu Wei.</td>
+      </tr>
+      <tr>
+          <td>206.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/flan-ul2">FLAN-UL2</a> <a href="https://github.com/google-research/t5x/blob/main/docs/models.md#flan-ul2-checkpoints">Paper</a></td>
+          <td>by Hyung Won Chung, Le Hou, Shayne Longpre, Barret Zoph, Yi Tay, William Fedus, Eric Li, Xuezhi Wang, Mostafa Dehghani, Siddhartha Brahma, Albert Webson, Shixiang Shane Gu, Zhuyun Dai, Mirac Suzgun, Xinyun Chen, Aakanksha Chowdhery, Sharan Narang, Gaurav Mishra, Adams Yu, Vincent Zhao, Yanping Huang, Andrew Dai, Hongkun Yu, Slav Petrov, Ed H. Chi, Jeff Dean, Jacob Devlin, Adam Roberts, Denny Zhou, Quoc V. Le, and Jason Wei</td>
+      </tr>
+      <tr>
+          <td>207.</td>
+          <td><a href="https://huggingface.co/docs/transformers/model_doc/flava">FLAVA</a> <a href="https://arxiv.org/abs/2112.04482">Paper</a></td>
+          <td>by Amanpreet Singh, Ronghang Hu, Vedanuj Goswami, Guillaume Couairon, Wojciech Galuba, Marcus Rohrbach, and Douwe Kiela.</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="conclusion">Conclusion</h2>
+<p>I hope this article gave you an idea about Transformer architecture, their variants, their types, their birth chronology and the creators. As we have seen, the Transformer architecture has been a game-changer in natural language processing and computer vision tasks. It has been instrumental in enabling breakthroughs in machine translation, language understanding, and image classification, among other fields.</p>
+<p>There are many types of Transformers, such as autoregressive models like GPT, autoencoding models like BERT and its variants, and hybrid models that combine the strengths of both. Additionally, there are many variants of the Transformer architecture, such as XLNet, RoBERTa, and T5, each with their unique contributions and improvements.</p>
+<p>The Transformer&rsquo;s birth chronology spans just a few years, from the original paper in 2017 to the latest models that are being developed today. Its creators include some of the most prominent names in the field of AI, such as Google, Facebook, and OpenAI.</p>
+<p>As AI technology continues to evolve, we can expect more exciting developments in the field of Transformers, with even more powerful and sophisticated models that can tackle even more complex tasks. The Transformer architecture has shown us that there is still much to explore in the world of deep learning, and we can&rsquo;t wait to see what the future holds.</p>
+<p><strong>Author</strong><br>
+Dr Hari Thapliyaal<br>
+dasarpai.com <br>
+linkedin.com/in/harithapliyal</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Container Management on Agones</title>
+    <link>http://localhost:1313/tags/container-management/</link>
+    <description>Recent content in Container Management on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/container-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Decoding docker commands</title>
+      <link>http://localhost:1313/dsblog/Decoding-docker-commands/</link>
+      <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Decoding-docker-commands/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6117-Decoding-docker-commands.jpg&#34; alt=&#34;Decoding-docker-commands&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;decoding-docker-commands&#34;&gt;Decoding docker commands&lt;/h1&gt;&#xA;&lt;h2 id=&#34;is-this-article-for-me&#34;&gt;Is this article for me?&lt;/h2&gt;&#xA;&lt;p&gt;If you are coming from IT Infrastructure background and have solid experience in containerization you can skip this. But if you are seeking to learn any of the following topic then keep reading.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;What is docker image, what is docker container, what is docker?&lt;/li&gt;&#xA;&lt;li&gt;How to create docker image and docker container?&lt;/li&gt;&#xA;&lt;li&gt;What is the use of docker compose?&lt;/li&gt;&#xA;&lt;li&gt;What is the meaning of code written inside Dockerfile?&lt;/li&gt;&#xA;&lt;li&gt;How to create a new python code and put inside the docker?&lt;/li&gt;&#xA;&lt;li&gt;How to ensure my docker uses my GPU?&lt;/li&gt;&#xA;&lt;li&gt;How to access my host machine&amp;rsquo;s local drive within the docker?&lt;/li&gt;&#xA;&lt;li&gt;How to send data out from docker to local host machine&amp;rsquo;s folder?&lt;/li&gt;&#xA;&lt;li&gt;How to execute command inside docker shell?&lt;/li&gt;&#xA;&lt;li&gt;How to install python packages inside docker?&lt;/li&gt;&#xA;&lt;li&gt;What are the common docker commands?&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;introduction-why-this-article&#34;&gt;Introduction: Why this article?&lt;/h2&gt;&#xA;&lt;p&gt;Coming from a non-infrastructure background, I found working with Docker frustrating at first. The commands seemed cryptic, and complex environments often required downloading large images, creating custom ones, or modifying existing ones—only to face disappointing results. Investing so much time without clear success, or not knowing if Docker is the right solution from the start, can be disheartening. This article aims to demystify Docker, making it easier to understand and use effectively. After you learn the docker you will find that docker is the simplest thing in computer world to make development, testing and deployment more simple. Experts may be laughing at me. :)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

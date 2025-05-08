@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ripple Edit on Agones</title>
+    <link>http://localhost:1313/tags/ripple-edit/</link>
+    <description>Recent content in Ripple Edit on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ripple-edit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Video Editing Concepts</title>
+      <link>http://localhost:1313/dsblog/video-editing-concepts/</link>
+      <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/video-editing-concepts/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6248-video-editing-concepts.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;-core-video-editing-concepts&#34;&gt;🎬 &lt;strong&gt;Core Video Editing Concepts&lt;/strong&gt;&lt;/h1&gt;&#xA;&lt;p&gt;A &lt;strong&gt;comprehensive list of features and concepts&lt;/strong&gt; that are useful to understand in &lt;strong&gt;any video editing software&lt;/strong&gt;, whether you&amp;rsquo;re using Shotcut, OBS Studio, Adobe Premiere, DaVinci Resolve, Final Cut Pro, or any other. When I was working on a project that required me to explore this, it was overwhelming for me to remember and apply all of these concepts. Therefore, I thought of sharing this with others who are starting their journey.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

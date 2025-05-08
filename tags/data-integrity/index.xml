@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Integrity on Agones</title>
+    <link>http://localhost:1313/tags/data-integrity/</link>
+    <description>Recent content in Data Integrity on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/data-integrity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>All about Hashing</title>
+      <link>http://localhost:1313/dsblog/All-about-Hashing/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/All-about-Hashing/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6123-All-about-Hashing.jpg&#34; alt=&#34;All-about-Hashing&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;all-about-hashing&#34;&gt;All about Hashing&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-hashing-function&#34;&gt;What is Hashing function?&lt;/h2&gt;&#xA;&lt;p&gt;A hashing function is a mathematical algorithm that converts an input (or &amp;ldquo;message&amp;rdquo;) into a fixed-size string of bytes, typically a hash code or hash value. This output is usually a short, unique representation of the input data. Examples of common hash functions include MD5, SHA-1, and SHA-256.&lt;/p&gt;&#xA;&lt;p&gt;Hashing is a process where an algorithm (known as a hash function) takes an input (or &amp;ldquo;message&amp;rdquo;) and returns a fixed-size string of bytes. The output, typically a hexadecimal number, appears random. The purpose of hashing is to ensure data integrity and to securely compare large amounts of data.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

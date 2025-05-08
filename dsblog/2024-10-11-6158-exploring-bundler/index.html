@@ -1,0 +1,429 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>What is Bundler? | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2024-10-11-6158-exploring-bundler/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="What is Bundler?">
+  <meta property="og:description" content="What is Bundler? Bundler is a dependency management tool for Ruby applications. It ensures that the right versions of gems (libraries) are installed and used in a project. Ruby packages are called Gem. Bundler is commonly used in situations where you need to manage multiple Ruby projects with different dependencies or need to ensure that a project has all the necessary gems with specific versions.
+Key points about Bundler: Language: Bundler is used with Ruby programming language. Purpose: It manages gem dependencies for Ruby applications, ensuring consistent environments by locking gem versions. Usage scenario: When working with Ruby on Rails applications. When collaborating on a project where multiple developers need the same gem versions. In deployment environments where consistency between local and production gem versions is critical. Developed by: Bundler was originally created by Yehuda Katz in 2009 as part of the Ruby community, and it is now maintained by the Bundler core team under the Ruby Together umbrella. How it works: Gemfile: You define your project’s dependencies in a Gemfile. bundle install: Installs the exact versions of gems specified in the Gemfile. Gemfile.lock: Bundler creates a Gemfile.lock file to lock down the versions, ensuring consistency across different environments. bundle exec: Ensures that the correct versions of gems are used when running scripts or commands. Top 50 Commands of Bundler bundle install - Installs gems listed in the Gemfile. bundle update - Updates gems to the latest versions in Gemfile. bundle exec - Runs a command in the context of the Gemfile. bundle init - Creates a new Gemfile in the current directory. bundle add &lt;gem&gt; - Adds a gem to the Gemfile. bundle remove &lt;gem&gt; - Removes a gem from the Gemfile. bundle check - Checks if dependencies are installed. bundle clean - Cleans up unused gems. bundle outdated - Lists gems that have newer versions. bundle lock - Locks the Gemfile with the exact versions. bundle open &lt;gem&gt; - Opens the source for a gem in your editor. bundle console - Opens an IRB session with the Gemfile’s gems. bundle show &lt;gem&gt; - Shows the location of the gem. bundle config - Manages bundler configuration settings. bundle cache - Caches the gems for offline use. bundle outdated –local - Checks for outdated gems locally. bundle platform - Displays your platform and gem version requirements. bundle viz - Generates a dependency graph. bundle pristine - Restores installed gems to pristine condition. bundle list - Lists all installed gems. bundle doctor - Verifies the bundle environment. bundle gem &lt;name&gt; - Creates a skeleton for a new gem. bundle outdated &lt;gem&gt; - Checks for outdated versions of a specific gem. bundle show –paths - Displays the gem install paths. bundle info &lt;gem&gt; - Shows detailed information about a gem. bundle exec rails &lt;cmd&gt; - Executes Rails commands in bundle context. bundle install –without &lt;group&gt; - Excludes specified gem groups. bundle install –path &lt;dir&gt; - Installs gems to a specific directory. bundle update –group &lt;group&gt; - Updates gems in a specific group. bundle update &lt;gem&gt; - Updates only a specific gem. bundle install –deployment - Installs gems for deployment. bundle lock –add-platform - Adds an additional platform to the lockfile. bundle install –local - Installs gems from local cache. bundle inject &lt;gem&gt; &lt;version&gt; - Injects a gem directly into the lockfile. bundle install –binstubs - Generates binstubs for the gems. bundle exec rspec - Runs RSpec within the bundle environment. bundle install –jobs &lt;n&gt; - Parallelizes gem installation with n jobs. bundle install –retry &lt;n&gt; - Retries installation if it fails. bundle update –patch - Updates gems to the latest patch version. bundle update –minor - Updates gems to the latest minor version. bundle update –major - Updates gems to the latest major version. bundle show –bundler - Shows the installed version of Bundler. bundle lock –update - Updates lockfile with specific gem requirements. bundle config set –local - Sets a local configuration option. bundle config set –global - Sets a global configuration option. bundle exec rake &lt;task&gt; - Runs a Rake task within the bundle context. bundle update –strict - Only updates gems specified explicitly. bundle binstubs &lt;gem&gt; - Creates binstubs for a specific gem. bundle plugin install - Installs a Bundler plugin. bundle version - Displays the version of Bundler. What is Ruby on Rails? Here we discussed about Ruby and also mentioned about Ruby on Rails, therefore le’s understand what this is? Rails is known for making web development easier by offering a full-stack framework that supports both front-end and back-end development.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-10-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-11T00:00:00+00:00">
+    <meta property="article:tag" content="Package Management">
+    <meta property="article:tag" content="Programming">
+
+  <meta itemprop="name" content="What is Bundler?">
+  <meta itemprop="description" content="What is Bundler? Bundler is a dependency management tool for Ruby applications. It ensures that the right versions of gems (libraries) are installed and used in a project. Ruby packages are called Gem. Bundler is commonly used in situations where you need to manage multiple Ruby projects with different dependencies or need to ensure that a project has all the necessary gems with specific versions.
+Key points about Bundler: Language: Bundler is used with Ruby programming language. Purpose: It manages gem dependencies for Ruby applications, ensuring consistent environments by locking gem versions. Usage scenario: When working with Ruby on Rails applications. When collaborating on a project where multiple developers need the same gem versions. In deployment environments where consistency between local and production gem versions is critical. Developed by: Bundler was originally created by Yehuda Katz in 2009 as part of the Ruby community, and it is now maintained by the Bundler core team under the Ruby Together umbrella. How it works: Gemfile: You define your project’s dependencies in a Gemfile. bundle install: Installs the exact versions of gems specified in the Gemfile. Gemfile.lock: Bundler creates a Gemfile.lock file to lock down the versions, ensuring consistency across different environments. bundle exec: Ensures that the correct versions of gems are used when running scripts or commands. Top 50 Commands of Bundler bundle install - Installs gems listed in the Gemfile. bundle update - Updates gems to the latest versions in Gemfile. bundle exec - Runs a command in the context of the Gemfile. bundle init - Creates a new Gemfile in the current directory. bundle add &lt;gem&gt; - Adds a gem to the Gemfile. bundle remove &lt;gem&gt; - Removes a gem from the Gemfile. bundle check - Checks if dependencies are installed. bundle clean - Cleans up unused gems. bundle outdated - Lists gems that have newer versions. bundle lock - Locks the Gemfile with the exact versions. bundle open &lt;gem&gt; - Opens the source for a gem in your editor. bundle console - Opens an IRB session with the Gemfile’s gems. bundle show &lt;gem&gt; - Shows the location of the gem. bundle config - Manages bundler configuration settings. bundle cache - Caches the gems for offline use. bundle outdated –local - Checks for outdated gems locally. bundle platform - Displays your platform and gem version requirements. bundle viz - Generates a dependency graph. bundle pristine - Restores installed gems to pristine condition. bundle list - Lists all installed gems. bundle doctor - Verifies the bundle environment. bundle gem &lt;name&gt; - Creates a skeleton for a new gem. bundle outdated &lt;gem&gt; - Checks for outdated versions of a specific gem. bundle show –paths - Displays the gem install paths. bundle info &lt;gem&gt; - Shows detailed information about a gem. bundle exec rails &lt;cmd&gt; - Executes Rails commands in bundle context. bundle install –without &lt;group&gt; - Excludes specified gem groups. bundle install –path &lt;dir&gt; - Installs gems to a specific directory. bundle update –group &lt;group&gt; - Updates gems in a specific group. bundle update &lt;gem&gt; - Updates only a specific gem. bundle install –deployment - Installs gems for deployment. bundle lock –add-platform - Adds an additional platform to the lockfile. bundle install –local - Installs gems from local cache. bundle inject &lt;gem&gt; &lt;version&gt; - Injects a gem directly into the lockfile. bundle install –binstubs - Generates binstubs for the gems. bundle exec rspec - Runs RSpec within the bundle environment. bundle install –jobs &lt;n&gt; - Parallelizes gem installation with n jobs. bundle install –retry &lt;n&gt; - Retries installation if it fails. bundle update –patch - Updates gems to the latest patch version. bundle update –minor - Updates gems to the latest minor version. bundle update –major - Updates gems to the latest major version. bundle show –bundler - Shows the installed version of Bundler. bundle lock –update - Updates lockfile with specific gem requirements. bundle config set –local - Sets a local configuration option. bundle config set –global - Sets a global configuration option. bundle exec rake &lt;task&gt; - Runs a Rake task within the bundle context. bundle update –strict - Only updates gems specified explicitly. bundle binstubs &lt;gem&gt; - Creates binstubs for a specific gem. bundle plugin install - Installs a Bundler plugin. bundle version - Displays the version of Bundler. What is Ruby on Rails? Here we discussed about Ruby and also mentioned about Ruby on Rails, therefore le’s understand what this is? Rails is known for making web development easier by offering a full-stack framework that supports both front-end and back-end development.">
+  <meta itemprop="datePublished" content="2024-10-11T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-10-11T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1578">
+  <meta itemprop="keywords" content="Bundler,Ruby,Gemfile,Dependency management,Ruby gems,Yehuda Katz,Ruby on Rails,Gemfile.lock,Ruby development tools,Bundler commands">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What is Bundler?">
+  <meta name="twitter:description" content="What is Bundler? Bundler is a dependency management tool for Ruby applications. It ensures that the right versions of gems (libraries) are installed and used in a project. Ruby packages are called Gem. Bundler is commonly used in situations where you need to manage multiple Ruby projects with different dependencies or need to ensure that a project has all the necessary gems with specific versions.
+Key points about Bundler: Language: Bundler is used with Ruby programming language. Purpose: It manages gem dependencies for Ruby applications, ensuring consistent environments by locking gem versions. Usage scenario: When working with Ruby on Rails applications. When collaborating on a project where multiple developers need the same gem versions. In deployment environments where consistency between local and production gem versions is critical. Developed by: Bundler was originally created by Yehuda Katz in 2009 as part of the Ruby community, and it is now maintained by the Bundler core team under the Ruby Together umbrella. How it works: Gemfile: You define your project’s dependencies in a Gemfile. bundle install: Installs the exact versions of gems specified in the Gemfile. Gemfile.lock: Bundler creates a Gemfile.lock file to lock down the versions, ensuring consistency across different environments. bundle exec: Ensures that the correct versions of gems are used when running scripts or commands. Top 50 Commands of Bundler bundle install - Installs gems listed in the Gemfile. bundle update - Updates gems to the latest versions in Gemfile. bundle exec - Runs a command in the context of the Gemfile. bundle init - Creates a new Gemfile in the current directory. bundle add &lt;gem&gt; - Adds a gem to the Gemfile. bundle remove &lt;gem&gt; - Removes a gem from the Gemfile. bundle check - Checks if dependencies are installed. bundle clean - Cleans up unused gems. bundle outdated - Lists gems that have newer versions. bundle lock - Locks the Gemfile with the exact versions. bundle open &lt;gem&gt; - Opens the source for a gem in your editor. bundle console - Opens an IRB session with the Gemfile’s gems. bundle show &lt;gem&gt; - Shows the location of the gem. bundle config - Manages bundler configuration settings. bundle cache - Caches the gems for offline use. bundle outdated –local - Checks for outdated gems locally. bundle platform - Displays your platform and gem version requirements. bundle viz - Generates a dependency graph. bundle pristine - Restores installed gems to pristine condition. bundle list - Lists all installed gems. bundle doctor - Verifies the bundle environment. bundle gem &lt;name&gt; - Creates a skeleton for a new gem. bundle outdated &lt;gem&gt; - Checks for outdated versions of a specific gem. bundle show –paths - Displays the gem install paths. bundle info &lt;gem&gt; - Shows detailed information about a gem. bundle exec rails &lt;cmd&gt; - Executes Rails commands in bundle context. bundle install –without &lt;group&gt; - Excludes specified gem groups. bundle install –path &lt;dir&gt; - Installs gems to a specific directory. bundle update –group &lt;group&gt; - Updates gems in a specific group. bundle update &lt;gem&gt; - Updates only a specific gem. bundle install –deployment - Installs gems for deployment. bundle lock –add-platform - Adds an additional platform to the lockfile. bundle install –local - Installs gems from local cache. bundle inject &lt;gem&gt; &lt;version&gt; - Injects a gem directly into the lockfile. bundle install –binstubs - Generates binstubs for the gems. bundle exec rspec - Runs RSpec within the bundle environment. bundle install –jobs &lt;n&gt; - Parallelizes gem installation with n jobs. bundle install –retry &lt;n&gt; - Retries installation if it fails. bundle update –patch - Updates gems to the latest patch version. bundle update –minor - Updates gems to the latest minor version. bundle update –major - Updates gems to the latest major version. bundle show –bundler - Shows the installed version of Bundler. bundle lock –update - Updates lockfile with specific gem requirements. bundle config set –local - Sets a local configuration option. bundle config set –global - Sets a global configuration option. bundle exec rake &lt;task&gt; - Runs a Rake task within the bundle context. bundle update –strict - Only updates gems specified explicitly. bundle binstubs &lt;gem&gt; - Creates binstubs for a specific gem. bundle plugin install - Installs a Bundler plugin. bundle version - Displays the version of Bundler. What is Ruby on Rails? Here we discussed about Ruby and also mentioned about Ruby on Rails, therefore le’s understand what this is? Rails is known for making web development easier by offering a full-stack framework that supports both front-end and back-end development.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6158-Exploring-Bundler.jpg" alt="Exploring Bundler"></p>
+<h2 id="what-is-bundler">What is Bundler?</h2>
+<p><strong>Bundler</strong> is a dependency management tool for Ruby applications. It ensures that the right versions of gems (libraries) are installed and used in a project. Ruby packages are called Gem. Bundler is commonly used in situations where you need to manage multiple Ruby projects with different dependencies or need to ensure that a project has all the necessary gems with specific versions.</p>
+<h3 id="key-points-about-bundler">Key points about Bundler:</h3>
+<ul>
+<li><strong>Language</strong>: Bundler is used with <strong>Ruby</strong> programming language.</li>
+<li><strong>Purpose</strong>: It manages gem dependencies for Ruby applications, ensuring consistent environments by locking gem versions.</li>
+<li><strong>Usage scenario</strong>:
+<ul>
+<li>When working with Ruby on Rails applications.</li>
+<li>When collaborating on a project where multiple developers need the same gem versions.</li>
+<li>In deployment environments where consistency between local and production gem versions is critical.</li>
+</ul>
+</li>
+<li><strong>Developed by</strong>: Bundler was originally created by <strong>Yehuda Katz</strong> in 2009 as part of the Ruby community, and it is now maintained by the Bundler core team under the <strong>Ruby Together</strong> umbrella.</li>
+</ul>
+<h3 id="how-it-works">How it works:</h3>
+<ol>
+<li><strong>Gemfile</strong>: You define your project&rsquo;s dependencies in a <code>Gemfile</code>.</li>
+<li><strong>bundle install</strong>: Installs the exact versions of gems specified in the Gemfile.</li>
+<li><strong>Gemfile.lock</strong>: Bundler creates a <code>Gemfile.lock</code> file to lock down the versions, ensuring consistency across different environments.</li>
+<li><strong>bundle exec</strong>: Ensures that the correct versions of gems are used when running scripts or commands.</li>
+</ol>
+<h2 id="top-50-commands-of-bundler">Top 50 Commands of Bundler</h2>
+<ol>
+<li><strong>bundle install</strong> - Installs gems listed in the Gemfile.</li>
+<li><strong>bundle update</strong> - Updates gems to the latest versions in Gemfile.</li>
+<li><strong>bundle exec</strong> - Runs a command in the context of the Gemfile.</li>
+<li><strong>bundle init</strong> - Creates a new Gemfile in the current directory.</li>
+<li><strong>bundle add &lt;gem&gt;</strong> - Adds a gem to the Gemfile.</li>
+<li><strong>bundle remove &lt;gem&gt;</strong> - Removes a gem from the Gemfile.</li>
+<li><strong>bundle check</strong> - Checks if dependencies are installed.</li>
+<li><strong>bundle clean</strong> - Cleans up unused gems.</li>
+<li><strong>bundle outdated</strong> - Lists gems that have newer versions.</li>
+<li><strong>bundle lock</strong> - Locks the Gemfile with the exact versions.</li>
+<li><strong>bundle open &lt;gem&gt;</strong> - Opens the source for a gem in your editor.</li>
+<li><strong>bundle console</strong> - Opens an IRB session with the Gemfile&rsquo;s gems.</li>
+<li><strong>bundle show &lt;gem&gt;</strong> - Shows the location of the gem.</li>
+<li><strong>bundle config</strong> - Manages bundler configuration settings.</li>
+<li><strong>bundle cache</strong> - Caches the gems for offline use.</li>
+<li><strong>bundle outdated &ndash;local</strong> - Checks for outdated gems locally.</li>
+<li><strong>bundle platform</strong> - Displays your platform and gem version requirements.</li>
+<li><strong>bundle viz</strong> - Generates a dependency graph.</li>
+<li><strong>bundle pristine</strong> - Restores installed gems to pristine condition.</li>
+<li><strong>bundle list</strong> - Lists all installed gems.</li>
+<li><strong>bundle doctor</strong> - Verifies the bundle environment.</li>
+<li><strong>bundle gem &lt;name&gt;</strong> - Creates a skeleton for a new gem.</li>
+<li><strong>bundle outdated &lt;gem&gt;</strong> - Checks for outdated versions of a specific gem.</li>
+<li><strong>bundle show &ndash;paths</strong> - Displays the gem install paths.</li>
+<li><strong>bundle info &lt;gem&gt;</strong> - Shows detailed information about a gem.</li>
+<li><strong>bundle exec rails &lt;cmd&gt;</strong> - Executes Rails commands in bundle context.</li>
+<li><strong>bundle install &ndash;without &lt;group&gt;</strong> - Excludes specified gem groups.</li>
+<li><strong>bundle install &ndash;path &lt;dir&gt;</strong> - Installs gems to a specific directory.</li>
+<li><strong>bundle update &ndash;group &lt;group&gt;</strong> - Updates gems in a specific group.</li>
+<li><strong>bundle update &lt;gem&gt;</strong> - Updates only a specific gem.</li>
+<li><strong>bundle install &ndash;deployment</strong> - Installs gems for deployment.</li>
+<li><strong>bundle lock &ndash;add-platform</strong> - Adds an additional platform to the lockfile.</li>
+<li><strong>bundle install &ndash;local</strong> - Installs gems from local cache.</li>
+<li><strong>bundle inject &lt;gem&gt; &lt;version&gt;</strong> - Injects a gem directly into the lockfile.</li>
+<li><strong>bundle install &ndash;binstubs</strong> - Generates binstubs for the gems.</li>
+<li><strong>bundle exec rspec</strong> - Runs RSpec within the bundle environment.</li>
+<li><strong>bundle install &ndash;jobs &lt;n&gt;</strong> - Parallelizes gem installation with <code>n</code> jobs.</li>
+<li><strong>bundle install &ndash;retry &lt;n&gt;</strong> - Retries installation if it fails.</li>
+<li><strong>bundle update &ndash;patch</strong> - Updates gems to the latest patch version.</li>
+<li><strong>bundle update &ndash;minor</strong> - Updates gems to the latest minor version.</li>
+<li><strong>bundle update &ndash;major</strong> - Updates gems to the latest major version.</li>
+<li><strong>bundle show &ndash;bundler</strong> - Shows the installed version of Bundler.</li>
+<li><strong>bundle lock &ndash;update</strong> - Updates lockfile with specific gem requirements.</li>
+<li><strong>bundle config set &ndash;local</strong> - Sets a local configuration option.</li>
+<li><strong>bundle config set &ndash;global</strong> - Sets a global configuration option.</li>
+<li><strong>bundle exec rake &lt;task&gt;</strong> - Runs a Rake task within the bundle context.</li>
+<li><strong>bundle update &ndash;strict</strong> - Only updates gems specified explicitly.</li>
+<li><strong>bundle binstubs &lt;gem&gt;</strong> - Creates binstubs for a specific gem.</li>
+<li><strong>bundle plugin install</strong> - Installs a Bundler plugin.</li>
+<li><strong>bundle version</strong> - Displays the version of Bundler.</li>
+</ol>
+<h2 id="what-is-ruby-on-rails">What is Ruby on Rails?</h2>
+<p>Here we discussed about Ruby and also mentioned about Ruby on Rails, therefore le&rsquo;s understand what this is? Rails is known for making web development easier by offering a full-stack framework that supports both front-end and back-end development.</p>
+<p><strong>Ruby on Rails (often simply called Rails)</strong> is a popular open-source web application framework written in the Ruby programming language. It follows the <strong>Model-View-Controller (MVC)</strong> architectural pattern and provides default structures for a database, a web service, and web pages. Rails emphasizes the use of well-known software engineering paradigms like <strong>convention over configuration (CoC)</strong> and <strong>don&rsquo;t repeat yourself (DRY)</strong> to improve developer productivity and reduce the complexity of code.</p>
+<h3 id="key-features-of-ruby-on-rails">Key Features of Ruby on Rails:</h3>
+<ol>
+<li>
+<p><strong>MVC Architecture</strong>: Rails organizes an application into three interconnected components:</p>
+<ul>
+<li><strong>Model</strong>: Represents the data and the business logic. Written in Ruby.</li>
+<li><strong>View</strong>: Displays the data to the user (usually HTML templates). Written in HTML and some Emedded Ruby code. Embedded Ruby will have .html.erb extention.</li>
+<li><strong>Controller</strong>: Manages the interaction between the model and the view. Written in Ruby.</li>
+</ul>
+</li>
+<li>
+<p><strong>Convention Over Configuration</strong>: Rails assumes sensible defaults, so developers don&rsquo;t have to write a lot of configuration code. This makes it faster to build applications.</p>
+</li>
+<li>
+<p><strong>DRY (Don&rsquo;t Repeat Yourself)</strong>: Rails encourages reusable code, minimizing duplication.</p>
+</li>
+<li>
+<p><strong>Active Record</strong>: Rails includes an Object-Relational Mapping (ORM) system, which allows developers to interact with the database using Ruby objects instead of writing SQL queries.</p>
+</li>
+<li>
+<p><strong>Routing</strong>: Rails has a built-in routing system that maps HTTP requests to specific controller actions.</p>
+</li>
+<li>
+<p><strong>Scaffolding</strong>: Automatically generates boilerplate code for creating, reading, updating, and deleting (CRUD) operations based on database models.</p>
+</li>
+<li>
+<p><strong>Security Features</strong>: Rails includes security features like protection against SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF).</p>
+</li>
+</ol>
+<h3 id="use-cases">Use Cases:</h3>
+<p>Ruby on Rails is ideal for developing:</p>
+<ul>
+<li>Web applications</li>
+<li>Content management systems (CMS)</li>
+<li>E-commerce platforms</li>
+<li>Social media websites</li>
+<li>APIs and backend services</li>
+</ul>
+<h3 id="developed-by">Developed by:</h3>
+<p>Ruby on Rails was created by <strong>David Heinemeier Hansson (DHH)</strong> in 2004 and has since become widely used by web developers.</p>
+<h3 id="notable-applications-built-with-ruby-on-rails">Notable Applications Built with Ruby on Rails:</h3>
+<ul>
+<li><strong>GitHub</strong></li>
+<li><strong>Shopify</strong></li>
+<li><strong>Basecamp</strong></li>
+<li><strong>Airbnb</strong></li>
+<li><strong>Hulu</strong></li>
+</ul>
+<h2 id="apart-from-bundle-exec-jekyll-what-are-other-commands-that-we-can-use-to-run-jekyll">Apart from bundle exec jekyll, what are other commands that we can use to run jekyll?</h2>
+<ol>
+<li><strong>jekyll new</strong> - Creates a new Jekyll site.</li>
+<li><strong>jekyll build</strong> - Builds the site.</li>
+<li><strong>jekyll serve</strong> - Serves the site locally.</li>
+<li><strong>jekyll serve &ndash;watch</strong> - Serves the site locally and watches for changes.</li>
+<li><strong>jekyll serve &ndash;livereload</strong> - Serves the site locally and reloads the page on changes.</li>
+<li><strong>jekyll serve &ndash;incremental</strong> - Serves the site locally and rebuilds the site on changes.</li>
+<li><strong>jekyll serve &ndash;port &lt;port&gt;</strong> - Serves the site locally on a specific port.</li>
+</ol>
+<h2 id="apart-from-bundle-exec-jekyll-what-are-other-commands-which-we-can-run-bundle-exec-for">Apart from bundle exec jekyll, what are other commands which we can run bundle exec for?</h2>
+<p>Apart from Jekyll commands, you can use <code>bundle exec</code> to run various Ruby-based tools and frameworks that are specified in your <code>Gemfile</code>. Here are some common tools and the commands you can run with <code>bundle exec</code>:</p>
+<ol>
+<li>
+<p><strong>Rake</strong>:   - Command: <code>bundle exec rake db:migrate</code>, Rake is a build automation tool for Ruby. You can define and run tasks like database migration, tests, and other automations.</p>
+</li>
+<li>
+<p><strong>RSpec</strong>   - Command: <code>bundle exec rspec spec/</code>, Used for running tests in Ruby projects, especially for behavior-driven development (BDD).</p>
+</li>
+<li>
+<p><strong>Rubocop</strong>   - Command: <code>bundle exec rubocop .</code>, A Ruby static code analyzer and code formatter, Rubocop helps in adhering to coding standards.</p>
+</li>
+<li>
+<p><strong>Capistrano</strong>   - Command: <code>bundle exec cap production deploy</code>, A tool for automating deployment and server management.</p>
+</li>
+<li>
+<p><strong>Rails</strong>   - Command: <code>bundle exec rails server</code>, If you’re working on a Ruby on Rails application, you use this command to interact with the Rails framework, such as running the server or database migrations.</p>
+</li>
+<li>
+<p><strong>Middleman</strong>   - Command: <code>bundle exec middleman build</code>, A static site generator like Jekyll, but Middleman is often used for more complex static sites.</p>
+</li>
+<li>
+<p><strong>Cucumber</strong>   - Command: <code>bundle exec cucumber</code>, A tool for running automated acceptance tests written in a behavior-driven development style.</p>
+</li>
+<li>
+<p><strong>Guard</strong>   - Command: <code>bundle exec guard</code>, A command-line tool to automatically run tests or other tasks when files are modified.</p>
+</li>
+<li>
+<p><strong>Puma</strong>   - Command: <code>bundle exec puma -C config/puma.rb</code>, A web server optimized for running Ruby web applications like Rails.</p>
+</li>
+<li>
+<p><strong>Sidekiq</strong>   - Command: <code>bundle exec sidekiq</code>, Used for background processing in Rails or Ruby applications.</p>
+</li>
+<li>
+<p><strong>Brakeman</strong>   - Command: <code>bundle exec brakeman</code>, A static analysis tool to check for security vulnerabilities in Ruby on Rails applications.</p>
+</li>
+<li>
+<p><strong>Jekyll</strong>   - Command: <code>bundle exec jekyll</code>, Jekyll commands for building, serving, and deploying static sites.</p>
+</li>
+<li>
+<p><strong>Thoreau</strong>   - Command: <code>bundle exec thoreau server</code>, A content management system for Markdown blogs, similar to Jekyll.</p>
+</li>
+<li>
+<p><strong>Sinatra</strong>   - Command: <code>bundle exec sinatra app.rb</code>, If you&rsquo;re using Sinatra, a Ruby framework for web applications, you can run its commands with <code>bundle exec</code>.</p>
+</li>
+<li>
+<p><strong>Foreman</strong>   - Command: <code>bundle exec foreman start</code>, A tool to run multiple processes concurrently, often used for managing processes in development.</p>
+</li>
+<li>
+<p><strong>Overcommit</strong>   - Command: <code>bundle exec overcommit --install</code>, A Git hook manager for Ruby projects.</p>
+</li>
+<li>
+<p><strong>Fastlane</strong>   - Command: <code>bundle exec fastlane release</code>, Automates building and releasing mobile apps.</p>
+</li>
+</ol>
+<p>You can execute any Ruby-based tool or framework installed through the <code>Gemfile</code> by using <code>bundle exec</code>. This ensures you&rsquo;re using the correct versions of gems defined in the <code>Gemfile.lock</code>.</p>
+<h2 id="hashtags">Hashtags</h2>
+<p>#Ruby
+#Bundler
+#RubyOnRails
+#DependencyManagement
+#Gemfile
+#GemDependencies
+#WebDevelopment
+#OpenSource
+#RubyGems
+#ProgrammingTools</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

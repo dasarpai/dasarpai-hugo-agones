@@ -1,0 +1,791 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Exploring AnythingLLM | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/exploring-anythingllm/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Exploring AnythingLLM">
+  <meta property="og:description" content="Exploring AnythingLLM What is AnythingLLM? AnythingLLM is an open-source project developed by Mintplex Labs that offers a highly flexible platform for creating personalized language models and knowledge databases. It operates using Retrieval-Augmented Generation (RAG), which combines language models with data from custom document collections. AnythingLLM supports embedding models (e.g., BERT), language models, and vector databases to index and query data, allowing users to fine-tune or deploy various models tailored to their needs, from local deployments to cloud integrations with OpenAI or Azure OpenAI.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-11-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="LLM">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Vector Databases">
+    <meta property="article:tag" content="RAG">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="Natural Language Processing">
+
+  <meta itemprop="name" content="Exploring AnythingLLM">
+  <meta itemprop="description" content="Exploring AnythingLLM What is AnythingLLM? AnythingLLM is an open-source project developed by Mintplex Labs that offers a highly flexible platform for creating personalized language models and knowledge databases. It operates using Retrieval-Augmented Generation (RAG), which combines language models with data from custom document collections. AnythingLLM supports embedding models (e.g., BERT), language models, and vector databases to index and query data, allowing users to fine-tune or deploy various models tailored to their needs, from local deployments to cloud integrations with OpenAI or Azure OpenAI.">
+  <meta itemprop="datePublished" content="2024-11-11T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="2816">
+  <meta itemprop="keywords" content="AnythingLLM,personalized language models,knowledge databases,Retrieval-Augmented Generation,RAG,BERT,embedding models">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exploring AnythingLLM">
+  <meta name="twitter:description" content="Exploring AnythingLLM What is AnythingLLM? AnythingLLM is an open-source project developed by Mintplex Labs that offers a highly flexible platform for creating personalized language models and knowledge databases. It operates using Retrieval-Augmented Generation (RAG), which combines language models with data from custom document collections. AnythingLLM supports embedding models (e.g., BERT), language models, and vector databases to index and query data, allowing users to fine-tune or deploy various models tailored to their needs, from local deployments to cloud integrations with OpenAI or Azure OpenAI.">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p><img src="/assets/images/dspost/dsp6179-exploring-anythingllm.jpg" alt="Exploring AnythingLLM "></p>
+<h1 id="exploring-anythingllm">Exploring AnythingLLM</h1>
+<h2 id="what-is-anythingllm">What is AnythingLLM?</h2>
+<p>AnythingLLM is an open-source project developed by Mintplex Labs that offers a highly flexible platform for creating personalized language models and knowledge databases. It operates using Retrieval-Augmented Generation (RAG), which combines language models with data from custom document collections. AnythingLLM supports embedding models (e.g., BERT), language models, and vector databases to index and query data, allowing users to fine-tune or deploy various models tailored to their needs, from local deployments to cloud integrations with OpenAI or Azure OpenAI.</p>
+<p>This platform includes options for local and cloud setups, with compatibility across popular vector storage options like Pinecone and Chroma. Its modular design allows for custom skills, integration with chat interfaces, and an API for embedding it in different applications. Additionally, AnythingLLM&rsquo;s GUI simplifies the setup process, while advanced configuration allows for document uploads, embedding, and model fine-tuning, making it a versatile choice for developing personalized AI solutions on a budget.</p>
+<h2 id="what-are-limitations-of-anythingllm">What are limitations of AnythingLLM?</h2>
+<p>AnythingLLM, though powerful for local and private large language model (LLM) deployment, has a few limitations:</p>
+<ol>
+<li>
+<p><strong>High Resource Demand</strong>: Running AnythingLLM, especially with larger language models, requires significant hardware resources such as high-performance CPUs or GPUs. Users with older or less powerful hardware might face performance issues or even struggle to run larger models locally.</p>
+</li>
+<li>
+<p><strong>Limited Model Availability</strong>: Although it supports several open-source models, AnythingLLM has fewer model options compared to some cloud-based LLM services. This can limit its flexibility for users who want access to proprietary models or need advanced, frequently updated LLMs that are not available locally.</p>
+</li>
+<li>
+<p><strong>No Built-in LLM for Cloud Version</strong>: The hosted cloud version of AnythingLLM does not include a built-in LLM, requiring users to integrate external models. This setup can add complexity and might not be ideal for those expecting an all-in-one solution.</p>
+</li>
+<li>
+<p><strong>Maintenance and Updates</strong>: Keeping up with AI advancements means frequent updates, model downloads, and possibly migrating to newer versions. This maintenance responsibility can be a burden, especially as AI software evolves rapidly.</p>
+</li>
+<li>
+<p><strong>Performance Trade-Offs</strong>: For locally deployed AnythingLLM, there may be performance limitations compared to cloud-based AI solutions. Larger models can experience slower response times on less capable hardware, which can impact user experience.</p>
+</li>
+</ol>
+<p>Overall, AnythingLLM provides substantial privacy benefits and customization potential, but these come with a trade-off in terms of resources, ongoing maintenance, and model availability, making it best suited for users with the required technical setup and hardware capabilities.</p>
+<h2 id="what-modalities-anythingllm-supports">What modalities AnythingLLM supports?</h2>
+<p>AnythingLLM supports several modalities, enabling it to handle both text-based and image-based tasks. Specifically, it can process text-to-text and image-to-text interactions, making it suitable for applications involving both text generation and understanding of visual content. This multi-modal capability allows for enhanced flexibility in tasks such as document parsing, conversation, and image captioning.</p>
+<p>Additionally, AnythingLLM integrates various LLM providers, supporting a broad range of language models, including those capable of text generation and analysis. It allows users to customize setups with both local and cloud-based language models, transcription tools, and vector databases for more advanced functionality.</p>
+<h2 id="can-i-use-anythingllm-for-questions-answering-youtube-videos">Can I use AnythingLLM for questions answering youtube videos?</h2>
+<p>Yes, AnythingLLM does support transcription capabilities, which can be used for audio or video content, including YouTube videos, depending on the integrated transcription model. AnythingLLM includes built-in support for audio transcription through its own transcription setup and can also utilize OpenAI&rsquo;s Whisper model for transcription. This means that if configured correctly, AnythingLLM can process and transcribe the audio from a YouTube video, assuming the audio data is accessible through a compatible format or direct audio extraction.</p>
+<p>In practice, transcription of YouTube videos typically involves extracting the audio track first and then feeding it into the transcription model within AnythingLLM. This setup can help convert spoken content in videos into text, making it searchable and usable within the platform’s AI-driven content management system.</p>
+<p>For detailed setup instructions on configuring transcription services in AnythingLLM, check the official documentation or specific configurations for enabling OpenAI&rsquo;s Whisper or other transcription models.</p>
+<h2 id="can-i-use-anythinllm-for-questions-answering-podcast-and-telephonic-conversation">Can I use AnythinLLM for questions answering Podcast and telephonic conversation?</h2>
+<p>Yes, AnythingLLM can support question-answering for your own MP3 files containing podcasts or discussions, provided you set up transcription and indexing of the audio content. Here’s how it works:</p>
+<ol>
+<li>
+<p><strong>Transcription</strong>: First, AnythingLLM transcribes the MP3 files using built-in transcription options, such as its native transcription service or external integrations like OpenAI’s Whisper model. This converts spoken content in the audio files into searchable text format.</p>
+</li>
+<li>
+<p><strong>Indexing and Embedding</strong>: Once transcribed, the text is processed into embeddings (vector representations) and stored in a vector database, which enables fast and relevant text retrieval. You can use compatible vector databases like Pinecone, LanceDB, or Chroma for this.</p>
+</li>
+<li>
+<p><strong>Question-Answering</strong>: With the content indexed, AnythingLLM uses a Retrieval-Augmented Generation (RAG) setup, where it retrieves relevant sections from the transcribed text and feeds them to a language model to generate accurate answers based on the content of your MP3 files.</p>
+</li>
+</ol>
+<p>This setup allows you to ask questions directly related to the content of the transcribed podcasts or discussions, making AnythingLLM a useful tool for managing and querying audio-based knowledge sources.</p>
+<h2 id="why-i-see-output-quality-of-anythingllm-is-not-as-good-as-chatgpt">Why I see output quality of AnythingLLM is not as good as ChatGPT?</h2>
+<p>If the answers from AnythingLLM seem short, incomplete, or lack creativity, this is likely due to limitations in retrieval and response generation. Here are several strategies to enhance response quality:</p>
+<ol>
+<li>
+<p><strong>Expand Retrieval Context</strong>:</p>
+<ul>
+<li><strong>Increase Context Window</strong>: Adjust the retrieval settings to pull in a larger context. Instead of returning only short snippets, configure it to bring in extended passages or multiple relevant paragraphs. This gives the language model more material to create comprehensive answers.</li>
+<li><strong>Multiple Document Sources</strong>: If the dataset includes only a single document or limited data, consider adding a wider range of content on the same topic. This can provide the model with diverse perspectives, improving answer richness.</li>
+</ul>
+</li>
+<li>
+<p><strong>Improve Language Model Parameters</strong>:</p>
+<ul>
+<li><strong>Use Creative-Friendly Models</strong>: Switch to an LLM known for creative or conversational responses. Models from OpenAI (like GPT-4) or Anthropic’s Claude are designed for more nuanced answers, which can improve response quality.</li>
+<li><strong>Temperature and Sampling Tweaks</strong>: Adjust generation settings like temperature and sampling. Increasing the temperature (e.g., setting it between 0.7 and 1.0) encourages more varied and creative responses, while controlled sampling prevents overly random output.</li>
+</ul>
+</li>
+<li>
+<p><strong>Fine-Tune with Customized Datasets</strong>:</p>
+<ul>
+<li><strong>Fine-Tune for Depth and Completeness</strong>: Fine-tuning the model on datasets specifically containing well-rounded answers, thorough explanations, or even creative writing can result in more detailed and engaging outputs.</li>
+<li><strong>Add Examples</strong>: Use few-shot prompting by embedding examples of the type of detailed, thoughtful answers you expect. This can help guide the model toward producing responses in the desired format and tone.</li>
+</ul>
+</li>
+<li>
+<p><strong>Use RAG with Enhanced Retrieval Techniques</strong>:</p>
+<ul>
+<li><strong>Semantic Search Adjustments</strong>: Improve the vector search technique by adjusting similarity thresholds to capture contextually rich matches instead of only highly specific or direct matches. A broader semantic range may lead to retrieving content that allows for a more creative and complete answer generation.</li>
+<li><strong>Response Re-ranking</strong>: Implement a secondary filtering or re-ranking mechanism that prioritizes responses with more context or depth, ensuring only the most relevant and comprehensive retrievals are processed by the language model.</li>
+</ul>
+</li>
+<li>
+<p><strong>Experiment with Advanced Models in the Pipeline</strong>:</p>
+<ul>
+<li>Integrate models that excel at rephrasing or summarizing text (e.g., T5 for summarization) as a second step after initial generation. This approach can help refine short or incomplete answers into more comprehensive responses.</li>
+</ul>
+</li>
+</ol>
+<p>These techniques collectively can improve AnythingLLM’s answer quality, yielding responses that are more informative, creative, and aligned with your needs for detail and engagement.</p>
+<h2 id="what-vector-database-anythingllm-supports-for-local-implementation">What vector database AnythingLLM supports for local implementation?</h2>
+<p>For local implementations of AnythingLLM, you generally need to set up and maintain a separate vector database, as it does not come with an integrated vector storage solution. However, it supports integration with various vector databases, including:</p>
+<ol>
+<li><strong>LanceDB</strong> (local or hosted option): Often chosen for its lightweight, open-source compatibility with embedding and vector management.</li>
+<li><strong>Pinecone</strong> and <strong>Chroma</strong>: Both are commonly used vector databases that are suitable for handling larger datasets and advanced search capabilities. Pinecone is a managed cloud option, while Chroma can be set up locally.</li>
+<li><strong>Astra DB by Datastax</strong>: This is another option if you are looking for a more robust, managed solution that integrates well with large-scale applications.</li>
+</ol>
+<p>For local setups, <strong>LanceDB</strong> and <strong>Chroma</strong> are commonly recommended due to ease of installation and maintenance. By installing and running one of these vector databases locally, you can store and manage embeddings without relying on cloud solutions, keeping the data fully within your environment.</p>
+<h2 id="how-to-install-and-integrate-and-configure-these-vector-databases-with-anythingllm">How to install and integrate and configure these vector databases with AnythingLLM?</h2>
+<p>To set up and configure vector databases like LanceDB, Pinecone, and Chroma with AnythingLLM, here are the steps for each:</p>
+<h3 id="1-lancedb-local-option">1. <strong>LanceDB (Local Option)</strong></h3>
+<ul>
+<li><strong>Installation</strong>: LanceDB can be installed locally with:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install lancedb
+</span></span></code></pre></div></li>
+<li><strong>Configuration</strong>:
+<ul>
+<li>After installation, configure LanceDB in the AnythingLLM settings or configuration file to define it as the vector database.</li>
+<li>In the configuration, specify the path or connection parameters for LanceDB if required, and ensure AnythingLLM knows to use LanceDB as the default database for vector storage.</li>
+</ul>
+</li>
+<li><strong>Integration</strong>:
+<ul>
+<li>Within AnythingLLM, set up embeddings generation so that each document or text snippet creates vectors that are then stored in LanceDB. This setup usually includes embedding the data and pushing the vectors to LanceDB&rsquo;s storage engine.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-chroma-local-or-managed">2. <strong>Chroma (Local or Managed)</strong></h3>
+<ul>
+<li><strong>Installation</strong>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install chromadb
+</span></span></code></pre></div></li>
+<li><strong>Configuration</strong>:
+<ul>
+<li>Launch a Chroma instance locally by setting up the required environment in a Docker container or as a standalone service.</li>
+<li>Update the AnythingLLM configuration to connect to Chroma’s API. This typically involves specifying Chroma’s base URL or the server’s local address.</li>
+</ul>
+</li>
+<li><strong>Integration</strong>:
+<ul>
+<li>Chroma organizes data as collections, where each collection holds similar types of documents. In AnythingLLM, set each document category to a specific Chroma collection, and ensure vectors are stored accordingly.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-pinecone-managed-cloud">3. <strong>Pinecone (Managed Cloud)</strong></h3>
+<ul>
+<li><strong>Setup</strong>: Pinecone requires a subscription to use its cloud-hosted vector database. Register for an API key at <a href="https://www.pinecone.io">Pinecone.io</a>.</li>
+<li><strong>Installation and Configuration</strong>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install pinecone-client
+</span></span></code></pre></div><ul>
+<li>Initialize the Pinecone client within AnythingLLM by adding the API key in the configuration file.</li>
+<li>Set up a Pinecone index, which acts as a vector storage for embeddings. Define the metric type (e.g., cosine similarity) and dimension to match the embeddings AnythingLLM generates.</li>
+</ul>
+</li>
+<li><strong>Integration</strong>:
+<ul>
+<li>After setup, AnythingLLM can send vectors to Pinecone for indexing and retrieval. Configure the query parameters in AnythingLLM to use Pinecone’s API for real-time similarity searches and retrieval.</li>
+</ul>
+</li>
+</ul>
+<h3 id="general-steps-to-integrate-with-anythingllm">General Steps to Integrate with AnythingLLM</h3>
+<ol>
+<li><strong>Edit Configuration</strong>: In the AnythingLLM configuration file, define the connection settings for the selected vector database, such as API keys for Pinecone or paths for local databases.</li>
+<li><strong>Embed and Store Data</strong>: Configure AnythingLLM to generate embeddings for your documents and store them in the connected vector database.</li>
+<li><strong>Test Retrieval</strong>: Run a few test queries to ensure the embeddings are being stored correctly and can be retrieved as expected.</li>
+</ol>
+<p>For detailed setup, refer to the <a href="https://docs.anythingllm.com">official AnythingLLM documentation</a> for each specific database integration and API setup instructions.</p>
+<h2 id="how-to-install-chormadb-docker-container-on-wsl">How to install chormadb docker container on wsl?</h2>
+<p>To install <strong>ChromaDB</strong> in a Docker container on <strong>WSL (Windows Subsystem for Linux)</strong>, follow these steps:</p>
+<h3 id="prerequisites">Prerequisites:</h3>
+<ul>
+<li><strong>WSL</strong> (preferably WSL2) installed on your Windows machine.</li>
+<li><strong>Docker</strong> installed and running within your WSL environment. You can install Docker on WSL by following the official <a href="https://docs.docker.com/desktop/install/windows-install/">Docker installation guide for WSL2</a>.</li>
+</ul>
+<h3 id="step-by-step-guide">Step-by-Step Guide:</h3>
+<ol>
+<li>
+<p><strong>Install Docker</strong> in WSL (if not done already):</p>
+<ul>
+<li>First, ensure Docker is installed and running. Open your WSL terminal and verify Docker installation:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker --version
+</span></span></code></pre></div></li>
+<li>If Docker is not installed, follow these commands to install Docker in WSL2:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install -y docker.io
+</span></span><span style="display:flex;"><span>sudo systemctl enable --now docker
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Pull the ChromaDB Docker Image</strong>:</p>
+<ul>
+<li>Open your WSL terminal and run the following command to pull the ChromaDB Docker image from Docker Hub:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull chromadb/chroma
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Run ChromaDB in a Docker Container</strong>:</p>
+<ul>
+<li>Once the image is downloaded, you can run ChromaDB in a Docker container with this command:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d -p 6333:6333 chromadb/chroma
+</span></span></code></pre></div></li>
+<li>This command does the following:
+<ul>
+<li><code>-d</code>: Runs the container in detached mode.</li>
+<li><code>-p 6333:6333</code>: Exposes the ChromaDB service on port 6333.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify ChromaDB is Running</strong>:</p>
+<ul>
+<li>Check if the ChromaDB container is running by using:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker ps
+</span></span></code></pre></div></li>
+<li>You should see the Chroma container running on port <code>6333</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Connect to ChromaDB from AnythingLLM</strong>:</p>
+<ul>
+<li>Once the ChromaDB Docker container is running, update your <strong>AnythingLLM</strong> configuration to point to <code>http://localhost:6333</code> (or the IP address of your WSL2 environment) as the ChromaDB host.</li>
+</ul>
+</li>
+<li>
+<p><strong>Testing the ChromaDB Container</strong>:</p>
+<ul>
+<li>You can test if ChromaDB is responding correctly by accessing the API endpoint. Use a tool like <code>curl</code> to test:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://localhost:6333
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<h3 id="example-docker-compose-setup-optional-for-simplified-management">Example Docker-Compose Setup (Optional for Simplified Management)</h3>
+<p>If you prefer to use Docker Compose, you can create a <code>docker-compose.yml</code> file in your project directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3.8&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">chromadb</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">chromadb/chroma</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;6333:6333&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">unless-stopped</span>
+</span></span></code></pre></div><p>Run the Docker Compose with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up -d
+</span></span></code></pre></div><p>This setup allows you to run ChromaDB on your local machine in WSL and integrate it with AnythingLLM or other applications requiring vector databases.</p>
+<h2 id="is-deepseek25-or-deepseek-llm-7b-good-for-summarization-rag-qa">Is deepseek2.5 or deepseek-llm-7b good for summarization, RAG, Q&amp;A?</h2>
+<p><strong>DeepSeek 2.5</strong> and <strong>DeepSeek-LLM-7B</strong> are both designed for natural language processing tasks like summarization, retrieval-augmented generation (RAG), and question-answering (Q&amp;A), but their effectiveness depends on the specific requirements and use case.</p>
+<h3 id="1-deepseek-25">1. <strong>DeepSeek 2.5</strong>:</h3>
+<ul>
+<li><strong>Summarization</strong>: DeepSeek 2.5, being a large language model, can handle summarization tasks, as it is designed to process and generate concise summaries of long text. It leverages its context window and semantic understanding to condense content effectively. However, for best results, it should be fine-tuned or prompted appropriately to focus on summarization-specific tasks.</li>
+<li><strong>RAG (Retrieval-Augmented Generation)</strong>: DeepSeek 2.5 can perform well in a RAG setup if integrated with a vector database for retrieval. It can leverage external knowledge and generate more relevant responses based on the context retrieved, which is useful for knowledge-intensive tasks like Q&amp;A.</li>
+<li><strong>Q&amp;A</strong>: Given its general-purpose NLP capabilities, DeepSeek 2.5 is effective in answering questions, especially when the input data is well-structured and the questions are aligned with the model&rsquo;s training data.</li>
+</ul>
+<h3 id="2-deepseek-llm-7b">2. <strong>DeepSeek-LLM-7B</strong>:</h3>
+<ul>
+<li><strong>Summarization</strong>: With 7 billion parameters, DeepSeek-LLM-7B is capable of performing high-quality summarization tasks, especially for long-form content. Larger models typically exhibit better capabilities in summarizing complex or dense information while maintaining coherence and relevance.</li>
+<li><strong>RAG</strong>: DeepSeek-LLM-7B&rsquo;s ability to generate contextually rich and coherent responses makes it a good candidate for RAG tasks. By combining it with retrieval systems, this model can improve the accuracy and relevance of generated responses based on external information.</li>
+<li><strong>Q&amp;A</strong>: This model is specifically well-suited for Q&amp;A tasks due to its larger scale and ability to process complex queries and context. It can handle both direct and inference-based questions, offering detailed, fact-based, and nuanced responses.</li>
+</ul>
+<h3 id="comparison">Comparison:</h3>
+<ul>
+<li><strong>DeepSeek-LLM-7B</strong> is likely to outperform <strong>DeepSeek 2.5</strong> in terms of handling complex and resource-intensive tasks like summarization, RAG, and Q&amp;A due to its larger scale (7 billion parameters) and improved understanding of language nuances. Models with more parameters generally provide better performance on tasks requiring deep contextual understanding, like generating coherent summaries or answering questions with diverse context.</li>
+</ul>
+<h3 id="conclusion">Conclusion:</h3>
+<ul>
+<li><strong>For Summarization and Q&amp;A</strong>, both models can work, but <strong>DeepSeek-LLM-7B</strong> offers higher quality outputs, especially in more complex scenarios.</li>
+<li><strong>For RAG</strong>, <strong>DeepSeek-LLM-7B</strong> will likely offer more nuanced and relevant responses, especially when paired with a powerful retrieval system, making it a better choice for advanced use cases.</li>
+</ul>
+<p>If you&rsquo;re looking for high-quality responses with the ability to deal with complex queries and diverse inputs, <strong>DeepSeek-LLM-7B</strong> is generally the better choice for these tasks.</p>
+<h2 id="what-embedding-model-anythingllm-uses">What embedding model AnythingLLM uses?</h2>
+<p><strong>AnythingLLM</strong> uses a variety of embedding models depending on the specific implementation and configuration. Some commonly used embedding models include:</p>
+<ol>
+<li>
+<p><strong>OpenAI Embedding Models</strong>:</p>
+<ul>
+<li>AnythingLLM can leverage OpenAI&rsquo;s powerful models for embedding generation, such as those based on <strong>GPT-3</strong> or <strong>GPT-4</strong>. These models are typically used to create dense vector representations of text that capture semantic meaning, making them suitable for tasks like similarity search, question answering, and information retrieval.</li>
+</ul>
+</li>
+<li>
+<p><strong>Sentence-Transformers (e.g., <code>all-MiniLM-L6-v2</code>)</strong>:</p>
+<ul>
+<li>For tasks requiring lightweight and efficient embeddings, <strong>Sentence-Transformers</strong> can be used in AnythingLLM. Models like <code>all-MiniLM-L6-v2</code> are commonly employed to generate embeddings that are particularly effective in capturing sentence-level semantic information. These embeddings are useful for document search, clustering, and retrieval-based tasks.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hugging Face Transformers</strong>:</p>
+<ul>
+<li><strong>AnythingLLM</strong> may also support embeddings generated by models available on <strong>Hugging Face</strong>, such as <strong>BERT</strong>, <strong>DistilBERT</strong>, and <strong>RoBERTa</strong>, which are fine-tuned for various NLP tasks including document classification, summarization, and Q&amp;A. These models can be integrated depending on the user’s needs.</li>
+</ul>
+</li>
+<li>
+<p><strong>Custom or Domain-Specific Embeddings</strong>:</p>
+<ul>
+<li>In some cases, users may fine-tune or deploy their own embeddings using specialized models tailored for particular domains. For instance, embeddings trained on domain-specific data can help in improving the performance of AnythingLLM on highly specialized tasks.</li>
+</ul>
+</li>
+</ol>
+<h3 id="key-points">Key Points:</h3>
+<ul>
+<li><strong>AnythingLLM</strong> offers flexibility by supporting different embedding models depending on user needs and configuration.</li>
+<li><strong>OpenAI models</strong> and <strong>Sentence-Transformers</strong> are the most common options.</li>
+<li>Integration with <strong>Hugging Face models</strong> and custom embeddings allows for specialized use cases.</li>
+</ul>
+<p>By utilizing these models, AnythingLLM is capable of handling various NLP tasks, from document retrieval to advanced question answering.</p>
+<div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/llm" class="category-badge">LLM</a><a href="/tags/ai" class="category-badge">AI</a><a href="/tags/vector-databases" class="category-badge">Vector Databases</a><a href="/tags/rag" class="category-badge">RAG</a><a href="/tags/machine-learning" class="category-badge">Machine Learning</a><a href="/tags/natural-language-processing" class="category-badge">Natural Language Processing</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=Exploring%20AnythingLLM&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fexploring-anythingllm%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fexploring-anythingllm%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fexploring-anythingllm%2f&title=Exploring%20AnythingLLM" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fexploring-anythingllm%2f&title=Exploring%20AnythingLLM" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=Exploring%20AnythingLLM&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fexploring-anythingllm%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/Navigating-Python-Ecosystem/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">Navigating Python Ecosystem</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/exploring-gguf-and-other-model-formats/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">Exploring GGUF and Other Model Formats</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-anythingllm">What is AnythingLLM?</a></li>
+    <li><a href="#what-are-limitations-of-anythingllm">What are limitations of AnythingLLM?</a></li>
+    <li><a href="#what-modalities-anythingllm-supports">What modalities AnythingLLM supports?</a></li>
+    <li><a href="#can-i-use-anythingllm-for-questions-answering-youtube-videos">Can I use AnythingLLM for questions answering youtube videos?</a></li>
+    <li><a href="#can-i-use-anythinllm-for-questions-answering-podcast-and-telephonic-conversation">Can I use AnythinLLM for questions answering Podcast and telephonic conversation?</a></li>
+    <li><a href="#why-i-see-output-quality-of-anythingllm-is-not-as-good-as-chatgpt">Why I see output quality of AnythingLLM is not as good as ChatGPT?</a></li>
+    <li><a href="#what-vector-database-anythingllm-supports-for-local-implementation">What vector database AnythingLLM supports for local implementation?</a></li>
+    <li><a href="#how-to-install-and-integrate-and-configure-these-vector-databases-with-anythingllm">How to install and integrate and configure these vector databases with AnythingLLM?</a>
+      <ul>
+        <li><a href="#1-lancedb-local-option">1. <strong>LanceDB (Local Option)</strong></a></li>
+        <li><a href="#2-chroma-local-or-managed">2. <strong>Chroma (Local or Managed)</strong></a></li>
+        <li><a href="#3-pinecone-managed-cloud">3. <strong>Pinecone (Managed Cloud)</strong></a></li>
+        <li><a href="#general-steps-to-integrate-with-anythingllm">General Steps to Integrate with AnythingLLM</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-to-install-chormadb-docker-container-on-wsl">How to install chormadb docker container on wsl?</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites:</a></li>
+        <li><a href="#step-by-step-guide">Step-by-Step Guide:</a></li>
+        <li><a href="#example-docker-compose-setup-optional-for-simplified-management">Example Docker-Compose Setup (Optional for Simplified Management)</a></li>
+      </ul>
+    </li>
+    <li><a href="#is-deepseek25-or-deepseek-llm-7b-good-for-summarization-rag-qa">Is deepseek2.5 or deepseek-llm-7b good for summarization, RAG, Q&amp;A?</a>
+      <ul>
+        <li><a href="#1-deepseek-25">1. <strong>DeepSeek 2.5</strong>:</a></li>
+        <li><a href="#2-deepseek-llm-7b">2. <strong>DeepSeek-LLM-7B</strong>:</a></li>
+        <li><a href="#comparison">Comparison:</a></li>
+        <li><a href="#conclusion">Conclusion:</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-embedding-model-anythingllm-uses">What embedding model AnythingLLM uses?</a>
+      <ul>
+        <li><a href="#key-points">Key Points:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

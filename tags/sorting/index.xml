@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sorting on Agones</title>
+    <link>http://localhost:1313/tags/sorting/</link>
+    <description>Recent content in Sorting on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/sorting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sorting Algorithm A Summary</title>
+      <link>http://localhost:1313/dsblog/Sorting-Algorithm-A-Summary/</link>
+      <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Sorting-Algorithm-A-Summary/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6071-Sorting-Algorithm-A-Summary.jpg&#34; alt=&#34;Sorting Algorithm A Summary&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;sorting-algorithm-a-summary&#34;&gt;Sorting Algorithm A Summary&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Sorting is a fundamental operation in computer science and plays a vital role in various applications. Whether it&amp;rsquo;s organizing data, searching for specific elements efficiently, or preparing data for further processing, sorting algorithms provide the necessary tools to bring order to chaos. With a wide range of sorting techniques available, each with its own strengths and weaknesses, it is essential to understand their principles, time complexities, and trade-offs.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

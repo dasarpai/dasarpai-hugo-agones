@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GPT3 on Agones</title>
+    <link>http://localhost:1313/tags/gpt3/</link>
+    <description>Recent content in GPT3 on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gpt3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GPT Usecases</title>
+      <link>http://localhost:1313/dsblog/gpt-usecases/</link>
+      <pubDate>Thu, 05 Jan 2023 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/gpt-usecases/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6020-GPT-Usecases.jpg&#34; alt=&#34;GPT Usecases&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-gpt&#34;&gt;What is GPT?&lt;/h1&gt;&#xA;&lt;p&gt;GPT is a transformer. Don&amp;rsquo;t confuse it with your electricity transformer! In Artificial Intelligence there are different kinds of neural network architectures to perform various tasks like classification, translation, segmentation, regression, etc. One of those architectures is transformer architecture. The Foundation of this architecture is based on another two architectures called encoder architecture and decoder architecture. There are lots of other technical complexity but for the business readers I am hiding that for that the time being, we will discuss that at some other place. In nutshell, GPT is a Transformer technology developed by OpenAI and it can perform several NLP tasks. NLP stands for natural language preprocessing. NLP tasks mean tasks like sentiment analysis of the text, text classification, topic modeling, translation, named entity recognition, and dozens of other tasks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ChatGPT Usecases</title>
+      <link>http://localhost:1313/dsblog/chatgpt-usecases/</link>
+      <pubDate>Wed, 04 Jan 2023 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/chatgpt-usecases/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6019-ChatGPT-Usecases.jpg&#34; alt=&#34;ChatGPT Usecases&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-chatgpt&#34;&gt;What is ChatGPT?&lt;/h1&gt;&#xA;&lt;p&gt;ChatGPT is &lt;strong&gt;general purpose&lt;/strong&gt; - &amp;ldquo;chat model&amp;rdquo; from OpenAI. It is a &lt;strong&gt;language model&lt;/strong&gt;, which means if you type some text then it can understand and respond to you appropriately. At this point in time, it is not accepting voice commands, neither able to process images or videos. A &lt;strong&gt;general-purpose model&lt;/strong&gt; means it can understand the question coming from any domain of life. A domain may be vertical or horizontal. A vertical domain means where a vendor is supplying a product or service for a specific type of customer. A horizontal domain is where a vendor supplies products or services for all types of customer.  Healthcare, banking, logistic, insurance, agriculture, philosophy, history, and economics are one kind of verticals whereas&#xA;BPO, Quality Management, Software Development, Taxation, HR, IT Security, Accounting, Office Administration, Catering, and Entertainment are other kind of domains. A &lt;strong&gt;general-purpose model&lt;/strong&gt; can understand the questions from all aspects of life whether business vertical or horizontal or normal daily family or conflicts with other group members, family members, etc.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

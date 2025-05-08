@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OOPs on Agones</title>
+    <link>http://localhost:1313/tags/oops/</link>
+    <description>Recent content in OOPs on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/oops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Code Snippnet from Colab</title>
+      <link>http://localhost:1313/dsblog/Python-Code-Snippnet-from-Colab/</link>
+      <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Python-Code-Snippnet-from-Colab/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6149-Python-Code-Snippnet-from-Colab.jpg&#34; alt=&#34;Python Code Snippnet from Colab&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;python-code-snippnet-from-colab&#34;&gt;Python Code Snippnet from Colab&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-snippet&#34;&gt;What is snippet?&lt;/h2&gt;&#xA;&lt;p&gt;A &lt;strong&gt;snippet&lt;/strong&gt; is a small, reusable piece of code designed to perform a specific task or solve a particular problem. It’s often just a few lines long and is meant to be quickly inserted into a larger program to save time or avoid re-writing commonly used functions.&lt;/p&gt;&#xA;&lt;h3 id=&#34;key-features-of-a-snippet&#34;&gt;Key Features of a Snippet:&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Short and specific&lt;/strong&gt;: Snippets usually address a single functionality or task, such as reading a file, making a network request, or sorting data.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Reusable&lt;/strong&gt;: Snippets can be reused in multiple projects without modification.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Pre-tested&lt;/strong&gt;: Snippets are typically pre-tested, so you can trust them to work in many situations.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Contextual&lt;/strong&gt;: A snippet often relies on a specific environment or language and may need to be adapted slightly to fit your use case.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;example-of-a-snippet&#34;&gt;Example of a Snippet:&lt;/h3&gt;&#xA;&lt;p&gt;For example, if you frequently need to read a file in Python, you might save a snippet like this:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

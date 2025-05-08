@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Conversation on Agones</title>
+    <link>http://localhost:1313/tags/ai-conversation/</link>
+    <description>Recent content in AI Conversation on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai-conversation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Transfer Learning Key AI Techniques Explained</title>
+      <link>http://localhost:1313/dsblog/Transfer-Learning-Key-AI-Techniques-Explained/</link>
+      <pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Transfer-Learning-Key-AI-Techniques-Explained/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6172-Transfer-Learning-Key-AI-Techniques-Explained.jpg&#34; alt=&#34;Transfer Learning Key AI Techniques Explained&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;transfer-learning-key-ai-techniques-explained&#34;&gt;Transfer Learning Key AI Techniques Explained&lt;/h1&gt;&#xA;&lt;p&gt;In this article we will understand some important concepts used within machine learning.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;What is in-context Learning?&lt;/li&gt;&#xA;&lt;li&gt;What is Prompt-Engineering?&lt;/li&gt;&#xA;&lt;li&gt;What is the relationship between Prompt Engineering and In-Context Learning?&lt;/li&gt;&#xA;&lt;li&gt;What is Zero-shot learning?&lt;/li&gt;&#xA;&lt;li&gt;How Zero-shot learning is different from In-context Learning?&lt;/li&gt;&#xA;&lt;li&gt;What is Meta-Learning?&lt;/li&gt;&#xA;&lt;li&gt;What is Few-shot learning?&lt;/li&gt;&#xA;&lt;li&gt;Do we need foundational models for Meta-learning and Few-shot learning?&lt;/li&gt;&#xA;&lt;li&gt;What is transfer learning?&lt;/li&gt;&#xA;&lt;li&gt;How do we do transfer learning from existing model?&lt;/li&gt;&#xA;&lt;li&gt;What is finetuning?&lt;/li&gt;&#xA;&lt;li&gt;Which layers to update, what weight to update during finetuning?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;prompt-engineering-in-context-learning-and-zero-shot-learning&#34;&gt;Prompt Engineering, In Context Learning and Zero-shot Learning&lt;/h2&gt;&#xA;&lt;h3 id=&#34;what-is-in-context-learning&#34;&gt;What is in-context Learning?&lt;/h3&gt;&#xA;&lt;p&gt;In-Context Learning refers to a model&amp;rsquo;s ability to adapt its responses based on the context provided in the input prompt without updating its parameters or undergoing explicit training. The model uses the examples, instructions, or context given in the input to influence its behavior during inference.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Navigating the JavaScript Ecosystem</title>
+      <link>http://localhost:1313/dsblog/Navigating-the-JavaScript-Ecosystem/</link>
+      <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Navigating-the-JavaScript-Ecosystem/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6170-Navigating-the-JavaScript-Ecosystem.jpg&#34; alt=&#34;Navigating the JavaScript Ecosystem&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;navigating-the-javascript-ecosystem-npm-yarn-unpkg-and-more&#34;&gt;Navigating the JavaScript Ecosystem: npm, Yarn, unpkg, and More&lt;/h1&gt;&#xA;&lt;p&gt;This article is trying to answer following questions.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Evoluation of Javascript and Relationship with Java.&lt;/li&gt;&#xA;&lt;li&gt;What are popular javascript libraries?&lt;/li&gt;&#xA;&lt;li&gt;What is Node and Node.js?&lt;/li&gt;&#xA;&lt;li&gt;Key Features of Node.js.&lt;/li&gt;&#xA;&lt;li&gt;How are Node and Node.js Related?&lt;/li&gt;&#xA;&lt;li&gt;What are the Central Repositories of Javascript Packages?&lt;/li&gt;&#xA;&lt;li&gt;What is the difference between npm and npx?&lt;/li&gt;&#xA;&lt;li&gt;What are important npx commands?&lt;/li&gt;&#xA;&lt;li&gt;What is the &amp;rsquo;export&amp;rsquo; keyword in javascript?&lt;/li&gt;&#xA;&lt;li&gt;How to Use the Exported Function?&lt;/li&gt;&#xA;&lt;li&gt;What is the meaning of workspace in Yarn pacakge manager?&lt;/li&gt;&#xA;&lt;li&gt;Key Features of Yarn Workspaces.&lt;/li&gt;&#xA;&lt;li&gt;How to Set Up Yarn Workspaces?&lt;/li&gt;&#xA;&lt;li&gt;Can I use multiple package managers in my Javascript project?&lt;/li&gt;&#xA;&lt;li&gt;What are other Important Languages and their primary purpose?&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;evoluation-of-javascript-and-relationship-with-java&#34;&gt;Evoluation of Javascript and Relationship with Java.&lt;/h2&gt;&#xA;&lt;p&gt;There is no relationship between Java and JavaScript.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Applications of GenAI</title>
+      <link>http://localhost:1313/dsblog/Applications-of-GenAI/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Applications-of-GenAI/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6169-Applications-of-GenAI.jpg&#34; alt=&#34;Applications of GenAI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;application-of-generative-ai-genai&#34;&gt;Application of Generative AI (GenAI)&lt;/h1&gt;&#xA;&lt;p&gt;Generative AI (GenAI) is transforming how we interact with technology by producing human-like text, images, audio, and even code. Leveraging advanced models, especially large language models (LLMs), GenAI offers a wide range of applications across industries and data types. Let&amp;rsquo;s explore some of the key use cases and how different sectors are benefiting from this technology.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-text-generation&#34;&gt;1. &lt;strong&gt;Text Generation&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Text generation using GenAI models is a powerful tool for automating content creation. Pretrained models can generate natural, coherent text for various business and creative purposes. This can be particularly valuable for:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

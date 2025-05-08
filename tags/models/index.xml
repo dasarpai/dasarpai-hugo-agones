@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Models on Agones</title>
+    <link>http://localhost:1313/tags/models/</link>
+    <description>Recent content in Models on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Types of Models</title>
+      <link>http://localhost:1313/dsblog/exploring-types-of-models/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-types-of-models/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6209-Exploring-Types-of-Models.jpg&#34; alt=&#34;Exploring Types of Models&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;understanding-different-types-of-models&#34;&gt;Understanding Different Types of Models&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;A model is a simplified representation or abstraction of a system, concept, or phenomenon around us. It is used to analyze, understand, predict, or simulate real-world behavior. Models can take many forms, depending on the context in which they are used. For example you also say that I have created a Data Model, Functional Model, UI Model, Simulation Model etc.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Adapting AI Models to the Latest Information: Methods and Approaches</title>
+      <link>http://localhost:1313/dsblog/adapting-ai-models-to-the-latest-information/</link>
+      <pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/adapting-ai-models-to-the-latest-information/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6202-Adapting-AI-Models-to-the-Latest-Information.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;adapting-ai-models-to-the-latest-information-methods-and-approaches&#34;&gt;Adapting AI Models to the Latest Information: Methods and Approaches&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Artificial Intelligence offers numerous advantages over traditional search engines like Google or Bing, but it also has a notable limitation: its knowledge is often frozen in the past. Unless a model is retrained or updated with newly available data, it cannot respond effectively to current business, political, social, or scientific developments.&lt;/p&gt;&#xA;&lt;p&gt;To address this limitation, one popular approach is &lt;strong&gt;Retrieval-Augmented Generation (RAG)&lt;/strong&gt;, a method that combines AI models with up-to-date external data sources. You may have come across RAG frequently in recent discussions about AI advancements.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI Models and Creators</title>
+      <link>http://localhost:1313/dsblog/AI-Models-and-Creators/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/AI-Models-and-Creators/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6187-ai-models-and-creators.jpg&#34; alt=&#34;AI Models and Creators&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;ai-models-and-creators&#34;&gt;AI Models and Creators&lt;/h1&gt;&#xA;&lt;h2 id=&#34;popular-models-and-their-creator&#34;&gt;Popular Models and Their Creator&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Nova - Amazon&lt;/li&gt;&#xA;&lt;li&gt;Gemini, Gemma - Google&lt;/li&gt;&#xA;&lt;li&gt;Granite - Oracle&lt;/li&gt;&#xA;&lt;li&gt;GPT - OpenAI&lt;/li&gt;&#xA;&lt;li&gt;Phi - Microsoft Azure&lt;/li&gt;&#xA;&lt;li&gt;Einstein - Salesforce&lt;/li&gt;&#xA;&lt;li&gt;Joule - SAP&lt;/li&gt;&#xA;&lt;li&gt;Grok - X (formerly Twitter)&lt;/li&gt;&#xA;&lt;li&gt;Llama - Meta&lt;/li&gt;&#xA;&lt;li&gt;Qwen - Alibaba&lt;/li&gt;&#xA;&lt;li&gt;Claude - Anthropic&lt;/li&gt;&#xA;&lt;li&gt;Bard - Google&lt;/li&gt;&#xA;&lt;li&gt;PaLM - Google&lt;/li&gt;&#xA;&lt;li&gt;Mistral - Mistral AI&lt;/li&gt;&#xA;&lt;li&gt;Falcon - Technology Innovation Institute (TII), UAE&lt;/li&gt;&#xA;&lt;li&gt;Gato - DeepMind&lt;/li&gt;&#xA;&lt;li&gt;Jasper - Jasper AI&lt;/li&gt;&#xA;&lt;li&gt;Bloom - BigScience (collaborative project)&lt;/li&gt;&#xA;&lt;li&gt;Ernie - Baidu&lt;/li&gt;&#xA;&lt;li&gt;Alpaca - Stanford University (fine-tuned LLaMA model)&lt;/li&gt;&#xA;&lt;li&gt;Stable Diffusion - Stability AI&lt;/li&gt;&#xA;&lt;li&gt;HuggingChat - Hugging Face&lt;/li&gt;&#xA;&lt;li&gt;Cohere of Command&lt;/li&gt;&#xA;&lt;li&gt;Alpha fold of deepmind&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;models-developed-by-microsoft&#34;&gt;Models Developed by Microsoft&lt;/h2&gt;&#xA;&lt;p&gt;Microsoft has developed or collaborated on several AI models and frameworks, especially as part of its Azure AI ecosystem and its partnership with OpenAI. Below is a list of models and AI systems associated with Microsoft:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

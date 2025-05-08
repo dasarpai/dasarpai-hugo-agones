@@ -1,0 +1,416 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Introduction to ML Model Deployment | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2023-07-19-6077-introduction-to-ml-model-deployment/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Introduction to ML Model Deployment">
+  <meta property="og:description" content="Introduction to AI Model deployment Big Players Amazon Amazon has many products and one of their product is AWS Cloud. Under this product they sell IT infrastructure (storage, memory, network, VM, webhosting etc.) Amazon SageMaker is Cloud based Machine Learning Platform, and this is one of the product under AWS Cloud. Amazon SageMaker can be used to train AI model, host AI model, monitor the model and hosts many other services which any Data Science project need from data gathering to model serving. AWS is oldest cloud service provider in the market. AWS Sagemaker was launched in Nov&#39;17. Google Google has hundreds of products like gmail, youtube, google drive etc. One of their product is called Google Cloud. Under this product they sell IT infrastrcture like Amazon sells under AWS. VertexAI is Cloud based Machine Learning platform of Google. VertexAI is part of Google Cloud. VertexAI can be used to train AI Model,host AI model, monitor the model etc. VertexAI was launched in Jun&#39;21 Microsoft Like Amazon’s cloud platform which is called AWS Cloud, Microsoft’s cloud plateform is called Azure. Microsoft’s AI product is called Azure Machine Learning. Today (Jul&#39;23) Azure Machine Learning has has most of the capabilites than any other player’s AI product. Azure Machine Learning was launched Feb&#39;14 What is GenAI? There are many kinds of AI models like classifier models, regressor models, clustering models, reinforcement models, etc. An AI model which has the ability to generate text, images, video, and music is called GenAI. They all take inspiration from the human brain, therefore they all have neural network (NN) architecture. There are dozens (if not hundreds) types of NN architecture that can be used to create different kinds of AI models. The type of NN architecture depends upon the data which is used for developing the model and the problem which we want to solve using AI model. Researchers in universities or big corporations like Google, Facebook, Amazon, and Microsoft keep developing new architecture, and using these architectures they develop the foundational models. Once foundational models are developed, they release a research paper. In this, they inform the world what architecture they used, what data they used, what parameters (weights &amp; biases) the model has learned, what are the results of their product and compare that with other existing models. They can develop these foundational models with one set of hyperparameters, and they can release these foundational models of different sizes (it depends upon the number of parameters used). AI product builders pick up these foundational models and fine-tune these based on the exact business problem in their hands. Which foundational model do they choose, it also depends upon the size of the model, the kind of data it has used to create those foundational models, and what was the performance of the model on a similar task which the product developer want to solve.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2023-07-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-07-19T00:00:00+00:00">
+    <meta property="article:tag" content="MLOps">
+    <meta property="article:tag" content="Model Deployment">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="DevOps">
+    <meta property="article:tag" content="Production AI">
+    <meta property="article:tag" content="Cloud Computing">
+
+  <meta itemprop="name" content="Introduction to ML Model Deployment">
+  <meta itemprop="description" content="Introduction to AI Model deployment Big Players Amazon Amazon has many products and one of their product is AWS Cloud. Under this product they sell IT infrastructure (storage, memory, network, VM, webhosting etc.) Amazon SageMaker is Cloud based Machine Learning Platform, and this is one of the product under AWS Cloud. Amazon SageMaker can be used to train AI model, host AI model, monitor the model and hosts many other services which any Data Science project need from data gathering to model serving. AWS is oldest cloud service provider in the market. AWS Sagemaker was launched in Nov&#39;17. Google Google has hundreds of products like gmail, youtube, google drive etc. One of their product is called Google Cloud. Under this product they sell IT infrastrcture like Amazon sells under AWS. VertexAI is Cloud based Machine Learning platform of Google. VertexAI is part of Google Cloud. VertexAI can be used to train AI Model,host AI model, monitor the model etc. VertexAI was launched in Jun&#39;21 Microsoft Like Amazon’s cloud platform which is called AWS Cloud, Microsoft’s cloud plateform is called Azure. Microsoft’s AI product is called Azure Machine Learning. Today (Jul&#39;23) Azure Machine Learning has has most of the capabilites than any other player’s AI product. Azure Machine Learning was launched Feb&#39;14 What is GenAI? There are many kinds of AI models like classifier models, regressor models, clustering models, reinforcement models, etc. An AI model which has the ability to generate text, images, video, and music is called GenAI. They all take inspiration from the human brain, therefore they all have neural network (NN) architecture. There are dozens (if not hundreds) types of NN architecture that can be used to create different kinds of AI models. The type of NN architecture depends upon the data which is used for developing the model and the problem which we want to solve using AI model. Researchers in universities or big corporations like Google, Facebook, Amazon, and Microsoft keep developing new architecture, and using these architectures they develop the foundational models. Once foundational models are developed, they release a research paper. In this, they inform the world what architecture they used, what data they used, what parameters (weights &amp; biases) the model has learned, what are the results of their product and compare that with other existing models. They can develop these foundational models with one set of hyperparameters, and they can release these foundational models of different sizes (it depends upon the number of parameters used). AI product builders pick up these foundational models and fine-tune these based on the exact business problem in their hands. Which foundational model do they choose, it also depends upon the size of the model, the kind of data it has used to create those foundational models, and what was the performance of the model on a similar task which the product developer want to solve.">
+  <meta itemprop="datePublished" content="2023-07-19T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2023-07-19T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2234">
+  <meta itemprop="keywords" content="Machine Learning Deployment,MLOps,Model Serving,Production AI,ML Infrastructure,Model Optimization,Deployment Frameworks,Cloud Deployment">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Introduction to ML Model Deployment">
+  <meta name="twitter:description" content="Introduction to AI Model deployment Big Players Amazon Amazon has many products and one of their product is AWS Cloud. Under this product they sell IT infrastructure (storage, memory, network, VM, webhosting etc.) Amazon SageMaker is Cloud based Machine Learning Platform, and this is one of the product under AWS Cloud. Amazon SageMaker can be used to train AI model, host AI model, monitor the model and hosts many other services which any Data Science project need from data gathering to model serving. AWS is oldest cloud service provider in the market. AWS Sagemaker was launched in Nov&#39;17. Google Google has hundreds of products like gmail, youtube, google drive etc. One of their product is called Google Cloud. Under this product they sell IT infrastrcture like Amazon sells under AWS. VertexAI is Cloud based Machine Learning platform of Google. VertexAI is part of Google Cloud. VertexAI can be used to train AI Model,host AI model, monitor the model etc. VertexAI was launched in Jun&#39;21 Microsoft Like Amazon’s cloud platform which is called AWS Cloud, Microsoft’s cloud plateform is called Azure. Microsoft’s AI product is called Azure Machine Learning. Today (Jul&#39;23) Azure Machine Learning has has most of the capabilites than any other player’s AI product. Azure Machine Learning was launched Feb&#39;14 What is GenAI? There are many kinds of AI models like classifier models, regressor models, clustering models, reinforcement models, etc. An AI model which has the ability to generate text, images, video, and music is called GenAI. They all take inspiration from the human brain, therefore they all have neural network (NN) architecture. There are dozens (if not hundreds) types of NN architecture that can be used to create different kinds of AI models. The type of NN architecture depends upon the data which is used for developing the model and the problem which we want to solve using AI model. Researchers in universities or big corporations like Google, Facebook, Amazon, and Microsoft keep developing new architecture, and using these architectures they develop the foundational models. Once foundational models are developed, they release a research paper. In this, they inform the world what architecture they used, what data they used, what parameters (weights &amp; biases) the model has learned, what are the results of their product and compare that with other existing models. They can develop these foundational models with one set of hyperparameters, and they can release these foundational models of different sizes (it depends upon the number of parameters used). AI product builders pick up these foundational models and fine-tune these based on the exact business problem in their hands. Which foundational model do they choose, it also depends upon the size of the model, the kind of data it has used to create those foundational models, and what was the performance of the model on a similar task which the product developer want to solve.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6077-Introduction-to-ML-Model-deployment.jpg" alt="Introduction to AI Model Deployement"></p>
+<h1 id="introduction-to-ai-model-deployment">Introduction to AI Model deployment</h1>
+<h2 id="big-players">Big Players</h2>
+<ul>
+<li>Amazon
+<ul>
+<li>Amazon has many products and one of their product is <strong>AWS Cloud</strong>. Under this product they sell IT infrastructure (storage, memory, network, VM, webhosting etc.)</li>
+<li><strong>Amazon SageMaker</strong> is Cloud based Machine Learning Platform, and this is one of the product under AWS Cloud.</li>
+<li>Amazon SageMaker can be used to train AI model, host AI model, monitor the model and hosts many other services which any Data Science project need from data gathering to model serving.</li>
+<li>AWS is oldest cloud service provider in the market.</li>
+<li>AWS Sagemaker was launched in Nov'17.</li>
+</ul>
+</li>
+<li>Google
+<ul>
+<li>Google has hundreds of products like gmail, youtube, google drive etc. One of their product is called <strong>Google Cloud</strong>. Under this product they sell IT infrastrcture like Amazon sells under AWS.</li>
+<li><strong>VertexAI</strong> is Cloud based Machine Learning platform of Google. VertexAI is part of Google Cloud.</li>
+<li>VertexAI can be used to train AI Model,host AI model, monitor the model etc.</li>
+<li>VertexAI was launched in Jun'21</li>
+</ul>
+</li>
+<li>Microsoft
+<ul>
+<li>Like Amazon&rsquo;s cloud platform which is called AWS Cloud, Microsoft&rsquo;s cloud plateform is called <strong>Azure</strong>.</li>
+<li>Microsoft&rsquo;s AI product is called <strong>Azure Machine Learning</strong>.</li>
+<li>Today (Jul'23) Azure Machine Learning has has most of the capabilites than any other player&rsquo;s AI product.</li>
+<li>Azure Machine Learning was launched Feb'14</li>
+</ul>
+</li>
+</ul>
+<h2 id="what-is-genai">What is GenAI?</h2>
+<p>There are many kinds of AI models like classifier models, regressor models, clustering models, reinforcement models, etc. An AI model which has the ability to generate text, images, video, and music is called GenAI. They all take inspiration from the human brain, therefore they all have neural network (NN) architecture. There are dozens (if not hundreds) types of NN architecture that can be used to create different kinds of AI models. The type of NN architecture depends upon the data which is used for developing the model and the problem which we want to solve using AI model. Researchers in universities or big corporations like Google, Facebook, Amazon, and Microsoft keep developing new architecture, and using these architectures they develop the foundational models. Once foundational models are developed, they release a research paper. In this, they inform the world what architecture they used, what data they used, what parameters (weights &amp; biases) the model has learned, what are the results of their product and compare that with other existing models. They can develop these foundational models with one set of hyperparameters, and they can release these foundational models of different sizes (it depends upon the number of parameters used). AI product builders pick up these foundational models and fine-tune these based on the exact business problem in their hands. Which foundational model do they choose, it also depends upon the size of the model, the kind of data it has used to create those foundational models, and what was the performance of the model on a similar task which the product developer want to solve.</p>
+<h3 id="what-is-large-language-model">What is Large Language Model?</h3>
+<p>Large Language Models or LLM are the foundational models developed by researchers. They are very big in the size. For example, GPT3 was a 175 bn parameter model, PaLM was 540 bn parameter model. You cannot load these models on a normal machine for the prediction, forget about fine-tuning or customization. Therefore, most of the time you will find these LLMs are made available as service from the cloud providers like AWS SageMaker, Azure Machine Learning, VertexAI etc.</p>
+<ul>
+<li>LLaMa (Large Language Model Meta AI) is LLM family of state-of-the-art open-access large language models released by Meta. It is 65 bn parameter model. Other Models at Meta are <a href="https://huggingface.co/facebook">Meta Models at HuggingFace</a></li>
+<li>GPT is LLM family of state-of-art model language models developed by OpenAI. ChatGPT (OpenAI&rsquo;s very famous Product) is based on GPT3.5 model. Other models of OpenAI are <a href="https://huggingface.co/openai">OpenAI Models at HuggingFace</a></li>
+<li>PaLM is LLM family state of the art model from Google. Other Models at google are <a href="/dsblog/model-garden-of-vertexai">VertexAI Model Garden</a>
+<a href="https://huggingface.co/google">https://huggingface.co/google</a></li>
+</ul>
+<h3 id="what-is-foundational-model">What is Foundational Model?</h3>
+<p>A foundational model is developed by researchers using a huge corpus of different types of data. They are built of unique architecture. These can use fine-tuned for many kinds of downstream tasks like classification, generation, translation, etc.</p>
+<ul>
+<li><strong>Foundational Models Developed by OpenAI:</strong> clip-vit, diffusers-cd, diffusers-ct, imagegpt, GPT, jukebox, shap-e, shap, whisper</li>
+<li><strong>Foundational Models Developed by Microsoft:</strong> amos, beit, BioGPT, BiomedCLIP, BiomedNLP, BiomedVLP, bloom, ClimaX, cocoLM, CodeBert, CodeExecutor, CodeGPT, CodeReviewer, conditional, cvt, deberta, DialoGPT, DialogRPT, dit, dolly, focalnet, git, GODEL, graphcodebert, infoxlm, layoutlm, longcoder, lts, markuplm, mdeberta, MiniLM, mpnet, Multilingual, Promptist, prophetnet, reacc, resnet, speecht5, SportsBERT, ssr, swin, table, tapex, trocr, unihanlm, unilm, unispeech, unixcoder, vq, wavlm, xclip, xdoc, xlm, xprophetnet, xtremedistil</li>
+<li><strong>Foundational Models of Google:</strong> BERT, bert2bert, bigbird, bit, byt5, canine, ddpm, deeplabv3, deplot, efficientnet, electra, flan, fnet, long, matcha, maxim, mobileBERT, mobilenet, mt5, multiberts, muril, music, ncsnpp, owlvit, pegasus, pix2struct, realm, reformer, rembert, roberta2roberta, switch, T5, tapas, ul2, umt5, VIT, vivit</li>
+<li><strong>Foundational Models Developed by Meta:</strong> BART blenderbot, contriever, convnext, convnextv2, data2vec, deformable, deit, DETR, dino, dinov2, DiT, dpr, dragon, encodec, esm, esm1b, esm1v, esm2, esmfold, FairBERTa, fastspeech2, fastText, flava, galactica, genre, hubert, ic-gan, incoder, levit, m2m100, mask2former, maskformer, mBart, mcontriever, mgenre, MMS, muppet, musicgen, nllb, npm, opt, perturber, rag, regnet, roberta, roscoe, s2t, sam, spar, stylenerf, tart, textless, timesformer, tts-transformer, unit-hifigan, vc1, vit, wav2vec2, wmt19, wmt21, xglm, xlm, xm, xmod</li>
+</ul>
+<h3 id="deploying-a-llm-on-sagemaker">Deploying a LLM on SageMaker</h3>
+<h4 id="1-library-installation-and-setup">1. Library Installation and Setup</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a40000">!</span><span style="color:#000">pip</span> <span style="color:#000">install</span> <span style="color:#4e9a06">&#34;sagemaker==2.163.0&#34;</span> <span style="color:#ce5c00;font-weight:bold">--</span><span style="color:#000">upgrade</span> <span style="color:#ce5c00;font-weight:bold">--</span><span style="color:#000">quiet</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">sagemaker</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">boto3</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">sess</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sagemaker</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">Session</span><span style="color:#000;font-weight:bold">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">sagemaker_session_bucket</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">None</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">sagemaker_session_bucket</span> <span style="color:#204a87;font-weight:bold">is</span> <span style="color:#204a87;font-weight:bold">None</span> <span style="color:#204a87;font-weight:bold">and</span> <span style="color:#000">sess</span> <span style="color:#204a87;font-weight:bold">is</span> <span style="color:#204a87;font-weight:bold">not</span> <span style="color:#204a87;font-weight:bold">None</span><span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8f5902;font-style:italic"># set to default bucket if a bucket name is not given</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">sagemaker_session_bucket</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sess</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">default_bucket</span><span style="color:#000;font-weight:bold">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">try</span><span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">role</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sagemaker</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">get_execution_role</span><span style="color:#000;font-weight:bold">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">except</span> <span style="color:#c00;font-weight:bold">ValueError</span><span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">iam</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">boto3</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">client</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;iam&#39;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">role</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">iam</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">get_role</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">RoleName</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;sagemaker_execution_role&#39;</span><span style="color:#000;font-weight:bold">)[</span><span style="color:#4e9a06">&#39;Role&#39;</span><span style="color:#000;font-weight:bold">][</span><span style="color:#4e9a06">&#39;Arn&#39;</span><span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">sess</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sagemaker</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">Session</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">default_bucket</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">sagemaker_session_bucket</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">f</span><span style="color:#4e9a06">&#34;sagemaker role arn: </span><span style="color:#4e9a06">{</span><span style="color:#000">role</span><span style="color:#4e9a06">}</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">f</span><span style="color:#4e9a06">&#34;sagemaker session region: </span><span style="color:#4e9a06">{</span><span style="color:#000">sess</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">boto_region_name</span><span style="color:#4e9a06">}</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><h4 id="2-retrieve-the-necessary-sagemaker-container-for-tgi-deployment">2. Retrieve the necessary SageMaker container for TGI deployment</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">from</span> <span style="color:#000">sagemaker.huggingface</span> <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">get_huggingface_llm_image_uri</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># retrieve the llm image uri</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">llm_image</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">get_huggingface_llm_image_uri</span><span style="color:#000;font-weight:bold">(</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;huggingface&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">version</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;0.8.2&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># print ecr image uri</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">f</span><span style="color:#4e9a06">&#34;llm image uri: </span><span style="color:#4e9a06">{</span><span style="color:#000">llm_image</span><span style="color:#4e9a06">}</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><h4 id="3-load-the-model">3. Load the Model</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">json</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">from</span> <span style="color:#000">sagemaker.huggingface</span> <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">HuggingFaceModel</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Define Model and Endpoint configuration parameter</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">config</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#39;HF_MODEL_ID&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;decapoda-research/llama-7b-hf&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#8f5902;font-style:italic"># model_id from hf.co/models</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#39;SM_NUM_GPUS&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">json</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">dumps</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">number_of_gpu</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#8f5902;font-style:italic"># Number of GPU used per replica</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#39;MAX_INPUT_LENGTH&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">json</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">dumps</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1024</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic"># Max length of input text</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#39;MAX_TOTAL_TOKENS&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">json</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">dumps</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">2048</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic"># Max length of the generation (including input text)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h4 id="4-create-huggingfacemodel-with-the-image-uri">4. Create HuggingFaceModel with the image uri</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#000">llm_model</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">HuggingFaceModel</span><span style="color:#000;font-weight:bold">(</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">role</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">role</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">image_uri</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">llm_image</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">env</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">config</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><h4 id="5-deploy-the-model-on-sagemaker-instance-creating-endpoint">5. Deploy the Model on SageMaker Instance (Creating Endpoint)</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#000">instance_type</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;ml.g5.12xlarge&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">number_of_gpu</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">health_check_timeout</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">300</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">llm</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">llm_model</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">deploy</span><span style="color:#000;font-weight:bold">(</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">initial_instance_count</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">instance_type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">instance_type</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">container_startup_health_check_timeout</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">health_check_timeout</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><h4 id="6-test-your-deployment">6. Test your deployment</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#000">llm</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">predict</span><span style="color:#000;font-weight:bold">({</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4e9a06">&#34;inputs&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;My name is Hari Thapliyal and I am Data Scientist.&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">})</span>
+</span></span></code></pre></div><h3 id="model-installation-locaion">Model Installation Locaion</h3>
+<p>Model can be installed on Local machine or on Public cloud or private cloud. Model can deployed on Linux, MacOS, Andorid, iPhone, or Windows Machine</p>
+<ul>
+<li>Local Machine
+<ul>
+<li>Linux</li>
+<li>MacOS</li>
+<li>Windows</li>
+</ul>
+</li>
+<li>Cloud
+<ul>
+<li>Google Cloud</li>
+<li>AWS Cloud</li>
+<li>Azure Cloud</li>
+</ul>
+</li>
+<li>Cloud AI Platform
+<ul>
+<li>AWS SageMaker</li>
+<li>VertexAI</li>
+<li>Azure AI</li>
+</ul>
+</li>
+</ul>
+<h3 id="open-source-deep-learning-model-development-frameworks">Open-Source Deep Learning Model Development Frameworks</h3>
+<ul>
+<li><strong>PyTorch</strong> deep learning framework developed by Facebook&rsquo;s AI Research (FAIR) lab. It has gained significant popularity among researchers and developers due to its flexibility, dynamic computation graph, and intuitive API. PyTorch is known for its ease of use and strong support for custom operations and dynamic neural networks. It is good for quick AI model development, fast prototyping is possible.</li>
+<li><strong>TensorFlow 2.0+</strong>: TensorFlow, underwent significant changes with the release of TensorFlow 2.0. It now includes eager execution by default, making it more intuitive and Pythonic. TensorFlow&rsquo;s updated version has better integration with Keras, simplifying the process of building and training models.</li>
+<li><strong>Keras</strong> deep learning API written in Python that acts as a high-level interface to other deep learning frameworks, including TensorFlow, Pytorch and Microsoft Cognitive Toolkit (CNTK). It provides a simple and user-friendly interface for building and training neural networks, making it a popular choice for beginners and quick prototyping.</li>
+<li><strong>Apache MXNet</strong> deep learning framework developed by Apache Software Foundation. It offers both symbolic and imperative programming models, allowing developers to choose between static and dynamic computation graphs. MXNet is designed for efficiency and scalability, making it suitable for a wide range of applications.</li>
+<li><strong>Gluon</strong> is an interface for Apache MXNet that provides a high-level abstraction for building deep learning models. It aims to combine the ease of use of dynamic computation graphs with the performance advantages of static computation graphs.</li>
+<li><strong>Caffe</strong> deep learning framework developed by Berkeley Vision and Learning Center (BVLC). It is known for its efficiency, especially for convolutional neural networks (CNNs) used in computer vision tasks. However, compared to newer frameworks, Caffe may be less flexible and harder to customize.</li>
+<li><strong>Chainer</strong> is an open-source deep learning framework developed by Preferred Networks. Like PyTorch, Chainer emphasizes dynamic computation graphs and flexibility, allowing users to define complex neural network architectures more easily.</li>
+<li><strong>Deep Java Library (DJL)</strong> is an open-source, high-level, engine-agnostic Java framework for deep learning.</li>
+<li><strong><a href="https://parl.ai/docs/zoo.html">ParlAI</a></strong> : ParlAI (pronounced “par-lay”) is a python framework for sharing, training and testing dialogue models, from open-domain chitchat, to task-oriented dialogue, to visual question answering.</li>
+</ul>
+<h3 id="format-used-for-representing-deep-learning-models">Format Used for Representing Deep Learning Models.</h3>
+<ul>
+<li><strong>ONNX</strong> (Open Neural Network Exchange): It allows interoperability between different deep learning frameworks, enabling users to move models between frameworks without rebuilding them from scratch. ONNX is joint effort of Microsoft, AWS, FAIR and IBM.</li>
+<li><strong>TensorFlow SavedModel</strong> is a format specific to TensorFlow, and it is used for saving and restoring TensorFlow models. It includes the model&rsquo;s architecture, weights, and metadata, making it easy to save a trained model and load it later for inference or further training.</li>
+<li><strong>PyTorch JIT</strong> (Just-In-Time) compilation allows users to export their models in a serialized format that can be later loaded and executed without the need for the original Python code. The JIT-compiled model can be used in production without requiring the entire PyTorch framework to be present.</li>
+<li><strong>HDF5 or H5</strong> is a data format commonly used for storing and sharing large datasets and is also used to save deep learning models. Keras, which is integrated with TensorFlow, commonly uses the &ldquo;.h5&rdquo; format to save models. The HDF5 format allows saving the model architecture, weights, optimizer state, and other metadata.</li>
+<li><strong>MLIR</strong> (Multi-Level Intermediate Representation) is an intermediate representation developed by LLVM that aims to provide a common format for various machine learning frameworks. While still in its early stages, MLIR holds promise for representing models in a unified format and enabling efficient transformations and optimizations across different frameworks.</li>
+<li><strong>CoreML</strong> is a format developed by Apple for representing machine learning models specifically for deployment on Apple devices like iPhones and iPads. It allows developers to integrate pre-trained models into their iOS and macOS applications.</li>
+<li><strong>Computation Graph Configuration</strong> is developed by Deeplearning4j (DL4J). It  is a deep learning framework for Java, and it uses a specific configuration format for serializing its computation graphs, making it portable across different platforms.</li>
+</ul>
+<h3 id="deep-learning-model-inference-libraries">Deep Learning Model Inference Libraries</h3>
+<p>There are several products and libraries designed to accelerate deep learning inference and optimize model performance on specific hardware. These products and libraries focus on optimizing and accelerating deep learning inference on specific hardware platforms, allowing developers to deploy their models with improved performance and efficiency on target devices. Depending on the hardware architecture and deployment environment, choosing the right product or library can significantly impact the inference speed and overall user experience.</p>
+<ul>
+<li><strong>OpenVINO</strong> (Open Visual Inference &amp; Neural Network Optimization) is an open-source toolkit developed by <strong>Intel</strong> that provides hardware-accelerated deep learning inference for Intel CPUs, integrated GPUs, and other hardware accelerators. It optimizes pre-trained models from various deep learning frameworks and deploys them efficiently on Intel-powered devices.</li>
+<li><strong>DNNL</strong> (Deep Neural Network Library) formerly MKL-DNN, is a library developed by <strong>Intel</strong> to optimize deep learning workloads on Intel CPUs. It provides efficient implementations of primitives and functions for deep learning, improving performance on Intel architectures.</li>
+<li><strong>nGraph</strong> is an open-source deep learning compiler developed by <strong>Intel</strong> it optimizes models for various hardware targets, including CPUs, GPUs, and specialized accelerators. It enables efficient execution of deep learning workloads across different hardware architectures.</li>
+<li><strong>TensorRT</strong> (Tensor Runtime) is a high-performance deep learning inference optimizer and runtime library developed by <strong>NVIDIA</strong>.</li>
+<li><strong>Core ML</strong> is a framework by <em>Apple</em>* that allows developers to integrate pre-trained machine learning models into iOS, macOS, watchOS, and tvOS applications. It supports hardware acceleration using the Apple Neural Engine on compatible devices, making it ideal for on-device inference.</li>
+<li><strong>SNPE</strong> (Snapdragon Neural Processing Engine) is a deep learning inference SDK developed by <strong>Qualcomm</strong> for deployment on devices powered by Qualcomm Snapdragon processors. It optimizes deep learning models and accelerates inference on Snapdragon CPUs, GPUs, and DSPs.</li>
+<li><strong>TVM</strong> (Tensor <strong>Virtual</strong> Machine) is open-source deep learning compiler stack developed by the <strong>Apache Software Foundation</strong>. It optimizes and deploys machine learning models on various hardware targets, including CPUs, GPUs, and specialized accelerators. It supports integration with different frameworks like TensorFlow, PyTorch, and ONNX.</li>
+<li><strong>MIVisionX</strong> is developed by <strong>AMD</strong>. It includes tools and libraries for deep learning inference, image processing, and computer vision tasks, optimized for AMD GPUs and CPUs.</li>
+<li><strong>DJL Serving</strong> is a high performance universal stand-alone model serving solution. It is deeloped by <strong>DJL</strong></li>
+<li><strong>Huggingface Text Generation Interface (TGI)</strong></li>
+<li><a href="https://aws.amazon.com/sagemaker/jumpstart/getting-started"><strong>Amazon SageMaker JumpStart</strong></a> : Built-in algorithms with pretrained models from model hubs, pretrained foundation models, and prebuilt solutions to solve common use cases</li>
+</ul>
+<h3 id="ai-model-zoos">AI Model Zoos</h3>
+<ul>
+<li><a href="https://parl.ai/docs/zoo.html">ParlAI</a> or <a href="https://github.com/facebookresearch/ParlAI">https://github.com/facebookresearch/ParlAI</a></li>
+<li><a href="https://cloud.google.com/model-garden">Google Model Garden</a></li>
+<li><a href="https://huggingface.co/?trending=model">Huggingface</a></li>
+<li><a href="https://tfhub.dev/">TF Hub</a></li>
+<li><a href="https://github.com/tensorflow/models/tree/master/official">Tensorflow on Git</a></li>
+<li><a href="https://paperswithcode.com/">PaperwithCode</a></li>
+<li><a href="https://github.com/openvinotoolkit/open_model_zoo">OpenVino Toolkit</a></li>
+<li><a href="https://deci.ai/resources/videos/tutorial-infery/">Deci.ai</a></li>
+<li><a href="https://www.elinux.org/Jetson_Zoo#Model_Zoo">Jetson Zoo</a></li>
+<li><a href="https://modelzoo.co/">Modelzoo</a></li>
+<li><a href="https://google.github.io/mediapipe/">Mediapipe on github</a></li>
+<li><a href="https://github.com/magenta/magenta/tree/main/magenta/models">Magenta on github</a></li>
+<li><a href="https://github.com/likedan/Awesome-CoreML-Models">Awesome CoreML on github</a></li>
+<li><a href="https://github.com/PINTO0309/PINTO_model_zoo">Pinto Model zoo on github</a></li>
+<li><a href="https://github.com/onnx/models">ONNX</a></li>
+<li><a href="https://www.catalyzex.com/">CatalyZex</a></li>
+</ul>
+<p><strong>Author</strong><br>
+Dr Hari Thapliyaal<br>
+dasarpai.com <br>
+linkedin.com/in/harithapliyal</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

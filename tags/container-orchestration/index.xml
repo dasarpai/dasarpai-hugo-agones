@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Container Orchestration on Agones</title>
+    <link>http://localhost:1313/tags/container-orchestration/</link>
+    <description>Recent content in Container Orchestration on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/container-orchestration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Container Registry</title>
+      <link>http://localhost:1313/dsblog/Introduction-to-Container-Registry/</link>
+      <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Introduction-to-Container-Registry/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6167-Introduction-to-Container-Registry.jpg&#34; alt=&#34;Introduction to Container Registry&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction-to-container-registry&#34;&gt;Introduction to Container Registry&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-container-registry&#34;&gt;What is Container Registry?&lt;/h2&gt;&#xA;&lt;p&gt;A container registry is a central store or service where container images are stored, managed and distributed. Container images are packaged applications that include the code, dependencies, libraries and configuration to run in any environment that supports containerization, like Docker or Kubernetes.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Key aspects of a Container Registry:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Storing Images: Container registries act as a storage for container images, where developers can push and pull images as needed. These images are often versioned and tagged so you can track different versions of an application.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

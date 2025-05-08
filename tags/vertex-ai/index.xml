@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vertex AI on Agones</title>
+    <link>http://localhost:1313/tags/vertex-ai/</link>
+    <description>Recent content in Vertex AI on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/vertex-ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google AI Studio vs Vertex AI</title>
+      <link>http://localhost:1313/dsblog/google-ai-studio-vs-vertexai/</link>
+      <pubDate>Fri, 06 Dec 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/google-ai-studio-vs-vertexai/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6183-Google-AI-Studio-vs-VertexAI.jpg&#34; alt=&#34;Google AI Studio vs Vertex AI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;google-ai-studio-vs-vertex-ai&#34;&gt;Google AI Studio vs Vertex AI&lt;/h1&gt;&#xA;&lt;p&gt;The difference between &lt;strong&gt;Vertex AI&lt;/strong&gt; and &lt;strong&gt;Google AI Studio&lt;/strong&gt; lies in their scope, functionality, and target audiences within Google&amp;rsquo;s suite of AI tools.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-vertex-ai&#34;&gt;&lt;strong&gt;1. Vertex AI&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Vertex AI&lt;/strong&gt; is Google&amp;rsquo;s &lt;strong&gt;end-to-end AI platform&lt;/strong&gt; for machine learning (ML) and AI model development, training, deployment, and management. It is designed for developers and data scientists who want a comprehensive environment to build, deploy, and scale ML models.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Model Garden of VertexAI</title>
+      <link>http://localhost:1313/dsblog/Model-Garden-of-VertexAI/</link>
+      <pubDate>Wed, 21 Jun 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Model-Garden-of-VertexAI/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6065-Model-Garden-of-VertexAI.jpg&#34; alt=&#34;All Resources to Learn Data Science&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;model-garden-of-vertexai&#34;&gt;Model Garden of VertexAI:&lt;/h1&gt;&#xA;&lt;h2 id=&#34;unlocking-the-power-of-googles-vertexai-exploring-the-world-of-pre-built-models-for-ai-tasks&#34;&gt;Unlocking the Power of Google&amp;rsquo;s VertexAI: Exploring the World of Pre-Built Models for AI Tasks&lt;/h2&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction:&lt;/h2&gt;&#xA;&lt;p&gt;Artificial Intelligence (AI) has transformed numerous industries, from healthcare and finance to e-commerce, logistic, eduction and entertainment. But the complexity of developing machine learning models often poses a challenge. As the demand for AI-powered solutions continues to rise, data scientists seek efficient ways to leverage pre-trained models or build custom models to address specific tasks. In this regard, Google&amp;rsquo;s VertexAI emerges as a robust platform that offers an extensive selection of pre-built models for a wide range of AI tasks. VertexAI platform has revolutionized the landscape by seamlessly leveraging LLM (Large Language Models) and Prompt Engineering techniques to perform complex machine learning tasks effortlessly. With VertexAI, data scientists can harness the power of state-of-the-art language models, such as LLM, to accelerate their ML development process. Additionally, the innovative concept of Prompt Engineering enables users to effectively communicate with the models, guiding them to deliver precise and accurate results. From computer vision and natural language processing to speech processing and structured tabular data analysis, Vertex AI&amp;rsquo;s repertoire includes over 100 models catering to diverse application domains. This article explores how Vertex AI, through its integration of LLM and Prompt Engineering, empowers users to effortlessly tackle intricate machine learning tasks across diverse domains, revolutionizing the AI development experience.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

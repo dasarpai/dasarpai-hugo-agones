@@ -1,0 +1,430 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Ollama Setup and Running Models | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2025-04-19-6262-ollama-setup-and-running-models/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Ollama Setup and Running Models">
+  <meta property="og:description" content="Ollama: Running Large Language Models Locally The landscape of Artificial Intelligence (AI) and Large Language Models (LLMs) has traditionally been dominated by cloud-based services. While powerful, these often come with costs, privacy concerns, and require constant internet connectivity. Ollama emerges as a compelling open-source solution, designed to simplify the process of downloading, managing, and running LLMs directly on your local machine. This approach offers significant advantages, including enhanced privacy, cost savings, offline capability, and greater control over the models you use.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-04-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-19T00:00:00+00:00">
+    <meta property="article:tag" content="Ollama">
+    <meta property="article:tag" content="Large Language Models">
+    <meta property="article:tag" content="AI and NLP">
+    <meta property="article:tag" content="Local Models">
+    <meta property="article:tag" content="Cost Savings">
+    <meta property="article:tag" content="Privacy">
+
+  <meta itemprop="name" content="Ollama Setup and Running Models">
+  <meta itemprop="description" content="Ollama: Running Large Language Models Locally The landscape of Artificial Intelligence (AI) and Large Language Models (LLMs) has traditionally been dominated by cloud-based services. While powerful, these often come with costs, privacy concerns, and require constant internet connectivity. Ollama emerges as a compelling open-source solution, designed to simplify the process of downloading, managing, and running LLMs directly on your local machine. This approach offers significant advantages, including enhanced privacy, cost savings, offline capability, and greater control over the models you use.">
+  <meta itemprop="datePublished" content="2025-04-19T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-04-19T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1741">
+  <meta itemprop="keywords" content="ollama setup,running large language models locally,cost savings with ollama,enhanced privacy with ollama,offline large language models">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ollama Setup and Running Models">
+  <meta name="twitter:description" content="Ollama: Running Large Language Models Locally The landscape of Artificial Intelligence (AI) and Large Language Models (LLMs) has traditionally been dominated by cloud-based services. While powerful, these often come with costs, privacy concerns, and require constant internet connectivity. Ollama emerges as a compelling open-source solution, designed to simplify the process of downloading, managing, and running LLMs directly on your local machine. This approach offers significant advantages, including enhanced privacy, cost savings, offline capability, and greater control over the models you use.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6262-Ollama-Setup-and-Running-Models.jpg" alt="Ollama Setup and Running Models"></p>
+<h1 id="ollama-running-large-language-models-locally">Ollama: Running Large Language Models Locally</h1>
+<p>The landscape of Artificial Intelligence (AI) and Large Language Models (LLMs) has traditionally been dominated by cloud-based services. While powerful, these often come with costs, privacy concerns, and require constant internet connectivity. Ollama emerges as a compelling open-source solution, designed to simplify the process of downloading, managing, and running LLMs directly on your local machine. This approach offers significant advantages, including enhanced privacy, cost savings, offline capability, and greater control over the models you use.</p>
+<h2 id="why-choose-local-llms-with-ollama">Why Choose Local LLMs with Ollama?</h2>
+<p>Running LLMs locally addresses several key challenges associated with cloud services:</p>
+<ol>
+<li><strong>Privacy and Security:</strong> When using local models via Ollama, your data doesn&rsquo;t need to leave your machine. This is crucial for handling sensitive information or for applications in sectors like healthcare and finance where data privacy is paramount.</li>
+<li><strong>Cost Efficiency:</strong> Cloud-based LLM services often involve ongoing costs related to API calls or server usage. Ollama eliminates these costs, as you leverage your own hardware resources. Once a model is downloaded, running it incurs no additional expense.</li>
+<li><strong>Reduced Latency:</strong> Local execution significantly reduces the network latency inherent in communicating with remote servers. This results in faster response times, which is beneficial for interactive applications.</li>
+<li><strong>Offline Capability:</strong> Since the models run on your machine, you can use them even without an active internet connection (after the initial download).</li>
+<li><strong>Customization and Flexibility:</strong> Ollama provides greater flexibility in customizing and fine-tuning models to suit specific needs, without the limitations imposed by third-party service providers.</li>
+<li><strong>Accessibility:</strong> It simplifies the technically challenging process of setting up LLMs, making advanced language processing accessible to a broader audience, including developers, researchers, and hobbyists, without deep knowledge of machine learning frameworks or complex hardware configurations.</li>
+</ol>
+<h2 id="getting-started-with-ollama">Getting Started with Ollama</h2>
+<p><strong>Installation:</strong></p>
+<p>Setting up Ollama is straightforward:</p>
+<ol>
+<li>Navigate to the official Ollama website (<code>ollama.com</code>).</li>
+<li>Click the &ldquo;Download&rdquo; button.</li>
+<li>Select your operating system (macOS, Windows, or Linux).
+<ul>
+<li><strong>macOS/Windows:</strong> Download the installer application and run it. Follow the on-screen prompts. The application will set up the necessary command-line tools and potentially start a background service.</li>
+<li><strong>Linux:</strong> Copy the provided <code>curl</code> command and execute it in your terminal to install Ollama.</li>
+</ul>
+</li>
+<li><strong>Verification:</strong> Once installed, open your terminal or command prompt and type <code>ollama</code>. If the installation was successful, you should see a list of available commands and options.</li>
+</ol>
+<p>The Ollama application often runs as a background service, managing the models and handling requests. On macOS and Windows, you might see an Ollama icon in your system tray or menu bar.</p>
+<h2 id="core-concepts-and-usage">Core Concepts and Usage</h2>
+<p><strong>1. Running Models:</strong></p>
+<p>The primary command to interact with models is <code>ollama run</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama run &lt;model_name&gt;
+</span></span></code></pre></div><p>Replace <code>&lt;model_name&gt;</code> with the identifier of the model you wish to use (e.g., <code>llama3.1</code>, <code>mistral</code>, <code>codegemma</code>, <code>llava</code>).</p>
+<ul>
+<li>If the specified model is not already present on your system, Ollama will automatically download it first. Model sizes can vary significantly (from a few gigabytes to hundreds), so ensure you have sufficient disk space and a stable internet connection for the download.</li>
+<li>Once the model is ready (either downloaded or already local), Ollama will launch an interactive chat prompt in your terminal, allowing you to start conversing with the LLM immediately.</li>
+</ul>
+<p>Example:
+<code>ollama run mistral</code></p>
+<p>You can exit the interactive chat prompt by typing <code>/bye</code>.</p>
+<p><strong>2. Model Management:</strong></p>
+<ul>
+<li>
+<p><strong>Listing Installed Models:</strong> To see which models you have downloaded locally, use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama list
+</span></span></code></pre></div><p>This command displays the model name, ID, size, and modification date.</p>
+</li>
+<li>
+<p><strong>Removing Models:</strong> If you need to free up disk space or no longer need a specific model, use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama rm &lt;model_name&gt;
+</span></span></code></pre></div><p>This will delete the specified model and its associated data from your system.</p>
+</li>
+<li>
+<p><strong>Pulling Models:</strong> You can download models without immediately running them using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama pull &lt;model_name&gt;
+</span></span></code></pre></div></li>
+</ul>
+<p><strong>3. Understanding Models:</strong></p>
+<p>Ollama provides access to a wide variety of open-source models. When choosing a model, consider these factors:</p>
+<ul>
+<li><strong>Parameters:</strong> Often denoted with &lsquo;B&rsquo; (billions), like 7B, 13B, 70B, or even 405B. This reflects the model&rsquo;s complexity and capacity. More parameters generally mean better performance but require more computational resources (RAM and processing power).</li>
+<li><strong>Size:</strong> The disk space required to store the model. This is directly related to the number of parameters and quantization.</li>
+<li><strong>RAM Requirements:</strong> Running a model requires loading it into your computer&rsquo;s RAM. Ollama&rsquo;s documentation often provides guidance on how much RAM is needed based on the model&rsquo;s parameter count (e.g., a 7B model might need 8GB+ RAM, while a 70B model could require 64GB+ RAM).</li>
+<li><strong>Quantization:</strong> A technique used to reduce the model&rsquo;s size and computational requirements by reducing the precision of its weights (e.g., 4-bit quantization). This makes larger models feasible to run on consumer hardware, sometimes with a slight trade-off in performance.</li>
+<li><strong>Model Types:</strong> Ollama supports various model types tailored for different tasks:
+<ul>
+<li><strong>Language Models:</strong> For text generation, conversation, instruction following, summarization (e.g., Llama series, Mistral, Gemma).</li>
+<li><strong>Multimodal Models:</strong> Capable of processing multiple types of input, such as text and images (e.g., Llava). You can provide an image file path along with your text prompt.</li>
+<li><strong>Embedding Models:</strong> Used to convert text into numerical vector representations, essential for Retrieval-Augmented Generation (RAG) systems and semantic search (e.g., <code>nomic-embed-text</code>, <code>mxbai-embed-large</code>).</li>
+<li><strong>Tool Calling Models:</strong> Fine-tuned models designed to interact with external tools, functions, or APIs in an agentic manner.</li>
+</ul>
+</li>
+</ul>
+<p><strong>4. Finding Models:</strong></p>
+<p>The Ollama website features a model library (<code>ollama.com/library</code>) where you can browse, search, and filter available models. Each model page provides details about its size, parameters, use cases, and how to run it. Common popular choices include models from the Llama series, Mistral, CodeGemma (for coding tasks), and Llava (for multimodal tasks).</p>
+<h2 id="advanced-usage">Advanced Usage</h2>
+<h3 id="1-customizing-models-with"><strong>1. Customizing Models with <code>Modelfile</code>:</strong></h3>
+<p>Similar to how Docker uses a <code>Dockerfile</code> to define container images, Ollama uses a <code>Modelfile</code> to create customized model variations. This plain text file allows you to:</p>
+<ul>
+<li>Start from a base model (<code>FROM &lt;base_model_name&gt;</code>).</li>
+<li>Set parameters like <code>temperature</code> (controls creativity vs. factuality), <code>top_k</code>, <code>top_p</code>, etc.</li>
+<li>Define a <code>SYSTEM</code> prompt to give the model specific instructions, persona, or context for its responses.</li>
+<li>Include adapter weights (e.g., for LoRA fine-tuning).</li>
+</ul>
+<p><strong>Example <code>Modelfile</code>:</strong></p>
+<pre tabindex="0"><code>FROM llama3.1:8b
+PARAMETER temperature 0.7
+PARAMETER top_k 50
+SYSTEM &#34;&#34;&#34;
+You are a helpful assistant specializing in explaining complex scientific concepts in simple terms.
+Always be concise and clear.
+&#34;&#34;&#34;
+</code></pre><p>To create a new custom model from this file:</p>
+<ol>
+<li>Save the content above into a file named <code>Modelfile</code> (no extension).</li>
+<li>Run the command in your terminal, in the same directory as the file:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama create &lt;your_custom_model_name&gt; -f Modelfile
+</span></span></code></pre></div></li>
+<li>Run your custom model:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama run &lt;your_custom_model_name&gt;
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="2-the-ollama-server-and-rest-api"><strong>2. The Ollama Server and REST API:</strong></h3>
+<p>Under the hood, Ollama runs a local HTTP server, typically on <code>http://localhost:11434</code>. This server exposes a REST API that handles requests to the LLMs. This is fundamental because it allows <em>any</em> application capable of making HTTP requests to interact with your local models.</p>
+<ul>
+<li><strong>Automatic Start:</strong> Usually, the server starts automatically when the Ollama desktop application is running or when you use commands like <code>ollama run</code>.</li>
+<li><strong>Manual Start:</strong> You can manually start the server and view logs using:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama serve
+</span></span></code></pre></div>This will show incoming requests and processing details in your terminal.</li>
+<li><strong>API Endpoints:</strong> The API provides various endpoints:
+<ul>
+<li><code>/api/generate</code>: For straightforward text generation based on a prompt.</li>
+<li><code>/api/chat</code>: For conversational interactions, maintaining context through a list of messages.</li>
+<li>Other endpoints exist for managing models (listing, pulling, deleting), showing model info, and creating embeddings.</li>
+</ul>
+</li>
+</ul>
+<p>You can interact with this API using tools like <code>curl</code>, Postman, or directly from your code. Common parameters in API requests include <code>model</code>, <code>prompt</code> (for generate), <code>messages</code> (for chat), <code>stream</code> (true/false - whether to stream response tokens or wait for the full response), and <code>format</code> (<code>json</code> - to request JSON output).</p>
+<h3 id="3-interacting-via-code-python-example"><strong>3. Interacting via Code (Python Example):</strong></h3>
+<p>The Ollama API makes it easy to integrate local LLMs into your applications. Here&rsquo;s how you might do it in Python:</p>
+<ul>
+<li>
+<p><strong>Manual HTTP Requests:</strong> Using libraries like <code>requests</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://localhost:11434/api/chat&#34;</span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;model&#34;</span>: <span style="color:#e6db74">&#34;mistral&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;messages&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {<span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#e6db74">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;Why is the sky blue?&#34;</span>}
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;stream&#34;</span>: <span style="color:#66d9ef">False</span> <span style="color:#75715e"># Get the full response at once</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(url, json<span style="color:#f92672">=</span>payload)
+</span></span><span style="display:flex;"><span>response<span style="color:#f92672">.</span>raise_for_status() <span style="color:#75715e"># Raise an exception for bad status codes</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>json()
+</span></span><span style="display:flex;"><span>print(data[<span style="color:#e6db74">&#39;message&#39;</span>][<span style="color:#e6db74">&#39;content&#39;</span>])
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Using the Official <code>ollama</code> Python Package:</strong> Ollama provides convenient libraries for popular languages. For Python:</p>
+<ol>
+<li>Install the package: <code>pip install ollama</code></li>
+<li>Use the client:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> ollama
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>client <span style="color:#f92672">=</span> ollama<span style="color:#f92672">.</span>Client() <span style="color:#75715e"># Connects to http://localhost:11434 by default</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>chat(model<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mistral&#39;</span>, messages<span style="color:#f92672">=</span>[
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;role&#39;</span>: <span style="color:#e6db74">&#39;user&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;content&#39;</span>: <span style="color:#e6db74">&#39;Why is the sky blue?&#39;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(response[<span style="color:#e6db74">&#39;message&#39;</span>][<span style="color:#e6db74">&#39;content&#39;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For streaming responses:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># stream = client.chat(</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     model=&#39;mistral&#39;,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     messages=[{&#39;role&#39;: &#39;user&#39;, &#39;content&#39;: &#39;Tell me a short story&#39;}],</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     stream=True,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># )</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># for chunk in stream:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   print(chunk[&#39;message&#39;][&#39;content&#39;], end=&#39;&#39;, flush=True)</span>
+</span></span></code></pre></div></li>
+</ol>
+<p>The library handles the complexities of API calls, making integration much cleaner. Similar libraries exist for JavaScript/TypeScript.</p>
+</li>
+</ul>
+<h3 id="4-using-graphical-user-interfaces-guis"><strong>4. Using Graphical User Interfaces (GUIs):</strong></h3>
+<p>Because Ollama exposes a standard API, various community-developed GUI applications can act as frontends. Tools like &ldquo;Open Web UI&rdquo; or &ldquo;Mist&rdquo; provide chat interfaces similar to commercial offerings but connect to your local Ollama models. Some even offer features for managing models, adjusting parameters, and setting up simple RAG pipelines by uploading documents directly through the UI.</p>
+<h2 id="common-use-cases">Common Use Cases</h2>
+<p>Ollama empowers a variety of applications:</p>
+<ul>
+<li><strong>Development and Testing:</strong> Easily experiment with different LLMs for application features without incurring API costs or dealing with complex setups.</li>
+<li><strong>Education and Research:</strong> Provides an accessible platform for learning about and experimenting with LLMs without the cost barriers of cloud services.</li>
+<li><strong>Secure Applications:</strong> Build AI-powered features for applications handling sensitive data, ensuring data stays within a controlled environment.</li>
+<li><strong>Offline AI Tools:</strong> Create tools that leverage LLMs even without internet access.</li>
+<li><strong>Personalized Assistants:</strong> Customize models with specific instructions or knowledge using <code>Modelfile</code>.</li>
+<li><strong>Building Local AI Applications:</strong> Create tools for tasks like:
+<ul>
+<li>Text summarization</li>
+<li>Sentiment analysis</li>
+<li>Code generation and explanation</li>
+<li>Retrieval-Augmented Generation (RAG) systems using local embedding models and vector stores.</li>
+</ul>
+</li>
+</ul>
+<h2 id="tree-view---everything-about-ollama">Tree View - Everything about Ollama</h2>
+<div class="tree-controls">
+  <button id="expand-all">Expand All</button>
+  <button id="collapse-all">Collapse All</button>
+</div>
+<div class="tree-view">
+  {% assign tree_data = site.data.ollama-tree %}
+  {% include tree-view.html nodes=tree_data depth=0 %}
+</div>
+<link rel="stylesheet" href="/assets/css/tree.css">
+<script src="/assets/js/tree.js"></script>
+<h2 id="conclusion">Conclusion</h2>
+<p>Ollama significantly lowers the barrier to entry for working with powerful Large Language Models. By enabling local execution, it addresses key concerns around cost, privacy, and complexity. Its simple CLI, standardized API, support for model customization, and compatibility with a growing ecosystem of open-source models make it an invaluable tool for developers, researchers, and AI enthusiasts looking to harness the power of LLMs on their own terms and hardware. Whether you&rsquo;re building sophisticated AI applications or simply exploring the capabilities of modern AI, Ollama provides a robust, free, and private foundation.</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

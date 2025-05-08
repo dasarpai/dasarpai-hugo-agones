@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CNN on Agones</title>
+    <link>http://localhost:1313/tags/cnn/</link>
+    <description>Recent content in CNN on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cnn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding the Working of CNN</title>
+      <link>http://localhost:1313/dsblog/understanding-working-of-cnn/</link>
+      <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/understanding-working-of-cnn/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6213-Understanding-Working-of-CNN.jpg&#34; alt=&#34;Understanding the Working of CNN&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;understanding-the-working-of-cnn&#34;&gt;Understanding the Working of CNN&lt;/h1&gt;&#xA;&lt;p&gt;In this article, we aim to delve deeper into the working of CNNs. This article is intended for readers who have a basic understanding of CNNs and have computation-related questions. If you have any other questions about CNNs, feel free to ask in the comments.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Questions we are looking into.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;What is the meaning of convolution in neural network?&lt;/li&gt;&#xA;&lt;li&gt;If there is some convolution layer with 64 kernel (filter) and filter size is 3x3 then does the filter get updated during training process?&lt;/li&gt;&#xA;&lt;li&gt;I heard filters has only 0 and 1 value. Depending upon what we want to extract we use the pattern of 0 and 1 on the filter, like for edge detection, contras detection etc.&lt;/li&gt;&#xA;&lt;li&gt;If a layer with 64 filter has 3x3 filter then how many weights are there?&lt;/li&gt;&#xA;&lt;li&gt;There is very famous 1x1 filter. How many weights are there if it layer has 64 neuron? Why it is more effective?&lt;/li&gt;&#xA;&lt;li&gt;Normally we think channel means number of layer in input image (RGB color). How come we can have 256 channels in neural network?&lt;/li&gt;&#xA;&lt;li&gt;How to calculate output size of convolutional layer?&lt;/li&gt;&#xA;&lt;li&gt;When 3x3x3 filter is applied to 224x224x3 image then how it become 224x224?&lt;/li&gt;&#xA;&lt;li&gt;Earlier we discussed weight of each layer R, G, B is different? When and how these weights are decided?&lt;/li&gt;&#xA;&lt;li&gt;Where do we learn features? At the level of differet layers or different channels (filter)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-is-the-meaning-of-convolution-in-neural-network&#34;&gt;What is the meaning of convolution in neural network?&lt;/h2&gt;&#xA;&lt;p&gt;In the context of neural networks, specifically Convolutional Neural Networks (CNNs), &lt;em&gt;convolution&lt;/em&gt; refers to a mathematical operation that combines two functions (or datasets) to produce a third function, typically used to extract features from input data. In simple terms, it’s a way of applying a filter or kernel to an input (like an image) to create a feature map, which highlights important patterns or features such as edges, textures, or shapes.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

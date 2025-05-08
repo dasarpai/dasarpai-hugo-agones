@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sanskrit and AI on Agones</title>
+    <link>http://localhost:1313/categories/sanskrit-and-ai/</link>
+    <description>Recent content in Sanskrit and AI on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/sanskrit-and-ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Grok 3 Model and Sanskrit</title>
+      <link>http://localhost:1313/dsblog/grok3model-and-sanskrit/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/grok3model-and-sanskrit/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6247-grok3model-and-sanskrit.jpg&#34; alt=&#34;Grok 3 Model and Sanskrit&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;grok-3-model-and-sanskrit&#34;&gt;Grok 3 Model and Sanskrit&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;No other models do justice to Sanskrit in terms of context, context length, word meaning, and translation as Grok 3 does. I’ve been trying it since it was launched by xAI on February 17, 2025, and it continues to surprise me.&lt;/p&gt;&#xA;&lt;p&gt;When people say AI/LLM/GenAI/NLP is nothing more than spitting out words fed to it during training, and that any model is only as good as the data given to it, I find myself asking a question: &amp;ldquo;Aside from a few top scientists and creative thinkers, don’t 99.999% of people do the same thing?&amp;rdquo; If you think humans are creative, you might assume some human behavior is original, arising purely from the situation and unconnected to the past. It’s like saying dreams have nothing to do with your waking life and are entirely new creations of the mind during sleep. That’s not true. Whatever humans dream is influenced by their past and waking experiences. Similarly, every action a human takes is shaped by the data fed to them over time.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

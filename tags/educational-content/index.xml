@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Educational Content on Agones</title>
+    <link>http://localhost:1313/tags/educational-content/</link>
+    <description>Recent content in Educational Content on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/educational-content/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Best YouTube Channels to Learn Data Science</title>
+      <link>http://localhost:1313/dsblog/best-youtube-channels-for-ds/</link>
+      <pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/best-youtube-channels-for-ds/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dsresources/dsr107-Best-YouTube-Channels-to-Learn-Data-Science.jpg&#34; alt=&#34;Best YouTube Channels to Learn Data Science&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;best-youtube-channels-to-learn-data-science&#34;&gt;Best YouTube Channels to Learn Data Science&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;The way we are learning new technologies has hugely changed in the last 5 years. Many educators, researchers, voices for quality education for all have come to create their educational videos and share those with community members, peers, and learners from industries. Many subjects and topics like Data Science, Artificial Intelligence, Machine Learning, Deep Learning, Reinforcement Learning have gained has huge popularity in the market because they have brought disruption in the existing businesses and knowledge is openly available in the market. If you have time and money, then it makes sense to join some full-time or part-time course from some good university and learn these subjects systematically in depth and detail. But, if time or/and money is the issue, and you know what you want to learn, then there are many YouTube channels. From there you can learn everything you need to become a good ML Engineer, Data Scientist, Data Engineer, DL Engineer, NLP Engineer, etc.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

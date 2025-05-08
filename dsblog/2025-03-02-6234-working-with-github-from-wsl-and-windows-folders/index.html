@@ -1,0 +1,344 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Working with GitHub from WSL and Windows Folders | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2025-03-02-6234-working-with-github-from-wsl-and-windows-folders/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Working with GitHub from WSL and Windows Folders">
+  <meta property="og:description" content="Problem Statement: I have project in D:\github-blog\dasarpai-websitetest. This is also a github repo. It’s remote repo is https://github.com/dasarpai/dasarpai-websitetest. I have github desktop for windows 11 installed on my machine. Sometime I push/pull files in github repo using this github desktop. I have Visual Code IDE installed on my windows 11 machine and I also visual code IDE on my machine’s wsl.
+When I am working with this project from windows 11 or wsl then sometimes file will get updated.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-03-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-02T00:00:00+00:00">
+    <meta property="article:tag" content="GitHub">
+    <meta property="article:tag" content="WSL">
+    <meta property="article:tag" content="Windows">
+    <meta property="article:tag" content="Development Environment">
+    <meta property="article:tag" content="Version Control">
+    <meta property="article:tag" content="Software Collaboration">
+
+  <meta itemprop="name" content="Working with GitHub from WSL and Windows Folders">
+  <meta itemprop="description" content="Problem Statement: I have project in D:\github-blog\dasarpai-websitetest. This is also a github repo. It’s remote repo is https://github.com/dasarpai/dasarpai-websitetest. I have github desktop for windows 11 installed on my machine. Sometime I push/pull files in github repo using this github desktop. I have Visual Code IDE installed on my windows 11 machine and I also visual code IDE on my machine’s wsl.
+When I am working with this project from windows 11 or wsl then sometimes file will get updated.">
+  <meta itemprop="datePublished" content="2025-03-02T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-03-02T00:00:00+00:00">
+  <meta itemprop="wordCount" content="937">
+  <meta itemprop="keywords" content="GitHub integration with WSL,Managing Git projects on Windows,Version control with WSL,Collaborative development setups,Efficient Git branching strategies,Cross-platform development with GitHub,Optimizing development workflow with WSL">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Working with GitHub from WSL and Windows Folders">
+  <meta name="twitter:description" content="Problem Statement: I have project in D:\github-blog\dasarpai-websitetest. This is also a github repo. It’s remote repo is https://github.com/dasarpai/dasarpai-websitetest. I have github desktop for windows 11 installed on my machine. Sometime I push/pull files in github repo using this github desktop. I have Visual Code IDE installed on my windows 11 machine and I also visual code IDE on my machine’s wsl.
+When I am working with this project from windows 11 or wsl then sometimes file will get updated.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6234-Working-with-Github-from-WSL-and-Windows-Folders.jpg" alt="Working with GitHub from WSL and Windows Folders"></p>
+<h2 id="problem-statement">Problem Statement:</h2>
+<p>I have project in D:\github-blog\dasarpai-websitetest. This is also a github repo. It&rsquo;s remote repo is <a href="https://github.com/dasarpai/dasarpai-websitetest">https://github.com/dasarpai/dasarpai-websitetest</a>. I have github desktop for windows 11 installed on my machine. Sometime I push/pull files in github repo using this github desktop. I have Visual Code IDE installed on my windows 11 machine and I also visual code IDE on my machine&rsquo;s wsl.</p>
+<p>When I am working with this project from windows 11 or wsl then sometimes file will get updated.</p>
+<p>Keeping all this in mind do you have anything for me which I need to take care of github repo code.</p>
+<h2 id="solution-space">Solution Space</h2>
+<p>Given your setup with the <code>dasarpai-websitetest</code> project, GitHub Desktop, Visual Studio Code (VS Code) on Windows 11, and VS Code on WSL, along with pushing/pulling files to/from the GitHub remote repository, here are some tips and considerations to ensure smooth management of your GitHub repo code:</p>
+<hr>
+<h3 id="1-syncing-between-windows-11-and-wsl">1. Syncing Between Windows 11 and WSL</h3>
+<p>Since you’re working on the same project from both Windows 11 and WSL, there’s a risk of file conflicts or inconsistencies. Here’s what to watch out for:</p>
+<ul>
+<li>
+<p><strong>File Path Differences</strong>: Windows uses backslashes (<code>\</code>) and drive letters (e.g., <code>D:\</code>), while WSL uses Unix-style paths (e.g., <code>/mnt/d/</code>). Ensure your Git repository is accessible consistently. It’s best to work on the project from a directory that both systems can access seamlessly, like <code>D:\github-blog\dasarpai-websitetest</code>, which WSL maps as <code>/mnt/d/github-blog/dasarpai-websitetest</code>.</p>
+<ul>
+<li><strong>Tip</strong>: Open the project in WSL using VS Code’s WSL extension (<code>Remote - WSL</code>) to avoid path confusion.</li>
+</ul>
+</li>
+<li>
+<p><strong>Line Endings (CRLF vs LF)</strong>: Windows uses <code>CRLF</code> (carriage return + line feed) for line endings, while WSL/Linux uses <code>LF</code> (line feed). This can cause Git to detect changes in files even if you didn’t modify them.</p>
+<ul>
+<li><strong>Fix</strong>: Configure Git to handle line endings consistently:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global core.autocrlf true  <span style="color:#75715e"># On Windows</span>
+</span></span><span style="display:flex;"><span>git config --global core.autocrlf input <span style="color:#75715e"># On WSL</span>
+</span></span></code></pre></div>Alternatively, add a <code>.gitattributes</code> file to your repo:
+<pre tabindex="0"><code>* text=auto
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p><strong>File Permissions</strong>: WSL might alter file permissions in a way that Windows doesn’t recognize properly. This usually isn’t an issue for Git unless you’re tracking executable scripts.</p>
+<ul>
+<li><strong>Tip</strong>: Avoid committing permission changes unless necessary (e.g., use <code>git config core.fileMode false</code> in WSL).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-using-github-desktop-and-vs-code-together">2. Using GitHub Desktop and VS Code Together</h3>
+<p>You’re using GitHub Desktop for push/pull operations, but you might also use Git commands in VS Code (via its terminal or Git integration). Here’s how to avoid confusion:</p>
+<ul>
+<li><strong>Check Git Status Before Switching Tools</strong>: If you make changes in VS Code (Windows or WSL) and then switch to GitHub Desktop, ensure there are no uncommitted changes. Run <code>git status</code> in the terminal or check the Git panel in VS Code.</li>
+<li><strong>Commit Frequently</strong>: Whether in GitHub Desktop or VS Code, commit changes often with meaningful messages to avoid losing work or creating large, unwieldy commits.</li>
+<li><strong>Pull Before Push</strong>: Always pull from the remote repo (<code>https://github.com/dasarpai/dasarpai-websitetest</code>) before pushing, especially if you switch between Windows and WSL. GitHub Desktop usually prompts for this, but double-check in VS Code if you use its Git features.</li>
+</ul>
+<hr>
+<h3 id="3-avoiding-conflicts-in-the-repo">3. Avoiding Conflicts in the Repo</h3>
+<p>Since files “sometimes get updated” when working in Windows or WSL, you might accidentally overwrite changes or create merge conflicts. Here’s how to manage this:</p>
+<ul>
+<li>
+<p><strong>Branching Strategy</strong>: If you’re experimenting or working on features, create separate branches (<code>git checkout -b feature-name</code>) instead of working directly on <code>main</code>. This keeps your main branch stable.</p>
+<ul>
+<li>Example:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout -b wsl-updates  <span style="color:#75715e"># Work in WSL</span>
+</span></span><span style="display:flex;"><span>git checkout -b windows-updates  <span style="color:#75715e"># Work in Windows</span>
+</span></span></code></pre></div>Merge them later with <code>git merge</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Stash Changes</strong>: If you switch between Windows and WSL mid-work, use <code>git stash</code> to temporarily save uncommitted changes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git stash  <span style="color:#75715e"># Save changes</span>
+</span></span><span style="display:flex;"><span>git pull   <span style="color:#75715e"># Update from remote</span>
+</span></span><span style="display:flex;"><span>git stash pop  <span style="color:#75715e"># Reapply changes</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Sync Regularly</strong>: Use GitHub Desktop or <code>git pull</code> to keep your local repo in sync with the remote repo before starting work in either environment.</p>
+</li>
+</ul>
+<hr>
+<h3 id="4-tool-specific-tips">4. Tool-Specific Tips</h3>
+<ul>
+<li>
+<p><strong>GitHub Desktop</strong>:</p>
+<ul>
+<li>Use it for simple push/pull operations, but if you encounter merge conflicts, resolve them in VS Code or the terminal since GitHub Desktop’s conflict resolution is limited.</li>
+<li>Check the “History” tab to ensure your commits align with what’s on the remote repo.</li>
+</ul>
+</li>
+<li>
+<p><strong>VS Code (Windows)</strong>:</p>
+<ul>
+<li>Use the built-in Git integration (Source Control tab) to stage, commit, and push changes if you prefer a GUI over GitHub Desktop.</li>
+<li>Install the “GitLens” extension for better Git history and blame tracking.</li>
+</ul>
+</li>
+<li>
+<p><strong>VS Code (WSL)</strong>:</p>
+<ul>
+<li>Ensure your WSL distro has Git installed (<code>sudo apt install git</code> for Ubuntu-based distros).</li>
+<li>Use the WSL terminal in VS Code for Git commands if you’re working in the WSL environment.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="5-backup-and-safety">5. Backup and Safety</h3>
+<ul>
+<li><strong>Remote as Backup</strong>: Since your repo is on GitHub, it’s already a good backup. Push changes frequently to avoid losing work if something goes wrong locally.</li>
+<li><strong>gitignore</strong>: Ensure you have a <code>.gitignore</code> file to exclude unnecessary files (e.g., build artifacts, IDE configs like <code>.vscode/</code>, or WSL-specific files). Example:
+<pre tabindex="0"><code>node_modules/
+.vscode/
+*.log
+</code></pre></li>
+</ul>
+<hr>
+<h3 id="6-general-workflow-suggestion">6. General Workflow Suggestion</h3>
+<p>Here’s a streamlined approach:</p>
+<ol>
+<li>Start your session by opening <code>D:\github-blog\dasarpai-websitetest</code> in VS Code (Windows or WSL).</li>
+<li>Run <code>git pull</code> (or use GitHub Desktop) to get the latest changes from <code>https://github.com/dasarpai/dasarpai-websitetest</code>.</li>
+<li>Make your changes and test them.</li>
+<li>Stage and commit your changes (<code>git add .</code> and <code>git commit -m &quot;your message&quot;</code> in VS Code, or use GitHub Desktop).</li>
+<li>Push to the remote repo (<code>git push</code> or GitHub Desktop’s “Push” button).</li>
+<li>Repeat when switching between Windows and WSL.</li>
+</ol>
+<hr>
+<h3 id="final-notes">Final Notes</h3>
+<p>This setup is fairly standard, and with a little care, you can avoid most issues. The key is to stay consistent with how you interact with Git (e.g., pull before editing, commit often) and be mindful of the Windows-WSL differences.</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

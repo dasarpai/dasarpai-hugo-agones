@@ -1,0 +1,635 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Exploring Tokenization and Embedding in NLP | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2025-01-31-6215-exploring-tokenization-in-ai/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Exploring Tokenization and Embedding in NLP">
+  <meta property="og:description" content="Exploring Tokenization and Embedding in NLP Tokenization and embedding are key components of natural language processing (NLP) models. Sometimes people misunderstand tokenization and embedding and this article is to address those issues. This is in the question answer format and addressing following questions.
+What is tokenization? What are different Tokenzation schemes? What is OOV (Out-of-Vocabulary) in Tokenization? If a word does not exist in embedding model’s vocabulary, then how tokenization and embedding is done? What is criteria of splitting a word? What is Subword Tokenization? How FastText Tokenization works? What is role of [CLS] token? What is WordPiece and how it works? What is BPE (Byte Pair Encoding), and how it works? What is SentencePiece and how it works? For Indian languages what tokenization schemes is the best? What is tokenization? Tokenization is the process of breaking text into smaller units (tokens), such as words, subwords, or characters, for NLP tasks.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-01-31T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-31T00:00:00+00:00">
+    <meta property="article:tag" content="Tokenization">
+    <meta property="article:tag" content="Embeddings">
+    <meta property="article:tag" content="NLP">
+
+  <meta itemprop="name" content="Exploring Tokenization and Embedding in NLP">
+  <meta itemprop="description" content="Exploring Tokenization and Embedding in NLP Tokenization and embedding are key components of natural language processing (NLP) models. Sometimes people misunderstand tokenization and embedding and this article is to address those issues. This is in the question answer format and addressing following questions.
+What is tokenization? What are different Tokenzation schemes? What is OOV (Out-of-Vocabulary) in Tokenization? If a word does not exist in embedding model’s vocabulary, then how tokenization and embedding is done? What is criteria of splitting a word? What is Subword Tokenization? How FastText Tokenization works? What is role of [CLS] token? What is WordPiece and how it works? What is BPE (Byte Pair Encoding), and how it works? What is SentencePiece and how it works? For Indian languages what tokenization schemes is the best? What is tokenization? Tokenization is the process of breaking text into smaller units (tokens), such as words, subwords, or characters, for NLP tasks.">
+  <meta itemprop="datePublished" content="2025-01-31T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-01-31T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2427">
+  <meta itemprop="keywords" content="NLP Tokenization Schemes,Tokenization in NLP,Language Model Tokenization,Embeddings in NLP,NLP Tokenization Methods,Tokenization Techniques NLP,NLP Tokenization Examples">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exploring Tokenization and Embedding in NLP">
+  <meta name="twitter:description" content="Exploring Tokenization and Embedding in NLP Tokenization and embedding are key components of natural language processing (NLP) models. Sometimes people misunderstand tokenization and embedding and this article is to address those issues. This is in the question answer format and addressing following questions.
+What is tokenization? What are different Tokenzation schemes? What is OOV (Out-of-Vocabulary) in Tokenization? If a word does not exist in embedding model’s vocabulary, then how tokenization and embedding is done? What is criteria of splitting a word? What is Subword Tokenization? How FastText Tokenization works? What is role of [CLS] token? What is WordPiece and how it works? What is BPE (Byte Pair Encoding), and how it works? What is SentencePiece and how it works? For Indian languages what tokenization schemes is the best? What is tokenization? Tokenization is the process of breaking text into smaller units (tokens), such as words, subwords, or characters, for NLP tasks.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6215-Exploring-Tokenization-in-AI.jpg" alt="Exploring Tokenization and Embedding in NLP"></p>
+<h1 id="exploring-tokenization-and-embedding-in-nlp">Exploring Tokenization and Embedding in NLP</h1>
+<p>Tokenization and embedding are key components of natural language processing (NLP) models. Sometimes people misunderstand tokenization and embedding and this article is to address those issues. This is in the question answer format and addressing following questions.</p>
+<ol>
+<li>What is tokenization?</li>
+<li>What are different Tokenzation schemes?</li>
+<li>What is OOV (Out-of-Vocabulary) in Tokenization?</li>
+<li>If a word does not exist in embedding model&rsquo;s vocabulary, then how tokenization and embedding is done?</li>
+<li>What is criteria of splitting a word?</li>
+<li>What is Subword Tokenization?</li>
+<li>How FastText Tokenization works?</li>
+<li>What is role of [CLS] token?</li>
+<li>What is WordPiece and how it works?</li>
+<li>What is BPE (Byte Pair Encoding), and how it works?</li>
+<li>What is SentencePiece and how it works?</li>
+<li>For Indian languages what tokenization schemes is the best?</li>
+</ol>
+<h2 id="what-is-tokenization">What is tokenization?</h2>
+<p>Tokenization is the process of breaking text into smaller units (tokens), such as words, subwords, or characters, for NLP tasks.</p>
+<p>Purpose:
+✔ Converts raw text into a structured format for machine learning models.
+✔ Handles out-of-vocabulary (OOV) words and improves text processing.
+✔ Enables models to understand and generate human language efficiently.</p>
+<h2 id="what-are-different-tokenzation-schemes">What are different Tokenzation schemes?</h2>
+<p>The most popular and widely used in NLP today. Each scheme is optimized for different tasks, languages, and domains.</p>
+<ol>
+<li><strong>Word-Based</strong> (Simple, but suffers from OOV issues)</li>
+<li><strong>Whitespace &amp; Rule-Based</strong> (NLTK, spaCy, useful for preprocessing)</li>
+<li><strong>Subword-Based</strong> (WordPiece, BPE, Unigram—used in BERT, GPT, T5)</li>
+<li><strong>Character-Level</strong> (Good for misspellings, used in FastText, OCR)</li>
+<li><strong>Byte-Level</strong> (GPT-4, T5, handles emojis and special characters)</li>
+<li><strong>Morpheme-Based</strong> (Japanese, Korean, Chinese NLP)</li>
+<li><strong>Sentence-Level</strong> (Text summarization, document-level models)</li>
+<li><strong>Hybrid Tokenization</strong> (Combining multiple methods—XLNet, ALBERT)</li>
+<li><strong>Augmented BPE</strong> (Multilingual NLP—mBERT, XLM-R)</li>
+<li><strong>Meta-Corpus Tokenization</strong> (Self-learning tokenization—DeepMind RETRO)</li>
+<li><strong>Hierarchical Tokenization</strong> (Sentence → Word → Subword → Character)</li>
+<li><strong>Phoneme-Based</strong> (Speech recognition—Whisper, wav2vec)</li>
+<li><strong>Radical-Based</strong> (For Chinese/Japanese—MeCab, KoNLPy)</li>
+<li><strong>Graph-Based</strong> (For knowledge graphs—KG-BERT)</li>
+<li><strong>Punctuation-Aware</strong> (Legal, TTS, sentiment analysis)</li>
+<li><strong>Code-Specific</strong> (For programming languages—CodeBERT, Codex)</li>
+</ol>
+<h2 id="what-is-oov-out-of-vocabulary-in-tokenization">What is OOV (Out-of-Vocabulary) in Tokenization?</h2>
+<p>OOV (Out-of-Vocabulary) refers to words that are not present in a model’s vocabulary and cannot be directly recognized or processed.</p>
+<p>Why Does OOV Occur?</p>
+<ul>
+<li>Limited vocabulary size in NLP models.</li>
+<li>Rare or new words, such as slang or technical terms.</li>
+<li>Misspellings or variations of words.</li>
+<li>Morphologically complex words, especially in rich languages like Hindi or Finnish.</li>
+</ul>
+<h2 id="if-a-word-does-not-exist-in-embedding-models-vocabulary-then-how-tokenization-and-embedding-is-done">If a word does not exist in embedding model&rsquo;s vocabulary, then how tokenization and embedding is done?</h2>
+<p>For example we have word <em>simultaneously</em> which is not part of vocbulary. In that case it is tokenized into multiple tokens in a transformer-based model (e.g., BERT, GPT), each token gets its own embedding. To generate an embedding for the complete word, there are several strategies:</p>
+<ol>
+<li>
+<p><strong>Taking the First Token&rsquo;s Embedding</strong></p>
+<ul>
+<li>Many transformer models (e.g., BERT) use <strong>wordpiece</strong> tokenization, where the first subword token often carries more meaning. Using the embedding of the first token can be a simple and efficient choice.</li>
+</ul>
+</li>
+<li>
+<p><strong>Averaging the Token Embeddings</strong></p>
+<ul>
+<li>Compute the <strong>mean</strong> of all subword embeddings:
+$$ E_{word} = \frac{1}{N} \sum_{i=1}^{N} E_{token_i}$$</li>
+<li>This smooths out variations and gives a balanced representation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Weighted Average (Attention-Based)</strong></p>
+<ul>
+<li>Some methods use attention weights to give more importance to certain subwords, especially in contextual embeddings.</li>
+</ul>
+</li>
+<li>
+<p><strong>Using the Last Token&rsquo;s Embedding</strong></p>
+<ul>
+<li>If the last token carries a suffix that changes the meaning (e.g., &ldquo;-ing&rdquo;, &ldquo;-ly&rdquo;), it might be useful to consider its embedding.</li>
+</ul>
+</li>
+<li>
+<p><strong>Concatenation of Embeddings</strong></p>
+<ul>
+<li>Instead of averaging, concatenate the embeddings of all tokens, creating a longer but richer word representation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Fine-tuning with a Context-Aware Model</strong></p>
+<ul>
+<li>If the application requires better word-level embeddings, a downstream model can be trained to aggregate subword embeddings effectively.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Best Practice</strong>
+For general NLP tasks, <strong>averaging subword embeddings</strong> is a common and effective strategy. However, in tasks like machine translation or sentiment analysis, an attention-weighted or task-specific approach may work better.</p>
+<h2 id="what-is-criteria-of-splitting-a-word">What is criteria of splitting a word?</h2>
+<p>The criteria for splitting a word into multiple tokens in BERT (or similar models) depend on the tokenization algorithm. BERT uses WordPiece tokenization, which follows these rules:</p>
+<p>simultaneously → [&lsquo;simult&rsquo;, &lsquo;##aneously&rsquo;]
+transformers → [&rsquo;transform&rsquo;, &lsquo;##ers&rsquo;]  # Splitting Follows the &ldquo;Longest Match First&rdquo; Rule<br>
+Subword Tokens Start with ##</p>
+<h2 id="what-is-subword-tokenization">What is Subword Tokenization?</h2>
+<p><strong>Subword Tokenization</strong> is a technique that breaks words into smaller, meaningful units (subwords) rather than whole words or individual characters. This helps handle <strong>out-of-vocabulary (OOV) words</strong>, <strong>morphologically rich languages</strong>, and <strong>rare words</strong> efficiently.</p>
+<p><strong>How It Works:</strong></p>
+<ol>
+<li>
+<p><strong>Training Phase</strong>:</p>
+<ul>
+<li>A vocabulary is built using <strong>frequent words</strong> and <strong>subwords</strong> from a corpus.</li>
+<li>Common sequences of characters are merged iteratively.</li>
+</ul>
+</li>
+<li>
+<p><strong>Tokenization Phase</strong> (at inference):</p>
+<ul>
+<li>Words are split into <strong>subwords</strong> based on the trained vocabulary.</li>
+<li>Frequent words remain whole, while rare words are broken into subwords.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Example (Using BPE/WordPiece)</strong></p>
+<ul>
+<li><strong>Input:</strong> <code>&quot;unhappiness&quot;</code></li>
+<li><strong>Tokenized as:</strong> <code>[&quot;un&quot;, &quot;happiness&quot;]</code><br>
+(if &ldquo;happiness&rdquo; is common)</li>
+<li><strong>If not in vocabulary:</strong> <code>[&quot;un&quot;, &quot;happi&quot;, &quot;ness&quot;]</code></li>
+</ul>
+<p><strong>Popular Subword Tokenization Methods</strong></p>
+<ul>
+<li><strong>Byte Pair Encoding (BPE)</strong> – Used in GPT models.</li>
+<li><strong>WordPiece</strong> – Used in BERT.</li>
+<li><strong>SentencePiece (Unigram)</strong> – Used in T5, mBERT.</li>
+<li><strong>FastText</strong></li>
+</ul>
+<p><strong>Key Benefits</strong>
+✔️ Handles <strong>rare words</strong><br>
+✔️ Reduces <strong>vocabulary size</strong><br>
+✔️ Works well for <strong>multilingual models</strong></p>
+<h2 id="how-fasttext-tokenization-works">How FastText Tokenization works?</h2>
+<p><strong>FastText</strong> uses <strong>subword tokenization</strong>, but in a different way compared to <strong>BPE, WordPiece, or SentencePiece</strong>.</p>
+<p><strong>How FastText Uses Subwords</strong><br>
+Instead of breaking words into learned <strong>subword units</strong>, FastText represents words using <strong>character n-grams</strong> (continuous sequences of <code>n</code> characters).</p>
+<p><strong>How It Works:</strong></p>
+<ol>
+<li>Each word is split into overlapping <strong>character n-grams</strong> (default: <strong>3-6 characters</strong>).</li>
+<li>The word embedding is computed as the sum of its <strong>subword embeddings</strong>.</li>
+<li>This helps handle <strong>OOV words</strong>, <strong>misspellings</strong>, and <strong>morphological variations</strong> better than traditional word embeddings.</li>
+</ol>
+<p><strong>Example:</strong><br>
+For the word <strong>&ldquo;apple&rdquo;</strong>, with <code>n=3</code>:</p>
+<ul>
+<li>Subwords: <code>[&quot;&lt;ap&quot;, &quot;app&quot;, &quot;ppl&quot;, &quot;ple&quot;, &quot;le&gt;&quot;]</code></li>
+<li>Word embedding = sum of all subword embeddings</li>
+</ul>
+<h2 id="what-is-role-of-cls-token">What is role of [CLS] token?</h2>
+<p>The [CLS] token embedding is used when you want a context-aware representation of a word within a sentence, rather than just its isolated meaning. In BERT, the first token of every input is [CLS], which learns a summary representation of the entire sequence. This is often useful for sentence-level tasks like classification, but it can also be used as a context-aware word embedding when working with entire sentences.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sentence <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;I saw an elephant in the zoo.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Tokenize the sentence</span>
+</span></span><span style="display:flex;"><span>tokens <span style="color:#f92672">=</span> tokenizer(sentence, return_tensors<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pt&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get embeddings</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad():
+</span></span><span style="display:flex;"><span>    outputs <span style="color:#f92672">=</span> model(<span style="color:#f92672">**</span>tokens)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert sentence to token list</span>
+</span></span><span style="display:flex;"><span>token_list <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>tokenize(sentence)
+</span></span><span style="display:flex;"><span>print(token_list)  <span style="color:#75715e"># Example output: [&#39;i&#39;, &#39;saw&#39;, &#39;an&#39;, &#39;elephant&#39;, &#39;in&#39;, &#39;the&#39;, &#39;zoo&#39;, &#39;.&#39;]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find index of &#34;elephant&#34;</span>
+</span></span><span style="display:flex;"><span>elephant_index <span style="color:#f92672">=</span> token_list<span style="color:#f92672">.</span>index(<span style="color:#e6db74">&#34;elephant&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>  <span style="color:#75715e"># +1 because BERT adds [CLS] at position 0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract &#34;elephant&#34; embedding</span>
+</span></span><span style="display:flex;"><span>elephant_embedding <span style="color:#f92672">=</span> outputs<span style="color:#f92672">.</span>last_hidden_state[:, elephant_index, :]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Elephant Embedding Shape:&#34;</span>, elephant_embedding<span style="color:#f92672">.</span>shape)  <span style="color:#75715e"># Expected: (1, 768)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract embedding for the entire sentence</span>
+</span></span><span style="display:flex;"><span>sentence_embedding <span style="color:#f92672">=</span> outputs<span style="color:#f92672">.</span>last_hidden_state[:, <span style="color:#ae81ff">0</span>, :]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Sentence Embedding Shape:&#34;</span>, sentence_embedding<span style="color:#f92672">.</span>shape)  <span style="color:#75715e"># Expected: (1, 768)</span>
+</span></span></code></pre></div><h2 id="what-is-wordpiece-and-how-it-works">What is WordPiece and how it works?</h2>
+<p><strong>WordPiece</strong> is a <strong>subword tokenization algorithm</strong> used in <strong>BERT, mBERT, and ALBERT</strong>. It helps handle <strong>OOV words</strong>, reduces vocabulary size, and improves efficiency in NLP models.</p>
+<p><strong>How WordPiece Works:</strong></p>
+<ol>
+<li>
+<p><strong>Build Vocabulary:</strong></p>
+<ul>
+<li>Start with a base vocabulary (single characters).</li>
+<li>Iteratively merge the most <strong>frequent</strong> adjacent character sequences to form subwords.</li>
+<li>Stop when the vocabulary reaches a predefined size (e.g., 30,000 for BERT).</li>
+</ul>
+</li>
+<li>
+<p><strong>Tokenization Process:</strong></p>
+<ul>
+<li>Split words into subwords based on the trained vocabulary.</li>
+<li>If a word is not in the vocabulary, it is <strong>broken into known subwords</strong>, prefixed with <code>##</code> (to indicate continuation).</li>
+</ul>
+</li>
+</ol>
+<p><strong>Example:</strong></p>
+<ul>
+<li><strong>Input:</strong> <code>&quot;unhappiness&quot;</code></li>
+<li><strong>Tokenized as:</strong> <code>[&quot;un&quot;, &quot;##happi&quot;, &quot;##ness&quot;]</code><br>
+(if &ldquo;happiness&rdquo; isn&rsquo;t frequent, it&rsquo;s split further)</li>
+</ul>
+<h2 id="what-is-bpe-byte-pair-encoding-and-how-it-works">What is BPE (Byte Pair Encoding), and how it works?</h2>
+<p><strong>BPE (Byte Pair Encoding)</strong> is a <strong>subword tokenization algorithm</strong> that replaces the most frequent character pairs with new tokens iteratively. It is widely used in <strong>GPT models, MarianMT, and SentencePiece</strong> to handle <strong>rare words, reduce vocabulary size, and improve text compression</strong>.</p>
+<hr>
+<p><strong>Step 1. Training Phase (Vocabulary Learning)</strong></p>
+<ol>
+<li><strong>Start with individual characters</strong> as the base vocabulary.</li>
+<li><strong>Count frequent adjacent character pairs</strong> in the corpus.</li>
+<li><strong>Merge the most frequent pair</strong> into a new token.</li>
+<li><strong>Repeat steps 2-3</strong> until a predefined vocabulary size is reached.</li>
+</ol>
+<hr>
+<p><strong>Step 2. Tokenization Phase (Applying Learned Rules)</strong></p>
+<ol>
+<li>Break words into <strong>subwords</strong> using the trained vocabulary.</li>
+<li>If a word is not found in the vocabulary, break it into the longest matching subwords.</li>
+</ol>
+<hr>
+<p><strong>Example:</strong><br>
+<strong>Corpus:</strong> <code>&quot;low&quot;, &quot;lowest&quot;, &quot;lower&quot;</code></p>
+<ol>
+<li>Initial tokens: <code>[&quot;l&quot;, &quot;o&quot;, &quot;w&quot;, &quot;e&quot;, &quot;s&quot;, &quot;t&quot;, &quot;r&quot;]</code></li>
+<li>Merge frequent pairs:
+<ul>
+<li><code>&quot;l o&quot;</code> → <code>&quot;lo&quot;</code></li>
+<li><code>&quot;lo w&quot;</code> → <code>&quot;low&quot;</code></li>
+<li><code>&quot;low e&quot;</code> → <code>&quot;lowe&quot;</code></li>
+<li><code>&quot;lowe s&quot;</code> → <code>&quot;lowes&quot;</code></li>
+<li><code>&quot;lowes t&quot;</code> → <code>&quot;lowest&quot;</code></li>
+</ul>
+</li>
+</ol>
+<p><strong>Final tokenized words:</strong></p>
+<ul>
+<li><code>&quot;low&quot;</code> → <code>[&quot;low&quot;]</code></li>
+<li><code>&quot;lowest&quot;</code> → <code>[&quot;low&quot;,&quot;est&quot;]</code></li>
+<li><code>&quot;lower&quot;</code> → <code>[&quot;low&quot;, &quot;er&quot;]</code></li>
+</ul>
+<h2 id="what-is-sentencepiece-and-how-it-works">What is SentencePiece and how it works?</h2>
+<p><strong>What is SentencePiece?</strong><br>
+<strong>SentencePiece</strong> is a data-driven <strong>subword tokenization algorithm</strong> used in <strong>T5, mBERT, XLNet, and MarianMT</strong>. Unlike <strong>BPE</strong> or <strong>WordPiece</strong>, it treats text as a <strong>stream of raw bytes</strong> instead of splitting on whitespace or relying on pre-tokenized words.</p>
+<hr>
+<p><strong>How SentencePiece Works?</strong></p>
+<ol>
+<li>
+<p><strong>Preprocesses Text Without Whitespace Assumptions</strong></p>
+<ul>
+<li>Treats input text as a <strong>continuous stream of characters</strong> (no need for space-based tokenization).</li>
+<li>Works well for languages <strong>without clear word boundaries</strong> (e.g., Chinese, Japanese, Thai).</li>
+</ul>
+</li>
+<li>
+<p><strong>Builds a Token Vocabulary Using One of Two Methods:</strong></p>
+<ul>
+<li><strong>Byte Pair Encoding (BPE)</strong> → Merges frequent character pairs iteratively.</li>
+<li><strong>Unigram Model</strong> → Uses a <strong>probabilistic approach</strong>, where subword units are scored based on likelihood.</li>
+</ul>
+</li>
+<li>
+<p><strong>Tokenizes New Text Based on Learned Vocabulary</strong></p>
+<ul>
+<li>Splits words into <strong>subwords</strong> based on the highest-probability segmentations.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><strong>Example:</strong><br>
+<strong>Input:</strong> <code>&quot;unhappiness&quot;</code></p>
+<p>If using <strong>BPE-based SentencePiece:</strong><br>
+🔹 <code>[&quot;un&quot;, &quot;happiness&quot;]</code> (if &ldquo;happiness&rdquo; is frequent)<br>
+🔹 <code>[&quot;un&quot;, &quot;happi&quot;, &quot;ness&quot;]</code> (if &ldquo;happiness&rdquo; isn&rsquo;t frequent)</p>
+<p>If using <strong>Unigram-based SentencePiece:</strong><br>
+🔹 Multiple segmentations are possible, and the most probable one is selected.</p>
+<hr>
+<p><strong>Key Advantages of SentencePiece:</strong><br>
+✔ <strong>Supports raw text</strong> (doesn’t need pre-tokenization)<br>
+✔ <strong>Works for multiple languages</strong> (even ones without spaces)<br>
+✔ <strong>Can use both BPE and Unigram approaches</strong><br>
+✔ <strong>Highly efficient for Neural Machine Translation (NMT)</strong></p>
+<h2 id="for-indian-languages-what-tokenization-schemes-is-the-best-">For Indian languages what tokenization schemes is the best ?</h2>
+<p>For <strong>Indian languages</strong>, tokenization can be challenging due to their diverse scripts, rich morphology, and the fact that many languages have complex compound words, words with complex characters, and inflections. Below are the <strong>best tokenization schemes</strong> and techniques specifically suited for Indian languages:</p>
+<hr>
+<p><strong>1. Morpheme-Based Tokenization</strong></p>
+<ul>
+<li>Indian languages like <strong>Hindi, Bengali, Tamil, Kannada</strong>, etc., often have complex morphology, and <strong>morpheme-based tokenization</strong> is highly effective here.</li>
+<li>This approach breaks down words into smaller meaningful units (morphemes), allowing for better handling of compound words and inflections.</li>
+<li>Indian languages often have <strong>rich inflection</strong> (gender, tense, case), and tokenizing at the morpheme level preserves these nuances.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<ul>
+<li><strong>Hindi:</strong> &ldquo;वह स्कूल जाता है&rdquo; (&ldquo;He goes to school&rdquo;)<br>
+Tokenized as: [&ldquo;वह&rdquo;, &ldquo;स्कूल&rdquo;, &ldquo;जाता&rdquo;, &ldquo;है&rdquo;]<br>
+Using morpheme-based tokenization, one could further break down the word &ldquo;जाता&rdquo; (goes) into &ldquo;जा&rdquo; (go) + &ldquo;ता&rdquo; (tense suffix).</li>
+</ul>
+<p><strong>Used in Libraries:</strong></p>
+<ul>
+<li><strong>Indic NLP Library</strong></li>
+<li><strong>KoNLPy</strong> (though more popular for Korean, adaptations exist for Indian languages)</li>
+</ul>
+<hr>
+<p><strong>2. Subword Tokenization</strong>
+<strong>Multilingual models</strong> like <strong>mBERT</strong> support Indian languages, and SentencePiece tokenization is often used in these models. These models break down words into <strong>subwords</strong>, enabling better handling of complex and compound words.</p>
+<ul>
+<li>Models like WordPiece, BPE, SentencePiece break down words into <strong>subwords</strong>, enabling better handling of complex and compound words.</li>
+<li><strong>WordPiece, BPE, or SentencePiece</strong> models are popular choices for tokenizing Indian languages, particularly for <strong>Neural Machine Translation (NMT)</strong> or <strong>multilingual models</strong> like <strong>mBERT</strong> and <strong>XLM-R</strong>.</li>
+<li>These methods are effective for handling <strong>out-of-vocabulary (OOV)</strong> words in low-resource Indian languages.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<ul>
+<li><strong>Hindi:</strong> &ldquo;स्वतंत्रता संग्राम सेनानी&rdquo; (&ldquo;Freedom Fighter&rdquo;)<br>
+Tokenized into subwords: [&ldquo;स्वत&rdquo;, &ldquo;ंत्र&rdquo;, &ldquo;ता&rdquo;, &ldquo;सं&rdquo;, &ldquo;ग्राम&rdquo;, &ldquo;से&rdquo;, &ldquo;नानी&rdquo;]</li>
+</ul>
+<p><strong>Used in Libraries:</strong></p>
+<ul>
+<li><strong>mBERT</strong>, <strong>XLM-R</strong>, <strong>IndicBERT</strong>, <strong>T5</strong>, <strong>XLM</strong></li>
+</ul>
+<hr>
+<p><strong>3. Hybrid Tokenization (Combining WordPiece + Character-Level)</strong>
+This approach combines the best of <strong>word-level tokenization</strong> and <strong>character-level tokenization</strong>. It’s especially useful for <strong>Indian languages</strong> because they have a combination of regular words and highly agglutinative or inflected words. Hybrid tokenization helps model both <strong>frequent words</strong> and <strong>rare or unknown words</strong> by combining word-level tokenization with the ability to handle characters.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li><strong>Tamil:</strong> &ldquo;தமிழ்நாடு&rdquo; (&ldquo;Tamil Nadu&rdquo;)
+<ul>
+<li>Could be tokenized as [&ldquo;த&rdquo;, &ldquo;ம&rdquo;, &ldquo;ிழ&rdquo;, &ldquo;நாடு&rdquo;] (character-level) or as one word in <strong>pre-trained multilingual models</strong>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Used in Libraries:</strong></p>
+<ul>
+<li><strong>IndicBERT</strong>, <strong>XLM-R</strong> (combines character-level and subword-level tokenization).</li>
+</ul>
+<hr>
+<p><strong>4. Sentence-Level Tokenization</strong>
+For tasks like <strong>translation</strong>, <strong>summarization</strong>, or <strong>document-level tasks</strong> in <strong>Indian languages</strong>, sentence-level tokenization is often used. <strong>Sentence segmentation</strong> helps in <strong>splitting long texts</strong> into meaningful sentences, which can then be processed by NLP models. Indian languages have complex sentence structures, and sentence segmentation ensures that each meaningful unit is tokenized appropriately.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li><strong>Hindi:</strong> &ldquo;मैं स्कूल जाता हूँ।&rdquo; → [&ldquo;मैं स्कूल जाता हूँ।&rdquo;] - a complete sentence.</li>
+<li><strong>Tamil:</strong> &ldquo;நான் பள்ளிக்கு போகிறேன்.&rdquo; → [&ldquo;நான் பள்ளிக்கு போகிறேன்.&rdquo;]</li>
+</ul>
+<p><strong>Used in Libraries:</strong></p>
+<ul>
+<li><strong>IndicNLP</strong> for segmentation.</li>
+<li><strong>spaCy</strong> with custom models.</li>
+</ul>
+<hr>
+<p><strong>5. Grapheme-Based Tokenization (Script-Specific)</strong>
+<strong>Grapheme-based tokenization</strong> is used for handling text at the character level. Especially useful for handling <strong>script-specific challenges</strong> (e.g., <strong>ligatures</strong> or <strong>complex characters</strong>). It works at the <strong>character level</strong>, breaking down words into individual characters, making it easier to handle scripts with rich diacritics and combinations.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li><strong>Kannada:</strong> &ldquo;ಬೆಂಗಳೂರು&rdquo; (&ldquo;Bengaluru&rdquo;)<br>
+Tokenized at the grapheme level: [&ldquo;ಬೆ&rdquo;, &ldquo;ಂ&rdquo;, &ldquo;ಗ&rdquo;, &ldquo;ಲ&rdquo;, &ldquo;ೂ&rdquo;, &ldquo;ರು&rdquo;]</li>
+</ul>
+<p><strong>Used in Libraries:</strong></p>
+<ul>
+<li><strong>Indic NLP Library</strong> for preprocessing. <strong>ICU-based tokenizers</strong> (Unicode handling).</li>
+</ul>
+<hr>
+<p><strong>6. Character n-grams</strong>
+<strong>FastText</strong> is a <strong>character-level model</strong> that uses <strong>n-grams</strong> (subsequences of n characters) to generate word embeddings, and it works well for <strong>Indian languages</strong>, especially for <strong>low-resource languages</strong>. It works well for low-resource languages. Useful for text classification, <strong>word embeddings</strong>, and <strong>language identification</strong> in Indian languages. FastText works well with <strong>misspelled words</strong>, <strong>out-of-vocabulary terms</strong>, and <strong>morphologically rich languages</strong> like Hindi, Tamil, or Bengali.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li><strong>Hindi:</strong> &ldquo;समाजवादी&rdquo; (&ldquo;Socialist&rdquo;)<br>
+Tokenized as character n-grams like [&ldquo;सम&rdquo;, &ldquo;मा&rdquo;, &ldquo;ाज&rdquo;, &ldquo;वाद&rdquo;, &ldquo;वी&rdquo;].</li>
+</ul>
+<p><strong>Used in Libraries:</strong></p>
+<ul>
+<li><strong>FastText model</strong> for Indian language embeddings.</li>
+</ul>
+<hr>
+<p><strong>7. Punctuation-Aware Tokenization</strong>
+For <strong>sentiment analysis</strong>, <strong>legal text</strong>, and <strong>social media data</strong>, tokenizers need to handle <strong>punctuation</strong> and <strong>emojis</strong> effectively. <strong>Indian languages</strong> with a mix of <strong>Hindi, English (Hinglish)</strong>, and emojis require punctuation-aware tokenization. Keeps punctuation as separate tokens, ensuring that models correctly interpret sentiments or legal structures.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li><strong>Hindi-English:</strong> &ldquo;मुझे food अच्छा लगा!&rdquo; (&ldquo;I liked food!&rdquo;)<br>
+Tokenized as: [&ldquo;मुझे&rdquo;, &ldquo;food&rdquo;, &ldquo;अच्छा&rdquo;, &ldquo;लगा&rdquo;, &ldquo;!&rdquo;]</li>
+</ul>
+<p><strong>Used in Libraries:</strong></p>
+<ul>
+<li><strong>BERT-based</strong> models like <strong>Hinglish-BERT</strong>.</li>
+<li><strong>Or other Multi-lingual or code-mixed NLP models</strong>.</li>
+</ul>
+<hr>
+<p><strong>8. Indic-Specific Models (mBERT, IndicBERT)</strong>
+Pre-trained models like <strong>mBERT</strong> or <strong>IndicBERT</strong> are trained on <strong>multiple Indian languages</strong>. They rely on <strong>subword tokenization</strong> (BPE/WordPiece) for efficient handling of Indian languages. <strong>IndicBERT</strong> is specifically optimized for <strong>Indian languages</strong> and trained on <strong>11 official languages</strong> of India. These models are designed with <strong>Indian linguistic features</strong> in mind, and they support multiple <strong>scripts</strong> and <strong>languages</strong> without requiring language-specific tokenization.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li><strong>Hindi:</strong> &ldquo;भारत&rdquo; (&ldquo;India&rdquo;)<br>
+Tokenized as: [&ldquo;भारत&rdquo;]</li>
+</ul>
+<p><strong>Used in Libraries:</strong></p>
+<ul>
+<li><strong>IndicBERT</strong>, <strong>mBERT</strong>, <strong>XLM-R</strong> for multilingual tasks.</li>
+</ul>
+<hr>
+<p><strong>Which Tokenization Scheme is Best for Indian Languages?</strong></p>
+<ul>
+<li><strong>Morpheme-Based</strong>: Best for <strong>richly inflected languages</strong> (e.g., Hindi, Tamil, Kannada).</li>
+<li><strong>BPE/WordPiece/SentencePiece</strong>: Best for <strong>multilingual models</strong> (e.g., <strong>mBERT</strong>, <strong>IndicBERT</strong>) and <strong>low-resource languages</strong>.</li>
+<li><strong>Hybrid Tokenization</strong>: Effective for <strong>handling both frequent and rare words</strong> (e.g., <strong>IndicBERT</strong>, <strong>XLM-R</strong>).</li>
+<li><strong>FastText</strong>: Best for <strong>word embeddings</strong>, <strong>language identification</strong>, and <strong>low-resource languages</strong>.</li>
+<li><strong>Punctuation-Aware</strong>: Best for <strong>sentiment analysis</strong>, <strong>legal text</strong> or <strong>social media</strong>.</li>
+</ul>
+<hr>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

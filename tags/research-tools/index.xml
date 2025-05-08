@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research Tools on Agones</title>
+    <link>http://localhost:1313/tags/research-tools/</link>
+    <description>Recent content in Research Tools on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/research-tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LaTeX Capabilities</title>
+      <link>http://localhost:1313/dsblog/latex-capabilities/</link>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/latex-capabilities/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6098-Latex-capabilities.jpg&#34; alt=&#34;LaTeX Capabilities&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;In the realm of document typesetting and preparation, LaTeX stands as a timeless giant, revered by professionals, researchers, students, and publishers alike. With its unmatched typographic quality, precision, and versatility, LaTeX empowers users to create documents that transcend the boundaries of conventional word processing. In this article, I am listing major capabilities that make LaTeX the tool of choice for those who demand perfection in their documents, ready to learn some coding and don&amp;rsquo;t want to pay for all this.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

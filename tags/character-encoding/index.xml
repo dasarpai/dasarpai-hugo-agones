@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Character Encoding on Agones</title>
+    <link>http://localhost:1313/tags/character-encoding/</link>
+    <description>Recent content in Character Encoding on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/character-encoding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is Unicode and how does it works?</title>
+      <link>http://localhost:1313/dsblog/what-is-unicode-and-how-does-it-works/</link>
+      <pubDate>Sat, 27 Jul 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/what-is-unicode-and-how-does-it-works/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6114-what-is-unicode-and-how-does-it-works.jpg&#34; alt=&#34;What is Unicode and how does it works?&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-unicode-and-how-does-it-works&#34;&gt;What is Unicode and how does it works?&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-unicode-a-universal-character-set&#34;&gt;What is Unicode: A Universal Character Set&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Unicode&lt;/strong&gt; is a standard that assigns a unique number to every character, no matter the platform, program, or language. It&amp;rsquo;s like a global dictionary for characters.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Why is it important?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Before Unicode, different systems used different character sets, leading to compatibility issues. For instance, a document created on one system might appear garbled when opened on another. Unicode solved this problem by providing a unified standard.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

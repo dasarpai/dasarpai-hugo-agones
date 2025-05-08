@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Energy on Agones</title>
+    <link>http://localhost:1313/tags/energy/</link>
+    <description>Recent content in Energy on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/energy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring the Energy Demand and Supply of India</title>
+      <link>http://localhost:1313/dsblog/exploring-the-energy-demand-and-supply-of-india/</link>
+      <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-the-energy-demand-and-supply-of-india/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6217-Exploring-the-Energy-Demand-and-Supply-of-India.jpg&#34; alt=&#34;Exploring the Energy Demand and Supply of India&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-the-energy-demand-and-supply-of-india&#34;&gt;Exploring the Energy Demand and Supply of India&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;When India talks about becoming a &lt;em&gt;Vishwa Guru&lt;/em&gt; (World Leader), &lt;em&gt;Vishwa Mitra&lt;/em&gt; (Friend of the World), the &lt;em&gt;Leader of the South&lt;/em&gt;, or an &lt;em&gt;AI Superpower&lt;/em&gt;, we must first understand our own electricity demand and supply. Without this understanding, these grand aspirations will remain mere words in the 21st century.&lt;/p&gt;&#xA;&lt;p&gt;I know energy experts are already discussing these issues, but those of us in AI development and semiconductor manufacturing also need to be on the same page. We cannot pursue narrow, isolated advancements without acknowledging our energy requirements. In this article, I aim to provoke my fellow data science community members in India to think critically about this issue—ask questions, analyze the situation, raise concerns in the right forums, and develop solutions.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

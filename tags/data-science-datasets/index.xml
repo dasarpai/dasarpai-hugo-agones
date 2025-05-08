@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Science Datasets on Agones</title>
+    <link>http://localhost:1313/tags/data-science-datasets/</link>
+    <description>Recent content in Data Science Datasets on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/data-science-datasets/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thousands of Machine Learning Datasets  </title>
+      <link>http://localhost:1313/dsblog/datasets/</link>
+      <pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/datasets/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dsresources/dsr115-Datasets.jpg&#34; alt=&#34;Datasets&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;thousands-of-machine-learning-datasets&#34;&gt;Thousands of Machine Learning Datasets&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction:&lt;/h2&gt;&#xA;&lt;p&gt;Without Data there is no Machine Learning, no AI, no Deep Learning. Because of heavy automation, IOT devices all around, there is no dirth of data. The first issue is, due to privacy and security related issues, data is not available for everyone. The second issue is cleaning this data. He third issues is getting complete data which can solve a given business problem. To get the complete data you need to get the data from multiple sources, identify the key to connect different records/sample of different sources. It is an expensive and time-consuming step of data science project. If you want to learn data science or want to solve any existing problem using new methods. Then you need some benchmarking framework in place which can display the model metrics (recall/precision/accuracy etc.) of each new approach (algorithm) against a given dataset. So datasets play a critical role in benchmarking algorithm performance.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,1713 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Statistics Interview Question for Data Scientist | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/Statistics-Interview-Question-for-Data-Scientist/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Statistics Interview Question for Data Scientist">
+  <meta property="og:description" content="Statistics Interview Question for Data Scientist In this question-answer blog, I will try to answer that every question starts with an example rather than a theory or definition (some unavoidable variation may be possible). I firmly believe if examples are clear, then a human mind is smart enough in generalizing, creating theories and definitions.
+The purpose of this blog is not to give you clear-cut definitions of important concepts of statistics but help you in visualizing the ideas in your mind. So that even without the definitions you understand what a particular idea means.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2023-01-06T15:50:00+05:30">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="Statistics">
+    <meta property="article:tag" content="Data Science Interview">
+    <meta property="article:tag" content="Probability Theory">
+    <meta property="article:tag" content="Statistical Analysis">
+    <meta property="article:tag" content="Data Science">
+    <meta property="article:tag" content="Hypothesis Testing">
+
+  <meta itemprop="name" content="Statistics Interview Question for Data Scientist">
+  <meta itemprop="description" content="Statistics Interview Question for Data Scientist In this question-answer blog, I will try to answer that every question starts with an example rather than a theory or definition (some unavoidable variation may be possible). I firmly believe if examples are clear, then a human mind is smart enough in generalizing, creating theories and definitions.
+The purpose of this blog is not to give you clear-cut definitions of important concepts of statistics but help you in visualizing the ideas in your mind. So that even without the definitions you understand what a particular idea means.">
+  <meta itemprop="datePublished" content="2023-01-06T15:50:00+05:30">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="11721">
+  <meta itemprop="keywords" content="statistics interview questions,data science statistics,probability theory,statistical analysis,hypothesis testing,descriptive statistics,inferential statistics,statistical distributions,correlation analysis,causation vs correlation,statistical measures,data science concepts,statistical methods,probability distributions,statistical testing,data analysis techniques,statistical formulas,mathematical statistics,statistical inference,interview preparation">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Statistics Interview Question for Data Scientist">
+  <meta name="twitter:description" content="Statistics Interview Question for Data Scientist In this question-answer blog, I will try to answer that every question starts with an example rather than a theory or definition (some unavoidable variation may be possible). I firmly believe if examples are clear, then a human mind is smart enough in generalizing, creating theories and definitions.
+The purpose of this blog is not to give you clear-cut definitions of important concepts of statistics but help you in visualizing the ideas in your mind. So that even without the definitions you understand what a particular idea means.">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p><img src="/assets/images/dspost/dsp6025-Statistics-Interview-Question-for-Data-Scientist.jpg" alt="Statistics Interview Question for Data Scientist"></p>
+<h1 id="statistics-interview-question-for-data-scientist">Statistics Interview Question for Data Scientist</h1>
+<blockquote>
+<p>In this question-answer blog, I will try to answer that every question starts with an example rather than a theory or definition (some unavoidable variation may be possible). I firmly believe if examples are clear, then a human mind is smart enough in generalizing, creating theories and definitions.</p></blockquote>
+<blockquote>
+<p>The purpose of this blog is not to give you clear-cut definitions of important concepts of statistics but help you in visualizing the ideas in your mind. So that even without the definitions you understand what a particular idea means.</p></blockquote>
+<blockquote>
+<p>This blog is written keeping learners from software engineering background in mind. They have a lot of confusion around the naming convention used in statistics like event, experiments, variable, test, sample, significance, confidence level, theoretical probability, statistical measure and their calculation, etc.</p></blockquote>
+<blockquote>
+<p>To give an example, in most of the places, I will use the “job_applicant” dataset. This dataset has data about the people who applied for a job in the company and applicants were either selected or rejected by the company. So the information in this dataset is the applicant&rsquo;s name, date of birth, date of application, job applied, last salary, education, living_city, selected, etc.</p></blockquote>
+<h1 id="about-statistics">About Statistics</h1>
+<h2 id="can-you-tell-me-about-population-space-or-sample-space">Can you tell me about population space or sample space?</h2>
+<p>Population space where all the observation are stored. Sample space is where some of the observation are stored. If your organization has 300K employees then the population space of all the employees of your organization is 300K. If you create a sample of 100 employees from this sample space then 100 employee are forming a sample space. Sample space is creating in sampling process. Every sampling has some purpose, therefore it must ensure that sample represents the population. There are many techniques to ensure this.</p>
+<p>If there are 5 variables like Name, Age, Gender, Title, Salary then no two observations in the population or sample dataset can have the same information. Possible outcome of 2 observations in sample or population space can be &ldquo;John Smith&rdquo;, who is 35 years old, male, has a job title of &ldquo;Manager&rdquo;, and earns a salary of $ 70,000. Another possible outcome could be the employee named &ldquo;Jane Doe&rdquo;, who is 42 years old, female, has a job title of &ldquo;Engineer&rdquo;, and earns a salary of $80,000.</p>
+<p>A sample space, often denoted by the symbol S, is the set of all possible outcomes of a random experiment. The population space, often denoted by the symbol Ω, is the set of all possible outcomes of a random process. The population space is typically not known and it is the sample space that we use to make inferences about the population.</p>
+<h2 id="what-is-random-process-random-experiment-random-event-all-are-the-same-thing-or-different">What is Random Process, Random Experiment, Random Event, all are the same thing or different?</h2>
+<p>A random process is a sequence of events that cannot be predicted exactly. For example, tomorrow&rsquo;s stock price of X stock. It depends on many dozens of variables.</p>
+<p>A random experiment is an experiment in which the outcome is uncertain and can take on different values based on chance or probability. Traffic movement, dice throw, selecting employee, coin throw.</p>
+<p>A random event is a specific outcome of a random process. Coming head in tossing random process, coming 4 in dice throw random process, selecting Ph.D holder from employee dataset, a vehicle can turn right on a traffic light.</p>
+<h2 id="what-is-the-difference-between-variable-and-random-variable">What is the difference between variable and random variable?</h2>
+<p>An observation has attribute, for example an employee # 108 is one observation from our sample of population dataset. It has many attributes like name, age, gender, salary, position etc. These are variables. Any employee can have any value corresponding to these variables.</p>
+<p>Random variable is a variable whose values are determined by a random process. For example if there can be only one job_position out of 4 job_position, then job_position variable is random variable. Output of random variables follows some distribution like normal distribution.</p>
+<p>Every random variable is a variable but every variable is not a random variable.</p>
+<h2 id="what-is-the-difference-between-measure-tool-technique-method-and-process">What is the difference between Measure, Tool, Technique, Method, and Process?</h2>
+<ul>
+<li>A measure is a <strong>way to calculate</strong>. It is a metric. For example mean, median, and mode are measures to know the central tendency of data. In our example dataset we can summarize the age column, as &ldquo;mean age&rdquo;=35 years, or median age is 38 years.</li>
+<li>A tool is a physical object or software or app used <strong>to accomplish a task</strong>. For example, Microsoft Project for creating a project schedule and identifying a critical path.</li>
+<li>A technique is a <strong>method or procedure used to accomplish a task</strong>. It is related to a simple problem. For example, a technique used to open the lid of an air-tight box or visualize 4 dimensional data on a 2D plane.</li>
+<li>A method is a <strong>systematic approach</strong> to solve a problem. It is more related to creativity and refers to a larger problem. For example, a method of cracking an IAS exam.</li>
+<li>A process is a <strong>series of steps or actions</strong> taken to achieve a desired result. For example the process of hiring.</li>
+</ul>
+<h2 id="what-is-the-meaning-of-sample-in-statistics-and-how-is-it-different-from-observation">What is the meaning of &ldquo;sample&rdquo; in statistics and how is it different from &ldquo;observation&rdquo;?</h2>
+<p>In statistics, <strong>a sample is a subset of a population</strong> that is chosen for the purpose of the study. A sample is a representation of the population. The goal of sampling is to select a group of individuals from a population that will be representative of the population as a whole. A sample is used to make inferences about the population from which it was drawn. A sample is used for estimating population parameters, such as the mean or standard deviation, and to test hypotheses about the population.</p>
+<p>An observation, on the other hand, <strong>refers to a single measurement or data point</strong>. Observations are the individual pieces of data collected in a study. A sample can contain multiple observations, for example, a sample of 100 people means 100 different observations of different individuals, each observation can have multiple data points such as age, gender, income, etc.</p>
+<p>In summary, a sample is a subset of a population, which is chosen to represent the population, while an observation is a single data point or measurement collected from an individual within the sample. A sample is used to make inferences about the population, whereas observations are used to make inferences about the sample.</p>
+<p><img src="/assets/images/dspost/statistics/observation-sample-population.png" alt="observation sample population"></p>
+<h2 id="what-is-the-difference-between-statistics-and-census">What is the difference between statistics and census?</h2>
+<p><strong>Statistics</strong> is the science of collecting, organizing, analyzing, and interpreting data. It is about <strong>sample</strong> data (a portion of the entire population).</p>
+<p><strong>Census</strong> is the process of collecting and counting data about a <strong>population</strong>. For example, to study the economic well-being of tribal people, if you can collect some sample data then it is part of statistics. But if you collect data on the entire tribal population then it is a census.</p>
+<h2 id="what-are-observational-data-and-experimental-data-in-statistics">What are observational data, and experimental data in Statistics?</h2>
+<p>Observational Data: If you want to know whether there is any relationship between <strong>overtime working</strong> and <strong>number of defects produced</strong> then you collect the data and check the relationship. This collected data is observational data. Before collecting the data, we don&rsquo;t have any intention of experimenting. We just want to know. To establish the relationship just observation of existing data is enough.</p>
+<p>Experimental Data: If you <strong>change the number of working hours</strong> then what is the impact of this on <strong>number of defects produced</strong>? This way, you experiment with different working hours, sometimes you increase the hours, and at other times you decrease the hours. This collected data is experimental data. Before collecting the data I have an intention to experiment. In one experiment, we increased the number of working hours and then noted the number of defects. In another experiment, we decreased the number of working hours and then noted the number of defects. To establish this relationship you need to experiment multiple times.</p>
+<h2 id="are-statistical-measures-and-statistical-methods-the-same">Are statistical measures and statistical methods the same?</h2>
+<p>No, Statistical measures are the <strong>numerical values</strong> used to describe data, like mean, median, and standard deviation. While statistical methods are the <strong>techniques</strong> used to analyze data like regression, and statistical tests.</p>
+<h2 id="what-are-the-different-types-of-statistics">What are the different types of statistics?</h2>
+<p>The different types of statistics are</p>
+<ul>
+<li>Descriptive statistics</li>
+<li>Inferential statistics</li>
+<li>Predictive analytics.</li>
+</ul>
+<h2 id="what-is-descriptive-statistics">What is Descriptive statistics?</h2>
+<p>Descriptive statistics is the process of summarizing and organizing data in order to describe the characteristics of a <strong>population or sample</strong>. It includes measures such as mean, median, mode, range, variance, standard deviation, quartiles, percentiles, skewness, kurtosis, and covariance. Each measure has a different formula to calculate. Apart from that, the same measure can be calculated differently for different data distributions.</p>
+<h2 id="what-is-inferential-statistics">What is Inferential statistics?</h2>
+<p>Inferential Statistics is a form of statistical analysis used to make inferences or draw conclusions from a given dataset. Generally, this involves <strong>testing assumptions and hypotheses about the data</strong>, such as if there is a relationship between two variables, or what the effect of one variable has on another. Inferential Statistics can help researchers to better understand the population they are studying.</p>
+<h2 id="what-is-predictive-statistics">What is predictive statistics?</h2>
+<p>Predictive Statistics is a branch of statistics used to make predictions about future events or outcomes. This is done by analyzing data sets and using mathematical models to uncover patterns and correlations that can be used to forecast potential results and trends. Predictive Statistics can be used in many different areas such as marketing, business forecasting, machine learning, and health care. Machine learning models are built for predictive statistics.</p>
+<h2 id="what-are-statistical-measures-of-descriptive-statistics">What are statistical measures of Descriptive Statistics?</h2>
+<p>Descriptive statistics measures include mean, median, mode, range, variance, standard deviation, quartiles, percentiles, skewness, kurtosis, and covariance. In statistics, we can study, and analyze these measures for sample data or for population data. In fact, when it is not possible to do a census then we use these measures of sample data and predict/extrapolate/postulate about the population measure. For example, if you want to know the average life expectancy of Indian women then you collect sample data and using that you can postulate about the average age of the entire indian women population. There is a process for doing this. In this process, there can be errors and there are processes of handling/factoring that error component.</p>
+<h2 id="what-are-statistical-measures-in-inferential-statistics">What are statistical measures in Inferential Statistics?</h2>
+<p>Inferential statistics measures include z-score, t-test, chi-square test, correlation coefficient, confidence interval, and p-value.</p>
+<h2 id="what-are-statistical-measures-in-predictive-statistics">What are statistical measures in Predictive Statistics?</h2>
+<p>To measure the performance of statistical models we have several measures. It depends upon the type of predictor or model type. For example, a classification model can be evaluated using precision, recall, accuracy, etc. A regression model can be evaluated using R^2 or Adjusted R^2.</p>
+<h2 id="what-are-the-statistical-tools-in-inferential-statistics">What are the statistical tools in Inferential Statistics?</h2>
+<p>Inferential Statistics are statistical tools used to make inferences or draw conclusions from a given dataset. Examples of these tools include <strong>hypothesis testing, regression analysis, and correlation analysis.</strong> These tools allow researchers to infer information about population characteristics based on their observations of a smaller sample.</p>
+<h2 id="what-are-the-statistical-tools-in-predictive-statistics">What are the statistical tools in Predictive Statistics?</h2>
+<p>Predictive statistics tools are machine learning algorithms, such as linear regression, logistic regression, decision trees, neural networks, and support vector machines.</p>
+<h1 id="about-variables--models">About Variables &amp; Models</h1>
+<h2 id="what-is-a-random-variable">What is a random variable?</h2>
+<ul>
+<li>If you throw a die then the outcome can be any number between 1 to 6, inclusive.</li>
+<li>If you check the job applicant&rsquo;s age then the age can be any number from 18 to 60, knowing this is the age limit.</li>
+<li>If you see traffic movement on a four-way cross junction it can be left, right, straight, or u-turn.</li>
+</ul>
+<p>So the variables like dice-outcome, applicant-job, traffic-turn-direction can take any random value between the range or the options available. Therefore they are called random variables. In the language of the database, every table&rsquo;s column is a random variable. In statistics, this is referred to as a random variable.</p>
+<h2 id="what-are-the-different-types-of-random-variables">What are the different types of random variables?</h2>
+<p>A random variable can take any value from the given fixed number of options. For example, applicant_education applicant_gender, applicant_city, and dice_outcome can have a fixed number of outcomes. This kind of variable is called a <strong>categorical variable</strong>. Further, there are two types of categorical variables. Applicant_education can be Higher_Secondry, Graduate, Master, Ph.D. But this random variable has an order from low to high therefore it is called an ordinal categorical variable or <strong>ordinal variable</strong>. Applicant_city or color of the side of the die does not have any order therefore they are called nominal categorical variables or <strong>nominal variables.</strong></p>
+<p>In the employee dataset, what can be the value of applicant_age or salary? Like earlier, it is not selected from a fixed number of options available. Not only that it can be decimal also. Therefore such kind of random variable is called a numeric random variable or <strong>numeric variable.</strong></p>
+<h2 id="variable-types-and-summarization">Variable Types and Summarization</h2>
+<p>There are two kinds of variables and they are summarized in different ways.</p>
+<ul>
+<li>Summary of Nominal Variables: Count, Ratio, and Percentage, e.g. How many girls and boys, percentage of fruit tree vs no-fruit tree, percentage of bad product vs good product, etc.</li>
+<li>Summary of Numeric Data: mean, median, e.g. Mean salary, median age, mean sugar level, mean score</li>
+<li>Depending upon the situation, Ordinal data can be nominal or numeric.</li>
+</ul>
+<h2 id="explain-dependent-variables-and-independent-variables">Explain dependent variables and independent variables.</h2>
+<p>In regression, or in classification problems we want to predict or forecast something. It may be house-price, cost-of-project, time-to-complete-project, salary-of-new-hired, promotion of employee, churn-of-a-customer etc. These are called dependent variables. But to predict these we need the help of some other variables, on which the value of these dependent variables depends. Like house-price can be predicted from the area of a house, the cost-of-project can be predicted from the cost of the materials used, etc. These predictors are called independent variables. If there is only one predictor then we need simple linear regression. But in real business or personal life, you need more than one predictor, in that situation multi-linear regression is needed to predict.</p>
+<h2 id="what-is-the-difference-between-the-regression-coefficient-and-correlation-coefficient">What is the difference between the regression coefficient and correlation coefficient?</h2>
+<p>The regression coefficient is used to quantify the relationship between two variables. It can tell you keep all variables constant if you change a variable (related to regression coefficient) by 1 unit then how much change will happen on the target variable. The regression coefficient takes into account the slopes and intercepts of the line of best fit that is created when plotting the data points. The regression coefficient also allows for a more accurate prediction of outcome values based on input values.</p>
+<p>While the correlation coefficient measures the direction and strength of the linear relationship between two variables.</p>
+<h2 id="what-is-a-statistical-model">What is a statistical model?</h2>
+<p>A statistical model is a mathematical representation of a real-world phenomenon. It is used to make predictions and analyze data. The data generated by the model and real-world data will have some differences and this is called an error in the model. For example, based on certain parameters like carpet_area, number_of_bedroom, etc. a model can predict house price should be 1.2 crores, but the actual price is 1 core. Thus, the model is predicting the price as 20 lakhs Rupees more. This is a model error. Keeping people&rsquo;s behavior, market opportunities, etc in mind we can never make a statistical model with zero error. But if I could guess the distribution of input variables correctly then the output of our model will have fewer errors.</p>
+<h2 id="what-is-the-difference-between-statistical-model-and-mathematical-model">What is the difference between Statistical Model and Mathematical Model?</h2>
+<p>Mathematical models are deterministic, the input is clearly known, the outcome is fixed. Newton&rsquo;s equation of motion is a Mathematical Model. It represents the physical reality of the world. In $$s = u*t + \frac{1}{2}<em>a</em>t^2$$ You provide the value of u,t, and a and you will get accurate s.</p>
+<p>Statistical models are non-deterministic or stochastic, some of the inputs are probabilistic, and the outcome is also probabilistic. When you develop a model to predict a house price then you need a statistical model. In your model parameters may be carpet_area, number of bedrooms, etc. From the sample data, we know if the area is 2000sft then the price can be 1cr, it can be 1.2cr, or 1.5cr. For the same carpet area the price is different. It is not only because of other parameters but because of market opportunities. Thus input and output of the model will be probabilistic. Because of this non-deterministic nature, we need to assume the distribution of the data, so that outcome is more certain.</p>
+<h1 id="about-tools--techniques">About Tools &amp; Techniques</h1>
+<h2 id="what-is-regression">What is regression?</h2>
+<p>If you want to predict salary from experience or the “number of projects done” then you can use regression analysis.</p>
+<p>A generic linear regression equation is $$y=mx+c$$. Where y is a dependent variable like salary (which you want to predict), x is an independent variable like no_of_years_experience. m is the slope of the line or coefficient. c is an intercept of the line, which will give you the value of salary even if the experience is zero. For example, this model will predict salary in lakhs. $$Salary=2.5*no_of_years_experience+1$$</p>
+<h2 id="what-is-correlation-and-what-is-the-formula-of-this">What is Correlation and What is the formula of this?</h2>
+<p>When you want to know the strength and degree of relationship between two variables you can you Correlation measure. Its value ranges between -1 to 1. 0 correlation coefficient means there is no relationship between two variables and they move randomly with respect to each other. Negative correlation means they move in the opposite direction, when one increases the other decreases and vice versa. Positive correlation means they move in the same direction, when one increases the other also increases and vice versa. When two variables are numeric you can use Pearson correlation.</p>
+<p>The formula for Pearson&rsquo;s correlation coefficient, denoted by &ldquo;r,&rdquo; is:</p>
+<p>$$r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2} \sqrt{\sum_{i=1}^{n}(y_i - \bar{y})^2}}$$</p>
+<p>you can also write it like</p>
+<p>$$r = \frac{ \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{n} }</p>
+<p>{\sqrt{ \frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^2}</p>
+<p>\sqrt{ \frac{1}{n} \sum_{i=1}^{n}(y_i - \bar{y})^2}}$$</p>
+<p>or</p>
+<p>$$ \rho_{(x,y)} = \frac { Cov(x, y)} {(Std(x) * Std(y)) }$$</p>
+<p>where x and y are the two numeric variables being correlated, n is the number of observations, and $\bar{x}$ and $\bar{y}$ are the means of the x and y variables, respectively.</p>
+<h2 id="how-many-types-of-correlation-coefficient-are-there-in-stats">How many types of correlation coefficient are there in stats?</h2>
+<p>There are several types of correlation coefficients that are commonly used in statistics to measure the <strong>strength</strong> and <strong>direction of a linear relationship</strong> between two variables. Here are a few of the most common ones:</p>
+<ol>
+<li>
+<p>Pearson correlation coefficient: The Pearson correlation coefficient is a measure of the linear relationship between two variables. It ranges from -1 to 1, where -1 indicates a strong negative relationship, 0 indicates no relationship, and 1 indicates a strong positive relationship. For example: relationship between experience and salary.</p>
+</li>
+<li>
+<p>Spearman rank correlation coefficient: The Spearman rank correlation coefficient is a nonparametric measure of the strength of the monotonic relationship between two categorical variables. It is calculated based on the ranks of the values rather than the raw data. For example: relationship between gender and bone cancer.</p>
+</li>
+<li>
+<p>Kendall rank correlation coefficient: The Kendall rank correlation coefficient is another nonparametric measure of the strength of the monotonic relationship between two variables. It is calculated based on the number of concordant and discordant pairs in the data.</p>
+</li>
+<li>
+<p>Partial correlation coefficient: The partial correlation coefficient is a measure of the correlation between two variables, taking into account the influence of one or more additional variables.</p>
+</li>
+<li>
+<p>Intraclass correlation coefficient: The intraclass correlation coefficient is a measure of the degree of agreement between observations that are made on the same subjects. It is commonly used in the analysis of repeated measures data.</p>
+</li>
+</ol>
+<p>It&rsquo;s important to choose the appropriate correlation coefficient based on the nature of the data and the type of relationship you are interested in.</p>
+<h2 id="what-is-autocorrelation">What is AutoCorrelation?</h2>
+<p>Let’s say we have share price data of a company. These observations are monthly. We want to know if there is any pattern in this monthly data? For that purpose we try the relationship between the stock price. But this time the original stock price is associated with “after month share price”. This shifting is called one month lagging, it means 1949-01 data is compared with 1949-02 data, and so on. Similarly you can shift data 2 time periods or 3 time periods. When you check the relationship between original share price and 1 lagged shared price or 2 lagged shared price or 3 lagged share price it gives you a correlation coefficient. This process is called AutoCorrelation. Whatever number of month’s shifts shows higher correlation, that number of months is interesting for us.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Mean=&gt;</th>
+          <th>127</th>
+          <th></th>
+          <th>128</th>
+          <th>127</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Month</td>
+          <td>Passengers (y)</td>
+          <td>$$y_{t-1}$$</td>
+          <td>$$y_{t-2}$$</td>
+          <td>$$y_{t-3}$$</td>
+      </tr>
+      <tr>
+          <td>1949-01</td>
+          <td>112</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>1949-02</td>
+          <td>118</td>
+          <td>112</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>1949-03</td>
+          <td>132</td>
+          <td>118</td>
+          <td>112</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>1949-04</td>
+          <td>129</td>
+          <td>132</td>
+          <td>118</td>
+          <td>112</td>
+      </tr>
+      <tr>
+          <td>1949-05</td>
+          <td>121</td>
+          <td>129</td>
+          <td>132</td>
+          <td>118</td>
+      </tr>
+      <tr>
+          <td>1949-06</td>
+          <td>135</td>
+          <td>121</td>
+          <td>129</td>
+          <td>132</td>
+      </tr>
+      <tr>
+          <td>1949-07</td>
+          <td>148</td>
+          <td>135</td>
+          <td>121</td>
+          <td>129</td>
+      </tr>
+      <tr>
+          <td>1949-08</td>
+          <td>148</td>
+          <td>148</td>
+          <td>135</td>
+          <td>121</td>
+      </tr>
+      <tr>
+          <td>1949-09</td>
+          <td>136</td>
+          <td>148</td>
+          <td>148</td>
+          <td>135</td>
+      </tr>
+      <tr>
+          <td>1949-10</td>
+          <td>119</td>
+          <td>136</td>
+          <td>148</td>
+          <td>148</td>
+      </tr>
+      <tr>
+          <td>1949-11</td>
+          <td>104</td>
+          <td>119</td>
+          <td>136</td>
+          <td>148</td>
+      </tr>
+      <tr>
+          <td>1949-12</td>
+          <td>118</td>
+          <td>104</td>
+          <td>119</td>
+          <td>136</td>
+      </tr>
+      <tr>
+          <td>1950-01</td>
+          <td>115</td>
+          <td>118</td>
+          <td>104</td>
+          <td>119</td>
+      </tr>
+      <tr>
+          <td>1950-02</td>
+          <td>126</td>
+          <td>115</td>
+          <td>118</td>
+          <td>104</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="what-is-the-autocorrelation-formula">What is the AutoCorrelation formula?</h2>
+<p>The AutoCorrelation formula is the same as the Correlation formula. Only difference is Y is taken from the time lag of X.</p>
+<p>$$\rho_{X_t, X_{t+\tau}} = \frac{\displaystyle \sum_{t=1}^T (X_t - \overline{X})(X_{t+\tau} - \overline{X})}{\displaystyle \sum_{t=1}^T (X_t - \overline{X})^2}$$,</p>
+<p>where $$\bar{X}$$ is the mean of the data set X, $$\tau$$ is the lag, and T is the length of the data set.</p>
+<h2 id="causation-and-correlations-are-two-different-things-can-you-explain-them-with-an-example">Causation and Correlations are two different things, can you explain them with an example?</h2>
+<p>Causation means that a <strong>change in one thing causes a change in another</strong>, while correlation means that <strong>two things occur together without necessarily being connected</strong>. Let&rsquo;s see examples:</p>
+<ol>
+<li>Studies have shown that there is a positive correlation between the amount of <strong>time spent studying and good grades</strong>, but this does not necessarily mean that studying causes good grades. It could be that other factors such as access to excellent teachers, resources, and tutors cause both studying and good grades.</li>
+<li>There is a positive correlation between <strong>smoking and lung cancer</strong>. However, this doesn&rsquo;t necessarily mean that smoking causes lung cancer. Other factors such as genetics, lifestyle, and environment may also play a role in developing lung cancer.</li>
+<li>There is a positive correlation between <strong>exercising and improved physical health</strong>, but this doesn&rsquo;t necessarily mean that exercising causes improved physical health. Other factors such as diet, sleep, and genetics may also play a role in physical health.</li>
+<li>There is a positive correlation between <strong>eating junk food and becoming overweight</strong>, yet this doesn&rsquo;t necessarily mean that junk food causes overweight. Other factors like exercise, genetics, and stress levels can also contribute to weight gain.</li>
+<li>There is a positive correlation between <strong>drinking alcohol and developing liver disease</strong>, yet this doesn&rsquo;t necessarily mean that drinking alcohol causes liver disease. Other factors such as genetics, lifestyle, and environment may also be contributing factors.</li>
+</ol>
+<h2 id="what-is-variance-and-how-to-calculate-variance">What is Variance and how to calculate variance?</h2>
+<p>If your dataset has a column &ldquo;Age&rdquo; and all people are 25 years, it means the variance of the Age column is zero. From an analysis and model-building perspective this column is useless. Only those columns, which have some variance are useful, the more the variance the better is the column.</p>
+<p>Variance is a measure of the dispersion of a single column of data. It is calculated as the <strong>sum of the “squared differences” between each “data point” and the “mean of the data”</strong>, divided by the number of data points.</p>
+<p>Variance of population dataset is calculated as below.
+$$\sigma^2 = \frac{\sum_{i=1}^{n} (x_i - \mu)^2}{n}$$</p>
+<p>Variance of the sample dataset is calculated as follows.
+$$\sigma^2 = \frac{\sum_{i=1}^{n} (x_i - \mu)^2}{n-1}$$</p>
+<p><img src="/assets/images/dspost/statistics/Variance-Calculation.jpg" alt="Variance-Calculation"></p>
+<h2 id="are-correlation-and-regression-different-or-same-thing">Are correlation and regression different or same thing?</h2>
+<p>If you want to study the magnitude or direction of the relationship between two variables you can use correlation <strong>statistical measure</strong>.</p>
+<p>Regression analysis is a <strong>statistical technique</strong> used to analyze the relationship between two or more variables. It can also help in prediction.</p>
+<h2 id="what-is-covariance-and-how-to-calculate-it">What is Covariance and how to calculate it?</h2>
+<p>The idea behind variance and covariance is the same. The only difference is in variance we check the variation of one column from it means, but in covariance we check how closely two different variables walk together.</p>
+<p>Let&rsquo;s assume your dataset has 2 columns, age, and experience. We want to know the relationship between these two columns, for this we can calculate covariance, how strongly two column values move together. They can move in the same direction or in the opposite direction. A higher absolute value means two columns are moving strongly with each other.</p>
+<p>It is calculated as the <strong>sum of the “products of the differences” between each “data point in one set” and the “mean of that set”</strong>, and the <strong>differences between the corresponding data points in the other set and the mean of that set</strong>, divided by the number of data points.</p>
+<p>$$cov(X, Y) = \frac{\sum_{i=1}^{n} (x_i - \mu_X)(y_i - \mu_Y)}{n}$$</p>
+<h2 id="what-is-the-autocovariance-function-acvf-formula">What is the AutoCovariance Function (ACVF) Formula?</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Mean=&gt;</th>
+          <th>127</th>
+          <th></th>
+          <th>128</th>
+          <th>127</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>AutoCovariance 16</th>
+          <th>AutoCovariance -51</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Month</td>
+          <td>Passengers (y)</td>
+          <td>$$y_{t-1}$$</td>
+          <td>$$y_{t-2}$$</td>
+          <td>$$y_{t-3}$$</td>
+          <td>$$y_t - \bar{y_t}$$</td>
+          <td>$$y_{t-2} - \bar{y}_{t-2}$$</td>
+          <td>$$y_{t-3} - \bar{y}_{t-3}$$</td>
+          <td>($$y_t - \bar{y_t}$$) * ($$y_{t-2} - \bar{y}_{t-2}$$)</td>
+          <td>($$y_t - \bar{y_t}$$) * ($$y_{t-3} - \bar{y}_{t-3}$$)</td>
+      </tr>
+      <tr>
+          <td>1949-01</td>
+          <td>112</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>1949-02</td>
+          <td>118</td>
+          <td>112</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>1949-03</td>
+          <td>132</td>
+          <td>118</td>
+          <td>112</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>1949-04</td>
+          <td>129</td>
+          <td>132</td>
+          <td>118</td>
+          <td>112</td>
+          <td>2</td>
+          <td>-9</td>
+          <td>-15</td>
+          <td>-18</td>
+          <td>-30</td>
+      </tr>
+      <tr>
+          <td>1949-05</td>
+          <td>121</td>
+          <td>129</td>
+          <td>132</td>
+          <td>118</td>
+          <td>-6</td>
+          <td>5</td>
+          <td>-9</td>
+          <td>-30</td>
+          <td>54</td>
+      </tr>
+      <tr>
+          <td>1949-06</td>
+          <td>135</td>
+          <td>121</td>
+          <td>129</td>
+          <td>132</td>
+          <td>8</td>
+          <td>2</td>
+          <td>5</td>
+          <td>16</td>
+          <td>40</td>
+      </tr>
+      <tr>
+          <td>1949-07</td>
+          <td>148</td>
+          <td>135</td>
+          <td>121</td>
+          <td>129</td>
+          <td>21</td>
+          <td>-6</td>
+          <td>2</td>
+          <td>-126</td>
+          <td>42</td>
+      </tr>
+      <tr>
+          <td>1949-08</td>
+          <td>148</td>
+          <td>148</td>
+          <td>135</td>
+          <td>121</td>
+          <td>21</td>
+          <td>8</td>
+          <td>-6</td>
+          <td>168</td>
+          <td>-126</td>
+      </tr>
+      <tr>
+          <td>1949-09</td>
+          <td>136</td>
+          <td>148</td>
+          <td>148</td>
+          <td>135</td>
+          <td>9</td>
+          <td>21</td>
+          <td>8</td>
+          <td>189</td>
+          <td>72</td>
+      </tr>
+      <tr>
+          <td>1949-10</td>
+          <td>119</td>
+          <td>136</td>
+          <td>148</td>
+          <td>148</td>
+          <td>-8</td>
+          <td>21</td>
+          <td>21</td>
+          <td>-168</td>
+          <td>-168</td>
+      </tr>
+      <tr>
+          <td>1949-11</td>
+          <td>104</td>
+          <td>119</td>
+          <td>136</td>
+          <td>148</td>
+          <td>-23</td>
+          <td>9</td>
+          <td>21</td>
+          <td>-207</td>
+          <td>-483</td>
+      </tr>
+      <tr>
+          <td>1949-12</td>
+          <td>118</td>
+          <td>104</td>
+          <td>119</td>
+          <td>136</td>
+          <td>-9</td>
+          <td>-8</td>
+          <td>9</td>
+          <td>72</td>
+          <td>-81</td>
+      </tr>
+      <tr>
+          <td>1950-01</td>
+          <td>115</td>
+          <td>118</td>
+          <td>104</td>
+          <td>119</td>
+          <td>-12</td>
+          <td>-23</td>
+          <td>-8</td>
+          <td>276</td>
+          <td>96</td>
+      </tr>
+      <tr>
+          <td>1950-02</td>
+          <td>126</td>
+          <td>115</td>
+          <td>118</td>
+          <td>104</td>
+          <td>-1</td>
+          <td>-9</td>
+          <td>-23</td>
+          <td>9</td>
+          <td>23</td>
+      </tr>
+  </tbody>
+</table>
+<p>AutoCovariance is the same as variance. The only difference is you are not checking the relation between two different columns but the same column&rsquo;s value with different time lag. It is used in timeseries data. Let&rsquo;s assume your dataset has a 365 day&rsquo;s closing price of TCS. If you want to know how much the price of today is related to the price of last week then you can AutoCovariance.</p>
+<p>AutoCovariance formula is</p>
+<p>$$\gamma(k) = Cov(X_t, X_{t+k})$$</p>
+<h2 id="what-is-standard-deviation-and-what-is-the-formula-to-calculate-this">What is Standard Deviation and what is the formula to calculate this?</h2>
+<p>Standard Deviation (SD) is a measure of spread or dispersion around the mean. It is also called Sigma and written as $$\sigma$$. It quantifies the amount of variation or dispersion of a set of data values.  For any data column larger the value of means more the spread. The standard deviation is the square root of the variance. Larger value indicates a more flatten normal distribution.</p>
+<p><img src="/assets/images/dspost/statistics/threenormaldistributions.png" alt="Three Normal Distributions"></p>
+<p><strong>The formula for the “sample standard deviation”, denoted by &ldquo;s,&rdquo; is:</strong></p>
+<p>$$s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2}$$ OR</p>
+<p>$$s = \sqrt{Sample_Variance}$$</p>
+<p>where x is the set of observations, n is the number of observations, and $\bar{x}$ is the mean of the observations.</p>
+<p><strong>The formula for the population standard deviation, denoted by &ldquo;σ,&rdquo; is:</strong></p>
+<p>$$σ = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_i - \mu)^2}$$ OR
+$$σ = \sqrt{Population_Variance}$$</p>
+<p>where x is the set of observations, n is the number of observations, and $\mu$ is the mean of the observations.</p>
+<h2 id="what-is-standard-scaling-or-z-score-calculation">What is standard scaling or z score calculation?</h2>
+<p>Standard scaling of a numeric column means converting normal values into z scale values. Let&rsquo;s say our salary column minimum value 20,000, maximum value 150,000 and mean value 50,000. If this column is normally distributed then 50% of the people will have a salary &lt;=50,000 and 50% of the people will have a salary &gt;50,000. When you convert this column into z-scale you need to calculate the z-score of every value. In that situation the z-value of the mean will become 0, and less than mean values will become negative z-values and more than mean values will become positive z-values. After this scaling you can say 99% of the data is within -3 to +3 Z scale. You can pick-up any other column, like age, which is a completely different scale compared to salary. When you convert that into z-scale then 99% of the age will be within -3 to +3 z scale. For calculating z score we can use the formula $$\frac{X-\mu}{\sigma}$$. This is called standard scaling of salary column values.</p>
+<p>Thus a z-score is a description of how far a sample or point of data is away from its mean. Z score value can be negative or positive. Larger the absolute z score value of any point, far away that is from the mean. For example, if we want to calculate the z-score of a salary 30,000 then the Z score of 30,000 = (30,000 - 50,000) /10,000 = -2. It means a 30,000 salary is 2 distance away from the mean, but left side.</p>
+<p>If we want to convert a salary of 70,000 into sigma value we get z score = (70,000-50,000)/10,000 = 2. It means a 70,000 salary is also 2 distance away from the mean but right side.</p>
+<p>During a statistical test we need to make sure that z score of any given value should not fall in the critical range, otherwise the null hypothesis will be rejected. We will discuss this in detail at another place.</p>
+<p><strong>Because of its utility and applications, In statistics and process control perhaps Sigma or SD or Standard Deviation is the most popular measure.</strong></p>
+<p><strong>Sigma of Statistics, Sigma of process control and Z score are confusing and sometimes used interchangeably.</strong></p>
+<h2 id="what-is-the-sigma-value-in-statistics-normal-distribution">What is the Sigma value in Statistics (Normal Distribution)?</h2>
+<p>It helps us in understanding the distribution of sample data. It helps us in knowing the probability. If 1 Sigma is 10,000, then 68% samples will have a salary between mean_salary $$\pm 10000$$.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Sigma Level</th>
+          <th>Confidence</th>
+          <th>Significance</th>
+          <th>Area on the edge of curve</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$$\pm 1 \sigma$$</td>
+          <td>68.00%</td>
+          <td>34.00%</td>
+          <td>34% left or 34% right or 17% left and 17% right</td>
+      </tr>
+      <tr>
+          <td>$$\pm 1.64 \sigma$$</td>
+          <td>90.00%</td>
+          <td>10.00%</td>
+          <td>10% left or 10% right or 5% left and 5% right</td>
+      </tr>
+      <tr>
+          <td>$$\pm 2 \sigma$$</td>
+          <td>95.00%</td>
+          <td>5.00%</td>
+          <td>5% left or 5% right or 2.5% left and 2.5% right</td>
+      </tr>
+      <tr>
+          <td>$$\pm 3 \sigma$$</td>
+          <td>99.00%</td>
+          <td>1.00%</td>
+          <td>1% left or 1% right or 0.5% left and 0.5% right</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="what-is-sigma-value-in-process-control">What is Sigma value in Process Control?</h2>
+<p>It helps us see how much maximum error a process can do. If a packing process is 5 sigma then it will not make more than 233 packing errors out of 1 million packings.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Sigma Level</th>
+          <th>Defects/Mn Opportunities or DPMO</th>
+          <th>Yield</th>
+          <th>Defects in %</th>
+          <th>Yield %</th>
+          <th>9s</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>691462</td>
+          <td>308500</td>
+          <td>69.1462</td>
+          <td>30.85</td>
+          <td>0 9s</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>308538</td>
+          <td>691460</td>
+          <td>30.8538</td>
+          <td>69.146</td>
+          <td>0 9s</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>66807</td>
+          <td>933190</td>
+          <td>6.6807</td>
+          <td>93.319</td>
+          <td>1 9s</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>6210</td>
+          <td>993790</td>
+          <td>0.621</td>
+          <td>99.379</td>
+          <td>2 9s</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>233</td>
+          <td>999767</td>
+          <td>0.0233</td>
+          <td>99.9767</td>
+          <td>3 9s</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>3.4</td>
+          <td>999997</td>
+          <td>0.00034</td>
+          <td>99.9997</td>
+          <td>5 9s</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="what-is-the-meaning-of-standard-deviation-sd-of-the-sampling-distribution-of-the-mean">What is the meaning of Standard Deviation (SD) of the sampling distribution of the mean?</h2>
+<h2 id="what-is-sample-standard-error-or-standard-error-of-sample-mean">What is Sample Standard Error OR Standard Error of Sample Mean?</h2>
+<p>The SD of the sampling distribution of the mean, also known as the <strong>&ldquo;standard error (SE) of the sample mean&rdquo;</strong>. It is a measure of the variability of the sample mean. It is used to estimate the precision of the sample mean as an estimate of the population mean.</p>
+<p>To understand this concept, let&rsquo;s consider an example. Imagine you are studying the heights of adult males in a certain population. The population mean height is 170 cm and the population standard deviation is 10 cm. If you take a sample of 5 adult males, you would calculate the sample mean height. Each time you take a different sample of 5 adult males, you would get a different sample mean height.</p>
+<p>Now, imagine taking many samples of 5 adult males, each time calculating the &ldquo;sample mean height&rdquo;. The distribution of the &ldquo;sample mean heights&rdquo; is known as the &ldquo;sampling distribution of the mean&rdquo;. The SD of this &ldquo;sampling distribution of the mean&rdquo; is called the &ldquo;standard deviation of the sampling distribution of the mean&rdquo; or the &ldquo;standard error of the sample mean&rdquo;.</p>
+<p>In other words, the &ldquo;standard deviation of the sampling distribution of the mean&rdquo; is a measure of the variability of the sample mean. It tells us how much the sample mean is likely to deviate from the population mean, given a certain sample size. The smaller the &ldquo;standard deviation of the sampling distribution of the mean&rdquo;, the more precise the sample mean is as an estimate of the population mean. This means, as the sample size increases, the &ldquo;standard deviation of the sampling distribution of the mean&rdquo; decreases, the sample mean becomes a more accurate estimate of the population mean.</p>
+<p>$$SE = \frac{s}{\sqrt{n}}$$</p>
+<p>SE is the Standard Error, <br>
+s is the standard deviation of the sample<br>
+n is the sample size</p>
+<p>In our dataset if the salary column has mean_slary=50,000 then we know some observations will have less than 50K and others will have more than 50K. If we do the total of this difference between actual_salary and mean_salary we will get standard error. $$SE = \frac{X-\bar{X}}{n}$$.</p>
+<p>If you don&rsquo;t know this $$X-\bar{X}$$ but you know s then you can calculate it like following $$SE = \frac{s}{\sqrt{n}}$$</p>
+<p>If you know the variance but not SD then you can calculate as following $$SE = \frac{ {\sqrt{variance}}}{\sqrt{n}} = \sqrt{\frac{variance}{n}}$$</p>
+<h2 id="what-is-population-standard-error-or-standard-error-of-population-mean">What is Population Standard Error OR Standard Error of Population Mean?</h2>
+<p>In statistics, the standard error of the population mean, denoted as σM or σ/√N, is a measure of the variability of the population mean. It is the standard deviation of the sampling distribution of the population mean. It is used to estimate the precision of the population mean, but it is not commonly used because often the population standard deviation and population size are not known.</p>
+<p>The standard error of the population mean is based on the assumption that the population is normally distributed. If the population is not normally distributed, the standard error of the population mean cannot be calculated and other methods must be used to estimate the precision of the population mean.</p>
+<h2 id="how-to-use-z-score-for-probability-calculation">How to use z score for probability calculation?</h2>
+<table>
+  <thead>
+      <tr>
+          <th>z-score (Standard Deviations)</th>
+          <th>p-value (Probability)</th>
+          <th>Confidence level</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&lt; -1.65 or &gt; +1.65</td>
+          <td>&lt; 0.10</td>
+          <td>90%</td>
+      </tr>
+      <tr>
+          <td>&lt; -1.96 or &gt; +1.96</td>
+          <td>&lt; 0.05</td>
+          <td>95%</td>
+      </tr>
+      <tr>
+          <td>&lt; -2.58 or &gt; +2.58</td>
+          <td>&lt; 0.01</td>
+          <td>99%</td>
+      </tr>
+  </tbody>
+</table>
+<p><img src="/assets/images/dspost/statistics/Distribution-Significance.png" alt="Distribution-Significance"></p>
+<p>If the mean salary in our dataset is 75,000 and SD is 5000 then what is the probability that the salary of a randomly chosen employee is &gt;90,000</p>
+<p><strong>Method1</strong>
+You can get z score of this 90,000<br>
+$$z = \frac{x - \mu}{\sigma}$$ = (90000 - 75000) / 5000 = 3<br>
+Pr for Z&lt;=3 (salary &lt;= than 90K)  =&gt; .99865 <br>
+Pr for Z&gt;3 (salary more than 90K) =&gt; 1-.99865 = .00145</p>
+<p><strong>Above z values we can get from z-table. Z tables are based on standard deviation of normally distributed data. Z table gives probability values for a given z score or standard deviation (SD). If data is not normally distributed then you will not get correct probabilities.</strong></p>
+<p><strong>Method2</strong>
+You can put these values in a normal distribution formula and you will get the same value.</p>
+<p>$$\varphi(x) = \frac{1}{ \sqrt(2\pi\sigma^2)}*e^\frac{ -(x-\mu)^2}{2\sigma^2}$$</p>
+<h2 id="what-is-the-box-cox-normality-plot">What is the Box-Cox Normality Plot?</h2>
+<p>Many statistical tests and intervals are based on the assumption of normality. The assumption of normality often leads to tests that are simple, mathematically tractable, and powerful compared to tests that do not make the normality assumption. Unfortunately, many real data sets are in fact not approximately normal.</p>
+<p>The Box-Cox transformation is a particularly useful family of transformations. It is defined as:</p>
+<p>$$T(Y) = (Y^{\lambda} - 1)/\lambda \qquad  (\forall \lambda&gt;0)$$
+$$T(Y) = ln(Y) \qquad  (\forall \lambda=0)$$</p>
+<h2 id="what-is-skewness">What is skewness?</h2>
+<p>Skewness measures the lack of symmetry in a data distribution. It indicates that there are significant differences between the mean, the mode, and the median of data. If you want to use skewed data for modeling or analysis purposes then you need to transform this into a normal distribution. The curve below is left skewed.</p>
+<p><img src="/assets/images/dspost/statistics/skewed-distribution.jpg" alt="Skewed Distribution"></p>
+<p>$$skewness = \frac{\sum_{i=i}^{n}{({x_i - \bar{x}}})^3}{(N-1)*\sigma^3}$$</p>
+<p>Right skewed = Positive Skewed<br>
+Left skewed = Negative Skewed</p>
+<h2 id="what-is-kurtosis">What is kurtosis?</h2>
+<p>Kurtosis is a measure of the &ldquo;tailedness&rdquo; of the probability distribution of a real-valued random variable. The long tail will have kurtosis.</p>
+<p>$$kurtosis = \frac{\sum_{i=1}^n{({x_i - \bar{x}}})^4}{var^2}$$</p>
+<h2 id="what-is-the-r-square-formula">What is the R-Square formula?</h2>
+<p>R-Square or $R^2$ is also called the coefficient of determination. It is used to evaluate the performance of the regression model. $R^2$ value can be any number between 0 and 1 including 0 and 1. It can never be negative. If $R^2$ of a model is .80 then it means this model explains 80% variation between actual and predicted values but 20% variation cannot be explained. A higher $R^2$ value means more variation can be explained by the model and better the model is.</p>
+<p>$$R^2 = 1 - \frac{SS_{res}}{SS_{tot}}$$</p>
+<p>Where $$SS_{res}$$ is the sum of squared residuals (the difference between the predicted value and the actual value) and $$SS_{tot}$$ is the total sum of squares (the difference between the actual value and the mean of all actual values).</p>
+<h2 id="what-is-the-adjusted-r-square-formula">What is the Adjusted R-Square formula?</h2>
+<p>It is used to understand whether any newly added feature is adding any value to the model or not. Because this model adds a penalty for every newly added variable, therefore if the addition of a new variable in the model does not increase R^2 more than the penalty added then overall R^2, adjusted R^2 will decrease.</p>
+<p>$$Adjusted R^2 = 1 - (1 - R^2) * \frac{(n - 1)}{(n - p - 1)}$$</p>
+<h1 id="about-probability--distributions">About Probability &amp; Distributions</h1>
+<h2 id="what-is-probability">What is probability?</h2>
+<p>A ratio between &ldquo;chances of getting success&rdquo; and number of outcomes available.</p>
+<p>A die has 6 faces, if success = coming 4 success on top, then the chances of getting 4, the success=1. Total number of  outcomes (1,2,3,4,5,6)=6. Probability of getting success 1/6</p>
+<h2 id="what-is-log-odd">What is log-odd?</h2>
+<p>It is also called logit. It is used more in logistic regression. It is a log of the odds.</p>
+<p>An odd is a ratio between &ldquo;chances in favor&rdquo; and &ldquo;chances against&rdquo;.
+When you throw a fair coin, total chances are 2 (head, tail). If success means head come then chances of coming head is 1, chances of tail come is also 1. In this case the odds of head coming or success is 1.</p>
+<p>$$logodd(event=success) = log( \frac{p}{(1-p)})$$</p>
+<p>$$p(event=success) = 1/2 = 0.5$$</p>
+<p>$$logodd(event=success) = log( \frac{p}{(1-p)}) = log(\frac{.5}{1-.5}) = log(1) = 0$$</p>
+<p>It is important to note that the log-odd of getting a head is zero only when the coin is fair, if the coin is not fair, the log-odd will be different.</p>
+<h2 id="what-is-the-difference-between-theoretical-probability-and-experimental-probability">What is the difference between theoretical probability and experimental probability?</h2>
+<p>Success probability of all the outcomes may not be the same. This you can know from historical data. For example, if you go to your friend&rsquo;s house without calling him, what is the probability you will find him at home? ½ or 50%. This is theoretical probability. But from your past experience you know out of 50 times he was available only 5 times. So success probability (experimental probability) your friend is at home is 5/50 = 1/10 = .1 = 10%.</p>
+<p>Similarly in die through game theoretical probability of getting 2 is ⅙. But if die is tampored in the favor of 2 then the probability of getting is more than ⅙ or probability of getting any other number is less than ⅙.</p>
+<p>If the stock-market opens today then will the share price of Infosys go up, or down or remain as it was on the last day? Theoretical probability of opening at a higher price is ⅓. But from historical data you may know the market is in favor or against Infosys at the start of day.</p>
+<h2 id="what-is-success-probability">What is success probability?</h2>
+<p>Let&rsquo;s assume our job_applicant dataset can have applicants only from 6 cities (Mumbai, Delhi, Bangalore, Chennai, Hyderabad, and Kolkata). In this dataset, you have 10,000 applicants&rsquo; information. Now if you are interested in only those employees who are from Mumbai, then you can ask questions like, what is the probability that a given employee is from Mumbai? In the experiment, if you pick up record number 1008 and this candidate is from Mumbai then you call the event successful. But, if the candidate is from any other city then, you call the event a failure. You write it as $$Pr(Applicant_city=Mumbai)$$.</p>
+<p>If this dataset has 2000 candidates from Mumbai then a randomly selected candidate will be from Mumbai, what is the probability? 2,000/10,000 = .20 or 20% so $$Pr(Applicant_City=Mumbai)=.20$$. 20% is the success probability.</p>
+<p>Success probability is a little tricky in the case of a numeric variable. Because if you want to check the probability of a person whose age is 35 years, 3 months, 10 days, and 6 hours then the question is valid but the answer is Probability of success of this event is zero. You pick up any number and the answer is going to be like that. For example, when you say age is 30 years, it means 30 years, 0 months, 0 days, and 0 hours. Due to this reason with numeric probability you either use &gt;= or &lt;=. It means you can ask a question like, what is the probability of Age of a candidate [&lt;=30, or &gt;=30], or [&gt;=30 but &lt;=35] years?</p>
+<p>In our dataset, if we have 3000 people who are &lt;= 30 years then Pr(Applicant_Age&lt;=30) = .30 or 30%.</p>
+<p>If our dataset has 5000 people &lt;=35 years then $$Pr(Applicant_Age&lt;=35) = .50$$  or 50%.</p>
+<p>Now we can say Pr(Applicant_age&gt;=30 and &lt;=35) = .50 - .30 = .20 or 20%.</p>
+<p>This all is done by exploring another concept called probability density.</p>
+<h2 id="what-is-probability-density">What is probability density?</h2>
+<p>Let&rsquo;s assume our dataset has 10,000 applicants and their age is between 18 to 60 years. You can plot a histogram and this histogram represents the distribution of age of the applicants. The entire area of this histogram is referred to as 1, in our case 10,000 people&rsquo;s age is represented by this area and it is 1. This is the total density of this curve. The X-axis of this curve will have age and the Y- axis will have a number of people.</p>
+<p><img src="/assets/images/dspost/statistics/Distributions.jpg" alt="Distributions">
+<strong>Shapes of Various Distributions</strong></p>
+<p><img src="/assets/images/dspost/statistics/Normal-Distribution.jpg" alt="Normal Distribution"></p>
+<h2 id="what-is-uniform-distribution">What is uniform distribution?</h2>
+<p>Suppose in our dataset, if the number of people in each age group of 10 years like 18-28, 28-38, 38-48, etc we have an equal number of people then it is a uniform distribution..</p>
+<p><img src="/assets/images/dspost/statistics/Uniform-Distribution.jpg" alt="Uniform Distribution"></p>
+<h2 id="what-is-a-normal-distribution-what-is-the-use-of-this">What is a normal distribution? What is the use of this?</h2>
+<p>In our dataset, the minimum age is 18 years (recently hired), but there are fewer people like this. The maximum age in the dataset is 60 years (people are going to retire this year), but there are fewer people like this. If you plot the histogram of this &ldquo;age&rdquo; information you will get a normal distribution. It is also called Gaussian distribution, It means the mean and median will be 40 years, 5000 employees are &lt;= 40 years old and 5000 employees are &gt; 40 year age.</p>
+<p>If this age data is truly normally distributed then 68% of employees will be within $$\pm 1\sigma$$, 95% of employees will be within $$\pm 2\sigma$$, and 99% of employees will be within $$\pm 3\sigma$$.</p>
+<p><strong>Characteristics of Normal Distribution</strong></p>
+<ul>
+<li>Curve is a perfect bell curve (Unimodal, only one peak). Due to this reason, the normal distribution curve is also called the bell curve.</li>
+<li>Mean=Median=Mode</li>
+<li>Area less than mean = 0.5, and the area more than mean = 0.5 (symmetric)</li>
+<li>Asymptotic on both sides of the curve</li>
+</ul>
+<p>Formula to calculate the probability of a random variable having a normal distribution.
+$$\varphi(x) = \frac{1}{ \sqrt(2\pi\sigma^2)}*e^\frac{ -(x-\mu)^2}{2\sigma^2}$$</p>
+<p>Examples :
+The height of people, the weight of people, IQ scores, blood pressure levels, grades on a test, marks on a sports field, finger lengths, frequency of letters in a language, errors in a manufacturing process, and the time it takes for a web page to load</p>
+<p><img src="/assets/images/dspost/statistics/Distribution-Boxplot.png" alt="Distribution-Boxplot">
+Source: <a href="https://en.wikipedia.org/wiki/Probability_density_function">Wikipedia</a></p>
+<h2 id="what-is-binomial-distribution-what-is-the-use-of-this">What is binomial distribution? What is the use of this?</h2>
+<p>If you throw 2 dice simultaneously then the sum of the outcomes can be anything between 2 to 12.</p>
+<table>
+  <thead>
+      <tr>
+          <th>First Dice</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Second Dice</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+      </tr>
+  </tbody>
+</table>
+<p>There are a total 36 ways (above combinations) to get any number between 2 to 12. There is only one way to get 2, 2 ways to get 3, 3 ways to get 4, 4 ways to get 5, etc.</p>
+<p>So the probability of coming 10 is 3/36, the probability of coming 7 is 6/36 = 1/6, etc. The probability of coming 7 is the highest.</p>
+<p>If you throw these two dice together 100 times then what is the probability 20 times the total sum of 7 will come? To get this answer you need a distribution formula, a distribution that determines this whole game.</p>
+<p>This whole game can be predicted using the binomial distribution. Formula is $$pr(success=r, times)= nC_rP^r(1-P)^{n-r}$$, where n= number of times experiment repeated, r=number of times success happens, p=probability a success happens.
+The probability of success means the probability of getting 7. for p=1/6.
+$$pr(success=20 ,times , total , is , 7)= 100C_{20}\frac{1}{6}^{20}(1-\frac{1}{6})^{100-20} =  0.0678$$</p>
+<p>We can use binomial distribution for any experiments where the outcome is either success or fail (binary) and experiments n times and we want to know the success for r times.</p>
+<p><strong>Application:</strong> You are tracking the stock price for TCS shares for the last 500 days. You want to know that in the next 100 days, the probability of the stock price will cross Rs 800, 10 times.</p>
+<p>You can get the P value, the probability of success from 500 days of data. Let&rsquo;s say it has crossed 800, 40 times. P=40/800 = .05.</p>
+<p>$$pr(success=10 ,times)= 100C_{10}\frac{1}{.05}^{10}(1-.95)^{100-10} =  .0.0167$$</p>
+<p><img src="/assets/images/dspost/statistics/diceHistogram.jpg" alt="Dice Histogram"></p>
+<h2 id="can-you-give-example-of-exponential-distribution">Can you give example of exponential distribution</h2>
+<p><strong>Where time is on X axis</strong></p>
+<ul>
+<li>Time between arrivals of customers to a store,</li>
+<li>Time between arrivals of cars at an intersection,</li>
+<li>Time taken by the computer system to respond to user requests.</li>
+<li>Over a period of time the amount of money spent on goods and services,</li>
+<li>Over a period of time number of mutations in a gene sequence,</li>
+<li>Number of web pages visited over a given period.</li>
+<li>Over a period of time the number of deaths due to a particular disease.</li>
+<li>Over a period of time radiation levels of radioactive materials,</li>
+<li>Over a period of time the length of time it takes for a user to complete a task</li>
+<li>The amount of radioactive material decayed over a given period</li>
+</ul>
+<p><strong>Where time is NOT on X axis</strong></p>
+<ul>
+<li>Size of earthquakes, the length of coastline</li>
+<li>Size of earthquakes, and number of casualties</li>
+<li>Number of time compression and the size of a computer file after compression</li>
+<li>Distance and the intensity of light from a star.</li>
+</ul>
+<p><img src="/assets/images/dspost/statistics/exponential-distribution.webp" alt="exponential-distribution">
+<strong>Exponential Distribution</strong></p>
+<h1 id="about-hypothesis-testing">About Hypothesis Testing</h1>
+<h2 id="what-is-p-value">What is p-value?</h2>
+<p>P value is the probability in the favor of the null hypothesis. It is used to evaluate the hypothesis.</p>
+<ul>
+<li>Higher p-value means it is supporting H0.</li>
+<li>Higher p-value means it is against H1.</li>
+<li>Lower p-value means it is supporting H1.</li>
+<li>Lower p-value means it is supporting H0.</li>
+</ul>
+<p>You can read the p-value from the z-table. It means, if you know the z value of any observation you can know the p-value of that.</p>
+<p>For example: if we want to know what is the probability that someone has a salary &lt;=40000 we can calculate the z score of 40,000 and read the p-value of that z-score from the z-table.</p>
+<h2 id="what-is-the-significance-level">What is the Significance Level?</h2>
+<p>Total Probability = Confidence Level + Significance Level.
+If confidence level is 95% then significance level is 5%.
+If confidence level is 99% then significance level is 1%.</p>
+<p>Significance level means margin of error.
+Error means when you predict incorrectly, or opposite of ground truth.
+If you predict it will rain, but it doesn&rsquo;t rain this is called an error.
+If you predict it will not rain, but it rains, this is also called an error.</p>
+<h2 id="what-is-type-i-and-type-ii-error">What is Type-I and Type-II error?</h2>
+<p>Type-I error is when H0 is wrongly rejected. It is also called false positive.
+Type-II error is when H0 is wrongly accepted. It is also called false negative.</p>
+<p>If a good tweet is blocked by twitter then it is Type I error.
+If a good product is wrongly rejected by the quality team, it is Type-I error.
+If an innocent person is fined by the income tax department, it is Type-I error.
+If a healthy person is wrongly detected as infected, it is Type-I error.</p>
+<p>If an offensive or hateful tweet is blue ticked by twitter then it is type II error.
+If a bad product is wrongly accepted by the quality team it is Type-II error.
+If a tax invader is not fined by the income tax department, it is Type-II error.
+If an infected person is wrongly certified as a healthy person, it is Type-II error.</p>
+<h2 id="how-to-select-the-right-statistical-test-for-a-problem-in-hand">How to select the right Statistical Test for a problem in hand?</h2>
+<p>In the process of statistical testing, choosing a correct statistical test is a very important step. Which test is applicable for the problem can be determined using the following.</p>
+<p>1- What kind of data we have (numerical or categorical)<br>
+2- How many samples we have (1, 2 or many). Each sample has dozens or hundreds of observations.<br>
+3- How many variables we have (1 or 2). Like age, temperature, sale, number of people etc.<br>
+4- Whether variables are paired for each observation or not.</p>
+<ul>
+<li>Example of pair can be, salary and experience of the same person. Blood sugar of the same person, before fasting, then post fasting. It is 2 variable and 1 sample.</li>
+<li>Examples of unpaired, two groups, one have gone through meditation and another have not gone through meditation. We check their BP after 15 days. It is one variable but 2 samples.</li>
+</ul>
+<p>5- Purpose of test. We want to compare two sample mean/median etc, or we want to compare sample mean with population mean, or we want to check relationship between two variable</p>
+<p><strong>Selecting a correct statistical test for a given scenario is very challenging task for most of the non-statistics background people</strong></p>
+<h2 id="statistical-tests-with-example">Statistical Tests with Example</h2>
+<ul>
+<li>
+<p><strong>CASE1:</strong> Mileage claim: An automobile manufacturing company claims their car&rsquo;s average mileage is 20 Km/Liter. Automobile Association collects data of 100 automobiles, calculating the mean as 19 KM/Liter, SD=.5. Now they can compare this sample mean with population mean (20 km/liter). Whether the automanufacture&rsquo;s claim is valid, at 5% significance level?<br>
+<strong>SOLUTION:</strong> Data- Milage (Numeric).<br>
+Sample: 1 sample, we need to compare the mean with population mean.<br>
+Purpose: Compare the data against the population claim. <br>
+H0: Mu mileage &gt;= 20 km/liter or Mu consumption &lt;= 50ml/km<br>
+H1: Mu mileage &lt; 20 km/liter or Mu consumption &gt; 50ml/km<br>
+<strong>Test: Test of Mean or t-Test.  Z-Test</strong>
+SE = s/sqrt(n) = .5/10 = .05
+z = (x - mu)/SE = (19-20)/.05 = -20, z score for critical value 5% is -1.96. The Z-score of of the sample mean is extremely less than critical value, therefore the H0 is rejected.</p>
+</li>
+<li>
+<p><strong>CASE2:</strong> School-Leavers and Working Duration: Whether school leavers tend to stay a longer or shorter time in the company than people who have worked elsewhere first. HR collects the data of 100 ex employees, their number of years stay and joining information. They summarize the data as follows: mean stay time of joinee from school= 8 years, mean stay time of joinee from other company is 7.5 years. Now you can compare these two. Whether there is any relationship between how long people will work and from where they join?<br>
+<strong>SOLUTION:</strong> Data - Stay Duration (numeric)<br>
+Sample : 2 sample unpaired (school leaver vs other)<br>
+Purpose: Compare the mean of two groups. <br>
+H0: Mu School Leavers = Mu Others<br>
+H1: Mu School Leavers &lt;&gt; Mu Others<br>
+<strong>Test: Difference of 2 Means (independent samples). t-Test</strong></p>
+</li>
+<li>
+<p><strong>CASE3:</strong> Defect Claim: An electronics manufacturer does not allow more than 1% fault on their components. The quality manager gets data of 500 components and finds 11 are faulty. Whether the company is working as per the standard set by them?<br>
+<strong>SOLUTION:</strong> Data- Faulty or Non Faulty (Nominal Data)<br>
+Sample: 1 sample <br>
+Purpose: Compare against the standard. <br>
+H0: Defects &lt;= .01<br>
+H1: Defects &gt; .01<br>
+<strong>Test: Test of Proportion. Z-test</strong></p>
+</li>
+<li>
+<p><strong>CASE4:</strong> Recruitment Assessment: Recruiter gives you a test score of 200 people and wants to know how long a person will stay in the company. You get the data of ex-employees, years they stay and their test score.<br>
+<strong>SOLUTION:</strong> Data- score (numeric data), length of stay (numeric)<br>
+Sample: 1 Sample<br>
+Purpose: Predict how a person will stay<br>
+<strong>Test: Regression Analysis</strong></p>
+</li>
+<li>
+<p><strong>CASE5:</strong> There is a new sorting algorithm and data-scientists want to know whether the new algorithm is significantly faster than the old algorithm. You get 100 datasets tested against these two algorithms and you have test results as dataset_id, old_algo_time, new_algo_time.<br>
+<strong>SOLUTION:</strong> Data- time taken to run (numeric data)<br>
+Sample: 1 sample<br>
+Purpose: To compare two means.<br>
+H0: mu_diff = 0<br>
+H1: mu_diff &lt;&gt; 0<br>
+<strong>Test: Difference of two means (Paired). T-test</strong></p>
+</li>
+<li>
+<p><strong>CASE6:</strong> Checking consistency of Testers: A tester passes 75 tasks out of 100, another tester passes 35 tasks out of 45. Whether these two testers are testing consistently or not?<br>
+<strong>SOLUTION:</strong> Data- tester (Tester1, Tester2), results (pass failed). Nominal data.<br>
+Sample: 2 samples (one for tester1 and another for tester2)
+Purpose: Compare the proportion of two testers.<br>
+H0: Number of Errors of Tester1 = Number of Errors of Tester2<br>
+H1: Number of Errors of Tester1 &lt;&gt; Number of Errors of Tester2<br>
+<strong>Test: Difference of two proportions</strong></p>
+</li>
+<li>
+<p><strong>CASE7:</strong> Almonds claimed in Chocolate: Chocolate manufacturing claims their nutty bar chocolate has 10% almonds. Quality department get a sample of 100 chocolate, weighs the chocolate and the weights of almonds in them. He summarizes the data and says the average weight of almonds in chocolate is 9% of the chocolate weight. Whether company&rsquo;s claim correct?</p>
+</li>
+<li>
+<p><strong>CASE8:</strong> Checking the work of the Packing department: To promote their product, a chocolate making company decided that 20% of their chocolates should have a prize coupon. Quality department collects a sample of 50 chocolates and finds 8 chocolates with a price coupon. Packing department doing their work properly or not?</p>
+</li>
+<li>
+<p><strong>CASE9:</strong> Does coupon help in sales: Company has 20 days sales data. 8 days sales when couplen were available, 12 days data when coupon was not available.</p>
+</li>
+<li>
+<p><strong>CASE10:</strong> Checking which product is better: A chocolate making company assumes if people are taking more time to eat a chocolate it means they are enjoying it more. They claim their dark chocolate is liked more by the customer than milk chocolate. They collect the data of 100 people, who were offered two different chocolates at two different occasions. They summarize the mean time to eat for both the Chocolate Dark: 6 min, Chocolate Milk: 5.5min. Whether the company&rsquo;s claim about dark chocolate is correct?</p>
+</li>
+<li>
+<p><strong>CASE11:</strong> Which machine needs attention: There are two chocolate wrapping machines. There are some wrapping issues in the chocolate. Packing department collects the data from two machines. They summarize the results as: Out of 100 chocolate machine1 had 10 issues, while machine2 had 5 issues out of 40 packings. Is there any significant difference between the packing quality of these two machines?</p>
+</li>
+<li>
+<p><strong>CASE12:</strong> Is there any significant relationship between temperature and sale?</p>
+</li>
+<li>
+<p><strong>CASE13:</strong>  Preference for a product: 100 Women and 80 Men were offered two chocolates and we wanted to know if there is any preference of chocolate by women and men.</p>
+</li>
+</ul>
+<h2 id="can-you-explain-the-statistical-t-test">Can you explain the statistical t-test?</h2>
+<p>Suppose we have a hypothesis &ldquo;Girls have more IQ than boys&rdquo;
+H0 (Null Hypothesis) = There is no relationship between IQ and Gender. You could have told IQ of Girls = IQ of boys
+H1 (Ha) (Alternative Hypothesis) = IQ of Girls &lt;&gt; IQ of boys</p>
+<p>Now if you collect IQ test data of 50 people, 30 boys and 20 girls. You plot a distribution of a boy&rsquo;s IQ and you find the mean is 100 and sample SD is 3. You plot a distribution of girl&rsquo;s IQ and mean IQ of girls is 104 and sample SD is 4. From this difference can you conclude that H1 is accepted?</p>
+<p>Let&rsquo;s set significance level for our test as 5%, it means the 5% difference between the two sample mean is not considered significant.</p>
+<p>Now we need to compare whether two sample means are statistically significant or not. For this we will conduct &ldquo;Two Sample t test for Comparing Two Means&rdquo;</p>
+<p>$$t = \frac{\overline{X}_1 - \overline{X}<em>2}{s</em>{\overline{X}_1 - \overline{X}_2}}$$</p>
+<p>$$s_{\overline{X}_1 - \overline{X}_2} = \sqrt{\frac{s_1^2 }{ n_1} + \frac{s_2^2 }{n_2}}$$</p>
+<p>$$s_{\overline{X}_1 - \overline{X}_2} = \sqrt(3^2/30 + 4^2/20) = sqrt(2.01) = 1.418$$
+$$t = 4 /.547 = 2.82 $$</p>
+<p>The degrees of freedom parameter is the smaller of (30 – 1) and (20 – 1), or 19. Because this is a one‐tailed test, the alpha level (0.05) is not divided by two. The next step is to look up t .05,19in the t‐table, which gives a critical value of 1.729. The computed t of 2.82 exceeds the tabled value, so the null hypothesis is rejected. This test has provided statistically significant evidence that there is a significant difference between the IQ of Girls and Boys.</p>
+<p><strong>Additional Observations</strong><br>
+From boy&rsquo;s sample we know, 95% of the boys will have IQ between 100 +/- 2<em>3 = 94 to 106.
+From girl&rsquo;s sample we know, 95% of the girls will have IQ between 104 +/- 2</em>4 = 96 to 112.</p>
+<p><a href="https://www.khanacademy.org/math/ap-statistics/xfb5d8e68:inference-quantitative-means/two-sample-t-test-means/v/two-sample-t-test-for-difference-of-means"></a></p>
+<h2 id="can-you-explain-the-z-test">Can you explain the z-test?</h2>
+<ul>
+<li>One-sample z-test:
+$$SE = \frac{\sigma}{\sqrt{n}}$$
+$$z = \frac{\bar{x}-\mu}{SE}$$</li>
+</ul>
+<p>$$\bar{x}$$ is sample mean, σ is the population standard deviation, and μ is the population mean.</p>
+<ul>
+<li>
+<p>Two-sample z-test: This is used to compare the means of two independent samples. The formula for the two-sample z-test is: z = (x̄1 - x̄2) / √(s^2 / n1 + s^2 / n2)</p>
+</li>
+<li>
+<p>Paired sample z-test: This is used to compare the means of two related samples, for example, before and after measurements. The formula for the paired sample z-test is: z = (d̄ - μd) / (s_d / √n)</p>
+</li>
+<li>
+<p>Proportion z-test: This is used to compare the proportion of success in a sample to a known population proportion. The formula for the proportion z-test is: z = (p̂ - p) / √(p(1-p) / n)</p>
+</li>
+</ul>
+<p><a href="https://www.calculator.net/z-score-calculator.html">Z Score Calculator</a></p>
+<h1 id="more-concepts-in-statistics">More Concepts in Statistics</h1>
+<h2 id="what-are-concordant-or-discordant-pairs">What are concordant or discordant pairs?</h2>
+<p>Concordant pairs are two variables that tend to increase or decrease together. Discordant pairs, on the other hand, are two variables that tend to move in opposite directions. For example, a positive correlation between the number of hours studied and exam scores would be an example of a concordant pair, while a negative correlation between the number of hours studied and the number of hours spent playing video games would be an example of a discordant pair.</p>
+<h2 id="what-is-a-monotonic-relationship">What is a monotonic relationship?</h2>
+<p>A monotonic relationship is a statistical relationship between two variables in which one variable either increases or decreases consistently as the other variable increases. In other words, there is a clear direction to the relationship, but <strong>the relationship may not necessarily be linear</strong>.</p>
+<p>For example, consider the relationship between temperature and ice cream sales. As temperature increases, ice cream sales are likely to increase as well. This is a positive monotonic relationship, because one variable (temperature) increases consistently as the other variable (ice cream sales) increases. On the other hand, if temperature were to decrease as ice cream sales increased, the relationship would be <strong>negative monotonic</strong>.</p>
+<p>Monotonic relationships can be measured using <strong>nonparametric statistical techniques</strong>, such as the <strong>Spearman rank correlation coefficient</strong> or the <strong>Kendall rank correlation coefficient</strong>. These techniques are based on the ranks of the values rather than the raw data, and they are less sensitive to deviations from a linear relationship than parametric techniques such as the Pearson correlation coefficient.</p>
+<h2 id="what-is-the-difference-between-nonparametric-measure-vs-parametric-measure">What is the difference between nonparametric measure vs parametric measure?</h2>
+<p>Parametric measures are statistical techniques that make assumptions about the underlying distribution of the data. These assumptions are usually about the shape of the distribution and the presence of certain statistical properties, such as a normal distribution or constant variance.
+Let&rsquo;s say our dataset has earthquake information, size of earthquakes, and number of casualties. If we plot the distribution of earthquake size you will not have normal distribution, it will have exponential distribution. But if we were having an employee dataset and age is mentioned there then you can assume that age will have normal distribution. Because of assumption you can use a parametric test with a small dataset to conclude about the larger sample. Parametric tests like t-test can infer with sample size&lt;30, on the other hand parametric tests like z-test can infer about population with sample size around 30.</p>
+<p>Nonparametric measures, on the other hand, <strong>do not make any assumptions about the underlying distribution of the data.</strong> They are more flexible and can be <strong>used with a wider range of data types</strong>, but they may be <strong>less powerful</strong> than parametric measures because they make fewer assumptions about the data.</p>
+<p>One of the main differences between parametric and nonparametric measures is the way they handle <strong>missing data</strong>. Parametric measures typically require complete datasets, while nonparametric measures are more robust to missing data.</p>
+<p>It&rsquo;s important to choose the appropriate statistical technique based on the nature of the data and the research question you are trying to answer. In general, parametric measures are more powerful when the assumptions they make about the data are met, but nonparametric measures may be more appropriate when these assumptions are not met.</p>
+<h2 id="when-is-median-better-than-mean-measure">When is Median better than Mean measure?</h2>
+<p>If you have 2 people in your dataset whose salary is 4 cr and 5 cr, then the mean will shift to the right side. If you have people whose salary is 4K or 5K means will shift left. In this situation if you want the central tendency of data to be correctly represented then use median.</p>
+<h2 id="what-is-percentile">What is percentile?</h2>
+<p>Let&rsquo;s assume our job_applicant dataset has 500 observations. If you order the salary column in ascending order. 80 percentile means 80 percent of 500, i.e. 400th record. Whatever the salary of this 400th person is, that is 80 percentile. Let&rsquo;s say it is 75K. It means 20% of people have more salary than 75K and 80% people have a salary less than 75K.</p>
+<p>If you want to know 99 percentile then 500*99/100 = 495th record. Let&rsquo;s say the 495th person&rsquo;s salary is 140K. It means 1% of the people have more than 140K salary.</p>
+<h2 id="what-are-applications-of-long-tailed-distribution">What are applications of long-tailed distribution?</h2>
+<p>Long-tailed distribution is when on the ends the shape of the normal distribution curve becomes almost parallel to the x-axis (asymptotic). It can help you outlier detection.</p>
+<p><img src="/assets/images/dspost/statistics/long-tailed-distribution.png" alt="long-tailed-distribution"></p>
+<p>Consider the following example.</p>
+<ul>
+<li>What is that range of working time when people are making 95% of mistakes? when the number of defects is almost zero you will get an asymptotic line, 5%. Depending on your data, You may get two side long tail or right side long tail. Now you can bring your number of working within the range where defects are least.</li>
+<li>What salary 95% of Indian IT professionals are making. You find a long tail on the curve. This is a good enough market for you. You can make your marketing strategies accordingly.</li>
+<li>What is the height of a 99.99% loaded luggage truck? You can construct height of subway accordingly</li>
+</ul>
+<h2 id="what-is-an-outlier-how-can-outliers-be-determined-in-a-dataset">What is an outlier? How can outliers be determined in a dataset?</h2>
+<p>If you sort the salary data of 1000 employees in ascending order, then the salary information of the 250th person is 25th (Q1) percentile. Salary information of the 500th person is 50th (Q2) percentile. Salary information of the 750th person is 75th (Q3) percentile. The difference between Q3 and Q1 salary is called IQR (Interquartile Range). If you add 1.5<em>IQR with Q3 you will get a salary, say 1.8 Lakh. Any salary more than this is considered a right side outlier. If you subtract 1.5</em>IQR from Q1 then you will get a number, say 40K. Any salary less than this will be considered as a left side outlier.</p>
+<p><img src="/assets/images/dspost/statistics/outliers.png" alt="Outlier Detection"></p>
+<h2 id="what-are-the-applications-of-outlier-detection">What are the applications of outlier detection?</h2>
+<ul>
+<li>Fraud detection in financial transactions</li>
+<li>Intrusion detection in infrastructure management</li>
+<li>Fault detection in manufacturing processes</li>
+<li>Data-preprocessing to remove anomalies in the dataset so that we can make a stable model.</li>
+</ul>
+<h2 id="how-to-handle-missing-data-in-a-given-dataset">How to handle missing data in a given dataset?</h2>
+<ul>
+<li>Predict the missing values using other columns.</li>
+<li>Assignment of individual (unique) values. Let&rsquo;s say city information is missing, you can say city1, city2 etc.</li>
+<li>Deletion of rows, which have the missing data. Deletion of column which has missing data.</li>
+<li>Mean imputation</li>
+<li>Median imputation</li>
+<li>Mode imputation</li>
+<li>Use other columns for Mean, Median, Mode imputation.</li>
+</ul>
+<h2 id="in-statistics-what-are-the-types-of-selection-bias">In statistics, what are the types of selection bias?</h2>
+<p>When you select some datapoint intentionally it is selection bias. You may not have the intention of introducing bias but because of your action it has come in the dataset. Following types of bias possible.</p>
+<ul>
+<li>Observer selection</li>
+<li>Attrition</li>
+<li>Protopathic bias</li>
+<li>Time intervals</li>
+<li>Sampling bias</li>
+</ul>
+<h2 id="what-is-the-central-limit-theorem-clt">What is the central limit theorem (CLT)?</h2>
+<p>According to Central Limit Theorem</p>
+<ol>
+<li>Population means can be known from sample mean. x̄ = μ + z * (σ / √n)</li>
+</ol>
+<p>where:<br>
+x̄ (bar x) is the sample mean<br>
+μ is the population mean<br>
+z is the standard normal score (also known as a z-score)<br>
+σ is the population standard deviation<br>
+n is the sample size</p>
+<p>The CLT states that as the sample size (n) increases, the sampling distribution of the mean (x̄) becomes more normal, and the sample mean becomes a more accurate estimate of the population mean (μ).</p>
+<ol start="2">
+<li>
+<p>The standard deviation of the sampling distribution of the mean = SE = Sample&rsquo;s SD = (σ/√n).</p>
+</li>
+<li>
+<p>$$z =  \frac{\bar{x}-\mu}{SE}, \qquad where \qquad SE = \frac{s}{\sqrt{n}}$$
+where \bar{x} is sample mean, s is sample SD</p>
+</li>
+</ol>
+<p><img src="/assets/images/dspost/statistics/central-limit-theorem-distribution.png" alt="central-limit-theorem-distribution"></p>
+<h2 id="can-you-explain-what-is-the-distribution-in-statistics-what-purpose-they-serve">Can you explain what is the distribution in statistics, what purpose they serve?</h2>
+<p>There are two kinds of variables: numerical and categorical. Numerical variables like age of human, age of star, waiting time at service counter, growth of virus, distance between stars etc follows different types of continuous distributions. Discrete variables like city, color, education, pincode, plant name, building type, builder etc follow discrete distribution.</p>
+<p>Common Distribution types are</p>
+<ul>
+<li>Continuous Distributions
+<ul>
+<li>Normal Distribution</li>
+<li>Uniform Distribution</li>
+<li>Cauchy Distribution</li>
+<li>t Distribution</li>
+<li>F Distribution</li>
+<li>Chi-Square Distribution</li>
+<li>Exponential Distribution</li>
+<li>Weibull Distribution</li>
+<li>Lognormal Distribution</li>
+<li>Birnbaum-Saunders (Fatigue Life) Distribution</li>
+<li>Gamma Distribution</li>
+<li>Double Exponential Distribution</li>
+<li>Power Normal Distribution</li>
+<li>Power Lognormal Distribution</li>
+<li>Tukey-Lambda Distribution</li>
+<li>Extreme Value Type 1 Distribution</li>
+<li>Extreme Value Type I Distribution</li>
+<li>Beta Distribution</li>
+</ul>
+</li>
+<li>Discrete Distributions
+<ul>
+<li>Binomial Distribution</li>
+<li>Poisson Distribution</li>
+</ul>
+</li>
+</ul>
+<p>There are many kinds of distribution and each distribution has its related function.  Some of the important functions related to each distribution are as below. <strong>Formulas for each function are different for different distribution types.</strong></p>
+<ul>
+<li>Probability Density Function (pdf): PDF gives the probability that of variable at value x, e.g: pdf can give probability of variable (age) at value (=35 years)</li>
+<li>Cumulative Distribution Function (CDF): CDF is the probability that the variable takes a value less than or equal to x, e.g. CDF can give probability of variable (age) at value (&lt;&gt;=35 years)</li>
+<li>Percent Point Function (ppf) : It is Inverse of Distribution function (idf)</li>
+<li>Survival Function : The survival function is the probability that the variate takes a value greater than x, e.g. sf can give probability of variable (age) at value (&gt;35 years)</li>
+<li>Inverse Survival Function: It is the Inverse of Survival function.</li>
+<li>Hazard Function: The hazard function is the ratio of the probability density function to the survival function, S(x).</li>
+<li>Cumulative Hazard Function: The cumulative hazard function is the integral of the hazard function.</li>
+</ul>
+<p><em><strong>Note:</strong></em>
+Each distribution has its own shape and measure to summarize the data. They are broadly of three types, measure of central tendency, measure of dispersion and shape of distribution. Following are common measures for every distribution. For example, to calculate central tendencies like mean, median of normal distribution there is some formula. In the case of exponential distribution central tendencies will not be arithmetic mean but geometric mean.</p>
+<ul>
+<li>Mean, Median, Mode, Range, SD, Kurtosis, Coefficient of Variation, SD, Skewness</li>
+<li><strong>Each measure has different formula for calculation</strong></li>
+</ul>
+<h2 id="some-additional-notes-for-data-scientists">Some Additional Notes for Data Scientists.</h2>
+<p>A data scientist is dealing with different streams of subjects like statistics, database, software engineering, geometry, vector and metrics, and calculus at the same time. There are certain terms which are referred to differently by different subjects. To avoid the confusion I am putting them below.</p>
+<ul>
+<li>Variable of statistics = Column of database = Field of database = Basis vector of geometry. They all refer to the same thing.</li>
+<li>Records of database = tuple of database = observation of statistics = vector of geometry.</li>
+<li>Slope of Geometry = Gradient of calculus = Gradient in Deep Learning and Machine Learning. The value of slope or gradient can be between $$-\infty ,, to ,,+\infty$$</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<p>If any of the link breaks then you can search for these books at <a href="https://drive.google.com/drive/folders/14wS6JWWDsZ2TEXCD9A7jgLVCEVEd1Mpb?usp=drive_link">location</a></p>
+<ul>
+<li><a href="https://drive.google.com/file/d/1rwFT2l39UsuNs9kyyqoSLsxH-zMk5FBx/view?usp=sharing">Statistics_Cartoon_Guide-BOOK</a></li>
+<li><a href="https://drive.google.com/file/d/1RhqHx_7suKuHamekBkEHvwn5OjUD4sds/view?usp=sharing">Probability and Statistics for Data Science-BOOK</a></li>
+<li><a href="https://drive.google.com/file/d/1PMa7FSwkY_AkI6UrtnhgPIWEjNs60kLY/view?usp=sharing">Comprehensive &amp; Practical Inferential Statistics Guide-GUIDE</a></li>
+<li><a href="">Statistics and Machine Learning in Python-BOOK</a></li>
+<li><a href="https://drive.google.com/file/d/1oZUsZUPf5E8d7oc3WOFgLItWsyu12DBG/view?usp=sharing">Introduction to Probability and Statistics for Engineers and Scientists-BOOK</a></li>
+<li><a href="https://drive.google.com/file/d/112akj_HiddwvTshbgzvQFN299bfugib0/view?usp=sharing">Probability &amp; Statistics with Applications to Computing-BOOK</a></li>
+<li><a href="https://drive.google.com/file/d/1p6H6mvNBrfOoW9Dp2tX0l5I-667Zor3h/view?usp=sharing">Statistics  Demystified-BOOK</a></li>
+<li><a href="https://drive.google.com/file/d/1dX-BbLPjN-pKVOmidrkT_Imh9mmMzeX_/view?usp=share_link">HypothesisTesting-PPT</a></li>
+<li><a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/what-is-a-z-score-what-is-a-p-value.htm#:~:text=The%20critical%20z%2Dscore%20values,1.96%20and%20%2B1.96%20standard%20deviations.">What is a z-score? What is a p-value?</a></li>
+</ul>
+<p><strong>YouTube Resource for Statistical Test</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=rulIUAN0U3w">Choosing which statistical test to use - 10 min video</a></li>
+<li><a href="https://www.youtube.com/watch?v=ZX4m6zav5To&amp;t=1s">Choosing a statistical test for analysis of data - 25 min video</a></li>
+<li><a href="https://www.youtube.com/watch?v=QfVx7AH8rck&amp;t=10s">T test, Z test, F test, Chi-square test, ANOVA, Mann-Whitney U Test, H test - 33min video</a></li>
+<li><a href="https://www.khanacademy.org/math/ap-statistics/xfb5d8e68:inference-quantitative-means/two-sample-t-test-means/v/two-sample-t-test-for-difference-of-means">Two-sample t test for difference of means</a></li>
+</ul>
+<h1 id="conclusion">Conclusion</h1>
+<p>Statistics is a big and complex subject and this is the foundational stone of any data science work, primarily for data analysis and model building. You may not be an expert in this subject and it can take a significant amount of time to get mastery over this subject. But with the help of the above questions a company can evaluate whether you are comfortable enough in the subject to take challenges in a data science project. If you would like to add your favorite questions then you can email me at <a href="mailto:hari.prasad@vedavit-ps.com">hari.prasad@vedavit-ps.com</a></p>
+<p><strong>Author</strong><br>
+Dr Hari Thapliyaal<br>
+dasarpai.com <br>
+linkedin.com/in/harithapliyal</p>
+<div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/statistics" class="category-badge">Statistics</a><a href="/tags/data-science-interview" class="category-badge">Data Science Interview</a><a href="/tags/probability-theory" class="category-badge">Probability Theory</a><a href="/tags/statistical-analysis" class="category-badge">Statistical Analysis</a><a href="/tags/data-science" class="category-badge">Data Science</a><a href="/tags/hypothesis-testing" class="category-badge">Hypothesis Testing</a><a href="/tags/statistical-methods" class="category-badge">Statistical Methods</a><a href="/tags/data-analysis" class="category-badge">Data Analysis</a><a href="/tags/mathematical-concepts" class="category-badge">Mathematical Concepts</a><a href="/tags/statistical-distributions" class="category-badge">Statistical Distributions</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=Statistics%20Interview%20Question%20for%20Data%20Scientist&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fStatistics-Interview-Question-for-Data-Scientist%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fStatistics-Interview-Question-for-Data-Scientist%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fStatistics-Interview-Question-for-Data-Scientist%2f&title=Statistics%20Interview%20Question%20for%20Data%20Scientist" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fStatistics-Interview-Question-for-Data-Scientist%2f&title=Statistics%20Interview%20Question%20for%20Data%20Scientist" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=Statistics%20Interview%20Question%20for%20Data%20Scientist&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fStatistics-Interview-Question-for-Data-Scientist%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/gpt-usecases/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">GPT Usecases</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/Linear-Regression-Interview-Questions/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">Linear Regression Interview Questions</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#can-you-tell-me-about-population-space-or-sample-space">Can you tell me about population space or sample space?</a></li>
+    <li><a href="#what-is-random-process-random-experiment-random-event-all-are-the-same-thing-or-different">What is Random Process, Random Experiment, Random Event, all are the same thing or different?</a></li>
+    <li><a href="#what-is-the-difference-between-variable-and-random-variable">What is the difference between variable and random variable?</a></li>
+    <li><a href="#what-is-the-difference-between-measure-tool-technique-method-and-process">What is the difference between Measure, Tool, Technique, Method, and Process?</a></li>
+    <li><a href="#what-is-the-meaning-of-sample-in-statistics-and-how-is-it-different-from-observation">What is the meaning of &ldquo;sample&rdquo; in statistics and how is it different from &ldquo;observation&rdquo;?</a></li>
+    <li><a href="#what-is-the-difference-between-statistics-and-census">What is the difference between statistics and census?</a></li>
+    <li><a href="#what-are-observational-data-and-experimental-data-in-statistics">What are observational data, and experimental data in Statistics?</a></li>
+    <li><a href="#are-statistical-measures-and-statistical-methods-the-same">Are statistical measures and statistical methods the same?</a></li>
+    <li><a href="#what-are-the-different-types-of-statistics">What are the different types of statistics?</a></li>
+    <li><a href="#what-is-descriptive-statistics">What is Descriptive statistics?</a></li>
+    <li><a href="#what-is-inferential-statistics">What is Inferential statistics?</a></li>
+    <li><a href="#what-is-predictive-statistics">What is predictive statistics?</a></li>
+    <li><a href="#what-are-statistical-measures-of-descriptive-statistics">What are statistical measures of Descriptive Statistics?</a></li>
+    <li><a href="#what-are-statistical-measures-in-inferential-statistics">What are statistical measures in Inferential Statistics?</a></li>
+    <li><a href="#what-are-statistical-measures-in-predictive-statistics">What are statistical measures in Predictive Statistics?</a></li>
+    <li><a href="#what-are-the-statistical-tools-in-inferential-statistics">What are the statistical tools in Inferential Statistics?</a></li>
+    <li><a href="#what-are-the-statistical-tools-in-predictive-statistics">What are the statistical tools in Predictive Statistics?</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#what-is-a-random-variable">What is a random variable?</a></li>
+    <li><a href="#what-are-the-different-types-of-random-variables">What are the different types of random variables?</a></li>
+    <li><a href="#variable-types-and-summarization">Variable Types and Summarization</a></li>
+    <li><a href="#explain-dependent-variables-and-independent-variables">Explain dependent variables and independent variables.</a></li>
+    <li><a href="#what-is-the-difference-between-the-regression-coefficient-and-correlation-coefficient">What is the difference between the regression coefficient and correlation coefficient?</a></li>
+    <li><a href="#what-is-a-statistical-model">What is a statistical model?</a></li>
+    <li><a href="#what-is-the-difference-between-statistical-model-and-mathematical-model">What is the difference between Statistical Model and Mathematical Model?</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#what-is-regression">What is regression?</a></li>
+    <li><a href="#what-is-correlation-and-what-is-the-formula-of-this">What is Correlation and What is the formula of this?</a></li>
+    <li><a href="#how-many-types-of-correlation-coefficient-are-there-in-stats">How many types of correlation coefficient are there in stats?</a></li>
+    <li><a href="#what-is-autocorrelation">What is AutoCorrelation?</a></li>
+    <li><a href="#what-is-the-autocorrelation-formula">What is the AutoCorrelation formula?</a></li>
+    <li><a href="#causation-and-correlations-are-two-different-things-can-you-explain-them-with-an-example">Causation and Correlations are two different things, can you explain them with an example?</a></li>
+    <li><a href="#what-is-variance-and-how-to-calculate-variance">What is Variance and how to calculate variance?</a></li>
+    <li><a href="#are-correlation-and-regression-different-or-same-thing">Are correlation and regression different or same thing?</a></li>
+    <li><a href="#what-is-covariance-and-how-to-calculate-it">What is Covariance and how to calculate it?</a></li>
+    <li><a href="#what-is-the-autocovariance-function-acvf-formula">What is the AutoCovariance Function (ACVF) Formula?</a></li>
+    <li><a href="#what-is-standard-deviation-and-what-is-the-formula-to-calculate-this">What is Standard Deviation and what is the formula to calculate this?</a></li>
+    <li><a href="#what-is-standard-scaling-or-z-score-calculation">What is standard scaling or z score calculation?</a></li>
+    <li><a href="#what-is-the-sigma-value-in-statistics-normal-distribution">What is the Sigma value in Statistics (Normal Distribution)?</a></li>
+    <li><a href="#what-is-sigma-value-in-process-control">What is Sigma value in Process Control?</a></li>
+    <li><a href="#what-is-the-meaning-of-standard-deviation-sd-of-the-sampling-distribution-of-the-mean">What is the meaning of Standard Deviation (SD) of the sampling distribution of the mean?</a></li>
+    <li><a href="#what-is-sample-standard-error-or-standard-error-of-sample-mean">What is Sample Standard Error OR Standard Error of Sample Mean?</a></li>
+    <li><a href="#what-is-population-standard-error-or-standard-error-of-population-mean">What is Population Standard Error OR Standard Error of Population Mean?</a></li>
+    <li><a href="#how-to-use-z-score-for-probability-calculation">How to use z score for probability calculation?</a></li>
+    <li><a href="#what-is-the-box-cox-normality-plot">What is the Box-Cox Normality Plot?</a></li>
+    <li><a href="#what-is-skewness">What is skewness?</a></li>
+    <li><a href="#what-is-kurtosis">What is kurtosis?</a></li>
+    <li><a href="#what-is-the-r-square-formula">What is the R-Square formula?</a></li>
+    <li><a href="#what-is-the-adjusted-r-square-formula">What is the Adjusted R-Square formula?</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#what-is-probability">What is probability?</a></li>
+    <li><a href="#what-is-log-odd">What is log-odd?</a></li>
+    <li><a href="#what-is-the-difference-between-theoretical-probability-and-experimental-probability">What is the difference between theoretical probability and experimental probability?</a></li>
+    <li><a href="#what-is-success-probability">What is success probability?</a></li>
+    <li><a href="#what-is-probability-density">What is probability density?</a></li>
+    <li><a href="#what-is-uniform-distribution">What is uniform distribution?</a></li>
+    <li><a href="#what-is-a-normal-distribution-what-is-the-use-of-this">What is a normal distribution? What is the use of this?</a></li>
+    <li><a href="#what-is-binomial-distribution-what-is-the-use-of-this">What is binomial distribution? What is the use of this?</a></li>
+    <li><a href="#can-you-give-example-of-exponential-distribution">Can you give example of exponential distribution</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#what-is-p-value">What is p-value?</a></li>
+    <li><a href="#what-is-the-significance-level">What is the Significance Level?</a></li>
+    <li><a href="#what-is-type-i-and-type-ii-error">What is Type-I and Type-II error?</a></li>
+    <li><a href="#how-to-select-the-right-statistical-test-for-a-problem-in-hand">How to select the right Statistical Test for a problem in hand?</a></li>
+    <li><a href="#statistical-tests-with-example">Statistical Tests with Example</a></li>
+    <li><a href="#can-you-explain-the-statistical-t-test">Can you explain the statistical t-test?</a></li>
+    <li><a href="#can-you-explain-the-z-test">Can you explain the z-test?</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#what-are-concordant-or-discordant-pairs">What are concordant or discordant pairs?</a></li>
+    <li><a href="#what-is-a-monotonic-relationship">What is a monotonic relationship?</a></li>
+    <li><a href="#what-is-the-difference-between-nonparametric-measure-vs-parametric-measure">What is the difference between nonparametric measure vs parametric measure?</a></li>
+    <li><a href="#when-is-median-better-than-mean-measure">When is Median better than Mean measure?</a></li>
+    <li><a href="#what-is-percentile">What is percentile?</a></li>
+    <li><a href="#what-are-applications-of-long-tailed-distribution">What are applications of long-tailed distribution?</a></li>
+    <li><a href="#what-is-an-outlier-how-can-outliers-be-determined-in-a-dataset">What is an outlier? How can outliers be determined in a dataset?</a></li>
+    <li><a href="#what-are-the-applications-of-outlier-detection">What are the applications of outlier detection?</a></li>
+    <li><a href="#how-to-handle-missing-data-in-a-given-dataset">How to handle missing data in a given dataset?</a></li>
+    <li><a href="#in-statistics-what-are-the-types-of-selection-bias">In statistics, what are the types of selection bias?</a></li>
+    <li><a href="#what-is-the-central-limit-theorem-clt">What is the central limit theorem (CLT)?</a></li>
+    <li><a href="#can-you-explain-what-is-the-distribution-in-statistics-what-purpose-they-serve">Can you explain what is the distribution in statistics, what purpose they serve?</a></li>
+    <li><a href="#some-additional-notes-for-data-scientists">Some Additional Notes for Data Scientists.</a></li>
+    <li><a href="#resources">Resources</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

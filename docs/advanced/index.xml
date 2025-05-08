@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Advanced on Agones</title>
+    <link>http://localhost:1313/docs/advanced/</link>
+    <description>Recent content in Advanced on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/advanced/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>System Diagram</title>
+      <link>http://localhost:1313/docs/advanced/system-diagram/</link>
+      <pubDate>Thu, 18 Apr 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/advanced/system-diagram/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;../../../diagrams/system-diagram.dot.png&#34; alt=&#34;System Diagram&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;agones-control-plane&#34;&gt;Agones Control Plane&lt;/h1&gt;&#xA;&lt;p&gt;The Agones Control Plane consists of 4 &lt;code&gt;Deployments&lt;/code&gt;:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;NAME                READY   UP-TO-DATE   AVAILABLE   AGE&#xA;agones-allocator    3/3     3            3           40d&#xA;agones-controller   2/2     2            2           40d&#xA;agones-extensions   2/2     2            2           40d&#xA;agones-ping         2/2     2            2           40d&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;agones-allocator&#34;&gt;&lt;code&gt;agones-allocator&lt;/code&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;agones-allocator&lt;/code&gt; provides a gRPC/REST service that translates allocation requests into &lt;code&gt;GameServerAllocations&lt;/code&gt;. See &lt;a href=&#34;http://localhost:1313/docs/advanced/allocator-service/&#34;&gt;Allocator Service&lt;/a&gt; for more information.&lt;/p&gt;&#xA;&lt;h2 id=&#34;agones-controller&#34;&gt;&lt;code&gt;agones-controller&lt;/code&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;agones-controller&lt;/code&gt; maintains various control loops for all Agones CRDs (&lt;code&gt;GameServer&lt;/code&gt;, &lt;code&gt;Fleet&lt;/code&gt;, etc.). A single leader-elected &lt;code&gt;Pod&lt;/code&gt; of the &lt;code&gt;Deployment&lt;/code&gt;&#xA;is active at any given time (see &lt;a href=&#34;http://localhost:1313/docs/advanced/high-availability-agones/&#34;&gt;High Availability&lt;/a&gt;).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Scheduling and Autoscaling</title>
+      <link>http://localhost:1313/docs/advanced/scheduling-and-autoscaling/</link>
+      <pubDate>Thu, 03 Jan 2019 05:45:05 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/advanced/scheduling-and-autoscaling/</guid>
+      <description>&lt;h2 id=&#34;cluster-autoscaler&#34;&gt;Cluster Autoscaler&lt;/h2&gt;&#xA;&lt;p&gt;Kubernetes has a &lt;a href=&#34;https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler&#34;&gt;cluster node autoscaler that works with a wide variety of cloud providers&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The default scheduling strategy (&lt;code&gt;Packed&lt;/code&gt;) is designed to work with the Kubernetes autoscaler out of the box.&lt;/p&gt;&#xA;&lt;p&gt;The autoscaler will automatically add Nodes to the cluster when &lt;code&gt;GameServers&lt;/code&gt; don&amp;rsquo;t have room to be scheduled on the&#xA;clusters, and then scale down when there are empty Nodes with no &lt;code&gt;GameServers&lt;/code&gt; running on them.&lt;/p&gt;&#xA;&lt;p&gt;This means that scaling &lt;code&gt;Fleets&lt;/code&gt; up and down can be used to control the size of the cluster, as the cluster autoscaler&#xA;will adjust the size of the cluster to match the resource needs of one or more &lt;code&gt;Fleets&lt;/code&gt; running on it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>High Availability Agones</title>
+      <link>http://localhost:1313/docs/advanced/high-availability-agones/</link>
+      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/advanced/high-availability-agones/</guid>
+      <description>&lt;h2 id=&#34;high-availability-for-agones-controller&#34;&gt;High Availability for Agones Controller&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;code&gt;agones-controller&lt;/code&gt; responsibility is split up into &lt;code&gt;agones-controller&lt;/code&gt;, which enacts the Agones control loop, and &lt;code&gt;agones-extensions&lt;/code&gt;, which acts as a service endpoint for webhooks and the allocation extension API. Splitting these responsibilities allows the &lt;code&gt;agones-extensions&lt;/code&gt; pod to be &lt;strong&gt;horizontally scaled&lt;/strong&gt;, making the Agones control plane &lt;strong&gt;highly available&lt;/strong&gt; and more &lt;strong&gt;resiliant to disruption&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Multiple &lt;code&gt;agones-controller&lt;/code&gt; pods enabled, with a primary controller selected via leader election. Having multiple &lt;code&gt;agones-controller&lt;/code&gt; minimizes downtime of the service from pod disruptions such as deployment updates, autoscaler evictions, and crashes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Controlling Disruption</title>
+      <link>http://localhost:1313/docs/advanced/controlling-disruption/</link>
+      <pubDate>Tue, 24 Jan 2023 20:15:26 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/advanced/controlling-disruption/</guid>
+      <description>&lt;h2 id=&#34;disruption-in-kubernetes&#34;&gt;Disruption in Kubernetes&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/pods/disruptions/#voluntary-and-involuntary-disruptions&#34;&gt;A &lt;code&gt;Pod&lt;/code&gt; in Kubernetes may be disrupted&lt;/a&gt; for involuntary reasons, e.g. hardware failure, or voluntary reasons, such as when nodes are drained for upgrades.&lt;/p&gt;&#xA;&lt;p&gt;By default, Agones assumes your game server should never be disrupted voluntarily and configures the &lt;code&gt;Pod&lt;/code&gt; appropriately - but this isn&amp;rsquo;t always the ideal setting. Here we discuss how Agones allows you to control the two most significant sources of voluntary &lt;code&gt;Pod&lt;/code&gt; evictions, node upgrades and Cluster Autoscaler, using the &lt;code&gt;eviction&lt;/code&gt; API on the &lt;code&gt;GameServer&lt;/code&gt; object.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Limiting CPU &amp; Memory</title>
+      <link>http://localhost:1313/docs/advanced/limiting-resources/</link>
+      <pubDate>Thu, 03 Jan 2019 05:45:15 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/advanced/limiting-resources/</guid>
+      <description>&lt;p&gt;As a short description:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;CPU &lt;code&gt;Requests&lt;/code&gt; are limits that are applied when there is CPU congestion, and as such can burst above their set limits.&lt;/li&gt;&#xA;&lt;li&gt;CPU &lt;code&gt;Limits&lt;/code&gt; are hard limits on how much CPU time the particular container gets access to.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This is useful for game servers, not just as a mechanism to distribute compute resources evenly, but also as a way&#xA;to advice the Kubernetes scheduler how many game server processes it is able to fit into a given node in the cluster.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Out of Cluster Dev Server</title>
+      <link>http://localhost:1313/docs/advanced/out-of-cluster-dev-server/</link>
+      <pubDate>Tue, 15 Aug 2023 07:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/advanced/out-of-cluster-dev-server/</guid>
+      <description>&lt;p&gt;This section builds upon the topics discussed in &lt;a href=&#34;http://localhost:1313/docs/guides/client-sdks/local/&#34;&gt;local SDK Server&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/docs/guides/local-game-server/&#34;&gt;Local Game Server&lt;/a&gt;, and &lt;code&gt;GameServer&lt;/code&gt; allocation (discussed &lt;a href=&#34;http://localhost:1313/docs/integration-patterns/allocation-from-fleet/&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/docs/reference/gameserverallocation/&#34;&gt;here&lt;/a&gt;, and &lt;a href=&#34;http://localhost:1313/docs/advanced/allocator-service/&#34;&gt;here&lt;/a&gt;).&#xA;Having a firm understanding of those concepts will be necessary for running an &amp;ldquo;out of cluster&amp;rdquo; local server.&lt;/p&gt;&#xA;&lt;p&gt;Running an &amp;ldquo;out of cluster&amp;rdquo; dev server combines the best parts of local debugging and being a part of a cluster.&#xA;A developer will be able to run a custom server binary on their local machine, even within an IDE with breakpoints.&#xA;The server would also be allocatable within a cluster, allowing integration with the project&amp;rsquo;s full stack for handling game server lifetime.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Allocator Service</title>
+      <link>http://localhost:1313/docs/advanced/allocator-service/</link>
+      <pubDate>Fri, 25 Oct 2019 05:45:05 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/advanced/allocator-service/</guid>
+      <description>&lt;p&gt;To allocate a game server, Agones provides a gRPC and REST service with mTLS authentication, called &lt;code&gt;agones-allocator&lt;/code&gt; that can be used instead of &#xA;&lt;a href=&#34;https://github.com/googleforgames/agones/blob/release-1.48.0/pkg/apis/allocation/v1/gameserverallocation.go&#34; target=&#34;_blank&#34; data-proofer-ignore&gt;GameServerAllocations&lt;/a&gt;&#xA;.&lt;/p&gt;&#xA;&lt;p&gt;Both gRPC and REST are accessible through a Kubernetes service that can be externalized using a load balancer. By default, gRPC and REST are served from the same port. However, either service can be disabled or the services can be served from separate ports using the &lt;a href=&#34;http://localhost:1313/docs/installation/install-agones/helm/&#34;&gt;helm configuration&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Multi-cluster Allocation</title>
+      <link>http://localhost:1313/docs/advanced/multi-cluster-allocation/</link>
+      <pubDate>Fri, 25 Oct 2019 05:45:05 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/advanced/multi-cluster-allocation/</guid>
+      <description>&lt;div class=&#34;pageinfo pageinfo-info&#34;&gt;&#xA;&lt;p&gt;This implementation of multi-cluster allocation was written before managed and open source multi-cluster Service Meshes&#xA;such as &lt;a href=&#34;https://istio.io/latest/docs/setup/install/multicluster/&#34;&gt;Istio&lt;/a&gt;&#xA;and &lt;a href=&#34;https://linkerd.io/2.15/features/multicluster/&#34;&gt;Linkerd&lt;/a&gt;, were available and so widely utilised.&lt;/p&gt;&#xA;&lt;p&gt;We now recommend implementing a Service Mesh in each of your Agones clusters and backend services cluster to provide&#xA;a multi-cluster allocation endpoint that points to each Agones cluster&amp;rsquo;s&#xA;&lt;a href=&#34;http://localhost:1313/docs/advanced/allocator-service/&#34;&gt;Allocation Service&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Service Mesh specific projects provide far more powerful features, easier configuration and maintenance, and we&#xA;expect that they will be something that you will likely be installing in your multi-cluster architecture anyway.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GameServer Pod Service Accounts</title>
+      <link>http://localhost:1313/docs/advanced/service-accounts/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/advanced/service-accounts/</guid>
+      <description>&lt;h2 id=&#34;default-settings&#34;&gt;Default Settings&lt;/h2&gt;&#xA;&lt;p&gt;By default, Agones sets up service accounts and sets them appropriately for the &lt;code&gt;Pods&lt;/code&gt; that are created for &lt;code&gt;GameServers&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Since Agones provides &lt;code&gt;GameServer&lt;/code&gt; &lt;code&gt;Pods&lt;/code&gt; with a sidecar container that needs access to Agones Custom Resource Definitions,&#xA;&lt;code&gt;Pods&lt;/code&gt; are configured with a service account with extra RBAC permissions to ensure that it can read and modify the resources it needs.&lt;/p&gt;&#xA;&lt;p&gt;Since service accounts apply to all containers in a &lt;code&gt;Pod&lt;/code&gt;, Agones will automatically overwrite the mounted key for the&#xA;service account in the container that is running the dedicated game server in the backing &lt;code&gt;Pod&lt;/code&gt;. This is done&#xA;since game server containers are exposed publicly, and generally don&amp;rsquo;t require the extra permissions to access aspects&#xA;of the Kubernetes API.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

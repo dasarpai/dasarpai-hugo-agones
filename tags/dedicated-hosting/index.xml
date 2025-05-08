@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dedicated Hosting on Agones</title>
+    <link>http://localhost:1313/tags/dedicated-hosting/</link>
+    <description>Recent content in Dedicated Hosting on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/dedicated-hosting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Hosting Types</title>
+      <link>http://localhost:1313/dsblog/exploring-hosting-types/</link>
+      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-hosting-types/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6249-exploring-hosting-types.jpg&#34; alt=&#34;Exploring Hosting Types&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-hosting-types&#34;&gt;Exploring Hosting Types&lt;/h1&gt;&#xA;&lt;h2 id=&#34;hosting-by-infrastructure-types&#34;&gt;Hosting by Infrastructure Types&lt;/h2&gt;&#xA;&lt;p&gt;There are several &lt;strong&gt;types of hosting&lt;/strong&gt; available in the market, each suited to different needs, from small personal websites to large enterprise applications. Here&amp;rsquo;s a breakdown of the &lt;strong&gt;main types of hosting by Infrastructure&lt;/strong&gt;, along with the &lt;strong&gt;major players&lt;/strong&gt; in each category:&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;-1-shared-hosting&#34;&gt;🌐 1. &lt;strong&gt;Shared Hosting&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt; Multiple websites share the same server resources (CPU, memory, disk, etc.). Ideal for small websites or blogs with low traffic.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

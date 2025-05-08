@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LLM Infrastructure on Agones</title>
+    <link>http://localhost:1313/tags/llm-infrastructure/</link>
+    <description>Recent content in LLM Infrastructure on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/llm-infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Navigating the LLM Infrastructure Landscape</title>
+      <link>http://localhost:1313/dsblog/navigating-llm-infrastructure-landscape/</link>
+      <pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/navigating-llm-infrastructure-landscape/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6181-llm-infrastructure.jpg&#34; alt=&#34;Navigating the LLM Infrastructure Landscape&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;navigating-the-llm-infrastructure-landscape-from-cloud-giants-to-specialized-providers&#34;&gt;Navigating the LLM Infrastructure Landscape: From Cloud Giants to Specialized Providers&lt;/h1&gt;&#xA;&lt;h2 id=&#34;1-introduction&#34;&gt;&lt;strong&gt;1. Introduction&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;The rapid advancement of Large Language Models (LLMs) has revolutionized a wide range of industries, from customer support to content creation and beyond. As LLMs like GPT-4, T5, and BERT become integral to AI-driven applications, the need for specialized infrastructure to support their deployment, training, and scaling has grown significantly. Traditional cloud services, while effective for general-purpose computing, often fall short in addressing the unique challenges posed by these models, such as handling vast amounts of data, providing low-latency responses, and managing the immense computational load. As a result, businesses and developers are increasingly turning to platforms specifically optimized for LLMs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How Much Memory Needed for LLM</title>
+      <link>http://localhost:1313/dsblog/How-Much-Memory-Needed-for-LLM/</link>
+      <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/How-Much-Memory-Needed-for-LLM/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6133-How-Much-Memory-Needed-for-LLM.jpg&#34; alt=&#34;How-Much-Memory-Needed-for-LLM&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;how-much-memory-needed-for-llm&#34;&gt;How Much Memory Needed for LLM?&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-llm&#34;&gt;What is LLM?&lt;/h2&gt;&#xA;&lt;p&gt;LLM stands for &lt;strong&gt;Large Language Model&lt;/strong&gt;. These are machine learning models that are trained on massive amounts of text data to understand, generate, and work with human language in a way that mimics natural language understanding. They are called &amp;ldquo;large&amp;rdquo; because of the significant number of parameters they contain, often numbering in the billions or even trillions.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-defines-a-large-language-model&#34;&gt;What Defines a Large Language Model?&lt;/h3&gt;&#xA;&lt;p&gt;There is no strict or universally accepted benchmark to define what constitutes an LLM purely based on the number of parameters. The term &amp;ldquo;large&amp;rdquo; is relative and depends on the current state of technology and the size of models being developed. As technology progresses, what is considered &amp;ldquo;large&amp;rdquo; may continue to grow. However, some general guidelines have emerged:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

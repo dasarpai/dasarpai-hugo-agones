@@ -1,0 +1,1116 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Navigating the JavaScript Ecosystem | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2024-10-23-6170-nativagting-javascript-ecosystem/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Navigating the JavaScript Ecosystem">
+  <meta property="og:description" content="Navigating the JavaScript Ecosystem: npm, Yarn, unpkg, and More This article is trying to answer following questions.
+Evoluation of Javascript and Relationship with Java. What are popular javascript libraries? What is Node and Node.js? Key Features of Node.js. How are Node and Node.js Related? What are the Central Repositories of Javascript Packages? What is the difference between npm and npx? What are important npx commands? What is the ’export’ keyword in javascript? How to Use the Exported Function? What is the meaning of workspace in Yarn pacakge manager? Key Features of Yarn Workspaces. How to Set Up Yarn Workspaces? Can I use multiple package managers in my Javascript project? What are other Important Languages and their primary purpose? Evoluation of Javascript and Relationship with Java. There is no relationship between Java and JavaScript.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-10-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-23T00:00:00+00:00">
+    <meta property="article:tag" content="Generative AI">
+    <meta property="article:tag" content="Text Generation">
+    <meta property="article:tag" content="AI Conversation">
+    <meta property="article:tag" content="Content Creation">
+    <meta property="article:tag" content="Natural Language Processing">
+
+  <meta itemprop="name" content="Navigating the JavaScript Ecosystem">
+  <meta itemprop="description" content="Navigating the JavaScript Ecosystem: npm, Yarn, unpkg, and More This article is trying to answer following questions.
+Evoluation of Javascript and Relationship with Java. What are popular javascript libraries? What is Node and Node.js? Key Features of Node.js. How are Node and Node.js Related? What are the Central Repositories of Javascript Packages? What is the difference between npm and npx? What are important npx commands? What is the ’export’ keyword in javascript? How to Use the Exported Function? What is the meaning of workspace in Yarn pacakge manager? Key Features of Yarn Workspaces. How to Set Up Yarn Workspaces? Can I use multiple package managers in my Javascript project? What are other Important Languages and their primary purpose? Evoluation of Javascript and Relationship with Java. There is no relationship between Java and JavaScript.">
+  <meta itemprop="datePublished" content="2024-10-23T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-10-23T00:00:00+00:00">
+  <meta itemprop="wordCount" content="5163">
+  <meta itemprop="keywords" content="javascript ecosystem,javascript libraries,node.js,npm,yarn,javascript package managers,javascript central repositories">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Navigating the JavaScript Ecosystem">
+  <meta name="twitter:description" content="Navigating the JavaScript Ecosystem: npm, Yarn, unpkg, and More This article is trying to answer following questions.
+Evoluation of Javascript and Relationship with Java. What are popular javascript libraries? What is Node and Node.js? Key Features of Node.js. How are Node and Node.js Related? What are the Central Repositories of Javascript Packages? What is the difference between npm and npx? What are important npx commands? What is the ’export’ keyword in javascript? How to Use the Exported Function? What is the meaning of workspace in Yarn pacakge manager? Key Features of Yarn Workspaces. How to Set Up Yarn Workspaces? Can I use multiple package managers in my Javascript project? What are other Important Languages and their primary purpose? Evoluation of Javascript and Relationship with Java. There is no relationship between Java and JavaScript.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6170-Navigating-the-JavaScript-Ecosystem.jpg" alt="Navigating the JavaScript Ecosystem"></p>
+<h1 id="navigating-the-javascript-ecosystem-npm-yarn-unpkg-and-more">Navigating the JavaScript Ecosystem: npm, Yarn, unpkg, and More</h1>
+<p>This article is trying to answer following questions.</p>
+<ol>
+<li>Evoluation of Javascript and Relationship with Java.</li>
+<li>What are popular javascript libraries?</li>
+<li>What is Node and Node.js?</li>
+<li>Key Features of Node.js.</li>
+<li>How are Node and Node.js Related?</li>
+<li>What are the Central Repositories of Javascript Packages?</li>
+<li>What is the difference between npm and npx?</li>
+<li>What are important npx commands?</li>
+<li>What is the &rsquo;export&rsquo; keyword in javascript?</li>
+<li>How to Use the Exported Function?</li>
+<li>What is the meaning of workspace in Yarn pacakge manager?</li>
+<li>Key Features of Yarn Workspaces.</li>
+<li>How to Set Up Yarn Workspaces?</li>
+<li>Can I use multiple package managers in my Javascript project?</li>
+<li>What are other Important Languages and their primary purpose?</li>
+</ol>
+<h2 id="evoluation-of-javascript-and-relationship-with-java">Evoluation of Javascript and Relationship with Java.</h2>
+<p>There is no relationship between Java and JavaScript.</p>
+<p>The evolution of web technologies has been influenced by various needs, trends, and advancements in programming paradigms. Below is a chronological overview of some key technologies like Java, JavaScript, TypeScript, Node.js, Go, and others, highlighting their origins, purpose, and contributions to web development.</p>
+<h3 id="1-java-released-in-1995">1. <strong>Java (Released in 1995)</strong></h3>
+<ul>
+<li><strong>Origin</strong>: Developed by Sun Microsystems (now owned by Oracle).</li>
+<li><strong>Purpose</strong>: Designed as a general-purpose, object-oriented programming language with a &ldquo;write once, run anywhere&rdquo; philosophy due to its platform independence via the Java Virtual Machine (JVM).</li>
+<li><strong>Value Added</strong>:
+<ul>
+<li>Introduced concepts like garbage collection and strong typing.</li>
+<li>Widely used for server-side applications, especially in enterprise environments, through technologies like Java EE (Enterprise Edition).</li>
+<li>Established a robust ecosystem with frameworks (like Spring) and libraries.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-javascript-released-in-1995">2. <strong>JavaScript (Released in 1995)</strong></h3>
+<ul>
+<li><strong>Origin</strong>: Created by Brendan Eich at Netscape as a client-side scripting language for web browsers.</li>
+<li><strong>Purpose</strong>: Intended to make web pages interactive and dynamic.</li>
+<li><strong>Value Added</strong>:
+<ul>
+<li>Allowed developers to manipulate the Document Object Model (DOM) and respond to user events directly in the browser.</li>
+<li>Became the de facto standard for client-side web development, leading to frameworks like jQuery and later single-page applications (SPAs) using React, Angular, and Vue.js.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-nodejs-released-in-2009">3. <strong>Node.js (Released in 2009)</strong></h3>
+<ul>
+<li><strong>Origin</strong>: Created by Ryan Dahl, built on Google’s V8 JavaScript engine.</li>
+<li><strong>Purpose</strong>: A runtime environment to execute JavaScript server-side.</li>
+<li><strong>Value Added</strong>:
+<ul>
+<li>Enabled JavaScript to be used for server-side development, allowing developers to use a single language across both client and server.</li>
+<li>Introduced an event-driven, non-blocking I/O model, making it efficient for handling concurrent requests.</li>
+<li>Supported a rich ecosystem through npm (Node Package Manager), facilitating rapid development.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-typescript-released-in-2012">4. <strong>TypeScript (Released in 2012)</strong></h3>
+<ul>
+<li><strong>Origin</strong>: Developed by Microsoft as a superset of JavaScript.</li>
+<li><strong>Purpose</strong>: To add static typing to JavaScript, making it more suitable for large-scale applications.</li>
+<li><strong>Value Added</strong>:
+<ul>
+<li>Provides type safety, enhancing code quality and maintainability.</li>
+<li>Supports modern JavaScript features and allows for better tooling and IDE support.</li>
+<li>Gained popularity in enterprise applications and is the backbone of frameworks like Angular.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-react-released-in-2013">5. <strong>React (Released in 2013)</strong></h3>
+<ul>
+<li><strong>Origin</strong>: Developed by Facebook as a JavaScript library for building user interfaces.</li>
+<li><strong>Purpose</strong>: To create reusable UI components and manage the state of applications.</li>
+<li><strong>Value Added</strong>:
+<ul>
+<li>Popularized component-based architecture in web applications.</li>
+<li>Introduced the concept of a virtual DOM for efficient rendering, influencing many modern front-end frameworks.</li>
+</ul>
+</li>
+</ul>
+<h2 id="what-are-popular-javascript-libraries">What are popular javascript libraries?</h2>
+<p>JavaScript libraries have been developed by various organizations and communities to enhance web development, improve functionality, and simplify coding tasks. Below is a list of notable JavaScript libraries, along with their creators and primary uses:</p>
+<h3 id="1-jquery">1. <strong>jQuery</strong></h3>
+<ul>
+<li><strong>Organization</strong>: jQuery Foundation</li>
+<li><strong>Purpose</strong>: Simplifies HTML document traversal, event handling, and animation. It allows developers to write less code while achieving more functionality.</li>
+</ul>
+<h3 id="2-react">2. <strong>React</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Facebook</li>
+<li><strong>Purpose</strong>: A library for building user interfaces, especially for single-page applications (SPAs) using a component-based architecture.</li>
+</ul>
+<h3 id="3-vuejs">3. <strong>Vue.js</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Evan You (and the community)</li>
+<li><strong>Purpose</strong>: A progressive framework for building user interfaces, designed to be incrementally adoptable and easy to integrate with other projects.</li>
+</ul>
+<h3 id="4-angularjs">4. <strong>AngularJS</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Google</li>
+<li><strong>Purpose</strong>: A structural framework for building dynamic web applications, allowing for two-way data binding and dependency injection.</li>
+</ul>
+<h3 id="5-d3js">5. <strong>D3.js</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Mike Bostock and the community</li>
+<li><strong>Purpose</strong>: A library for creating data visualizations using web standards (HTML, SVG, and CSS). It helps bind data to the DOM and apply data-driven transformations.</li>
+</ul>
+<h3 id="6-lodash">6. <strong>Lodash</strong></h3>
+<ul>
+<li><strong>Organization</strong>: John-David Dalton (and the community)</li>
+<li><strong>Purpose</strong>: A utility library that provides helpful functions for common programming tasks, like manipulating arrays, objects, and strings.</li>
+</ul>
+<h3 id="7-momentjs">7. <strong>Moment.js</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Tim Wood and the community</li>
+<li><strong>Purpose</strong>: A library for parsing, validating, manipulating, and displaying dates and times in JavaScript.</li>
+</ul>
+<h3 id="8-threejs">8. <strong>Three.js</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Mr.doob (and the community)</li>
+<li><strong>Purpose</strong>: A library for creating and displaying 3D graphics in the browser using WebGL.</li>
+</ul>
+<h3 id="9-chartjs">9. <strong>Chart.js</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Nick Downie (and the community)</li>
+<li><strong>Purpose</strong>: A simple yet flexible JavaScript charting library for designers and developers to visualize data.</li>
+</ul>
+<h3 id="10-redux">10. <strong>Redux</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Dan Abramov and Andrew Clark</li>
+<li><strong>Purpose</strong>: A predictable state container for JavaScript apps, commonly used with React for managing application state.</li>
+</ul>
+<h3 id="11-expressjs">11. <strong>Express.js</strong></h3>
+<ul>
+<li><strong>Organization</strong>: StrongLoop (now part of IBM)</li>
+<li><strong>Purpose</strong>: A minimal and flexible Node.js web application framework that provides a robust set of features for building web and mobile applications.</li>
+</ul>
+<h3 id="12-backbonejs">12. <strong>Backbone.js</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Jeremy Ashkenas</li>
+<li><strong>Purpose</strong>: Provides a minimal structure for web applications by providing models with key-value binding and custom events.</li>
+</ul>
+<h3 id="13-emberjs">13. <strong>Ember.js</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Ember Core Team</li>
+<li><strong>Purpose</strong>: A framework for building ambitious web applications, emphasizing convention over configuration.</li>
+</ul>
+<h3 id="14-rxjs">14. <strong>RxJS</strong></h3>
+<ul>
+<li><strong>Organization</strong>: ReactiveX community</li>
+<li><strong>Purpose</strong>: A library for reactive programming using Observables, enabling composition of asynchronous and event-based programs.</li>
+</ul>
+<h3 id="15-socketio">15. <strong>Socket.IO</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Guillermo Rauch and the community</li>
+<li><strong>Purpose</strong>: A library for real-time, bidirectional, and event-based communication between clients and servers.</li>
+</ul>
+<h3 id="16-grapesjs">16. <strong>GrapesJS</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Artus D. (and the community)</li>
+<li><strong>Purpose</strong>: A framework for building web templates without coding, with a focus on providing a visual editor.</li>
+</ul>
+<h3 id="17-nextjs">17. <strong>Next.js</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Vercel</li>
+<li><strong>Purpose</strong>: A React framework for building server-side rendered (SSR) applications and static websites with ease.</li>
+</ul>
+<h3 id="18-svelte">18. <strong>Svelte</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Rich Harris (and the community)</li>
+<li><strong>Purpose</strong>: A compiler that generates minimal and optimized JavaScript code, allowing developers to build reactive user interfaces.</li>
+</ul>
+<h3 id="19-alpinejs">19. <strong>Alpine.js</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Caleb Porzio (and the community)</li>
+<li><strong>Purpose</strong>: A minimal framework for composing JavaScript behavior in HTML, providing reactivity similar to Vue.js.</li>
+</ul>
+<h3 id="20-p5js">20. <strong>P5.js</strong></h3>
+<ul>
+<li><strong>Organization</strong>: Processing Foundation</li>
+<li><strong>Purpose</strong>: A library that makes coding accessible for artists and designers, focusing on creating graphic and interactive experiences.</li>
+</ul>
+<h3 id="summary">Summary</h3>
+<p>This list includes various JavaScript libraries from different organizations, each with its unique purpose and features. These libraries have been developed to address specific needs in web development, such as user interface design, data visualization, state management, and server communication, contributing to a rich ecosystem for building modern web applications.</p>
+<h2 id="what-is-node-and-nodejs">What is Node and Node.js?</h2>
+<p><strong>Node</strong> and <strong>Node.js</strong> are terms that are often used interchangeably, but they have specific meanings. Here’s a breakdown of each term and how they are related:</p>
+<p><strong>Node</strong>: In a general sense, a &ldquo;node&rdquo; can refer to any entity within a data structure, such as a point in a graph, an element in a linked list, or a device in a network. However, in the context of web development, &ldquo;Node&rdquo; often refers to a single instance of the Node.js runtime or server.</p>
+<p><strong>Node.js</strong>: Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to execute JavaScript code on the server side. It was created by Ryan Dahl in 2009 and is built on the V8 JavaScript engine, which is the same engine used by Google Chrome.</p>
+<h3 id="key-features-of-nodejs">Key Features of Node.js</h3>
+<ol>
+<li>
+<p><strong>Event-Driven Architecture</strong>: Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. It can handle multiple connections simultaneously without being blocked by long-running operations.</p>
+</li>
+<li>
+<p><strong>Asynchronous Programming</strong>: Node.js allows for asynchronous programming, enabling the execution of operations like reading files, querying databases, and handling network requests without waiting for them to complete. This is achieved using callbacks, promises, and async/await syntax.</p>
+</li>
+<li>
+<p><strong>NPM (Node Package Manager)</strong>: Node.js comes with a package manager called NPM, which allows developers to install and manage libraries and packages easily.</p>
+</li>
+<li>
+<p><strong>Built-in Libraries</strong>: Node.js provides several built-in libraries that facilitate networking, file system operations, and more.</p>
+</li>
+<li>
+<p><strong>Cross-Platform</strong>: Node.js applications can run on various operating systems, including Windows, macOS, and Linux.</p>
+</li>
+</ol>
+<h3 id="how-are-node-and-nodejs-related">How are Node and Node.js Related?</h3>
+<ul>
+<li>
+<p><strong>Node as a Runtime Instance</strong>: In a practical sense, when developers refer to &ldquo;Node,&rdquo; they are often talking about a specific instance of Node.js that is executing JavaScript code. This might include running a Node.js server, performing command-line tasks, or executing scripts.</p>
+</li>
+<li>
+<p><strong>Node.js Framework</strong>: Node.js is the framework that provides the environment for executing JavaScript on the server side. When you run a JavaScript file using the <code>node</code> command in the terminal (e.g., <code>node app.js</code>), you are using Node.js to interpret and run that JavaScript code.</p>
+</li>
+</ul>
+<h3 id="example-usage">Example Usage</h3>
+<p>Here’s a simple example of how Node.js works:</p>
+<ol>
+<li>
+<p><strong>Install Node.js</strong>: You can download and install Node.js from <a href="https://nodejs.org/">the official website</a>.</p>
+</li>
+<li>
+<p><strong>Create a Simple Server</strong>:</p>
+<p><strong>File: <code>server.js</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">http</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;http&#39;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">server</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">http</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">createServer</span><span style="color:#000;font-weight:bold">((</span><span style="color:#000">req</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">res</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">res</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">statusCode</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">200</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">res</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setHeader</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;Content-Type&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#39;text/plain&#39;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">res</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">end</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;Hello, World!\n&#39;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">});</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">PORT</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">3000</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">server</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">listen</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PORT</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">`Server running at http://localhost:</span><span style="color:#4e9a06">${</span><span style="color:#000">PORT</span><span style="color:#4e9a06">}</span><span style="color:#4e9a06">/`</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">});</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Run the Server</strong>: Open your terminal and run:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>node server.js
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Access the Server</strong>: Open your web browser and navigate to <code>http://localhost:3000/</code>. You should see &ldquo;Hello, World!&rdquo; displayed in your browser.</p>
+</li>
+</ol>
+<h3 id="summary-1">Summary</h3>
+<ul>
+<li><strong>Node</strong> generally refers to an instance of Node.js or the broader concept of a node in computing.</li>
+<li><strong>Node.js</strong> is a specific runtime environment for executing JavaScript on the server side, featuring an event-driven architecture, asynchronous programming capabilities, and a rich ecosystem of packages through NPM.</li>
+<li>The two terms are related in that &ldquo;Node&rdquo; often refers to the use or instance of the Node.js runtime.</li>
+</ul>
+<h2 id="what-are-the-central-repositories-of-javascript-packages">What are the Central Repositories of Javascript Packages?</h2>
+<p>Yes, there are several central repositories and package managers where JavaScript libraries and frameworks are hosted, making it easy for developers to discover, install, and manage them. Here are some of the key platforms:</p>
+<h3 id="1-npm-node-package-manager">1. <strong>npm (Node Package Manager)</strong></h3>
+<ul>
+<li><strong>Website</strong>: <a href="https://www.npmjs.com/">npmjs.com</a></li>
+<li><strong>Description</strong>: npm is the largest ecosystem of open-source libraries and packages for JavaScript. It allows developers to publish their own packages and manage dependencies in their projects. You can find libraries by searching for keywords, names, or categories.</li>
+</ul>
+<h3 id="2-github">2. <strong>GitHub</strong></h3>
+<ul>
+<li><strong>Website</strong>: <a href="https://github.com/">github.com</a></li>
+<li><strong>Description</strong>: Many JavaScript libraries are hosted on GitHub, where developers can contribute, report issues, and collaborate on projects. GitHub serves as a version control system and a repository for hosting code. Libraries often include documentation, examples, and release notes.</li>
+</ul>
+<h3 id="3-jsdelivr">3. <strong>JSDelivr</strong></h3>
+<ul>
+<li><strong>Website</strong>: <a href="https://www.jsdelivr.com/">jsdelivr.com</a></li>
+<li><strong>Description</strong>: JSDelivr is a free CDN (Content Delivery Network) for open-source libraries. It provides a fast and reliable way to load JavaScript libraries directly into web applications. You can search for popular libraries and include them in your projects without downloading them.</li>
+</ul>
+<h3 id="4-cdnjs">4. <strong>CDNJS</strong></h3>
+<ul>
+<li><strong>Website</strong>: <a href="https://cdnjs.com/">cdnjs.com</a></li>
+<li><strong>Description</strong>: CDNJS is another free CDN that hosts a wide variety of JavaScript libraries. It allows developers to include libraries in their projects quickly and efficiently, improving load times and reducing server load.</li>
+</ul>
+<h3 id="5-unpkg">5. <strong>unpkg</strong></h3>
+<ul>
+<li><strong>Website</strong>: <a href="https://unpkg.com/">unpkg.com</a></li>
+<li><strong>Description</strong>: unpkg is a CDN that serves files from npm packages. You can use it to load libraries directly from npm in your web applications without needing to install them locally.</li>
+</ul>
+<h3 id="6-bower-deprecated">6. <strong>Bower (Deprecated)</strong></h3>
+<ul>
+<li><strong>Website</strong>: <a href="https://bower.io/">bower.io</a></li>
+<li><strong>Description</strong>: Bower was a package manager for the web that allowed developers to manage front-end libraries. However, it has been deprecated in favor of npm and Yarn, as these tools have become more popular and capable.</li>
+</ul>
+<h3 id="7-yarn">7. <strong>Yarn</strong></h3>
+<ul>
+<li><strong>Website</strong>: <a href="https://yarnpkg.com/">yarnpkg.com</a></li>
+<li><strong>Description</strong>: Yarn is a package manager that serves as an alternative to npm. It offers features like workspaces, deterministic dependency resolution, and improved speed. It can be used to install libraries from npm&rsquo;s registry.</li>
+</ul>
+<h3 id="conclusion">Conclusion</h3>
+<p>These platforms provide central repositories for JavaScript libraries, enabling developers to find, manage, and use them in their projects easily. npm is the most widely used, but GitHub, CDNs, and other package managers also play essential roles in the JavaScript ecosystem.</p>
+<h2 id="what-is-the-difference-between-npm-and-npx">What is the difference between npm and npx?</h2>
+<p>The difference between <code>npm</code> and <code>npx</code> lies in how they handle package management and execution:</p>
+<h3 id="1-npm">1. <strong><code>npm</code> (Node Package Manager)</strong>:</h3>
+<ul>
+<li><strong>Purpose</strong>: <code>npm</code> is primarily used to manage packages (install, update, and remove packages) in Node.js projects.</li>
+<li><strong>Usage</strong>: It installs packages from the npm registry and adds them to your project (usually in the <code>node_modules</code> directory). You typically use <code>npm</code> to install global or local dependencies.</li>
+<li><strong>Common Commands</strong>:
+<ul>
+<li><code>npm install &lt;package&gt;</code>: Installs a package locally to the project.</li>
+<li><code>npm install -g &lt;package&gt;</code>: Installs a package globally so that it can be used anywhere on your system.</li>
+<li><code>npm run &lt;script&gt;</code>: Runs a script defined in your <code>package.json</code> file.</li>
+</ul>
+</li>
+</ul>
+<h3 id="example">Example:</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install express
+</span></span><span style="display:flex;"><span>npm install -g create-react-app
+</span></span></code></pre></div><p>In the example above, <code>npm</code> installs the <code>express</code> package locally in the project, while <code>create-react-app</code> is installed globally.</p>
+<h3 id="2-npx">2. <strong><code>npx</code> (Node Package Execute)</strong>:</h3>
+<ul>
+<li><strong>Purpose</strong>: <code>npx</code> is used to <strong>execute</strong> Node.js packages without needing to install them globally or locally beforehand. It simplifies the process of running one-off commands or CLI tools.</li>
+<li><strong>Usage</strong>: When you use <code>npx &lt;command&gt;</code>, it either runs the package if it’s already installed or temporarily downloads and executes it. This is especially useful for running commands that don’t need to be installed globally.</li>
+<li><strong>Common Use Cases</strong>:
+<ul>
+<li>Running CLI tools without installing them globally.</li>
+<li>Ensuring you’re using the correct version of a package, even if it’s not globally installed.</li>
+</ul>
+</li>
+</ul>
+<h3 id="example-1">Example:</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx create-react-app my-app
+</span></span></code></pre></div><p>In this example, <code>npx</code> executes the <code>create-react-app</code> package without requiring you to install it globally. It temporarily downloads and runs the package, then discards it once the command is finished.</p>
+<h3 id="key-differences">Key Differences:</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th><code>npm</code></th>
+          <th><code>npx</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Main Purpose</strong></td>
+          <td>Package management (installing, updating, removing)</td>
+          <td>Executing Node.js packages or CLI tools directly</td>
+      </tr>
+      <tr>
+          <td><strong>Installation</strong></td>
+          <td>Installs packages locally or globally</td>
+          <td>Runs packages without installation or temporarily</td>
+      </tr>
+      <tr>
+          <td><strong>Usage</strong></td>
+          <td>Primarily for managing dependencies and running scripts</td>
+          <td>Primarily for executing commands without prior setup</td>
+      </tr>
+      <tr>
+          <td><strong>Global Installs</strong></td>
+          <td>Requires global installation for CLI tools</td>
+          <td>No need for global installation; can run directly</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="when-to-use-npm-vs-npx">When to use <code>npm</code> vs. <code>npx</code>?</h3>
+<ul>
+<li>Use <strong><code>npm</code></strong> to manage dependencies for your project and install libraries and frameworks.</li>
+<li>Use <strong><code>npx</code></strong> to execute commands from packages without installing them globally, especially for one-time use or temporary tasks.</li>
+</ul>
+<h2 id="can-we-say-npx-is-like-npm-run">Can we say npx is like npm run?</h2>
+<p>You <strong>can say <code>npx</code> is similar to <code>npm run</code></strong>, but they are not exactly the same and serve different purposes. Here’s how they compare:</p>
+<h3 id="similarities"><strong>Similarities</strong>:</h3>
+<ul>
+<li>Both <code>npx</code> and <code>npm run</code> are used to execute commands from packages, but the scope and functionality differ.</li>
+</ul>
+<h3 id="differences"><strong>Differences</strong>:</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th><code>npx</code></th>
+          <th><code>npm run</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Primary Purpose</strong></td>
+          <td>Execute commands from Node packages without installation</td>
+          <td>Run custom scripts defined in your project’s <code>package.json</code></td>
+      </tr>
+      <tr>
+          <td><strong>Installation</strong></td>
+          <td>Doesn’t require prior installation (downloads &amp; runs temporarily)</td>
+          <td>Requires the package to be installed and referenced in scripts</td>
+      </tr>
+      <tr>
+          <td><strong>Command Origin</strong></td>
+          <td>Can run packages globally, locally, or fetch them temporarily</td>
+          <td>Runs scripts defined locally in <code>package.json</code> under <code>&quot;scripts&quot;</code></td>
+      </tr>
+      <tr>
+          <td><strong>Usage</strong></td>
+          <td>Directly runs CLI tools or packages (even if not installed)</td>
+          <td>Runs pre-configured scripts like build/test scripts within the project</td>
+      </tr>
+      <tr>
+          <td><strong>Common Usage</strong></td>
+          <td>Run one-time commands, especially CLI tools without installation</td>
+          <td>Automate tasks within a project (build, test, lint, etc.)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="example-of-npm-run">Example of <code>npm run</code>:</h3>
+<p>If you have this in your <code>package.json</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;scripts&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;build&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;webpack --config webpack.config.js&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;start&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;node server.js&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><p>You would use <code>npm run</code> to execute these scripts:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm run build
+</span></span><span style="display:flex;"><span>npm run start
+</span></span></code></pre></div><p>Here, <code>npm run</code> runs the scripts that are defined in the project.</p>
+<h3 id="example-of-npx">Example of <code>npx</code>:</h3>
+<p>If you want to use a CLI tool without installing it globally:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx create-react-app my-app
+</span></span></code></pre></div><p>This fetches and runs <code>create-react-app</code> without needing a global install.</p>
+<h3 id="key-takeaway">Key Takeaway:</h3>
+<ul>
+<li><strong><code>npx</code></strong> is great for running <strong>one-off commands</strong> from packages (especially those not installed globally or locally).</li>
+<li><strong><code>npm run</code></strong> is used to <strong>run predefined scripts</strong> that are part of your project&rsquo;s workflow, often tied to installed packages.</li>
+</ul>
+<p>In summary, while both <code>npx</code> and <code>npm run</code> execute commands, <code>npx</code> is more flexible in directly running packages or CLI tools, whereas <code>npm run</code> is for running project-specific scripts.</p>
+<h2 id="after-npx-command-how-to-the-project-setup-of-npx">After npx command, how to the project setup of npx?</h2>
+<p>After the <code>npx create-react-app my-app</code> command is successfully executed, you can run your new React project by following these steps:</p>
+<h3 id="steps-to-run-the-project">Steps to Run the Project:</h3>
+<ol>
+<li>
+<p><strong>Navigate into the project directory</strong>:
+Once the <code>npx</code> command finishes setting up the project, move into the newly created project folder (<code>my-app</code> in this example).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#204a87">cd</span> my-app
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Install dependencies</strong> (if not already done):
+Normally, <code>create-react-app</code> installs the necessary dependencies during the setup process. However, if something went wrong or you skipped the installation, you can manually install them using:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Start the development server</strong>:
+To run the React app in development mode, use the <code>npm start</code> command.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm start
+</span></span></code></pre></div><ul>
+<li>This will start a local development server and open your default browser at <code>http://localhost:3000</code>.</li>
+<li>Any changes you make to your React files will be automatically reflected in the browser via <strong>hot-reloading</strong>.</li>
+</ul>
+</li>
+</ol>
+<h3 id="example-2">Example:</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx create-react-app my-app  <span style="color:#8f5902;font-style:italic"># Step 1: Create the app</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87">cd</span> my-app                    <span style="color:#8f5902;font-style:italic"># Step 2: Navigate to the app folder</span>
+</span></span><span style="display:flex;"><span>npm start                    <span style="color:#8f5902;font-style:italic"># Step 3: Start the development server</span>
+</span></span></code></pre></div><p>After running <code>npm start</code>, the terminal will show output indicating the server is running, and you can view your React app by visiting <code>http://localhost:3000</code> in a web browser.</p>
+<h3 id="additional-commands">Additional Commands:</h3>
+<ul>
+<li>
+<p><strong>Build for production</strong>: When you&rsquo;re ready to deploy your app, run the build command:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm run build
+</span></span></code></pre></div><p>This creates a production-ready build in the <code>build/</code> directory.</p>
+</li>
+<li>
+<p><strong>Run tests</strong>: If you want to run tests (set up by default):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm <span style="color:#204a87">test</span>
+</span></span></code></pre></div></li>
+</ul>
+<p>These commands (<code>start</code>, <code>build</code>, <code>test</code>) are predefined in the <code>package.json</code> file created by <code>create-react-app</code>.</p>
+<h2 id="what-are-important-npx-commands">What are important npx commands?</h2>
+<p>Here’s a list of commonly used <strong><code>npx</code> commands</strong>, along with their purpose. These commands demonstrate the flexibility of <code>npx</code> in running packages or CLI tools without needing to install them globally:</p>
+<h3 id="1-create-a-new-react-app">1. <strong>Create a New React App</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx create-react-app my-app
+</span></span></code></pre></div><ul>
+<li>Creates a new React app without installing <code>create-react-app</code> globally.</li>
+</ul>
+<h3 id="2-run">2. <strong>Run <code>eslint</code> (Linting)</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx eslint .
+</span></span></code></pre></div><ul>
+<li>Runs the <code>eslint</code> linter on your project. If it&rsquo;s installed locally, <code>npx</code> will use the local version. If not, it can download it temporarily.</li>
+</ul>
+<h3 id="3-run">3. <strong>Run <code>http-server</code> (Simple Web Server)</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx http-server
+</span></span></code></pre></div><ul>
+<li>Starts a simple HTTP server to serve static files from the current directory. This is useful for quick testing.</li>
+</ul>
+<h3 id="4-generate-a-typescript-configuration-file">4. <strong>Generate a TypeScript Configuration File</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx tsc --init
+</span></span></code></pre></div><ul>
+<li>Initializes a <code>tsconfig.json</code> file for a TypeScript project. This uses the TypeScript compiler (<code>tsc</code>) without needing to install it globally.</li>
+</ul>
+<h3 id="5-run">5. <strong>Run <code>webpack</code> (Module Bundler)</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx webpack --config webpack.config.js
+</span></span></code></pre></div><ul>
+<li>Runs Webpack using a configuration file, bundling your project files without requiring a global install of <code>webpack</code>.</li>
+</ul>
+<h3 id="6-install-and-use-any-cli-tool-temporarily">6. <strong>Install and Use Any CLI Tool Temporarily</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx cowsay <span style="color:#4e9a06">&#34;Hello, npx!&#34;</span>
+</span></span></code></pre></div><ul>
+<li>Runs the <code>cowsay</code> CLI tool, which displays an ASCII cow saying a message. This is downloaded and run temporarily by <code>npx</code>.</li>
+</ul>
+<h3 id="7-run">7. <strong>Run <code>npm-check</code> (Check for Dependency Updates)</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx npm-check
+</span></span></code></pre></div><ul>
+<li>Uses <code>npm-check</code> to list any out-of-date packages in your project.</li>
+</ul>
+<h3 id="8-use">8. <strong>Use <code>yo</code> (Yeoman) to Scaffold a Project</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx yo
+</span></span></code></pre></div><ul>
+<li>Runs the Yeoman scaffolding tool for generating project structures. You can avoid installing <code>yo</code> globally by using <code>npx</code>.</li>
+</ul>
+<h3 id="9-generate">9. <strong>Generate <code>create-next-app</code> for Next.js</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx create-next-app my-next-app
+</span></span></code></pre></div><ul>
+<li>Creates a new Next.js project without globally installing the <code>create-next-app</code> package.</li>
+</ul>
+<h3 id="10-run">10. <strong>Run <code>serve</code> to Serve Static Files</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx serve
+</span></span></code></pre></div><ul>
+<li>Quickly starts a static file server to serve your website or project files.</li>
+</ul>
+<h3 id="11-use">11. <strong>Use <code>prettier</code> to Format Code</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx prettier --write <span style="color:#4e9a06">&#34;**/*.js&#34;</span>
+</span></span></code></pre></div><ul>
+<li>Runs <code>prettier</code> to format JavaScript files according to your formatting rules.</li>
+</ul>
+<h3 id="12-run">12. <strong>Run <code>json-server</code> (Mock REST API)</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx json-server --watch db.json
+</span></span></code></pre></div><ul>
+<li>Starts <code>json-server</code> to create a mock REST API that serves data from <code>db.json</code>.</li>
+</ul>
+<h3 id="13-use">13. <strong>Use <code>create-express-app</code> to Scaffold an Express App</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx create-express-app my-express-app
+</span></span></code></pre></div><ul>
+<li>Creates a new Express.js app without globally installing the <code>create-express-app</code> package.</li>
+</ul>
+<h3 id="14-generate-license-files">14. <strong>Generate License Files</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx license mit
+</span></span></code></pre></div><ul>
+<li>Quickly generates a license file of a specific type, like MIT, GPL, etc.</li>
+</ul>
+<h3 id="15-run">15. <strong>Run <code>react-native</code> CLI to Create a New React Native App</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx react-native init MyNewProject
+</span></span></code></pre></div><ul>
+<li>Initializes a new React Native project without needing to globally install the React Native CLI.</li>
+</ul>
+<h3 id="16-run">16. <strong>Run <code>gatsby</code> (Static Site Generator)</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx gatsby new my-site
+</span></span></code></pre></div><ul>
+<li>Creates a new Gatsby site without globally installing <code>gatsby-cli</code>.</li>
+</ul>
+<h3 id="17-run">17. <strong>Run <code>parcel</code> (Zero Config Bundler)</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx parcel index.html
+</span></span></code></pre></div><ul>
+<li>Runs <code>parcel</code> to bundle your project starting from <code>index.html</code>, without globally installing Parcel.</li>
+</ul>
+<h3 id="18-check">18. <strong>Check <code>npx</code> Version</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx --version
+</span></span></code></pre></div><ul>
+<li>Displays the version of <code>npx</code> installed on your machine.</li>
+</ul>
+<h3 id="19-run">19. <strong>Run <code>node</code> REPL</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx node
+</span></span></code></pre></div><ul>
+<li>Starts a Node.js REPL (Read-Eval-Print-Loop) without installing Node globally (useful on some systems).</li>
+</ul>
+<h3 id="20-run">20. <strong>Run <code>create-vue</code> (Vue.js CLI)</strong></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx @vue/cli create my-vue-app
+</span></span></code></pre></div><ul>
+<li>Creates a new Vue.js project without globally installing the Vue CLI.</li>
+</ul>
+<hr>
+<h3 id="summary-2">Summary:</h3>
+<ul>
+<li><strong>Scaffolding new apps</strong>: <code>npx create-react-app</code>, <code>npx create-next-app</code>, <code>npx create-vue-app</code>.</li>
+<li><strong>Running linters and formatters</strong>: <code>npx eslint</code>, <code>npx prettier</code>.</li>
+<li><strong>Serving static files</strong>: <code>npx http-server</code>, <code>npx serve</code>.</li>
+<li><strong>Running temporary CLI tools</strong>: <code>npx cowsay</code>, <code>npx license</code>.</li>
+<li><strong>Handling project tasks</strong>: <code>npx webpack</code>, <code>npx tsc</code>.</li>
+</ul>
+<p>These examples show the power of <code>npx</code> to execute a wide range of commands without requiring global installations, simplifying one-off or temporary package execution.</p>
+<h2 id="what-is-the-export-keyword-in-javascript">What is the &rsquo;export&rsquo; keyword in javascript?</h2>
+<pre tabindex="0"><code>export function greet(name: string): string { 
+  return @myscope/greeter says: hello to ${name};
+}
+</code></pre><p>The <code>export</code> keyword in the code snippet is used to make the <code>greet</code> function available for import in other modules. Here’s a breakdown of its purpose and functionality:</p>
+<h3 id="purpose-of-export">Purpose of <code>export</code></h3>
+<ol>
+<li>
+<p><strong>Modularity</strong>: Using <code>export</code> allows you to create modular code by separating functionality into different files or modules. This promotes better organization and maintainability of your codebase.</p>
+</li>
+<li>
+<p><strong>Reusability</strong>: When you export a function, it can be reused in other files without duplicating the code. This helps to avoid redundancy and makes it easier to maintain the code.</p>
+</li>
+<li>
+<p><strong>Encapsulation</strong>: By exporting only the necessary functions, you can encapsulate the internal workings of a module while exposing a clear interface for users of the module. This is useful for hiding implementation details.</p>
+</li>
+</ol>
+<h3 id="how-to-use-the-export-function">How to Use the Export Function?</h3>
+<p>Given your code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">export</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">greet</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">name</span>: <span style="color:#204a87;font-weight:bold">string</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">string</span> <span style="color:#000;font-weight:bold">{</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#4e9a06">`@myscope/greeter says: hello to </span><span style="color:#4e9a06">${</span><span style="color:#000">name</span><span style="color:#4e9a06">}</span><span style="color:#4e9a06">`</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="importing-the-exported-function">Importing the Exported Function</h3>
+<p>In another file, you can import the <code>greet</code> function using the following syntax:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">greet</span> <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">from</span> <span style="color:#4e9a06">&#39;./path-to-your-module&#39;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">// Now you can use the greet function
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">message</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">greet</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;Alice&#39;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">message</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// Output: @myscope/greeter says: hello to Alice
+</span></span></span></code></pre></div><h3 id="additional-details">Additional Details</h3>
+<ul>
+<li>
+<p><strong>Default vs Named Exports</strong>: The <code>export</code> keyword used in your example is a <strong>named export</strong>. You can have multiple named exports in a single module. If you want to export a single item as the default export, you would use:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">export</span> <span style="color:#204a87;font-weight:bold">default</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">greet</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">name</span>: <span style="color:#204a87;font-weight:bold">string</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">string</span> <span style="color:#000;font-weight:bold">{</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#4e9a06">`@myscope/greeter says: hello to </span><span style="color:#4e9a06">${</span><span style="color:#000">name</span><span style="color:#4e9a06">}</span><span style="color:#4e9a06">`</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><p>In this case, the import would look like this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">greet</span> <span style="color:#204a87;font-weight:bold">from</span> <span style="color:#4e9a06">&#39;./path-to-your-module&#39;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>TypeScript Context</strong>: In TypeScript, exporting functions, classes, or variables with type annotations (like <code>string</code> in your example) ensures that the imported entities retain their types, providing type safety and better tooling support.</p>
+</li>
+</ul>
+<h3 id="summary-3">Summary</h3>
+<ul>
+<li><strong><code>export</code> makes the function, class and variable available to be imported and used in other files.</strong></li>
+<li>It supports <strong>modularity, reusability,</strong> and <strong>encapsulation</strong> in your codebase.</li>
+<li>You can import the function, class and variable in other modules and use it as needed.</li>
+</ul>
+<p>By using <code>export</code>, you enable a more organized and scalable code structure, making it easier to manage and maintain larger applications.</p>
+<h2 id="export-variable-class-example">Export variable, class example.</h2>
+<pre tabindex="0"><code>// Exporting a constant variable. file: constant.js 
+export const PI = 3.14;
+export const GREETING = &#34;Hello, World!&#34;;
+
+// Defining a class and exporting it. file: Person.js
+export class Person {
+  constructor(public name: string, public age: number) {}
+
+  greet() {
+    return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+  }
+}
+</code></pre><h2 id="importing-variable-class-function">Importing variable, class, function</h2>
+<p>file: app.ts</p>
+<pre tabindex="0"><code>import { PI, GREETING } from &#39;./constants&#39;;
+
+console.log(`Value of PI: ${PI}`); // Output: Value of PI: 3.14
+console.log(GREETING);              // Output: Hello, World!
+
+import { Person } from &#39;./Person&#39;;
+
+const john = new Person(&#34;John&#34;, 30);
+console.log(john.greet()); // Output: Hello, my name is John and I am 30 years old.
+</code></pre><h2 id="what-is-the-meaning-of-workspace-in-yarn-pacakge-manager">What is the meaning of workspace in Yarn pacakge manager?</h2>
+<p>Yarn Workspaces is a feature of the Yarn package manager that allows you to manage multiple packages within a single repository, often referred to as a monorepo. This setup is particularly useful for projects that contain several related packages or modules, enabling better organization and streamlined development. Here’s a breakdown of Yarn Workspaces:</p>
+<h3 id="key-features-of-yarn-workspaces">Key Features of Yarn Workspaces</h3>
+<ol>
+<li>
+<p><strong>Monorepo Management</strong>:</p>
+<ul>
+<li>With workspaces, you can store multiple packages in a single repository. This means you can have a single <code>package.json</code> file at the root level to manage shared dependencies and configurations, while each package has its own <code>package.json</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Shared Dependencies</strong>:</p>
+<ul>
+<li>Dependencies that are common across multiple packages can be installed once at the root level instead of being duplicated in each package. This reduces disk space usage and simplifies dependency management.</li>
+</ul>
+</li>
+<li>
+<p><strong>Easy Linking</strong>:</p>
+<ul>
+<li>Yarn automatically symlinks packages within the workspace. If one package depends on another package in the same repository, Yarn creates a symlink to that package, allowing for easy local development and testing.</li>
+</ul>
+</li>
+<li>
+<p><strong>Simplified Scripts</strong>:</p>
+<ul>
+<li>You can run scripts across all workspaces with a single command. For example, running tests or building all packages can be done from the root level.</li>
+</ul>
+</li>
+<li>
+<p><strong>Version Consistency</strong>:</p>
+<ul>
+<li>Workspaces help maintain consistent versions of dependencies across packages, reducing compatibility issues.</li>
+</ul>
+</li>
+</ol>
+<h3 id="how-to-set-up-yarn-workspaces">How to Set Up Yarn Workspaces?</h3>
+<p>To set up Yarn Workspaces in your project, follow these steps:</p>
+<ol>
+<li>
+<p><strong>Create a Monorepo Structure</strong>:</p>
+<ul>
+<li>Organize your project directory like this:
+<pre tabindex="0"><code>my-monorepo/
+├── package.json
+├── packages/
+│   ├── package-a/
+│   │   └── package.json
+│   ├── package-b/
+│   │   └── package.json
+│   └── package-c/
+│       └── package.json
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p><strong>Configure <code>package.json</code> at the Root</strong>:</p>
+<ul>
+<li>Add a <code>workspaces</code> field to the root <code>package.json</code>:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;private&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;workspaces&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4e9a06">&#34;packages/*&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Add Dependencies</strong>:</p>
+<ul>
+<li>You can add dependencies to a specific package:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#204a87">cd</span> packages/package-a
+</span></span><span style="display:flex;"><span>yarn add lodash
+</span></span></code></pre></div></li>
+<li>Or add a dependency to all packages:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn add react --cwd packages/package-a
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Install All Dependencies</strong>:</p>
+<ul>
+<li>Run the following command from the root of the monorepo to install all dependencies for all packages:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn install
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Run Scripts Across Workspaces</strong>:</p>
+<ul>
+<li>To run a script defined in the <code>package.json</code> of each workspace, use:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn workspaces run <span style="color:#204a87">test</span>
+</span></span></code></pre></div></li>
+<li>This will execute the <code>test</code> script in each workspace that has it defined.</li>
+</ul>
+</li>
+</ol>
+<h3 id="example-3">Example</h3>
+<p>Here&rsquo;s an example of a simple <code>package.json</code> for a workspace setup:</p>
+<p><strong>Root <code>package.json</code></strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;private&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;workspaces&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4e9a06">&#34;packages/*&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><p><strong><code>packages/package-a/package.json</code></strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;package-a&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;version&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1.0.0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;dependencies&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;lodash&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;^4.17.21&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><p><strong><code>packages/package-b/package.json</code></strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;package-b&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;version&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1.0.0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;dependencies&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;package-a&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1.0.0&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="conclusion-1">Conclusion</h3>
+<p>Yarn Workspaces is a powerful feature for managing multiple related packages within a single repository, promoting better organization, shared dependencies, and efficient development workflows. This setup is commonly used in large-scale projects and microservices architectures to streamline development and maintain consistency across packages.</p>
+<h2 id="can-i-use-multiple-package-managers-in-my-javascript-project">Can I use multiple package managers in my Javascript project?</h2>
+<p>Using multiple package managers like npm, Yarn, and unpkg in a single project can lead to some issues if not managed carefully. Here’s a breakdown of potential problems and best practices:</p>
+<h3 id="potential-issues">Potential Issues</h3>
+<ol>
+<li>
+<p><strong>Dependency Conflicts</strong>:</p>
+<ul>
+<li>Each package manager has its own way of resolving dependencies, which can lead to different versions of the same package being installed. This inconsistency can cause unexpected behavior or errors in your application.</li>
+</ul>
+</li>
+<li>
+<p><strong>Lock Files</strong>:</p>
+<ul>
+<li>npm uses <code>package-lock.json</code>, while Yarn uses <code>yarn.lock</code>. If both package managers are used interchangeably, the presence of both lock files can lead to confusion about which versions of dependencies are installed, and it might cause inconsistencies in the dependency tree.</li>
+</ul>
+</li>
+<li>
+<p><strong>Installation Locations</strong>:</p>
+<ul>
+<li>Using different package managers may result in different installation paths for dependencies, which can cause issues if modules expect to find their dependencies in specific locations.</li>
+</ul>
+</li>
+<li>
+<p><strong>Bloating</strong>:</p>
+<ul>
+<li>If both npm and Yarn are used to install the same packages, it could lead to unnecessary duplication of files and increase the size of your <code>node_modules</code> folder, consuming more disk space.</li>
+</ul>
+</li>
+<li>
+<p><strong>Build Process Complications</strong>:</p>
+<ul>
+<li>If you rely on different package managers for different parts of your project (e.g., using Yarn for development and npm for production), it can complicate the build and deployment processes.</li>
+</ul>
+</li>
+</ol>
+<h3 id="best-practices">Best Practices</h3>
+<ol>
+<li>
+<p><strong>Choose One Package Manager</strong>:</p>
+<ul>
+<li>It’s generally best to stick with one package manager for a project to avoid conflicts and confusion. Choose either npm or Yarn based on your project needs and team preferences.</li>
+</ul>
+</li>
+<li>
+<p><strong>Remove Lock Files</strong>:</p>
+<ul>
+<li>If you decide to switch from one package manager to another, make sure to remove the existing lock file (e.g., <code>package-lock.json</code> for npm or <code>yarn.lock</code> for Yarn) before switching to avoid any conflicts.</li>
+</ul>
+</li>
+<li>
+<p><strong>Clear Node Modules</strong>:</p>
+<ul>
+<li>If switching package managers, consider deleting the <code>node_modules</code> directory before reinstalling dependencies with the new package manager.</li>
+</ul>
+</li>
+<li>
+<p><strong>Use Unpkg for CDN</strong>:</p>
+<ul>
+<li>When using unpkg to load libraries directly in the browser, it’s generally safe, as it serves packages directly from npm. However, make sure that the versions you use are compatible with the versions in your local environment to avoid discrepancies.</li>
+</ul>
+</li>
+<li>
+<p><strong>Version Control</strong>:</p>
+<ul>
+<li>Ensure that your <code>package.json</code> is checked into version control, and communicate with your team about which package manager to use. This can help prevent mix-ups in the development workflow.</li>
+</ul>
+</li>
+<li>
+<p><strong>Documentation</strong>:</p>
+<ul>
+<li>Document the package manager used in the project’s README or contribution guidelines to provide clarity for new contributors.</li>
+</ul>
+</li>
+</ol>
+<h3 id="conclusion-2">Conclusion</h3>
+<p>While it’s possible to use multiple package managers in a project, doing so can introduce complexities and potential issues. Sticking to one package manager for dependency management helps maintain consistency and reduce the risk of conflicts. If you need to use different tools for specific purposes (like unpkg for CDN loading), ensure that you manage dependencies carefully to avoid problems.</p>
+<h2 id="what-are-other-important-languages-and-their-primary-purpose">What are other Important Languages and their primary purpose?</h2>
+<h3 id="1-python-released-in-1991">1. <strong>Python (Released in 1991)</strong></h3>
+<ul>
+<li><strong>Origin</strong>: Created by Guido van Rossum as a high-level, interpreted programming language.</li>
+<li><strong>Purpose</strong>: Focused on readability and simplicity, making it ideal for beginners and rapid application development.</li>
+<li><strong>Value Added</strong>:
+<ul>
+<li>Widely used in web development (with frameworks like Django and Flask), data science, machine learning, and scripting.</li>
+<li>Strong community and a vast ecosystem of libraries.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-go-released-in-2009">2. <strong>Go (Released in 2009)</strong></h3>
+<ul>
+<li><strong>Origin</strong>: Developed by Google to address shortcomings in other programming languages (like C and Java) for system programming.</li>
+<li><strong>Purpose</strong>: A statically typed language designed for simplicity, efficiency, and ease of concurrency.</li>
+<li><strong>Value Added</strong>:
+<ul>
+<li>Built-in support for concurrent programming via goroutines and channels.</li>
+<li>Compiled to native code, making it fast and efficient.</li>
+<li>Popular in cloud-native applications, microservices architecture, and server-side development.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-dart-released-in-2011">3. <strong>Dart (Released in 2011)</strong></h3>
+<ul>
+<li><strong>Origin</strong>: Developed by Google as a client-optimized language for web and mobile.</li>
+<li><strong>Purpose</strong>: To improve productivity in developing complex web applications.</li>
+<li><strong>Value Added</strong>:
+<ul>
+<li>Primarily used with the Flutter framework for building cross-platform mobile applications.</li>
+<li>Compiles to native code for performance optimization.</li>
+</ul>
+</li>
+</ul>
+<h3 id="why-were-they-created">Why Were They Created?</h3>
+<ul>
+<li><strong>Evolving Needs</strong>: Each technology emerged in response to specific challenges or limitations of existing languages or frameworks, whether it was server-side capabilities, performance, scalability, or developer experience.</li>
+<li><strong>Increasing Complexity</strong>: As web applications grew in complexity and size, there was a need for languages and frameworks that could manage this complexity better, leading to the development of TypeScript, React, and others.</li>
+<li><strong>Different Paradigms</strong>: Different programming paradigms (like functional programming, concurrency, etc.) led to the creation of languages like Go and the adoption of specific design patterns in frameworks.</li>
+</ul>
+<h3 id="conclusion-3">Conclusion</h3>
+<p>The evolution of web technologies reflects the ongoing desire for better tools, frameworks, and languages to solve problems in web development. Each technology has its unique strengths and weaknesses, contributing to a rich ecosystem that allows developers to choose the best tools for their specific use cases. Understanding the history and context of these technologies can help developers make informed choices about which ones to use in their projects.</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

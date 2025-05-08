@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Prompting on Agones</title>
+    <link>http://localhost:1313/tags/ai-prompting/</link>
+    <description>Recent content in AI Prompting on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai-prompting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unlocking the Power of Prompts: A Comprehensive Guide to Prompt Engineering</title>
+      <link>http://localhost:1313/dsblog/unlocking-the-power-of-prompts/</link>
+      <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/unlocking-the-power-of-prompts/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6226-Unlocking-the-Power-of-Prompting.jpg&#34; alt=&#34;Unlocking the Power of Prompts&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;unlocking-the-power-of-prompts&#34;&gt;Unlocking the Power of Prompts&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;What can you do with Art of Prompting and powerful AI Models? You can use prompts to accomplish almost any task that requires human intelligence. However, prompting is just one part of the process—you also need a powerful model to execute these prompts effectively.&lt;/p&gt;&#xA;&lt;p&gt;The models can be:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cloud-based proprietary models&lt;/strong&gt; like ChatGPT, Gemini, and Sonnet.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Open-source models hosted on the cloud&lt;/strong&gt; like LLaMa, DeepSeek, and Qwen.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Proprietary models deployed on your organization&amp;rsquo;s internal infrastructure.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Open-source models running on your organization&amp;rsquo;s infrastructure.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;For general personal use, these models are often available with limited usage and warranty. However, for commercial applications requiring higher reliability and guarantees, paid plans are necessary. The cost of these models is decreasing by a factor of 10 each year. In the near future, we will have even more powerful models available for free or at a nominal cost.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

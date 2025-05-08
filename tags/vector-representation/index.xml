@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vector Representation on Agones</title>
+    <link>http://localhost:1313/tags/vector-representation/</link>
+    <description>Recent content in Vector Representation on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/vector-representation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basics of Word Embedding</title>
+      <link>http://localhost:1313/dsblog/basics-of-word-embedding/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/basics-of-word-embedding/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6101-Basics-of-Word-Embedding.jpg&#34; alt=&#34;Basics of Word Embedding&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;basics-of-word-embedding&#34;&gt;Basics of Word Embedding&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-context-target-and-window&#34;&gt;What is Context, target and window?&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The &amp;ldquo;context&amp;rdquo; word is the surrounding word.&lt;/li&gt;&#xA;&lt;li&gt;The &amp;ldquo;target&amp;rdquo; word is the middle word.&lt;/li&gt;&#xA;&lt;li&gt;The &amp;ldquo;window distance&amp;rdquo; is number of words (including) between context words and target word. Window distance 1 means, one word surronding the target, one left side context word, one right context word. Two window distance means 2 words left and 2 words right.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s take a sentence&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

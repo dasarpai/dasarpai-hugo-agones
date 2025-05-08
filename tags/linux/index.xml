@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Agones</title>
+    <link>http://localhost:1313/tags/linux/</link>
+    <description>Recent content in Linux on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting Up a Development Environment with Windows 11, WSL2 and Docker</title>
+      <link>http://localhost:1313/dsblog/development-environment-with-windows-11-wsl2-and-docker/</link>
+      <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/development-environment-with-windows-11-wsl2-and-docker/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6222-Setting-Up-a-Development-Environment-with-Windows-11-WSL2-and-Docker.jpg&#34; alt=&#34;Setting Development Environment with WSL2, Docker and Github&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;setting-development-environment-with-wsl2-docker-and-github&#34;&gt;Setting Development Environment with WSL2, Docker and Github&lt;/h1&gt;&#xA;&lt;p&gt;This quick tutorial is about setting Up a Development Environment with Windows 11, WSL 2, Docker and Github&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Like any other operating system, Windows has its strengths and weaknesses. But what if you believe that the democratization of technology is best achieved through open-source solutions, and that Linux is the key to this future? What’s the next step for you?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux OS Directories</title>
+      <link>http://localhost:1313/dsblog/Linux-OS-Directories/</link>
+      <pubDate>Wed, 26 Apr 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Linux-OS-Directories/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6055-Linux-OS-Directories.jpg&#34; alt=&#34;Linux OS Directories&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;linux-os-directories&#34;&gt;Linux OS Directories&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Linux OS Folders and the purpose.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction:&lt;/h2&gt;&#xA;&lt;p&gt;Linux is a widely used operating system that is known for its flexibility and versatility. One of the unique features of Linux is its file system hierarchy, which is organized into a many directories that serve specific purposes. Folder structure of Unix OS and all distributions of Linux is same. Each directory has its own set of files and subdirectories that are used to manage various aspects of the operating system and data folders.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

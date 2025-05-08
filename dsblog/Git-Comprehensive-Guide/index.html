@@ -1,0 +1,1128 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Mastering Git: Comprehensive Guide to Git Commands | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/Git-Comprehensive-Guide/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Mastering Git: Comprehensive Guide to Git Commands">
+  <meta property="og:description" content="Comprehensive Guide to Git Commands Is this article for me? If you are a developer and you want to learn Git commands and their usage, this article is for you. If you are a data scientist and you want to learn Git commands and their usage, this article is also for you. If you are a manager and you want to get familiarize about git commands so that you know what your team is talking about then, this article is also for you.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-10-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="GitHub">
+
+  <meta itemprop="name" content="Mastering Git: Comprehensive Guide to Git Commands">
+  <meta itemprop="description" content="Comprehensive Guide to Git Commands Is this article for me? If you are a developer and you want to learn Git commands and their usage, this article is for you. If you are a data scientist and you want to learn Git commands and their usage, this article is also for you. If you are a manager and you want to get familiarize about git commands so that you know what your team is talking about then, this article is also for you.">
+  <meta itemprop="datePublished" content="2024-10-07T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="3090">
+  <meta itemprop="keywords" content="Git commands,Git workflow,GitHub Actions,GitHub Packages,GitHub Gist,GitHub Codespaces,GitHub Repositories">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mastering Git: Comprehensive Guide to Git Commands">
+  <meta name="twitter:description" content="Comprehensive Guide to Git Commands Is this article for me? If you are a developer and you want to learn Git commands and their usage, this article is for you. If you are a data scientist and you want to learn Git commands and their usage, this article is also for you. If you are a manager and you want to get familiarize about git commands so that you know what your team is talking about then, this article is also for you.">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p><img src="/assets/images/dspost/dsp6155-Comprehensive-Guide-to-Git-Commands.jpg" alt="Mastering Git: Comprehensive Guide to Git Commands"></p>
+<h1 id="comprehensive-guide-to-git-commands">Comprehensive Guide to Git Commands</h1>
+<h2 id="is-this-article-for-me">Is this article for me?</h2>
+<p>If you are a developer and you want to learn Git commands and their usage, this article is for you. If you are a data scientist and you want to learn Git commands and their usage, this article is also for you. If you are a manager and you want to get familiarize about git commands so that you know what your team is talking about then, this article is also for you.</p>
+<p>Are you looking answer to these questions?</p>
+<ol>
+<li>Basic Git Commands</li>
+<li>Advanced Git Commands</li>
+<li>Before &ldquo;git rebase&rdquo; do we need to check the difference between current branch and main branch? How to do that?</li>
+<li>How to merge two commits into one?</li>
+<li>What does &ldquo;sync fork&rdquo; link in github do?</li>
+<li>Before sending Pull request do I need to do &ldquo;Sync fork&rdquo;?</li>
+<li>What is the difference between git pull and git fetch?</li>
+<li>How to create branch from original repository&rsquo;s main branch?</li>
+<li>What is Codespace in github?</li>
+<li>What is Github Actions?</li>
+<li>What is Github Gist, what is the use of this?</li>
+<li>What are different types of workflows in Github Actions?</li>
+<li>What are different types of github repositories?</li>
+<li>What is Package in Github?</li>
+<li>Can you tell me usecases where Github packages are used?</li>
+</ol>
+<h2 id="introduction">Introduction</h2>
+<p>In this article, I am assuming that you have basic knowledge of Git and you are looking for Git commands and their usage. I am also assuming that you already have github account, you know how to create github repository, have github desktop installed on your system and you can access github bash in your system.</p>
+<p>Essential Git commands along with their one-line descriptions:</p>
+<h3 id="basic-git-commands">Basic Git Commands:</h3>
+<ol>
+<li>
+<p><strong><code>git init</code></strong><br>
+Initializes a new Git repository in the current directory.<br>
+<em>Use when starting a new project with Git version control.</em></p>
+</li>
+<li>
+<p><strong><code>git clone &lt;repo-url&gt;</code></strong><br>
+Creates a copy of an existing repository (remote or local) to your local machine.<br>
+<em>Use when you want to copy a repository to your system.</em></p>
+</li>
+<li>
+<p><strong><code>git status</code></strong><br>
+Displays the state of the working directory and staging area.<br>
+<em>Use to see changes to tracked files, new files, and files staged for commit.</em></p>
+</li>
+<li>
+<p><strong><code>git add &lt;file&gt;</code></strong><br>
+Stages the specified file(s) for the next commit.<br>
+<em>Use when you&rsquo;re ready to include changes in the next commit.</em></p>
+</li>
+<li>
+<p><strong><code>git commit -m &quot;message&quot;</code></strong><br>
+Records changes in the repository with a descriptive message.<br>
+<em>Use when saving your changes after staging files.</em></p>
+</li>
+<li>
+<p><strong><code>git pull</code></strong><br>
+Fetches and integrates changes from a remote repository into the current branch.<br>
+<em>Use to sync your local branch with the latest changes from the remote.</em></p>
+</li>
+<li>
+<p><strong><code>git push</code></strong><br>
+Uploads local branch changes to the remote repository.<br>
+<em>Use to send your committed changes to the remote repository.</em></p>
+</li>
+<li>
+<p><strong><code>git fetch</code></strong><br>
+Downloads commits, files, and refs from a remote repository without integrating.<br>
+<em>Use when you want to check for changes without modifying your local branch.</em></p>
+</li>
+<li>
+<p><strong><code>git merge &lt;branch&gt;</code></strong><br>
+Combines the specified branch into the current branch.<br>
+<em>Use to merge changes from another branch into the one you’re working on.</em></p>
+</li>
+<li>
+<p><strong><code>git branch</code></strong><br>
+Lists, creates, or deletes branches.<br>
+<em>Use to view branches or manage branch operations.</em></p>
+</li>
+<li>
+<p><strong><code>git checkout &lt;branch&gt;</code></strong><br>
+Switches to the specified branch or commit.<br>
+<em>Use to change the working branch.</em></p>
+</li>
+<li>
+<p><strong><code>git checkout -b &lt;branch&gt;</code></strong><br>
+Creates and switches to a new branch.<br>
+<em>Use when you need to start work on a new branch.</em></p>
+</li>
+<li>
+<p><strong><code>git rebase &lt;branch&gt;</code></strong><br>
+Re-applies commits from the current branch on top of another branch.<br>
+<em>Use to keep a linear history by integrating changes from another branch.</em></p>
+</li>
+<li>
+<p><strong><code>git log</code></strong><br>
+Displays the commit history for the repository.<br>
+<em>Use to review the commit history.</em></p>
+</li>
+<li>
+<p><strong><code>git diff</code></strong><br>
+Shows the differences between working directory changes, staged changes, or between commits.<br>
+<em>Use to see the differences between files or commits.</em></p>
+</li>
+<li>
+<p><strong><code>git reset &lt;file&gt;</code></strong><br>
+Unstages the specified file from the staging area but keeps changes in the working directory.<br>
+<em>Use when you want to remove a file from staging without losing the changes.</em></p>
+</li>
+<li>
+<p><strong><code>git rm &lt;file&gt;</code></strong><br>
+Removes the specified file from the working directory and stages the removal for commit.<br>
+<em>Use to delete files and record their removal in Git.</em></p>
+</li>
+<li>
+<p><strong><code>git stash</code></strong><br>
+Temporarily saves changes that aren’t ready to be committed.<br>
+<em>Use to save work-in-progress changes before switching branches.</em></p>
+</li>
+<li>
+<p><strong><code>git stash pop</code></strong><br>
+Restores the most recent stash and removes it from the stash list.<br>
+<em>Use to retrieve your stashed changes.</em></p>
+</li>
+<li>
+<p><strong><code>git tag &lt;tag-name&gt;</code></strong><br>
+Creates a tag to mark a specific commit.<br>
+<em>Use to create version or release markers.</em></p>
+</li>
+<li>
+<p><strong><code>git remote add &lt;name&gt; &lt;url&gt;</code></strong><br>
+Adds a new remote repository to your configuration.<br>
+<em>Use to link a remote repository to your local one.</em></p>
+</li>
+<li>
+<p><strong><code>git remote -v</code></strong><br>
+Lists the remotes with their URLs.<br>
+<em>Use to check the linked remotes for the repository.</em></p>
+</li>
+<li>
+<p><strong><code>git cherry-pick &lt;commit&gt;</code></strong><br>
+Applies the changes from a specific commit to the current branch.<br>
+<em>Use to selectively apply changes from another branch or commit.</em></p>
+</li>
+<li>
+<p><strong><code>git revert &lt;commit&gt;</code></strong><br>
+Creates a new commit that undoes the changes from the specified commit.<br>
+<em>Use to reverse a commit while keeping the history intact.</em></p>
+</li>
+<li>
+<p><strong><code>git blame &lt;file&gt;</code></strong><br>
+Shows who made the last changes to each line of a file.<br>
+<em>Use to find out who modified a specific line of code.</em></p>
+</li>
+<li>
+<p><strong><code>git mv &lt;old&gt; &lt;new&gt;</code></strong><br>
+Renames a file and stages the change.<br>
+<em>Use to rename files in the repository.</em></p>
+</li>
+<li>
+<p><strong><code>git clean -f</code></strong><br>
+Removes untracked files from the working directory.<br>
+<em>Use to clean up unwanted files in your repository.</em></p>
+</li>
+<li>
+<p><strong><code>git config --global &lt;key&gt; &lt;value&gt;</code></strong><br>
+Sets global Git configuration options (e.g., username, email).<br>
+<em>Use to configure Git settings like name and email.</em></p>
+</li>
+</ol>
+<h3 id="advanced-git-commands">Advanced Git Commands:</h3>
+<ol start="29">
+<li>
+<p><strong><code>git bisect</code></strong><br>
+Finds the commit that introduced a bug by using binary search.<br>
+<em>Use when you need to debug which commit caused an issue.</em></p>
+</li>
+<li>
+<p><strong><code>git reflog</code></strong><br>
+Shows a history of all actions in the repository, including resets and checkouts.<br>
+<em>Use to view or recover from recent Git actions.</em></p>
+</li>
+<li>
+<p><strong><code>git submodule</code></strong><br>
+Manages submodules, which are external repositories embedded in your repository.<br>
+<em>Use to include other Git repositories as part of your project.</em></p>
+</li>
+<li>
+<p><strong><code>git archive</code></strong><br>
+Creates a tar or zip archive of files from a Git repository.<br>
+<em>Use to package a snapshot of your project.</em></p>
+</li>
+<li>
+<p><strong><code>git cherry &lt;branch&gt;</code></strong><br>
+Lists commits in the current branch that are not in the specified branch.<br>
+<em>Use to compare commits between branches.</em></p>
+</li>
+<li>
+<p><strong><code>git apply &lt;patch-file&gt;</code></strong><br>
+Applies changes from a patch file to the working directory.<br>
+<em>Use when applying a patch manually.</em></p>
+</li>
+</ol>
+<h2 id="before-git-rebase-do-we-need-to-check-the-difference-between-current-branch-and-main-branch-how-to-do-that">Before &ldquo;git rebase&rdquo; do we need to check the difference between current branch and main branch? How to do that?</h2>
+<p>Yes, it&rsquo;s a good practice to check the differences between your current branch and the main branch before performing a rebase. This helps you understand what changes you&rsquo;re about to integrate and can help prevent unexpected conflicts. Here&rsquo;s how you can do that:</p>
+<ol>
+<li>First, make sure your local main branch is up to date:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout main <span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>git pull origin main <span style="color:#75715e">#</span>
+</span></span></code></pre></div><ol start="2">
+<li>Then, switch back to your feature branch:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout your-feature-branch
+</span></span></code></pre></div><ol start="3">
+<li>Now, you can use several Git commands to check the differences:</li>
+</ol>
+<p>a. To see a list of commits that are in your feature branch but not in main:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log main..HEAD
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git log main..HEAD --oneline <span style="color:#75715e"># Shows a concise list of commits in your branch that are not in main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git log --oneline --graph --decorate --all <span style="color:#75715e"># Visualizes the commit history, showing where your branch diverges from main</span>
+</span></span></code></pre></div><p>b. To see a summary of changes (files changed, insertions, deletions):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git diff --stat main
+</span></span></code></pre></div><p>c. To see the full diff of all changes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git diff main
+</span></span></code></pre></div><p>d. To see just the file names that have been changed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git diff --name-only main
+</span></span></code></pre></div><ol start="4">
+<li>If you want to see how your branch would look after rebasing onto main, without actually performing the rebase, you can use:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git rebase -i --onto main --root <span style="color:#66d9ef">$(</span>git merge-base HEAD main<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><p>This will open an interactive rebase editor. You can close it without making changes to see what would happen without actually rebasing.</p>
+<p>After reviewing the differences, if you&rsquo;re comfortable with the changes, you can proceed with the rebase:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git rebase main
+</span></span></code></pre></div><p>Remember, rebasing rewrites history, so if you&rsquo;ve already pushed your branch to a shared repository, you&rsquo;ll need to force push after rebasing. Be cautious with this, especially on shared branches.</p>
+<p>By checking the differences before rebasing, you can:</p>
+<ul>
+<li>Anticipate potential conflicts</li>
+<li>Ensure you&rsquo;re not accidentally overwriting important changes</li>
+<li>Understand how your changes fit into the context of the main branch</li>
+<li>Decide if a merge might be more appropriate than a rebase in some cases</li>
+</ul>
+<p>This approach helps maintain a cleaner history and reduces the likelihood of unexpected issues during the rebase process.</p>
+<h2 id="how-to-merge-two-commits-into-one">How to merge two commits into one?</h2>
+<p>To merge two commits into one in Git (a process called squashing), you can use an interactive rebase to combine multiple commits into a single one. This is useful when you want to clean up your commit history before pushing to a remote repository or submitting a pull request.</p>
+<ol>
+<li>Identify the commits you want to merge. Command below will show the commit history in a condensed format.
+<pre tabindex="0"><code>git log --oneline
+</code></pre></li>
+<li>Start an interactive rebase. Suppose you want to squash the last two commits.
+<pre tabindex="0"><code>git rebase -i HEAD~2
+</code></pre></li>
+<li>Modify the rebase instruction. An interactive editor will open, showing the commits:
+<pre tabindex="0"><code>pick e456f8b Second commit
+pick d123abc First commit
+Change the word pick on the second line (for the older commit) to squash. This tells Git to &#34;squash&#34; the second commit into the first one.
+</code></pre></li>
+<li>Save and close the editor</li>
+<li>Edit the commit message</li>
+<li>Push the squashed commit
+<pre tabindex="0"><code>git push --force origin &lt;branch-name&gt;
+
+OR
+
+git push origin &lt;branch-name&gt; 
+</code></pre></li>
+</ol>
+<h2 id="what-does-sync-fork-link-in-github-do">What does &ldquo;sync fork&rdquo; link in github do?</h2>
+<p>The &ldquo;Sync fork&rdquo; link in GitHub is used to update your local copy of a repository with the latest changes from the original repository. This is particularly useful when you have made changes to your fork that conflict with the latest changes from the original repository.</p>
+<h2 id="before-sending-pull-request-do-i-need-to-do-sync-fork">Before sending Pull request do I need to do &ldquo;Sync fork&rdquo;?</h2>
+<p>Yes, it&rsquo;s a good practice to sync your fork with the original repository before sending a pull request. This ensures that your changes are based on the latest code and reduces the risk of conflicts. Here’s how you can do it:</p>
+<ol>
+<li>
+<p><strong>Add the original repository as an upstream remote:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Fetch the latest changes from the original repository:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git fetch upstream
+</span></span></code></pre></div></li>
+<li>
+<p>Switch to your main branch (or the branch you are planning to send the PR from):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout main
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Merge the latest changes into your local repository:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git merge upstream/main
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Push the updated changes to your fork on GitHub:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push origin main
+</span></span></code></pre></div></li>
+</ol>
+<p>This ensures that your pull request is based on the latest code from the original repository.</p>
+<h2 id="what-is-the-difference-between-git-pull-and-git-fetch">What is the difference between <code>git pull</code> and <code>git fetch</code>?</h2>
+<ol>
+<li>
+<p><strong><code>git fetch</code></strong>:</p>
+<ul>
+<li>Fetches the latest changes from the remote repository without merging them into your current branch.</li>
+<li>Updates your local repository with the latest changes from the remote repository.</li>
+<li>Does not modify your working directory or staging area.</li>
+<li>Useful when you want to check for new changes without changing your local branch.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>git pull</code></strong>:</p>
+<ul>
+<li>Fetches the latest changes from the remote repository and merges them into your current branch.</li>
+<li>Updates your local repository with the latest changes from the remote repository.</li>
+<li>Modifies your working directory and staging area.</li>
+<li>Useful when you want to update your local branch with the latest changes from the remote repository.</li>
+</ul>
+</li>
+</ol>
+<p>In summary, <code>git fetch</code> is used to update your local repository with the latest changes from the remote repository without merging them, while <code>git pull</code> is used to fetch the latest changes and merge them into your current branch.</p>
+<h2 id="how-to-create-branch-from-original-repositorys-main-branch">How to create branch from original repository&rsquo;s main branch?</h2>
+<ol>
+<li>
+<p><strong>Permissions needed</strong>
+You need write access to the original repository. If you&rsquo;re a maintainer, collaborator, or part of an organization that manages the repository, you can create branches directly in the original repository.</p>
+</li>
+<li>
+<p><strong>Clone Repository</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Change folder</strong>
+cd ORIGINAL_REPOSITORY</p>
+</li>
+<li>
+<p>Create a new branch locally.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout -b my-new-branch
+</span></span></code></pre></div></li>
+<li>
+<p>Push the branch to the original repository (also called the &ldquo;remote&rdquo;):</p>
+<pre tabindex="0"><code>git push origin my-new-branch
+</code></pre></li>
+</ol>
+<h2 id="what-is-codespace-in-github">What is Codespace in github?</h2>
+<p>GitHub Codespaces is a cloud-based development environment provided by GitHub. It allows developers to code in the cloud, using a fully-featured development environment that can be accessed via a web browser. Here&rsquo;s what GitHub Codespaces is and how it works:</p>
+<ol>
+<li>
+<p><strong>Development Environment</strong>:</p>
+<ul>
+<li>GitHub Codespaces provides a fully-featured development environment in the cloud.</li>
+<li>It includes a pre-configured development container with popular tools and languages.</li>
+</ul>
+</li>
+<li>
+<p><strong>Access</strong>:</p>
+<ul>
+<li>Developers can access GitHub Codespaces via a web browser.</li>
+<li>They can start, stop, and manage their codespaces from the GitHub website.</li>
+</ul>
+</li>
+<li>
+<p><strong>Customization</strong>:</p>
+<ul>
+<li>Developers can customize their codespace with additional tools and extensions.</li>
+</ul>
+</li>
+<li>
+<p><strong>Integration</strong>:</p>
+<ul>
+<li>GitHub Codespaces integrates with GitHub&rsquo;s features, such as pull requests, issues, and discussions.</li>
+</ul>
+</li>
+<li>
+<p><strong>Security</strong>:</p>
+<ul>
+<li>GitHub Codespaces follows GitHub&rsquo;s security practices, ensuring that the development environment is secure.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cost</strong>:</p>
+<ul>
+<li>GitHub Codespaces is billed based on usage, with a free tier available for personal accounts.</li>
+</ul>
+</li>
+</ol>
+<h2 id="how-much-github-codespaces-cost">How much GitHub Codespaces cost?</h2>
+<p>GitHub Codespaces is billed based on usage, with a free tier available for personal accounts. The free tier includes:</p>
+<ol>
+<li><strong>1500 minutes per month</strong>: This allows for 1500 minutes of usage per month.</li>
+<li><strong>2GB of storage</strong>: This includes 2GB of storage for your codespace.</li>
+<li><strong>10GB of data transfer</strong>: This includes 10GB of data transfer per month.</li>
+</ol>
+<h2 id="what-is-github-actions">What is Github Actions?</h2>
+<p>GitHub Actions is a powerful automation tool provided by GitHub. It allows developers to automate tasks within their repositories, such as building, testing, and deploying code. Here&rsquo;s what GitHub Actions is and how it works:</p>
+<ol>
+<li>
+<p><strong>Automated Workflows</strong>:</p>
+<ul>
+<li>GitHub Actions allows developers to define automated workflows for their repositories.</li>
+<li>These workflows can be triggered by events, such as push, pull request, or issue creation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Workflow Configuration</strong>:</p>
+<ul>
+<li>Developers can define workflows using YAML files in the <code>.github/workflows</code> directory.</li>
+<li>These workflows can include multiple jobs, each running on a different runner.</li>
+</ul>
+</li>
+<li>
+<p><strong>Runners</strong>:</p>
+<ul>
+<li>GitHub Actions uses virtual machines or containers to run workflows.</li>
+<li>These runners are hosted on GitHub&rsquo;s infrastructure.</li>
+</ul>
+</li>
+<li>
+<p><strong>Jobs</strong>:</p>
+<ul>
+<li>Each workflow can contain multiple jobs.</li>
+<li>Jobs are steps that are executed on the runner.</li>
+</ul>
+</li>
+<li>
+<p><strong>Actions</strong>:</p>
+<ul>
+<li>Actions are reusable workflows that can be used to perform specific tasks.</li>
+<li>They are defined in the workflow file.</li>
+</ul>
+</li>
+<li>
+<p><strong>Workflow Triggers</strong>:</p>
+<ul>
+<li>Workflows can be triggered by events, such as push, pull request, or issue creation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Contexts</strong>:</p>
+<ul>
+<li>Contexts are variables that are available to workflows.</li>
+<li>They can be used to pass data between jobs.</li>
+</ul>
+</li>
+<li>
+<p><strong>Secrets</strong>:</p>
+<ul>
+<li>Secrets are variables that are available to workflows.</li>
+<li>They can be used to store sensitive information, such as API keys.</li>
+</ul>
+</li>
+</ol>
+<h2 id="what-is-github-gist-what-is-the-use-of-this">What is Github Gist, what is the use of this?</h2>
+<p>GitHub Gist is a simple tool for sharing code snippets and small pieces of code. It&rsquo;s a great way to share code with others or to keep track of your ideas. Here&rsquo;s what GitHub Gist is and how it works:</p>
+<ol>
+<li>
+<p><strong>Code Sharing</strong>:</p>
+<ul>
+<li>GitHub Gist allows developers to share code snippets with others.</li>
+<li>They can be used to share code with others or to keep track of your ideas.</li>
+</ul>
+</li>
+<li>
+<p><strong>Code Storage</strong>:</p>
+<ul>
+<li>GitHub Gist allows developers to store code snippets in a centralized location.</li>
+<li>They can be used to store code snippets for future reference.</li>
+</ul>
+</li>
+<li>
+<p><strong>Code Collaboration</strong>:</p>
+<ul>
+<li>GitHub Gist allows developers to collaborate on code snippets.</li>
+<li>They can be used to collaborate on code with others.</li>
+</ul>
+</li>
+</ol>
+<h2 id="what-are-different-types-of-workflows-in-github-actions">What are different types of workflows in Github Actions?</h2>
+<ol>
+<li>
+<p><strong>Continuous Integration (CI)</strong>:</p>
+<ul>
+<li>CI workflows are used to build, test, and deploy code.</li>
+<li>They are triggered by push, pull request, or issue creation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Continuous Deployment (CD)</strong>:</p>
+<ul>
+<li>CD workflows are used to deploy code to a production environment.</li>
+<li>They are triggered by push, pull request, or issue creation.</li>
+</ul>
+</li>
+</ol>
+<h2 id="what-are-different-types-of-github-repositories">What are different types of github repositories?</h2>
+<ol>
+<li>
+<p><strong>Public Repository</strong>:</p>
+<ul>
+<li>Public repositories are accessible to everyone.</li>
+<li>They can be used to store code that is shared with others.</li>
+</ul>
+</li>
+<li>
+<p><strong>Private Repository</strong>:</p>
+<ul>
+<li>Private repositories are accessible to specific users.</li>
+<li>They can be used to store code that is not shared with others.</li>
+</ul>
+</li>
+<li>
+<p><strong>Internal Repository</strong>:</p>
+<ul>
+<li>Internal repositories are accessible to specific users.</li>
+<li>They can be used to store code that is not shared with others.</li>
+<li>To create an internal repository in GitHub, you&rsquo;ll need to be using GitHub Enterprise Cloud</li>
+</ul>
+</li>
+<li>
+<p><strong>Forked Repository</strong>:</p>
+<ul>
+<li>Forked repositories are repositories that are forked from another repository.</li>
+<li>They can be used to store code that is not shared with others.</li>
+</ul>
+</li>
+</ol>
+<h2 id="what-is-package-in-github">What is Package in Github?</h2>
+<p>A package in GitHub is a repository that contains code that can be used by other developers. They are similar to repositories, but they are specifically designed to contain code that can be used by other developers.</p>
+<h2 id="can-you-tell-me-usecases-where-github-packages-are-used">Can you tell me usecases where Github packages are used?</h2>
+<p>GitHub Packages is a package hosting service that allows you to host your software packages privately or publicly and use packages as dependencies in your projects. Here are some common use cases for GitHub Packages:</p>
+<ol>
+<li>
+<p>Dependency Management:</p>
+<ul>
+<li>Host and manage private dependencies for your projects.</li>
+<li>Share common libraries across multiple projects within your organization.</li>
+</ul>
+</li>
+<li>
+<p>CI/CD Integration:</p>
+<ul>
+<li>Automatically publish packages as part of your continuous integration pipeline.</li>
+<li>Use versioned packages in your deployment processes.</li>
+</ul>
+</li>
+<li>
+<p>Language-specific Package Hosting:</p>
+<ul>
+<li>npm packages for JavaScript/Node.js projects</li>
+<li>pip and conda packages for Python projects</li>
+<li>Maven packages for Java projects</li>
+<li>NuGet packages for .NET projects</li>
+<li>RubyGems for Ruby projects</li>
+<li>Docker images for containerized applications</li>
+</ul>
+</li>
+<li>
+<p>Internal Tool Distribution:</p>
+<ul>
+<li>Distribute internal tools and utilities across your organization.</li>
+<li>Manage different versions of tools for different teams or projects.</li>
+</ul>
+</li>
+<li>
+<p>Plugin/Extension Distribution:</p>
+<ul>
+<li>Host plugins or extensions for your software platforms.</li>
+<li>Manage versioning and updates for add-ons.</li>
+</ul>
+</li>
+<li>
+<p>Code Reusability:</p>
+<ul>
+<li>Package reusable code components for easy integration into multiple projects.</li>
+<li>Maintain a centralized repository of shared code.</li>
+</ul>
+</li>
+<li>
+<p>Release Management:</p>
+<ul>
+<li>Manage different versions of your software packages.</li>
+<li>Control access to pre-release or beta versions.</li>
+</ul>
+</li>
+<li>
+<p>Monorepo Management:</p>
+<ul>
+<li>Manage packages for different components in a monorepo structure.</li>
+<li>Simplify dependency management in large, multi-module projects.</li>
+</ul>
+</li>
+<li>
+<p>Open Source Distribution:</p>
+<ul>
+<li>Host open-source packages for public use.</li>
+<li>Provide an alternative or supplement to other public package registries.</li>
+</ul>
+</li>
+<li>
+<p>API Distribution:</p>
+<ul>
+<li>Package and distribute SDKs or client libraries for your APIs.</li>
+</ul>
+</li>
+<li>
+<p>Machine Learning Model Distribution:</p>
+<ul>
+<li>Host and version machine learning models as packages.</li>
+</ul>
+</li>
+<li>
+<p>Configuration Management:</p>
+<ul>
+<li>Distribute configuration files or templates as packages.</li>
+</ul>
+</li>
+<li>
+<p>Asset Management:</p>
+<ul>
+<li>Host and version design assets, documentation, or other non-code resources.</li>
+</ul>
+</li>
+<li>
+<p>Cross-platform Development:</p>
+<ul>
+<li>Host packages for multiple platforms (e.g., mobile, web, desktop) in one place.</li>
+</ul>
+</li>
+<li>
+<p>Vendor Management:</p>
+<ul>
+<li>Host vendored or forked dependencies to ensure availability and version control.</li>
+</ul>
+</li>
+</ol>
+<p>Using GitHub Packages offers several benefits:</p>
+<ul>
+<li>Tight integration with GitHub repositories and actions</li>
+<li>Fine-grained access control</li>
+<li>Unified billing with other GitHub services</li>
+<li>Seamless workflow within the GitHub ecosystem</li>
+</ul>
+<p>When using GitHub Packages, remember to consider factors like storage limits, bandwidth usage, and access management to ensure it aligns with your project&rsquo;s needs and your organization&rsquo;s policies.</p>
+<h2 id="hasttags">Hasttags</h2>
+<p>#GitCommands
+#GitWorkflow
+#GitHubActions
+#GitHubPackages
+#GitHubGist
+#GitHubCodespaces
+#GitHubRepositories</p>
+<div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/github" class="category-badge">Github</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=Mastering%20Git%3a%20Comprehensive%20Guide%20to%20Git%20Commands&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fGit-Comprehensive-Guide%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fGit-Comprehensive-Guide%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fGit-Comprehensive-Guide%2f&title=Mastering%20Git%3a%20Comprehensive%20Guide%20to%20Git%20Commands" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fGit-Comprehensive-Guide%2f&title=Mastering%20Git%3a%20Comprehensive%20Guide%20to%20Git%20Commands" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=Mastering%20Git%3a%20Comprehensive%20Guide%20to%20Git%20Commands&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fGit-Comprehensive-Guide%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/Selecting-Database-for-Project/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">Selecting Database for Project</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/Introduction-to-Perplexity-AI/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">Introduction to Perplexity AI</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#is-this-article-for-me">Is this article for me?</a></li>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#basic-git-commands">Basic Git Commands:</a></li>
+        <li><a href="#advanced-git-commands">Advanced Git Commands:</a></li>
+      </ul>
+    </li>
+    <li><a href="#before-git-rebase-do-we-need-to-check-the-difference-between-current-branch-and-main-branch-how-to-do-that">Before &ldquo;git rebase&rdquo; do we need to check the difference between current branch and main branch? How to do that?</a></li>
+    <li><a href="#how-to-merge-two-commits-into-one">How to merge two commits into one?</a></li>
+    <li><a href="#what-does-sync-fork-link-in-github-do">What does &ldquo;sync fork&rdquo; link in github do?</a></li>
+    <li><a href="#before-sending-pull-request-do-i-need-to-do-sync-fork">Before sending Pull request do I need to do &ldquo;Sync fork&rdquo;?</a></li>
+    <li><a href="#what-is-the-difference-between-git-pull-and-git-fetch">What is the difference between <code>git pull</code> and <code>git fetch</code>?</a></li>
+    <li><a href="#how-to-create-branch-from-original-repositorys-main-branch">How to create branch from original repository&rsquo;s main branch?</a></li>
+    <li><a href="#what-is-codespace-in-github">What is Codespace in github?</a></li>
+    <li><a href="#how-much-github-codespaces-cost">How much GitHub Codespaces cost?</a></li>
+    <li><a href="#what-is-github-actions">What is Github Actions?</a></li>
+    <li><a href="#what-is-github-gist-what-is-the-use-of-this">What is Github Gist, what is the use of this?</a></li>
+    <li><a href="#what-are-different-types-of-workflows-in-github-actions">What are different types of workflows in Github Actions?</a></li>
+    <li><a href="#what-are-different-types-of-github-repositories">What are different types of github repositories?</a></li>
+    <li><a href="#what-is-package-in-github">What is Package in Github?</a></li>
+    <li><a href="#can-you-tell-me-usecases-where-github-packages-are-used">Can you tell me usecases where Github packages are used?</a></li>
+    <li><a href="#hasttags">Hasttags</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

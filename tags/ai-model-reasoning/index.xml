@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Model Reasoning on Agones</title>
+    <link>http://localhost:1313/tags/ai-model-reasoning/</link>
+    <description>Recent content in AI Model Reasoning on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai-model-reasoning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring DeepSeek R1: The AI That Thinks Like a Human</title>
+      <link>http://localhost:1313/dsblog/exploring-deepseek-r1/</link>
+      <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-deepseek-r1/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6228-Exploring-DeepSeek-R1.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-deepseek-r1-the-ai-that-thinks-like-a-human&#34;&gt;Exploring DeepSeek R1: The AI That Thinks Like a Human&lt;/h1&gt;&#xA;&lt;p&gt;Artificial Intelligence (AI) has come a long way, but few models have captured the imagination of researchers, developers, and businesses like &lt;strong&gt;DeepSeek R1&lt;/strong&gt;. Developed by &lt;strong&gt;DeepSeek&lt;/strong&gt;, a cutting-edge AI research organization, DeepSeek R1 is not just another AI model—it’s a reasoning engine designed to tackle complex tasks with human-like precision. Whether it’s solving intricate math problems, writing code, or analyzing data, DeepSeek R1 is reasoning in every step. In this article, we’ll explore into what makes DeepSeek R1 special, how it works, and why it’s a game-changer for industries and individuals alike.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

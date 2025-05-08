@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Human-AI Interaction on Agones</title>
+    <link>http://localhost:1313/tags/human-ai-interaction/</link>
+    <description>Recent content in Human-AI Interaction on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/human-ai-interaction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Will AI Replace Human?</title>
+      <link>http://localhost:1313/dsblog/Will-AI-Replace-Human/</link>
+      <pubDate>Thu, 19 Jan 2023 08:33:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Will-AI-Replace-Human/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6038-Will-AI-Replace-Human.jpg&#34; alt=&#34;Will AI Replace Human&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;artificial-intelligence-can-replace-human&#34;&gt;Artificial Intelligence can Replace Human?&lt;/h1&gt;&#xA;&lt;p&gt;The Success of ChatGPT has taken the world by storm. Unless you are not living in some cave you already know what is happening. People are asking questions like will AI replace humans? What will happen to our jobs? What are the challenges? I thought let me write my thought on this. There was significant overlap between these phases, so don&amp;rsquo;t assume that when one phase was over then only the second started.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,3360 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Computer Vision Research Work | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2025-01-27-6211-computer-vision-research-work/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Computer Vision Research Work">
+  <meta property="og:description" content="Computer Vision Research Work When we talk about “vision” capabilities, most people don’t understand how complex the brain is in processing the visual spectrum (light signals). What kind of processing happens inside our brain that allows us to understand color, depth, motion, speed, segments, objects, scenes, different kinds of art, drawings, culture, etc.? Until recently, when “computer vision” became a serious field in AI, only neurology researchers, surgeons, and brain specialists had some insights into these processes. But since 2012 (AlexNet Paper), with new papers being published almost every month, we are constantly learning how far we’ve come in computer vision. This article is not only about the chronology of computer vision but also about software engineers, computer scientists, AI engineers, and everyone who wants to understand how their phone performs certain computer visions tasks and becomes intelligent.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-01-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-27T00:00:00+00:00">
+    <meta property="article:tag" content="Computer Vision">
+    <meta property="article:tag" content="Research">
+    <meta property="article:tag" content="AI">
+
+  <meta itemprop="name" content="Computer Vision Research Work">
+  <meta itemprop="description" content="Computer Vision Research Work When we talk about “vision” capabilities, most people don’t understand how complex the brain is in processing the visual spectrum (light signals). What kind of processing happens inside our brain that allows us to understand color, depth, motion, speed, segments, objects, scenes, different kinds of art, drawings, culture, etc.? Until recently, when “computer vision” became a serious field in AI, only neurology researchers, surgeons, and brain specialists had some insights into these processes. But since 2012 (AlexNet Paper), with new papers being published almost every month, we are constantly learning how far we’ve come in computer vision. This article is not only about the chronology of computer vision but also about software engineers, computer scientists, AI engineers, and everyone who wants to understand how their phone performs certain computer visions tasks and becomes intelligent.">
+  <meta itemprop="datePublished" content="2025-01-27T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-01-27T00:00:00+00:00">
+  <meta itemprop="wordCount" content="5224">
+  <meta itemprop="keywords" content="computer vision research work,advancements in computer vision,history of computer vision,computer vision breakthroughs,computer vision research papers,computer vision techniques,computer vision applications">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Computer Vision Research Work">
+  <meta name="twitter:description" content="Computer Vision Research Work When we talk about “vision” capabilities, most people don’t understand how complex the brain is in processing the visual spectrum (light signals). What kind of processing happens inside our brain that allows us to understand color, depth, motion, speed, segments, objects, scenes, different kinds of art, drawings, culture, etc.? Until recently, when “computer vision” became a serious field in AI, only neurology researchers, surgeons, and brain specialists had some insights into these processes. But since 2012 (AlexNet Paper), with new papers being published almost every month, we are constantly learning how far we’ve come in computer vision. This article is not only about the chronology of computer vision but also about software engineers, computer scientists, AI engineers, and everyone who wants to understand how their phone performs certain computer visions tasks and becomes intelligent.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6211-Computer-Vision-Research-Work.jpg" alt="Computer Vision Research Work&#34;"></p>
+<h1 id="computer-vision-research-work">Computer Vision Research Work</h1>
+<p>When we talk about &ldquo;vision&rdquo; capabilities, most people don&rsquo;t understand how complex the brain is in processing the visual spectrum (light signals). What kind of processing happens inside our brain that allows us to understand color, depth, motion, speed, segments, objects, scenes, different kinds of art, drawings, culture, etc.? Until recently, when &ldquo;computer vision&rdquo; became a serious field in AI, only neurology researchers, surgeons, and brain specialists had some insights into these processes. But since 2012 (AlexNet Paper), with new papers being published almost every month, we are constantly learning how far we&rsquo;ve come in computer vision. This article is not only about the chronology of computer vision but also about software engineers, computer scientists, AI engineers, and everyone who wants to understand how their phone performs certain computer visions tasks and becomes intelligent.</p>
+<table>
+  <thead>
+      <tr>
+          <th>SNo</th>
+          <th>Research Name</th>
+          <th>Short Description of Paper</th>
+          <th>Month-Year</th>
+          <th>Organization</th>
+          <th>URL</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>DeconvNet</td>
+          <td>Deconvolutional Networks for Feature Learning</td>
+          <td>Nov 2010</td>
+          <td>KAIST</td>
+          <td><a href="https://arxiv.org/abs/1505.04366">Paper</a>, <a href="https://medium.com/towards-data-science/review-deconvnet-unpooling-layer-semantic-segmentation-55cf8a6e380e">Blog</a></td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Saliency Propagation</td>
+          <td>A method for salient object detection that propagates saliency information through optimization</td>
+          <td>Apr 2014</td>
+          <td>Chinese Academy of Sciences</td>
+          <td><a href="https://arxiv.org/abs/1404.6190">Paper</a></td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>SDS</td>
+          <td>Simultaneous Detection and Segmentation</td>
+          <td>Jun 2014</td>
+          <td>UC Berkeley</td>
+          <td><a href="https://arxiv.org/abs/1407.1808">Paper</a></td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>GoogleNet</td>
+          <td>Introduced the Inception module to increase network depth and width efficiently.</td>
+          <td>Sep-2014</td>
+          <td>Google</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>VGGNet</td>
+          <td>Used small 3x3 convolution filters to increase depth, achieving high accuracy.</td>
+          <td>Sep-2014</td>
+          <td>Oxford University</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>FCN</td>
+          <td>Fully Convolutional Networks for semantic segmentation</td>
+          <td>Nov 2014</td>
+          <td>UC Berkeley</td>
+          <td><a href="https://arxiv.org/abs/1411.4038">Paper</a></td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>HyperColumn</td>
+          <td>Multi-scale CNN feature fusion</td>
+          <td>Nov 2014</td>
+          <td>UC Berkeley</td>
+          <td><a href="https://arxiv.org/abs/1411.5752">Paper</a></td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>DeepLab v1</td>
+          <td>Semantic Image Segmentation with Deep Convolutional Nets and CRFs</td>
+          <td>Dec 2014</td>
+          <td>Google</td>
+          <td><a href="https://arxiv.org/abs/1412.7062">Paper</a></td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>U-Net</td>
+          <td>Convolutional network for biomedical image segmentation</td>
+          <td>May 2015</td>
+          <td>University of Freiburg</td>
+          <td><a href="https://arxiv.org/abs/1505.04597">Paper</a>, <a href="https://medium.com/towards-data-science/review-squeezenet-image-classification-e7414825581a">Blog</a></td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>Highway Network</td>
+          <td>Proposed highway layers to enable training of very deep networks.</td>
+          <td>May-2015</td>
+          <td>University of Montreal</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td>YOLO Series</td>
+          <td>You Only Look Once: series of real-time object detection systems (v1-v4)</td>
+          <td>Jun 2015 (v1) - Apr 2020 (v4)</td>
+          <td>University of Washington, Darknet</td>
+          <td><a href="https://arxiv.org/abs/1506.02640">Paper</a>, <a href="https://towardsdatascience.com/yolo-intuitively-and-exhaustively-explained-83143925c7a9/">Blog</a></td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td>CRF-RNN</td>
+          <td>Conditional Random Fields as Recurrent Neural Networks</td>
+          <td>Jun 2015</td>
+          <td>University of Oxford</td>
+          <td><a href="https://arxiv.org/abs/1502.03240">Paper</a></td>
+      </tr>
+      <tr>
+          <td>13</td>
+          <td>MR-CNN &amp; S-CNN</td>
+          <td>Multi-Region CNN and Semantic CNN for object detection</td>
+          <td>Jun 2015</td>
+          <td>University of California, Berkeley</td>
+          <td><a href="https://arxiv.org/abs/1505.01749">Paper</a></td>
+      </tr>
+      <tr>
+          <td>14</td>
+          <td>DeepMask</td>
+          <td>Learning to Segment Objects Candidates</td>
+          <td>Jun 2015</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/1506.06204">Paper</a></td>
+      </tr>
+      <tr>
+          <td>15</td>
+          <td>LAPGAN</td>
+          <td>Laplacian Pyramid of Generative Adversarial Networks for image generation</td>
+          <td>Jun 2015</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/1506.05751">Paper</a></td>
+      </tr>
+      <tr>
+          <td>16</td>
+          <td>CUDMedVision1</td>
+          <td>Medical Image Segmentation System 1</td>
+          <td>Sep 2015</td>
+          <td>Chinese University of Hong Kong</td>
+          <td><a href="https://github.com/tangzhenyu/SemanticSegmentation_DL">Paper</a>, <a href="https://medium.datadriveninvestor.com/review-cumedvision1-fully-convolutional-network-biomedical-image-segmentation-5434280d6e6">Blog</a></td>
+      </tr>
+      <tr>
+          <td>17</td>
+          <td>SegNet</td>
+          <td>Deep Convolutional Encoder-Decoder Architecture for Image Segmentation</td>
+          <td>Oct 2015</td>
+          <td>University of Cambridge</td>
+          <td><a href="https://arxiv.org/abs/1511.00561">Paper</a></td>
+      </tr>
+      <tr>
+          <td>18</td>
+          <td>DilatedNet</td>
+          <td>Multi-Scale Context Aggregation by Dilated Convolutions</td>
+          <td>Nov 2015</td>
+          <td>Princeton University</td>
+          <td><a href="https://arxiv.org/abs/1511.07122">Paper</a></td>
+      </tr>
+      <tr>
+          <td>19</td>
+          <td>CAM</td>
+          <td>Class Activation Mapping for identifying discriminative regions</td>
+          <td>Dec 2015</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/1512.04150">Paper</a></td>
+      </tr>
+      <tr>
+          <td>20</td>
+          <td>ParseNet</td>
+          <td>Looking Wider to See Better for semantic segmentation</td>
+          <td>Dec 2015</td>
+          <td>UNC Chapel Hill</td>
+          <td><a href="https://arxiv.org/abs/1506.04579">Paper</a></td>
+      </tr>
+      <tr>
+          <td>21</td>
+          <td>MNC</td>
+          <td>Instance-aware Semantic Segmentation via Multi-task Network Cascades</td>
+          <td>Dec 2015</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/1512.04412">Paper</a></td>
+      </tr>
+      <tr>
+          <td>22</td>
+          <td>ResNet</td>
+          <td>Introduced residual learning to address vanishing gradients in deep networks.</td>
+          <td>Dec-2015</td>
+          <td>Microsoft Research</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>23</td>
+          <td>SqueezeNet</td>
+          <td>AlexNet-level accuracy with 50x fewer parameters</td>
+          <td>Feb 2016</td>
+          <td>UC Berkeley, Stanford</td>
+          <td><a href="https://arxiv.org/abs/1602.07360">Paper</a>, <a href="https://medium.com/towards-data-science/review-squeezenet-image-classification-e7414825581a">Blog</a></td>
+      </tr>
+      <tr>
+          <td>24</td>
+          <td>SqueezeNet</td>
+          <td>Designed to reduce model size while maintaining accuracy, using 1x1 convolutions.</td>
+          <td>Feb-2016</td>
+          <td>DeepScale, UC Berkeley</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>25</td>
+          <td>Pre-activation ResNet</td>
+          <td>Identity Mappings in Deep Residual Networks</td>
+          <td>Mar 2016</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/1603.05027">Paper</a></td>
+      </tr>
+      <tr>
+          <td>26</td>
+          <td>SharpMask</td>
+          <td>Learning to Refine Object Segments</td>
+          <td>Mar 2016</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/1603.08695">Paper</a></td>
+      </tr>
+      <tr>
+          <td>27</td>
+          <td>InstanceFCN</td>
+          <td>Instance-sensitive Fully Convolutional Networks</td>
+          <td>Mar 2016</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/1603.08678">Paper</a></td>
+      </tr>
+      <tr>
+          <td>28</td>
+          <td>MultipathNet</td>
+          <td>Multiple Path Aggregation Network</td>
+          <td>Apr 2016</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/1604.02135">Paper</a></td>
+      </tr>
+      <tr>
+          <td>29</td>
+          <td>R-FCN</td>
+          <td>Region-based Fully Convolutional Networks for object detection</td>
+          <td>May 2016</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/1605.06409">Paper</a></td>
+      </tr>
+      <tr>
+          <td>30</td>
+          <td>NOC</td>
+          <td>Neural Object Counting for object detection</td>
+          <td>May 2016</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/1505.05264">Paper</a></td>
+      </tr>
+      <tr>
+          <td>31</td>
+          <td>DeepLab v2</td>
+          <td>Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution</td>
+          <td>Jun 2016</td>
+          <td>Google</td>
+          <td><a href="https://arxiv.org/abs/1606.00915">Paper</a></td>
+      </tr>
+      <tr>
+          <td>32</td>
+          <td>DeepSim</td>
+          <td>Deep Learning Approach for Image Quality Assessment</td>
+          <td>Jun 2016</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/1606.01972">Paper</a></td>
+      </tr>
+      <tr>
+          <td>33</td>
+          <td>DIS</td>
+          <td>Deep Image Smoothing</td>
+          <td>Jun 2016</td>
+          <td>University of Illinois</td>
+          <td><a href="https://arxiv.org/abs/1606.03634">Paper</a></td>
+      </tr>
+      <tr>
+          <td>34</td>
+          <td>V-Net</td>
+          <td>Fully Convolutional Neural Network for volumetric medical image segmentation</td>
+          <td>Jun 2016</td>
+          <td>University College London</td>
+          <td><a href="https://arxiv.org/abs/1606.04797">Paper</a></td>
+      </tr>
+      <tr>
+          <td>35</td>
+          <td>3D U-net</td>
+          <td>Volumetric Segmentation with 3D U-net</td>
+          <td>Jun 2016</td>
+          <td>University of Freiburg</td>
+          <td><a href="https://arxiv.org/abs/1606.06650">Paper</a></td>
+      </tr>
+      <tr>
+          <td>36</td>
+          <td>ENet</td>
+          <td>Efficient Neural Network for Real-time Semantic Segmentation</td>
+          <td>Jul 2016</td>
+          <td>University of Cambridge</td>
+          <td><a href="https://arxiv.org/abs/1606.02147">Paper</a></td>
+      </tr>
+      <tr>
+          <td>37</td>
+          <td>ResNet38</td>
+          <td>Wider or Deeper: Revisiting the ResNet Model</td>
+          <td>Jul 2016</td>
+          <td>KAIST</td>
+          <td><a href="https://arxiv.org/abs/1611.10080">Paper</a></td>
+      </tr>
+      <tr>
+          <td>38</td>
+          <td>DRRN</td>
+          <td>Deep Recursive Residual Network for image super-resolution</td>
+          <td>Jul 2016</td>
+          <td>National University of Singapore</td>
+          <td><a href="https://arxiv.org/abs/1608.05148">Paper</a></td>
+      </tr>
+      <tr>
+          <td>39</td>
+          <td>Multi-Channel</td>
+          <td>Multi-Channel CNN for medical image analysis</td>
+          <td>Jul 2016</td>
+          <td>University of California, San Diego</td>
+          <td><a href="https://arxiv.org/abs/2306.07365">Paper</a></td>
+      </tr>
+      <tr>
+          <td>40</td>
+          <td>GCN</td>
+          <td>Graph Convolutional Networks for processing graph-structured data</td>
+          <td>Sep 2016</td>
+          <td>University of Montreal</td>
+          <td><a href="https://arxiv.org/abs/1609.02907">Paper</a></td>
+      </tr>
+      <tr>
+          <td>41</td>
+          <td>M²FCN</td>
+          <td>Multi-modal Fully Convolutional Networks for medical imaging</td>
+          <td>Sep 2016</td>
+          <td>Chinese Academy of Sciences</td>
+          <td><a href="https://openaccess.thecvf.com/content_ICCV_2017/papers/Shen_Multi-Stage_Multi-Recursive-Input_Fully_ICCV_2017_paper.pdf">Paper</a>, <a href="https://medium.com/towards-data-science/review-m%C2%B2fcn-multi-stage-multi-recursive-input-fully-convolutional-networks-biomedical-image-4f8d5e3f07f1">Blog</a></td>
+      </tr>
+      <tr>
+          <td>42</td>
+          <td>Graph CNN</td>
+          <td>Graph Convolutional Neural Networks</td>
+          <td>Sep 2016</td>
+          <td>University of Montreal</td>
+          <td><a href="https://arxiv.org/abs/1609.02907">Paper</a></td>
+      </tr>
+      <tr>
+          <td>43</td>
+          <td>Grad-CAM</td>
+          <td>Gradient-weighted Class Activation Mapping</td>
+          <td>Oct 2016</td>
+          <td>Georgia Tech</td>
+          <td><a href="https://arxiv.org/abs/1610.02391">Paper</a></td>
+      </tr>
+      <tr>
+          <td>44</td>
+          <td>ResNeXt</td>
+          <td>Aggregated Residual Transformations for Deep Neural Networks</td>
+          <td>Nov 2016</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/1611.05431">Paper</a></td>
+      </tr>
+      <tr>
+          <td>45</td>
+          <td>DRN</td>
+          <td>Dilated Residual Networks</td>
+          <td>Nov 2016</td>
+          <td>Princeton University</td>
+          <td><a href="https://arxiv.org/abs/1705.09914">Paper</a></td>
+      </tr>
+      <tr>
+          <td>46</td>
+          <td>RefineNet</td>
+          <td>Multi-Path Refinement Networks for high-resolution semantic segmentation</td>
+          <td>Nov 2016</td>
+          <td>University of Adelaide</td>
+          <td><a href="https://arxiv.org/abs/1611.06612">Paper</a></td>
+      </tr>
+      <tr>
+          <td>47</td>
+          <td>FractalNet</td>
+          <td>Ultra-Deep Neural Networks without Residuals</td>
+          <td>Nov 2016</td>
+          <td>University of Toronto</td>
+          <td><a href="https://arxiv.org/abs/1605.07648">Paper</a></td>
+      </tr>
+      <tr>
+          <td>48</td>
+          <td>SSD</td>
+          <td>Single Shot MultiBox Detector for real-time object detection</td>
+          <td>Dec 2016</td>
+          <td>Google</td>
+          <td><a href="https://arxiv.org/abs/1512.02325">Paper</a>, <a href="https://towardsdatascience.com/understanding-ssd-multibox-real-time-object-detection-in-deep-learning-495ef744fab/">Blog</a></td>
+      </tr>
+      <tr>
+          <td>49</td>
+          <td>TDM</td>
+          <td>Top-Down Modulation for object detection</td>
+          <td>Dec 2016</td>
+          <td>Carnegie Mellon University</td>
+          <td><a href="https://arxiv.org/abs/1612.06851">Paper</a></td>
+      </tr>
+      <tr>
+          <td>50</td>
+          <td>FPN</td>
+          <td>Feature Pyramid Networks for object detection</td>
+          <td>Dec 2016</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/1612.03144">Paper</a></td>
+      </tr>
+      <tr>
+          <td>51</td>
+          <td>VoxResNet</td>
+          <td>Deep Voxelwise Residual Networks</td>
+          <td>Dec 2016</td>
+          <td>Chinese Academy of Sciences</td>
+          <td><a href="https://arxiv.org/abs/1608.05895">Paper</a></td>
+      </tr>
+      <tr>
+          <td>52</td>
+          <td>DSSD</td>
+          <td>Deconvolutional Single Shot Detector</td>
+          <td>Jan 2017</td>
+          <td>UNC Chapel Hill</td>
+          <td><a href="https://arxiv.org/abs/1701.06659">Paper</a></td>
+      </tr>
+      <tr>
+          <td>53</td>
+          <td>PolyNet</td>
+          <td>Better Vision with More Complex Paths</td>
+          <td>Mar 2017</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/1611.05725">Paper</a></td>
+      </tr>
+      <tr>
+          <td>54</td>
+          <td>IGCNet</td>
+          <td>Interleaved Group Convolutions</td>
+          <td>Mar 2017</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/1707.02725">Paper</a></td>
+      </tr>
+      <tr>
+          <td>55</td>
+          <td>DCN</td>
+          <td>Deformable Convolutional Networks</td>
+          <td>Mar 2017</td>
+          <td>Microsoft Research Asia</td>
+          <td><a href="https://arxiv.org/abs/1703.06211">Paper</a></td>
+      </tr>
+      <tr>
+          <td>56</td>
+          <td>IDW-CNN</td>
+          <td>Image Dependent Warping CNN</td>
+          <td>Mar 2017</td>
+          <td>Seoul National University</td>
+          <td><a href="https://arxiv.org/abs/1704.02798">Paper</a></td>
+      </tr>
+      <tr>
+          <td>57</td>
+          <td>FCIS</td>
+          <td>Fully Convolutional Instance-aware Semantic Segmentation</td>
+          <td>Mar 2017</td>
+          <td>Microsoft Research Asia</td>
+          <td><a href="https://arxiv.org/abs/1611.07709">Paper</a></td>
+      </tr>
+      <tr>
+          <td>58</td>
+          <td>Residual Attention Network</td>
+          <td>Attention mechanism for image classification</td>
+          <td>Apr 2017</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/1704.06904">Paper</a></td>
+      </tr>
+      <tr>
+          <td>59</td>
+          <td>ResNet-DUC-HDC</td>
+          <td>Dense Upsampling Convolution and Hybrid Dilated Convolution</td>
+          <td>Apr 2017</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/1702.08502">Paper</a></td>
+      </tr>
+      <tr>
+          <td>60</td>
+          <td>MobileNet</td>
+          <td>Focused on efficient models for mobile and embedded devices using depthwise separable convolutions.</td>
+          <td>Apr-2017</td>
+          <td>Google</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>61</td>
+          <td>G-RMI</td>
+          <td>Google&rsquo;s large scale object detection system</td>
+          <td>Jun 2017</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/1706.02677">Paper</a></td>
+      </tr>
+      <tr>
+          <td>62</td>
+          <td>GraphSAGE</td>
+          <td>Inductive Representation Learning on Large Graphs</td>
+          <td>Jun 2017</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/1706.02216">Paper</a></td>
+      </tr>
+      <tr>
+          <td>63</td>
+          <td>DPN</td>
+          <td>Dual Path Networks combining ResNet and DenseNet</td>
+          <td>Jul 2017</td>
+          <td>UCSD, Momenta</td>
+          <td><a href="https://arxiv.org/abs/1707.01629">Paper</a></td>
+      </tr>
+      <tr>
+          <td>64</td>
+          <td>ERFNet</td>
+          <td>Efficient Residual Factorized ConvNet for real-time semantic segmentation</td>
+          <td>Jul 2017</td>
+          <td>Universidad de Alcalá</td>
+          <td><a href="https://arxiv.org/abs/1707.07012">Paper</a></td>
+      </tr>
+      <tr>
+          <td>65</td>
+          <td>Suggestive Annotation</td>
+          <td>Active Learning for medical image segmentation</td>
+          <td>Jul 2017</td>
+          <td>ETH Zurich</td>
+          <td><a href="https://arxiv.org/abs/2206.01014">Paper</a></td>
+      </tr>
+      <tr>
+          <td>66</td>
+          <td>RetinaNet</td>
+          <td>Focal Loss for Dense Object Detection</td>
+          <td>Aug 2017</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/1708.02002">Paper</a>, <a href="https://medium.com/towards-data-science/review-deeplabv3-atrous-convolution-semantic-segmentation-6d818bfd1d74">Blog</a></td>
+      </tr>
+      <tr>
+          <td>67</td>
+          <td>Hide-and-Seek</td>
+          <td>Weakly-supervised object detection training strategy</td>
+          <td>Aug 2017</td>
+          <td>Carnegie Mellon University</td>
+          <td><a href="https://arxiv.org/abs/1704.04232">Paper</a></td>
+      </tr>
+      <tr>
+          <td>68</td>
+          <td>C3</td>
+          <td>Cross-City Cascade for semantic segmentation</td>
+          <td>Aug 2017</td>
+          <td>University of Oxford</td>
+          <td><a href="https://arxiv.org/abs/1708.08197">Paper</a></td>
+      </tr>
+      <tr>
+          <td>69</td>
+          <td>U-net+Res-net</td>
+          <td>Combined U-net and Residual Network for medical segmentation</td>
+          <td>Aug 2017</td>
+          <td>Technical University of Munich</td>
+          <td><a href="https://arxiv.org/abs/1708.00183">Paper</a></td>
+      </tr>
+      <tr>
+          <td>70</td>
+          <td>DenseVoxNet</td>
+          <td>Dense Voxel Network for 3D medical image segmentation</td>
+          <td>Sep 2017</td>
+          <td>Chinese University of Hong Kong</td>
+          <td><a href="https://sh-tsang.medium.com/review-densevoxnet-volumetric-brain-segmentation-biomedical-image-segmentation-9136bb6128dd">Paper</a></td>
+      </tr>
+      <tr>
+          <td>71</td>
+          <td>Graph Attention Networks</td>
+          <td>Self-attention for Graph Data</td>
+          <td>Oct 2017</td>
+          <td>Université de Montréal</td>
+          <td><a href="https://arxiv.org/abs/1710.10903">Paper</a></td>
+      </tr>
+      <tr>
+          <td>72</td>
+          <td>Light-Head R-CNN</td>
+          <td>Light-weight object detection architecture</td>
+          <td>Nov 2017</td>
+          <td>Megvii Technology</td>
+          <td><a href="https://arxiv.org/abs/1711.07264">Paper</a></td>
+      </tr>
+      <tr>
+          <td>73</td>
+          <td>LayerCascade</td>
+          <td>Instance segmentation via layer cascade</td>
+          <td>Nov 2017</td>
+          <td>University of Washington</td>
+          <td><a href="https://arxiv.org/abs/1712.04837">Paper</a></td>
+      </tr>
+      <tr>
+          <td>74</td>
+          <td>3D U-net + ResNet</td>
+          <td>Combined 3D U-net and ResNet for volumetric segmentation</td>
+          <td>Nov 2017</td>
+          <td>Technical University of Munich</td>
+          <td><a href="https://medium.com/towards-data-science/review-3d-u-net-resnet-volumetric-convolutions-long-short-residual-connections-biomedical-3a7da3f98dae">Paper</a></td>
+      </tr>
+      <tr>
+          <td>75</td>
+          <td>Cascade R-CNN</td>
+          <td>Multi-stage object detection refinement</td>
+          <td>Dec 2017</td>
+          <td>CIDSE</td>
+          <td><a href="https://arxiv.org/abs/1712.00726">Paper</a></td>
+      </tr>
+      <tr>
+          <td>76</td>
+          <td>StairNet</td>
+          <td>Top-down semantic feature refinement</td>
+          <td>Dec 2017</td>
+          <td>Seoul National University</td>
+          <td><a href="https://arxiv.org/abs/1711.07971">Paper</a></td>
+      </tr>
+      <tr>
+          <td>77</td>
+          <td>MaskLab</td>
+          <td>Instance Segmentation by Refining Object Detection</td>
+          <td>Jan 2018</td>
+          <td>Google</td>
+          <td><a href="https://arxiv.org/abs/1712.04837">Paper</a></td>
+      </tr>
+      <tr>
+          <td>78</td>
+          <td>RU-Net + R2U-Net</td>
+          <td>Recurrent Residual U-Net variants</td>
+          <td>Jan 2018</td>
+          <td>University of Dhaka</td>
+          <td><a href="https://arxiv.org/abs/1802.06955">Paper</a></td>
+      </tr>
+      <tr>
+          <td>79</td>
+          <td>AmoebaNet</td>
+          <td>Evolutionary Architecture Search</td>
+          <td>Feb 2018</td>
+          <td>Google Brain</td>
+          <td><a href="https://arxiv.org/abs/1802.01548">Paper</a></td>
+      </tr>
+      <tr>
+          <td>80</td>
+          <td>SqueezeNext</td>
+          <td>Hardware-Aware Neural Network Design</td>
+          <td>Feb 2018</td>
+          <td>UC Berkeley</td>
+          <td><a href="https://arxiv.org/abs/1803.10615">Paper</a></td>
+      </tr>
+      <tr>
+          <td>81</td>
+          <td>ENAS</td>
+          <td>Efficient Neural Architecture Search</td>
+          <td>Feb 2018</td>
+          <td>Google Brain</td>
+          <td><a href="https://arxiv.org/abs/1802.03268">Paper</a></td>
+      </tr>
+      <tr>
+          <td>82</td>
+          <td>DeepLab v3+</td>
+          <td>Encoder-Decoder with Atrous Separable Convolution</td>
+          <td>Feb 2018</td>
+          <td>Google</td>
+          <td><a href="https://arxiv.org/abs/1802.02611">Paper</a>, <a href="https://medium.com/towards-data-science/review-deeplabv3-atrous-convolution-semantic-segmentation-6d818bfd1d74">Blog</a></td>
+      </tr>
+      <tr>
+          <td>83</td>
+          <td>Group Normalization</td>
+          <td>Alternative to Batch Normalization</td>
+          <td>Mar 2018</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/1803.08494">Paper</a></td>
+      </tr>
+      <tr>
+          <td>84</td>
+          <td>ACoL</td>
+          <td>Adversarial Complementary Learning for weakly supervised object localization</td>
+          <td>Mar 2018</td>
+          <td>University of Technology Sydney</td>
+          <td><a href="https://arxiv.org/abs/1804.06962">Paper</a></td>
+      </tr>
+      <tr>
+          <td>85</td>
+          <td>BR²Net</td>
+          <td>Boundary Refinement and Recurrent Network for semantic segmentation</td>
+          <td>Mar 2018</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/1803.10840">Paper</a></td>
+      </tr>
+      <tr>
+          <td>86</td>
+          <td>PANet</td>
+          <td>Path Aggregation Network for Instance Segmentation</td>
+          <td>Mar 2018</td>
+          <td>Chinese Academy of Sciences</td>
+          <td><a href="https://arxiv.org/abs/1803.01534">Paper</a></td>
+      </tr>
+      <tr>
+          <td>87</td>
+          <td>MorphNet</td>
+          <td>Fast &amp; Simple Resource-Constrained Structure Learning</td>
+          <td>Apr 2018</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/1801.00746">Paper</a></td>
+      </tr>
+      <tr>
+          <td>88</td>
+          <td>ImageNet Rethinking</td>
+          <td>Research on ImageNet training strategies</td>
+          <td>Apr 2018</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/1805.00932">Paper</a></td>
+      </tr>
+      <tr>
+          <td>89</td>
+          <td>Attention U-net</td>
+          <td>Attention Gates for Medical Image Segmentation</td>
+          <td>Apr 2018</td>
+          <td>University College London</td>
+          <td><a href="https://arxiv.org/abs/1804.03999">Paper</a></td>
+      </tr>
+      <tr>
+          <td>90</td>
+          <td>MegNet</td>
+          <td>Multi-Evidence Guidance for weakly supervised object detection</td>
+          <td>Jun 2018</td>
+          <td>University of Technology Sydney</td>
+          <td><a href="https://arxiv.org/abs/1806.04718">Paper</a></td>
+      </tr>
+      <tr>
+          <td>91</td>
+          <td>H-DenseUNet</td>
+          <td>Hybrid Densely Connected UNet for medical segmentation</td>
+          <td>Jun 2018</td>
+          <td>Chinese University of Hong Kong</td>
+          <td><a href="https://arxiv.org/abs/1709.07330">Paper</a></td>
+      </tr>
+      <tr>
+          <td>92</td>
+          <td>PNASNet</td>
+          <td>Progressive Neural Architecture Search</td>
+          <td>Jul 2018</td>
+          <td>Google Brain</td>
+          <td><a href="https://arxiv.org/abs/1712.00559">Paper</a></td>
+      </tr>
+      <tr>
+          <td>93</td>
+          <td>ShuffleNetV2</td>
+          <td>Practical Guidelines for Mobile Network Design</td>
+          <td>Jul 2018</td>
+          <td>Face++</td>
+          <td><a href="https://arxiv.org/abs/1807.11164">Paper</a></td>
+      </tr>
+      <tr>
+          <td>94</td>
+          <td>BAM</td>
+          <td>Bottleneck Attention Module</td>
+          <td>Jul 2018</td>
+          <td>KAIST</td>
+          <td><a href="https://arxiv.org/abs/1807.06514">Paper</a></td>
+      </tr>
+      <tr>
+          <td>95</td>
+          <td>CBAM</td>
+          <td>Convolutional Block Attention Module</td>
+          <td>Jul 2018</td>
+          <td>KAIST</td>
+          <td><a href="https://arxiv.org/abs/1807.06521">Paper</a></td>
+      </tr>
+      <tr>
+          <td>96</td>
+          <td>NetAdapt</td>
+          <td>Platform-Aware Neural Network Adaptation</td>
+          <td>Jul 2018</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/1804.03230">Paper</a></td>
+      </tr>
+      <tr>
+          <td>97</td>
+          <td>U-Net++</td>
+          <td>Nested U-Net Architecture</td>
+          <td>Jul 2018</td>
+          <td>Arizona State University</td>
+          <td><a href="https://arxiv.org/abs/1807.10165">Paper</a></td>
+      </tr>
+      <tr>
+          <td>98</td>
+          <td>DU-Net</td>
+          <td>Deformable U-Net for medical image segmentation</td>
+          <td>Aug 2018</td>
+          <td>Shanghai Jiao Tong University</td>
+          <td><a href="https://arxiv.org/abs/1808.10720">Paper</a></td>
+      </tr>
+      <tr>
+          <td>99</td>
+          <td>DropBlock</td>
+          <td>Structured dropout method for convolutional networks</td>
+          <td>Oct 2018</td>
+          <td>Google Brain</td>
+          <td><a href="https://arxiv.org/abs/1810.12890">Paper</a></td>
+      </tr>
+      <tr>
+          <td>100</td>
+          <td>AutoDeepLab</td>
+          <td>Neural Architecture Search for Semantic Image Segmentation</td>
+          <td>Jan 2019</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/1901.02985">Paper</a></td>
+      </tr>
+      <tr>
+          <td>101</td>
+          <td>ESPNetv2</td>
+          <td>Efficient Spatial Pyramid of Dilated Convolutions</td>
+          <td>Mar 2019</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/1811.11431">Paper</a></td>
+      </tr>
+      <tr>
+          <td>102</td>
+          <td>SiamRPN++</td>
+          <td>Deep learning-based visual tracking framework that removes spatial awareness by sampling features across different layers</td>
+          <td>Mar 2019</td>
+          <td>Chinese Academy of Sciences</td>
+          <td><a href="https://arxiv.org/abs/1903.06015">Paper</a></td>
+      </tr>
+      <tr>
+          <td>103</td>
+          <td>Libra R-CNN</td>
+          <td>Balanced learning framework for object detection that addresses sample level, feature level, and objective level imbalance</td>
+          <td>Apr 2019</td>
+          <td>SenseTime Research</td>
+          <td><a href="https://arxiv.org/abs/1904.02701">Paper</a></td>
+      </tr>
+      <tr>
+          <td>104</td>
+          <td>FBNet</td>
+          <td>Hardware-Aware Efficient ConvNet Design</td>
+          <td>May 2019</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/1812.03443">Paper</a></td>
+      </tr>
+      <tr>
+          <td>105</td>
+          <td>SDN</td>
+          <td>Selective Deep Network for efficient visual recognition</td>
+          <td>May 2019</td>
+          <td>University of Texas</td>
+          <td><a href="https://arxiv.org/abs/1905.04168">Paper</a></td>
+      </tr>
+      <tr>
+          <td>106</td>
+          <td>MultiResUNet</td>
+          <td>Multi-Resolution U-Net for medical image segmentation</td>
+          <td>May 2019</td>
+          <td>Bangladesh University</td>
+          <td><a href="https://arxiv.org/abs/1902.04049">Paper</a></td>
+      </tr>
+      <tr>
+          <td>107</td>
+          <td>EfficientNet</td>
+          <td>Scaled networks uniformly in depth, width, and resolution for better efficiency.</td>
+          <td>May-2019</td>
+          <td>Google</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>108</td>
+          <td>ADL</td>
+          <td>Attention-based Dropout Layer for weakly supervised object localization</td>
+          <td>Jun 2019</td>
+          <td>KAIST</td>
+          <td><a href="https://arxiv.org/abs/1908.10028">Paper</a></td>
+      </tr>
+      <tr>
+          <td>109</td>
+          <td>ARMA Convolution</td>
+          <td>Auto-Regressive Moving Average Graph Filtering</td>
+          <td>Jun 2019</td>
+          <td>Università degli Studi di Modena</td>
+          <td><a href="https://arxiv.org/abs/1901.01343">Paper</a></td>
+      </tr>
+      <tr>
+          <td>110</td>
+          <td>Panoptic Segmentation</td>
+          <td>Unified Scene Parsing Framework</td>
+          <td>Jun 2019</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/1801.00868">Paper</a></td>
+      </tr>
+      <tr>
+          <td>111</td>
+          <td>CutMix</td>
+          <td>Data augmentation method combining cut and mix images</td>
+          <td>Aug 2019</td>
+          <td>Clova AI Research, NAVER</td>
+          <td><a href="https://arxiv.org/abs/1905.04899">Paper</a></td>
+      </tr>
+      <tr>
+          <td>112</td>
+          <td>SlowFast</td>
+          <td>Two-pathway network for video recognition that captures both slow and fast motion patterns</td>
+          <td>Aug 2019</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/1812.03982">Paper</a></td>
+      </tr>
+      <tr>
+          <td>113</td>
+          <td>EfficientDet</td>
+          <td>Scalable object detection architecture using weighted bidirectional feature network and compound scaling</td>
+          <td>Nov 2019</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/1911.09070">Paper</a></td>
+      </tr>
+      <tr>
+          <td>114</td>
+          <td>AdderNet</td>
+          <td>Neural Networks with Only Addition Operations</td>
+          <td>Dec 2019</td>
+          <td>Huawei Noah&rsquo;s Ark Lab</td>
+          <td><a href="https://arxiv.org/abs/1912.13200">Paper</a></td>
+      </tr>
+      <tr>
+          <td>115</td>
+          <td>TPN</td>
+          <td>Temporal Pyramid Network for action detection in videos</td>
+          <td>Dec 2019</td>
+          <td>Microsoft Research Asia</td>
+          <td><a href="https://arxiv.org/abs/1912.08848">Paper</a></td>
+      </tr>
+      <tr>
+          <td>116</td>
+          <td>ATSS</td>
+          <td>Adaptive Training Sample Selection for object detection</td>
+          <td>Dec 2019</td>
+          <td>ByteDance AI Lab</td>
+          <td><a href="https://arxiv.org/abs/1912.02424">Paper</a></td>
+      </tr>
+      <tr>
+          <td>117</td>
+          <td>ACNe</td>
+          <td>Attentive Context Normalization for robust permutation-equivariant learning</td>
+          <td>Dec 2019</td>
+          <td>KAIST</td>
+          <td><a href="https://arxiv.org/abs/1907.02545">Paper</a></td>
+      </tr>
+      <tr>
+          <td>118</td>
+          <td>Cascade Cost Volume</td>
+          <td>Cascade Cost Volume for stereo matching</td>
+          <td>Dec 2019</td>
+          <td>Megvii Technology</td>
+          <td><a href="https://arxiv.org/abs/1912.06378">Paper</a></td>
+      </tr>
+      <tr>
+          <td>119</td>
+          <td>Yolact++</td>
+          <td>Real-time instance segmentation with improved mask quality and inference speed</td>
+          <td>Jan 2020</td>
+          <td>University of California, Davis</td>
+          <td><a href="https://arxiv.org/abs/1912.06218">Paper</a></td>
+      </tr>
+      <tr>
+          <td>120</td>
+          <td>MCN</td>
+          <td>Multi-task Collaboration Network</td>
+          <td>Jan 2020</td>
+          <td>Microsoft Research Asia</td>
+          <td><a href="https://arxiv.org/abs/2001.05509">Paper</a></td>
+      </tr>
+      <tr>
+          <td>121</td>
+          <td>RandLA-Net</td>
+          <td>Large-scale Point Cloud Semantic Segmentation</td>
+          <td>Jan 2020</td>
+          <td>University of Oxford</td>
+          <td><a href="https://arxiv.org/abs/1911.11236">Paper</a></td>
+      </tr>
+      <tr>
+          <td>122</td>
+          <td>OccuSeg</td>
+          <td>3D instance segmentation approach that handles occlusions in point clouds</td>
+          <td>Mar 2020</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/2003.06537">Paper</a></td>
+      </tr>
+      <tr>
+          <td>123</td>
+          <td>GTAD</td>
+          <td>Global Temporal Action Detection framework for temporal action localization</td>
+          <td>Mar 2020</td>
+          <td>Sun Yat-sen University</td>
+          <td><a href="https://arxiv.org/abs/2003.12444">Paper</a></td>
+      </tr>
+      <tr>
+          <td>124</td>
+          <td>Attention-RPN</td>
+          <td>Visual tracking framework with attention mechanism in Region Proposal Network</td>
+          <td>Mar 2020</td>
+          <td>Chinese Academy of Sciences</td>
+          <td><a href="https://arxiv.org/abs/2003.12125">Paper</a></td>
+      </tr>
+      <tr>
+          <td>125</td>
+          <td>QSA + QNT</td>
+          <td>Quantized Squeeze-and-Attention Networks</td>
+          <td>Mar 2020</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/2003.13630">Paper</a></td>
+      </tr>
+      <tr>
+          <td>126</td>
+          <td>UNet 3+</td>
+          <td>Full-Scale Connected UNet for medical image segmentation</td>
+          <td>Mar 2020</td>
+          <td>Southern Medical University</td>
+          <td><a href="https://arxiv.org/abs/2004.08790">Paper</a></td>
+      </tr>
+      <tr>
+          <td>127</td>
+          <td>ROAM</td>
+          <td>Recurrently Optimizing Tracking Model</td>
+          <td>Mar 2020</td>
+          <td>ByteDance AI Lab</td>
+          <td><a href="https://arxiv.org/abs/2002.10218">Paper</a></td>
+      </tr>
+      <tr>
+          <td>128</td>
+          <td>PF-NET</td>
+          <td>Point Fractal Network for 3D point cloud completion</td>
+          <td>Mar 2020</td>
+          <td>Simon Fraser University</td>
+          <td><a href="https://arxiv.org/abs/2003.00410">Paper</a></td>
+      </tr>
+      <tr>
+          <td>129</td>
+          <td>Total3DUnderstanding</td>
+          <td>3D Scene Understanding</td>
+          <td>Mar 2020</td>
+          <td>National University of Singapore</td>
+          <td><a href="https://arxiv.org/abs/2002.12212">Paper</a></td>
+      </tr>
+      <tr>
+          <td>130</td>
+          <td>SG-NN</td>
+          <td>Scene Graph Neural Networks</td>
+          <td>Mar 2020</td>
+          <td>Georgia Tech</td>
+          <td><a href="https://arxiv.org/abs/2001.03111">Paper</a></td>
+      </tr>
+      <tr>
+          <td>131</td>
+          <td>SEAN</td>
+          <td>Semantic Region-Adaptive Normalization</td>
+          <td>Mar 2020</td>
+          <td>ETH Zürich</td>
+          <td><a href="https://arxiv.org/abs/2004.03458">Paper</a></td>
+      </tr>
+      <tr>
+          <td>132</td>
+          <td>SAOL</td>
+          <td>Self-Attention Object Localization</td>
+          <td>Apr 2020</td>
+          <td>Seoul National University</td>
+          <td><a href="https://arxiv.org/abs/2004.00567">Paper</a></td>
+      </tr>
+      <tr>
+          <td>133</td>
+          <td>VGGNet For Covid19</td>
+          <td>Modified VGG architecture for COVID-19 detection</td>
+          <td>Apr 2020</td>
+          <td>Multiple Institutions</td>
+          <td><a href="https://arxiv.org/abs/2004.09959">Paper</a></td>
+      </tr>
+      <tr>
+          <td>134</td>
+          <td>CentripetalNet</td>
+          <td>Anchor-free object detection with point-based prediction</td>
+          <td>Apr 2020</td>
+          <td>Megvii Technology</td>
+          <td><a href="https://arxiv.org/abs/2003.09119">Paper</a></td>
+      </tr>
+      <tr>
+          <td>135</td>
+          <td>PointAugment</td>
+          <td>Auto-Augmentation for 3D Point Cloud</td>
+          <td>Apr 2020</td>
+          <td>National University of Singapore</td>
+          <td><a href="https://arxiv.org/abs/2002.10876">Paper</a></td>
+      </tr>
+      <tr>
+          <td>136</td>
+          <td>PQ-Net</td>
+          <td>Learning to Generate 3D Shapes</td>
+          <td>Apr 2020</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/2002.02288">Paper</a></td>
+      </tr>
+      <tr>
+          <td>137</td>
+          <td>Axial-DeepLab</td>
+          <td>Stand-Alone Axial-Attention for Vision Models</td>
+          <td>Apr 2020</td>
+          <td>Johns Hopkins University</td>
+          <td><a href="https://arxiv.org/abs/2003.07853">Paper</a></td>
+      </tr>
+      <tr>
+          <td>138</td>
+          <td>SipMask</td>
+          <td>Spatial Information Preservation for Fast Instance Segmentation</td>
+          <td>Apr 2020</td>
+          <td>Inception Institute of AI</td>
+          <td><a href="https://arxiv.org/abs/2007.14772">Paper</a></td>
+      </tr>
+      <tr>
+          <td>139</td>
+          <td>SCAN</td>
+          <td>Learning to Classify Images without Labels</td>
+          <td>Apr 2020</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/2005.12320">Paper</a></td>
+      </tr>
+      <tr>
+          <td>140</td>
+          <td>MutualNet</td>
+          <td>Adaptive ConvNet via Mutual Learning</td>
+          <td>Apr 2020</td>
+          <td>Microsoft Research Asia</td>
+          <td><a href="https://arxiv.org/abs/2004.05159">Paper</a></td>
+      </tr>
+      <tr>
+          <td>141</td>
+          <td>DETR</td>
+          <td>End-to-End Object Detection with Transformers</td>
+          <td>May 2020</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/2005.12872">Paper</a></td>
+      </tr>
+      <tr>
+          <td>142</td>
+          <td>C-Flow</td>
+          <td>Conditional Normalizing Flows</td>
+          <td>May 2020</td>
+          <td>ETH Zürich</td>
+          <td><a href="https://arxiv.org/abs/2006.13784">Paper</a></td>
+      </tr>
+      <tr>
+          <td>143</td>
+          <td>PerfectShape</td>
+          <td>Shape completion using implicit functions</td>
+          <td>May 2020</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/2004.10178">Paper</a></td>
+      </tr>
+      <tr>
+          <td>144</td>
+          <td>UFO²</td>
+          <td>Unified Framework for Object Detection</td>
+          <td>May 2020</td>
+          <td>Carnegie Mellon University</td>
+          <td><a href="https://arxiv.org/abs/2002.11971">Paper</a></td>
+      </tr>
+      <tr>
+          <td>145</td>
+          <td>Refinement Network</td>
+          <td>RGB-D Scene Understanding</td>
+          <td>May 2020</td>
+          <td>Technical University Munich</td>
+          <td><a href="https://arxiv.org/abs/2004.07437">Paper</a></td>
+      </tr>
+      <tr>
+          <td>146</td>
+          <td>AssembleNet++</td>
+          <td>Video Recognition with Learnable Connectivity</td>
+          <td>May 2020</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2008.08072">Paper</a></td>
+      </tr>
+      <tr>
+          <td>147</td>
+          <td>WeightNet</td>
+          <td>Revisiting Weight Networks</td>
+          <td>May 2020</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2007.11823">Paper</a></td>
+      </tr>
+      <tr>
+          <td>148</td>
+          <td>YOLOv5</td>
+          <td>Improved version of YOLO with better speed-accuracy trade-off</td>
+          <td>Jun 2020</td>
+          <td>Ultralytics</td>
+          <td><a href="https://github.com/ultralytics/yolov5">Paper</a></td>
+      </tr>
+      <tr>
+          <td>149</td>
+          <td>UCTGAN</td>
+          <td>Unsupervised Cartoon-to-Real Translation GAN for image translation between cartoon and real-world domains</td>
+          <td>Jun 2020</td>
+          <td>Nanyang Technological University</td>
+          <td><a href="https://arxiv.org/abs/2006.11479">Paper</a></td>
+      </tr>
+      <tr>
+          <td>150</td>
+          <td>IF-Nets</td>
+          <td>Implicit Function Neural Networks for 3D reconstruction</td>
+          <td>Jun 2020</td>
+          <td>Max Planck Institute</td>
+          <td><a href="https://arxiv.org/abs/2003.01456">Paper</a></td>
+      </tr>
+      <tr>
+          <td>151</td>
+          <td>SketchGCN</td>
+          <td>Sketch Recognition using Graph Convolutional Networks</td>
+          <td>Jun 2020</td>
+          <td>University of British Columbia</td>
+          <td><a href="https://arxiv.org/abs/2003.00678">Paper</a></td>
+      </tr>
+      <tr>
+          <td>152</td>
+          <td>AABO</td>
+          <td>Adaptive Anchor Box Optimization</td>
+          <td>Jun 2020</td>
+          <td>Huawei Noah&rsquo;s Ark Lab</td>
+          <td><a href="https://arxiv.org/abs/2006.15221">Paper</a></td>
+      </tr>
+      <tr>
+          <td>153</td>
+          <td>Polka Lines</td>
+          <td>Line Detection using Polar Coordinates</td>
+          <td>Jun 2020</td>
+          <td>Korea University</td>
+          <td><a href="https://arxiv.org/abs/2006.02836">Paper</a></td>
+      </tr>
+      <tr>
+          <td>154</td>
+          <td>Pose2Mesh</td>
+          <td>3D Human Pose and Mesh Recovery</td>
+          <td>Jun 2020</td>
+          <td>Korea University</td>
+          <td><a href="https://arxiv.org/abs/2008.09191">Paper</a></td>
+      </tr>
+      <tr>
+          <td>155</td>
+          <td>SNE-RoadSeg</td>
+          <td>Road Segmentation with Synthetic Data</td>
+          <td>Jun 2020</td>
+          <td>Hong Kong University</td>
+          <td><a href="https://arxiv.org/abs/2008.11351">Paper</a></td>
+      </tr>
+      <tr>
+          <td>156</td>
+          <td>Deep Hough Transform</td>
+          <td>Line Detection using Deep Learning</td>
+          <td>Jun 2020</td>
+          <td>Chinese Academy of Sciences</td>
+          <td><a href="https://arxiv.org/abs/2007.09493">Paper</a></td>
+      </tr>
+      <tr>
+          <td>157</td>
+          <td>Non-Local Sparse Attention</td>
+          <td>Efficient Attention Mechanism</td>
+          <td>Jun 2020</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2007.04746">Paper</a></td>
+      </tr>
+      <tr>
+          <td>158</td>
+          <td>Hit-Detector</td>
+          <td>Hierarchical Trinity architecture for object detection combining different detection paradigms</td>
+          <td>Jul 2020</td>
+          <td>ByteDance AI Lab</td>
+          <td><a href="https://arxiv.org/abs/2007.10739">Paper</a></td>
+      </tr>
+      <tr>
+          <td>159</td>
+          <td>Spectral 3D Computer Vision</td>
+          <td>Graph Neural Network Library</td>
+          <td>Jul 2020</td>
+          <td>Multiple Contributors</td>
+          <td><a href="https://arxiv.org/abs/2302.08054">Paper</a></td>
+      </tr>
+      <tr>
+          <td>160</td>
+          <td>TIDE</td>
+          <td>Error Analysis Tool for Object Detection</td>
+          <td>Jul 2020</td>
+          <td>Carnegie Mellon University</td>
+          <td><a href="https://arxiv.org/abs/2008.08115">Paper</a></td>
+      </tr>
+      <tr>
+          <td>161</td>
+          <td>SimAug</td>
+          <td>Learning Robust Representations through Simulation</td>
+          <td>Jul 2020</td>
+          <td>Carnegie Mellon University</td>
+          <td><a href="https://arxiv.org/abs/2007.08558">Paper</a></td>
+      </tr>
+      <tr>
+          <td>162</td>
+          <td>HOTR</td>
+          <td>End-to-End Human-Object Interaction Detection</td>
+          <td>Jul 2020</td>
+          <td>KAIST</td>
+          <td><a href="https://arxiv.org/abs/2008.05407">Paper</a></td>
+      </tr>
+      <tr>
+          <td>163</td>
+          <td>ReXNet</td>
+          <td>Rethinking Channel Dimensions for Efficient Model Design</td>
+          <td>Jul 2020</td>
+          <td>UC Berkeley</td>
+          <td><a href="https://arxiv.org/abs/2007.00992">Paper</a></td>
+      </tr>
+      <tr>
+          <td>164</td>
+          <td>Keep Eyes on the Lane</td>
+          <td>Lane Detection with Deep Learning</td>
+          <td>Jul 2020</td>
+          <td>Shanghai Jiao Tong University</td>
+          <td><a href="https://arxiv.org/abs/2004.11011">Paper</a></td>
+      </tr>
+      <tr>
+          <td>165</td>
+          <td>AdvPC</td>
+          <td>Adversarial Point Cloud Defense</td>
+          <td>Jul 2020</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/2007.07191">Paper</a></td>
+      </tr>
+      <tr>
+          <td>166</td>
+          <td>PD-GAN</td>
+          <td>Probabilistic Diverse GAN</td>
+          <td>Jul 2020</td>
+          <td>University of Oxford</td>
+          <td><a href="https://arxiv.org/abs/2008.12062">Paper</a></td>
+      </tr>
+      <tr>
+          <td>167</td>
+          <td>FedDG</td>
+          <td>Federated Domain Generalization</td>
+          <td>Jul 2020</td>
+          <td>Carnegie Mellon University</td>
+          <td><a href="https://arxiv.org/abs/2008.06223">Paper</a></td>
+      </tr>
+      <tr>
+          <td>168</td>
+          <td>Dynamic RCNN</td>
+          <td>Dynamic R-CNN for object detection with improved training and inference</td>
+          <td>Aug 2020</td>
+          <td>ByteDance AI Lab</td>
+          <td><a href="https://arxiv.org/abs/2004.06002">Paper</a></td>
+      </tr>
+      <tr>
+          <td>169</td>
+          <td>Aug-FPN</td>
+          <td>Augmented Feature Pyramid Network for object detection with improved multi-scale feature fusion</td>
+          <td>Aug 2020</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/2008.05159">Paper</a></td>
+      </tr>
+      <tr>
+          <td>170</td>
+          <td>Instant-teaching</td>
+          <td>Self-training for Object Detection</td>
+          <td>Aug 2020</td>
+          <td>ByteDance AI Lab</td>
+          <td><a href="https://arxiv.org/abs/2008.02934">Paper</a></td>
+      </tr>
+      <tr>
+          <td>171</td>
+          <td>Soft-IntroVAE</td>
+          <td>Soft Introduction of Variational AutoEncoders</td>
+          <td>Aug 2020</td>
+          <td>Tel Aviv University</td>
+          <td><a href="https://arxiv.org/abs/2008.08017">Paper</a></td>
+      </tr>
+      <tr>
+          <td>172</td>
+          <td>DiNTS</td>
+          <td>Differentiable Neural Network Transform Search</td>
+          <td>Aug 2020</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2008.00256">Paper</a></td>
+      </tr>
+      <tr>
+          <td>173</td>
+          <td>Eagle Eye</td>
+          <td>Fast Sub-net Evaluation for Efficient Neural Network Training</td>
+          <td>Aug 2020</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/2007.02491">Paper</a></td>
+      </tr>
+      <tr>
+          <td>174</td>
+          <td>StyleMapGAN</td>
+          <td>Exploiting Spatial Dimensions of Latent for Image Manipulation</td>
+          <td>Aug 2020</td>
+          <td>KAIST</td>
+          <td><a href="https://arxiv.org/abs/2008.02401">Paper</a></td>
+      </tr>
+      <tr>
+          <td>175</td>
+          <td>TediGAN</td>
+          <td>Text-Guided Diverse Image Generation</td>
+          <td>Aug 2020</td>
+          <td>Microsoft Research Asia</td>
+          <td><a href="https://arxiv.org/abs/2008.12542">Paper</a></td>
+      </tr>
+      <tr>
+          <td>176</td>
+          <td>Auto-Exposure Fusion</td>
+          <td>Automatic Exposure Fusion for Photography</td>
+          <td>Aug 2020</td>
+          <td>ETH Zürich</td>
+          <td><a href="https://arxiv.org/abs/2008.05073">Paper</a></td>
+      </tr>
+      <tr>
+          <td>177</td>
+          <td>Vision Transformer</td>
+          <td>Transformer architecture adapted for image recognition tasks</td>
+          <td>Sep 2020</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2010.11929">Paper</a></td>
+      </tr>
+      <tr>
+          <td>178</td>
+          <td>IDU</td>
+          <td>Instance Depth Embedding for RGB-D salient object detection</td>
+          <td>Sep 2020</td>
+          <td>Nankai University</td>
+          <td><a href="https://arxiv.org/abs/2009.05724">Paper</a></td>
+      </tr>
+      <tr>
+          <td>179</td>
+          <td>VideoMoCo</td>
+          <td>Contrastive Learning for Video Understanding</td>
+          <td>Sep 2020</td>
+          <td>Microsoft Research Asia</td>
+          <td><a href="https://arxiv.org/abs/2020.11883">Paper</a></td>
+      </tr>
+      <tr>
+          <td>180</td>
+          <td>MZSR</td>
+          <td>Meta-Transfer Learning for Zero-Shot Super-Resolution</td>
+          <td>Nov 2020</td>
+          <td>KAIST</td>
+          <td><a href="https://arxiv.org/abs/2002.12213">Paper</a></td>
+      </tr>
+      <tr>
+          <td>181</td>
+          <td>DeiT</td>
+          <td>Data-efficient training of image transformers</td>
+          <td>Dec 2020</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/2012.12877">Paper</a></td>
+      </tr>
+      <tr>
+          <td>182</td>
+          <td>Involution</td>
+          <td>Inverting Convolution for Visual Recognition</td>
+          <td>Dec 2020</td>
+          <td>Shanghai AI Lab</td>
+          <td><a href="https://arxiv.org/abs/2103.06255">Paper</a></td>
+      </tr>
+      <tr>
+          <td>183</td>
+          <td>Deep Learning on Semantic Segmentation</td>
+          <td>Comprehensive Survey and Benchmark</td>
+          <td>Dec 2020</td>
+          <td>Chinese Academy of Sciences</td>
+          <td><a href="https://arxiv.org/abs/2012.14355">Paper</a></td>
+      </tr>
+      <tr>
+          <td>184</td>
+          <td>LiteFlowNet3</td>
+          <td>Lightweight Optical Flow Estimation</td>
+          <td>Dec 2020</td>
+          <td>Chinese University of Hong Kong</td>
+          <td><a href="https://arxiv.org/abs/2007.09319">Paper</a></td>
+      </tr>
+      <tr>
+          <td>185</td>
+          <td>PPDM</td>
+          <td>Parallel Point Detection and Matching</td>
+          <td>Dec 2020</td>
+          <td>ByteDance AI Lab</td>
+          <td><a href="https://arxiv.org/abs/2012.13601">Paper</a></td>
+      </tr>
+      <tr>
+          <td>186</td>
+          <td>RepVGG</td>
+          <td>Making VGG-style ConvNets Great Again</td>
+          <td>Jan 2021</td>
+          <td>MEGVII Technology</td>
+          <td><a href="https://arxiv.org/abs/2101.03697">Paper</a></td>
+      </tr>
+      <tr>
+          <td>187</td>
+          <td>PSConvolution</td>
+          <td>Parameter-Sharing Convolution for Deep Learning</td>
+          <td>Jan 2021</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/2101.05053">Paper</a></td>
+      </tr>
+      <tr>
+          <td>188</td>
+          <td>PerPixel Classification</td>
+          <td>Pixel-wise Classification Network</td>
+          <td>Jan 2021</td>
+          <td>ETH Zürich</td>
+          <td><a href="https://arxiv.org/abs/2101.06175">Paper</a></td>
+      </tr>
+      <tr>
+          <td>189</td>
+          <td>PIPAL</td>
+          <td>Perceptual Image Quality Assessment</td>
+          <td>Jan 2021</td>
+          <td>Nanyang Technological University</td>
+          <td><a href="https://arxiv.org/abs/2101.04362">Paper</a></td>
+      </tr>
+      <tr>
+          <td>190</td>
+          <td>ArtGAN</td>
+          <td>Artwork Synthesis with GAN</td>
+          <td>Feb 2021</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://arxiv.org/abs/2102.12593">Paper</a></td>
+      </tr>
+      <tr>
+          <td>191</td>
+          <td>Synthetic to Real</td>
+          <td>Domain Adaptation for Semantic Segmentation</td>
+          <td>Feb 2021</td>
+          <td>ETH Zürich</td>
+          <td><a href="https://arxiv.org/abs/2103.15309">Paper</a></td>
+      </tr>
+      <tr>
+          <td>192</td>
+          <td>Spatial-Phase-Shallow-Learning</td>
+          <td>Phase-Based Feature Learning</td>
+          <td>Feb 2021</td>
+          <td>Peking University</td>
+          <td><a href="https://arxiv.org/abs/2102.12290">Paper</a></td>
+      </tr>
+      <tr>
+          <td>193</td>
+          <td>DARKGAN</td>
+          <td>Dark Image Enhancement with GAN</td>
+          <td>Feb 2021</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/2102.03808">Paper</a></td>
+      </tr>
+      <tr>
+          <td>194</td>
+          <td>Deep Imbalance Regression</td>
+          <td>Learning from Imbalanced Data</td>
+          <td>Feb 2021</td>
+          <td>Carnegie Mellon University</td>
+          <td><a href="https://arxiv.org/abs/2102.09554">Paper</a></td>
+      </tr>
+      <tr>
+          <td>195</td>
+          <td>Room Classification GNN</td>
+          <td>Graph Neural Network for Room Layout</td>
+          <td>Feb 2021</td>
+          <td>Facebook Research</td>
+          <td><a href="https://arxiv.org/abs/2102.12100">Paper</a></td>
+      </tr>
+      <tr>
+          <td>196</td>
+          <td>Pyramid Vision Transformer</td>
+          <td>Hierarchical Vision Transformer</td>
+          <td>Feb 2021</td>
+          <td>KAIST</td>
+          <td><a href="https://arxiv.org/abs/2102.12122">Paper</a></td>
+      </tr>
+      <tr>
+          <td>197</td>
+          <td>Residual Attention</td>
+          <td>Attention Mechanism for CNNs</td>
+          <td>Feb 2021</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2102.12594">Paper</a></td>
+      </tr>
+      <tr>
+          <td>198</td>
+          <td>Teachers do more than teach</td>
+          <td>Multi-teacher approach for image-to-image translation</td>
+          <td>Mar 2021</td>
+          <td>Tel Aviv University</td>
+          <td><a href="https://arxiv.org/abs/2103.17080">Paper</a></td>
+      </tr>
+      <tr>
+          <td>199</td>
+          <td>Vip-DeepLab</td>
+          <td>Visual Parsing DeepLab for Panoptic Segmentation</td>
+          <td>Mar 2021</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2012.15487">Paper</a></td>
+      </tr>
+      <tr>
+          <td>200</td>
+          <td>HistoGAN</td>
+          <td>Histological Image Generation with GAN</td>
+          <td>Mar 2021</td>
+          <td>University of Oxford</td>
+          <td><a href="https://arxiv.org/abs/2103.10018">Paper</a></td>
+      </tr>
+      <tr>
+          <td>201</td>
+          <td>Anchor-Free Person Search</td>
+          <td>End-to-End Person Search without Anchors</td>
+          <td>Mar 2021</td>
+          <td>Chinese Academy of Sciences</td>
+          <td><a href="https://arxiv.org/abs/2103.07581">Paper</a></td>
+      </tr>
+      <tr>
+          <td>202</td>
+          <td>CBNetV2</td>
+          <td>Composite Backbone Network</td>
+          <td>Mar 2021</td>
+          <td>Megvii Technology</td>
+          <td><a href="https://arxiv.org/abs/2107.00420">Paper</a></td>
+      </tr>
+      <tr>
+          <td>203</td>
+          <td>Kaleido-BERT</td>
+          <td>Vision-Language Pre-training</td>
+          <td>Mar 2021</td>
+          <td>Microsoft Research Asia</td>
+          <td><a href="https://arxiv.org/abs/2103.16110">Paper</a></td>
+      </tr>
+      <tr>
+          <td>204</td>
+          <td>Elastic Graph Neural Network</td>
+          <td>Adaptive Graph Structure Learning</td>
+          <td>Mar 2021</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/2103.04131">Paper</a></td>
+      </tr>
+      <tr>
+          <td>205</td>
+          <td>Rank and Sort Loss</td>
+          <td>Loss Function for Object Detection</td>
+          <td>Mar 2021</td>
+          <td>ByteDance AI Lab</td>
+          <td><a href="https://arxiv.org/abs/2103.16709">Paper</a></td>
+      </tr>
+      <tr>
+          <td>206</td>
+          <td>EigenGAN</td>
+          <td>Eigenvalue-Based GAN Architecture</td>
+          <td>Mar 2021</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/2104.12476">Paper</a></td>
+      </tr>
+      <tr>
+          <td>207</td>
+          <td>DetCo</td>
+          <td>Unsupervised Detection Pre-training</td>
+          <td>Mar 2021</td>
+          <td>Microsoft Research Asia</td>
+          <td><a href="https://arxiv.org/abs/2102.04803">Paper</a></td>
+      </tr>
+      <tr>
+          <td>208</td>
+          <td>MG-GAN</td>
+          <td>Multi-Generator GAN</td>
+          <td>Mar 2021</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://arxiv.org/abs/2103.15852">Paper</a></td>
+      </tr>
+      <tr>
+          <td>209</td>
+          <td>AdaAttN</td>
+          <td>Adaptive Attention for Style Transfer</td>
+          <td>Mar 2021</td>
+          <td>Microsoft Research Asia</td>
+          <td><a href="https://arxiv.org/abs/2103.17185">Paper</a></td>
+      </tr>
+      <tr>
+          <td>210</td>
+          <td>AirBERT</td>
+          <td>Vision-Language Model for Aerial Images</td>
+          <td>Mar 2021</td>
+          <td>Chinese Academy of Sciences</td>
+          <td><a href="https://arxiv.org/abs/2103.16851">Paper</a></td>
+      </tr>
+      <tr>
+          <td>211</td>
+          <td>DeepGCNs</td>
+          <td>Deep Graph Convolutional Networks</td>
+          <td>Mar 2021</td>
+          <td>KAUST</td>
+          <td><a href="https://arxiv.org/abs/1910.06849">Paper</a></td>
+      </tr>
+      <tr>
+          <td>212</td>
+          <td>Survey: Instance Segmentation</td>
+          <td>Comprehensive review of instance segmentation methods</td>
+          <td>Mar 2021</td>
+          <td>Multiple Institutions</td>
+          <td><a href="https://arxiv.org/abs/2103.15714">Paper</a></td>
+      </tr>
+      <tr>
+          <td>213</td>
+          <td>LoFTR</td>
+          <td>Local Feature TRansformer for establishing dense correspondences between images</td>
+          <td>Apr 2021</td>
+          <td>Zhejiang University</td>
+          <td><a href="https://arxiv.org/abs/2104.00680">Paper</a></td>
+      </tr>
+      <tr>
+          <td>214</td>
+          <td>Semantic Image Matting</td>
+          <td>Matting with Semantic Guidance</td>
+          <td>Apr 2021</td>
+          <td>ByteDance AI Lab</td>
+          <td><a href="https://arxiv.org/abs/2104.08201">Paper</a></td>
+      </tr>
+      <tr>
+          <td>215</td>
+          <td>EfficientNetV2</td>
+          <td>Improved EfficientNet Architecture</td>
+          <td>Apr 2021</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2104.00298">Paper</a></td>
+      </tr>
+      <tr>
+          <td>216</td>
+          <td>Closed-Loop Matters</td>
+          <td>Dual Regression for Image Generation</td>
+          <td>Apr 2021</td>
+          <td>University of Oxford</td>
+          <td><a href="https://arxiv.org/abs/2104.05610">Paper</a></td>
+      </tr>
+      <tr>
+          <td>217</td>
+          <td>Mobile-Former</td>
+          <td>Mobile-Friendly Transformer</td>
+          <td>Apr 2021</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2104.02861">Paper</a></td>
+      </tr>
+      <tr>
+          <td>218</td>
+          <td>GNeRF</td>
+          <td>Generalizable Neural Radiance Fields</td>
+          <td>Apr 2021</td>
+          <td>UC Berkeley</td>
+          <td><a href="https://arxiv.org/abs/2103.15074">Paper</a></td>
+      </tr>
+      <tr>
+          <td>219</td>
+          <td>DETR with Modulated Co-Attention</td>
+          <td>Enhanced DETR Architecture</td>
+          <td>Apr 2021</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/2104.12099">Paper</a></td>
+      </tr>
+      <tr>
+          <td>220</td>
+          <td>Adaptable GAN Encoders</td>
+          <td>Flexible GAN Inversion</td>
+          <td>Apr 2021</td>
+          <td>Adobe Research</td>
+          <td><a href="https://arxiv.org/abs/2104.05137">Paper</a></td>
+      </tr>
+      <tr>
+          <td>221</td>
+          <td>Conformer</td>
+          <td>Local Features Meet Global Dependencies</td>
+          <td>Apr 2021</td>
+          <td>Shanghai AI Lab</td>
+          <td><a href="https://arxiv.org/abs/2105.03889">Paper</a></td>
+      </tr>
+      <tr>
+          <td>222</td>
+          <td>VMNet</td>
+          <td>Visual Manipulation Networks</td>
+          <td>Apr 2021</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/2104.14620">Paper</a></td>
+      </tr>
+      <tr>
+          <td>223</td>
+          <td>Battle of Network Structure</td>
+          <td>Network Architecture Comparison Study</td>
+          <td>Apr 2021</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2104.13636">Paper</a></td>
+      </tr>
+      <tr>
+          <td>224</td>
+          <td>Efficient Person Search</td>
+          <td>Fast Person Search Framework</td>
+          <td>Apr 2021</td>
+          <td>University of Technology Sydney</td>
+          <td><a href="https://arxiv.org/abs/2104.01242">Paper</a></td>
+      </tr>
+      <tr>
+          <td>225</td>
+          <td>SLIDE</td>
+          <td>Smart Learning on Large-Scale Data</td>
+          <td>Apr 2021</td>
+          <td>Carnegie Mellon University</td>
+          <td><a href="https://arxiv.org/abs/2104.14590">Paper</a></td>
+      </tr>
+      <tr>
+          <td>226</td>
+          <td>SOTR</td>
+          <td>Transformer for Set Operations</td>
+          <td>Apr 2021</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/2104.14610">Paper</a></td>
+      </tr>
+      <tr>
+          <td>227</td>
+          <td>CANet</td>
+          <td>Class-Agnostic Segmentation Networks</td>
+          <td>Apr 2021</td>
+          <td>UC Berkeley</td>
+          <td><a href="https://arxiv.org/abs/2104.08797">Paper</a></td>
+      </tr>
+      <tr>
+          <td>228</td>
+          <td>YOLOP</td>
+          <td>Real-time Driving Perception</td>
+          <td>May 2021</td>
+          <td>Huawei Noah&rsquo;s Ark Lab</td>
+          <td><a href="https://arxiv.org/abs/2108.11250">Paper</a></td>
+      </tr>
+      <tr>
+          <td>229</td>
+          <td>InSeGAN</td>
+          <td>Interactive Segmentation with GAN</td>
+          <td>May 2021</td>
+          <td>Adobe Research</td>
+          <td><a href="https://arxiv.org/abs/2105.06456">Paper</a></td>
+      </tr>
+      <tr>
+          <td>230</td>
+          <td>GroupFormer</td>
+          <td>Group-Based Attention</td>
+          <td>May 2021</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2105.08055">Paper</a></td>
+      </tr>
+      <tr>
+          <td>231</td>
+          <td>Super Neuron</td>
+          <td>Neural Architecture Enhancement</td>
+          <td>May 2021</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/2105.08954">Paper</a></td>
+      </tr>
+      <tr>
+          <td>232</td>
+          <td>SO-Pose</td>
+          <td>Self-Occlusion Aware Pose Estimation</td>
+          <td>May 2021</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://arxiv.org/abs/2105.12439">Paper</a></td>
+      </tr>
+      <tr>
+          <td>233</td>
+          <td>TxT</td>
+          <td>Text-driven Text Generation</td>
+          <td>May 2021</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2105.03458">Paper</a></td>
+      </tr>
+      <tr>
+          <td>234</td>
+          <td>OS2D</td>
+          <td>One-Stage 2D Object Detection</td>
+          <td>May 2021</td>
+          <td>Yandex Research</td>
+          <td><a href="https://arxiv.org/abs/2105.12139">Paper</a></td>
+      </tr>
+      <tr>
+          <td>235</td>
+          <td>CodeNet</td>
+          <td>Large-Scale Code Dataset</td>
+          <td>May 2021</td>
+          <td>IBM Research</td>
+          <td><a href="https://arxiv.org/abs/2105.12655">Paper</a></td>
+      </tr>
+      <tr>
+          <td>236</td>
+          <td>Geometric Deep Learning</td>
+          <td>Blueprint for designing architectures for geometric data</td>
+          <td>May 2021</td>
+          <td>Imperial College London</td>
+          <td><a href="https://arxiv.org/abs/2104.13478">Paper</a></td>
+      </tr>
+      <tr>
+          <td>237</td>
+          <td>Oriented R-CNN</td>
+          <td>Oriented Object Detection</td>
+          <td>Jun 2021</td>
+          <td>Tongji University</td>
+          <td><a href="https://arxiv.org/abs/2108.05699">Paper</a></td>
+      </tr>
+      <tr>
+          <td>238</td>
+          <td>XVFI</td>
+          <td>Video Frame Interpolation</td>
+          <td>Jun 2021</td>
+          <td>KAIST</td>
+          <td><a href="https://arxiv.org/abs/2106.05965">Paper</a></td>
+      </tr>
+      <tr>
+          <td>239</td>
+          <td>Cross Domain Contrastive Learning</td>
+          <td>Domain Adaptation via Contrastive Learning</td>
+          <td>Jun 2021</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2106.05528">Paper</a></td>
+      </tr>
+      <tr>
+          <td>240</td>
+          <td>PointManifoldCut</td>
+          <td>Data Augmentation for Point Clouds</td>
+          <td>Jun 2021</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/2106.09337">Paper</a></td>
+      </tr>
+      <tr>
+          <td>241</td>
+          <td>Distance IOU Loss</td>
+          <td>Improved Loss Function for Object Detection</td>
+          <td>Jun 2021</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/2106.14425">Paper</a></td>
+      </tr>
+      <tr>
+          <td>242</td>
+          <td>ConvMLP</td>
+          <td>Convolutional MLP Architecture</td>
+          <td>Jul 2021</td>
+          <td>University of Oregon</td>
+          <td><a href="https://arxiv.org/abs/2107.08391">Paper</a></td>
+      </tr>
+      <tr>
+          <td>243</td>
+          <td>Graph-FPN</td>
+          <td>Feature Pyramid Networks with Graph Neural Networks</td>
+          <td>Jul 2021</td>
+          <td>Carnegie Mellon University</td>
+          <td><a href="https://arxiv.org/abs/2107.14170">Paper</a></td>
+      </tr>
+      <tr>
+          <td>244</td>
+          <td>WatchOut!</td>
+          <td>Motion Blur Impact on DNNs</td>
+          <td>Jul 2021</td>
+          <td>ETH Zürich</td>
+          <td><a href="https://arxiv.org/abs/2107.14170">Paper</a></td>
+      </tr>
+      <tr>
+          <td>245</td>
+          <td>ECA-Net</td>
+          <td>Efficient Channel Attention Network</td>
+          <td>Jul 2021</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/2107.12231">Paper</a></td>
+      </tr>
+      <tr>
+          <td>246</td>
+          <td>ShiftAddNet</td>
+          <td>Efficient Neural Network Training</td>
+          <td>Aug 2021</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/2108.02057">Paper</a></td>
+      </tr>
+      <tr>
+          <td>247</td>
+          <td>Deep Imitation Learning</td>
+          <td>Survey of Imitation Learning Methods</td>
+          <td>Aug 2021</td>
+          <td>DeepMind</td>
+          <td><a href="https://arxiv.org/abs/2108.04548">Paper</a></td>
+      </tr>
+      <tr>
+          <td>248</td>
+          <td>3DETR</td>
+          <td>3D Object Detection with Transformers</td>
+          <td>Aug 2021</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/2108.08931">Paper</a></td>
+      </tr>
+      <tr>
+          <td>249</td>
+          <td>ByteTrack</td>
+          <td>Multi-Object Tracking Framework</td>
+          <td>Aug 2021</td>
+          <td>ByteDance AI Lab</td>
+          <td><a href="https://arxiv.org/abs/2110.06864">Paper</a></td>
+      </tr>
+      <tr>
+          <td>250</td>
+          <td>Neuron Merging</td>
+          <td>Network Compression via Neuron Merging</td>
+          <td>Sep 2021</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2109.06872">Paper</a></td>
+      </tr>
+      <tr>
+          <td>251</td>
+          <td>Focal Transformer</td>
+          <td>Vision Transformer with Focal Attention</td>
+          <td>Sep 2021</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2109.14824">Paper</a></td>
+      </tr>
+      <tr>
+          <td>252</td>
+          <td>Non-Deep Networks</td>
+          <td>Alternative to Deep Neural Networks</td>
+          <td>Sep 2021</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/2109.11278">Paper</a></td>
+      </tr>
+      <tr>
+          <td>253</td>
+          <td>PytorchVideo</td>
+          <td>Deep Learning Library for Video Understanding</td>
+          <td>Sep 2021</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://dl.acm.org/doi/10.1145/3474085.3478329">Paper</a></td>
+      </tr>
+      <tr>
+          <td>254</td>
+          <td>HeadGAN</td>
+          <td>Head Generation and Editing</td>
+          <td>Oct 2021</td>
+          <td>Tel Aviv University</td>
+          <td><a href="https://arxiv.org/abs/2110.11248">Paper</a></td>
+      </tr>
+      <tr>
+          <td>255</td>
+          <td>StyleGAN3</td>
+          <td>Alias-Free Generative Network</td>
+          <td>Oct 2021</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://arxiv.org/abs/2110.11985">Paper</a></td>
+      </tr>
+      <tr>
+          <td>256</td>
+          <td>MedMNIST</td>
+          <td>Medical Image Dataset Collection</td>
+          <td>Oct 2021</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/2110.14795">Paper</a></td>
+      </tr>
+      <tr>
+          <td>257</td>
+          <td>TokenLearner</td>
+          <td>Dynamic Token Selection in Vision Transformers</td>
+          <td>Oct 2021</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2110.09552">Paper</a></td>
+      </tr>
+      <tr>
+          <td>258</td>
+          <td>Temporal Fusion Transformer</td>
+          <td>Multi-horizon Forecasting</td>
+          <td>Oct 2021</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/1912.09363">Paper</a></td>
+      </tr>
+      <tr>
+          <td>259</td>
+          <td>NeuralProphet</td>
+          <td>Neural Network based Time-Series Model</td>
+          <td>Oct 2021</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/2111.15397">Paper</a></td>
+      </tr>
+      <tr>
+          <td>260</td>
+          <td>MetNet-2</td>
+          <td>Weather Forecasting Model</td>
+          <td>Oct 2021</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2111.07470">Paper</a></td>
+      </tr>
+      <tr>
+          <td>261</td>
+          <td>Plan-then-generate</td>
+          <td>Controlled Text Generation</td>
+          <td>Nov 2021</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2111.11067">Paper</a></td>
+      </tr>
+      <tr>
+          <td>262</td>
+          <td>ProjectedGAN</td>
+          <td>Improved GAN Image Quality</td>
+          <td>Nov 2021</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://arxiv.org/abs/2111.14213">Paper</a></td>
+      </tr>
+      <tr>
+          <td>263</td>
+          <td>PHALP</td>
+          <td>Pose and Human Analysis using Language Processing</td>
+          <td>Nov 2021</td>
+          <td>Carnegie Mellon University</td>
+          <td><a href="https://arxiv.org/abs/2112.09454">Paper</a></td>
+      </tr>
+      <tr>
+          <td>264</td>
+          <td>Semantic Diffusion Guidance</td>
+          <td>Controlled Image Generation</td>
+          <td>Nov 2021</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/2112.02745">Paper</a></td>
+      </tr>
+      <tr>
+          <td>265</td>
+          <td>GauGAN</td>
+          <td>Text-to-Image Generation</td>
+          <td>Nov 2021</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://medium.com/analytics-vidhya/gaugan-generating-photorealistic-images-from-drawings-7eac091f6c7f">Paper</a></td>
+      </tr>
+      <tr>
+          <td>266</td>
+          <td>NeatNet</td>
+          <td>Neural Architecture Evolution</td>
+          <td>Nov 2021</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2111.11674">Paper</a></td>
+      </tr>
+      <tr>
+          <td>267</td>
+          <td>DenseULearn</td>
+          <td>Dense Prediction with Uncertainty</td>
+          <td>Nov 2021</td>
+          <td>ETH Zürich</td>
+          <td><a href="https://arxiv.org/abs/2111.14343">Paper</a></td>
+      </tr>
+      <tr>
+          <td>268</td>
+          <td>StyleNeRF</td>
+          <td>Neural Radiance Fields with Style-based Generation</td>
+          <td>Dec 2021</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://arxiv.org/abs/2112.08867">Paper</a></td>
+      </tr>
+      <tr>
+          <td>269</td>
+          <td>Colossal-AI</td>
+          <td>Large-Scale Parallel Training System</td>
+          <td>Dec 2021</td>
+          <td>UC Berkeley</td>
+          <td><a href="https://arxiv.org/abs/2112.15594">Paper</a></td>
+      </tr>
+      <tr>
+          <td>270</td>
+          <td>EditGAN</td>
+          <td>Semantic Image Editing with GANs</td>
+          <td>Dec 2021</td>
+          <td>Adobe Research</td>
+          <td><a href="https://arxiv.org/abs/2112.14668">Paper</a></td>
+      </tr>
+      <tr>
+          <td>271</td>
+          <td>PoolFormer</td>
+          <td>Alternative to Attention-based Transformers</td>
+          <td>Dec 2021</td>
+          <td>Sea AI Lab</td>
+          <td><a href="https://arxiv.org/abs/2111.11418">Paper</a></td>
+      </tr>
+      <tr>
+          <td>272</td>
+          <td>GLIP</td>
+          <td>Grounded Language-Image Pre-training</td>
+          <td>Dec 2021</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2112.03857">Paper</a></td>
+      </tr>
+      <tr>
+          <td>273</td>
+          <td>PixMix</td>
+          <td>Data Augmentation Strategy</td>
+          <td>Dec 2021</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2112.05135">Paper</a></td>
+      </tr>
+      <tr>
+          <td>274</td>
+          <td>GANgealing</td>
+          <td>GAN-based Image Alignment</td>
+          <td>Dec 2021</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/2112.05143">Paper</a></td>
+      </tr>
+      <tr>
+          <td>275</td>
+          <td>HiClass</td>
+          <td>Hierarchical Classification Metrics</td>
+          <td>Dec 2021</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2112.00838">Paper</a></td>
+      </tr>
+      <tr>
+          <td>276</td>
+          <td>MetaFormer</td>
+          <td>General Architecture for Vision</td>
+          <td>Dec 2021</td>
+          <td>Sea AI Lab</td>
+          <td><a href="https://arxiv.org/abs/2111.11418">Paper</a></td>
+      </tr>
+      <tr>
+          <td>277</td>
+          <td>SAVi</td>
+          <td>Slot Attention for Video Understanding</td>
+          <td>Dec 2021</td>
+          <td>DeepMind</td>
+          <td><a href="https://arxiv.org/abs/2112.09454">Paper</a></td>
+      </tr>
+      <tr>
+          <td>278</td>
+          <td>PARP</td>
+          <td>Parameter Reduction Technique</td>
+          <td>Dec 2021</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/2112.14674">Paper</a></td>
+      </tr>
+      <tr>
+          <td>279</td>
+          <td>TransMix</td>
+          <td>Data Augmentation for Transformers</td>
+          <td>Dec 2021</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2112.15535">Paper</a></td>
+      </tr>
+      <tr>
+          <td>280</td>
+          <td>Stable Long Term Video SR</td>
+          <td>Long-term Video Super Resolution</td>
+          <td>Dec 2021</td>
+          <td>ETH Zürich</td>
+          <td><a href="https://arxiv.org/abs/2112.09715">Paper</a></td>
+      </tr>
+      <tr>
+          <td>281</td>
+          <td>Few-Shot Learner</td>
+          <td>Few-Shot Learning Framework</td>
+          <td>Dec 2021</td>
+          <td>Meta AI Research</td>
+          <td><a href="https://arxiv.org/abs/2112.09763">Paper</a></td>
+      </tr>
+      <tr>
+          <td>282</td>
+          <td>StyleSwin</td>
+          <td>StyleGAN with Swin Transformer</td>
+          <td>Dec 2021</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2112.10762">Paper</a></td>
+      </tr>
+      <tr>
+          <td>283</td>
+          <td>2 Stage U-net</td>
+          <td>Two-Stage Medical Image Segmentation</td>
+          <td>Dec 2021</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/2112.11673">Paper</a></td>
+      </tr>
+      <tr>
+          <td>284</td>
+          <td>ELSA</td>
+          <td>Efficient Long-term Semantic Aggregation</td>
+          <td>Dec 2021</td>
+          <td>ETH Zürich</td>
+          <td><a href="https://arxiv.org/abs/2112.15594">Paper</a></td>
+      </tr>
+      <tr>
+          <td>285</td>
+          <td>GLIDE</td>
+          <td>Text-Guided Image Generation</td>
+          <td>Dec 2021</td>
+          <td>OpenAI</td>
+          <td><a href="https://arxiv.org/abs/2112.10741">Paper</a></td>
+      </tr>
+      <tr>
+          <td>286</td>
+          <td>AdaViT</td>
+          <td>Adaptive Vision Transformers</td>
+          <td>Jan 2022</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2201.04288">Paper</a></td>
+      </tr>
+      <tr>
+          <td>287</td>
+          <td>Exemplar Transformers</td>
+          <td>Example-based Vision Transformers</td>
+          <td>Jan 2022</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2201.06679">Paper</a></td>
+      </tr>
+      <tr>
+          <td>288</td>
+          <td>RepMLNet</td>
+          <td>Reprogrammable Multi-Layer Network</td>
+          <td>Jan 2022</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/2201.08442">Paper</a></td>
+      </tr>
+      <tr>
+          <td>289</td>
+          <td>Untrained Deep NN</td>
+          <td>Deep Networks without Training</td>
+          <td>Jan 2022</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/2201.09192">Paper</a></td>
+      </tr>
+      <tr>
+          <td>290</td>
+          <td>JoJoGAN</td>
+          <td>Just one Joint Training GAN</td>
+          <td>Jan 2022</td>
+          <td>National University of Singapore</td>
+          <td><a href="https://arxiv.org/abs/2112.11641">Paper</a></td>
+      </tr>
+      <tr>
+          <td>291</td>
+          <td>PRIME</td>
+          <td>Pre-trained Image Encoders</td>
+          <td>Jan 2022</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2201.09792">Paper</a></td>
+      </tr>
+      <tr>
+          <td>292</td>
+          <td>StyleGAN-V</td>
+          <td>Video Generation with StyleGAN</td>
+          <td>Jan 2022</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://arxiv.org/abs/2201.13038">Paper</a></td>
+      </tr>
+      <tr>
+          <td>293</td>
+          <td>SmoothNet</td>
+          <td>Motion Smoothing Network</td>
+          <td>Jan 2022</td>
+          <td>ETH Zürich</td>
+          <td><a href="https://arxiv.org/abs/2201.11209">Paper</a></td>
+      </tr>
+      <tr>
+          <td>294</td>
+          <td>PCACE</td>
+          <td>Point Cloud Auto-Encoder</td>
+          <td>Jan 2022</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/2201.02663">Paper</a></td>
+      </tr>
+      <tr>
+          <td>295</td>
+          <td>Siamese CD</td>
+          <td>Change Detection with Transformers</td>
+          <td>Jan 2022</td>
+          <td>Wuhan University</td>
+          <td><a href="https://arxiv.org/abs/2201.01293">Paper</a></td>
+      </tr>
+      <tr>
+          <td>296</td>
+          <td>SASA</td>
+          <td>Self-Attention Spatial Adaptivity</td>
+          <td>Jan 2022</td>
+          <td>Carnegie Mellon University</td>
+          <td><a href="https://arxiv.org/abs/2201.10801">Paper</a></td>
+      </tr>
+      <tr>
+          <td>297</td>
+          <td>GCD</td>
+          <td>Generalized Category Discovery</td>
+          <td>Jan 2022</td>
+          <td>University of Oxford</td>
+          <td><a href="https://arxiv.org/abs/2201.02609">Paper</a></td>
+      </tr>
+      <tr>
+          <td>298</td>
+          <td>3D ConvNet Optimization</td>
+          <td>Optimization Planning for 3D CNNs</td>
+          <td>Jan 2022</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2201.09100">Paper</a></td>
+      </tr>
+      <tr>
+          <td>299</td>
+          <td>SeamlessGAN</td>
+          <td>Seamless Image Generation</td>
+          <td>Jan 2022</td>
+          <td>Adobe Research</td>
+          <td><a href="https://arxiv.org/abs/2201.13395">Paper</a></td>
+      </tr>
+      <tr>
+          <td>300</td>
+          <td>HardBoost</td>
+          <td>Hard Example Mining with Boosting</td>
+          <td>Jan 2022</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/2201.11924">Paper</a></td>
+      </tr>
+      <tr>
+          <td>301</td>
+          <td>Q-ViT</td>
+          <td>Quantized Vision Transformer</td>
+          <td>Jan 2022</td>
+          <td>Meta AI Research</td>
+          <td><a href="https://arxiv.org/abs/2201.07703">Paper</a></td>
+      </tr>
+      <tr>
+          <td>302</td>
+          <td>GeoFill</td>
+          <td>Geometry-aware Image Inpainting</td>
+          <td>Jan 2022</td>
+          <td>Adobe Research</td>
+          <td><a href="https://arxiv.org/abs/2201.09858">Paper</a></td>
+      </tr>
+      <tr>
+          <td>303</td>
+          <td>Detic</td>
+          <td>Detector with Image Classes</td>
+          <td>Jan 2022</td>
+          <td>UC Berkeley</td>
+          <td><a href="https://arxiv.org/abs/2201.02605">Paper</a></td>
+      </tr>
+      <tr>
+          <td>304</td>
+          <td>RelTR</td>
+          <td>Relational Transformer</td>
+          <td>Jan 2022</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2201.02860">Paper</a></td>
+      </tr>
+      <tr>
+          <td>305</td>
+          <td>ResiDualGAN</td>
+          <td>Residual Dual GAN Architecture</td>
+          <td>Jan 2022</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://arxiv.org/abs/2201.10563">Paper</a></td>
+      </tr>
+      <tr>
+          <td>306</td>
+          <td>You Only Cut Once</td>
+          <td>Single-Shot Instance Segmentation</td>
+          <td>Jan 2022</td>
+          <td>ByteDance AI Lab</td>
+          <td><a href="https://arxiv.org/abs/2201.09898">Paper</a></td>
+      </tr>
+      <tr>
+          <td>307</td>
+          <td>KFIoU Loss</td>
+          <td>Kalman Filter IoU Loss Function</td>
+          <td>Jan 2022</td>
+          <td>Tongji University</td>
+          <td><a href="https://arxiv.org/abs/2201.12558">Paper</a></td>
+      </tr>
+      <tr>
+          <td>308</td>
+          <td>StyleGAN3 Editing</td>
+          <td>Image and Video Editing Framework</td>
+          <td>Jan 2022</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://arxiv.org/abs/2201.13433">Paper</a></td>
+      </tr>
+      <tr>
+          <td>309</td>
+          <td>Block-NeRF</td>
+          <td>City-scale Neural Radiance Fields using blocked-based decomposition</td>
+          <td>Jan 2022</td>
+          <td>Waymo/Google Research</td>
+          <td><a href="https://arxiv.org/abs/2202.08614">Paper</a></td>
+      </tr>
+      <tr>
+          <td>310</td>
+          <td>SeMask</td>
+          <td>Semantically Masked Transformers</td>
+          <td>Feb 2022</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://arxiv.org/abs/2202.14824">Paper</a></td>
+      </tr>
+      <tr>
+          <td>311</td>
+          <td>SLIP</td>
+          <td>Self-supervision with Language-Image Pre-training</td>
+          <td>Feb 2022</td>
+          <td>UC Berkeley</td>
+          <td><a href="https://arxiv.org/abs/2202.06629">Paper</a></td>
+      </tr>
+      <tr>
+          <td>312</td>
+          <td>Deformable ViT</td>
+          <td>Vision Transformer with Deformable Attention</td>
+          <td>Feb 2022</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2201.00520">Paper</a></td>
+      </tr>
+      <tr>
+          <td>313</td>
+          <td>Lawin Transformer</td>
+          <td>Lightweight Transformer for Segmentation</td>
+          <td>Feb 2022</td>
+          <td>Nanjing University</td>
+          <td><a href="https://arxiv.org/abs/2201.09792">Paper</a></td>
+      </tr>
+      <tr>
+          <td>314</td>
+          <td>HyperionSolarNet</td>
+          <td>Solar Panel Detection Network</td>
+          <td>Feb 2022</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/2202.05402">Paper</a></td>
+      </tr>
+      <tr>
+          <td>315</td>
+          <td>KerGNNs</td>
+          <td>Kernel Graph Neural Networks</td>
+          <td>Feb 2022</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/2202.03183">Paper</a></td>
+      </tr>
+      <tr>
+          <td>316</td>
+          <td>gDNA</td>
+          <td>Geometric DNA Networks</td>
+          <td>Feb 2022</td>
+          <td>DeepMind</td>
+          <td><a href="https://arxiv.org/abs/2202.01949">Paper</a></td>
+      </tr>
+      <tr>
+          <td>317</td>
+          <td>HYDRA</td>
+          <td>Hybrid Deep Learning Architecture</td>
+          <td>Feb 2022</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2202.00833">Paper</a></td>
+      </tr>
+      <tr>
+          <td>318</td>
+          <td>DDU-Net</td>
+          <td>Dense Dual-Path U-Net</td>
+          <td>Feb 2022</td>
+          <td>Shanghai Jiao Tong University</td>
+          <td><a href="https://arxiv.org/abs/2202.02681">Paper</a></td>
+      </tr>
+      <tr>
+          <td>319</td>
+          <td>SPAMs</td>
+          <td>Spatial Attention Modules</td>
+          <td>Feb 2022</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2202.05910">Paper</a></td>
+      </tr>
+      <tr>
+          <td>320</td>
+          <td>ReLICv2</td>
+          <td>Representation Learning with Image Consistency</td>
+          <td>Feb 2022</td>
+          <td>Meta AI Research</td>
+          <td><a href="https://arxiv.org/abs/2202.02534">Paper</a></td>
+      </tr>
+      <tr>
+          <td>321</td>
+          <td>Momentum Capsules</td>
+          <td>Dynamic Routing with Momentum</td>
+          <td>Feb 2022</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2202.03611">Paper</a></td>
+      </tr>
+      <tr>
+          <td>322</td>
+          <td>SAR Despecking</td>
+          <td>Transformer for SAR Image Denoising</td>
+          <td>Feb 2022</td>
+          <td>Chinese Academy of Sciences</td>
+          <td><a href="https://arxiv.org/abs/2202.01424">Paper</a></td>
+      </tr>
+      <tr>
+          <td>323</td>
+          <td>VRT</td>
+          <td>Video Restoration Transformer</td>
+          <td>Feb 2022</td>
+          <td>ETH Zürich</td>
+          <td><a href="https://arxiv.org/abs/2201.12288">Paper</a></td>
+      </tr>
+      <tr>
+          <td>324</td>
+          <td>StyleGAN-XL</td>
+          <td>Extra Large Scale StyleGAN</td>
+          <td>Feb 2022</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://arxiv.org/abs/2202.00273">Paper</a></td>
+      </tr>
+      <tr>
+          <td>325</td>
+          <td>AlphaCode</td>
+          <td>Code Generation AI System</td>
+          <td>Feb 2022</td>
+          <td>DeepMind</td>
+          <td><a href="https://arxiv.org/abs/2203.07814">Paper</a></td>
+      </tr>
+      <tr>
+          <td>326</td>
+          <td>StyleGAN-Human</td>
+          <td>Human image synthesis using StyleGAN</td>
+          <td>Apr 2022</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2204.11823">Paper</a></td>
+      </tr>
+      <tr>
+          <td>327</td>
+          <td>How Do Vision Transformers Work?</td>
+          <td>Analysis of internal mechanisms of Vision Transformers</td>
+          <td>Jun 2022</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2202.06709">Paper</a></td>
+      </tr>
+      <tr>
+          <td>328</td>
+          <td>FERV39k</td>
+          <td>Facial Expression Recognition Dataset with 39k samples</td>
+          <td>Jun 2022</td>
+          <td>South China University of Technology</td>
+          <td><a href="https://arxiv.org/abs/2205.01036">Paper</a></td>
+      </tr>
+      <tr>
+          <td>329</td>
+          <td>DaViT</td>
+          <td>Data-efficient Vision Transformer</td>
+          <td>Jul 2022</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2204.03645">Paper</a></td>
+      </tr>
+      <tr>
+          <td>330</td>
+          <td>BEVFormer</td>
+          <td>Bird&rsquo;s Eye View Transformer for autonomous driving</td>
+          <td>Aug 2022</td>
+          <td>Shanghai AI Lab</td>
+          <td><a href="https://arxiv.org/abs/2203.17270">Paper</a></td>
+      </tr>
+      <tr>
+          <td>331</td>
+          <td>TensoRF</td>
+          <td>Tensorial Radiance Fields for efficient 3D reconstruction</td>
+          <td>Sep 2022</td>
+          <td>Zhejiang University</td>
+          <td><a href="https://arxiv.org/abs/2203.09517">Paper</a></td>
+      </tr>
+      <tr>
+          <td>332</td>
+          <td>WebFace260M</td>
+          <td>Large-scale face recognition dataset</td>
+          <td>Sep 2022</td>
+          <td>InsightFace</td>
+          <td><a href="https://arxiv.org/abs/2209.03358">Paper</a></td>
+      </tr>
+      <tr>
+          <td>333</td>
+          <td>Neighborhood Attention Transformer</td>
+          <td>Local attention mechanism for vision tasks</td>
+          <td>Oct 2022</td>
+          <td>Meta AI Research</td>
+          <td><a href="https://arxiv.org/abs/2204.07143">Paper</a></td>
+      </tr>
+      <tr>
+          <td>334</td>
+          <td>Barbershop</td>
+          <td>Hair editing and synthesis framework</td>
+          <td>Oct 2022</td>
+          <td>Adobe Research</td>
+          <td><a href="https://arxiv.org/abs/2210.07574">Paper</a></td>
+      </tr>
+      <tr>
+          <td>335</td>
+          <td>Visual Attention Network</td>
+          <td>Novel attention mechanism for computer vision</td>
+          <td>Nov 2022</td>
+          <td>Meta AI Research</td>
+          <td><a href="https://arxiv.org/abs/2211.12156">Paper</a></td>
+      </tr>
+      <tr>
+          <td>336</td>
+          <td>MaskGIT</td>
+          <td>Masked Generative Image Transformer</td>
+          <td>Nov 2022</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2202.04200">Paper</a></td>
+      </tr>
+      <tr>
+          <td>337</td>
+          <td>CenterNet++</td>
+          <td>Improved CenterNet for object detection</td>
+          <td>Nov 2022</td>
+          <td>University of Texas</td>
+          <td><a href="https://arxiv.org/abs/2211.12931">Paper</a></td>
+      </tr>
+      <tr>
+          <td>338</td>
+          <td>Patch-NetVLAD+</td>
+          <td>Enhanced visual place recognition using patch-based features</td>
+          <td>Dec 2022</td>
+          <td>Oxford University</td>
+          <td><a href="https://arxiv.org/abs/2212.03271">Paper</a></td>
+      </tr>
+      <tr>
+          <td>339</td>
+          <td>PENCIL</td>
+          <td>Probabilistic end-to-end noise correction</td>
+          <td>Dec 2022</td>
+          <td>NTU Singapore</td>
+          <td><a href="https://arxiv.org/abs/2212.04765">Paper</a></td>
+      </tr>
+      <tr>
+          <td>340</td>
+          <td>CenterSnap</td>
+          <td>Center-based 3D object pose estimation</td>
+          <td>Dec 2022</td>
+          <td>Intel Labs</td>
+          <td><a href="https://arxiv.org/abs/2212.07132">Paper</a></td>
+      </tr>
+      <tr>
+          <td>341</td>
+          <td>AGCN</td>
+          <td>Adaptive Graph Convolutional Network</td>
+          <td>Dec 2022</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/2212.09123">Paper</a></td>
+      </tr>
+      <tr>
+          <td>342</td>
+          <td>AutoAvatar</td>
+          <td>Automated avatar generation from images</td>
+          <td>Dec 2022</td>
+          <td>Tencent AI Lab</td>
+          <td><a href="https://arxiv.org/abs/2212.08063">Paper</a></td>
+      </tr>
+      <tr>
+          <td>343</td>
+          <td>Balanced MSE</td>
+          <td>Balanced Mean Squared Error for imbalanced data</td>
+          <td>Dec 2022</td>
+          <td>Carnegie Mellon University</td>
+          <td><a href="https://arxiv.org/abs/2212.06784">Paper</a></td>
+      </tr>
+      <tr>
+          <td>344</td>
+          <td>ReCLIP</td>
+          <td>Improved CLIP with region-based features</td>
+          <td>Dec 2022</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2212.09741">Paper</a></td>
+      </tr>
+      <tr>
+          <td>345</td>
+          <td>EditGAN</td>
+          <td>GAN-based image editing framework</td>
+          <td>Dec 2022</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://arxiv.org/abs/2212.04407">Paper</a></td>
+      </tr>
+      <tr>
+          <td>346</td>
+          <td>HuMMan</td>
+          <td>Human Motion and Manipulation dataset</td>
+          <td>Dec 2022</td>
+          <td>Max Planck Institute</td>
+          <td><a href="https://arxiv.org/abs/2212.10380">Paper</a></td>
+      </tr>
+      <tr>
+          <td>347</td>
+          <td>BlobGAN</td>
+          <td>Unsupervised part-aware image generation</td>
+          <td>Dec 2022</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/2212.12143">Paper</a></td>
+      </tr>
+      <tr>
+          <td>348</td>
+          <td>Deep Spectral Methods</td>
+          <td>Spectral analysis for deep learning</td>
+          <td>Dec 2022</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/2212.11815">Paper</a></td>
+      </tr>
+      <tr>
+          <td>349</td>
+          <td>TransformNet</td>
+          <td>Transformer-based architecture for geometry transformation</td>
+          <td>Jan 2023</td>
+          <td>Carnegie Mellon University</td>
+          <td><a href="https://arxiv.org/abs/2301.09642">Paper</a></td>
+      </tr>
+      <tr>
+          <td>350</td>
+          <td>Mirror-YOLO</td>
+          <td>YOLO variant using mirror augmentation for detection</td>
+          <td>Jan 2023</td>
+          <td>Peking University</td>
+          <td><a href="https://arxiv.org/abs/2301.07589">Paper</a></td>
+      </tr>
+      <tr>
+          <td>351</td>
+          <td>Paying U-Attention to Textures</td>
+          <td>U-Net based texture synthesis with attention</td>
+          <td>Jan 2023</td>
+          <td>Adobe Research</td>
+          <td><a href="https://arxiv.org/abs/2301.05225">Paper</a></td>
+      </tr>
+      <tr>
+          <td>352</td>
+          <td>ZippyPoint</td>
+          <td>Fast point cloud processing architecture</td>
+          <td>Jan 2023</td>
+          <td>ETH Zürich</td>
+          <td><a href="https://arxiv.org/abs/2301.06555">Paper</a></td>
+      </tr>
+      <tr>
+          <td>353</td>
+          <td>InsetGAN for Full-Body Image Generation</td>
+          <td>GAN-based full-body image synthesis</td>
+          <td>Jan 2023</td>
+          <td>Max Planck Institute</td>
+          <td><a href="https://arxiv.org/abs/2301.05270">Paper</a></td>
+      </tr>
+      <tr>
+          <td>354</td>
+          <td>Mixed Differential Privacy</td>
+          <td>Privacy-preserving vision model training</td>
+          <td>Jan 2023</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/2301.07845">Paper</a></td>
+      </tr>
+      <tr>
+          <td>355</td>
+          <td>L³U-Net</td>
+          <td>Lightweight U-Net variant with enhanced learning</td>
+          <td>Jan 2023</td>
+          <td>ETH Zürich</td>
+          <td><a href="https://arxiv.org/abs/2301.05220">Paper</a></td>
+      </tr>
+      <tr>
+          <td>356</td>
+          <td>RBGNet</td>
+          <td>Residual Bidirectional Graph Network</td>
+          <td>Jan 2023</td>
+          <td>Peking University</td>
+          <td><a href="https://arxiv.org/abs/2301.09712">Paper</a></td>
+      </tr>
+      <tr>
+          <td>357</td>
+          <td>TopFormer</td>
+          <td>Top-down Transformer for vision tasks</td>
+          <td>Jan 2023</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2301.04566">Paper</a></td>
+      </tr>
+      <tr>
+          <td>358</td>
+          <td>CLIP-GEN</td>
+          <td>CLIP-guided image generation</td>
+          <td>Jan 2023</td>
+          <td>OpenAI</td>
+          <td><a href="https://arxiv.org/abs/2301.08318">Paper</a></td>
+      </tr>
+      <tr>
+          <td>359</td>
+          <td>DANBO</td>
+          <td>Dynamic Attention Network for Body Pose</td>
+          <td>Jan 2023</td>
+          <td>Carnegie Mellon University</td>
+          <td><a href="https://arxiv.org/abs/2301.04569">Paper</a></td>
+      </tr>
+      <tr>
+          <td>360</td>
+          <td>KeypointNeRF</td>
+          <td>NeRF with keypoint conditioning</td>
+          <td>Jan 2023</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/2301.05175">Paper</a></td>
+      </tr>
+      <tr>
+          <td>361</td>
+          <td>VOS (Visual Object Streaming)</td>
+          <td>Efficient streaming framework for video object segmentation</td>
+          <td>Feb 2023</td>
+          <td>ETH Zürich</td>
+          <td><a href="https://arxiv.org/abs/2302.14536">Paper</a></td>
+      </tr>
+      <tr>
+          <td>362</td>
+          <td>ScoreNet</td>
+          <td>Score-based generative modeling for point cloud generation</td>
+          <td>Feb 2023</td>
+          <td>UC Berkeley</td>
+          <td><a href="https://arxiv.org/abs/2302.07241">Paper</a></td>
+      </tr>
+      <tr>
+          <td>363</td>
+          <td>GroupViT</td>
+          <td>Vision Transformer with dynamic grouping mechanism</td>
+          <td>Feb 2023</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://arxiv.org/abs/2302.05442">Paper</a></td>
+      </tr>
+      <tr>
+          <td>364</td>
+          <td>TCTrack</td>
+          <td>Temporal context-aware tracking framework</td>
+          <td>Feb 2023</td>
+          <td>Chinese Academy of Sciences</td>
+          <td><a href="https://arxiv.org/abs/2302.03030">Paper</a></td>
+      </tr>
+      <tr>
+          <td>365</td>
+          <td>MLSeg</td>
+          <td>Multi-level semantic segmentation framework</td>
+          <td>Feb 2023</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/2302.07459">Paper</a></td>
+      </tr>
+      <tr>
+          <td>366</td>
+          <td>StyleBabel</td>
+          <td>Text-guided style transfer using BABEL embeddings</td>
+          <td>Feb 2023</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://arxiv.org/abs/2302.04268">Paper</a></td>
+      </tr>
+      <tr>
+          <td>367</td>
+          <td>Mixed DualStyleGAN</td>
+          <td>Dual-domain style transfer with mixed training</td>
+          <td>Feb 2023</td>
+          <td>NVIDIA</td>
+          <td><a href="https://arxiv.org/abs/2302.06384">Paper</a></td>
+      </tr>
+      <tr>
+          <td>368</td>
+          <td>StyleT2I</td>
+          <td>Style-based text-to-image generation</td>
+          <td>Feb 2023</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2302.09775">Paper</a></td>
+      </tr>
+      <tr>
+          <td>369</td>
+          <td>SPAct</td>
+          <td>Spatial-temporal action recognition</td>
+          <td>Feb 2023</td>
+          <td>University of Oxford</td>
+          <td><a href="https://arxiv.org/abs/2302.08780">Paper</a></td>
+      </tr>
+      <tr>
+          <td>370</td>
+          <td>JIFF</td>
+          <td>Joint Image and Feature Fusion</td>
+          <td>Feb 2023</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/2302.05175">Paper</a></td>
+      </tr>
+      <tr>
+          <td>371</td>
+          <td>C3-STISR</td>
+          <td>Cross-Camera Stereo Image Super-Resolution</td>
+          <td>Feb 2023</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/2302.11274">Paper</a></td>
+      </tr>
+      <tr>
+          <td>372</td>
+          <td>IVY</td>
+          <td>Integrated Vision System</td>
+          <td>Feb 2023</td>
+          <td>Intel Research</td>
+          <td><a href="https://arxiv.org/abs/2302.07482">Paper</a></td>
+      </tr>
+      <tr>
+          <td>373</td>
+          <td>StyLandGAN</td>
+          <td>Stylized landscape generation</td>
+          <td>Feb 2023</td>
+          <td>NVIDIA Research</td>
+          <td><a href="https://arxiv.org/abs/2302.09225">Paper</a></td>
+      </tr>
+      <tr>
+          <td>374</td>
+          <td>NeuralFusion</td>
+          <td>Neural fusion for 3D reconstruction using implicit representations</td>
+          <td>Mar 2023</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/2303.07662">Paper</a></td>
+      </tr>
+      <tr>
+          <td>375</td>
+          <td>COLA</td>
+          <td>Contrastive learning approach for visual recognition</td>
+          <td>Mar 2023</td>
+          <td>Stanford University</td>
+          <td><a href="https://arxiv.org/abs/2303.14353">Paper</a></td>
+      </tr>
+      <tr>
+          <td>376</td>
+          <td>VLP (Vision-Language Pre-training)</td>
+          <td>Joint pre-training for vision and language tasks</td>
+          <td>Mar 2023</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2303.08128">Paper</a></td>
+      </tr>
+      <tr>
+          <td>377</td>
+          <td>Level-K to Nash Equilibrium</td>
+          <td>Game theoretic approach to vision problems</td>
+          <td>Mar 2023</td>
+          <td>DeepMind</td>
+          <td><a href="https://arxiv.org/abs/2303.09913">Paper</a></td>
+      </tr>
+      <tr>
+          <td>378</td>
+          <td>HyperTransformer</td>
+          <td>Hypernetwork-based transformer for vision tasks</td>
+          <td>Mar 2023</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2303.11174">Paper</a></td>
+      </tr>
+      <tr>
+          <td>379</td>
+          <td>GrainSpace</td>
+          <td>Granular spatial representation learning</td>
+          <td>Mar 2023</td>
+          <td>Carnegie Mellon University</td>
+          <td><a href="https://arxiv.org/abs/2303.09876">Paper</a></td>
+      </tr>
+      <tr>
+          <td>380</td>
+          <td>ROOD-MRI</td>
+          <td>Robust out-of-distribution detection for medical imaging</td>
+          <td>Mar 2023</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/2303.13773">Paper</a></td>
+      </tr>
+      <tr>
+          <td>381</td>
+          <td>Bamboo</td>
+          <td>Framework for efficient neural architecture search</td>
+          <td>Mar 2023</td>
+          <td>Microsoft Research</td>
+          <td><a href="https://arxiv.org/abs/2303.15182">Paper</a></td>
+      </tr>
+      <tr>
+          <td>382</td>
+          <td>BigDetection</td>
+          <td>Large-scale object detection framework</td>
+          <td>Mar 2023</td>
+          <td>Facebook AI Research</td>
+          <td><a href="https://arxiv.org/abs/2303.12345">Paper</a></td>
+      </tr>
+      <tr>
+          <td>383</td>
+          <td>TransEditor</td>
+          <td>Transformer-based image editing framework</td>
+          <td>Mar 2023</td>
+          <td>Adobe Research</td>
+          <td><a href="https://arxiv.org/abs/2303.09689">Paper</a></td>
+      </tr>
+      <tr>
+          <td>384</td>
+          <td>Event Transformer</td>
+          <td>Transformer architecture for event-based vision</td>
+          <td>Mar 2023</td>
+          <td>Intel Labs</td>
+          <td><a href="https://arxiv.org/abs/2303.14435">Paper</a></td>
+      </tr>
+      <tr>
+          <td>385</td>
+          <td>MVSTER</td>
+          <td>Multi-view Stereo Transformer</td>
+          <td>Mar 2023</td>
+          <td>ETH Zürich</td>
+          <td><a href="https://arxiv.org/abs/2303.13794">Paper</a></td>
+      </tr>
+      <tr>
+          <td>386</td>
+          <td>CLIP-Art</td>
+          <td>CLIP-based artistic image synthesis</td>
+          <td>Mar 2023</td>
+          <td>DeepMind</td>
+          <td><a href="https://arxiv.org/abs/2303.17492">Paper</a></td>
+      </tr>
+      <tr>
+          <td>387</td>
+          <td>Sequencer</td>
+          <td>Sequential modeling for vision tasks</td>
+          <td>Mar 2023</td>
+          <td>Google Research</td>
+          <td><a href="https://arxiv.org/abs/2303.16104">Paper</a></td>
+      </tr>
+      <tr>
+          <td>388</td>
+          <td>GraphWorld</td>
+          <td>Benchmark for graph neural networks</td>
+          <td>Mar 2023</td>
+          <td>DeepMind</td>
+          <td><a href="https://arxiv.org/abs/2303.16698">Paper</a></td>
+      </tr>
+      <tr>
+          <td>389</td>
+          <td>F8Net</td>
+          <td>Lightweight network for efficient feature extraction</td>
+          <td>Apr 2023</td>
+          <td>Tsinghua University</td>
+          <td><a href="https://arxiv.org/abs/2304.12510">Paper</a></td>
+      </tr>
+      <tr>
+          <td>390</td>
+          <td>LatentFormer</td>
+          <td>Transformer architecture for latent space manipulation</td>
+          <td>Apr 2023</td>
+          <td>MIT</td>
+          <td><a href="https://arxiv.org/abs/2304.08281">Paper</a></td>
+      </tr>
+  </tbody>
+</table>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

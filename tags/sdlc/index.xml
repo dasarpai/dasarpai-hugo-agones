@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SDLC on Agones</title>
+    <link>http://localhost:1313/tags/sdlc/</link>
+    <description>Recent content in SDLC on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/sdlc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Complete Ecosystem of Software Development</title>
+      <link>http://localhost:1313/dsblog/the-complete-ecosystem-of-software-development/</link>
+      <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/the-complete-ecosystem-of-software-development/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6196-the-complete-ecosystem-of-software-development.jpg&#34; alt=&#34;The Complete Ecosystem of Software Development&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-complete-ecosystem-of-software-development&#34;&gt;The Complete Ecosystem of Software Development&lt;/h1&gt;&#xA;&lt;p&gt;Software processes are a fascinating area because they encapsulate not just the technical aspects but also the collaborative, creative, and even philosophical dimensions of how we build and deliver software. The discussion touches on everything from the foundational coding practices to advanced topics like sustainability, emerging technologies, and human dynamics within development teams. The list of processes, subprocesses, and tools makes sense for those who have been in the software development and maintenance business for quite some time. Even with decades of experience, you will find this list interesting to read, showing how far we have come from the early 80&amp;rsquo;s or 90&amp;rsquo;s software development.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

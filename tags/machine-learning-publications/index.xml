@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning Publications on Agones</title>
+    <link>http://localhost:1313/tags/machine-learning-publications/</link>
+    <description>Recent content in Machine Learning Publications on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/machine-learning-publications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Important AI Research Papers</title>
+      <link>http://localhost:1313/dsblog/important-ai-research-papers/</link>
+      <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/important-ai-research-papers/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dsresources/dsr105-Important-AI-Research-Papers.jpg&#34; alt=&#34;Important AI Research Papers&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;important-ai-research-papers&#34;&gt;Important AI Research Papers&lt;/h1&gt;&#xA;&lt;p&gt;Content from this page is migrated to &lt;a href=&#34;https://dasarpai.com/dsblog/select-ai-papers&#34;&gt;Link&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

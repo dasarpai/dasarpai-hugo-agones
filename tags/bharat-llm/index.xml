@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bharat LLM on Agones</title>
+    <link>http://localhost:1313/tags/bharat-llm/</link>
+    <description>Recent content in Bharat LLM on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/bharat-llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Road to Bharat LLMs Goes Via Sanskrit</title>
+      <link>http://localhost:1313/dsblog/the-road-to-bharat-llms-goes-via-sanskrit/</link>
+      <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/the-road-to-bharat-llms-goes-via-sanskrit/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6218-The-Road-to-Bharat-LLMs-Goes-Via-Sanskrit.jpg&#34; alt=&#34;The Road to Bharat LLMs Goes Via Sanskrit&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-road-to-bharat-llms-goes-via-sanskrit&#34;&gt;&lt;strong&gt;The Road to Bharat LLMs Goes Via Sanskrit&lt;/strong&gt;&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;The Case for Sanskrit as India’s AI Language&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-national-language-debate-and-its-impact-on-ai&#34;&gt;&lt;strong&gt;The National Language Debate and Its Impact on AI&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Since India&amp;rsquo;s independence, the debate over a national language has been intense. This issue becomes especially heated when considering the different regional perspectives, particularly in South India. For instance, Tamil Nadu politicians strongly believe that Tamil is their primary language, while Sanskrit is often seen as North Indian. At the time of independence, few would have predicted that 75 years later, we would be struggling to develop our own AI technology—partly due to not making Sanskrit the national language.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

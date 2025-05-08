@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Diary on Agones</title>
+    <link>http://localhost:1313/tags/ai-diary/</link>
+    <description>Recent content in AI Diary on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai-diary/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI ML Resources from My Diary</title>
+      <link>http://localhost:1313/dsblog/AI-ML-Resources-from-My-Diary/</link>
+      <pubDate>Wed, 21 Jul 2021 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/AI-ML-Resources-from-My-Diary/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dsresources/dsr121-AI-ML-Resources-from-My-Diary.jpg&#34; alt=&#34;AI ML Resources from My Diary&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;ai-ml-resources-from-my-diary&#34;&gt;AI ML Resources from My Diary&lt;/h1&gt;&#xA;&lt;p&gt;This is my personal diary which contains resources, which I know, learned or people have told me&#xA;to experiment with. I started writing this diary in Mar’ 2019. This diary is related to my work/learning&#xA;in data science, AI, ML, NLP, DL, GNN, GAN, Statistics, etc. A few links related to Software&#xA;Development, People Management, Project Management are also kept in this diary. The resources&#xA;here are python/R library link, blog articles, YouTube video links, article links, AI products links,&#xA;architecture, images etc. The Table of Content and Content of this diary is not any specific order.&#xA;Whatever I was/am getting I keep adding into this, mostly towards the end but not always.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

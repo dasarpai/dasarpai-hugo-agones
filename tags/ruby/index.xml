@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby on Agones</title>
+    <link>http://localhost:1313/tags/ruby/</link>
+    <description>Recent content in Ruby on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding HTML Templating with Python, Ruby, and PHP</title>
+      <link>http://localhost:1313/dsblog/Understanding-HTML-Templating-with-Python-Ruby-PHP/</link>
+      <pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Understanding-HTML-Templating-with-Python-Ruby-PHP/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6164-Understanding-HTML-Templating-with-Python-Ruby-PHP.jpg&#34; alt=&#34;Understanding HTML Templating with Python, Ruby, and PHP&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;understanding-html-templating-with-python-ruby-and-php&#34;&gt;Understanding HTML Templating with Python, Ruby, and PHP&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-html-templating&#34;&gt;What is HTML Templating?&lt;/h2&gt;&#xA;&lt;p&gt;This concept is widely used across different frameworks and languages to build dynamic, server-rendered web applications.&lt;/p&gt;&#xA;&lt;p&gt;The concept of mixing a programming or scripting language with HTML is commonly referred to as &lt;strong&gt;&amp;ldquo;Server-Side Templating&amp;rdquo;&lt;/strong&gt; or &lt;strong&gt;&amp;ldquo;Embedding Server-Side Code in HTML&amp;rdquo;&lt;/strong&gt;. This approach allows dynamic generation of web pages by combining HTML (for structure and presentation) with server-side logic (like PHP, Python, Ruby, etc.) to create dynamic content.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

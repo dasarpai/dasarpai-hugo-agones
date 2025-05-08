@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Benchmarks on Agones</title>
+    <link>http://localhost:1313/tags/benchmarks/</link>
+    <description>Recent content in Benchmarks on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/benchmarks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring AI Benchmarks &amp; Leaderboards</title>
+      <link>http://localhost:1313/dsblog/exploring-ai-benchmarks-and-leaderboards/</link>
+      <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-ai-benchmarks-and-leaderboards/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6210-Exploring-AI-Benchmarks-and-Leaderboards.jpg&#34; alt=&#34;Exploring AI Benchmarks &amp;amp; Leaderboards&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-ai-benchmarks--leaderboards&#34;&gt;Exploring AI Benchmarks &amp;amp; Leaderboards&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;A &lt;strong&gt;benchmark&lt;/strong&gt; is a standardized test or set of metrics used to measure and compare the performance, capabilities, or quality of systems, models, or algorithms. In the context of &lt;strong&gt;AI and machine learning&lt;/strong&gt;, benchmarks provide a way to evaluate how well models perform on specific tasks or datasets, often with respect to predefined metrics like accuracy, speed, robustness, or resource efficiency.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

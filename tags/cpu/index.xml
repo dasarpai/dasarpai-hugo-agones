@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CPU on Agones</title>
+    <link>http://localhost:1313/tags/cpu/</link>
+    <description>Recent content in CPU on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cpu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Basics of Microprocessor and Microcontroller</title>
+      <link>http://localhost:1313/dsblog/basics-of-microprocessor-and-microcontroller/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/basics-of-microprocessor-and-microcontroller/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6230-Basics-of-Microprocessor-and-Microcontroller.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-basics-of-microprocessor-and-microcontroller&#34;&gt;The Basics of Microprocessor and Microcontroller&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-a-microcontroller&#34;&gt;&lt;strong&gt;What is a Microcontroller?&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;A &lt;strong&gt;microcontroller (MCU)&lt;/strong&gt; is a compact, integrated computing device that includes a &lt;strong&gt;processor (CPU), memory (RAM &amp;amp; ROM), and input/output (I/O) peripherals&lt;/strong&gt; on a single chip. It is designed for &lt;strong&gt;specific embedded system applications&lt;/strong&gt; like controlling devices, automation, and real-time processing.&lt;/p&gt;&#xA;&lt;p&gt;🔹 &lt;strong&gt;Key Features of a Microcontroller:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;CPU (Central Processing Unit)&lt;/strong&gt; – Executes instructions.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;ROM (Read-Only Memory)&lt;/strong&gt; – Stores program code.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;RAM (Random Access Memory)&lt;/strong&gt; – Stores temporary data.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;I/O Ports&lt;/strong&gt; – Communicates with external devices like sensors, motors, and displays.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Timers &amp;amp; Counters&lt;/strong&gt; – Used for delay generation and counting events.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Serial Communication (UART, SPI, I2C, etc.)&lt;/strong&gt; – Allows data transfer between devices.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Power-efficient&lt;/strong&gt; – Designed for low-power applications like IoT, automation, and consumer electronics.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;examples-of-microcontrollers&#34;&gt;&lt;strong&gt;Examples of Microcontrollers&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Famous Microcontrollers and Their Origins&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

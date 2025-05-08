@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ONNX on Agones</title>
+    <link>http://localhost:1313/tags/onnx/</link>
+    <description>Recent content in ONNX on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/onnx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring GGUF and Other Model Formats</title>
+      <link>http://localhost:1313/dsblog/exploring-gguf-and-other-model-formats/</link>
+      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-gguf-and-other-model-formats/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6180-exploring-gguf.jpg&#34; alt=&#34;Understanding GGUF and Other Model Formats in Machine Learning&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;understanding-gguf-and-other-model-formats-in-machine-learning&#34;&gt;&lt;strong&gt;Understanding GGUF and Other Model Formats in Machine Learning&lt;/strong&gt;&lt;/h1&gt;&#xA;&lt;p&gt;As machine learning models continue to grow in complexity, the need for efficient, flexible, and versatile model formats becomes more pronounced. While formats like ONNX, TensorFlow’s SavedModel, and PyTorch’s native format have been around for some time, newer formats like GGUF are gaining attention for their unique benefits. This article explores these formats, their use cases, and how they support various aspects of machine learning, including deployment, compatibility, and optimization.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contribute on Agones</title>
+    <link>http://localhost:1313/docs/contribute/</link>
+    <description>Recent content in Contribute on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <atom:link href="http://localhost:1313/docs/contribute/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Agones Feature Proposal (AFP)</title>
+      <link>http://localhost:1313/docs/contribute/agones-feature-proposal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/contribute/agones-feature-proposal/</guid>
+      <description>&lt;h2 id=&#34;overview-of-the-agones-feature-proposal-afp-process&#34;&gt;Overview of the Agones Feature Proposal (AFP) Process&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;strong&gt;Agones Feature Proposal (AFP)&lt;/strong&gt; process provides a standardized way to propose, discuss, and track new features, enhancements, or architectural changes within the Agones project. This process is intended to ensure clarity, transparency, and collaborative decision-making, allowing stakeholders to effectively contribute to and communicate about important changes in the project.&lt;/p&gt;&#xA;&lt;h3 id=&#34;key-objectives-of-the-afp-process&#34;&gt;Key Objectives of the AFP Process&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Standardized Proposals&lt;/strong&gt;: Offers a common structure for proposing changes, ensuring that the motivation for a feature, its implementation, and its impact are clearly defined.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cross-Team Communication&lt;/strong&gt;: Facilitates collaboration across different teams within the Agones community, ensuring that all relevant stakeholders are informed and involved in the decision-making process.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Roadmap Integration&lt;/strong&gt;: Supports the creation of a user-facing development roadmap that outlines upcoming features and changes.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Feature Tracking&lt;/strong&gt;: Allows features and major changes to be tracked across one or more releases, providing a historical record of decisions and progress.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;afp-structure&#34;&gt;AFP Structure&lt;/h3&gt;&#xA;&lt;p&gt;Each AFP consists of several key sections that are defined incrementally as the feature progresses. These sections typically include:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Documentation Editing and Contribution</title>
+      <link>http://localhost:1313/docs/contribute/documentation-editing-contribution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/contribute/documentation-editing-contribution/</guid>
+      <description>&lt;h2 id=&#34;writing-documentation&#34;&gt;Writing Documentation&lt;/h2&gt;&#xA;&lt;p&gt;We welcome contributions to documentation!&lt;/p&gt;&#xA;&lt;h2 id=&#34;running-the-site&#34;&gt;Running the site&lt;/h2&gt;&#xA;&lt;p&gt;If you clone the repository and run &lt;code&gt;make site-server&lt;/code&gt; from the &lt;code&gt;build&lt;/code&gt; directory, this will run the live hugo server,&#xA;running as a showing the next version&amp;rsquo;s content and upcoming &lt;code&gt;publishedDate&lt;/code&gt;&amp;rsquo;d content as well. This is likely to be&#xA;the next releases&amp;rsquo; version of the website.&lt;/p&gt;&#xA;&lt;p&gt;To show the current website&amp;rsquo;s view, run it as &lt;code&gt;make site-server ENV=RELEASE_VERSION=1.48.0 ARGS=&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;platform&#34;&gt;Platform&lt;/h2&gt;&#xA;&lt;p&gt;This site and documentation is built with a combination of Hugo, static site generator,&#xA;with the Docsy theme for open source documentation.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

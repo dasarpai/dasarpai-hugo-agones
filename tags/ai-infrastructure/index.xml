@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Infrastructure on Agones</title>
+    <link>http://localhost:1313/tags/ai-infrastructure/</link>
+    <description>Recent content in AI Infrastructure on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai-infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open Source vs Closed Source AI</title>
+      <link>http://localhost:1313/dsblog/Open-Source-vs-Closed-Source-AI/</link>
+      <pubDate>Tue, 06 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Open-Source-vs-Closed-Source-AI/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6134-Open-Source-vs-Closed-Source-AI.jpg&#34; alt=&#34;Open-Source-vs-Closed-Source-AI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;open-source-ai-vs-closed-source-ai&#34;&gt;Open Source AI vs Closed Source AI&lt;/h1&gt;&#xA;&lt;p&gt;Major players in the AI industry, such as Google, Microsoft, IBM, Salesforce, etc each have their own proprietary models and infrastructure to host these models. They offer AI services that companies use to develop AI products for either their end customers or internal use. Training or developing AI models requires expensive hardware and highly skilled personnel, making it a costly process. However, the deployment and inference stages are even more expensive, as they involve ongoing costs for hardware and monitoring.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How Much Memory Needed for LLM</title>
+      <link>http://localhost:1313/dsblog/How-Much-Memory-Needed-for-LLM/</link>
+      <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/How-Much-Memory-Needed-for-LLM/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6133-How-Much-Memory-Needed-for-LLM.jpg&#34; alt=&#34;How-Much-Memory-Needed-for-LLM&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;how-much-memory-needed-for-llm&#34;&gt;How Much Memory Needed for LLM?&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-llm&#34;&gt;What is LLM?&lt;/h2&gt;&#xA;&lt;p&gt;LLM stands for &lt;strong&gt;Large Language Model&lt;/strong&gt;. These are machine learning models that are trained on massive amounts of text data to understand, generate, and work with human language in a way that mimics natural language understanding. They are called &amp;ldquo;large&amp;rdquo; because of the significant number of parameters they contain, often numbering in the billions or even trillions.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-defines-a-large-language-model&#34;&gt;What Defines a Large Language Model?&lt;/h3&gt;&#xA;&lt;p&gt;There is no strict or universally accepted benchmark to define what constitutes an LLM purely based on the number of parameters. The term &amp;ldquo;large&amp;rdquo; is relative and depends on the current state of technology and the size of models being developed. As technology progresses, what is considered &amp;ldquo;large&amp;rdquo; may continue to grow. However, some general guidelines have emerged:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

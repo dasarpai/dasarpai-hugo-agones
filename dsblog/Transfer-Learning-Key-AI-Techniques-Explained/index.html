@@ -1,0 +1,634 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Transfer Learning Key AI Techniques Explained | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/Transfer-Learning-Key-AI-Techniques-Explained/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Transfer Learning Key AI Techniques Explained">
+  <meta property="og:description" content="Transfer Learning Key AI Techniques Explained In this article we will understand some important concepts used within machine learning.
+What is in-context Learning? What is Prompt-Engineering? What is the relationship between Prompt Engineering and In-Context Learning? What is Zero-shot learning? How Zero-shot learning is different from In-context Learning? What is Meta-Learning? What is Few-shot learning? Do we need foundational models for Meta-learning and Few-shot learning? What is transfer learning? How do we do transfer learning from existing model? What is finetuning? Which layers to update, what weight to update during finetuning? Prompt Engineering, In Context Learning and Zero-shot Learning What is in-context Learning? In-Context Learning refers to a model’s ability to adapt its responses based on the context provided in the input prompt without updating its parameters or undergoing explicit training. The model uses the examples, instructions, or context given in the input to influence its behavior during inference.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-10-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="Generative AI">
+    <meta property="article:tag" content="Text Generation">
+    <meta property="article:tag" content="AI Conversation">
+    <meta property="article:tag" content="In Context Learning">
+    <meta property="article:tag" content="Prompt Engineering">
+    <meta property="article:tag" content="Zero Shot Learning">
+
+  <meta itemprop="name" content="Transfer Learning Key AI Techniques Explained">
+  <meta itemprop="description" content="Transfer Learning Key AI Techniques Explained In this article we will understand some important concepts used within machine learning.
+What is in-context Learning? What is Prompt-Engineering? What is the relationship between Prompt Engineering and In-Context Learning? What is Zero-shot learning? How Zero-shot learning is different from In-context Learning? What is Meta-Learning? What is Few-shot learning? Do we need foundational models for Meta-learning and Few-shot learning? What is transfer learning? How do we do transfer learning from existing model? What is finetuning? Which layers to update, what weight to update during finetuning? Prompt Engineering, In Context Learning and Zero-shot Learning What is in-context Learning? In-Context Learning refers to a model’s ability to adapt its responses based on the context provided in the input prompt without updating its parameters or undergoing explicit training. The model uses the examples, instructions, or context given in the input to influence its behavior during inference.">
+  <meta itemprop="datePublished" content="2024-10-25T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="2211">
+  <meta itemprop="keywords" content="Transfer Learning,In-Context Learning,Prompt Engineering,Zero-Shot Learning,Meta-Learning,Few-Shot Learning,Foundational Models">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Transfer Learning Key AI Techniques Explained">
+  <meta name="twitter:description" content="Transfer Learning Key AI Techniques Explained In this article we will understand some important concepts used within machine learning.
+What is in-context Learning? What is Prompt-Engineering? What is the relationship between Prompt Engineering and In-Context Learning? What is Zero-shot learning? How Zero-shot learning is different from In-context Learning? What is Meta-Learning? What is Few-shot learning? Do we need foundational models for Meta-learning and Few-shot learning? What is transfer learning? How do we do transfer learning from existing model? What is finetuning? Which layers to update, what weight to update during finetuning? Prompt Engineering, In Context Learning and Zero-shot Learning What is in-context Learning? In-Context Learning refers to a model’s ability to adapt its responses based on the context provided in the input prompt without updating its parameters or undergoing explicit training. The model uses the examples, instructions, or context given in the input to influence its behavior during inference.">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p><img src="/assets/images/dspost/dsp6172-Transfer-Learning-Key-AI-Techniques-Explained.jpg" alt="Transfer Learning Key AI Techniques Explained"></p>
+<h1 id="transfer-learning-key-ai-techniques-explained">Transfer Learning Key AI Techniques Explained</h1>
+<p>In this article we will understand some important concepts used within machine learning.</p>
+<ul>
+<li>What is in-context Learning?</li>
+<li>What is Prompt-Engineering?</li>
+<li>What is the relationship between Prompt Engineering and In-Context Learning?</li>
+<li>What is Zero-shot learning?</li>
+<li>How Zero-shot learning is different from In-context Learning?</li>
+<li>What is Meta-Learning?</li>
+<li>What is Few-shot learning?</li>
+<li>Do we need foundational models for Meta-learning and Few-shot learning?</li>
+<li>What is transfer learning?</li>
+<li>How do we do transfer learning from existing model?</li>
+<li>What is finetuning?</li>
+<li>Which layers to update, what weight to update during finetuning?</li>
+</ul>
+<h2 id="prompt-engineering-in-context-learning-and-zero-shot-learning">Prompt Engineering, In Context Learning and Zero-shot Learning</h2>
+<h3 id="what-is-in-context-learning">What is in-context Learning?</h3>
+<p>In-Context Learning refers to a model&rsquo;s ability to adapt its responses based on the context provided in the input prompt without updating its parameters or undergoing explicit training. The model uses the examples, instructions, or context given in the input to influence its behavior during inference.</p>
+<p>This learning occurs at inference time, meaning the model leverages the contextual information present in the prompt to generate relevant outputs. For example, if you provide a few examples of a specific task within the prompt, the model uses those examples to infer how to respond appropriately.</p>
+<p>Example: When you give a language model a few sentences that demonstrate a particular task (like sentiment analysis, translating text or generating questions), the model uses that context to perform the task as specified in the input.</p>
+<h3 id="what-is-prompt-engineering">What is Prompt-Engineering?</h3>
+<p>Prompt Engineering is the practice of crafting and designing prompts in a way that effectively elicits the desired behavior or output from a language model. It involves selecting the right wording, structure, and examples to improve the model&rsquo;s responses.</p>
+<p>This is a deliberate technique used to maximize the performance of the model by influencing how it interprets the input. It may involve adjusting the phrasing, adding context, or providing explicit instructions in the prompt.</p>
+<p>Example: If you want a model to summarize an article, you might engineer the prompt to explicitly state, &ldquo;Please summarize the following article in three sentences.&rdquo; This explicit instruction helps guide the model toward producing the desired output.</p>
+<h2 id="what-is-the-relationship-between-prompt-engineering-and-in-context-learning">What is the relationship between Prompt Engineering and In-Context Learning?</h2>
+<p>In-Context Learning is more about how the model utilizes the provided context during inference. So it is work of model. While Prompt Engineering is about how you craft that context (the prompt) to guide the model effectively, this is the work of human.</p>
+<p>In-Context Learning assesses the model&rsquo;s ability to understand and adapt to new information presented in the input. In Prompt Engineering aims to optimize the input format for better model performance, here we go with assumption that the model in hand is the best model and we need to tune our input in such a way that it works for us. So, there is no question of assessing.</p>
+<p>In nutshell, In-Context Learning deals with &ldquo;how the model processes information at inference time&rdquo;, and Prompt Engineering focuses on &ldquo;how to structure that input&rdquo; to achieve the best possible results.</p>
+<p>When we write our prompt to get the results in-context learning is happening in the background, without our knowledge.</p>
+<h2 id="what-is-zero-shot-learning">What is Zero-shot learning?</h2>
+<p>In zero-shot learning, the model is asked to perform a task or recognize a category it has not been explicitly trained on, using its understanding of the relationships between concepts. The model leverages its pre-existing knowledge without receiving any specific examples for the task.</p>
+<p>For example, imagine we have a language model that was trained on general text but has never been explicitly taught to translate languages. However, you ask it:</p>
+<p><strong>Prompt:</strong> “Translate ‘Hello’ from English to Spanish.”</p>
+<p>In zero-shot learning, the model attempts to respond with “Hola” by drawing on its general knowledge about languages, even though it wasn’t trained specifically for translation.</p>
+<p><strong>Prompt:</strong> What is this white animal in the image?</p>
+<p>In zero-shot learning, the model attempts to answer &ldquo;Zebra&rdquo;, even though no zebra images were used for the training.</p>
+<p>In short, the model uses its understanding to handle the new task without any direct examples or task-specific training. This approach is commonly used in natural language processing and is valuable for testing the model&rsquo;s ability to generalize. In fact it is more about inference or inferring and nothing to do with learning!</p>
+<h2 id="how-zero-shot-learning-is-different-from-in-context-learning">How Zero-shot learning is different from In-context Learning?</h2>
+<p>Zero-Shot Learning: Here, the model typically receives just a single prompt or query for an unfamiliar task and is expected to respond appropriately without any further guidance. The model might be given a straightforward question like “What is the name of this striped animal?” for a zebra, without examples or prior context.</p>
+<p>In-Context Learning: This involves providing examples or context (hence “in-context”) directly in the input prompt, showing the model the task structure. In few-shot or even one-shot in-context learning, the model might receive examples like “An animal with spots is a leopard” followed by “A black-and-white striped animal is a …?” which allows it to infer the pattern and give the correct response (“zebra”).</p>
+<h2 id="meta-learning-and-few-shot-learning">Meta learning and Few-shot Learning?</h2>
+<h3 id="what-is-meta-learning">What is Meta-Learning?</h3>
+<p>Meta learning is &ldquo;learning to learn&rdquo;. The goal of this is to enable the model to generalize across tasks so that it can learn new tasks with minimal fine-tuning or new examples. Meta-learning encompasses various approaches, like few-shot learning, zero-shot learning, multi-task learning, and rapid adaptation techniques.</p>
+<h3 id="what-is-few-shot-learning">What is Few-shot learning?</h3>
+<p>Few-shot learning is a type of learning where the model is trained to perform well on a task with only a few labeled examples (often 1 to 5 examples per class). Few-shot learning can be approached using various techniques, including meta-learning (as discussed earlier), transfer learning, and data augmentation. Few-shot learning is often achieved through meta-learning like Prototypical Networks or MAML (Model-Agnostic Meta-Learning)</p>
+<p>For example we have mnist dataset and we want to use few-shot learning to create a model. Let&rsquo;s assume our dataset has 1000 samples and there are 10 classes (0-9 digits). For each class we have 100 samples.</p>
+<p>In the 5-shot learning, we will take random n classes say 6. Then we pickup 5 sample from each of these classes. So we have 30 samples, this is called, support-set. Remaining 570 (600 - 30) samples are called query set. During the training process model need to learn from those 30 samples and predict nearest class on 570 sample. Suppose we conduct our training for 100 epochs then in each epoch these classes and samples of each classes will be different. This whole setup is called &ldquo;Prototypical Network&rdquo;, because we are creating prototype, a sample which represent classes in the dataset. Architecture, hyper-parameters are similar to normal training process.</p>
+<p>Once the training is complete the model is evaluated on completely new dataset to know the overall performance of the model.</p>
+<p>In traditional supervised learning, the model is trained directly on the full dataset, with all examples and classes used in a straightforward classification task. In few-shot learning, especially with meta-learning approaches like Prototypical Networks or Matching Networks, the model instead learns through a series of simulated few-shot tasks (mini classification problems) where it encounters limited samples and class subsets each time.</p>
+<p>In the traditional training, the model might overfit or memorize patterns specific to the training set, making it less adaptable to new, unseen classes. But, in few-Shot Meta-Learning, the model is constantly trained on various combinations of classes and examples, forcing it to generalize across tasks rather than specific examples. This makes it better suited to new tasks with limited data.</p>
+<p>In short, Meta-learning is a broader strategy for building adaptability across tasks. Few-shot learning is a specific objective (learning with minimal data) often achieved through meta-learning techniques.</p>
+<h3 id="do-we-need-foundational-models-for-meta-learning-and-few-shot-learning">Do we need foundational models for Meta-learning and Few-shot learning?</h3>
+<p>Yes, both meta-learning and few-shot learning typically benefit from a well-designed base model or foundation model, although the specific requirements vary depending on the approach.</p>
+<h2 id="transfer-learning-and-fine-tuning">Transfer Learning and Fine-tuning</h2>
+<h3 id="what-is-transfer-learning">What is transfer learning?</h3>
+<ul>
+<li>Transfer learning is the broader concept of taking a model trained on one task or dataset and reusing it for a new but related task.</li>
+<li>This approach leverages the <strong>knowledge</strong> (features, patterns, or representations) the model learned from the original dataset to make training on the new dataset faster and often more accurate, especially with limited data.</li>
+<li>In practice, transfer learning often involves starting with a <strong>pre-trained model</strong> and adapting it for a new task by adding, removing, or adjusting layers.</li>
+</ul>
+<p>Suppose we have the task of reading license plate numbers from vehicles on a busy road. This is a challenging problem, as it involves several complexities:</p>
+<ol>
+<li><strong>Varied Vehicles</strong>: Different types, shapes, and sizes of vehicles are present, such as cars, trucks, motorcycles, and even pedestrians.</li>
+<li><strong>Regional Variability</strong>: In countries like India, license plates often use local languages, unique fonts, and may have non-standard placements or formats.</li>
+</ol>
+<p>To address these challenges efficiently, rather than building models from scratch, we leverage <strong>transfer learning</strong>. Here&rsquo;s how:</p>
+<ol>
+<li>
+<p><strong>Using Pre-trained Models</strong>: We start with existing, pre-trained models designed for general tasks like <strong>object detection</strong> and <strong>optical character recognition (OCR)</strong>. For instance:</p>
+<ul>
+<li>A model that detects common objects can help identify vehicles and other elements in a scene, ignoring irrelevant objects like pedestrians.</li>
+<li>An OCR model trained to recognize alphabets and digits in multiple languages can be adapted to local license plate fonts and languages.</li>
+</ul>
+</li>
+<li>
+<p><strong>Adapting to Our Specific Task</strong>: Through transfer learning, we take these general models and <strong>fine-tune</strong> them using our custom dataset. This dataset includes images of vehicles in various orientations, lighting conditions, and with license plates in different scripts, fonts, and sizes.</p>
+<ul>
+<li><strong>Localization</strong>: An object detection model can be fine-tuned to recognize vehicles and pinpoint the exact location of license plates.</li>
+<li><strong>Character Recognition</strong>: An OCR model can be fine-tuned to identify the specific alphabets, numbers, and fonts common to the region.</li>
+</ul>
+</li>
+<li>
+<p><strong>Transfer Learning Techniques</strong>: We update only the parts of the pre-trained models that require adaptation (e.g., by re-training the last few layers), rather than adjusting the entire model. This allows us to build a robust, task-specific model much more efficiently than training from scratch.</p>
+</li>
+</ol>
+<p>In short, In transfer learning, we capitalize on the <strong>generalized knowledge</strong> captured by large, pre-trained models and <strong>adapt</strong> it for a specific task with minimal data and computational resources. In this example, we use transfer learning to detect vehicles, locate license plates, and recognize characters—achieving a powerful solution by leveraging pre-existing models as a foundation.</p>
+<h3 id="how-do-we-do-transfer-learning-from-existing-model">How do we do transfer learning from existing model?</h3>
+<p>To perform transfer learning on an existing model, you follow these general steps:</p>
+<ol>
+<li>
+<p><strong>Choose a Pre-trained Model</strong>:</p>
+<ul>
+<li>Select a model pre-trained on a large dataset relevant to your task (e.g., ImageNet for images, a general language model for text).</li>
+</ul>
+</li>
+<li>
+<p><strong>Freeze Early Layers</strong>:</p>
+<ul>
+<li>The early layers (left side of architecture) of a pre-trained model often capture general features (like edges in images or common word structures in text).</li>
+<li>Freeze these layers so their weights aren’t updated during training, which saves computation and preserves these general features.</li>
+</ul>
+</li>
+<li>
+<p><strong>Modify the Final Layers</strong>:</p>
+<ul>
+<li>Replace the last layers (the &ldquo;head&rdquo;) with new layers tailored to your specific task. For instance, if your task involves classifying 10 unique categories, change the output layer to have 10 nodes.</li>
+<li>Add dropout layers if you need to reduce overfitting or dense layers to learn new task-specific features.</li>
+</ul>
+</li>
+<li>
+<p><strong>Fine-Tune on Your Dataset</strong>:</p>
+<ul>
+<li>Use your labeled dataset to train the modified model.</li>
+<li>At first, train only the new (unfrozen) layers with a low learning rate.</li>
+<li>Optionally, &ldquo;unfreeze&rdquo; some of the later frozen layers to fine-tune them as well, especially if your dataset differs significantly from the original dataset.</li>
+</ul>
+</li>
+<li>
+<p><strong>Evaluate and Refine</strong>:</p>
+<ul>
+<li>After training, evaluate the model’s performance on a validation set.</li>
+<li>If needed, adjust hyperparameters, unfreeze more layers, or tweak the architecture further to improve performance.</li>
+</ul>
+</li>
+</ol>
+<h3 id="what-is-finetuning">What is finetuning?</h3>
+<ul>
+<li>Fine-tuning is a <strong>specific technique within transfer learning</strong>. It involves training (or re-training) some or all of the layers of the pre-trained model on the new dataset, often with a lower learning rate.</li>
+<li>Fine-tuning generally means that the <strong>early layers</strong> of the model, which contain general features (e.g., edges or textures in images, common word structures in text), are often frozen, while the <strong>later layers</strong> are adjusted to learn task-specific features for the new dataset.</li>
+<li>Fine-tuning can range from updating just the final few layers to selectively unfreezing additional layers to adapt the model further.</li>
+</ul>
+<p>In summary, <strong>Transfer learning</strong> is the overarching strategy of leveraging a pre-trained model for a new task. <strong>Fine-tuning</strong> is a method within transfer learning where you adjust certain layers of the model on the new task to improve its performance. In short, <strong>all fine-tuning is transfer learning</strong>, but not all transfer learning involves fine-tuning. Some transfer learning setups only reuse fixed features from a pre-trained model without modifying them.</p>
+<h3 id="which-layers-to-update-what-weight-to-update-during-finetuning">Which layers to update, what weight to update during finetuning?</h3>
+<p>During fine-tuning, you have flexibility regarding which parts of the model you expose for updates:</p>
+<ul>
+<li>All weights can be updated for full fine-tuning.</li>
+<li>Certain layers can be frozen to retain learned features while still adapting the model to new tasks.</li>
+<li>Adapter layers can be used to minimize changes to the original model while still allowing it to learn from new data.</li>
+</ul>
+<p>The choice of approach depends on factors such as the size of your dataset, the relatedness of your task to the pre-trained model, and the computational resources available.</p>
+<div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/generative-ai" class="category-badge">Generative AI</a><a href="/tags/text-generation" class="category-badge">Text Generation</a><a href="/tags/ai-conversation" class="category-badge">AI Conversation</a><a href="/tags/in-context-learning" class="category-badge">In Context Learning</a><a href="/tags/prompt-engineering" class="category-badge">Prompt Engineering</a><a href="/tags/zero-shot-learning" class="category-badge">Zero Shot Learning</a><a href="/tags/natural-language-processing" class="category-badge">Natural Language Processing</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=Transfer%20Learning%20Key%20AI%20Techniques%20Explained&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fTransfer-Learning-Key-AI-Techniques-Explained%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fTransfer-Learning-Key-AI-Techniques-Explained%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fTransfer-Learning-Key-AI-Techniques-Explained%2f&title=Transfer%20Learning%20Key%20AI%20Techniques%20Explained" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fTransfer-Learning-Key-AI-Techniques-Explained%2f&title=Transfer%20Learning%20Key%20AI%20Techniques%20Explained" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=Transfer%20Learning%20Key%20AI%20Techniques%20Explained&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fTransfer-Learning-Key-AI-Techniques-Explained%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/Types-of-LLM/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">Types of Large Language Models (LLM)</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/AI-Benchmarks-Explained/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">AI Benchmarks Explained</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#prompt-engineering-in-context-learning-and-zero-shot-learning">Prompt Engineering, In Context Learning and Zero-shot Learning</a>
+      <ul>
+        <li><a href="#what-is-in-context-learning">What is in-context Learning?</a></li>
+        <li><a href="#what-is-prompt-engineering">What is Prompt-Engineering?</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-is-the-relationship-between-prompt-engineering-and-in-context-learning">What is the relationship between Prompt Engineering and In-Context Learning?</a></li>
+    <li><a href="#what-is-zero-shot-learning">What is Zero-shot learning?</a></li>
+    <li><a href="#how-zero-shot-learning-is-different-from-in-context-learning">How Zero-shot learning is different from In-context Learning?</a></li>
+    <li><a href="#meta-learning-and-few-shot-learning">Meta learning and Few-shot Learning?</a>
+      <ul>
+        <li><a href="#what-is-meta-learning">What is Meta-Learning?</a></li>
+        <li><a href="#what-is-few-shot-learning">What is Few-shot learning?</a></li>
+        <li><a href="#do-we-need-foundational-models-for-meta-learning-and-few-shot-learning">Do we need foundational models for Meta-learning and Few-shot learning?</a></li>
+      </ul>
+    </li>
+    <li><a href="#transfer-learning-and-fine-tuning">Transfer Learning and Fine-tuning</a>
+      <ul>
+        <li><a href="#what-is-transfer-learning">What is transfer learning?</a></li>
+        <li><a href="#how-do-we-do-transfer-learning-from-existing-model">How do we do transfer learning from existing model?</a></li>
+        <li><a href="#what-is-finetuning">What is finetuning?</a></li>
+        <li><a href="#which-layers-to-update-what-weight-to-update-during-finetuning">Which layers to update, what weight to update during finetuning?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

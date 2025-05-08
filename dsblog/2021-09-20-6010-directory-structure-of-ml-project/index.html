@@ -1,0 +1,464 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Folder Structure for ML Project | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2021-09-20-6010-directory-structure-of-ml-project/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Folder Structure for ML Project">
+  <meta property="og:description" content="Directory Structure for ML Project is critical for any serious data science project. What we learn from a technology college and institution is useful in a real-world business, but the problem is that environment is completely different, and it takes proper guidance to adapt to a real business environment. Many times traveling on this path is full of frustration without any proper guidance. Sometimes guidance is there, but it is like blind is leading blind. One has already navigated a lot with struggle, so she/he is trying to guide a new person. Data-science education is not any different from this. From universities and institutions, we learn many concepts, algorithms, art, and science of developing models, etc. but when our customer or management tells us a problem with a simplistic dataset then we don’t know how to proceed. Although there are many templates and frameworks to approach, yet there is no simple cookie-cutter solution for all kinds of problems. Depending upon project duration, resources (human &#43; machine &#43; software), client, and his/her need, the technology available at hand we can choose different approaches.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2021-09-20T15:50:00+05:30">
+    <meta property="article:modified_time" content="2021-09-20T15:50:00+05:30">
+    <meta property="article:tag" content="ML Project Directory Structure">
+    <meta property="article:tag" content="Configuration Management">
+    <meta property="article:tag" content="Directory Structure">
+    <meta property="article:tag" content="MLOps">
+
+  <meta itemprop="name" content="Folder Structure for ML Project">
+  <meta itemprop="description" content="Directory Structure for ML Project is critical for any serious data science project. What we learn from a technology college and institution is useful in a real-world business, but the problem is that environment is completely different, and it takes proper guidance to adapt to a real business environment. Many times traveling on this path is full of frustration without any proper guidance. Sometimes guidance is there, but it is like blind is leading blind. One has already navigated a lot with struggle, so she/he is trying to guide a new person. Data-science education is not any different from this. From universities and institutions, we learn many concepts, algorithms, art, and science of developing models, etc. but when our customer or management tells us a problem with a simplistic dataset then we don’t know how to proceed. Although there are many templates and frameworks to approach, yet there is no simple cookie-cutter solution for all kinds of problems. Depending upon project duration, resources (human &#43; machine &#43; software), client, and his/her need, the technology available at hand we can choose different approaches.">
+  <meta itemprop="datePublished" content="2021-09-20T15:50:00+05:30">
+  <meta itemprop="dateModified" content="2021-09-20T15:50:00+05:30">
+  <meta itemprop="wordCount" content="2592">
+  <meta itemprop="keywords" content="machine,learning,project,structure,,project,organization,,MLOps,best,practices,,code,organization,,model,deployment,,project,management,,configuration,management,,development,workflow,,production,deployment,,testing,framework">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Folder Structure for ML Project">
+  <meta name="twitter:description" content="Directory Structure for ML Project is critical for any serious data science project. What we learn from a technology college and institution is useful in a real-world business, but the problem is that environment is completely different, and it takes proper guidance to adapt to a real business environment. Many times traveling on this path is full of frustration without any proper guidance. Sometimes guidance is there, but it is like blind is leading blind. One has already navigated a lot with struggle, so she/he is trying to guide a new person. Data-science education is not any different from this. From universities and institutions, we learn many concepts, algorithms, art, and science of developing models, etc. but when our customer or management tells us a problem with a simplistic dataset then we don’t know how to proceed. Although there are many templates and frameworks to approach, yet there is no simple cookie-cutter solution for all kinds of problems. Depending upon project duration, resources (human &#43; machine &#43; software), client, and his/her need, the technology available at hand we can choose different approaches.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6010-Directory-Strucutre-of-ML-Project.jpg" alt="Configuration Management"></p>
+<p><strong>Directory Structure for ML Project</strong> is critical for any serious data science project. What we learn from a technology college and institution is useful in a real-world business, but the problem is that environment is completely different, and it takes proper guidance to adapt to a real business environment. Many times traveling on this path is full of frustration without any proper guidance. Sometimes guidance is there, but it is like blind is leading blind. One has already navigated a lot with struggle, so she/he is trying to guide a new person. Data-science education is not any different from this. From universities and institutions, we learn many concepts, algorithms, art, and science of developing models, etc. but when our customer or management tells us a problem with a simplistic dataset then we don’t know how to proceed. Although there are many templates and frameworks to approach, yet there is no simple cookie-cutter solution for all kinds of problems. Depending upon project duration, resources (human + machine + software), client, and his/her need, the technology available at hand we can choose different approaches.</p>
+<p>In spite of all the chaos and confusion, one thing remains constant in the project. That one thing is managing the output of different stages of our project. Where to keep your intermediate file(s) or work product(s)? What should be the folder structure of our project? How files should be versioned? How product should be versioned? How the access permission to these files is managed? How the backup and retrieval of these files are managed, etc. All these activities are part of a big process called configuration management. <strong>Configuration management</strong> is a complex topic and much more complex in Machine Learning, and Data Science projects. So to keep things simple in this article, I am just trying one aspect of configuration management. The folder structure is one of the key concepts in configuration management. If you have proper folder structure then you can manage your work in much efficient way, it also helps you in understanding the high flow of the project.</p>
+<p>In my experience, if you are working on a project where less than one week of one-person effort is required, then you probably can manage without proper folder structure. However, you still need folder structure to manage the work of many projects of a week duration. But here we are discussing the folder structure of a project and not of the organization. If many people are involved in a project, it is going to take months, input is coming from multiple sources and there are many stakeholders then it is good to have a stable folder structure in place. If your folder structure is evolving during the project lifecycle then you will waste lots of time in naming/renaming folders, migrating code, changing your code, etc. In the absence of a stable folder structure, sometimes you can accidentally overwrite something which should not be, sometimes you’re referring to or modifying a wrong file, sometimes you are maintaining a copy of a file that is not needed.</p>
+<p>At the high-level, data-science project goes through three stages, therefore they deserve separate three top-level folders. They are as below.</p>
+<p><strong>Research and Development:</strong> In this stage, you get data from customer(s), or you collect data from different sources. This data may be structured or unstructured, clean or messy, one file or hundreds of files, one version of one file, or different versions of the same file. Based on the problem statement, you explore the data, clean the data, and develop a model(s).</p>
+<p>Under this folder, you can keep files directly, or you can create different subfolders. It depends upon data volume, analysis, and transformations required, number, and types of models required. If you are not creating a subfolder, then make sure the filename can speak about what is the work in it.</p>
+<p><strong>Productionization and Testing:</strong> A model can be consumed by the user via a UI interface. This UI can be on a computer, phone, television screen. Even if you keep a UI development out of scope for a data science project, you need to convert the developed model into a service. The Research and Development stage gives you a model which is a binary file, it is not a service. In this folder, we keep all the work which are required</p>
+<ol>
+<li>To convert the given input into something which the model can understand. Transformations are put in modularized code.</li>
+<li>Create a service from the model and deploy the service in the test environment.</li>
+<li>Check model can be deployed at any other location without problem. Irrespective of OS, infrastructure used model service should run without any problem.</li>
+<li>Check whether input transformation is happening properly or not. (Testing &amp; Test cases for input transformation)</li>
+<li>Check whether the model is giving the output as expected. (Model performance evaluation on the test data)</li>
+</ol>
+<p>Even the best engineers can deviate from the main process when their focus is to solve problems. There are chances when code may be running properly but not written properly. Therefore, after developing our model in the first stage, we cannot hand over that code to the customer. In the absence of proper coding practices, it is extremely hard to maintain the code. Therefore, this is the time we should create packages from the code written at the research and development stage. Here we also need to ensure coding best practices are followed. This folder also includes files that ensure</p>
+<ol>
+<li>Implementation of coding standard</li>
+<li>A separate configuration file which can be used during testing or in production environment. This ensures reproducibility of processes followed during development.</li>
+</ol>
+<p><strong>Model Serving:</strong> During the previous stage, we wrote test cases, ensured coding standards and conducted testing. So all the related code plus train and test datasets created by the transformation pipeline and some other code and files, that are important for testing but not of any value in the production environment, so it should be cleaned. We know running and maintaining the performance of a production server is a highly challenging task. We cannot keep something there which can cause performance related issues, increase the cost of maintenance, or confuses the operation team. Therefore, we need to migrate only that code, configuration files into production, which is a must for running the production. This folder is an exact copy of the production directory structure. Apart from that, if we are going to host our application or model on some cloud platform like Heroku then we need to make sure that those requirements are also fulfilled. For that, we may need to write some other code with the specific file name. Thus, all this information rests in this folder.</p>
+<p>You can maintain the same folder structure in your GitHub, or any other configuration-management software you are using. If you are using CI/CD software like circleci or jetkin then there will be little change in this structure. You need to include some yaml configuration files and decide from what place in your project life cycle you want the project to do continuous build, deployment, and delivery.</p>
+<h2 id="1--research-and-development-folder">1- Research and Development folder</h2>
+<ul>
+<li><strong>Data folder</strong>: Data files given by customer, data files you created after scrapping from various sources. Baseline this and never ever alter anything in this folder. Make it read only.</li>
+<li><strong>Data-Scripts</strong> <strong>folder</strong>: SQL, JavaScript, Python etc. code to collect data from different sources.</li>
+<li><strong>Data-Analysis</strong> <strong>folder</strong>: Checking volume of data, data type, categories for categorical data field, null values, date field, logical field etc. Code to check data distribution. Create map of categorical fields to numbers. Document your observations about the data and decisions you can take on this data. So, all the related python code goes here.</li>
+<li><strong>Data-Cleaning</strong> <strong>folder</strong>: Code related to joining multiple files on various fields, dropping column/rows, null value treatment, etc. goes in this folder.</li>
+<li><strong>Feature-Engineering</strong> <strong>folder</strong>: Code related transformation, mapping, scaling, new feature creation goes in this folder.</li>
+<li><strong>Feature-Selection</strong> <strong>folder</strong>: Select which features are valuable for our project. RFE, VIF, Lasso etc., list of features with their importance. Code required to achieve all this goes here.</li>
+<li><strong>Model-Training</strong> <strong>folder</strong>: Train model on Identified features. Check performance on train data. Train data files. Different grid search, cross validation, model experiments, model and model performance.</li>
+<li><strong>Test-Model folder</strong>: All Transformation of needed variable. Prediction from trained model. Test data files. Ideally, this is validation data (not Test data). Normally, we create this dataset after doing the train test split from the customer given data. We test our model on this validation data.</li>
+<li><strong>Helper-Functions</strong> <strong>folder</strong>: Modular code / class for cleaning, transformation, imputation etc. This can be done from all the code which you have written now. Being the first stage, there will be minimal code in this folder.</li>
+</ul>
+<h2 id="2--productionization-and-packaging-folder">2- Productionization and Packaging folder</h2>
+<p>Let’s assume your model name is <strong>mymagic</strong>. To create distribution and test automation, I am using tox python library.</p>
+<ul>
+<li>
+<p><strong>Test Folder</strong>: Keep your test cases here (this is to test the code and feature transformation on fly etc.). Code of prediction function is also here. Don’t confuse this with model performance testing.</p>
+<ul>
+<li>__init__.py</li>
+<li>configtest.py : Code related to loading test dataset (test dataset is given by customer)</li>
+<li>test_feature.py : Unit test cases for the functionality need to tested.</li>
+<li>test_prediction.py : Function required to test the prediction.</li>
+</ul>
+</li>
+<li>
+<p><strong>model_mymagic folder</strong></p>
+<ul>
+<li>
+<p><strong>config folder</strong></p>
+<ul>
+<li>
+<p>__init__.py</p>
+</li>
+<li>
+<p><strong>core.py</strong> : Declare the type of all variable (it should be same as in the cleaned trained dataset). Create a config memory object which holds all the parameters required in our project. It will help you in removing the hardcode.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>datasets folder</strong></p>
+<ul>
+<li>
+<p>train.csv : your final train data</p>
+</li>
+<li>
+<p>test.csv : Your final test data</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>processing folder</strong></p>
+<ul>
+<li>
+<p>__init__.py</p>
+</li>
+<li>
+<p><strong>datamanager.py</strong> : Code related to pipeline load, pipeline save, pipeline remove functions goes here.</p>
+</li>
+<li>
+<p><strong>feature.py</strong> : Code related to mapping of categorical variables, transformation functions.</p>
+</li>
+<li>
+<p><strong>validation.py</strong> : Code related to checking inputs of the model. It shouldn’t be NA, value should be correct data type etc.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>trained_model folder</strong></p>
+<ul>
+<li>
+<p>__init__.py</p>
+</li>
+<li>
+<p><strong>model_xyz_version.pkl</strong> : This is model binary file. It is created when you save the model OR if you execute this command “tox -e train”</p>
+</li>
+<li>
+<p><strong>config.yaml</strong> : This is a helper file. Mapping of categorical variables, all config variables required, validation of train/test dataset, FE, imputation information etc. all the related code goes here.</p>
+</li>
+<li>
+<p><strong>pipeline.py</strong> : Complete pipeline for imputation, temporal fields, FE, etc. is written here. For model building or data cleaning or prediction whatever need to be done in the sequence, all those functions are called in this pipeline.</p>
+</li>
+<li>
+<p><strong>predict.py</strong> : Prediction on new dataset. It can be batch prediction of one prediction.</p>
+</li>
+<li>
+<p><strong>train_pipeline.py</strong> Calling pipeline, creating model, saving model, selecting the best model.</p>
+</li>
+<li>
+<p><strong>VERSION</strong> : Model version number.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Requirements folder</strong>: During package creation, these two files are read, it ensures all the dependencies are installed, and all coding standards are enforced.</p>
+<ul>
+<li>
+<p><strong>requirements.txt</strong> : List all the packages/libraries you need in production environment. Your model will not work if these libraries are not shipped into a production environment. For example, pydantic (for data validation), feature-engine, joblib, scikit-learn, ruamel.yaml, strictyaml.yaml). Basically this the list of all third party libraries which you package is using.</p>
+</li>
+<li>
+<p><strong>test_requirements.txt</strong> : List of all the packages which are needed in production (-r requirment.txt) plus some more packages which are required for testing, coding standard enforcement etc. For example, pytest (for unit testing), black (variable naming convention is enforced), flake8 (for checking coding style PEP8/ programming errors like lib imported but not used, undefined name), mypy (variable type checking), isort (package imports are in correct order)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>dist folder</strong> : This folder is created automatically when you create distribution package of your model, you need to run following command <strong>=&gt; python -m build</strong>. You must have the latest build library for this for that command =&gt; <strong>python3 -m pip install –upgrad build</strong>.</p>
+</li>
+<li>
+<p><strong>model-mymagic-1.0.0.egg-info</strong> : This folder is also automatically created when you run above build command. If this folder and above folder is moved to different/production location, and you run <strong>pip install model-mymagic</strong> then this package will be installed along with the dependencies in the environment..</p>
+<ul>
+<li>dependecy_link.txt</li>
+<li>PKG-INFO</li>
+<li>requires.txt</li>
+<li>SOURCES.txt</li>
+<li>top_level.txt</li>
+</ul>
+</li>
+<li>
+<p><strong>.tox folder</strong>: This folder is created automatically, you need to run following command =&gt; <strong>pip install tox</strong>. <strong>tox -e train</strong>. “<strong>tox”</strong> is generic virtual environment manager. It helps to automate packaging, testing and releasing python based application. All the information related to virtual environment is in this folder.</p>
+<ul>
+<li>Lib</li>
+<li>Log</li>
+<li>Sciprts</li>
+<li>pyvenv.cfg</li>
+</ul>
+</li>
+<li>
+<p><strong>pyproject.toml</strong> : To specify what program to use for generating distribution. Command =&gt; p<strong>ython setup.py bdist</strong> or <strong>python setup.py bdist_wheel</strong> generate a distribution bundle. Command =&gt;<strong>python setup.py install</strong> installs the distribution. Setup.py uses this file.</p>
+</li>
+<li>
+<p><strong>MAFIFEST.in</strong> : During package building, which files should be included and which one should be excluded is listed at this place. Like md, pkl, txt, csv, yml, txt can be included (you can write full name or just extension of these files). Files like log, cfg can be excluded.</p>
+</li>
+<li>
+<p><strong>mypi.ini</strong> : Linting and pipe checking. Configuration setting for linting.</p>
+</li>
+<li>
+<p><strong>setup.py</strong> : Functionality to install package on the different machine.</p>
+</li>
+<li>
+<p><strong>tox.ini</strong>: TOX is generic virtual environment manager. Ensures package installed correctly. Run test in the environment, irrespective of OS. All python path, environment variable issues are taken care by tox. This file can have environments defined like as following.</p>
+<ul>
+<li>
+<p>[tox] default</p>
+</li>
+<li>
+<p>[testenv]</p>
+</li>
+<li>
+<p>[testenv:test_package] Setting for envdir, deps, commands</p>
+</li>
+<li>
+<p>[testenv:train] Setting for envdir, deps, commands</p>
+</li>
+<li>
+<p>[testenv:typechecks] Setting for envdir, deps, commands</p>
+</li>
+<li>
+<p>[testenv:stylechecks] Setting for envdir, deps, commands</p>
+</li>
+<li>
+<p>[textevn:lint] Setting for envdir, deps, commands</p>
+</li>
+<li>
+<p>[flake8]</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3--model-serving-folder">3- Model Serving Folder</h2>
+<p>By the time you reach to this stage, the code required to run the service is ready. Now, you first need to create the model file for that, you call the command =&gt; <strong>tox -e train</strong>. It will give a pkl file. After this, you can run this model as a service, for that you need to run this command =&gt; tox -e run. After this service will be running on your local machine. It gives you a URL and you can use that URL to consume the prediction service from the model. It will be https://localhost:8001/docs. After this service is available but it in embedded architecture using uvicorn or FastAPI, it can make asynchronous calls and serve the user. But if you want to consume the service via your own application, you need to deploy this application in dedicated architecture. For that, we need to develop our own UI using flask or Django etc., and call the API in our application.</p>
+<ul>
+<li>
+<p><strong>app folder</strong></p>
+<ul>
+<li>
+<p><strong>config.py</strong> : Code for calling logging function. Model monitoring is critical for model performance evaluation in the production environment. This code helps in model monitoring.</p>
+</li>
+<li>
+<p><strong>api.py:</strong> Code to run the application which main.py is calling is written here.</p>
+</li>
+<li>
+<p><strong>main.py</strong> : Code for running app</p>
+</li>
+<li>
+<p><strong>test folder</strong> :</p>
+<ul>
+<li><strong>ConfigTest.py</strong>: Configuration, code required to test the model in production environment.</li>
+<li><strong>TestAPI.py</strong>: Code to test the service in production environment.</li>
+</ul>
+</li>
+<li>
+<p><strong>schema folder</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>procfile</strong> : for heroku</p>
+</li>
+<li>
+<p><strong>requirements.txt</strong> : This file will have reference to the dependency plus the package we created, and uvicorn package</p>
+</li>
+<li>
+<p><strong>test_requirements.txt</strong></p>
+</li>
+<li>
+<p><strong>.tox</strong></p>
+</li>
+<li>
+<p><strong>tox.ini</strong></p>
+</li>
+<li>
+<p><strong>mypy.ini</strong></p>
+</li>
+</ul>
+<p>After third stage, your model will be running on some server and users can call the service or webpage to consume the service given by your model.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Let me know if I miss anything, or you do anything differently. If you are starting your first data science project for some customer or serious research, you can create this folder structure and keep putting files and content based on the need. It will give you clarity, and you can spend your time doing something which is more important than this administrative work.</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

@@ -1,0 +1,1159 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Exploring Github | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/Exploring-Github/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Exploring Github">
+  <meta property="og:description" content="Exploring Github Question: What is github package and what can I do with this? GitHub Packages is a service that allows you to host and manage packages (e.g., code libraries, Docker containers) within GitHub. Here’s a breakdown of what you can do or achieve with GitHub Packages:
+1. Host and Share Packages Languages Supported: You can host packages for multiple programming languages, such as: npm (JavaScript/Node.js) Maven (Java) NuGet (C#/.NET) RubyGems (Ruby) Python (PyPI) Docker (Container images) Share Packages: You can share packages publicly or privately within an organization or with collaborators. 2. Seamless Integration with GitHub Repositories You can tightly integrate packages with GitHub repositories. This allows for automated versioning, releasing, and managing packages in tandem with your code changes. Release Automation: Automate package publishing during a GitHub release or via CI/CD pipelines (GitHub Actions). 3. Versioning and Dependency Management GitHub Packages supports semantic versioning. This means you can publish new versions of your package and manage dependencies within your projects. Dependency Graph: View dependencies in your repository, understand their relationships, and check for vulnerabilities. Link with Code: GitHub Packages is linked with repositories, so you can easily trace which version of your package is linked with which repository or commit. 4. Private Package Hosting Host private packages that are accessible only to specific people, teams, or organizations. Role-based Access Control: Control who can view, download, or publish to your packages using GitHub’s role-based access. 5. Container Hosting (Docker and OCI Images) Use GitHub Packages as a Docker registry to store and manage your Docker images. Build &amp; Deploy Containers: Automate the building and publishing of Docker images via GitHub Actions and deploy them using platforms like Kubernetes. 6. Integrate with GitHub Actions You can automate the entire package lifecycle (build, test, publish) using GitHub Actions. CI/CD Pipelines: Use GitHub Actions to automatically publish packages whenever code is merged, tests pass, or new releases are created. 7. Security and Auditing Signed Packages: GitHub Packages can be configured to require packages to be signed, adding an extra layer of security. Package Scanning: GitHub also scans packages for known vulnerabilities, helping you avoid security risks in your dependencies. 8. Search and Discovery Discover Public Packages: Search for public packages published by other users or organizations. Tagging and Labeling: Use tags and labels to categorize your packages, making them easier to find and manage. 9. Package Insights and Usage Metrics View download statistics, such as how many times a package has been downloaded, and track overall usage trends. Repository Insights: See which repositories are consuming or contributing to your packages. 10. Custom Registries GitHub allows you to host your own private or public package registries for your team or organization. Use Cases for GitHub Packages: Publishing Libraries: Share reusable libraries and code modules (e.g., npm packages, Python libraries) with teams or the public. Managing Internal Tools: Host internal dependencies or tools that are not meant to be shared publicly. Docker Image Management: Manage and distribute Docker images for deploying applications. Automated Releases: Build automated pipelines to publish, test, and deploy code to production environments. GitHub Packages is particularly useful for teams or individuals who want a fully integrated solution to manage both their source code and dependencies in one place.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-09-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="GitHub">
+    <meta property="article:tag" content="Version Control">
+    <meta property="article:tag" content="Git">
+    <meta property="article:tag" content="Software Development">
+    <meta property="article:tag" content="Repository Management">
+    <meta property="article:tag" content="Collaboration Tools">
+
+  <meta itemprop="name" content="Exploring Github">
+  <meta itemprop="description" content="Exploring Github Question: What is github package and what can I do with this? GitHub Packages is a service that allows you to host and manage packages (e.g., code libraries, Docker containers) within GitHub. Here’s a breakdown of what you can do or achieve with GitHub Packages:
+1. Host and Share Packages Languages Supported: You can host packages for multiple programming languages, such as: npm (JavaScript/Node.js) Maven (Java) NuGet (C#/.NET) RubyGems (Ruby) Python (PyPI) Docker (Container images) Share Packages: You can share packages publicly or privately within an organization or with collaborators. 2. Seamless Integration with GitHub Repositories You can tightly integrate packages with GitHub repositories. This allows for automated versioning, releasing, and managing packages in tandem with your code changes. Release Automation: Automate package publishing during a GitHub release or via CI/CD pipelines (GitHub Actions). 3. Versioning and Dependency Management GitHub Packages supports semantic versioning. This means you can publish new versions of your package and manage dependencies within your projects. Dependency Graph: View dependencies in your repository, understand their relationships, and check for vulnerabilities. Link with Code: GitHub Packages is linked with repositories, so you can easily trace which version of your package is linked with which repository or commit. 4. Private Package Hosting Host private packages that are accessible only to specific people, teams, or organizations. Role-based Access Control: Control who can view, download, or publish to your packages using GitHub’s role-based access. 5. Container Hosting (Docker and OCI Images) Use GitHub Packages as a Docker registry to store and manage your Docker images. Build &amp; Deploy Containers: Automate the building and publishing of Docker images via GitHub Actions and deploy them using platforms like Kubernetes. 6. Integrate with GitHub Actions You can automate the entire package lifecycle (build, test, publish) using GitHub Actions. CI/CD Pipelines: Use GitHub Actions to automatically publish packages whenever code is merged, tests pass, or new releases are created. 7. Security and Auditing Signed Packages: GitHub Packages can be configured to require packages to be signed, adding an extra layer of security. Package Scanning: GitHub also scans packages for known vulnerabilities, helping you avoid security risks in your dependencies. 8. Search and Discovery Discover Public Packages: Search for public packages published by other users or organizations. Tagging and Labeling: Use tags and labels to categorize your packages, making them easier to find and manage. 9. Package Insights and Usage Metrics View download statistics, such as how many times a package has been downloaded, and track overall usage trends. Repository Insights: See which repositories are consuming or contributing to your packages. 10. Custom Registries GitHub allows you to host your own private or public package registries for your team or organization. Use Cases for GitHub Packages: Publishing Libraries: Share reusable libraries and code modules (e.g., npm packages, Python libraries) with teams or the public. Managing Internal Tools: Host internal dependencies or tools that are not meant to be shared publicly. Docker Image Management: Manage and distribute Docker images for deploying applications. Automated Releases: Build automated pipelines to publish, test, and deploy code to production environments. GitHub Packages is particularly useful for teams or individuals who want a fully integrated solution to manage both their source code and dependencies in one place.">
+  <meta itemprop="datePublished" content="2024-09-17T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="4209">
+  <meta itemprop="keywords" content="GitHub Platform,Version Control System,Git Commands,Repository Management,Code Collaboration,DevOps Tools,Software Development Workflow,Git Best Practices">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exploring Github">
+  <meta name="twitter:description" content="Exploring Github Question: What is github package and what can I do with this? GitHub Packages is a service that allows you to host and manage packages (e.g., code libraries, Docker containers) within GitHub. Here’s a breakdown of what you can do or achieve with GitHub Packages:
+1. Host and Share Packages Languages Supported: You can host packages for multiple programming languages, such as: npm (JavaScript/Node.js) Maven (Java) NuGet (C#/.NET) RubyGems (Ruby) Python (PyPI) Docker (Container images) Share Packages: You can share packages publicly or privately within an organization or with collaborators. 2. Seamless Integration with GitHub Repositories You can tightly integrate packages with GitHub repositories. This allows for automated versioning, releasing, and managing packages in tandem with your code changes. Release Automation: Automate package publishing during a GitHub release or via CI/CD pipelines (GitHub Actions). 3. Versioning and Dependency Management GitHub Packages supports semantic versioning. This means you can publish new versions of your package and manage dependencies within your projects. Dependency Graph: View dependencies in your repository, understand their relationships, and check for vulnerabilities. Link with Code: GitHub Packages is linked with repositories, so you can easily trace which version of your package is linked with which repository or commit. 4. Private Package Hosting Host private packages that are accessible only to specific people, teams, or organizations. Role-based Access Control: Control who can view, download, or publish to your packages using GitHub’s role-based access. 5. Container Hosting (Docker and OCI Images) Use GitHub Packages as a Docker registry to store and manage your Docker images. Build &amp; Deploy Containers: Automate the building and publishing of Docker images via GitHub Actions and deploy them using platforms like Kubernetes. 6. Integrate with GitHub Actions You can automate the entire package lifecycle (build, test, publish) using GitHub Actions. CI/CD Pipelines: Use GitHub Actions to automatically publish packages whenever code is merged, tests pass, or new releases are created. 7. Security and Auditing Signed Packages: GitHub Packages can be configured to require packages to be signed, adding an extra layer of security. Package Scanning: GitHub also scans packages for known vulnerabilities, helping you avoid security risks in your dependencies. 8. Search and Discovery Discover Public Packages: Search for public packages published by other users or organizations. Tagging and Labeling: Use tags and labels to categorize your packages, making them easier to find and manage. 9. Package Insights and Usage Metrics View download statistics, such as how many times a package has been downloaded, and track overall usage trends. Repository Insights: See which repositories are consuming or contributing to your packages. 10. Custom Registries GitHub allows you to host your own private or public package registries for your team or organization. Use Cases for GitHub Packages: Publishing Libraries: Share reusable libraries and code modules (e.g., npm packages, Python libraries) with teams or the public. Managing Internal Tools: Host internal dependencies or tools that are not meant to be shared publicly. Docker Image Management: Manage and distribute Docker images for deploying applications. Automated Releases: Build automated pipelines to publish, test, and deploy code to production environments. GitHub Packages is particularly useful for teams or individuals who want a fully integrated solution to manage both their source code and dependencies in one place.">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p><img src="/assets/images/dspost/dsp6142-Exploring-Github.jpg" alt="Exploring Github"></p>
+<h1 id="exploring-github">Exploring Github</h1>
+<h2 id="question-what-is-github-package-and-what-can-i-do-with-this">Question: What is github package and what can I do with this?</h2>
+<p>GitHub Packages is a service that allows you to host and manage packages (e.g., code libraries, Docker containers) within GitHub. Here&rsquo;s a breakdown of what you can do or achieve with GitHub Packages:</p>
+<h3 id="1-host-and-share-packages">1. <strong>Host and Share Packages</strong></h3>
+<ul>
+<li><strong>Languages Supported</strong>: You can host packages for multiple programming languages, such as:
+<ul>
+<li><strong>npm</strong> (JavaScript/Node.js)</li>
+<li><strong>Maven</strong> (Java)</li>
+<li><strong>NuGet</strong> (C#/.NET)</li>
+<li><strong>RubyGems</strong> (Ruby)</li>
+<li><strong>Python</strong> (PyPI)</li>
+<li><strong>Docker</strong> (Container images)</li>
+</ul>
+</li>
+<li><strong>Share Packages</strong>: You can share packages publicly or privately within an organization or with collaborators.</li>
+</ul>
+<h3 id="2-seamless-integration-with-github-repositories">2. <strong>Seamless Integration with GitHub Repositories</strong></h3>
+<ul>
+<li>You can tightly integrate packages with GitHub repositories. This allows for automated versioning, releasing, and managing packages in tandem with your code changes.</li>
+<li><strong>Release Automation</strong>: Automate package publishing during a GitHub release or via CI/CD pipelines (GitHub Actions).</li>
+</ul>
+<h3 id="3-versioning-and-dependency-management">3. <strong>Versioning and Dependency Management</strong></h3>
+<ul>
+<li>GitHub Packages supports semantic versioning. This means you can publish new versions of your package and manage dependencies within your projects.</li>
+<li><strong>Dependency Graph</strong>: View dependencies in your repository, understand their relationships, and check for vulnerabilities.</li>
+<li><strong>Link with Code</strong>: GitHub Packages is linked with repositories, so you can easily trace which version of your package is linked with which repository or commit.</li>
+</ul>
+<h3 id="4-private-package-hosting">4. <strong>Private Package Hosting</strong></h3>
+<ul>
+<li>Host private packages that are accessible only to specific people, teams, or organizations.</li>
+<li><strong>Role-based Access Control</strong>: Control who can view, download, or publish to your packages using GitHub&rsquo;s role-based access.</li>
+</ul>
+<h3 id="5-container-hosting-docker-and-oci-images">5. <strong>Container Hosting (Docker and OCI Images)</strong></h3>
+<ul>
+<li>Use GitHub Packages as a Docker registry to store and manage your Docker images.</li>
+<li><strong>Build &amp; Deploy Containers</strong>: Automate the building and publishing of Docker images via GitHub Actions and deploy them using platforms like Kubernetes.</li>
+</ul>
+<h3 id="6-integrate-with-github-actions">6. <strong>Integrate with GitHub Actions</strong></h3>
+<ul>
+<li>You can automate the entire package lifecycle (build, test, publish) using GitHub Actions.</li>
+<li><strong>CI/CD Pipelines</strong>: Use GitHub Actions to automatically publish packages whenever code is merged, tests pass, or new releases are created.</li>
+</ul>
+<h3 id="7-security-and-auditing">7. <strong>Security and Auditing</strong></h3>
+<ul>
+<li><strong>Signed Packages</strong>: GitHub Packages can be configured to require packages to be signed, adding an extra layer of security.</li>
+<li><strong>Package Scanning</strong>: GitHub also scans packages for known vulnerabilities, helping you avoid security risks in your dependencies.</li>
+</ul>
+<h3 id="8-search-and-discovery">8. <strong>Search and Discovery</strong></h3>
+<ul>
+<li><strong>Discover Public Packages</strong>: Search for public packages published by other users or organizations.</li>
+<li><strong>Tagging and Labeling</strong>: Use tags and labels to categorize your packages, making them easier to find and manage.</li>
+</ul>
+<h3 id="9-package-insights-and-usage-metrics">9. <strong>Package Insights and Usage Metrics</strong></h3>
+<ul>
+<li>View download statistics, such as how many times a package has been downloaded, and track overall usage trends.</li>
+<li><strong>Repository Insights</strong>: See which repositories are consuming or contributing to your packages.</li>
+</ul>
+<h3 id="10-custom-registries">10. <strong>Custom Registries</strong></h3>
+<ul>
+<li>GitHub allows you to host your own private or public package registries for your team or organization.</li>
+</ul>
+<h3 id="use-cases-for-github-packages">Use Cases for GitHub Packages:</h3>
+<ul>
+<li><strong>Publishing Libraries</strong>: Share reusable libraries and code modules (e.g., npm packages, Python libraries) with teams or the public.</li>
+<li><strong>Managing Internal Tools</strong>: Host internal dependencies or tools that are not meant to be shared publicly.</li>
+<li><strong>Docker Image Management</strong>: Manage and distribute Docker images for deploying applications.</li>
+<li><strong>Automated Releases</strong>: Build automated pipelines to publish, test, and deploy code to production environments.</li>
+</ul>
+<p>GitHub Packages is particularly useful for teams or individuals who want a fully integrated solution to manage both their source code and dependencies in one place.</p>
+<h2 id="question-what-is-sementic-versioning-and-how-github-handles-this">Question: What is sementic versioning and how Github handles this?</h2>
+<p><strong>Semantic versioning (SemVer)</strong> is a versioning scheme that helps communicate changes in a software project in a clear and predictable manner. The idea behind <strong>semantic</strong> is that each part of the version number conveys a specific meaning about the state of the software.</p>
+<p>The format for semantic versioning is typically:</p>
+<pre tabindex="0"><code>MAJOR.MINOR.PATCH
+</code></pre><p>Each of these components signifies the type of change in the software:</p>
+<h3 id="1-major-version-x">1. <strong>MAJOR version (X)</strong></h3>
+<ul>
+<li>Increment this when you make incompatible or breaking changes.</li>
+<li><strong>Example</strong>: If you change the API or make updates that are not backward-compatible, you increase the major version.</li>
+<li><strong>Example</strong>: Going from <code>2.5.1</code> to <code>3.0.0</code>.</li>
+</ul>
+<h3 id="2-minor-version-y">2. <strong>MINOR version (Y)</strong></h3>
+<ul>
+<li>Increment this when you add new features or functionality in a backward-compatible way.</li>
+<li><strong>Example</strong>: Adding a new feature without changing existing functionality increases the minor version.</li>
+<li><strong>Example</strong>: Going from <code>2.5.1</code> to <code>2.6.0</code>.</li>
+</ul>
+<h3 id="3-patch-version-z">3. <strong>PATCH version (Z)</strong></h3>
+<ul>
+<li>Increment this when you make backward-compatible bug fixes or improvements.</li>
+<li><strong>Example</strong>: Fixing a bug that does not affect the API or features increments the patch version.</li>
+<li><strong>Example</strong>: Going from <code>2.5.1</code> to <code>2.5.2</code>.</li>
+</ul>
+<h3 id="optional-components">Optional Components:</h3>
+<ul>
+<li>
+<p><strong>Pre-release version</strong>: Can be appended to indicate that a release is in a pre-release state (e.g., alpha, beta):</p>
+<pre tabindex="0"><code>2.0.0-alpha.1
+</code></pre></li>
+<li>
+<p><strong>Build metadata</strong>: Additional information (e.g., build information) can be appended:</p>
+<pre tabindex="0"><code>1.0.0+20130313144700
+</code></pre></li>
+</ul>
+<h3 id="examples">Examples:</h3>
+<ul>
+<li>
+<p><strong>Version 1.0.0</strong></p>
+<ul>
+<li>This is the initial stable release. It suggests that breaking changes could occur in future <code>2.0.0</code> or higher versions.</li>
+</ul>
+</li>
+<li>
+<p><strong>Version 1.1.0</strong></p>
+<ul>
+<li>This means a new feature has been added, but it is backward-compatible.</li>
+</ul>
+</li>
+<li>
+<p><strong>Version 1.1.1</strong></p>
+<ul>
+<li>A bug or small issue was fixed without affecting any existing features or breaking anything.</li>
+</ul>
+</li>
+</ul>
+<h3 id="why-semantic-versioning-matters">Why Semantic Versioning Matters:</h3>
+<ul>
+<li><strong>Predictability</strong>: Developers can easily understand the nature of changes (breaking changes, new features, bug fixes) just by looking at the version number.</li>
+<li><strong>Dependency Management</strong>: When using a package, you can safely update PATCH versions, cautiously update MINOR versions, and avoid MAJOR version changes unless you&rsquo;re ready for potential breaking changes.</li>
+</ul>
+<h3 id="summary">Summary:</h3>
+<ul>
+<li><strong>MAJOR</strong> for incompatible changes.</li>
+<li><strong>MINOR</strong> for new, backward-compatible features.</li>
+<li><strong>PATCH</strong> for backward-compatible bug fixes.</li>
+</ul>
+<p>This standardized system helps everyone (users, contributors, package managers) maintain consistency and avoid unintended issues when updating software.</p>
+<h2 id="question-how-github-action-takes-care-of-versioning">Question: How github action takes care of versioning?</h2>
+<p>GitHub Actions itself doesn&rsquo;t automatically determine whether a build should be marked as a major, minor, or patch version. However, there are <strong>ways</strong> you can <strong>configure GitHub Actions</strong> to automate the process of versioning, based on the changes being made to your code.</p>
+<p>Typically, GitHub Actions relies on:</p>
+<ol>
+<li><strong>Manual Triggers</strong>: You or your team define the version (major, minor, or patch) based on the nature of the changes.</li>
+<li><strong>Automated Tools or Conventions</strong>: You can use third-party tools or commit message conventions to automate version bumps.</li>
+</ol>
+<p>Here’s how this works in practice:</p>
+<h3 id="1-manual-versioning">1. <strong>Manual Versioning</strong></h3>
+<ul>
+<li><strong>When to bump a version</strong> is decided manually by the developer or maintainer.</li>
+<li>You can manually specify in your <code>package.json</code> (for JavaScript projects) or other configuration files which version to bump.</li>
+<li>Example in a workflow:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Update version to 1.2.0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">run</span>: <span style="color:#ae81ff">npm version minor</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="2-automated-semantic-versioning-using-tools">2. <strong>Automated Semantic Versioning (using tools)</strong></h3>
+<p>You can automate versioning using tools like <strong>semantic-release</strong> or <strong>commit message conventions</strong>. These tools help automate version bumps based on the types of changes that are made to the code.</p>
+<h4 id="example-semantic-release">Example: <strong>semantic-release</strong></h4>
+<p><strong>semantic-release</strong> is a tool that analyzes commit messages and decides if the version should be bumped (major, minor, or patch).</p>
+<ul>
+<li>
+<p><strong>How it works</strong>:</p>
+<ul>
+<li>You follow a <strong>conventional commit message</strong> format, where each commit message clearly defines the type of change (e.g., feature, fix, breaking change).</li>
+<li>Based on the commit types, <code>semantic-release</code> will automatically bump the correct version:
+<ul>
+<li><code>fix:</code> → bumps <strong>patch</strong> version.</li>
+<li><code>feat:</code> → bumps <strong>minor</strong> version.</li>
+<li><code>BREAKING CHANGE:</code> in the commit body → bumps <strong>major</strong> version.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>GitHub Actions setup with semantic-release</strong>:
+Here&rsquo;s a basic workflow to use <code>semantic-release</code> with GitHub Actions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Release</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">release</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout code</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Node.js</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/setup-node@v2</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">node-version</span>: <span style="color:#e6db74">&#39;14&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install dependencies</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">npm install</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Run semantic-release</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">GITHUB_TOKEN</span>: <span style="color:#ae81ff">${{ secrets.GITHUB_TOKEN }}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">npx semantic-release</span>
+</span></span></code></pre></div></li>
+<li>
+<p>In this example, <code>semantic-release</code> automatically analyzes your commit history and pushes a new tag or release based on the changes in your commits.</p>
+</li>
+</ul>
+<h3 id="3-using-conventional-commit-messages">3. <strong>Using Conventional Commit Messages</strong></h3>
+<p>You can also enforce a <strong>conventional commit</strong> style in your project, where each commit message is structured in a way that signals what kind of version bump should happen:</p>
+<ul>
+<li><code>fix: ...</code> → Patch</li>
+<li><code>feat: ...</code> → Minor</li>
+<li><code>BREAKING CHANGE: ...</code> → Major</li>
+</ul>
+<p>Then, based on these messages, a tool like <code>standard-version</code> or <code>semantic-release</code> can automatically decide which version bump to apply.</p>
+<h3 id="4-github-releases-and-tags">4. <strong>GitHub Releases and Tags</strong></h3>
+<p>You can also integrate GitHub releases into this process:</p>
+<ul>
+<li>When you tag a release (manually or via automation), you can specify the version based on the changes.</li>
+<li>GitHub Actions can automate the process of tagging new versions during the CI/CD pipeline.</li>
+</ul>
+<h3 id="conclusion">Conclusion</h3>
+<p>GitHub Actions doesn’t automatically determine version bumps (major, minor, patch) on its own, but it can be configured to use tools like <strong>semantic-release</strong> or conventions like <strong>Conventional Commits</strong> to automate the process. You can manually or automatically decide when to change versions based on the types of changes in your codebase.</p>
+<h2 id="question-what-is-the-lifecycle-of-the-code-between-writing-to-deployment">Question: What is the lifecycle of the code between writing to deployment?</h2>
+<p>From writing code for some software features in visual studio to making a release built what are the different stages code go through within git? You can tell all the steps with oneline description?</p>
+<ol>
+<li><strong>Write Code (Feature Development)</strong>: Developers write new code or modify existing code to implement features or fix bugs.</li>
+<li><strong>Stage Changes</strong>: Selected files are marked for inclusion in the next commit using <code>git add</code>.</li>
+<li><strong>Commit Changes</strong>: A snapshot of the staged changes is saved to the local repository with a message using <code>git commit</code>.</li>
+<li><strong>Push to Remote Repository (Feature Branch)</strong>: The committed changes are pushed to the remote repository in a feature-specific branch using <code>git push</code>.</li>
+<li><strong>Create a Pull Request (PR)</strong>: A request is made to merge the feature branch into the main branch, typically initiating a review process.</li>
+<li><strong>Code Review</strong>: Team members review the code, providing feedback and suggesting improvements or fixes.</li>
+<li><strong>Make Requested Changes (if any)</strong>: Developers make any necessary changes based on feedback and push updated commits to the feature branch.</li>
+<li><strong>Approve and Merge PR (to Main Branch)</strong>: Once approved, the feature branch is merged into the main branch, often using a GitHub or GitLab interface.</li>
+<li><strong>Run CI/CD Pipelines</strong>: Automated pipelines start, running tests and building the software to ensure everything works correctly.</li>
+<li><strong>Run Tests</strong>: Automated tests are executed to verify that the new code doesn’t break existing functionality.</li>
+<li><strong>Build the Application</strong>: The code is compiled or packaged into a build artifact, ready for deployment or distribution.</li>
+<li><strong>Tag a Release (Versioning)</strong>: A new version number is assigned using semantic versioning, and a tag is created in Git for this release.</li>
+<li><strong>Generate Release Notes</strong>: A summary of changes included in the release is prepared, often automatically based on commits or PR descriptions.</li>
+<li><strong>Push Release Tag</strong>: The release tag is pushed to the remote repository, making the release official.</li>
+<li><strong>Deploy to Staging/Production</strong>: The built application is deployed to a staging or production environment for users to access.</li>
+<li><strong>Release Build Available for Users</strong>: The final release is published, and users can download or use the new version of the software.</li>
+</ol>
+<p>This is the typical flow in a modern Git-based development environment with CI/CD pipelines and release management tools.</p>
+<h2 id="question-how-to-organize-diverse-technology-projects-business-projects-poc-in-github">Question: How to organize diverse technology projects, business projects, POC in GitHub?</h2>
+<p>To organize and manage your diverse projects effectively on GitHub, you can adopt a structured approach for configuration management and repository organization. Here&rsquo;s a strategy tailored to your situation:</p>
+<h3 id="1-categorize-by-industry-and-technology">1. <strong>Categorize by Industry and Technology</strong></h3>
+<ul>
+<li><strong>Create distinct GitHub repositories for each project</strong> based on industry or technology. For instance, you can categorize them as:
+<ul>
+<li><strong>Machine Learning</strong> (ML)</li>
+<li><strong>Web Development</strong> (WebDev)</li>
+<li><strong>Mobile Development</strong> (Mobile)</li>
+<li><strong>POC</strong> (for Proof-of-Concept projects)</li>
+<li><strong>Industry-Specific Projects</strong> (like Healthcare, Finance, etc.)</li>
+</ul>
+</li>
+<li>Within each industry/technology, create repositories for individual projects. Each repository should be specific to a project or a technology framework (e.g., PyTorch, TensorFlow).</li>
+</ul>
+<h3 id="2-create-organization-or-grouped-repos">2. <strong>Create Organization or Grouped Repos</strong></h3>
+<ul>
+<li>If you have multiple repositories related to a specific technology or framework, <strong>use GitHub Organizations</strong> to manage them. For example, an organization could be created for all your machine learning projects.</li>
+<li>You can also group your projects using <strong>GitHub Topics</strong> (e.g., <code>machine-learning</code>, <code>web-development</code>, <code>mobile-apps</code>, etc.) to help others easily navigate through similar projects.</li>
+</ul>
+<h3 id="3-fork-repositories-and-use-templates">3. <strong>Fork Repositories and Use Templates</strong></h3>
+<ul>
+<li>For projects where you extend existing repositories, <strong>fork them</strong> but maintain a clear structure and provide <strong>detailed documentation</strong> on how your work builds on the original repo.</li>
+<li>Consider creating <strong>template repositories</strong> for common setups like TensorFlow, PyTorch, or mobile development projects, which you can use as a starting point for similar projects.</li>
+</ul>
+<h3 id="4-pocs-and-experimental-projects">4. <strong>POCs and Experimental Projects</strong></h3>
+<ul>
+<li>Since some POCs are industry-agnostic or tech-agnostic, you could maintain a <strong>separate repository for POCs</strong>, categorizing them by type or technology inside the repo using subfolders (e.g., <code>poc/ml</code>, <code>poc/web</code>, etc.). Provide detailed README files to explain each POC’s objective.</li>
+</ul>
+<h3 id="5-version-control-and-branching-strategy">5. <strong>Version Control and Branching Strategy</strong></h3>
+<ul>
+<li>Implement a strong <strong>branching strategy</strong> for each repository:
+<ul>
+<li><strong>Main</strong> for stable, demo-ready code.</li>
+<li><strong>Development</strong> for ongoing work.</li>
+<li>Feature-specific branches for major changes or technology integrations (e.g., <code>feature-pytorch-2.0</code>).</li>
+</ul>
+</li>
+<li>Use <strong>tags and releases</strong> to mark stable versions of projects or POCs, especially when they are ready for demonstrations.</li>
+</ul>
+<h3 id="6-automated-cicd-and-demos">6. <strong>Automated CI/CD and Demos</strong></h3>
+<ul>
+<li>For demonstration purposes, configure <strong>CI/CD pipelines</strong> using GitHub Actions to automatically build, test, and deploy demos of your projects.</li>
+<li>Use GitHub Pages or other hosting services (like Netlify for web projects) to make POC and demo deployments easy for sharing.</li>
+</ul>
+<h3 id="7-documentation-and-configuration-management">7. <strong>Documentation and Configuration Management</strong></h3>
+<ul>
+<li>Create well-documented <code>README.md</code> files for each repository, describing:
+<ul>
+<li>The project’s purpose.</li>
+<li>Technologies used.</li>
+<li>Installation and setup instructions.</li>
+<li>Demos or how to replicate the results.</li>
+</ul>
+</li>
+<li>Use <code>.env</code> files for configuration management of environment variables and secure secrets like API keys (as you&rsquo;re already using .env for API keys).</li>
+<li>For large or more complex projects, include <strong>project-specific wiki</strong> or <strong>GitHub Projects</strong> to manage tasks and progress.</li>
+</ul>
+<h3 id="8-github-stars-and-contributions">8. <strong>GitHub Stars and Contributions</strong></h3>
+<ul>
+<li>Engage with the GitHub community by <strong>starring relevant repositories</strong> that align with your work and contributing to them. This will also drive traffic to your own projects.</li>
+</ul>
+<p>This way, you’ll have a well-organized GitHub portfolio that others can benefit from, and you can easily track and maintain various projects.</p>
+<h2 id="question-what-to-do-when-i-have-made-changes-in-code-on-the-local-and-want-to-pull-remote-repo-code">Question: What to do when I have made changes in code on the local and want to pull remote repo code</h2>
+<p>You have three options: either <strong>commit</strong> the local changes or <strong>stash</strong> them for later retrieval or discard. Here&rsquo;s how you can proceed:</p>
+<h3 id="option-1-commit-your-changes">Option 1: <strong>Commit Your Changes</strong></h3>
+<p>If you want to keep your local changes, commit them before running <code>git pull</code>:</p>
+<ol>
+<li>
+<p><strong>Add your changes</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Commit your changes</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Describe the changes you made&#34;</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Pull the latest changes</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git pull origin master
+</span></span></code></pre></div></li>
+</ol>
+<p>This will merge the latest changes with your local changes.</p>
+<h3 id="option-2-stash-your-changes">Option 2: <strong>Stash Your Changes</strong></h3>
+<p>If you&rsquo;re not ready to commit your changes but want to pull the latest changes, you can stash your changes and apply them later.</p>
+<ol>
+<li>
+<p><strong>Stash your changes</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git stash
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Pull the latest changes</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git pull origin master
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Apply your stashed changes</strong> (if you want them back):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git stash apply
+</span></span></code></pre></div></li>
+</ol>
+<p>This will temporarily hide your local changes, allow the pull to complete, and then you can reapply your changes afterward.</p>
+<h3 id="option-3-discard-local-changes-if-you-dont-need-them">Option 3: <strong>Discard Local Changes</strong> (If You Don&rsquo;t Need Them)</h3>
+<p>If you don&rsquo;t need the local changes and want to discard them, you can reset your local files:</p>
+<ol>
+<li>
+<p><strong>Discard local changes</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git reset --hard
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Pull the latest changes</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git pull origin master
+</span></span></code></pre></div></li>
+</ol>
+<p>This will remove any local changes and sync your branch with the latest from <code>master</code>.</p>
+<h2 id="question-is-it-possible-to-clone-only-a-particular-folder-from-github">Question: Is it possible to clone only a particular folder from github?</h2>
+<p>Git by default doesn&rsquo;t support cloning a single folder from a repository. However, there are several workarounds you can use to achieve this goal:</p>
+<h3 id="1-using-git-sparse-checkout-partial-clone">1. <strong>Using Git Sparse Checkout (Partial Clone)</strong></h3>
+<p>With Git&rsquo;s sparse checkout feature, you can clone a repository but only check out specific directories or files. I have tried this on my machine, but unfortunately i couldn&rsquo;t succeed on wsl on windows 11 with mounted drive. But as gone through blogs and github documentation it is mentioned it can be achieved.</p>
+<h4 id="steps">Steps:</h4>
+<ol>
+<li>
+<p><strong>Clone the Repository Without Checking Out Files:</strong>
+Run this command to initialize the repository without actually checking out files:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --no-checkout https://github.com/username/repository.git
+</span></span><span style="display:flex;"><span>cd repository
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Enable Sparse Checkout:</strong>
+In the repository, enable sparse checkout:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git sparse-checkout init --cone
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Specify the Folder You Want to Clone:</strong>
+Add the folder path that you want to clone:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git sparse-checkout set path/to/folder
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Pull the Specific Folder:</strong>
+Now, pull only the specified folder:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git pull origin main
+</span></span></code></pre></div><p>Replace <code>main</code> with the branch you want to pull from (e.g., <code>master</code> or another branch).</p>
+</li>
+</ol>
+<p>This way, you’ll only download the files from the specific folder.</p>
+<h3 id="2-using-github-zip-download-browser-method">2. <strong>Using GitHub Zip Download (Browser Method)</strong></h3>
+<p>If you don’t need to use Git for the folder and just want the contents, you can download it directly via GitHub’s web interface.</p>
+<h4 id="steps-1">Steps:</h4>
+<ol>
+<li>Go to the repository on GitHub.</li>
+<li>Navigate to the folder you want to download.</li>
+<li>Click on the folder, and on the top right, you’ll see a <strong>&ldquo;Download ZIP&rdquo;</strong> option for the entire repository. Unfortunately, this downloads the whole repo, but&hellip;</li>
+<li>Alternatively, use a service like <a href="https://download-directory.github.io/">Download Directory</a>, which allows you to download only a particular folder by pasting the URL of the folder you want. <font color=green>This method is the most simple and works smoothly.</font></li>
+</ol>
+<h3 id="3-using-svn-subversion-to-clone-a-folder">3. <strong>Using SVN (Subversion) to Clone a Folder</strong></h3>
+<p>GitHub also supports Subversion, and with it, you can check out a specific folder.</p>
+<h4 id="steps-2">Steps:</h4>
+<ol>
+<li>
+<p>Install <code>svn</code> (Subversion) if you don&rsquo;t have it:</p>
+<ul>
+<li>On Ubuntu:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install subversion
+</span></span></code></pre></div></li>
+<li>On macOS (with Homebrew):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install svn
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>Use this command to clone just the specific folder:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>svn checkout https://github.com/username/repository/trunk/path/to/folder
+</span></span></code></pre></div><p>Replace <code>username</code>, <code>repository</code>, and <code>path/to/folder</code> with the actual values. Also note github&rsquo;s &ldquo;tree/main&rdquo; (main is the branch name here) should be replaced with &ldquo;trunk&rdquo;. <font color=red> Keep in mind some github path may not be accessible via svn.</font></p>
+</li>
+</ol>
+<p>This method checks out only the desired folder, but it won’t provide the full Git history.</p>
+<h2 id="question-how-to-keep-big-size-files-in-github">Question: How to keep big size files in github?</h2>
+<p>To ensure GitHub Desktop saves large files into Git LFS, follow these steps:</p>
+<ol>
+<li>
+<p>git lfs install</p>
+</li>
+<li>
+<p><strong>Track specific file types with Git LFS:</strong>
+You need to tell Git LFS which file types or specific files to track. Run this command in your repository directory (where your <code>.git</code> folder is located) in a terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git lfs track <span style="color:#e6db74">&#34;*.extension&#34;</span>
+</span></span></code></pre></div><p>Replace <code>*.extension</code> with the type of file you want to track, such as <code>*.png</code>, <code>*.jpg</code>, or any other large file format.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git lfs track <span style="color:#e6db74">&#34;*.png&#34;</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Commit the <code>.gitattributes</code> file:</strong>
+When you run <code>git lfs track</code>, it updates a file called <code>.gitattributes</code> with the file types being tracked. You need to commit this file to your repository so that others (and GitHub) know to use LFS for these file types.</p>
+<p>Use GitHub Desktop or the terminal to commit:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .gitattributes
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Add .gitattributes for LFS tracking&#34;</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Push your changes to GitHub:</strong>
+Once your files are tracked and committed, push your changes to the repository using GitHub Desktop or the command line:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push origin main
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Verify large files are being tracked:</strong>
+You can verify that large files are being handled by Git LFS with the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git lfs ls-files
+</span></span></code></pre></div><p>This will list the files currently being tracked by LFS.</p>
+</li>
+</ol>
+<p>By following these steps, GitHub Desktop will automatically use Git LFS for the file types you specified, preventing errors when pushing large files.</p>
+<h2 id="question-my-github-repo-size-is-very-large-i-am-not-able-push-it-is-failing-what-to-do">Question: My github repo size is very large I am not able push, it is failing. What to do?</h2>
+<h3 id="1-increase-git-buffer-size">1. <strong>Increase Git Buffer Size</strong></h3>
+<p>Increase the buffer size to handle large pushes better. If you haven’t already tried this, increase it to 1 GB or more:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global http.postBuffer <span style="color:#ae81ff">1048576000</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1048576000 is 1 GB, by default it is 1048576 is 1MB</span>
+</span></span></code></pre></div><p>Then, try pushing again.</p>
+<h3 id="2-use-git-lfs-for-large-files">2. <strong>Use Git LFS for Large Files</strong></h3>
+<p>If the repository contains large binary files (e.g., videos, images), Git LFS (Large File Storage) is the recommended approach. Follow these steps:</p>
+<ol>
+<li>Install Git LFS:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git lfs install
+</span></span></code></pre></div></li>
+<li>Track large files:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git lfs track <span style="color:#e6db74">&#34;*.zip&#34;</span>
+</span></span><span style="display:flex;"><span>git lfs track <span style="color:#e6db74">&#34;*.mp4&#34;</span>
+</span></span></code></pre></div></li>
+<li>Add and commit your changes again:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .gitattributes
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Use Git LFS for large files&#34;</span>
+</span></span><span style="display:flex;"><span>git push
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="3-push-in-smaller-batches">3. <strong>Push in Smaller Batches</strong></h3>
+<p>Try pushing smaller chunks of the repository to reduce the load on the remote server:</p>
+<ol>
+<li>Use the <code>--recurse-submodules=on-demand</code> flag to push smaller parts:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push --recurse-submodules<span style="color:#f92672">=</span>on-demand
+</span></span></code></pre></div></li>
+<li>Or, manually push small parts of the repo by adding and committing only a few files at a time.</li>
+</ol>
+<h3 id="4-switch-to-ssh">4. <strong>Switch to SSH</strong></h3>
+<p>Sometimes, large pushes over HTTPS can cause issues. Switch to SSH, which is often more reliable for large operations.</p>
+<ol>
+<li>
+<p>Set up SSH keys for GitHub.</p>
+</li>
+<li>
+<p>Change your remote URL to SSH:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote set-url origin git@github.com:your-username/Management-PMIPrep.git
+</span></span></code></pre></div></li>
+<li>
+<p>Push again:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push -u origin master
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="5-use-personal-access-token-pat">5. <strong>Use Personal Access Token (PAT)</strong></h3>
+<ol>
+<li>Generate PAT : <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></li>
+<li>Use the token instead of your password during the git push command</li>
+</ol>
+<pre tabindex="0"><code>git push https://&lt;your-token&gt;@github.com/your-username/Management-PM-Courses.git
+</code></pre><h3 id="6-use-ssh">6. <strong>Use SSH</strong></h3>
+<p>If it&rsquo;s a network issue (slow or interrupted connection), try pushing again or check your internet connection. You can also use a different protocol like SSH:</p>
+<pre tabindex="0"><code>## Generating SSH 
+### Check existing SSH key
+
+Git Bash
+ls -al ~/.ssh
+
+
+### Question: How to generate SSH Key
+ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34;
+
+### Created key is available in 
+ls C:\Users\hari_/.ssh/
+
+Output: id_rsa  id_rsa.pub  known_hosts
+
+git remote set-url origin git@github.com:dasarpai/Management-PMIPrep.git   
+git push -u origin master
+</code></pre><h3 id="7-check-file-size-limits">7. <strong>Check File Size Limits</strong></h3>
+<p>GitHub has a 100 MB size limit per file and a 2 GB limit for total repository size. Ensure no single file exceeds the limit:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git ls-files -s | sort -n -k <span style="color:#ae81ff">4</span>
+</span></span></code></pre></div><h3 id="8-retry-push-after-reducing-history">8. <strong>Retry Push After Reducing History</strong></h3>
+<p>You can also try to reduce the number of commits in your local repository (if appropriate):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git rebase -i HEAD~&lt;number-of-commits&gt;
+</span></span></code></pre></div><p>This step removes unnecessary commits, making the push smaller.</p>
+<p>Try these workarounds and let me know how it goes!</p>
+<h2 id="question-what-is-the-advantage-of-lower-buffer-size">Question: What is the advantage of lower buffer size?</h2>
+<p>A lower buffer size (like the default 1 MB in Git) offers several advantages:</p>
+<h3 id="1-reduced-memory-usage">1. <strong>Reduced Memory Usage</strong></h3>
+<ul>
+<li>A smaller buffer size consumes less memory, which can be important for systems with limited resources. It avoids overloading the system&rsquo;s memory, especially when many simultaneous Git operations are occurring.</li>
+</ul>
+<h3 id="2-more-responsive-for-small-pushes">2. <strong>More Responsive for Small Pushes</strong></h3>
+<ul>
+<li>For small repositories or pushes, a smaller buffer makes the Git operation more efficient by avoiding unnecessary allocation of large memory blocks. The process completes faster for smaller changes.</li>
+</ul>
+<h3 id="3-better-network-stability-on-slowunstable-connections">3. <strong>Better Network Stability on Slow/Unstable Connections</strong></h3>
+<ul>
+<li>A smaller buffer size sends smaller chunks of data over the network. On slower or unstable internet connections, this can be advantageous because it reduces the likelihood of timeouts or failed transfers due to large packets being dropped.</li>
+</ul>
+<h3 id="4-less-risk-of-timeouts-for-small-data">4. <strong>Less Risk of Timeouts for Small Data</strong></h3>
+<ul>
+<li>Small pushes using a large buffer might result in excessive delay or unnecessary resource use, especially if there&rsquo;s minimal data to be sent. A lower buffer size ensures timely communication, especially for smaller operations.</li>
+</ul>
+<p>In short, lower buffer sizes are beneficial for memory-efficient operations, handling smaller data loads, and operating over unreliable or slow connections. However, for large pushes, increasing the buffer size can help avoid errors like the one you&rsquo;re encountering.</p>
+<h2 id="question-how-to-add-ssh-key-to-github">Question: How to add SSH Key to github?</h2>
+<p>Using the SSH protocol, you can connect and authenticate to remote servers and services. With SSH keys, you can connect to GitHub without supplying your username and personal access token at each visit. You can also use an SSH key to sign commits.</p>
+<h3 id="check-existing-ssh-key">Check existing SSH key</h3>
+<pre tabindex="0"><code>Git Bash
+ls -al ~/.ssh
+</code></pre><h3 id="how-to-generate-ssh-key">How to generate SSH Key</h3>
+<pre tabindex="0"><code>ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34;
+
+Created key is available in 
+C:\Users\hari_/.ssh/
+id_rsa  id_rsa.pub  known_hosts
+</code></pre><h3 id="how-to-add-ssh-key-in-github">How to add SSH key in github</h3>
+<p><a href="https://github.com/settings/profile">https://github.com/settings/profile</a><br>
+<a href="https://github.com/settings/keys">https://github.com/settings/keys</a></p>
+<h2 id="how-to-roll-back-to-previous-specific-commit">How to roll back to previous specific commit?</h2>
+<p>My current check-in github is failing the build. I want to roll back to previous specific commit. How to do?</p>
+<p>To revert your GitHub repository to a specific commit (<code>8913924aaef8bd3e278ffcb75d62de6fb3c76b79</code>), you can use one of the following approaches based on your requirements:</p>
+<hr>
+<h3 id="option-1-hard-reset-rewrite-history">Option 1: Hard Reset (Rewrite History)</h3>
+<p>This approach is destructive and rewrites history. Use this if you want to completely discard commits after the specified commit. This changes the commit history and can affect collaborators.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git status -u <span style="color:#75715e"># To check if there are any untracked or modified files not being reported</span>
+</span></span><span style="display:flex;"><span>git reset --hard 8913924aaef8bd3e278ffcb75d62de6fb3c76b79 <span style="color:#75715e"># This will reset the working directory, staging area, and branch to the specified. Ensure the most recent commit in the log matches the one you reset to 8913924</span>
+</span></span><span style="display:flex;"><span>git log --oneline <span style="color:#75715e"># Check the current commit</span>
+</span></span><span style="display:flex;"><span>git push --force <span style="color:#75715e"># This will overwrites the remote branch with the local branch.</span>
+</span></span></code></pre></div><h3 id="option-2-create-a-revert-commit">Option 2: Create a Revert Commit</h3>
+<p>If you want to undo changes introduced by subsequent commits while preserving history, create a new revert commit. This approach is safer for collaborative projects since it preserves commit history.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git revert 8913924aaef8bd3e278ffcb75d62de6fb3c76b79..HEAD <span style="color:#75715e"># Creates revert commits for all commits from the specified commit</span>
+</span></span><span style="display:flex;"><span>git push
+</span></span></code></pre></div><h3 id="option-3-reset-and-commit-new-changes">Option 3: Reset and Commit New Changes</h3>
+<p>If you want to revert but keep some changes:</p>
+<ol>
+<li>Reset to the commit without changing files:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git reset --soft 8913924aaef8bd3e278ffcb75d62de6fb3c76b79
+</span></span></code></pre></div></li>
+<li>Stage and commit your changes:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Revert to commit 8913924aaef8bd3e278ffcb75d62de6fb3c76b79&#34;</span>
+</span></span><span style="display:flex;"><span>git push --force
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="i-have-a-some-folder-gdrive-folder-and-dont-want-desktopini-folder-should-be-github">I have a some folder gdrive folder and don&rsquo;t want desktop.ini folder should be github.</h2>
+<p>When you have a local folder that is synced to Google Drive, it will automatically create a <code>desktop.ini</code> file for thumbnails. If you put <code>desktop.ini</code> in the <code>.gitignore</code> file, it doesn&rsquo;t work. You want to keep these constantly changing <code>desktop.ini</code> files on the local machine but you don&rsquo;t want to check them in. From the Command Prompt, use the following commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git rm --cached <span style="color:#e6db74">&#34;gdrive/**/desktop.ini&#34;</span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Remove desktop.ini from Git index&#34;</span>
+</span></span></code></pre></div><div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/github" class="category-badge">GitHub</a><a href="/tags/version-control" class="category-badge">Version Control</a><a href="/tags/git" class="category-badge">Git</a><a href="/tags/software-development" class="category-badge">Software Development</a><a href="/tags/repository-management" class="category-badge">Repository Management</a><a href="/tags/collaboration-tools" class="category-badge">Collaboration Tools</a><a href="/tags/devops" class="category-badge">DevOps</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=Exploring%20Github&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fExploring-Github%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fExploring-Github%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fExploring-Github%2f&title=Exploring%20Github" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fExploring-Github%2f&title=Exploring%20Github" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=Exploring%20Github&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fExploring-Github%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/What-is-Package-Manager/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">What is Package Manager?</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/Exploring-Ollama/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">Exploring Ollama &amp; LM Studio</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#question-what-is-github-package-and-what-can-i-do-with-this">Question: What is github package and what can I do with this?</a>
+      <ul>
+        <li><a href="#1-host-and-share-packages">1. <strong>Host and Share Packages</strong></a></li>
+        <li><a href="#2-seamless-integration-with-github-repositories">2. <strong>Seamless Integration with GitHub Repositories</strong></a></li>
+        <li><a href="#3-versioning-and-dependency-management">3. <strong>Versioning and Dependency Management</strong></a></li>
+        <li><a href="#4-private-package-hosting">4. <strong>Private Package Hosting</strong></a></li>
+        <li><a href="#5-container-hosting-docker-and-oci-images">5. <strong>Container Hosting (Docker and OCI Images)</strong></a></li>
+        <li><a href="#6-integrate-with-github-actions">6. <strong>Integrate with GitHub Actions</strong></a></li>
+        <li><a href="#7-security-and-auditing">7. <strong>Security and Auditing</strong></a></li>
+        <li><a href="#8-search-and-discovery">8. <strong>Search and Discovery</strong></a></li>
+        <li><a href="#9-package-insights-and-usage-metrics">9. <strong>Package Insights and Usage Metrics</strong></a></li>
+        <li><a href="#10-custom-registries">10. <strong>Custom Registries</strong></a></li>
+        <li><a href="#use-cases-for-github-packages">Use Cases for GitHub Packages:</a></li>
+      </ul>
+    </li>
+    <li><a href="#question-what-is-sementic-versioning-and-how-github-handles-this">Question: What is sementic versioning and how Github handles this?</a>
+      <ul>
+        <li><a href="#1-major-version-x">1. <strong>MAJOR version (X)</strong></a></li>
+        <li><a href="#2-minor-version-y">2. <strong>MINOR version (Y)</strong></a></li>
+        <li><a href="#3-patch-version-z">3. <strong>PATCH version (Z)</strong></a></li>
+        <li><a href="#optional-components">Optional Components:</a></li>
+        <li><a href="#examples">Examples:</a></li>
+        <li><a href="#why-semantic-versioning-matters">Why Semantic Versioning Matters:</a></li>
+        <li><a href="#summary">Summary:</a></li>
+      </ul>
+    </li>
+    <li><a href="#question-how-github-action-takes-care-of-versioning">Question: How github action takes care of versioning?</a>
+      <ul>
+        <li><a href="#1-manual-versioning">1. <strong>Manual Versioning</strong></a></li>
+        <li><a href="#2-automated-semantic-versioning-using-tools">2. <strong>Automated Semantic Versioning (using tools)</strong></a></li>
+        <li><a href="#3-using-conventional-commit-messages">3. <strong>Using Conventional Commit Messages</strong></a></li>
+        <li><a href="#4-github-releases-and-tags">4. <strong>GitHub Releases and Tags</strong></a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+    <li><a href="#question-what-is-the-lifecycle-of-the-code-between-writing-to-deployment">Question: What is the lifecycle of the code between writing to deployment?</a></li>
+    <li><a href="#question-how-to-organize-diverse-technology-projects-business-projects-poc-in-github">Question: How to organize diverse technology projects, business projects, POC in GitHub?</a>
+      <ul>
+        <li><a href="#1-categorize-by-industry-and-technology">1. <strong>Categorize by Industry and Technology</strong></a></li>
+        <li><a href="#2-create-organization-or-grouped-repos">2. <strong>Create Organization or Grouped Repos</strong></a></li>
+        <li><a href="#3-fork-repositories-and-use-templates">3. <strong>Fork Repositories and Use Templates</strong></a></li>
+        <li><a href="#4-pocs-and-experimental-projects">4. <strong>POCs and Experimental Projects</strong></a></li>
+        <li><a href="#5-version-control-and-branching-strategy">5. <strong>Version Control and Branching Strategy</strong></a></li>
+        <li><a href="#6-automated-cicd-and-demos">6. <strong>Automated CI/CD and Demos</strong></a></li>
+        <li><a href="#7-documentation-and-configuration-management">7. <strong>Documentation and Configuration Management</strong></a></li>
+        <li><a href="#8-github-stars-and-contributions">8. <strong>GitHub Stars and Contributions</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#question-what-to-do-when-i-have-made-changes-in-code-on-the-local-and-want-to-pull-remote-repo-code">Question: What to do when I have made changes in code on the local and want to pull remote repo code</a>
+      <ul>
+        <li><a href="#option-1-commit-your-changes">Option 1: <strong>Commit Your Changes</strong></a></li>
+        <li><a href="#option-2-stash-your-changes">Option 2: <strong>Stash Your Changes</strong></a></li>
+        <li><a href="#option-3-discard-local-changes-if-you-dont-need-them">Option 3: <strong>Discard Local Changes</strong> (If You Don&rsquo;t Need Them)</a></li>
+      </ul>
+    </li>
+    <li><a href="#question-is-it-possible-to-clone-only-a-particular-folder-from-github">Question: Is it possible to clone only a particular folder from github?</a>
+      <ul>
+        <li><a href="#1-using-git-sparse-checkout-partial-clone">1. <strong>Using Git Sparse Checkout (Partial Clone)</strong></a></li>
+        <li><a href="#2-using-github-zip-download-browser-method">2. <strong>Using GitHub Zip Download (Browser Method)</strong></a></li>
+        <li><a href="#3-using-svn-subversion-to-clone-a-folder">3. <strong>Using SVN (Subversion) to Clone a Folder</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#question-how-to-keep-big-size-files-in-github">Question: How to keep big size files in github?</a></li>
+    <li><a href="#question-my-github-repo-size-is-very-large-i-am-not-able-push-it-is-failing-what-to-do">Question: My github repo size is very large I am not able push, it is failing. What to do?</a>
+      <ul>
+        <li><a href="#1-increase-git-buffer-size">1. <strong>Increase Git Buffer Size</strong></a></li>
+        <li><a href="#2-use-git-lfs-for-large-files">2. <strong>Use Git LFS for Large Files</strong></a></li>
+        <li><a href="#3-push-in-smaller-batches">3. <strong>Push in Smaller Batches</strong></a></li>
+        <li><a href="#4-switch-to-ssh">4. <strong>Switch to SSH</strong></a></li>
+        <li><a href="#5-use-personal-access-token-pat">5. <strong>Use Personal Access Token (PAT)</strong></a></li>
+        <li><a href="#6-use-ssh">6. <strong>Use SSH</strong></a></li>
+        <li><a href="#7-check-file-size-limits">7. <strong>Check File Size Limits</strong></a></li>
+        <li><a href="#8-retry-push-after-reducing-history">8. <strong>Retry Push After Reducing History</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#question-what-is-the-advantage-of-lower-buffer-size">Question: What is the advantage of lower buffer size?</a>
+      <ul>
+        <li><a href="#1-reduced-memory-usage">1. <strong>Reduced Memory Usage</strong></a></li>
+        <li><a href="#2-more-responsive-for-small-pushes">2. <strong>More Responsive for Small Pushes</strong></a></li>
+        <li><a href="#3-better-network-stability-on-slowunstable-connections">3. <strong>Better Network Stability on Slow/Unstable Connections</strong></a></li>
+        <li><a href="#4-less-risk-of-timeouts-for-small-data">4. <strong>Less Risk of Timeouts for Small Data</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#question-how-to-add-ssh-key-to-github">Question: How to add SSH Key to github?</a>
+      <ul>
+        <li><a href="#check-existing-ssh-key">Check existing SSH key</a></li>
+        <li><a href="#how-to-generate-ssh-key">How to generate SSH Key</a></li>
+        <li><a href="#how-to-add-ssh-key-in-github">How to add SSH key in github</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-to-roll-back-to-previous-specific-commit">How to roll back to previous specific commit?</a>
+      <ul>
+        <li><a href="#option-1-hard-reset-rewrite-history">Option 1: Hard Reset (Rewrite History)</a></li>
+        <li><a href="#option-2-create-a-revert-commit">Option 2: Create a Revert Commit</a></li>
+        <li><a href="#option-3-reset-and-commit-new-changes">Option 3: Reset and Commit New Changes</a></li>
+      </ul>
+    </li>
+    <li><a href="#i-have-a-some-folder-gdrive-folder-and-dont-want-desktopini-folder-should-be-github">I have a some folder gdrive folder and don&rsquo;t want desktop.ini folder should be github.</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tokenization on Agones</title>
+    <link>http://localhost:1313/tags/tokenization/</link>
+    <description>Recent content in Tokenization on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tokenization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Tokenization and Embedding in NLP</title>
+      <link>http://localhost:1313/dsblog/exploring-tokenization-and-embedding-in-nlp/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-tokenization-and-embedding-in-nlp/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6215-Exploring-Tokenization-in-AI.jpg&#34; alt=&#34;Exploring Tokenization and Embedding in NLP&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-tokenization-and-embedding-in-nlp&#34;&gt;Exploring Tokenization and Embedding in NLP&lt;/h1&gt;&#xA;&lt;p&gt;Tokenization and embedding are key components of natural language processing (NLP) models. Sometimes people misunderstand tokenization and embedding and this article is to address those issues. This is in the question answer format and addressing following questions.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;What is tokenization?&lt;/li&gt;&#xA;&lt;li&gt;What are different Tokenzation schemes?&lt;/li&gt;&#xA;&lt;li&gt;What is OOV (Out-of-Vocabulary) in Tokenization?&lt;/li&gt;&#xA;&lt;li&gt;If a word does not exist in embedding model&amp;rsquo;s vocabulary, then how tokenization and embedding is done?&lt;/li&gt;&#xA;&lt;li&gt;What is criteria of splitting a word?&lt;/li&gt;&#xA;&lt;li&gt;What is Subword Tokenization?&lt;/li&gt;&#xA;&lt;li&gt;How FastText Tokenization works?&lt;/li&gt;&#xA;&lt;li&gt;What is role of [CLS] token?&lt;/li&gt;&#xA;&lt;li&gt;What is WordPiece and how it works?&lt;/li&gt;&#xA;&lt;li&gt;What is BPE (Byte Pair Encoding), and how it works?&lt;/li&gt;&#xA;&lt;li&gt;What is SentencePiece and how it works?&lt;/li&gt;&#xA;&lt;li&gt;For Indian languages what tokenization schemes is the best?&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;what-is-tokenization&#34;&gt;What is tokenization?&lt;/h2&gt;&#xA;&lt;p&gt;Tokenization is the process of breaking text into smaller units (tokens), such as words, subwords, or characters, for NLP tasks.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

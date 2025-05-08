@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>T-SNE on Agones</title>
+    <link>http://localhost:1313/tags/t-sne/</link>
+    <description>Recent content in T-SNE on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/t-sne/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dimensionality Reduction and Visualization</title>
+      <link>http://localhost:1313/dsblog/Dimensionality-Reduction-and-Visualization/</link>
+      <pubDate>Wed, 24 Jul 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Dimensionality-Reduction-and-Visualization/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6126-Dimensionality-Reduction-and-Visualization.jpg&#34; alt=&#34;Dimensionality-Reduction-and-Visualization&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;dimensionality-reduction-and-visualization&#34;&gt;Dimensionality Reduction and Visualization&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-are-the-popular-methods-of-dimensionality-reduction&#34;&gt;What are the popular methods of dimensionality reduction?&lt;/h2&gt;&#xA;&lt;p&gt;Dimensionality reduction is a crucial step in data preprocessing, particularly when dealing with high-dimensional datasets. It helps in reducing the number of features while retaining the essential information, improving computational efficiency, and facilitating data visualization. Here are some popular methods of dimensionality reduction:&lt;/p&gt;&#xA;&lt;h3 id=&#34;linear-methods&#34;&gt;Linear Methods&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Principal Component Analysis (PCA)&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Description&lt;/strong&gt;: PCA transforms the data into a set of linearly uncorrelated components, ordered by the amount of variance they explain.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Use Case&lt;/strong&gt;: Useful for datasets where the directions of maximum variance are important.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Implementation&lt;/strong&gt;: &lt;code&gt;sklearn.decomposition.PCA&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Linear Discriminant Analysis (LDA)&lt;/strong&gt;:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

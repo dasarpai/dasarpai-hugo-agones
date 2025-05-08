@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Smart Manufacturing on Agones</title>
+    <link>http://localhost:1313/tags/smart-manufacturing/</link>
+    <description>Recent content in Smart Manufacturing on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/smart-manufacturing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Use Cases in Food Processing</title>
+      <link>http://localhost:1313/dsblog/AI-Use-Cases-in-Food-Processing/</link>
+      <pubDate>Sun, 22 Jan 2023 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/AI-Use-Cases-in-Food-Processing/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6036-AI-Use-Cases-in-Food-Processing.jpg&#34; alt=&#34;“AI Use Cases in Food Processing&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;ai-use-cases-in-food-processing&#34;&gt;AI Use Cases in Food Processing&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;The food processing industry is a vital sector in the global economy, responsible for providing safe and nutritious food to millions of people around the world. Artificial intelligence (AI) is being increasingly used in the food processing industry to improve efficiency, reduce costs, and enhance the quality and safety of food products. From automated sorting and grading of fruits and vegetables to intelligent vending machines, AI is being used in a wide range of applications across the food processing industry.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

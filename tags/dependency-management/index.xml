@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dependency Management on Agones</title>
+    <link>http://localhost:1313/tags/dependency-management/</link>
+    <description>Recent content in Dependency Management on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/dependency-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is Package Manager?</title>
+      <link>http://localhost:1313/dsblog/What-is-Package-Manager/</link>
+      <pubDate>Thu, 29 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/What-is-Package-Manager/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6141-What-is-Package-Manager.jpg&#34; alt=&#34;What-is-Package-Manager&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;question-what-is-package-manager&#34;&gt;Question: What is Package Manager?&lt;/h1&gt;&#xA;&lt;p&gt;Package managers help simplify the process of software installation, updating, and dependency management on their respective platforms.&lt;/p&gt;&#xA;&lt;h2 id=&#34;question-why-are-there-so-many-package-managers&#34;&gt;Question: Why are there so many package managers?&lt;/h2&gt;&#xA;&lt;p&gt;The variety of package managers exists because different environments, languages, and operating systems have different needs for installing, updating, and managing software. The diversity of these ecosystems leads to specialized tools optimized for the specific challenges of each context. The key reasons for which there are so many package managers are:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

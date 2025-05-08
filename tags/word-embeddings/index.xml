@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Word Embeddings on Agones</title>
+    <link>http://localhost:1313/tags/word-embeddings/</link>
+    <description>Recent content in Word Embeddings on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/word-embeddings/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Embedding with FastText</title>
+      <link>http://localhost:1313/dsblog/Embedding-with-FastText/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Embedding-with-FastText/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6073-Embedding-with-FastText.jpg&#34; alt=&#34;Embedding with FastText&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;embedding-with-fasttext&#34;&gt;Embedding with FastText&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/dsblog/what-is-nlp#what-is-embedding&#34;&gt;What is Embedding?&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;http://localhost:1313/dsblog/what-is-nlp#what-are-different-embedding-types&#34;&gt;What are Different Types of Embedding&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-fasttext&#34;&gt;What is FastText?&lt;/h2&gt;&#xA;&lt;p&gt;FastText is an open-source library for efficient learning of word representations and sentence classification developed by Facebook AI Research. It is designed to handle large-scale text data and provides tools for &lt;strong&gt;training&lt;/strong&gt; and &lt;strong&gt;using word embeddings&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;FastText is an extension of the popular Word2Vec model that not only learns word embeddings but also &lt;strong&gt;considers subword&lt;/strong&gt; information. It represents each word as a bag of character n-grams (subword units), which allows it to capture morphological variations and &lt;strong&gt;handle out-of-vocabulary&lt;/strong&gt; words more effectively.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

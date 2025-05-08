@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Install and configure Agones on Kubernetes on Agones</title>
+    <link>http://localhost:1313/docs/installation/</link>
+    <description>Recent content in Install and configure Agones on Kubernetes on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <atom:link href="http://localhost:1313/docs/installation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Confirming Agones Installation</title>
+      <link>http://localhost:1313/docs/installation/confirm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/installation/confirm/</guid>
+      <description>&lt;p&gt;To confirm Agones is up and running, run the following command:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl describe --namespace agones-system pods&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It should describe six pods created in the &lt;code&gt;agones-system&lt;/code&gt; namespace, with no error messages or status. All &lt;code&gt;Conditions&lt;/code&gt; sections should look like this:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Conditions:&#xA;  Type              Status&#xA;  Initialized       True&#xA;  Ready             True&#xA;  ContainersReady   True&#xA;  PodScheduled      True&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;All this pods should be in a &lt;code&gt;RUNNING&lt;/code&gt; state:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl get pods --namespace agones-system&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;NAME                                 READY   STATUS    RESTARTS   AGE&#xA;agones-allocator-5c988b7b8d-cgtbs    1/1     Running   0          8m47s&#xA;agones-allocator-5c988b7b8d-hhhr5    1/1     Running   0          8m47s&#xA;agones-allocator-5c988b7b8d-pv577    1/1     Running   0          8m47s&#xA;agones-controller-7db45966db-56l66   1/1     Running   0          8m44s&#xA;agones-ping-84c64f6c9d-bdlzh         1/1     Running   0          8m37s&#xA;agones-ping-84c64f6c9d-sjgzz         1/1     Running   0          8m47s&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;That&amp;rsquo;s it!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Upgrading Agones and Kubernetes</title>
+      <link>http://localhost:1313/docs/installation/upgrading/</link>
+      <pubDate>Fri, 16 Aug 2019 00:19:19 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/installation/upgrading/</guid>
+      <description>&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;&#xA;&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;&#xA;&#xA;    Whichever approach you take to upgrading Agones, make sure to test it in your development environment&#xA;before applying it to production.&#xA;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;h2 id=&#34;upgrading-agones&#34;&gt;Upgrading Agones&lt;/h2&gt;&#xA;&lt;p&gt;The following are strategies for safely upgrading Agones from one version to another. They may require adjustment to&#xA;your particular game architecture but should provide a solid foundation for updating Agones safely.&lt;/p&gt;&#xA;&lt;p&gt;The recommended approach is to use &lt;a href=&#34;http://localhost:1313/docs/installation/upgrading/#upgrading-agones-multiple-clusters&#34;&gt;multiple clusters&lt;/a&gt;, such that the upgrade can be tested&#xA;gradually with production load and easily rolled back if the need arises.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

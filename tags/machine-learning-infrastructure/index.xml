@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning Infrastructure on Agones</title>
+    <link>http://localhost:1313/tags/machine-learning-infrastructure/</link>
+    <description>Recent content in Machine Learning Infrastructure on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/machine-learning-infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GenAI Capabilities from AWS, Azure and GCP</title>
+      <link>http://localhost:1313/dsblog/GenAI-Capabilities-from-AWS&#43;GCP&#43;Azure/</link>
+      <pubDate>Wed, 25 Sep 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/GenAI-Capabilities-from-AWS&#43;GCP&#43;Azure/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6144-GenAI-Capabilities-from-AWS&amp;#43;GCP&amp;#43;Azure.jpg&#34; alt=&#34;GenAI Capabilities from AWS, Azure, and Google Cloud&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-battle-for-ai-supremacy-genai-capabilities-from-aws-azure-and-google-cloud&#34;&gt;The Battle for AI Supremacy: GenAI Capabilities from AWS, Azure, and Google Cloud&lt;/h1&gt;&#xA;&lt;h2 id=&#34;is-this-article-for-me&#34;&gt;Is this Article for me?&lt;/h2&gt;&#xA;&lt;p&gt;If you are looking for answer of following questions then this article is for you, else you can skip this.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Who are the major players in GenAI Market?&lt;/li&gt;&#xA;&lt;li&gt;What is their main focus area?&lt;/li&gt;&#xA;&lt;li&gt;What are services they are offering?&lt;/li&gt;&#xA;&lt;li&gt;How to know X1 GenAI service of player one is similar to X2 of player two?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;introduction-genai-capabilities-from-key-players&#34;&gt;Introduction: &lt;strong&gt;GenAI Capabilities from Key Players&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;In recent times, generative AI (GenAI) has made a thunderbolt-like entry into the tech landscape, transforming industries and disrupting traditional workflows with unprecedented speed. As organizations increasingly leverage AI to power intelligent applications and automate tasks, the major cloud providers—Amazon Web Services (AWS), Microsoft Azure, and Google Cloud—are fiercely competing to offer the most comprehensive AI services. These key players have invested heavily in generative AI technologies, aiming to dominate the AI-driven market with powerful tools and scalable infrastructure.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tensorflow GPU Setup on Local Machine</title>
+      <link>http://localhost:1313/dsblog/Tensorflow-gpu-setup-on-local-machine/</link>
+      <pubDate>Wed, 28 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Tensorflow-gpu-setup-on-local-machine/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6140-Tensorflow-gpu-setup-on-local-machine.jpg&#34; alt=&#34;Tensorflow GPU Setup on Local Machine&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;tensorflow-gpu-setup-on-local-machine&#34;&gt;Tensorflow GPU Setup on Local Machine&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Tensorflow, pytorch are deep learning libraries or packages. Tensorflow is developed by google and pytorch is developed by Meta. There are some other but these are the most popular one among Machine Learning and Deep Learning Engineers. If you are doing anything significant in NLP, computer vision, voice processing you must have used this library. But the power of the these libraries lies in parallel metrics/tensor computation. For that they use hardwardes like GPU or TPU which has thousands of core and they designed purely for metrics/tensor processing. Intially they were used for gaming purpose but with the surge of AI these machines are in high use and used for model training and inference purpose.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Ethics on Agones</title>
+    <link>http://localhost:1313/tags/ai-ethics/</link>
+    <description>Recent content in AI Ethics on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai-ethics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>All About AI Hype</title>
+      <link>http://localhost:1313/dsblog/All-About-ai-Hype/</link>
+      <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/All-About-ai-Hype/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6139-All-About-ai-Hype.jpg&#34; alt=&#34;All About AI Hype&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;all-about-ai-hype&#34;&gt;All About AI Hype&lt;/h1&gt;&#xA;&lt;p&gt;Artificial Intelligence (AI) is a buzzword that has permeated almost every aspect of modern life. From the way we work and communicate to how we manage our environment and interact with animals, AI&amp;rsquo;s impact is being felt far and wide. But how deep is this impact, really? Is it truly revolutionary, or is it just another over-hyped trend that will fade with time?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LLM Security and Ethics Considerations</title>
+      <link>http://localhost:1313/dsblog/LLM-Security-and-Ethics-Considerations/</link>
+      <pubDate>Fri, 02 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/LLM-Security-and-Ethics-Considerations/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6128-LLM-Security-and-Ethics-Considerations.jpg&#34; alt=&#34;LLM-Security-and-Ethics-Considerations&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;llm-security-and-ethics-considerations&#34;&gt;LLM Security and Ethics Considerations&lt;/h1&gt;&#xA;&lt;h2 id=&#34;question-for-my-clients-highly-secured-data-like-health-industry-data-banking-insurnace-internal-security-etc-data-can-i-use-gpt4-for-finetuning&#34;&gt;Question: For my client&amp;rsquo;s highly secured data like health industry data, banking, insurnace, internal security, etc. data can I use gpt4 for finetuning?&lt;/h2&gt;&#xA;&lt;p&gt;For highly sensitive data, such as health industry data, banking information, insurance details, and security data, using models like ChatGPT-3.5 or GPT-4 involves several considerations to ensure security and compliance:&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-security-and-compliance-considerations&#34;&gt;1. &lt;strong&gt;Security and Compliance Considerations&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Data Privacy&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Sensitive Data Handling&lt;/strong&gt;: Ensure that the data used for fine-tuning is handled securely. Fine-tuning models on sensitive data requires stringent data protection measures to prevent unauthorized access or leakage.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Compliance&lt;/strong&gt;: Verify that the use of AI models complies with relevant regulations and standards such as HIPAA (for health data), GDPR (for personal data in the EU), and others specific to your industry.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Access Control&lt;/strong&gt;:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Responsible AI</title>
+      <link>http://localhost:1313/dsblog/Responsible-AI/</link>
+      <pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Responsible-AI/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6047-Responsible-AI.jpg&#34; alt=&#34;Responsible-AI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;responsible-ai&#34;&gt;Responsible AI&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction:&lt;/h2&gt;&#xA;&lt;p&gt;Artificial Intelligence (AI) is rapidly transforming the way we live, work, and interact with the world around us. As AI systems become increasingly sophisticated and ubiquitous, it is more important than ever to ensure that they are developed and deployed in a responsible and ethical manner. Responsible AI refers to the principles and practices of developing and using AI in a way that is safe, transparent, accountable, and aligned with human values. In this blog post, we will explore the different aspects of responsible AI, including ethics, safety, transparency, accountability, and societal impact.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What is XAI?</title>
+      <link>http://localhost:1313/dsblog/What-is-XAI/</link>
+      <pubDate>Fri, 15 May 2020 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/What-is-XAI/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6003-XAI.jpg&#34; alt=&#34;XAI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-xai&#34;&gt;What is XAI?&lt;/h1&gt;&#xA;&lt;h2 id=&#34;xai-in-simple-language&#34;&gt;XAI in Simple Language!&lt;/h2&gt;&#xA;&lt;p&gt;The discipline of Data Science and AI has introduced many terms into discussions that might seem complicated at first. In reality, many of these terms are intuitive and straightforward when considered from a natural intelligence perspective. However, from a technological standpoint, they can be complex. To understand XAI, let’s explore a few examples.&lt;/p&gt;&#xA;&lt;p&gt;All AI or ML-based systems rely on data for training. Once trained, the system works by providing answers or predictions based on input data. The quality of these answers depends on factors such as the algorithm used, the quantity and quality of the data, and hyperparameters, among others.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

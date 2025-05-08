@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chinese AI on Agones</title>
+    <link>http://localhost:1313/tags/chinese-ai/</link>
+    <description>Recent content in Chinese AI on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/chinese-ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Power of Chinese AI Models</title>
+      <link>http://localhost:1313/dsblog/power-of-chinese-ai-models/</link>
+      <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/power-of-chinese-ai-models/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6212-Power-of-Chinese-AI-Models.jpg&#34; alt=&#34;Power of Chinese AI Models&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;power-of-chinese-ai-models&#34;&gt;Power of Chinese AI Models&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;After the Deepseek R1 turmoil in the market, there has been a shift in attention towards China. The West is now looking towards the East, and even those in the East are turning their gaze northward.&lt;/p&gt;&#xA;&lt;p&gt;I was tracking these models for sometime so thought to summarize them at one place for my readers.&lt;/p&gt;&#xA;&lt;p&gt;Opensource: 🚀&lt;/p&gt;&#xA;&lt;p&gt;Partially or fully close source: 🔒&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

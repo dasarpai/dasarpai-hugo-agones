@@ -1,0 +1,360 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>What is NLP? | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2022-12-19-6016-what-is-nlp/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="What is NLP?">
+  <meta property="og:description" content="What is NLP? Humans interact with their surroundings using different kinds of inputs. Eyes deal with inputs of color, shape, and size. Ear deals with inputs of sound, voice, and noise. Similarly, the other 3 senses also deal with other kinds of inputs. When you write something you may be drawing some art or you may be drawing letters of some language. Language is what we use to speak, for example, English, Hindi, Kannada, Tamil, and French are languages. The script is a tool to write what we speak. There are many kinds of scripts and you can use those scripts to write words of the languages. Some scripts are good for some languages. You cannot write all the words of all the languages of the world using one script (without modifying the original letters of the script). The Roman script is good to write English languages but when you want to write any Indian language using Roman then you will make many mistakes when reading the scripts. Because you won’t be able to produce the same sound as the original language was producing.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2022-12-19T15:50:00+05:30">
+    <meta property="article:modified_time" content="2022-12-19T15:50:00+05:30">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="Natural Language Processing">
+    <meta property="article:tag" content="Text Analysis">
+    <meta property="article:tag" content="Language Models">
+    <meta property="article:tag" content="NLP Applications">
+    <meta property="article:tag" content="Text Mining">
+
+  <meta itemprop="name" content="What is NLP?">
+  <meta itemprop="description" content="What is NLP? Humans interact with their surroundings using different kinds of inputs. Eyes deal with inputs of color, shape, and size. Ear deals with inputs of sound, voice, and noise. Similarly, the other 3 senses also deal with other kinds of inputs. When you write something you may be drawing some art or you may be drawing letters of some language. Language is what we use to speak, for example, English, Hindi, Kannada, Tamil, and French are languages. The script is a tool to write what we speak. There are many kinds of scripts and you can use those scripts to write words of the languages. Some scripts are good for some languages. You cannot write all the words of all the languages of the world using one script (without modifying the original letters of the script). The Roman script is good to write English languages but when you want to write any Indian language using Roman then you will make many mistakes when reading the scripts. Because you won’t be able to produce the same sound as the original language was producing.">
+  <meta itemprop="datePublished" content="2022-12-19T15:50:00+05:30">
+  <meta itemprop="dateModified" content="2022-12-19T15:50:00+05:30">
+  <meta itemprop="wordCount" content="2562">
+  <meta itemprop="keywords" content="natural,language,processing,,NLP,,text,analysis,,language,models,,word,embeddings,,text,mining,,sentiment,analysis,,machine,translation,,text,classification,,language,understanding">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What is NLP?">
+  <meta name="twitter:description" content="What is NLP? Humans interact with their surroundings using different kinds of inputs. Eyes deal with inputs of color, shape, and size. Ear deals with inputs of sound, voice, and noise. Similarly, the other 3 senses also deal with other kinds of inputs. When you write something you may be drawing some art or you may be drawing letters of some language. Language is what we use to speak, for example, English, Hindi, Kannada, Tamil, and French are languages. The script is a tool to write what we speak. There are many kinds of scripts and you can use those scripts to write words of the languages. Some scripts are good for some languages. You cannot write all the words of all the languages of the world using one script (without modifying the original letters of the script). The Roman script is good to write English languages but when you want to write any Indian language using Roman then you will make many mistakes when reading the scripts. Because you won’t be able to produce the same sound as the original language was producing.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6016-What-is-NLP.jpg" alt="What is NLP?"></p>
+<h2 id="what-is-nlp">What is NLP?</h2>
+<p>Humans interact with their surroundings using different kinds of inputs. Eyes deal with inputs of color, shape, and size. Ear deals with inputs of sound, voice, and noise. Similarly, the other 3 senses also deal with other kinds of inputs. When you write something you may be drawing some art or you may be drawing letters of some language. Language is what we use to speak, for example, English, Hindi, Kannada, Tamil, and French are languages. The script is a tool to write what we speak. There are many kinds of scripts and you can use those scripts to write words of the languages. Some scripts are good for some languages. You cannot write all the words of all the languages of the world using one script (without modifying the original letters of the script). The Roman script is good to write English languages but when you want to write any Indian language using Roman then you will make many mistakes when reading the scripts. Because you won&rsquo;t be able to produce the same sound as the original language was producing.</p>
+<p>Thus there are many scripts in the world to write words in various languages of the world. Human upbringing, education, and training happen around a specific language and specific script, which we normally refer to as the mother language. In our mother language and script, we write poetry, music, philosophy, history, economics, drama, etc. We debate, speak, praise, scold, hurt, and appreciate people in our mother languages. Based on your interest and time you can learn a few more human languages. But it is extremely impossible for a human being to become an expert in all human languages and all scripts. Sometimes work of reading text from a specific language is mundane or boring, other times it is too much complicated and tiring. Sometimes it is too voluminous, and other times we don&rsquo;t have enough skills to read those documents and comprehend the meaning. In this situation, we want to exploit computing resources. But computers don&rsquo;t understand human language. Their mother language is a fluctuation of the current and their script is 0,1. In this situation how to make computers our partner in the journey of exploring the world?</p>
+<p>Natural Language Processing (NLP) is a technology that helps humans to interact with machines but in human language. It is a very complex technology because of the human dialect, different ways of writing or expressing the same idea, different scripts to express the same idea, mix of scripts, mix of languages to express something, business domains (like medicine, law, engineering, philosophy, etc), the expertise of all human is different in a different language and the different domain.</p>
+<h2 id="how-nlp-technology-works">How NLP Technology Works?</h2>
+<p>We know computers do not understand the text but numbers only. So we need to convert the text of a particular script and language into numbers. To convert text into numbers we do follow steps like text cleaning, tokenization, and embedding. Embedding means we get the numeric equivalent of the text. Once we have numbers then we can perform all the tasks which human does around text. In the following section, I have listed different tasks which machines can do using NLP.</p>
+<h2 id="what-is-embedding">What is Embedding?</h2>
+<p>As mentioned earlier Embedding means getting a numeric representation of the text. In NLP we call it creating a word vector. But the issue is there are many scripts how to ensure that you have the same word vector for the same word in different languages. For example, the word in English &ldquo;Fruit&rdquo; is the same as फल (Fala) in Hindi,फलं (Falam) in Sanskrit, பழம் (Paḻam) in Tamil. How to ensure this word gets the same word vector or at least the same place in the word vector space? It is not possible at all. Because generally embedding is created using one kind of script. Even if you create embedding using mixed script corpus you will get 4 different adjacent vectors for these words which have the same meaning (for a person who knows all these 4 languages). To create embedding we need a large corpus like Wikipedia articles, millions of emails, millions of articles across different languages and genres, millions of social media messages, etc. There are many techniques for creating embedding.</p>
+<h2 id="what-are-different-embedding-types">What are different Embedding Types?</h2>
+<p>Using different techniques when we are generating embedding we can have the following kinds of embeddings.</p>
+<ul>
+<li>Sentence Embeddings: In this entire sentence is considered one unit and you get one vector per sentence. In the vector space when you put different sentences you will be able to visualize which sentences are having the same meaning and which are not.</li>
+<li>Static Word Embeddings: In this embedding, a single word is embedded at a time, as a fixed embedding. For example, the word &ldquo;interest&rdquo; will have one embedding. Irrespective of whether it is used in the context of finance or relationship or general talk.</li>
+<li>Contextualized Word Embeddings: In this embedding, a single word will have one embedding  but if the word has come in three different contexts then it will have three embeddings. For example &ldquo;bank interest&rdquo;, &ldquo;interest in the relationship&rdquo;, &ldquo;interest in product&rdquo;, and &ldquo;out of interest&rdquo; (idiomatic use) all &ldquo;interest&rdquo; words will have different embedding.</li>
+<li>Topic Embeddings: In this type of embedding each topic will have a specific embedding. All the related topics will come together in topic embedding space.</li>
+<li>Sub-word embedding: In this embedding, words are broken into smaller 4 or 5-letter subwords. And then we generate word embedding for each subword. For example, the word &ldquo;experimentation&rdquo; will have the following 4 letters subwords &ldquo;expe&rdquo;, &ldquo;xper&rdquo;, &ldquo;peri&rdquo;, &ldquo;erim&rdquo;, &ldquo;rime&rdquo;, &ldquo;imen&rdquo;, &ldquo;ment&rdquo;, &ldquo;enta&rdquo;, &ldquo;ntat&rdquo;, &ldquo;tati&rdquo;, &ldquo;atio&rdquo;, &ldquo;tion&rdquo;. Thus we will get different embedding for each of these sub-words.</li>
+<li>Document Embedding: A document may be an email, news article, blog article, or a book chapter. When we create embedding of the document then all the related emails, articles, blogs come together in the document embedding space.</li>
+</ul>
+<p>Each embedding has its benefits and purpose. Depending upon the use case we create different kind of embedding for our project.</p>
+<h2 id="what-are-the-different-nlp-tasks">What are the different NLP Tasks?</h2>
+<p>Whatever task humans can perform or wish to perform with a written text, people want those should be done using NLP technologies. A high-level summary of possible tasks with NLP is as follows.</p>
+<ul>
+<li>Text Classification : Assigning predefined categories to a given text. News text can be classified as political,sports, business, entertainment etc.</li>
+<li>Sentiment Analysis : Determining the emotional tone behind a given text.</li>
+<li>Document Embeddings</li>
+<li>Code Generation</li>
+<li>Table Question Answering</li>
+<li>Question Answering</li>
+<li>Relation Extraction between different Nouns or verbs</li>
+<li>Machine Translation</li>
+<li>Language Detection</li>
+<li>Named entity recognition: Identifying and extracting proper names from text, like organization name, person name, country/city/state/district/village name, medicine name etc.</li>
+<li>Textual Meaning</li>
+<li>Part-of-speech Tagging: Identifying and labeling the grammatical role of each word in a sentence. Identifying noun, verb, article, adjective etc.</li>
+<li>Semantic Role Labeling (SRL): Determining the semantic roles of words or phrases in a sentence, such as the subject, verb, and object. For example: &ldquo;Ram went to meet his friend and he gave him a gift&rdquo;, &ldquo;Ram&rdquo; is subject, &ldquo;went&rdquo; is verb, &ldquo;to meet his friend and he gave him a gift&rdquo; is object of the sentence.</li>
+<li>Document Summary</li>
+<li>Chunking: grouping words into meaningfully related chunks. For example, United States of America, 4 words are grouped together as one.</li>
+<li>Conversation</li>
+<li>Parsing: Analyzing the grammatical structure of a sentence to identify dependencies between words. For example: &ldquo;Ram went to meet his friend and he gave him a gift&rdquo;. Here &ldquo;He&rdquo; means Ram, &ldquo;him&rdquo; refes to &ldquo;friend&rdquo;</li>
+<li>Dialogue Writing</li>
+<li>Discourse analysis: Studying the ways in which language is used in a broader context, such as across multiple sentences or in a conversation who said what.</li>
+<li>Coreference resolution: Determining when two or more words in a text refer to the same entity. For example: &ldquo;Ram went to meet his friend and he gave him a gift&rdquo;. Her&quot;He&quot; and &ldquo;Ram&rdquo; both are referring to same entity.</li>
+<li>Reading Comprehension</li>
+<li>Text Span Detection</li>
+<li>Citation Generation</li>
+<li>Index Generation</li>
+<li>Paraphrase a Sentence.</li>
+<li>Text Generation.</li>
+<li>Relationship Extration: For example &ldquo;Ram, Lakshaman with their Guru Viswamitra went to Mithila and married to Sita&rdquo;. &ldquo;Sita is resident of&rdquo;, &ldquo;Ram is brother of&rdquo;, &ldquo;Vishwamitra is guru of&rdquo; etc.</li>
+<li>Text clustering: Grouping similar texts together.</li>
+</ul>
+<h2 id="what-are-the-different-types-of-text-analytics-in-nlp">What are the different types of Text Analytics in NLP</h2>
+<ul>
+<li>Lexical analysis: This involves breaking down the text into its individual words, or tokens, and examining their meanings and relationships to one another. This can include tasks such as stemming, lemmatization, and part-of-speech tagging.
+<ul>
+<li>Those boys played the game.</li>
+<li>(Those, Boy, Play, The, Game)</li>
+</ul>
+</li>
+<li>Syntactic analysis: This involves analyzing the grammatical structure of a sentence, including the relationships between words and phrases. This can include tasks such as parsing and dependency analysis.
+<ul>
+<li>Those boys played the game.</li>
+<li>&ldquo;Those boys&rdquo; and &ldquo;Played&rdquo; and &ldquo;the game&rdquo; = SVO</li>
+<li>(Determinant, Noun, Verb, determiner, Noun)</li>
+</ul>
+</li>
+<li>Semantic analysis: This involves analyzing the meaning of a text, including identifying entities and relationships, and determining the sentiment or intent behind the text.
+<ul>
+<li>I went to bank to withdraw money.</li>
+<li>I am walking on the bank of river.
+Pragmatic analysis:This focus on the intended audience, the context, and the purpose of the text to understand the meaning of the sentence</li>
+<li>If this sentence is part of a news article describing a youth sports league, the pragmatic analysis might focus on the fact that the boys were engaging in an organized activity and that a game was taking place.</li>
+<li>If this sentence is part of a conversation between two friends discussing their weekend plans, the pragmatic analysis might focus on the fact that the boys were doing something for leisure and that the game is not specified.</li>
+<li>If this sentence is part of a children&rsquo;s story, the pragmatic analysis might focus on the fact that the boys are the protagonists of the story and that they are engaging in an exciting activity.</li>
+<li>If this sentence is part of a book or a script, the pragmatic analysis might focus on the fact that the boys are characters in a story and that they are engaging in an activity that is relevant to the plot.</li>
+<li>Discourse analysis: This involves analyzing the text at a higher level, looking at how ideas and arguments are structured and developed across multiple sentences or paragraphs.
+Stylistic analysis: This involves analyzing the style of the text, including the choice of words, sentence structures, and overall tone.</li>
+<li>Formal style: The sentence &ldquo;Those boys played the game&rdquo; is simple and straightforward, it uses a neutral tone. This style is often used in news articles, academic texts, and official documents.</li>
+<li>Informal style: If the sentence is &ldquo;Those dudes played the game&rdquo;, the use of &ldquo;dudes&rdquo; instead of &ldquo;boys&rdquo; gives a more casual and informal tone, it is often used in casual conversations, social media posts, and in fiction.</li>
+<li>Colloquial style: If the sentence is &ldquo;Those guys played the game&rdquo;, the use of &ldquo;guys&rdquo; instead of &ldquo;boys&rdquo; gives a more colloquial tone, and it is often used in informal conversations, and casual writing.</li>
+<li>Literature style: If the sentence is &ldquo;Those young lads played the game&rdquo;, the use of &ldquo;young lads&rdquo; instead of &ldquo;boys&rdquo; gives a more literary tone, often used in literature and poetry.</li>
+<li>Poetic style: If the sentence is &ldquo;Those boys, they played the game&rdquo;, the use of a comma before the verb to separate the subject and the verb, gives a more poetic tone.</li>
+</ul>
+</li>
+<li>Sociolinguistics analysis: this type of analysis studies how language is used in society, including how it varies across different groups, regions, and time periods.
+<ul>
+<li>Gender: If the sentence is &ldquo;Those boys played the game&rdquo; it is assumed that the speaker is talking about group of males, because the word &ldquo;boys&rdquo; is often associated with males.</li>
+<li>Age: If the sentence is &ldquo;Those boys played the game&rdquo;, it is assumed that the speaker is talking about a group of young people, because the word &ldquo;boys&rdquo; is often associated with young people.</li>
+<li>Ethnicity: If the sentence is &ldquo;Those boys played the game&rdquo;, it is assumed that the speaker is talking about a group of boys from the same ethnicity, because the sentence doesn&rsquo;t specify any other information about the boys.</li>
+<li>Social class: If the sentence is &ldquo;Those boys played the game&rdquo;, it is assumed that the speaker is talking about a group of boys from the same social class, because the sentence doesn&rsquo;t specify any other information about the boys.</li>
+<li>Geography: If the sentence is &ldquo;Those boys played the game&rdquo; it is assumed that the speaker is talking about a group of boys who are located in the same geographical area, because the sentence doesn&rsquo;t specify any other information about the boys.</li>
+</ul>
+</li>
+</ul>
+<h2 id="application-of-nlp">Application of NLP</h2>
+<p>There are hundreds of usecases of NLP in different domains. Wherever business exists, knowledge exists. Wherever knowledge exists, the written text exists. The written text can be a process document, business document, customer document, design document, or anything else. Wherever written text exists we want to read that document and perform many tasks as mentioned above. Every industry Oil &amp; Gas, BFSI, Education, Pharma, Health Care, Logistic, Aviation, Security, IT, ITES, Energy, Agriculture, Food Processing, Automobiles, Civil Construction, Road or Port Construction, Climate Change, or anything you name has the documents and hence need of NLP to engage with partners, translate, summarise, etc. Below is a small list of applications of NLP in various industries.</p>
+<ul>
+<li>Analyse project risks from documents, news articles, business sentiments</li>
+<li>Analyse business and political news and recommend investments.</li>
+<li>Virtual assistant for every department</li>
+<li>Document classification from millions of articles or files lying on the server.</li>
+<li>Document generation (contract, resume, rent agreement, business agreement)</li>
+<li>Fake news detection.</li>
+<li>FAQ Generation.</li>
+<li>Using a prompt word, find related documents</li>
+<li>Creating document hierarchy based on the relationship between them.</li>
+<li>Checking grammar, and spelling errors in a given document.</li>
+<li>Identifying synonyms and antonyms.</li>
+<li>Based on the document style recommend a better word or sentence.</li>
+<li>Helping intelligence agencies in crime detection</li>
+<li>Find the meaning of a word and the intent of the speaker</li>
+<li>Multi-class classification</li>
+<li>Multi-label classification</li>
+<li>Generating poetry, novels, articles, business review, comments, tweets</li>
+<li>Enforcing organization policy in emails, document writing</li>
+<li>Creating process flow from document</li>
+<li>Creating presentations from documents, articles, and excel</li>
+<li>Creating a presentation from Speech</li>
+<li>Writing product review based on the given sentiment prompts</li>
+<li>Product suggestions</li>
+<li>Extracting text from billboards, streets, lanes, hoarding</li>
+<li>Resume Builder</li>
+<li>Sarcasm detection</li>
+<li>Sentiment analysis</li>
+<li>Based on health reports suggesting exercise</li>
+<li>Based on health reports suggesting food supplements</li>
+<li>Based on the health symptoms generating reports of possible illness and their causes.</li>
+<li>Technical Assistant</li>
+<li>Analyzing text and labeling each word as noun, verb, subject, object, article, etc.</li>
+<li>Creating a training manual</li>
+<li>Creating user manuals</li>
+<li>Translation document (brochure, article, book, manual) written in one language into multiple languages</li>
+<li>Transliteration of text between same phonetic languages (like between Indian languages)</li>
+<li>Validating information from a scanned document</li>
+<li>Simplifying complex or technical ideas</li>
+<li>Writing code in any programming language based on the input prompt</li>
+<li>Converting code of one programming language into another</li>
+<li>Code review and suggestion</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Recently after the invention of encoder-decoder architecture, transformer architecture, GPU power, and GPT we see a huge surge in NLP and its application. In the future when humanity will be able to communicate with machines with their own voice, language  &amp; dialect, then human-machine interaction will touch new heights and this is possible only with the advancement of NLP technologies.</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Embeddings on Agones</title>
+    <link>http://localhost:1313/tags/embeddings/</link>
+    <description>Recent content in Embeddings on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/embeddings/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Tokenization and Embedding in NLP</title>
+      <link>http://localhost:1313/dsblog/exploring-tokenization-and-embedding-in-nlp/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-tokenization-and-embedding-in-nlp/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6215-Exploring-Tokenization-in-AI.jpg&#34; alt=&#34;Exploring Tokenization and Embedding in NLP&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-tokenization-and-embedding-in-nlp&#34;&gt;Exploring Tokenization and Embedding in NLP&lt;/h1&gt;&#xA;&lt;p&gt;Tokenization and embedding are key components of natural language processing (NLP) models. Sometimes people misunderstand tokenization and embedding and this article is to address those issues. This is in the question answer format and addressing following questions.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;What is tokenization?&lt;/li&gt;&#xA;&lt;li&gt;What are different Tokenzation schemes?&lt;/li&gt;&#xA;&lt;li&gt;What is OOV (Out-of-Vocabulary) in Tokenization?&lt;/li&gt;&#xA;&lt;li&gt;If a word does not exist in embedding model&amp;rsquo;s vocabulary, then how tokenization and embedding is done?&lt;/li&gt;&#xA;&lt;li&gt;What is criteria of splitting a word?&lt;/li&gt;&#xA;&lt;li&gt;What is Subword Tokenization?&lt;/li&gt;&#xA;&lt;li&gt;How FastText Tokenization works?&lt;/li&gt;&#xA;&lt;li&gt;What is role of [CLS] token?&lt;/li&gt;&#xA;&lt;li&gt;What is WordPiece and how it works?&lt;/li&gt;&#xA;&lt;li&gt;What is BPE (Byte Pair Encoding), and how it works?&lt;/li&gt;&#xA;&lt;li&gt;What is SentencePiece and how it works?&lt;/li&gt;&#xA;&lt;li&gt;For Indian languages what tokenization schemes is the best?&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;what-is-tokenization&#34;&gt;What is tokenization?&lt;/h2&gt;&#xA;&lt;p&gt;Tokenization is the process of breaking text into smaller units (tokens), such as words, subwords, or characters, for NLP tasks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding Contextual Embedding in Transformers</title>
+      <link>http://localhost:1313/dsblog/understanding-contextual-embedding-in-transformers/</link>
+      <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/understanding-contextual-embedding-in-transformers/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6214-Understanding-Contextual-Embedding-in-Transformer.jpg&#34; alt=&#34;Understanding Contextual Embedding in Transformers&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Embedding can be confusing for many people, and contextual embedding performed by transformers can be even more perplexing. Even after gaining an understanding, many questions remain. In this article, we aim to address the following questions.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;What is Embedding?&lt;/li&gt;&#xA;&lt;li&gt;What is Fixed Embedding?&lt;/li&gt;&#xA;&lt;li&gt;How Transformers Handle Context&lt;/li&gt;&#xA;&lt;li&gt;How this token &amp;lsquo;bank&amp;rsquo; and corresponding embedding is stored in embedding database?&lt;/li&gt;&#xA;&lt;li&gt;How contextural embedding is generated?&lt;/li&gt;&#xA;&lt;li&gt;What will be the output size of attention formula softmax?&lt;/li&gt;&#xA;&lt;li&gt;What is meaning of a LLM has context length of 2 million tokens?&lt;/li&gt;&#xA;&lt;li&gt;How many attention layers we keep in transformer like gpt4?&lt;/li&gt;&#xA;&lt;li&gt;What is the meaning of 96 attention layers, are they attention head count?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-is-embedding&#34;&gt;What is Embedding?&lt;/h2&gt;&#xA;&lt;p&gt;An embedding is a way to represent discrete data (like words or tokens) as continuous vectors of numbers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exploring Dense Embedding Models in AI</title>
+      <link>http://localhost:1313/dsblog/Exploring-Dense-Embedding-Models-in-AI/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Exploring-Dense-Embedding-Models-in-AI/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6157-Exploring-Dense-Embedding-Models-in-AI.jpg&#34; alt=&#34;Exploring Dense Embedding Models in AI&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-dense-embedding-in-ai&#34;&gt;What is dense embedding in AI?&lt;/h2&gt;&#xA;&lt;p&gt;Dense embeddings are critical in many AI applications, particularly in deep learning, where they help reduce data complexity and enhance the model’s ability to generalize from patterns in data.&lt;/p&gt;&#xA;&lt;p&gt;In artificial intelligence (AI), &lt;strong&gt;dense embedding&lt;/strong&gt; refers to a method of representing data (like words, sentences, images, or other inputs) as dense vectors in a continuous, lower-dimensional (lessor number of dimensions) space. These vectors, known as &lt;strong&gt;embeddings&lt;/strong&gt;, encode semantic information, enabling AI models to work with data in a more meaningful way.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

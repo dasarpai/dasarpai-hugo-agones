@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automated Evaluation on Agones</title>
+    <link>http://localhost:1313/tags/automated-evaluation/</link>
+    <description>Recent content in Automated Evaluation on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/automated-evaluation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Comprehensive Guide to Evaluate Generative Models</title>
+      <link>http://localhost:1313/dsblog/guide-to-evaluate-generative-models/</link>
+      <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/guide-to-evaluate-generative-models/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6240-Guide-to-Evaluate-Generative-Models.jpg&#34; alt=&#34;Generative Models&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;a-comprehensive-guide-to-evaluate-generative-models&#34;&gt;A Comprehensive Guide to Evaluate Generative Models&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In the rapidly evolving landscape of artificial intelligence, generative models have emerged as powerful tools capable of creating lifelike images, coherent text narratives, and even realistic audio. From large language models (LLMs) like GPT, Gemini, and Claude to image generators like Stable Diffusion, these systems are reshaping creativity, communication, and problem-solving. However, their potential is only as good as our ability to evaluate them effectively.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

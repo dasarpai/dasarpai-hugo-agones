@@ -1,0 +1,729 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Understanding the Working of CNN | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2025-01-29-6213-understaning-working-of-cnn/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Understanding the Working of CNN">
+  <meta property="og:description" content="Understanding the Working of CNN In this article, we aim to delve deeper into the working of CNNs. This article is intended for readers who have a basic understanding of CNNs and have computation-related questions. If you have any other questions about CNNs, feel free to ask in the comments.
+Questions we are looking into.
+What is the meaning of convolution in neural network? If there is some convolution layer with 64 kernel (filter) and filter size is 3x3 then does the filter get updated during training process? I heard filters has only 0 and 1 value. Depending upon what we want to extract we use the pattern of 0 and 1 on the filter, like for edge detection, contras detection etc. If a layer with 64 filter has 3x3 filter then how many weights are there? There is very famous 1x1 filter. How many weights are there if it layer has 64 neuron? Why it is more effective? Normally we think channel means number of layer in input image (RGB color). How come we can have 256 channels in neural network? How to calculate output size of convolutional layer? When 3x3x3 filter is applied to 224x224x3 image then how it become 224x224? Earlier we discussed weight of each layer R, G, B is different? When and how these weights are decided? Where do we learn features? At the level of differet layers or different channels (filter) What is the meaning of convolution in neural network? In the context of neural networks, specifically Convolutional Neural Networks (CNNs), convolution refers to a mathematical operation that combines two functions (or datasets) to produce a third function, typically used to extract features from input data. In simple terms, it’s a way of applying a filter or kernel to an input (like an image) to create a feature map, which highlights important patterns or features such as edges, textures, or shapes.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-01-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-29T00:00:00+00:00">
+    <meta property="article:tag" content="CNN">
+    <meta property="article:tag" content="Deep Learning">
+    <meta property="article:tag" content="AI">
+
+  <meta itemprop="name" content="Understanding the Working of CNN">
+  <meta itemprop="description" content="Understanding the Working of CNN In this article, we aim to delve deeper into the working of CNNs. This article is intended for readers who have a basic understanding of CNNs and have computation-related questions. If you have any other questions about CNNs, feel free to ask in the comments.
+Questions we are looking into.
+What is the meaning of convolution in neural network? If there is some convolution layer with 64 kernel (filter) and filter size is 3x3 then does the filter get updated during training process? I heard filters has only 0 and 1 value. Depending upon what we want to extract we use the pattern of 0 and 1 on the filter, like for edge detection, contras detection etc. If a layer with 64 filter has 3x3 filter then how many weights are there? There is very famous 1x1 filter. How many weights are there if it layer has 64 neuron? Why it is more effective? Normally we think channel means number of layer in input image (RGB color). How come we can have 256 channels in neural network? How to calculate output size of convolutional layer? When 3x3x3 filter is applied to 224x224x3 image then how it become 224x224? Earlier we discussed weight of each layer R, G, B is different? When and how these weights are decided? Where do we learn features? At the level of differet layers or different channels (filter) What is the meaning of convolution in neural network? In the context of neural networks, specifically Convolutional Neural Networks (CNNs), convolution refers to a mathematical operation that combines two functions (or datasets) to produce a third function, typically used to extract features from input data. In simple terms, it’s a way of applying a filter or kernel to an input (like an image) to create a feature map, which highlights important patterns or features such as edges, textures, or shapes.">
+  <meta itemprop="datePublished" content="2025-01-29T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-01-29T00:00:00+00:00">
+  <meta itemprop="wordCount" content="3758">
+  <meta itemprop="keywords" content="Understanding Convolutional Neural Networks,How CNN Works,Working of Convolutional Neural Networks,How CNN is used in AI,Convolutional Neural Networks in AI,How CNN is used in Deep Learning,Working of Convolutional Neural Networks in Deep Learning">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Understanding the Working of CNN">
+  <meta name="twitter:description" content="Understanding the Working of CNN In this article, we aim to delve deeper into the working of CNNs. This article is intended for readers who have a basic understanding of CNNs and have computation-related questions. If you have any other questions about CNNs, feel free to ask in the comments.
+Questions we are looking into.
+What is the meaning of convolution in neural network? If there is some convolution layer with 64 kernel (filter) and filter size is 3x3 then does the filter get updated during training process? I heard filters has only 0 and 1 value. Depending upon what we want to extract we use the pattern of 0 and 1 on the filter, like for edge detection, contras detection etc. If a layer with 64 filter has 3x3 filter then how many weights are there? There is very famous 1x1 filter. How many weights are there if it layer has 64 neuron? Why it is more effective? Normally we think channel means number of layer in input image (RGB color). How come we can have 256 channels in neural network? How to calculate output size of convolutional layer? When 3x3x3 filter is applied to 224x224x3 image then how it become 224x224? Earlier we discussed weight of each layer R, G, B is different? When and how these weights are decided? Where do we learn features? At the level of differet layers or different channels (filter) What is the meaning of convolution in neural network? In the context of neural networks, specifically Convolutional Neural Networks (CNNs), convolution refers to a mathematical operation that combines two functions (or datasets) to produce a third function, typically used to extract features from input data. In simple terms, it’s a way of applying a filter or kernel to an input (like an image) to create a feature map, which highlights important patterns or features such as edges, textures, or shapes.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6213-Understanding-Working-of-CNN.jpg" alt="Understanding the Working of CNN"></p>
+<h1 id="understanding-the-working-of-cnn">Understanding the Working of CNN</h1>
+<p>In this article, we aim to delve deeper into the working of CNNs. This article is intended for readers who have a basic understanding of CNNs and have computation-related questions. If you have any other questions about CNNs, feel free to ask in the comments.</p>
+<p><strong>Questions we are looking into.</strong></p>
+<ul>
+<li>What is the meaning of convolution in neural network?</li>
+<li>If there is some convolution layer with 64 kernel (filter) and filter size is 3x3 then does the filter get updated during training process?</li>
+<li>I heard filters has only 0 and 1 value. Depending upon what we want to extract we use the pattern of 0 and 1 on the filter, like for edge detection, contras detection etc.</li>
+<li>If a layer with 64 filter has 3x3 filter then how many weights are there?</li>
+<li>There is very famous 1x1 filter. How many weights are there if it layer has 64 neuron? Why it is more effective?</li>
+<li>Normally we think channel means number of layer in input image (RGB color). How come we can have 256 channels in neural network?</li>
+<li>How to calculate output size of convolutional layer?</li>
+<li>When 3x3x3 filter is applied to 224x224x3 image then how it become 224x224?</li>
+<li>Earlier we discussed weight of each layer R, G, B is different? When and how these weights are decided?</li>
+<li>Where do we learn features? At the level of differet layers or different channels (filter)</li>
+</ul>
+<h2 id="what-is-the-meaning-of-convolution-in-neural-network">What is the meaning of convolution in neural network?</h2>
+<p>In the context of neural networks, specifically Convolutional Neural Networks (CNNs), <em>convolution</em> refers to a mathematical operation that combines two functions (or datasets) to produce a third function, typically used to extract features from input data. In simple terms, it’s a way of applying a filter or kernel to an input (like an image) to create a feature map, which highlights important patterns or features such as edges, textures, or shapes.</p>
+<p>Here’s a breakdown of the process:</p>
+<ol>
+<li><strong>Filter/Kernels</strong>: A small matrix (filter or kernel) is applied over the input data (e.g., an image). The filter contains a set of weights.</li>
+<li><strong>Sliding Window</strong>: The filter slides over the input image (or data) in steps, typically starting from the top-left corner. At each position, the filter performs an element-wise multiplication with the corresponding portion of the input, and the results are summed up to produce a single value.</li>
+<li><strong>Feature Map</strong>: This process results in a new matrix called the feature map, which represents the features detected in the input image.</li>
+</ol>
+<p>The main goal of convolution in CNNs is to reduce the spatial dimensions of the input (through pooling layers) while preserving important features, allowing the network to focus on relevant patterns and improve efficiency for tasks like image classification, object detection, and more.</p>
+<p>In summary, convolution helps the neural network understand and capture local patterns in the input data, making it particularly powerful for tasks involving visual information.</p>
+<h2 id="if-there-is-some-convolution-layer-with-64-kernel-filter-and-filter-size-is-3x3-then-does-the-filter-get-updated-during-training-process">If there is some convolution layer with 64 kernel (filter) and filter size is 3x3 then does the filter get updated during training process?</h2>
+<p>Yes, the <strong>filters (kernels) in a convolutional layer are updated during training</strong> through <strong>backpropagation</strong> and <strong>gradient descent</strong>. They learn to detect meaningful patterns (e.g., edges, textures, shapes) by adjusting their weights through backpropagation.</p>
+<ol>
+<li>
+<p><strong>Convolution Layer Setup</strong></p>
+<ul>
+<li>If you have a convolutional layer with <strong>64 filters</strong> (or neurons), and each filter is of size <strong>3×3</strong>, then each filter has a set of weights (parameters).</li>
+<li>These filters slide over the input feature maps, performing convolution operations and generating activation maps.</li>
+</ul>
+</li>
+<li>
+<p><strong>Weight Updates During Training</strong></p>
+<ul>
+<li>Each <strong>filter (3×3)</strong> has <strong>weights</strong> (along with biases).</li>
+<li>During <strong>forward propagation</strong>, these filters extract features by performing element-wise multiplication with the input and summing up the results.</li>
+<li>During <strong>backpropagation</strong>, the loss (error) is computed, and gradients of the loss with respect to the filter weights are calculated using the <strong>chain rule</strong>.</li>
+<li>Using <strong>gradient descent (or any optimization algorithm like Adam, SGD, RMSProp, etc.)</strong>, the filter weights are updated in order to minimize the loss.</li>
+</ul>
+</li>
+</ol>
+<h2 id="i-heard-filters-has-only-0-and-1-value-depending-upon-what-we-want-to-extract-we-use-the-pattern-of-0-and-1-on-the-filter-like-for-edge-detection-contras-detection-etc">I heard filters has only 0 and 1 value. Depending upon what we want to extract we use the pattern of 0 and 1 on the filter, like for edge detection, contras detection etc.</h2>
+<p>That&rsquo;s a common misconception! You&rsquo;re referring to <strong>handcrafted filters</strong> used in traditional image processing, like <strong>Sobel, Prewitt, or Laplacian filters</strong> for edge detection, which have fixed values (e.g., 0s and 1s).</p>
+<p>However, in <strong>deep learning (CNNs)</strong>, filters (kernels) are <strong>learned automatically during training</strong>, and their values are not just 0s and 1s. Instead, they are real-valued numbers (floating-point weights) that get updated through <strong>backpropagation</strong>.</p>
+<hr>
+<p><strong>Key Differences: Traditional Filters vs. CNN Filters</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Traditional Filters (Fixed)</th>
+          <th>CNN Filters (Learned)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Values</td>
+          <td>Manually set (e.g., 0s, 1s, -1s)</td>
+          <td>Real-valued, learned from data</td>
+      </tr>
+      <tr>
+          <td>Purpose</td>
+          <td>Predefined for edge/contrast detection</td>
+          <td>Learn features specific to the dataset</td>
+      </tr>
+      <tr>
+          <td>Training Needed?</td>
+          <td>No training needed (fixed)</td>
+          <td>Updated using backpropagation</td>
+      </tr>
+      <tr>
+          <td>Examples</td>
+          <td>Sobel, Laplacian, Gabor filters</td>
+          <td>Learned filters in convolutional layers</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong>How CNN Filters Work?</strong></p>
+<ol>
+<li>
+<p><strong>Initialization:</strong></p>
+<ul>
+<li>Filters start with random values (not just 0s and 1s).</li>
+</ul>
+</li>
+<li>
+<p><strong>Learning Through Training:</strong></p>
+<ul>
+<li>CNNs automatically adjust the filter values to detect relevant patterns (edges, textures, objects, etc.).</li>
+<li>Filters in the first layers detect simple patterns (edges, corners), while deeper layers detect complex structures (faces, objects).</li>
+</ul>
+</li>
+<li>
+<p><strong>Backpropagation Updates Filters:</strong></p>
+<ul>
+<li>During training, the loss function calculates the error.</li>
+<li>Gradients of the loss with respect to each filter are computed.</li>
+<li>Using an optimizer (e.g., SGD, Adam), the filter values are updated to improve accuracy.</li>
+</ul>
+</li>
+</ol>
+<h2 id="if-a-layer-with-64-filter-has-3x3-filter-then-how-many-weights-are-there">If a layer with 64 filter has 3x3 filter then how many weights are there?</h2>
+<p><strong>Understanding the Parameters in a CNN Layer</strong><br>
+If a convolutional layer has <strong>64 filters</strong> (or neurons), and each filter is of size <strong>3×3</strong>, the number of trainable weights depends on the <strong>number of input channels</strong> (depth of the input feature map).</p>
+<p><strong>Case 1: Single-Channel Input (Grayscale)</strong>
+If the input to this layer is <strong>grayscale</strong> (i.e., it has only 1 channel), each filter has:</p>
+<p>3 x 3 = 9 (weights per filter)</p>
+<p>Since there are <strong>64 filters</strong>, the total number of weights is:</p>
+<p>64 x 9 = 576
+Additionally, each filter has <strong>one bias term</strong>, so the total trainable parameters are:</p>
+<p>64 x (9 + 1) = 640</p>
+<p><strong>Case 2: Multi-Channel Input (e.g., RGB Image)</strong>
+If the input has <strong>multiple channels</strong>, such as an <strong>RGB image with 3 channels (R, G, B)</strong>, each filter must process all channels. So, each filter has:</p>
+<p>3 x 3 x 3 = 27 (weights per filter)}</p>
+<p>With <strong>64 filters</strong>, the total number of trainable weights is:</p>
+<p>64 x 27 = 1,728</p>
+<p>Including the bias terms (one per filter):</p>
+<p>64 x (27 + 1) = 1,792</p>
+<p><strong>General Formula for Convolutional Layer Parameters</strong>
+For a convolutional layer with:</p>
+<ul>
+<li><strong>F</strong> filters (neurons)</li>
+<li><strong>K × K</strong> filter size</li>
+<li><strong>C</strong> input channels</li>
+<li><strong>1 bias per filter</strong></li>
+</ul>
+<p>The number of trainable parameters is:</p>
+<p>F x (K x K x C + 1)</p>
+<h2 id="there-is-very-famous-1x1-filter-how-many-weights-are-there-if-it-layer-has-64-neuron-why-it-is-more-effective">There is very famous 1x1 filter. How many weights are there if it layer has 64 neuron? Why it is more effective?</h2>
+<ul>
+<li><strong>1×1 convolutions learn cross-channel interactions efficiently.</strong></li>
+<li>They are <strong>used for dimensionality reduction</strong> (reducing channels) and <strong>feature transformation</strong>.</li>
+<li>They <strong>do not capture spatial features</strong>, but when combined with <strong>3×3 or 5×5 convolutions</strong>, they improve efficiency dramatically</li>
+</ul>
+<p><strong>1×1 Convolution (Pointwise Convolution)</strong>
+A <strong>1×1 filter</strong> is a convolutional kernel that operates on an entire input channel but <strong>does not consider neighboring spatial information</strong> like larger filters (e.g., 3×3 or 5×5).</p>
+<p><strong>Number of Weights in a 1×1 Convolution Layer</strong>
+If a convolutional layer has <strong>64 filters</strong> (neurons), and each filter is <strong>1×1</strong>, the number of trainable weights depends on the <strong>number of input channels (C)</strong>.</p>
+<p><strong>Formula for Weights in a 1×1 Convolution:</strong></p>
+<p>F x (K x K x C + 1)</p>
+<p>where:</p>
+<ul>
+<li><strong>F</strong> = Number of filters (neurons) = <strong>64</strong></li>
+<li><strong>K × K</strong> = <strong>1×1</strong> filter size</li>
+<li><strong>C</strong> = Number of input channels</li>
+<li><strong>+1</strong> accounts for the bias term per filter</li>
+</ul>
+<p><strong>Case 1: Single-Channel Input (Grayscale)</strong>
+For a <strong>grayscale image (1 channel)</strong>:</p>
+<p>64 x (1 x 1 x 1 + 1) = 64 x 2 = 128  parameters</p>
+<p><strong>Case 2: Multi-Channel Input (RGB, C=3)</strong>
+For an <strong>RGB image (3 channels)</strong>:</p>
+<p>64 x (1 x 1 x 3 + 1) = 64 x 4 = 256 parameters</p>
+<p><strong>Case 3: Multi-Channel - Interim Layers</strong>
+For an input with <strong>C=256 channels</strong>, a <strong>1×1 convolution with 64 filters</strong> would have:</p>
+<p>64 x (1 x 1 x 256 + 1) = 16,448 parameters</p>
+<hr>
+<p><strong>Why is 1×1 Convolution Effective?</strong>
+Despite its simplicity, <strong>1×1 convolutions are extremely powerful</strong> and are widely used in deep learning architectures like <strong>GoogleNet (Inception), MobileNet, and ResNet</strong> for multiple reasons:</p>
+<ol>
+<li>
+<p><strong>Dimensionality Reduction (Bottleneck Layers)</strong></p>
+<ul>
+<li>A <strong>1×1 convolution reduces the number of channels</strong> (feature maps), thus reducing computational cost.</li>
+<li>Example: If an input has <strong>256 channels</strong>, applying a <strong>1×1 convolution with 64 filters</strong> reduces it to <strong>64 channels</strong>.</li>
+<li>This significantly <strong>reduces model size and computation</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Feature Transformation</strong></p>
+<ul>
+<li>Even though it <strong>doesn’t change spatial dimensions</strong>, it <strong>learns new feature representations</strong> by linearly combining different channels.</li>
+<li>It acts as a <strong>fully connected layer applied independently to each pixel</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Efficient Depthwise Computation (Depthwise Separable Convolutions)</strong></p>
+<ul>
+<li>Used in architectures like <strong>MobileNet</strong> to replace expensive 3×3 convolutions.</li>
+<li>Instead of using a large <strong>3×3×256</strong> kernel (which has <strong>2,304</strong> weights per filter), a <strong>depthwise 3×3 convolution</strong> + <strong>1×1 convolution</strong> achieves the same effect with <strong>far fewer parameters</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Non-Linearity Enhancement (ReLU After 1×1)</strong></p>
+<ul>
+<li>Typically, after a <strong>1×1 convolution</strong>, a <strong>non-linearity (ReLU)</strong> is applied.</li>
+<li>This helps the network learn <strong>more complex transformations</strong> while keeping computation low.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><strong>Comparison: 1×1 vs 3×3 Convolutions</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>1×1 Convolution</th>
+          <th>3×3 Convolution</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Spatial Context</td>
+          <td>No spatial info</td>
+          <td>Captures local patterns</td>
+      </tr>
+      <tr>
+          <td>Parameters (per filter)</td>
+          <td>C+1</td>
+          <td>9C+1</td>
+      </tr>
+      <tr>
+          <td>Computational Cost</td>
+          <td>Low</td>
+          <td>High</td>
+      </tr>
+      <tr>
+          <td>Feature Mixing</td>
+          <td>Yes (across channels)</td>
+          <td>Yes (across spatial locations)</td>
+      </tr>
+      <tr>
+          <td>Use Case</td>
+          <td>Bottlenecks, depth reduction</td>
+          <td>Feature extraction</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="normally-we-think-channel-means-number-of-layer-in-input-image-rgb-color-how-come-we-can-have-256-channels-in-neural-network">Normally we think channel means number of layer in input image (RGB color). How come we can have 256 channels in neural network?</h2>
+<p>The concept of <strong>&ldquo;channels&rdquo;</strong> in convolutional layers extends beyond just color channels like <strong>RGB</strong>. Let’s understand this.</p>
+<p><strong>1. Understanding Channels in CNNs</strong></p>
+<ul>
+<li>In the <strong>input layer</strong>, channels refer to the number of color layers (e.g., <strong>RGB = 3 channels</strong>).</li>
+<li>However, <strong>inside convolutional layers</strong>, each filter learns a different feature map, and these become the new &ldquo;channels&rdquo; for the next layer.</li>
+</ul>
+<p><strong>2. How Do We Get 256 Channels?</strong>
+Each convolutional layer has <strong>multiple filters</strong>, and each filter extracts <strong>different features</strong> from the input. The <strong>number of filters</strong> determines the number of <strong>output channels</strong> in that layer.</p>
+<p><strong>Example: Expanding from RGB (3 channels)</strong></p>
+<ol>
+<li>Suppose we apply <strong>64 filters of size 3×3×3</strong> (since RGB has 3 input channels) in the <strong>first convolutional layer</strong>.
+<ul>
+<li>Each filter extracts a feature from all 3 channels.</li>
+<li>The output will have <strong>64 feature maps</strong>, meaning <strong>64 channels</strong>.</li>
+</ul>
+</li>
+<li>If the <strong>next convolutional layer</strong> applies <strong>256 filters</strong> on those <strong>64-channel feature maps</strong>, the output will have <strong>256 channels</strong>.</li>
+</ol>
+<p><strong>3. What Do Extra Channels Represent?</strong>
+Unlike <strong>RGB channels (red, green, blue), which are fixed</strong>, the additional <strong>channels in deeper layers are learned feature maps</strong>. These channels capture:</p>
+<ul>
+<li><strong>Edges, textures (early layers)</strong></li>
+<li><strong>Shapes, patterns (middle layers)</strong></li>
+<li><strong>High-level objects (deeper layers)</strong></li>
+</ul>
+<p>Each <strong>filter extracts a different aspect</strong> of the input, which is why more channels develop as the network gets deeper.</p>
+<p><strong>4. Example in a CNN Architecture</strong></p>
+<ul>
+<li><strong>First Convolutional Layer (Processing RGB Image)</strong>
+<ul>
+<li><strong>Input</strong>: 224×224×3 (RGB image)</li>
+<li><strong>Filters</strong>: 64 filters of 3×3×3</li>
+<li><strong>Output</strong>: 224×224×64 (<strong>64 feature maps = 64 channels</strong>)</li>
+</ul>
+</li>
+<li><strong>Second Convolutional Layer</strong>
+<ul>
+<li><strong>Input</strong>: 224×224×64 (previous output)</li>
+<li><strong>Filters</strong>: 128 filters of 3×3×64</li>
+<li><strong>Output</strong>: 224×224×128 (<strong>128 feature maps = 128 channels</strong>)</li>
+</ul>
+</li>
+<li>If a later convolutional layer has <strong>256 filters</strong>, its output will have <strong>256 channels</strong>.</li>
+</ul>
+<p><strong>5. Why Do CNNs Use So Many Channels?</strong></p>
+<ul>
+<li><strong>Helps learn complex patterns</strong> → More channels mean the network can capture different types of information.</li>
+<li><strong>Improves accuracy</strong> → More filters = better feature representation.</li>
+<li><strong>Works well with deeper layers</strong> → As images go deeper in the network, low-level edges combine into high-level structures.</li>
+</ul>
+<h2 id="how-to-calculate-output-size-of-convolutional-layer">How to calculate output size of convolutional layer?</h2>
+<p><strong>1. Understanding Convolution Layer Output Shape</strong>
+A convolutional layer <strong>does not reduce the spatial dimensions</strong> (height &amp; width) unless we apply <strong>stride &gt; 1</strong> or <strong>pooling</strong>. Instead, it adds <strong>depth (channels)</strong> based on the number of filters used.</p>
+<p><strong>Example: First Convolution Layer Processing an RGB Image</strong></p>
+<ul>
+<li><strong>Input Shape:</strong>  224 x 224 x 3  (Height × Width × Channels)</li>
+<li><strong>Filters:</strong> Suppose we apply <strong>64 filters</strong> of size  3 x 3</li>
+<li><strong>Stride:</strong> 1 (no downsampling)</li>
+<li><strong>Padding:</strong> &ldquo;Same&rdquo; (output size remains unchanged)</li>
+</ul>
+<p>\text{Output Shape} = 224 x 224 x 64</p>
+<p>✔ <strong>224 × 224</strong> → The spatial dimensions remain the same (since stride = 1).<br>
+✔ <strong>64 channels</strong> → Because we used 64 filters, each one creates a separate feature map.</p>
+<p><strong>2. Why Isn&rsquo;t the Output Just 64?</strong>
+You&rsquo;re probably thinking about a <strong>fully connected layer</strong>, where we get a single number per neuron.<br>
+However, <strong>a convolutional layer works differently</strong>:</p>
+<ul>
+<li>Each <strong>filter slides</strong> over the input and computes a <strong>feature map</strong>.</li>
+<li>Since we use <strong>64 filters</strong>, we get <strong>64 feature maps</strong>, each of size <strong>224 × 224</strong>.</li>
+<li>The output has <strong>spatial structure</strong>, not just 64 numbers.</li>
+</ul>
+<p>💡 <strong>Think of the output as a &ldquo;stack&rdquo; of 64 images (feature maps), each of size 224 × 224.</strong></p>
+<p><strong>3. General Formula for Convolution Output Size</strong>
+If an input has size ** H x W x C ** and we apply ** F  filters** of size  K x K  with stride  S  and padding  P , the output shape is:</p>
+<p>[[[H - K + 2P]/S] + 1  x [[W - K + 2P]/S] + 1 ] x F</p>
+<p>For our example:</p>
+<ul>
+<li>H = 224, W = 224, C = 3</li>
+<li>K = 3, S = 1, P = 1  (same padding ensures output size remains 224 × 224)</li>
+<li>F = 64  (number of filters)</li>
+</ul>
+<p>\text{Output Shape} = 224 x 224 x 64</p>
+<p><strong>4. When Do We Get Just 64 Numbers?</strong>
+If we want to reduce the <strong>spatial dimensions</strong>, we use:</p>
+<ol>
+<li><strong>Pooling (e.g., MaxPooling 2×2)</strong> → Reduces the size (e.g., from 224×224 to 112×112).</li>
+<li><strong>Flattening</strong> → Converts the feature maps into a <strong>1D vector</strong>.</li>
+<li><strong>Fully Connected (Dense) Layer</strong> → Outputs a single number per neuron.</li>
+</ol>
+<p>For example, in <strong>classification</strong>, the CNN eventually flattens feature maps and passes them through <strong>dense layers</strong>, resulting in <strong>64 or fewer numbers</strong> at the end.</p>
+<hr>
+<p><strong>Why Is Output 224 × 224 × 64?</strong>
+✅ A <strong>convolutional layer outputs feature maps, not just a single number</strong>.<br>
+✅ Since we apply <strong>64 filters</strong>, we get <strong>64 feature maps</strong>, <strong>not just 64 values</strong>.<br>
+✅ The <strong>spatial size (224 × 224) remains the same</strong> if we use <strong>stride = 1</strong> and <strong>padding = same</strong>.</p>
+<h2 id="when-3x3x3-filter-is-applied-to-224x224x3-image-then-how-it-become-224x224">When 3x3x3 filter is applied to 224x224x3 image then how it become 224x224?</h2>
+<p>✔ A <strong>3×3×3 filter applied to a 224×224×3 image produces a 224×224×1 feature map</strong>.<br>
+✔ When using <strong>64 filters, we get 224×224×64 output</strong>.<br>
+✔ The <strong>spatial dimensions remain 224×224</strong> because of <strong>stride=1 and &ldquo;same&rdquo; padding</strong>.<br>
+✔ The <strong>depth increases from 3 (RGB) to 64</strong> because each filter extracts different features.</p>
+<p><strong>1. Understanding How a Filter Works in CNNs</strong>
+In a convolutional layer:</p>
+<ul>
+<li>A filter (also called a kernel) slides over the <strong>spatial dimensions</strong> (height &amp; width) of the input image.</li>
+<li>It computes the <strong>dot product</strong> between the filter’s weights and the corresponding region of the image.</li>
+<li>The depth of the filter <strong>must match the depth (number of channels) of the input</strong>.</li>
+</ul>
+<p><strong>2. How a 3×3×3 Filter Works</strong>
+Consider an <strong>RGB image of size 224×224×3</strong> (Height × Width × Channels):</p>
+<ol>
+<li>
+<p>The <strong>filter size is 3×3×3</strong>, meaning:</p>
+<ul>
+<li>It covers a <strong>3×3</strong> region of the image.</li>
+<li>It extends across <strong>all 3 channels</strong> (Red, Green, Blue).</li>
+<li>Each filter has <strong>3×3×3 = 27 weights</strong>.</li>
+</ul>
+</li>
+<li>
+<p>The <strong>convolution operation</strong>:</p>
+<ul>
+<li>The filter slides over the image <strong>one step (stride = 1) at a time</strong>.</li>
+<li>At each position, it computes the weighted sum (dot product) of <strong>all 27 values</strong> (from 3×3 pixels across 3 channels).</li>
+<li>This produces <strong>a single number per position</strong>.</li>
+<li>The filter moves across the <strong>entire</strong> 224×224 spatial area.</li>
+</ul>
+</li>
+<li>
+<p>Since the filter moves <strong>one step at a time (stride = 1) and we use &ldquo;same&rdquo; padding</strong>, the output <strong>retains the same spatial size</strong> but with <strong>only one channel</strong>: Output size = 224 x 224 x 1</p>
+<p>(i.e., one feature map).</p>
+</li>
+</ol>
+<p><strong>3. What Happens When We Use 64 Filters?</strong></p>
+<ul>
+<li>If we apply <strong>64 different 3×3×3 filters</strong>, each filter extracts a different feature from the image.</li>
+<li>Each filter generates <strong>one 224×224 feature map</strong>.</li>
+<li>Since we have <strong>64 filters</strong>, we get <strong>64 feature maps</strong>.</li>
+</ul>
+<p>Thus, the final output shape of this convolutional layer is: 224 x 224 x 64</p>
+<p><strong>4. General Formula for Convolution Output Size</strong>
+If an input image has:</p>
+<ul>
+<li><strong>Size:</strong>  H x W x C  (Height × Width × Channels)</li>
+<li><strong>Filter size:</strong>  K x K x C  (Kernel size × Kernel size × Same depth as input)</li>
+<li><strong>Stride:</strong>  S</li>
+<li><strong>Padding:</strong>  P</li>
+</ul>
+<p>Then the output size is:</p>
+<p>$$\left( \frac{H - K + 2P}{S} + 1 \right) x \left( \frac{W - K + 2P}{S} + 1 \right) x F$$</p>
+<p>where:</p>
+<ul>
+<li><strong>F</strong> = number of filters</li>
+</ul>
+<hr>
+<p><strong>5. Example Calculation for Our Case</strong>
+Given:</p>
+<ul>
+<li><strong>Input:</strong>  224 x 224 x 3</li>
+<li><strong>Filter:</strong>  3 x 3 x 3</li>
+<li><strong>Stride:</strong>  S = 1</li>
+<li><strong>Padding:</strong> &ldquo;Same&rdquo; (so that output size remains unchanged)</li>
+</ul>
+<p>Using the formula:</p>
+<p>$$\left( \frac{224 - 3 + 2(1)}{1} + 1 \right) x \left( \frac{224 - 3 + 2(1)}{1} + 1 \right) x 64$$</p>
+<p>= 224 x 224 x 64</p>
+<p>Thus, the output retains the <strong>same height and width</strong> but increases in <strong>depth (number of filters applied)</strong>.</p>
+<hr>
+<p><strong>6. Why Does Depth Increase?</strong>
+Each filter extracts a different feature from the image:</p>
+<ul>
+<li><strong>Some filters detect edges</strong>.</li>
+<li><strong>Some detect textures</strong>.</li>
+<li><strong>Some detect patterns like curves, shapes, or corners</strong>.</li>
+</ul>
+<p>Instead of just <strong>3 channels (RGB), now we have 64 feature maps</strong>, allowing the CNN to learn more <strong>complex patterns</strong>.</p>
+<h2 id="earlier-we-discussed-weight-of-each-layer-r-g-b-is-different-when-and-how-these-weights-are-decided">Earlier we discussed weight of each layer R, G, B is different? When and how these weights are decided?</h2>
+<p>✔ <strong>Each filter has different weights for each channel (R, G, B).</strong><br>
+✔ <strong>Weights are randomly initialized and learned during training using backpropagation.</strong><br>
+✔ <strong>The dot product computes the weighted sum of pixel values in all channels.</strong><br>
+✔ <strong>Different filters learn to detect different features, from edges to complex objects.</strong></p>
+<p>The <strong>weights for each channel (R, G, B) are different</strong>, and they are <strong>learned during training</strong>. Let&rsquo;s understand this.</p>
+<p><strong>1. Understanding Weights in a Convolutional Filter</strong>
+Each <strong>filter (kernel)</strong> in a convolutional layer has a set of <strong>learnable weights</strong>.<br>
+For a <strong>3×3×3 filter</strong>, there are:</p>
+<ul>
+<li><strong>9 weights per channel</strong> (since the filter is 3×3).</li>
+<li><strong>3 separate weight matrices</strong> (one for each channel: R, G, B).</li>
+<li><strong>1 bias term</strong> (optional, but usually present).</li>
+</ul>
+<p>Total trainable parameters for one filter:</p>
+<p>(3 x 3 x 3) + 1 = 27 + 1 = 28</p>
+<p>Since <strong>each filter has different weights for R, G, and B channels</strong>, the convolution operation applies <strong>different transformations</strong> to each channel before summing them.</p>
+<p><strong>2. How Is the Weighted Sum (Dot Product) Computed?</strong>
+At each position where the filter slides over the image:</p>
+<ol>
+<li>The <strong>weights of the filter</strong> are multiplied with the corresponding pixel values.</li>
+<li>The <strong>results for each channel are summed</strong> to get a single value.</li>
+<li>A <strong>bias term is added</strong> (if used).</li>
+<li>A <strong>non-linearity (like ReLU)</strong> is applied.</li>
+</ol>
+<p>Example:</p>
+<p>If a <strong>3×3×3 filter</strong> has weights: W_R, W_G, W_B</p>
+<p>and the image patch under the filter has pixel values: I_R, I_G, I_B</p>
+<p>Then the output at that position is:</p>
+<p>output = I_R \cdot  + I_G \cdot W_G + I_B \cdot W_B + bias</p>
+<p>This results in <strong>a single number per filter position</strong>.</p>
+<p><strong>3. When and How Are These Weights Decided?</strong>
+<strong>(a) Initializing Weights</strong></p>
+<ul>
+<li>At the start of training, weights are <strong>randomly initialized</strong> (using techniques like Xavier or He initialization).</li>
+<li>They are <strong>not manually set</strong>—they start as small random values.</li>
+</ul>
+<p><strong>(b) Learning Weights During Training</strong>
+Weights are learned using <strong>backpropagation</strong> and <strong>gradient descent</strong>:</p>
+<ol>
+<li>The <strong>forward pass</strong> computes outputs using the current weights.</li>
+<li>The <strong>loss function</strong> (e.g., cross-entropy for classification) measures how far the predictions are from the correct labels.</li>
+<li><strong>Backpropagation</strong> calculates gradients of the loss <strong>with respect to the weights</strong>.</li>
+<li><strong>Gradient descent (or Adam, RMSprop, etc.) updates the weights</strong> to minimize the loss.</li>
+<li>Steps 1–4 repeat for many iterations (epochs) until the network converges.</li>
+</ol>
+<p><strong>(c) Different Filters Learn Different Features</strong></p>
+<ul>
+<li>In <strong>early layers</strong>, filters learn <strong>edges, corners, and simple textures</strong>.</li>
+<li>In <strong>deeper layers</strong>, filters learn <strong>complex patterns like shapes, objects, and high-level features</strong>.</li>
+</ul>
+<p><strong>4. Why Are There Different Weights for R, G, B?</strong>
+Each filter learns <strong>a different way to combine color information</strong>.</p>
+<ul>
+<li>Some filters might focus more on <strong>edges in the red channel</strong>.</li>
+<li>Others might emphasize <strong>texture in the green channel</strong>.</li>
+<li>Others may combine <strong>all three channels differently</strong> to detect complex patterns.</li>
+</ul>
+<p>This flexibility allows CNNs to <strong>extract meaningful features</strong> regardless of the color composition of the image.</p>
+<h2 id="where-do-we-learn-features-at-the-level-of-differet-layers-or-different-channels-filter">Where do we learn features? At the level of differet layers or different channels (filter)</h2>
+<p>Earlier we discussed &ldquo;In early layers, filters learn edges, corners, and simple textures.&rdquo; The we said &ldquo;If we apply 64 different 3×3×3 filters, each filter extracts a different feature from the image.&rdquo; Isn&rsquo;t contracting? Each filter extracts different feature and is represented by the channel (neuron) or each layer is learning different features?</p>
+<p><strong>1. Each Filter Extracts a Different Feature (Per Layer)</strong>
+When we apply <strong>64 different 3×3×3 filters</strong> in a <strong>single convolutional layer</strong>, each filter learns to detect <strong>a different low-level feature</strong>.</p>
+<ul>
+<li>One filter might detect <strong>horizontal edges</strong>.</li>
+<li>Another might detect <strong>vertical edges</strong>.</li>
+<li>Another might respond to <strong>small texture patterns</strong>.</li>
+<li>Each of these filters produces a <strong>separate feature map (channel)</strong>.</li>
+</ul>
+<p>✔ <strong>Each filter learns a different feature in that layer.</strong></p>
+<hr>
+<p><strong>2. Deeper Layers Learn More Complex Features</strong>
+CNNs are hierarchical:</p>
+<ul>
+<li><strong>Early layers</strong> learn simple features (edges, corners, textures).</li>
+<li><strong>Middle layers</strong> learn more abstract features (patterns, shapes).</li>
+<li><strong>Deeper layers</strong> learn high-level structures (eyes, faces, objects).</li>
+</ul>
+<p>✔ <strong>Each layer captures different types of features.</strong></p>
+<p><strong>3. How Does This Work Together?</strong></p>
+<ul>
+<li>In <strong>Layer 1</strong>, each filter detects a different <strong>low-level feature</strong> (edges, textures).</li>
+<li>In <strong>Layer 2</strong>, filters combine these edges/textures into <strong>shapes and patterns</strong>.</li>
+<li>In <strong>Layer 3+,</strong> filters detect <strong>high-level structures</strong> like objects.</li>
+</ul>
+<p>💡 <strong>Each filter within a layer extracts a different feature, and each deeper layer extracts more abstract features.</strong></p>
+<p><strong>4. Analogy: Detecting a Face</strong>
+Imagine detecting a face in an image:</p>
+<ul>
+<li><strong>Layer 1:</strong> Detects edges (nose outline, eye corners).</li>
+<li><strong>Layer 2:</strong> Combines edges into <strong>shapes</strong> (eye, mouth, nose).</li>
+<li><strong>Layer 3:</strong> Recognizes <strong>full facial structures</strong>.</li>
+<li><strong>Final Layers:</strong> Identify specific faces (person A vs. person B).</li>
+</ul>
+<p><strong>5. Final Answer: No Contradiction!</strong>
+✔ <strong>Each filter in a single layer extracts a different feature (edge, texture, shape).</strong><br>
+✔ <strong>Each deeper layer extracts progressively more complex features.</strong><br>
+✔ <strong>The number of filters = number of feature maps (channels) in that layer.</strong></p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

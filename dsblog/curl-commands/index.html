@@ -1,0 +1,1255 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>curl Commands | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/curl-commands/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="curl Commands">
+  <meta property="og:description" content="!
+What is curl command? The curl command is a versatile command-line tool for transferring data to and from servers using various protocols like HTTP, HTTPS, FTP, etc. It allows you to make requests (GET, POST, PUT, DELETE) to APIs, download/upload files, send data, and debug web interactions directly from the terminal. It supports custom headers, authentication, proxies, and more, making it essential for testing and automation in web development and API integrations.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-12-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="Curl">
+    <meta property="article:tag" content="Command-Line">
+    <meta property="article:tag" content="Web Development">
+
+  <meta itemprop="name" content="curl Commands">
+  <meta itemprop="description" content="!
+What is curl command? The curl command is a versatile command-line tool for transferring data to and from servers using various protocols like HTTP, HTTPS, FTP, etc. It allows you to make requests (GET, POST, PUT, DELETE) to APIs, download/upload files, send data, and debug web interactions directly from the terminal. It supports custom headers, authentication, proxies, and more, making it essential for testing and automation in web development and API integrations.">
+  <meta itemprop="datePublished" content="2024-12-29T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="2609">
+  <meta itemprop="keywords" content="curl commands for web development,curl http methods,curl command line tool,curl for api testing,curl for web scraping,curl for file upload and download,curl options and flags">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="curl Commands">
+  <meta name="twitter:description" content="!
+What is curl command? The curl command is a versatile command-line tool for transferring data to and from servers using various protocols like HTTP, HTTPS, FTP, etc. It allows you to make requests (GET, POST, PUT, DELETE) to APIs, download/upload files, send data, and debug web interactions directly from the terminal. It supports custom headers, authentication, proxies, and more, making it essential for testing and automation in web development and API integrations.">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p>!<img src="/assets/images/dspost/dsp6195-curl-commands.jpg" alt="curl Commands"></p>
+<h2 id="what-is-curl-command">What is curl command?</h2>
+<p>The <code>curl</code> command is a versatile command-line tool for transferring data to and from servers using various protocols like HTTP, HTTPS, FTP, etc. It allows you to make requests (GET, POST, PUT, DELETE) to APIs, download/upload files, send data, and debug web interactions directly from the terminal. It supports custom headers, authentication, proxies, and more, making it essential for testing and automation in web development and API integrations.</p>
+<h2 id="what-protocols-it-supports">What protocols it supports?</h2>
+<p>The <code>curl</code> command supports a wide range of protocols for transferring data. Here’s the list of supported protocols:</p>
+<ol>
+<li><strong>HTTP</strong> - Hypertext Transfer Protocol</li>
+<li><strong>HTTPS</strong> - Secure version of HTTP</li>
+<li><strong>FTP</strong> - File Transfer Protocol</li>
+<li><strong>FTPS</strong> - Secure File Transfer Protocol</li>
+<li><strong>SFTP</strong> - SSH File Transfer Protocol</li>
+<li><strong>TFTP</strong> - Trivial File Transfer Protocol</li>
+<li><strong>GOPHER</strong> - Gopher protocol (predecessor to HTTP)</li>
+<li><strong>IMAP</strong> - Internet Message Access Protocol</li>
+<li><strong>IMAPS</strong> - Secure version of IMAP</li>
+<li><strong>POP3</strong> - Post Office Protocol</li>
+<li><strong>POP3S</strong> - Secure version of POP3</li>
+<li><strong>SMTP</strong> - Simple Mail Transfer Protocol</li>
+<li><strong>SMTPS</strong> - Secure version of SMTP</li>
+<li><strong>RTSP</strong> - Real-Time Streaming Protocol</li>
+<li><strong>LDAP</strong> - Lightweight Directory Access Protocol</li>
+<li><strong>LDAPS</strong> - Secure version of LDAP</li>
+<li><strong>FILE</strong> - Accessing local files</li>
+<li><strong>DICT</strong> - Dictionary protocol</li>
+<li><strong>TELNET</strong> - Telnet protocol</li>
+<li><strong>MQTT</strong> - Message Queuing Telemetry Transport</li>
+</ol>
+<hr>
+<h3 id="key-highlights"><strong>Key Highlights:</strong></h3>
+<ul>
+<li><code>curl</code> automatically chooses the correct protocol based on the URL you provide (e.g., <code>http://</code>, <code>ftp://</code>).</li>
+<li>You can combine it with various options like authentication, headers, or POST data for complex operations.</li>
+</ul>
+<h2 id="can-you-share-typical-curl-command">Can you share typical curl command?</h2>
+<p>Here’s one neatly formatted <code>curl</code> command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST <span style="color:#e6db74">&#34;https://api.hyperbolic.xyz/v1/chat/comple...&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;Authorization: Bearer </span>$HYPERBOLIC_API_KEY<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--data-raw <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;messages&#34;: [
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;role&#34;: &#34;user&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;content&#34;: &#34;How many gifts will Santa Claus deliver on Christmas?&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    ],
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;model&#34;: &#34;deepseek-ai/DeepSeek-V3&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;max_tokens&#34;: 512,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;temperature&#34;: 0.7,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;top_p&#34;: 0.9,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;stream&#34;: false
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>
+</span></span></code></pre></div><p>It calls deepseek-v3 AI model to generate text content, input to generate the response is given in this curl command.</p>
+<h2 id="what-are-different-arguments-which-can-be-passed-to-call-curl">What are different arguments which can be passed to call curl?</h2>
+<p>All <code>curl</code> commands have the different format. The structure of a <code>curl</code> command depends on the type of request, the API requirements, and the desired functionality. Here’s a breakdown of the common elements in a <code>curl</code> command and when they are used:</p>
+<hr>
+<h3 id="1-basic">1. <strong>Basic <code>curl</code> Command</strong></h3>
+<ul>
+<li>Simplest form for making a GET request:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl https://example.com
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="2-using-http-methods">2. <strong>Using HTTP Methods</strong></h3>
+<ul>
+<li>Specify the HTTP method with <code>-X</code> (e.g., <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>, etc.).
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://example.com
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="3-headers">3. <strong>Headers</strong></h3>
+<ul>
+<li>Add headers using <code>-H</code>. Headers often include <code>Content-Type</code>, <code>Authorization</code>, or custom headers:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>     -H <span style="color:#e6db74">&#34;Authorization: Bearer YOUR_API_KEY&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>     https://example.com
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="4-sending-data">4. <strong>Sending Data</strong></h3>
+<ul>
+<li>Use <code>--data</code> or <code>--data-raw</code> to send data in the body of the request:
+<ul>
+<li>For JSON data:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://example.com <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--data-raw <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;key&#34;: &#34;value&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>
+</span></span></code></pre></div></li>
+<li>For form-encoded data:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://example.com <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--data <span style="color:#e6db74">&#34;key=value&amp;other_key=other_value&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="5-authentication">5. <strong>Authentication</strong></h3>
+<ul>
+<li>Basic authentication:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -u username:password https://example.com
+</span></span></code></pre></div></li>
+<li>Bearer token:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -H <span style="color:#e6db74">&#34;Authorization: Bearer YOUR_TOKEN&#34;</span> https://example.com
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="6-file-uploads">6. <strong>File Uploads</strong></h3>
+<ul>
+<li>Use <code>-F</code> for sending files:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://example.com/upload <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-F <span style="color:#e6db74">&#34;file=@/path/to/your/file.txt&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="7-query-parameters">7. <strong>Query Parameters</strong></h3>
+<ul>
+<li>Append query parameters directly in the URL:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl https://example.com?key<span style="color:#f92672">=</span>value&amp;other_key<span style="color:#f92672">=</span>other_value
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="8-options-for-output">8. <strong>Options for Output</strong></h3>
+<ul>
+<li>Output to a file:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -o output.txt https://example.com
+</span></span></code></pre></div></li>
+<li>Silent mode (no progress bar):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -s https://example.com
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="key-points">Key Points:</h3>
+<ul>
+<li><strong>Mandatory Components</strong>: URL is required, but other elements like <code>-X</code>, <code>-H</code>, or <code>--data</code> are optional depending on the API and use case.</li>
+<li><strong>Formats Vary</strong>: Not all APIs require headers or data in the same way. For example:
+<ul>
+<li>Simple REST APIs may only need a URL.</li>
+<li>Complex APIs may need specific headers, authentication, and JSON payloads.</li>
+</ul>
+</li>
+</ul>
+<p>Each <code>curl</code> command is customized based on the HTTP request you want to perform. Would you like examples of other specific use cases?</p>
+<h2 id="can-you-tell-me-curl-commands-for-other-use-cases">Can you tell me curl commands for other use cases?</h2>
+<p>Here are some examples of <code>curl</code> commands for various use cases:</p>
+<hr>
+<h3 id="1-get-request"><strong>1. GET Request</strong></h3>
+<p>Fetching data from an API:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl https://api.example.com/resource
+</span></span></code></pre></div><p>With query parameters:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#34;https://api.example.com/resource?param1=value1&amp;param2=value2&#34;</span>
+</span></span></code></pre></div><p>With headers:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -H <span style="color:#e6db74">&#34;Accept: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>     https://api.example.com/resource
+</span></span></code></pre></div><hr>
+<h3 id="2-post-request"><strong>2. POST Request</strong></h3>
+<p>Sending JSON data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://api.example.com/resource <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--data-raw <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;key1&#34;: &#34;value1&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;key2&#34;: &#34;value2&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>
+</span></span></code></pre></div><p>Sending form-encoded data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://api.example.com/resource <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--data <span style="color:#e6db74">&#34;key1=value1&amp;key2=value2&#34;</span>
+</span></span></code></pre></div><hr>
+<h3 id="3-put-request"><strong>3. PUT Request</strong></h3>
+<p>Updating existing data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X PUT https://api.example.com/resource/123 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--data-raw <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;key1&#34;: &#34;updated_value&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>
+</span></span></code></pre></div><hr>
+<h3 id="4-delete-request"><strong>4. DELETE Request</strong></h3>
+<p>Deleting a resource:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X DELETE https://api.example.com/resource/123
+</span></span></code></pre></div><p>With authentication:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X DELETE https://api.example.com/resource/123 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;Authorization: Bearer YOUR_API_KEY&#34;</span>
+</span></span></code></pre></div><hr>
+<h3 id="5-file-upload"><strong>5. File Upload</strong></h3>
+<p>Uploading a file using <code>-F</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://api.example.com/upload <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;Authorization: Bearer YOUR_API_KEY&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-F <span style="color:#e6db74">&#34;file=@/path/to/your/file.txt&#34;</span>
+</span></span></code></pre></div><hr>
+<h3 id="6-authentication-examples"><strong>6. Authentication Examples</strong></h3>
+<h4 id="basic-authentication">Basic Authentication:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -u username:password https://api.example.com/resource
+</span></span></code></pre></div><h4 id="bearer-token">Bearer Token:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -H <span style="color:#e6db74">&#34;Authorization: Bearer YOUR_API_KEY&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>     https://api.example.com/resource
+</span></span></code></pre></div><hr>
+<h3 id="7-download-a-file"><strong>7. Download a File</strong></h3>
+<p>Downloading and saving to a file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -o output_file.txt https://example.com/resource
+</span></span></code></pre></div><p>Downloading with progress hidden:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -s -o output_file.txt https://example.com/resource
+</span></span></code></pre></div><hr>
+<h3 id="8-api-pagination"><strong>8. API Pagination</strong></h3>
+<p>Handling paginated data with query parameters:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#34;https://api.example.com/resource?page=2&amp;limit=50&#34;</span>
+</span></span></code></pre></div><hr>
+<h3 id="9-using-proxy"><strong>9. Using Proxy</strong></h3>
+<p>Accessing via a proxy server:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -x http://proxy.example.com:8080 https://api.example.com/resource
+</span></span></code></pre></div><hr>
+<h3 id="10-redirect-handling"><strong>10. Redirect Handling</strong></h3>
+<p>Following redirects automatically:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -L https://example.com
+</span></span></code></pre></div><hr>
+<h3 id="11-custom-http-headers"><strong>11. Custom HTTP Headers</strong></h3>
+<p>Adding multiple custom headers:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -H <span style="color:#e6db74">&#34;X-Custom-Header: value&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>     -H <span style="color:#e6db74">&#34;Another-Header: value&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>     https://api.example.com/resource
+</span></span></code></pre></div><hr>
+<h3 id="12-debugging-with-verbose-output"><strong>12. Debugging with Verbose Output</strong></h3>
+<p>Show detailed information about the request and response:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -v https://api.example.com/resource
+</span></span></code></pre></div><hr>
+<h3 id="13-making-https-requests"><strong>13. Making HTTPS Requests</strong></h3>
+<p>Ignore SSL certificate verification:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -k https://insecure.example.com
+</span></span></code></pre></div><hr>
+<h3 id="14-using-variables"><strong>14. Using Variables</strong></h3>
+<p>Storing dynamic data in environment variables:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>API_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://api.example.com/resource&#34;</span>
+</span></span><span style="display:flex;"><span>curl <span style="color:#e6db74">&#34;</span>$API_URL<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><hr>
+<h3 id="15-parallel-requests-with-xargs"><strong>15. Parallel Requests (with xargs)</strong></h3>
+<p>Executing multiple <code>curl</code> commands simultaneously:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;https://example.com/1 https://example.com/2&#34;</span> | xargs -n <span style="color:#ae81ff">1</span> -P <span style="color:#ae81ff">2</span> curl -O
+</span></span></code></pre></div><h2 id="how-to-run-curl-commands-on-windows-terminal-like-command-or-powershell">How to run curl commands on windows terminal like command or powershell?</h2>
+<p>There are a few things to keep in mind when running <code>curl</code> on Windows, especially from <strong>Command Prompt (cmd)</strong> or <strong>PowerShell</strong>:</p>
+<hr>
+<h3 id="1-windows-specific-notes"><strong>1. Windows-Specific Notes</strong></h3>
+<ul>
+<li>
+<p><strong>Escape Characters</strong>:</p>
+<ul>
+<li>Windows uses <code>^</code> to escape special characters in <code>cmd</code> and backtick (`) in <strong>PowerShell</strong>.</li>
+<li>Example:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST <span style="color:#e6db74">&#34;http://127.0.0.1:8000/post-example&#34;</span> ^
+</span></span><span style="display:flex;"><span>-H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> ^
+</span></span><span style="display:flex;"><span>--data-raw <span style="color:#e6db74">&#34;{ \&#34;key1\&#34;: \&#34;value1\&#34;, \&#34;key2\&#34;: \&#34;value2\&#34; }&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Double Quotes</strong>:</p>
+<ul>
+<li>Use double quotes (<code>&quot;</code>) to wrap strings. If the JSON body uses double quotes, escape them with backslashes (<code>\&quot;</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Newline Continuation</strong>:</p>
+<ul>
+<li>In <strong>cmd</strong>, use the caret (<code>^</code>) for line continuation.</li>
+<li>In <strong>PowerShell</strong>, use the backtick (`).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-example-running-the"><strong>2. Example: Running the <code>curl</code> Commands</strong></h3>
+<h4 id="get-request-cmd"><strong>GET Request (cmd)</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#34;http://127.0.0.1:8000/get-example?param1=value1&amp;param2=value2&#34;</span>
+</span></span></code></pre></div><h4 id="post-request-with-json-cmd"><strong>POST Request with JSON (cmd)</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>curl -X POST <span style="color:#e6db74">&#34;http://127.0.0.1:8000/post-example&#34;</span> <span style="color:#ae81ff">^
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff">-</span>H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">^
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff">-</span>-data-raw <span style="color:#e6db74">&#34;{ \&#34;</span>key1\<span style="color:#e6db74">&#34;: \&#34;</span>value1\<span style="color:#e6db74">&#34;, \&#34;</span>key2\<span style="color:#e6db74">&#34;: \&#34;</span>value2\<span style="color:#e6db74">&#34; }&#34;</span>
+</span></span></code></pre></div><h4 id="post-request-with-json-powershell"><strong>POST Request with JSON (PowerShell)</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>curl -X POST <span style="color:#e6db74">&#34;http://127.0.0.1:8000/post-example&#34;</span> `
+</span></span><span style="display:flex;"><span>-H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> `
+</span></span><span style="display:flex;"><span>--data-raw <span style="color:#e6db74">&#39;{ &#34;key1&#34;: &#34;value1&#34;, &#34;key2&#34;: &#34;value2&#34; }&#39;</span>
+</span></span></code></pre></div><h4 id="file-upload-cmd"><strong>File Upload (cmd)</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>curl -X POST <span style="color:#e6db74">&#34;http://127.0.0.1:8000/upload&#34;</span> <span style="color:#ae81ff">^
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff">-</span>F <span style="color:#e6db74">&#34;file=@C:\path\to\file.txt&#34;</span>
+</span></span></code></pre></div><h4 id="file-upload-powershell"><strong>File Upload (PowerShell)</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>curl -X POST <span style="color:#e6db74">&#34;http://127.0.0.1:8000/upload&#34;</span> `
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-F</span> <span style="color:#e6db74">&#34;file=@C:\path\to\file.txt&#34;</span>
+</span></span></code></pre></div><hr>
+<h3 id="3-testing-on-windows-subsystem-for-linux-wsl"><strong>3. Testing on Windows Subsystem for Linux (WSL)</strong></h3>
+<p>If you have <strong>WSL</strong> installed, you can run <code>curl</code> commands exactly like you would on Linux/macOS without modifying the syntax. This is useful for avoiding Windows-specific escaping issues.</p>
+<hr>
+<h3 id="4-common-errors-on-windows"><strong>4. Common Errors on Windows</strong></h3>
+<ul>
+<li>
+<p><strong><code>'curl' is not recognized as an internal or external command</code></strong>:</p>
+<ul>
+<li>Ensure <code>curl</code> is installed and available in the PATH. Modern versions of Windows 10 and 11 come with <code>curl</code> pre-installed.</li>
+</ul>
+</li>
+<li>
+<p><strong>Issues with File Paths</strong>:</p>
+<ul>
+<li>Use full paths with double backslashes (<code>C:\\path\\to\\file.txt</code>) or forward slashes (<code>C:/path/to/file.txt</code>) for file uploads.</li>
+</ul>
+</li>
+</ul>
+<h2 id="can-you-share-example-of-curl-commands-with-different-servers">Can you share example of Curl commands with different servers?</h2>
+<p>To test <code>curl</code> commands with different protocols, you generally need servers or services that support those protocols. Here&rsquo;s a quick guide to setting up or accessing servers for different protocols:</p>
+<hr>
+<h3 id="1-httphttps"><strong>1. HTTP/HTTPS</strong></h3>
+<ul>
+<li><strong>Setup</strong>: Use a simple web server like FastAPI, Flask, or Nginx.</li>
+<li><strong>Tools</strong>: Mock servers like <a href="https://jsonplaceholder.typicode.com">JSONPlaceholder</a> or Postman Echo.</li>
+<li><strong>Example</strong>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://localhost:8000
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="2-ftpftps"><strong>2. FTP/FTPS</strong></h3>
+<ul>
+<li><strong>Setup</strong>: Use FTP servers like <strong>vsftpd</strong>, <strong>FileZilla Server</strong>, or <strong>ProFTPD</strong>.</li>
+<li><strong>Public Servers</strong>: Some free FTP servers for testing are available online.</li>
+<li><strong>Example</strong>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl ftp://ftp.example.com/file.txt --user username:password
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="3-sftp"><strong>3. SFTP</strong></h3>
+<ul>
+<li><strong>Setup</strong>: Use OpenSSH server or tools like <code>sshd</code> for secure file transfer.</li>
+<li><strong>Public Servers</strong>: Services like Rebex provide free SFTP test servers.</li>
+<li><strong>Example</strong>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl sftp://user@host/path/to/file --key ~/.ssh/id_rsa
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="4-smtpsmtps-email-sending"><strong>4. SMTP/SMTPS (Email Sending)</strong></h3>
+<ul>
+<li><strong>Setup</strong>: Use email servers like <strong>Postfix</strong> or <strong>SendGrid</strong> (for secure sending).</li>
+<li><strong>Public Servers</strong>: Use services like Gmail SMTP for testing (requires credentials).</li>
+<li><strong>Example</strong>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl smtp://smtp.example.com --mail-from <span style="color:#e6db74">&#34;from@example.com&#34;</span> --mail-rcpt <span style="color:#e6db74">&#34;to@example.com&#34;</span> --upload-file mail.txt
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="5-ldapldaps"><strong>5. LDAP/LDAPS</strong></h3>
+<ul>
+<li><strong>Setup</strong>: Use <strong>OpenLDAP</strong> server for directory access.</li>
+<li><strong>Public Servers</strong>: Online LDAP testing services exist for queries.</li>
+<li><strong>Example</strong>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl ldap://ldap.example.com/dc<span style="color:#f92672">=</span>example,dc<span style="color:#f92672">=</span>com
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="6-mqtt"><strong>6. MQTT</strong></h3>
+<ul>
+<li><strong>Setup</strong>: Use MQTT brokers like <strong>Mosquitto</strong> or cloud services like <strong>HiveMQ</strong>.</li>
+<li><strong>Example</strong>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl mqtt://broker.example.com -d <span style="color:#e6db74">&#34;message payload&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="7-rtsp"><strong>7. RTSP</strong></h3>
+<ul>
+<li><strong>Setup</strong>: Use media servers like <strong>VLC</strong> or <strong>FFmpeg</strong> to host RTSP streams.</li>
+<li><strong>Example</strong>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl rtsp://media.example.com/stream
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="8-file"><strong>8. FILE</strong></h3>
+<ul>
+<li><strong>Setup</strong>: No external server needed; simply reference local file paths.</li>
+<li><strong>Example</strong>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl file:///path/to/local/file.txt
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="9-telnet"><strong>9. TELNET</strong></h3>
+<ul>
+<li><strong>Setup</strong>: Enable Telnet on your machine or use services like <strong>PuTTY</strong>.</li>
+<li><strong>Example</strong>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl telnet://example.com:23
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="10-public-servers-for-testing"><strong>10. Public Servers for Testing</strong></h3>
+<p>For some protocols, you can use public test servers to avoid setting up your own. For example:</p>
+<ul>
+<li><strong>FTP</strong>: <code>ftp://speedtest.tele2.net</code></li>
+<li><strong>SFTP</strong>: Rebex test server (<code>test.rebex.net</code>)</li>
+<li><strong>LDAP</strong>: Public test LDAP servers like <code>ldap.forumsys.com</code></li>
+</ul>
+<hr>
+<h3 id="mock-servers"><strong>Mock Servers</strong></h3>
+<p>If setting up actual servers is complex, mock services like <strong>Mockoon</strong>, <strong>ngrok</strong>, or <strong>RequestBin</strong> can simulate server responses for testing.</p>
+<p>Would you like help setting up any specific server or testing environment?</p>
+<h2 id="can-you-share-an-example-of-curl-commands-with-smtp-server">Can you share an example of curl commands with SMTP server?</h2>
+<p>To test <strong>SMTP</strong> with <code>curl</code>, you’ll need an SMTP server. Below is a step-by-step guide, including an example setup for testing SMTP with <code>curl</code>. You fire these commands from the client machine and curl get the data from the server.</p>
+<hr>
+<h3 id="1-setup-an-smtp-server"><strong>1. Setup an SMTP Server</strong></h3>
+<p>You can use one of the following options:</p>
+<h4 id="option-a-use-a-public-smtp-server"><strong>Option A: Use a Public SMTP Server</strong></h4>
+<ul>
+<li>Gmail SMTP: <code>smtp.gmail.com</code><br>
+(You’ll need a Gmail account and an App Password since Gmail blocks less-secure apps.)</li>
+<li>Free SMTP Test Server: <a href="https://github.com/rnwood/smtp4dev">smtp4dev</a></li>
+</ul>
+<h4 id="option-b-run-a-local-smtp-server"><strong>Option B: Run a Local SMTP Server</strong></h4>
+<ul>
+<li>Use <code>Postfix</code> or <code>Sendmail</code> on Linux.</li>
+<li>On Windows, you can use <strong>MailHog</strong> or <strong>smtp4dev</strong> to emulate an SMTP server.</li>
+</ul>
+<h4 id="option-c-use-a-paid-smtp-provider"><strong>Option C: Use a Paid SMTP Provider</strong></h4>
+<ul>
+<li>Providers like <strong>SendGrid</strong>, <strong>Mailgun</strong>, or <strong>Amazon SES</strong> offer SMTP services with free tiers for testing.</li>
+</ul>
+<hr>
+<h3 id="2-smtp-configuration-details"><strong>2. SMTP Configuration Details</strong></h3>
+<p>Here’s an example configuration using Gmail SMTP:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>SMTP Server</td>
+          <td><code>smtp.gmail.com</code></td>
+      </tr>
+      <tr>
+          <td>Port (TLS)</td>
+          <td><code>587</code></td>
+      </tr>
+      <tr>
+          <td>Port (SSL)</td>
+          <td><code>465</code></td>
+      </tr>
+      <tr>
+          <td>Authentication</td>
+          <td>Yes (use your email/password or app password)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="3-test-smtp-with"><strong>3. Test SMTP with <code>curl</code></strong></h3>
+<h4 id="command"><strong>Command:</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -v --url smtp://smtp.gmail.com:587 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>     --mail-from <span style="color:#e6db74">&#34;youremail@gmail.com&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>     --mail-rcpt <span style="color:#e6db74">&#34;recipient@example.com&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>     --upload-file email.txt <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>     --user <span style="color:#e6db74">&#34;youremail@gmail.com:yourapppassword&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>     --ssl
+</span></span></code></pre></div><hr>
+<h3 id="4-email-body-emailtxt"><strong>4. Email Body (email.txt)</strong></h3>
+<p>Create a file named <code>email.txt</code> containing the email content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>From: youremail@gmail.com
+</span></span><span style="display:flex;"><span>To: recipient@example.com
+</span></span><span style="display:flex;"><span>Subject: Test Email
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Hello! This is a test email sent using curl and SMTP.
+</span></span></code></pre></div><hr>
+<h3 id="5-explanation-of-flags"><strong>5. Explanation of Flags</strong></h3>
+<ul>
+<li><strong><code>-v</code></strong>: Enables verbose output for debugging.</li>
+<li><strong><code>--url smtp://smtp.gmail.com:587</code></strong>: Connects to the SMTP server at port 587 using TLS.</li>
+<li><strong><code>--mail-from</code></strong>: Specifies the sender’s email address.</li>
+<li><strong><code>--mail-rcpt</code></strong>: Specifies the recipient’s email address.</li>
+<li><strong><code>--upload-file</code></strong>: Specifies the file containing the email content.</li>
+<li><strong><code>--user</code></strong>: Provides SMTP authentication in the format <code>username:password</code>.</li>
+<li><strong><code>--ssl</code></strong>: Ensures the connection is encrypted.</li>
+</ul>
+<hr>
+<h3 id="6-expected-output"><strong>6. Expected Output</strong></h3>
+<p>You should see a successful SMTP conversation in the terminal, ending with:</p>
+<pre tabindex="0"><code>&lt; 250 Message accepted for delivery
+</code></pre><p>If you encounter any issues, double-check:</p>
+<ul>
+<li>Your credentials (<code>username</code> and <code>app password</code> for Gmail).</li>
+<li>Correct ports (<code>587</code> for TLS or <code>465</code> for SSL).</li>
+<li>Email file formatting.</li>
+</ul>
+<h2 id="can-you-share-example-of-createing-ftp-server-and-testing-with-curl">Can you share example of createing &lsquo;FTP&rsquo; server and testing with &lsquo;curl&rsquo;</h2>
+<p>To test <strong>FTP</strong> with <code>curl</code>, you can either set up a local FTP server or use a public FTP server for testing. Here&rsquo;s how to proceed:</p>
+<hr>
+<h3 id="1-setup-an-ftp-server"><strong>1. Setup an FTP Server</strong></h3>
+<h4 id="option-a-use-a-public-ftp-server"><strong>Option A: Use a Public FTP Server</strong></h4>
+<p>There are public FTP servers available for testing:</p>
+<ul>
+<li><strong>Example</strong>:
+<ul>
+<li>FTP Server: <code>ftp://speedtest.tele2.net</code></li>
+<li>No authentication required.</li>
+</ul>
+</li>
+</ul>
+<h4 id="option-b-set-up-a-local-ftp-server"><strong>Option B: Set Up a Local FTP Server</strong></h4>
+<p>You can set up an FTP server on your machine for testing:</p>
+<ul>
+<li><strong>Linux/Mac</strong>: Use <code>vsftpd</code> or <code>ProFTPD</code>.</li>
+<li><strong>Windows</strong>: Use <strong>FileZilla Server</strong>.</li>
+</ul>
+<hr>
+<h3 id="2-ftp-commands-with"><strong>2. FTP Commands with <code>curl</code></strong></h3>
+<p>Here are some examples of using <code>curl</code> with FTP:</p>
+<hr>
+<h4 id="a-download-a-file"><strong>A. Download a File</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -v ftp://speedtest.tele2.net/1MB.zip -o downloaded_file.zip
+</span></span></code></pre></div><ul>
+<li><strong><code>-v</code></strong>: Enables verbose output.</li>
+<li><strong><code>-o</code></strong>: Saves the downloaded file with a specific name.</li>
+</ul>
+<hr>
+<h4 id="b-upload-a-file"><strong>B. Upload a File</strong></h4>
+<p>For uploading, you need write access to the FTP server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -v -T local_file.txt ftp://example.com/uploads/ --user username:password
+</span></span></code></pre></div><ul>
+<li><strong><code>-T</code></strong>: Specifies the file to upload.</li>
+<li><strong><code>--user</code></strong>: Provides credentials in <code>username:password</code> format.</li>
+</ul>
+<hr>
+<h4 id="c-list-files-in-a-directory"><strong>C. List Files in a Directory</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -v ftp://speedtest.tele2.net --user anonymous:
+</span></span></code></pre></div><ul>
+<li><strong><code>anonymous</code></strong>: Some public FTP servers allow anonymous access with a blank password.</li>
+</ul>
+<hr>
+<h4 id="d-create-a-directory"><strong>D. Create a Directory</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -v -Q <span style="color:#e6db74">&#34;MKD new_directory&#34;</span> ftp://example.com/ --user username:password
+</span></span></code></pre></div><ul>
+<li><strong><code>-Q</code></strong>: Sends an FTP command (e.g., <code>MKD</code> for making a directory).</li>
+</ul>
+<hr>
+<h4 id="e-delete-a-file"><strong>E. Delete a File</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -v -Q <span style="color:#e6db74">&#34;DELE file.txt&#34;</span> ftp://example.com/ --user username:password
+</span></span></code></pre></div><ul>
+<li><strong><code>DELE</code></strong>: Deletes the specified file.</li>
+</ul>
+<hr>
+<h3 id="3-using-a-public-ftp-server-example"><strong>3. Using a Public FTP Server (Example)</strong></h3>
+<h4 id="download-file"><strong>Download File</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -v ftp://speedtest.tele2.net/1MB.zip -o test_download.zip
+</span></span></code></pre></div><h4 id="upload-file-requires-local-server-or-access"><strong>Upload File (Requires Local Server or Access)</strong></h4>
+<p>If you&rsquo;re using a local FTP server:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -v -T sample.txt ftp://localhost/uploads/ --user testuser:testpassword
+</span></span></code></pre></div><hr>
+<h3 id="4-local-ftp-server-setup-optional"><strong>4. Local FTP Server Setup (Optional)</strong></h3>
+<p>If you&rsquo;d like to set up a local FTP server:</p>
+<ol>
+<li>
+<p><strong>Linux</strong>:</p>
+<ul>
+<li>Install <code>vsftpd</code>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt install vsftpd
+</span></span></code></pre></div></li>
+<li>Configure <code>/etc/vsftpd.conf</code> and restart the server.</li>
+</ul>
+</li>
+<li>
+<p><strong>Windows</strong>:</p>
+<ul>
+<li>Install <strong>FileZilla Server</strong> and configure a user with read/write permissions.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="troubleshooting"><strong>Troubleshooting</strong></h3>
+<ul>
+<li>Ensure the FTP server is running and accessible.</li>
+<li>Check file permissions for uploads and downloads.</li>
+<li>Use <code>-v</code> for verbose output to debug issues.</li>
+</ul>
+<h2 id="can-you-help-me-testing-curl-command-with-my-own-created-services">Can you help me testing curl command with my own created services?</h2>
+<p>Here&rsquo;s is an example of creating a service using python. You can use FastAPI python library. To create a <strong>FastAPI</strong> application that provides endpoints to test the <code>curl</code> commands discussed above, we need to create API and expose endpoints for different HTTP methods (GET, POST, PUT, DELETE, etc.) and features like file upload, query parameters, and authentication.</p>
+<hr>
+<h3 id="1-setting-up-fastapi"><strong>1. Setting Up FastAPI</strong></h3>
+<p>Install FastAPI and Uvicorn:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install fastapi uvicorn
+</span></span></code></pre></div><p>Create a file named <code>main.py</code>:</p>
+<hr>
+<h3 id="2-the-fastapi-code"><strong>2. The FastAPI Code</strong></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> fastapi <span style="color:#f92672">import</span> FastAPI, Query, Body, Header, File, UploadFile, HTTPException
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pydantic <span style="color:#f92672">import</span> BaseModel
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> FastAPI()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example data storage</span>
+</span></span><span style="display:flex;"><span>fake_db <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;item1&#34;</span>: <span style="color:#e6db74">&#34;value1&#34;</span>, <span style="color:#e6db74">&#34;item2&#34;</span>: <span style="color:#e6db74">&#34;value2&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1. GET Request with Query Parameters</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.get</span>(<span style="color:#e6db74">&#34;/get-example&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_example</span>(param1: str <span style="color:#f92672">=</span> Query(<span style="color:#f92672">...</span>), param2: str <span style="color:#f92672">=</span> Query(<span style="color:#66d9ef">None</span>)):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;param1&#34;</span>: param1, <span style="color:#e6db74">&#34;param2&#34;</span>: param2}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. POST Request with JSON</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PostData</span>(BaseModel):
+</span></span><span style="display:flex;"><span>    key1: str
+</span></span><span style="display:flex;"><span>    key2: str
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.post</span>(<span style="color:#e6db74">&#34;/post-example&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">post_example</span>(data: PostData):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;received&#34;</span>: data<span style="color:#f92672">.</span>dict()}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. PUT Request</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.put</span>(<span style="color:#e6db74">&#34;/put-example/</span><span style="color:#e6db74">{item_id}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">put_example</span>(item_draft: false
+</span></span><span style="display:flex;"><span>id: str, data: PostData):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> item_id <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> fake_db:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> HTTPException(status_code<span style="color:#f92672">=</span><span style="color:#ae81ff">404</span>, detail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Item not found&#34;</span>)
+</span></span><span style="display:flex;"><span>    fake_db[item_id] <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>dict()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;updated_item&#34;</span>: item_id, <span style="color:#e6db74">&#34;data&#34;</span>: data<span style="color:#f92672">.</span>dict()}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. DELETE Request</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.delete</span>(<span style="color:#e6db74">&#34;/delete-example/</span><span style="color:#e6db74">{item_id}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">delete_example</span>(item_draft: false
+</span></span><span style="display:flex;"><span>id: str):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> item_id <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> fake_db:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> HTTPException(status_code<span style="color:#f92672">=</span><span style="color:#ae81ff">404</span>, detail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Item not found&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">del</span> fake_db[item_id]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;deleted_item&#34;</span>: item_id}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 5. File Upload</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.post</span>(<span style="color:#e6db74">&#34;/upload&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload_file</span>(file: UploadFile <span style="color:#f92672">=</span> File(<span style="color:#f92672">...</span>)):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;filename&#34;</span>: file<span style="color:#f92672">.</span>filename, <span style="color:#e6db74">&#34;content_type&#34;</span>: file<span style="color:#f92672">.</span>content_type}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 6. Authentication</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.get</span>(<span style="color:#e6db74">&#34;/auth-example&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">auth_example</span>(authorization: str <span style="color:#f92672">=</span> Header(<span style="color:#66d9ef">None</span>)):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> authorization <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;Bearer YOUR_API_KEY&#34;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> HTTPException(status_code<span style="color:#f92672">=</span><span style="color:#ae81ff">401</span>, detail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Unauthorized&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Authorized&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 7. Pagination Example</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.get</span>(<span style="color:#e6db74">&#34;/pagination-example&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">pagination_example</span>(page: int <span style="color:#f92672">=</span> Query(<span style="color:#ae81ff">1</span>), limit: int <span style="color:#f92672">=</span> Query(<span style="color:#ae81ff">10</span>)):
+</span></span><span style="display:flex;"><span>    items <span style="color:#f92672">=</span> list(fake_db<span style="color:#f92672">.</span>keys())
+</span></span><span style="display:flex;"><span>    start <span style="color:#f92672">=</span> (page <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">*</span> limit
+</span></span><span style="display:flex;"><span>    end <span style="color:#f92672">=</span> start <span style="color:#f92672">+</span> limit
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;page&#34;</span>: page, <span style="color:#e6db74">&#34;limit&#34;</span>: limit, <span style="color:#e6db74">&#34;items&#34;</span>: items[start:end]}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 8. Debugging Example (headers and request data)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.get</span>(<span style="color:#e6db74">&#34;/debug-example&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">debug_example</span>(headers: dict <span style="color:#f92672">=</span> Header(<span style="color:#66d9ef">None</span>)):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;headers&#34;</span>: headers}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 9. Redirect Example</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.get</span>(<span style="color:#e6db74">&#34;/redirect-example&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">redirect_example</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Use curl -L to follow redirects&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 10. Proxy Example</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.get</span>(<span style="color:#e6db74">&#34;/proxy-example&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">proxy_example</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;This endpoint is just for testing proxies&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 11. HTTPS Example (SSL)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.get</span>(<span style="color:#e6db74">&#34;/https-example&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">https_example</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Test curl with -k to ignore SSL errors (not implemented here)&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 12. Parallel Requests Example</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.get</span>(<span style="color:#e6db74">&#34;/parallel-example/</span><span style="color:#e6db74">{item_id}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parallel_example</span>(item_draft: false
+</span></span><span style="display:flex;"><span>id: str):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;item_id&#34;</span>: item_id, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Fetched in parallel&#34;</span>}
+</span></span></code></pre></div><hr>
+<h3 id="3-running-the-api"><strong>3. Running the API</strong></h3>
+<p>Run the FastAPI app using Uvicorn:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>uvicorn main:app --reload
+</span></span></code></pre></div><p>Access the Swagger UI at:</p>
+<pre tabindex="0"><code>http://127.0.0.1:8000/docs
+</code></pre><hr>
+<h3 id="4-testing-with-curl-commands"><strong>4. Testing with cURL Commands</strong></h3>
+<p>You can now test the API endpoints using the <code>curl</code> commands. For example:</p>
+<h4 id="get-request"><strong>GET Request</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#34;http://127.0.0.1:8000/get-example?param1=value1&amp;param2=value2&#34;</span>
+</span></span></code></pre></div><h4 id="post-request"><strong>POST Request</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST <span style="color:#e6db74">&#34;http://127.0.0.1:8000/post-example&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--data-raw <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;key1&#34;: &#34;value1&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;key2&#34;: &#34;value2&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>
+</span></span></code></pre></div><h4 id="file-upload"><strong>File Upload</strong></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST <span style="color:#e6db74">&#34;http://127.0.0.1:8000/upload&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-F <span style="color:#e6db74">&#34;file=@/path/to/file.txt&#34;</span>
+</span></span></code></pre></div><hr>
+<h3 id="5-extending-the-api"><strong>5. Extending the API</strong></h3>
+<p>You can extend this FastAPI app to include more endpoints for advanced scenarios like handling streams, working with databases, or using WebSocket communication.</p>
+<div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/curl" class="category-badge">curl</a><a href="/tags/command-line" class="category-badge">command-line</a><a href="/tags/web-development" class="category-badge">web development</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=curl%20Commands&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fcurl-commands%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fcurl-commands%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fcurl-commands%2f&title=curl%20Commands" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fcurl-commands%2f&title=curl%20Commands" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=curl%20Commands&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fcurl-commands%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/How-AlphaFold-is-Revolutionizing-Protein-Science/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">How AlphaFold is Revolutionizing Protein Science</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/the-complete-ecosystem-of-software-development/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">The Complete Ecosystem of Software Development</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-curl-command">What is curl command?</a></li>
+    <li><a href="#what-protocols-it-supports">What protocols it supports?</a>
+      <ul>
+        <li><a href="#key-highlights"><strong>Key Highlights:</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#can-you-share-typical-curl-command">Can you share typical curl command?</a></li>
+    <li><a href="#what-are-different-arguments-which-can-be-passed-to-call-curl">What are different arguments which can be passed to call curl?</a>
+      <ul>
+        <li><a href="#1-basic">1. <strong>Basic <code>curl</code> Command</strong></a></li>
+        <li><a href="#2-using-http-methods">2. <strong>Using HTTP Methods</strong></a></li>
+        <li><a href="#3-headers">3. <strong>Headers</strong></a></li>
+        <li><a href="#4-sending-data">4. <strong>Sending Data</strong></a></li>
+        <li><a href="#5-authentication">5. <strong>Authentication</strong></a></li>
+        <li><a href="#6-file-uploads">6. <strong>File Uploads</strong></a></li>
+        <li><a href="#7-query-parameters">7. <strong>Query Parameters</strong></a></li>
+        <li><a href="#8-options-for-output">8. <strong>Options for Output</strong></a></li>
+        <li><a href="#key-points">Key Points:</a></li>
+      </ul>
+    </li>
+    <li><a href="#can-you-tell-me-curl-commands-for-other-use-cases">Can you tell me curl commands for other use cases?</a>
+      <ul>
+        <li><a href="#1-get-request"><strong>1. GET Request</strong></a></li>
+        <li><a href="#2-post-request"><strong>2. POST Request</strong></a></li>
+        <li><a href="#3-put-request"><strong>3. PUT Request</strong></a></li>
+        <li><a href="#4-delete-request"><strong>4. DELETE Request</strong></a></li>
+        <li><a href="#5-file-upload"><strong>5. File Upload</strong></a></li>
+        <li><a href="#6-authentication-examples"><strong>6. Authentication Examples</strong></a></li>
+        <li><a href="#7-download-a-file"><strong>7. Download a File</strong></a></li>
+        <li><a href="#8-api-pagination"><strong>8. API Pagination</strong></a></li>
+        <li><a href="#9-using-proxy"><strong>9. Using Proxy</strong></a></li>
+        <li><a href="#10-redirect-handling"><strong>10. Redirect Handling</strong></a></li>
+        <li><a href="#11-custom-http-headers"><strong>11. Custom HTTP Headers</strong></a></li>
+        <li><a href="#12-debugging-with-verbose-output"><strong>12. Debugging with Verbose Output</strong></a></li>
+        <li><a href="#13-making-https-requests"><strong>13. Making HTTPS Requests</strong></a></li>
+        <li><a href="#14-using-variables"><strong>14. Using Variables</strong></a></li>
+        <li><a href="#15-parallel-requests-with-xargs"><strong>15. Parallel Requests (with xargs)</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#how-to-run-curl-commands-on-windows-terminal-like-command-or-powershell">How to run curl commands on windows terminal like command or powershell?</a>
+      <ul>
+        <li><a href="#1-windows-specific-notes"><strong>1. Windows-Specific Notes</strong></a></li>
+        <li><a href="#2-example-running-the"><strong>2. Example: Running the <code>curl</code> Commands</strong></a></li>
+        <li><a href="#3-testing-on-windows-subsystem-for-linux-wsl"><strong>3. Testing on Windows Subsystem for Linux (WSL)</strong></a></li>
+        <li><a href="#4-common-errors-on-windows"><strong>4. Common Errors on Windows</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#can-you-share-example-of-curl-commands-with-different-servers">Can you share example of Curl commands with different servers?</a>
+      <ul>
+        <li><a href="#1-httphttps"><strong>1. HTTP/HTTPS</strong></a></li>
+        <li><a href="#2-ftpftps"><strong>2. FTP/FTPS</strong></a></li>
+        <li><a href="#3-sftp"><strong>3. SFTP</strong></a></li>
+        <li><a href="#4-smtpsmtps-email-sending"><strong>4. SMTP/SMTPS (Email Sending)</strong></a></li>
+        <li><a href="#5-ldapldaps"><strong>5. LDAP/LDAPS</strong></a></li>
+        <li><a href="#6-mqtt"><strong>6. MQTT</strong></a></li>
+        <li><a href="#7-rtsp"><strong>7. RTSP</strong></a></li>
+        <li><a href="#8-file"><strong>8. FILE</strong></a></li>
+        <li><a href="#9-telnet"><strong>9. TELNET</strong></a></li>
+        <li><a href="#10-public-servers-for-testing"><strong>10. Public Servers for Testing</strong></a></li>
+        <li><a href="#mock-servers"><strong>Mock Servers</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#can-you-share-an-example-of-curl-commands-with-smtp-server">Can you share an example of curl commands with SMTP server?</a>
+      <ul>
+        <li><a href="#1-setup-an-smtp-server"><strong>1. Setup an SMTP Server</strong></a></li>
+        <li><a href="#2-smtp-configuration-details"><strong>2. SMTP Configuration Details</strong></a></li>
+        <li><a href="#3-test-smtp-with"><strong>3. Test SMTP with <code>curl</code></strong></a></li>
+        <li><a href="#4-email-body-emailtxt"><strong>4. Email Body (email.txt)</strong></a></li>
+        <li><a href="#5-explanation-of-flags"><strong>5. Explanation of Flags</strong></a></li>
+        <li><a href="#6-expected-output"><strong>6. Expected Output</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#can-you-share-example-of-createing-ftp-server-and-testing-with-curl">Can you share example of createing &lsquo;FTP&rsquo; server and testing with &lsquo;curl&rsquo;</a>
+      <ul>
+        <li><a href="#1-setup-an-ftp-server"><strong>1. Setup an FTP Server</strong></a></li>
+        <li><a href="#2-ftp-commands-with"><strong>2. FTP Commands with <code>curl</code></strong></a></li>
+        <li><a href="#3-using-a-public-ftp-server-example"><strong>3. Using a Public FTP Server (Example)</strong></a></li>
+        <li><a href="#4-local-ftp-server-setup-optional"><strong>4. Local FTP Server Setup (Optional)</strong></a></li>
+        <li><a href="#troubleshooting"><strong>Troubleshooting</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#can-you-help-me-testing-curl-command-with-my-own-created-services">Can you help me testing curl command with my own created services?</a>
+      <ul>
+        <li><a href="#1-setting-up-fastapi"><strong>1. Setting Up FastAPI</strong></a></li>
+        <li><a href="#2-the-fastapi-code"><strong>2. The FastAPI Code</strong></a></li>
+        <li><a href="#3-running-the-api"><strong>3. Running the API</strong></a></li>
+        <li><a href="#4-testing-with-curl-commands"><strong>4. Testing with cURL Commands</strong></a></li>
+        <li><a href="#5-extending-the-api"><strong>5. Extending the API</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Image Processing on Agones</title>
+    <link>http://localhost:1313/tags/image-processing/</link>
+    <description>Recent content in Image Processing on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/image-processing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Audio Video Processing Concepts</title>
+      <link>http://localhost:1313/dsblog/audio-video-processing-concepts/</link>
+      <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/audio-video-processing-concepts/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6252-audio-video-processing-concepts.jpg&#34; alt=&#34;Audio Video Processing Concepts&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;foundational-concepts-of-audio-and-video-processing&#34;&gt;Foundational Concepts of Audio and Video Processing&lt;/h1&gt;&#xA;&lt;p&gt;Whether you are multimedia professional or deep learning Engineer, if you are dealing with audio and video processing, you will need to understand the core concepts of audio and video processing. My this guide is focussed on some of the key concepts of Audio Video processing.&lt;/p&gt;&#xA;&lt;p&gt;A digital microphone is a device that captures sound (air pressure variations) and converts it into digital signals. Internally, it contains an analog-to-digital converter (ADC) that performs the conversion from analog audio to digital audio.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What is Computer Vision</title>
+      <link>http://localhost:1313/dsblog/what-is-computer-vision/</link>
+      <pubDate>Wed, 28 Dec 2022 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/what-is-computer-vision/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6018-What-is-Computer-Vision.jpg&#34; alt=&#34;What is Computer Vision&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-computer-vision&#34;&gt;What is Computer vision?&lt;/h1&gt;&#xA;&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;&#xA;&lt;p&gt;In the digital world, scientists are working hard to create machines and robots that can interact with humans the way humans interact with each other. You cannot interact with another human being around if you are not aware of the objects and background around you. There are many ways to know the things around us. We can know them through smell; without looking anything around we can tell, here is a rose flower or samosa or sugar factory around. Without looking we can tell whether a train is coming or going, a person is going or coming, this is a song sung by Lata Mangeshkar. Without looking I can tell this is smooth or rough, hard or soft, cold or hot. In all these cases we could identify the objects and things around us without using our eyes.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,589 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Exploring AI Benchmarks &amp; Leaderboards | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2025-01-26-6210-exploring-ai-benchmarks-and-leaderboards/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Exploring AI Benchmarks & Leaderboards">
+  <meta property="og:description" content="Exploring AI Benchmarks &amp; Leaderboards Introduction A benchmark is a standardized test or set of metrics used to measure and compare the performance, capabilities, or quality of systems, models, or algorithms. In the context of AI and machine learning, benchmarks provide a way to evaluate how well models perform on specific tasks or datasets, often with respect to predefined metrics like accuracy, speed, robustness, or resource efficiency.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-01-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-26T00:00:00+00:00">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Benchmarks">
+    <meta property="article:tag" content="Leaderboards">
+
+  <meta itemprop="name" content="Exploring AI Benchmarks & Leaderboards">
+  <meta itemprop="description" content="Exploring AI Benchmarks &amp; Leaderboards Introduction A benchmark is a standardized test or set of metrics used to measure and compare the performance, capabilities, or quality of systems, models, or algorithms. In the context of AI and machine learning, benchmarks provide a way to evaluate how well models perform on specific tasks or datasets, often with respect to predefined metrics like accuracy, speed, robustness, or resource efficiency.">
+  <meta itemprop="datePublished" content="2025-01-26T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-01-26T00:00:00+00:00">
+  <meta itemprop="wordCount" content="3740">
+  <meta itemprop="keywords" content="evaluating AI models,performance metrics for AI,AI model evaluation benchmarks,AI leaderboards,standardized AI evaluation,comparing AI models,AI model performance evaluation">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exploring AI Benchmarks & Leaderboards">
+  <meta name="twitter:description" content="Exploring AI Benchmarks &amp; Leaderboards Introduction A benchmark is a standardized test or set of metrics used to measure and compare the performance, capabilities, or quality of systems, models, or algorithms. In the context of AI and machine learning, benchmarks provide a way to evaluate how well models perform on specific tasks or datasets, often with respect to predefined metrics like accuracy, speed, robustness, or resource efficiency.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6210-Exploring-AI-Benchmarks-and-Leaderboards.jpg" alt="Exploring AI Benchmarks &amp; Leaderboards"></p>
+<h1 id="exploring-ai-benchmarks--leaderboards">Exploring AI Benchmarks &amp; Leaderboards</h1>
+<h2 id="introduction">Introduction</h2>
+<p>A <strong>benchmark</strong> is a standardized test or set of metrics used to measure and compare the performance, capabilities, or quality of systems, models, or algorithms. In the context of <strong>AI and machine learning</strong>, benchmarks provide a way to evaluate how well models perform on specific tasks or datasets, often with respect to predefined metrics like accuracy, speed, robustness, or resource efficiency.</p>
+<h3 id="why-do-we-need-benchmarks"><strong>Why do we need Benchmarks?</strong></h3>
+<ul>
+<li><strong>Standardization</strong>: Benchmarks define a consistent set of tasks, datasets, or metrics, ensuring comparability across different systems or models.</li>
+<li><strong>Reproducibility</strong>: Results from benchmarks are replicable by others using the same conditions and configurations.</li>
+<li><strong>Metrics</strong>: Benchmarks provide clear metrics (e.g., accuracy, F1-score, latency) for evaluation.</li>
+<li><strong>Domain-Specific</strong>: Benchmarks can be tailored to specific tasks or domains (e.g., NLP, computer vision, robotics).</li>
+<li><strong>Progress Measurement</strong>: To track advancements in AI over time.</li>
+<li><strong>Innovation Incentive</strong>: To encourage researchers and developers to design better models that surpass existing benchmarks.</li>
+</ul>
+<h3 id="what-are-the-components-of-an-ai-benchmark"><strong>What are the Components of an AI Benchmark?</strong></h3>
+<ol>
+<li><strong>Dataset</strong>: A collection of data used for training, validation, or testing. Examples: <a href="https://www.image-net.org/">ImageNet</a>, <a href="https://rajpurkar.github.io/SQuAD-explorer/">SQuAD</a>, <a href="https://gluebenchmark.com/">GLUE</a>.</li>
+<li><strong>Tasks</strong>: Specific problems the model needs to solve, such as classification, translation, or question answering.</li>
+<li><strong>Metrics</strong>: Quantitative measures for evaluation (e.g., precision, recall, BLEU score).</li>
+<li><strong>Baselines</strong>: Pre-existing results or models to compare against (e.g., human performance or older algorithms).</li>
+</ol>
+<h3 id="types-of-benchmarks"><strong>Types of Benchmarks</strong></h3>
+<p>At high levels, benchmarks can be classified into <strong>performance</strong>, <strong>robustness</strong>, <strong>efficiency</strong>, and <strong>ethics and fairness</strong>.</p>
+<ol>
+<li><strong>Performance Benchmarks</strong>: Evaluate how well a model performs a specific task (e.g., accuracy in classification tasks).</li>
+<li><strong>Robustness Benchmarks</strong>: Test how models perform under challenging conditions, such as noise, adversarial inputs, or distribution shifts.</li>
+<li><strong>Efficiency Benchmarks</strong>: Measure resource usage, such as computation time, memory, or energy consumption.</li>
+<li><strong>Ethics and Fairness Benchmarks</strong>: Assess whether a model is fair and unbiased across demographic groups.</li>
+</ol>
+<h2 id="what-are-widely-known-benchmarks"><strong>What are widely known Benchmarks?</strong></h2>
+<p>Each benchmark mentioned after this can be either <strong>performance</strong>, <strong>robustness</strong>, <strong>efficiency</strong>, or <strong>ethics and fairness</strong> benchmark. Benchmarks cover a wide variety of tasks and domains, addressing different aspects of model performance, usability, and impact. As AI evolves, new benchmarks continue to emerge, reflecting advances in technology and shifting societal priorities.</p>
+<h3 id="1-natural-language-processing-nlp-benchmarks">1. <strong>Natural Language Processing (NLP) Benchmarks</strong></h3>
+<p>Benchmarks for tasks like text classification, machine translation, question answering, summarization, and more.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>GLUE (General Language Understanding Evaluation):</strong> Evaluates natural language understanding on tasks like sentiment analysis, textual entailment, and more. <a href="https://gluebenchmark.com/">GLUE</a></li>
+<li><strong>SuperGLUE:</strong> A more challenging version of GLUE. <a href="https://super.gluebenchmark.com/">SuperGLUE</a></li>
+<li><strong>XTREME:</strong> Evaluates multilingual models on tasks like question answering, named entity recognition, and sentence retrieval. <a href="https://sites.research.google/xtreme/">XTREME</a></li>
+<li><strong>SQuAD (Stanford Question Answering Dataset):</strong> Measures performance in machine reading comprehension. <a href="https://rajpurkar.github.io/SQuAD-explorer/">SQuAD</a></li>
+</ul>
+<h3 id="2-computer-vision-benchmarks">2. <strong>Computer Vision Benchmarks</strong></h3>
+<p>Benchmarks for tasks such as image classification, object detection, segmentation, and more.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>ImageNet:</strong> A dataset for image classification and object detection. <a href="https://www.image-net.org/">ImageNet</a></li>
+<li><strong>COCO (Common Objects in Context):</strong> Used for object detection, segmentation, and captioning. <a href="https://cocodataset.org/">COCO</a></li>
+<li><strong>OpenImages:</strong> A dataset for large-scale object detection and segmentation. <a href="https://storage.googleapis.com/openimages/web/index.html">OpenImages</a></li>
+<li><strong>CIFAR-10/100:</strong> Used for small-scale image classification. <a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR</a></li>
+<li><strong>Cityscapes:</strong> Focused on urban scene segmentation. <a href="https://www.cityscapes-dataset.com/">Cityscapes</a></li>
+</ul>
+<h3 id="3-speech-and-audio-benchmarks">3. <strong>Speech and Audio Benchmarks</strong></h3>
+<p>Benchmarks for speech recognition, speaker verification, and sound classification.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>LibriSpeech:</strong> Used for speech recognition tasks. <a href="https://www.openslr.org/12/">LibriSpeech</a></li>
+<li><strong>VoxCeleb:</strong> A dataset for speaker recognition and verification. <a href="https://www.robots.ox.ac.uk/~vgg/data/voxceleb/">VoxCeleb</a></li>
+<li><strong>TIMIT:</strong> Used for phoneme recognition. <a href="https://catalog.ldc.upenn.edu/LDC93S1">TIMIT</a></li>
+<li><strong>ESC-50:</strong> For environmental sound classification. <a href="https://github.com/karolpiczak/ESC-50">ESC-50</a></li>
+</ul>
+<h3 id="4-reinforcement-learning-benchmarks">4. <strong>Reinforcement Learning Benchmarks</strong></h3>
+<p>Benchmarks for evaluating performance on tasks involving sequential decision-making and control.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>OpenAI Gym:</strong> A collection of environments for RL algorithms, such as CartPole and Atari games. <a href="https://www.gymlibrary.dev/">OpenAI Gym</a></li>
+<li><strong>MuJoCo:</strong> A physics engine for robotics and continuous control tasks. <a href="https://mujoco.org/">MuJoCo</a></li>
+<li><strong>DeepMind Control Suite:</strong> Focused on simulated control tasks. <a href="https://github.com/deepmind/dm_control">DeepMind Control Suite</a></li>
+<li><strong>StarCraft II Learning Environment (SC2LE):</strong> For real-time strategy game learning. <a href="https://github.com/deepmind/pysc2">SC2LE</a></li>
+</ul>
+<h3 id="5-generative-ai-benchmarks">5. <strong>Generative AI Benchmarks</strong></h3>
+<p>Benchmarks for tasks like text-to-image generation, style transfer, and music generation.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>MS COCO Captioning Challenge:</strong> Evaluates text-to-image generation models. <a href="https://cocodataset.org/#captions-2015">MS COCO</a></li>
+<li><strong>FID (Fréchet Inception Distance):</strong> Measures the quality of generated images. <a href="https://github.com/mseitzer/pytorch-fid">FID</a></li>
+<li><strong>ChatGPT Eval:</strong> Measures the performance of generative conversational agents. <a href="https://github.com/openai/chatgpt-eval">ChatGPT Eval</a></li>
+<li><strong>BLEU and ROUGE:</strong> Evaluate text generation tasks such as summarization and translation. <a href="https://en.wikipedia.org/wiki/BLEU">BLEU</a>, <a href="https://en.wikipedia.org/wiki/ROUGE_%28metric%29">ROUGE</a></li>
+</ul>
+<h3 id="6-multimodal-benchmarks">6. <strong>Multimodal Benchmarks</strong></h3>
+<p>Benchmarks that evaluate models capable of handling multiple data types, like text, images, and video.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>Visual Question Answering (VQA):</strong> Combines image and text understanding. <a href="https://visualqa.org/">VQA</a></li>
+<li><strong>Image-Text Retrieval (Flickr30k, MS COCO):</strong> Aligns images with text captions. <a href="https://shannon.cs.illinois.edu/DenotationGraph/">Flickr30k</a>, <a href="https://cocodataset.org/#captions-2015">MS COCO</a></li>
+<li><strong>CLIP Benchmark:</strong> Evaluates zero-shot image classification using multimodal models. <a href="https://github.com/openai/CLIP">CLIP</a></li>
+<li><strong>MMBench</strong>: Tests models on tasks requiring integration of multiple data modalities. <a href="https://github.com/open-mmlab/mmbench">MMBench</a></li>
+<li><strong>FLAVA Tasks</strong>: Benchmarks for vision and language alignment in multi-modal models. <a href="https://github.com/facebookresearch/flava">FLAVA</a></li>
+</ul>
+<h3 id="7-ethics-and-fairness-benchmarks">7. <strong>Ethics and Fairness Benchmarks</strong></h3>
+<p>Benchmarks for measuring bias, fairness, and robustness of models.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>FairFace:</strong> A dataset for evaluating bias in facial recognition. <a href="https://github.com/dchen236/FairFace">FairFace</a></li>
+<li><strong>Datasheets for Datasets:</strong> Provides guidelines for dataset documentation to improve transparency. <a href="https://arxiv.org/abs/1803.09010">Datasheets</a></li>
+<li><strong>Gender Shades:</strong> Measures bias in gender classification systems. <a href="http://gendershades.org/">Gender Shades</a></li>
+</ul>
+<h3 id="8-general-ai-agi-benchmarks">8. <strong>General AI (AGI) Benchmarks</strong></h3>
+<p>Benchmarks for evaluating models that aim to generalize across diverse tasks.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>BIG-Bench (Beyond the Imitation Game Benchmark):</strong> Evaluates language models on tasks requiring reasoning, comprehension, and knowledge. <a href="https://github.com/google/BIG-bench">BIG-Bench</a></li>
+<li><strong>ARC (AI2 Reasoning Challenge):</strong> Tests commonsense and scientific reasoning. <a href="https://allenai.org/data/arc">ARC</a></li>
+<li><strong>HumanEval:</strong> Evaluates models on code generation tasks. <a href="https://github.com/openai/human-eval">HumanEval</a></li>
+</ul>
+<h3 id="9-temporal-and-sequential-benchmarks">9. <strong>Temporal and Sequential Benchmarks</strong></h3>
+<p>Evaluate models on tasks involving time-series or sequential data.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>MuJoCo Physics Simulation</strong>: Temporal reasoning and decision-making in physical simulations. <a href="https://mujoco.org/">MuJoCo</a></li>
+<li><strong>M4 Competition Dataset:</strong> For forecasting time series. <a href="https://www.m4.unic.ac.cy/">M4</a></li>
+<li><strong>UCR Time Series Classification Archive:</strong> A comprehensive benchmark for time series classification tasks. <a href="https://www.cs.ucr.edu/~eamonn/time_series_data_2018/">UCR</a></li>
+<li><strong>Electricity and Traffic:</strong> Common datasets used in forecasting and anomaly detection. <a href="https://archive.ics.uci.edu/ml/datasets/ElectricityLoadDiagrams20112014">Electricity</a>, <a href="https://archive.ics.uci.edu/ml/datasets/Dodgers&#43;Loop&#43;Sensor">Traffic</a></li>
+</ul>
+<h3 id="10-robotics-benchmarks">10. <strong>Robotics Benchmarks</strong></h3>
+<p>Benchmarks for evaluating performance in robotic manipulation, navigation, and control.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>RoboSuite:</strong> Focused on robotic manipulation. <a href="https://robosuite.ai/">RoboSuite</a></li>
+<li><strong>Habitat:</strong> A simulator for embodied AI tasks like navigation and object interaction. <a href="https://aihabitat.org/">Habitat</a></li>
+<li><strong>Fetch Benchmark:</strong> Used for robotic grasping tasks. <a href="https://fetchrobotics.com/">Fetch</a></li>
+</ul>
+<h3 id="11-scientific-ai-benchmarks">11. <strong>Scientific AI Benchmarks</strong></h3>
+<p>Benchmarks for AI models in scientific applications such as biology, chemistry, and physics.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>AlphaFold Dataset:</strong> For protein structure prediction. <a href="https://alphafold.ebi.ac.uk/">AlphaFold</a></li>
+<li><strong>QM9:</strong> A dataset for molecular property prediction. <a href="https://www.nature.com/articles/sdata201422">QM9</a></li>
+<li><strong>Physics Simulations (DeepMind Simulations):</strong> For evaluating models on physical interactions and properties. <a href="https://www.deepmind.com/">DeepMind</a></li>
+</ul>
+<h3 id="12-generalization-benchmarks">12. <strong>Generalization Benchmarks</strong></h3>
+<p>Test how well models can generalize to unseen data, tasks, or domains.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>WILDS</strong>: Evaluates models on real-world distribution shifts across domains like healthcare and satellite imagery. <a href="https://wilds.stanford.edu/">WILDS</a></li>
+<li><strong>DomainNet</strong>: Assesses domain adaptation and generalization for image classification across different styles (e.g., photos, sketches). <a href="http://ai.bu.edu/DomainNet/">DomainNet</a></li>
+<li><strong>Meta-Dataset</strong>: Evaluates few-shot learning and generalization across diverse datasets. <a href="https://github.com/google-research/meta-dataset">Meta-Dataset</a></li>
+</ul>
+<h3 id="13-few-shot-and-zero-shot-benchmarks">13. <strong>Few-Shot and Zero-Shot Benchmarks</strong></h3>
+<p>Assess models’ ability to perform tasks with limited or no prior examples.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>LEGOEval</strong>: Few-shot NLP tasks like classification and translation. <a href="https://github.com/allenai/LEGOEval">LEGOEval</a></li>
+<li><strong>CrossFit</strong>: Benchmarks for cross-task few-shot generalization. <a href="https://github.com/IBM/crossfit">CrossFit</a></li>
+<li><strong>Natural Instructions</strong>: Evaluates zero-shot task adaptation across natural language instructions. <a href="https://github.com/allenai/natural-instructions">Natural Instructions</a></li>
+</ul>
+<h3 id="14-explainability-benchmarks">14. <strong>Explainability Benchmarks</strong></h3>
+<p>Measure how interpretable and explainable an AI model’s outputs or decisions are to humans.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>ARRIVE</strong>: Focuses on explainability in reinforcement learning. <a href="https://arxiv.org/abs/2107.06299">ARRIVE</a></li>
+<li><strong>ExplainBoard</strong>: Evaluates explainability in NLP models. <a href="https://github.com/neulab/ExplainBoard">ExplainBoard</a></li>
+<li><strong>FACT Benchmark</strong>: Measures the fidelity and consistency of explainability methods for machine learning models. <a href="https://github.com/interpretml/interpret">FACT</a></li>
+</ul>
+<h3 id="15-continuous-learning-lifelong-learning-benchmarks">15. <strong>Continuous Learning (Lifelong Learning) Benchmarks</strong></h3>
+<p>Measure models&rsquo; ability to learn new tasks without forgetting previously learned ones.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>CLBenchmark</strong>: Evaluates continual learning in classification and regression tasks. <a href="https://github.com/ContinualAI/continual-learning-baselines">CLBenchmark</a></li>
+<li><strong>CLEAR</strong>: Tests continual reinforcement learning in dynamic environments. <a href="https://github.com/clear-benchmark/clear">CLEAR</a></li>
+<li><strong>Split CIFAR-100</strong>: Assesses lifelong learning in image classification. <a href="https://github.com/ContinualAI/avalanche">Split CIFAR-100</a></li>
+</ul>
+<h3 id="16-multi-agent-and-collaboration-benchmarks">16. <strong>Multi-Agent and Collaboration Benchmarks</strong></h3>
+<p>Test models on tasks requiring collaboration, communication, or competition between agents.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>StarCraft II Multi-Agent Challenge (SMAC):</strong> Evaluates multi-agent coordination strategies. <a href="https://github.com/oxwhirl/smac">SMAC</a></li>
+<li><strong>Overcooked-AI:</strong> Benchmarks for human-AI collaboration in cooperative tasks. <a href="https://github.com/HumanCompatibleAI/overcooked_ai">Overcooked-AI</a></li>
+<li><strong>Magent:</strong> A multi-agent environment for reinforcement learning. <a href="https://github.com/geek-ai/Magent">Magent</a></li>
+</ul>
+<h3 id="17-energy-and-carbon-efficiency-benchmarks">17. <strong>Energy and Carbon Efficiency Benchmarks</strong></h3>
+<p>Focus on the environmental impact of training and deploying AI models.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>Carbontracker:</strong> Tracks energy usage and carbon emissions of AI systems. <a href="https://github.com/lfwa/carbontracker">Carbontracker</a></li>
+<li><strong>GreenAI Benchmarks:</strong> Encourages the development of energy-efficient AI systems. <a href="https://github.com/GreenAI-NYUAD/GreenAI">GreenAI</a></li>
+<li><strong>MLPerf Power Benchmark:</strong> Measures energy consumption during model training and inference. <a href="https://mlcommons.org/en/">MLPerf</a></li>
+</ul>
+<h3 id="18-safety-benchmarks">18. <strong>Safety Benchmarks</strong></h3>
+<p>Test the reliability and safety of AI systems under real-world constraints.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>SafeLife:</strong> A benchmark for safe exploration in reinforcement learning. <a href="https://github.com/PartnershipOnAI/safelife">SafeLife</a></li>
+<li><strong>Safety Gym:</strong> Evaluates safe navigation and control in simulated environments. <a href="https://github.com/openai/safety-gym">Safety Gym</a></li>
+<li><strong>Adversarial Robustness Toolbox:</strong> Tests how models handle adversarial attacks while ensuring safety. <a href="https://github.com/Trusted-AI/adversarial-robustness-toolbox">ART</a></li>
+</ul>
+<h3 id="19-creativity-and-generative-ai-benchmarks">19. <strong>Creativity and Generative AI Benchmarks</strong></h3>
+<p>Evaluate models&rsquo; ability to generate creative or novel outputs in text, images, or other formats.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>MS-COCO Captions:</strong> A benchmark for image caption generation. <a href="https://cocodataset.org/#captions-2015">MS-COCO</a></li>
+<li><strong>Story Cloze Test:</strong> Tests the ability to generate plausible endings for short stories. <a href="https://github.com/uclanlp/StoryCloze">Story Cloze</a></li>
+<li><strong>GauGAN:</strong> Benchmarks for creative AI in image synthesis. <a href="https://github.com/NVlabs/SPADE">GauGAN</a></li>
+</ul>
+<h3 id="20-alignment-and-intent-understanding-benchmarks">20. <strong>Alignment and Intent Understanding Benchmarks</strong></h3>
+<p>Measure how well models align with human values, goals, or intentions.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>Anthropic’s HH-RLHF:</strong> Evaluates alignment with human feedback in reinforcement learning tasks. <a href="https://github.com/anthropics/hh-rlhf">HH-RLHF</a></li>
+<li><strong>BIG-Bench (Beyond the Imitation Game):</strong> Includes alignment-focused tasks, such as ethical reasoning and understanding intent. <a href="https://github.com/google/BIG-bench">BIG-Bench</a></li>
+<li><strong>REALM:</strong> Measures retrieval-augmented language model alignment with queries. <a href="https://github.com/google-research/realm">REALM</a></li>
+</ul>
+<h3 id="21-knowledge-representation-and-reasoning-benchmarks">21. <strong>Knowledge Representation and Reasoning Benchmarks</strong></h3>
+<p>Test a model’s ability to understand, manipulate, and reason with structured knowledge.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>OpenBookQA:</strong> Evaluates reasoning using common-sense and scientific facts. <a href="https://allenai.org/data/openbook-qa">OpenBookQA</a></li>
+<li><strong>ConceptNet Benchmark:</strong> Tests common-sense reasoning and knowledge graphs. <a href="https://github.com/commonsense/conceptnet5">ConceptNet</a></li>
+<li><strong>ATOMIC:</strong> Assesses models for inferential knowledge about everyday events. <a href="https://homes.cs.washington.edu/~msap/atomic/">ATOMIC</a></li>
+</ul>
+<h3 id="22-specialized-benchmarks-for-emerging-domains">22. <strong>Specialized Benchmarks for Emerging Domains</strong></h3>
+<p>Benchmarks are also emerging in highly specialized areas like quantum computing, space exploration, and neuroscience.</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li><strong>Quantum ML Benchmarks:</strong> For evaluating quantum-enhanced machine learning algorithms. <a href="https://github.com/quantumlib/Cirq">Quantum ML</a></li>
+<li><strong>SpaceNet:</strong> A benchmark for satellite imagery analysis. <a href="https://spacenet.ai/">SpaceNet</a></li>
+<li><strong>NeuroBench:</strong> Tests AI systems for neuroscience applications. <a href="https://github.com/neurobench/neurobench">NeuroBench</a></li>
+</ul>
+<h2 id="computer-use-and-browser-use-benchmarks">Computer Use and Browser Use Benchmarks</h2>
+<p><strong>&ldquo;Computer Use&rdquo;</strong> and <strong>&ldquo;Browser Use&rdquo;</strong> are designed for human-computer interaction (HCI), automation, and web-based tasks. These are Interaction Benchmarks. These benchmarks are primarily aimed at testing models or agents for their ability to perform <strong>interactive tasks</strong> involving user interfaces, browsers, or other digital tools. Here&rsquo;s an overview:</p>
+<p>These benchmarks are key for advancing AI systems capable of seamlessly interacting with digital tools, paving the way for highly capable personal assistants, RPA systems, and adaptive agents.</p>
+<p><strong>Evaluation Metrics for Computer/Browser Use Benchmarks</strong></p>
+<ul>
+<li><strong>Task Completion Rate</strong>: Percentage of tasks completed successfully.</li>
+<li><strong>Error Rate</strong>: Frequency of errors (e.g., incorrect clicks or invalid entries).</li>
+<li><strong>Time to Completion</strong>: The time taken to complete the task.</li>
+<li><strong>Efficiency and Resource Usage</strong>: Particularly for browser performance.</li>
+<li><strong>Human-Like Interaction</strong>: Measures how closely the AI’s actions align with typical human behaviors.</li>
+</ul>
+<h3 id="23-computer-use-benchmarks">23 <strong>Computer Use Benchmarks</strong></h3>
+<p>These benchmarks evaluate AI systems for their ability to interact with traditional desktop or mobile applications, including file management, text editing, and other GUI-based tasks.</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>HUMAN-AI Interaction Benchmarks</strong>:<br>
+Evaluates AI assistants in assisting humans with tasks like email management, file organization, or using desktop applications. <a href="https://github.com/HumanCompatibleAI/human-ai-interaction">HUMAN-AI</a></li>
+<li><strong>Virtual Desktop Environments</strong>:
+<ul>
+<li><strong>MetaWorld:</strong> A virtual environment for reinforcement learning where AI agents perform computer-use tasks, such as dragging and dropping files or using apps. <a href="https://github.com/rlworkgroup/metaworld">MetaWorld</a></li>
+<li><strong>RoboDesk:</strong> Benchmarks for robotic systems performing desktop-level tasks. <a href="https://github.com/robodesk/robodesk">RoboDesk</a></li>
+</ul>
+</li>
+<li><strong>MiniWoB++ (Mini World of Bits):</strong><br>
+A suite of web-based UI tasks designed for testing AI systems on basic computer interactions like clicking buttons, filling forms, or selecting options from menus. <a href="https://github.com/stanfordnlp/miniwob-plusplus">MiniWoB++</a></li>
+<li><strong>User Interface Interaction Datasets:</strong><br>
+Benchmarks like the <strong>ClickMe Dataset</strong> track user interactions with buttons, icons, and forms in GUI-based settings. <a href="https://github.com/ClickMe-Dataset/ClickMe">ClickMe</a></li>
+</ul>
+<h3 id="24-browser-use-benchmarks">24. <strong>Browser Use Benchmarks</strong></h3>
+<p>These benchmarks are designed for tasks involving web browsers, such as form filling, navigation, web scraping, or multi-step workflows (e.g., booking a flight or ordering a product online).</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>WebGPT Benchmarks:</strong><br>
+Evaluates AI models that search the web and extract or summarize relevant information to answer user queries. <a href="https://github.com/openai/webgpt">WebGPT</a></li>
+<li><strong>BrowserBench:</strong><br>
+Benchmarks designed to evaluate browser engines&rsquo; performance in handling tasks like rendering, navigation, and resource loading. (E.g., <strong>Speedometer</strong>, <strong>JetStream</strong>, <strong>MotionMark</strong>). These are more about browser performance than AI but are indirectly relevant. <a href="https://browserbench.org/">BrowserBench</a></li>
+<li><strong>MiniWoB++ for Web Tasks:</strong><br>
+Includes tasks like navigating through webpages, clicking specific elements, or extracting data from websites. <a href="https://github.com/stanfordnlp/miniwob-plusplus">MiniWoB++</a></li>
+<li><strong>OpenAI&rsquo;s WebGPT:</strong><br>
+Benchmarks assessing an agent&rsquo;s ability to use a browser for tasks like multi-step searches, citing sources, or reasoning across multiple pages. <a href="https://github.com/openai/webgpt">WebGPT</a></li>
+<li><strong>Browser Automation Benchmarks (RPA):</strong>
+<ul>
+<li>Datasets and tools from robotic process automation (RPA) platforms like <strong>SikuliX</strong> or <strong>UiPath</strong>, which evaluate the performance of agents automating browser-based workflows. <a href="https://sikulix.github.io/">SikuliX</a>, <a href="https://www.uipath.com/">UiPath</a></li>
+</ul>
+</li>
+<li><strong>DeepMind&rsquo;s Alphacode Web Automation Tasks:</strong><br>
+A set of benchmarks testing AI for automating workflows within web-based environments. <a href="https://github.com/deepmind/alphacode">Alphacode</a></li>
+</ul>
+<h2 id="the-most-popular-benechmarks-used-by-researchers-and-industry">The Most Popular Benechmarks Used by Researchers and Industry</h2>
+<ol>
+<li><strong>AGIEval</strong>: A suite of human-centric exams (e.g., SAT, LSAT, GRE) to evaluate reasoning and knowledge in academic contexts.</li>
+<li><strong>APPS</strong>: Automated Programming Problem Set, with 10,000 coding problems ranging from introductory to competition-level, testing code generation and correctness.</li>
+<li><strong>ARC (AI2 Reasoning Challenge)</strong>: A set of grade-school science questions requiring reasoning over facts, split into Easy and Challenge sets. The Challenge set is especially tough, with human-level performance still elusive for most models.</li>
+<li><strong>BIG-Bench</strong>: A massive, collaborative benchmark with over 200 diverse tasks, from linguistics to math to commonsense reasoning. It’s designed to push LLMs beyond their training data and includes a &ldquo;Hard&rdquo; subset (BIG-Bench Hard, or BBH) for extra challenge.</li>
+<li><strong>BoolQ</strong>: A yes/no question-answering benchmark derived from Google search queries, assessing reading comprehension and reasoning over passages.</li>
+<li><strong>C-Eval</strong>: A Chinese-language benchmark testing reasoning and knowledge across subjects like STEM, humanities, and professional fields, similar to MMLU but tailored for Chinese LLMs.</li>
+<li><strong>Chinese SimpleQA</strong>: A factual accuracy test with concise, fact-based questions in Chinese, designed to assess straightforward knowledge recall.</li>
+<li><strong>CLUEWSC</strong>: Part of the Chinese Language Understanding Evaluation (CLUE), this is a Winograd Schema Challenge variant testing coreference resolution and commonsense reasoning in Chinese.</li>
+<li><strong>CMath</strong>: A Chinese math benchmark, possibly focusing on advanced or competition-level problems, testing structured reasoning in a Chinese context.</li>
+<li><strong>CMMLU</strong>: Chinese Massive Multitask Language Understanding, a broad evaluation of knowledge and reasoning in Chinese across 57 subjects, akin to MMLU but culturally and linguistically specific.</li>
+<li><strong>CNMO2024</strong>: Likely the Chinese National Mathematical Olympiad 2024, a high-level math competition dataset used to evaluate advanced problem-solving skills.</li>
+<li><strong>COCO (Common Objects in Context)</strong>: Another vision benchmark, but focused on tasks like object detection, segmentation, and captioning. It’s more about understanding scenes holistically, not just classifying single objects.</li>
+<li><strong>Codeforces/CodeJam</strong>: Competitive programming datasets from platforms like Codeforces or Google Code Jam, used informally to test advanced coding skills.</li>
+<li><strong>CoQA</strong>: Conversational Question Answering, a dataset of 127,000+ questions across 8,000 conversations, evaluating contextual understanding and dialogue coherence.</li>
+<li><strong>DROP</strong>: A reading comprehension benchmark requiring discrete reasoning over paragraphs, often involving numerical or logical deductions from text.</li>
+<li><strong>EvalPlus (HumanEval+ &amp; MBPP+)</strong>: Enhanced versions of HumanEval and MBPP with stricter test cases to catch edge cases and ensure robustness in code generation.
+&ndash; <strong>GLUE</strong>: General Language Understanding Evaluation, a collection of 9 tasks (e.g., sentiment analysis, textual entailment) to test natural language understanding. SuperGLUE is its harder successor.</li>
+<li><strong>GPQA</strong>: Graduate-Level Google-Proof Q&amp;A Benchmark, featuring 448 challenging multiple-choice questions in biology, physics, and chemistry. Designed to be difficult even for PhD experts (65% accuracy) and resistant to simple web searches.</li>
+<li><strong>GSM8K</strong>: Grade School Math 8K (if not what you meant by GSMBK), 8,000 math word problems requiring multi-step reasoning, popular for testing logical skills.</li>
+<li><strong>HellaSwag</strong>: A commonsense reasoning benchmark where models pick the most plausible ending to a story or scenario. It’s tricky because it requires understanding context and human-like intuition, not just pattern matching.</li>
+<li><strong>HumanEval</strong>: For code generation, this benchmark checks if a model can write functioning Python code to solve programming problems. It’s practical and directly tied to real-world utility in software development.</li>
+<li><strong>ImageNet</strong>: For vision models, this is the classic. It’s a huge dataset of labeled images used to test object recognition accuracy. Though it’s been around a while, it’s still a foundational metric for computer vision.</li>
+<li><strong>LAMBADA</strong>: Tests long-range dependency understanding by predicting the last word in a passage, requiring coherence over extended text.</li>
+<li><strong>LiveCodeBench</strong>: A coding benchmark with fresh, real-world problems (e.g., from LeetCode, Codeforces) to evaluate code generation, repair, and execution, updated regularly to avoid contamination.</li>
+<li><strong>MATH</strong>: A dataset of 12,500 free-response math problems from high school competitions, spanning algebra, calculus, and more—extremely challenging for LLMs.</li>
+<li><strong>Math-500</strong>: A dataset of 500 math problems, likely an updated or in-distribution version of the MATH benchmark, testing logical and quantitative reasoning from basic to advanced levels.</li>
+<li><strong>MBPP+</strong>: An enhanced version of the Mostly Basic Python Problems dataset, with around 1,000 entry-level programming tasks, including automated test cases for evaluation.</li>
+<li><strong>MMLU (Massive Multitask Language Understanding)</strong>: This benchmark tests a model’s ability to handle college-level questions across 57 subjects, from STEM to humanities. It’s become a staple for assessing general knowledge and reasoning in large language models.</li>
+<li><strong>MMLU-Pro</strong>: An advanced version of the Massive Multitask Language Understanding (MMLU) benchmark, with 12,000 complex, reasoning-focused questions across various disciplines (e.g., STEM, law, humanities). It uses 10 multiple-choice options instead of 4, making it tougher and less prone to random guessing.</li>
+<li><strong>PIQA</strong>: Physical Interaction QA, with 16,000 questions testing physical commonsense reasoning (e.g., &ldquo;How do you open a jar?&rdquo;).</li>
+<li><strong>SQuAD (Stanford Question Answering Dataset)</strong>: A reading comprehension test where models answer questions based on a given passage. It’s a standard for evaluating how well AI can extract and interpret information from text.</li>
+<li><strong>SuperGLUE</strong>: An upgraded GLUE with more complex tasks like coreference resolution and question answering, designed to differentiate top-performing models.</li>
+<li><strong>TriviaQA</strong>: A large-scale trivia dataset with 650,000+ question-answer pairs, testing factual recall and reasoning over noisy web data.</li>
+<li><strong>TruthfulQA</strong>: Designed to measure how truthful a model is, this benchmark throws curveballs with questions that might trip up models prone to hallucination or overconfidence. It’s increasingly relevant as trustworthiness becomes a bigger focus.</li>
+<li><strong>WinoGrande</strong>: A larger-scale Winograd Schema Challenge (1,267 examples) testing commonsense reasoning through pronoun resolution in ambiguous sentences.</li>
+</ol>
+<h2 id="what-is-leaderboard">What is Leaderboard?</h2>
+<p>An AI Leaderboard is a publicly available platform or tool that ranks AI models, systems, or algorithms based on their performance on predefined benchmarks or datasets. It acts as a scoreboard for comparing different approaches and identifying the current state-of-the-art (SOTA) methods in specific AI tasks or domains. When above discussed different benchmarks are used by model provider or model evaluator against a given model then the performance of the model is reported on the leader board. So, a leaderboard is</p>
+<ul>
+<li>Ranking Mechanism: Models are ranked according to their performance on a specific task, measured using metrics like accuracy, F1 score, BLEU, or others depending on the benchmark.</li>
+<li>Transparency: Leaderboards display detailed information about submitted models, including the methodology, configuration, and even code, fostering reproducibility and openness.</li>
+<li>Task-Specific: Each leaderboard is typically associated with a particular dataset or task, such as machine translation, image recognition, or reinforcement learning.</li>
+<li>Dynamic Updates: As new models are submitted, the rankings are updated, reflecting ongoing progress in the field.</li>
+<li>Community Engagement: Researchers and practitioners actively submit their models to compete for the top position, driving innovation and improvement.</li>
+</ul>
+<h3 id="what-are-popular-leaderboard">What are popular Leaderboard?</h3>
+<p>Here is a list of notable AI leaderboards and their purposes. Keep in mind, a leaderboard is as good as it is updated by the community and model builder. If a leaderboard is not seeing any activity in last 3-6 month time, it means there is better leaderboard in place of that and people are not using it to report the model performance. The leaderboard contains current progress of the model therefore they are hosted at some places. There are many hosting spaces where leaderboards are hosted and one of the famous is huggingface.</p>
+<h3 id="huggingface-hosted-leaderboards">Huggingface Hosted Leaderboards</h3>
+<ul>
+<li><a href="https://huggingface.co/spaces/ArtificialAnalysis/Text-to-Image-Leaderboard">Text To Image Leaderboard - ArtificialAnalysis HF space</a></li>
+<li><a href="https://huggingface.co/spaces/optimum/llm-perf-leaderboard">LLM-Perf Leaderboard - optimum HF space</a></li>
+<li><a href="https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard">Open LLM Leaderboard - open-llm-leaderboard HF space</a></li>
+<li><a href="https://huggingface.co/spaces/Krisseck/IFEval-Leaderboard">IFEval Leaderboard - Krisseck HF space</a></li>
+<li><a href="https://huggingface.co/spaces/lmarena-ai/chatbot-arena-leaderboard">Chatbot Arena Leaderboard - lmarena-ai HF space</a></li>
+<li><a href="https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard">Chatbot Arena Leaderboard - lmsys HF space</a></li>
+<li><a href="https://huggingface.co/spaces/bigcode/bigcode-models-leaderboard">Big Code Models Leaderboard - bigcode HF space</a></li>
+<li><a href="https://huggingface.co/spaces/EffiBench/effibench-leaderboard">EffiBench Leaderboard - EffiBench HF space</a></li>
+<li><a href="https://huggingface.co/collections/clefourrier/leaderboards-and-benchmarks-64f99d2e11e92ca5568a7cce">Leaderboards and benchmarks - a clefourrier HF Collection</a></li>
+<li><a href="https://huggingface.co/spaces/mteb/leaderboard">MTEB (Massive Text Embedding Benchmark) Leaderboard</a> : Evaluates text embedding models on tasks like classification, clustering, and retrieval. <strong>Key Metrics</strong>: Performance across multiple embedding tasks.</li>
+<li><a href="https://huggingface.co/spaces/AIEnergyScore/Leaderboard">AI Energy Score Leaderboard</a> : Evaluates AI models based on their energy efficiency and environmental impact. <strong>Key Metrics</strong>: Energy consumption (kWh), carbon emissions, and computational efficiency (FLOPs).</li>
+</ul>
+<h3 id="githubio-hosted-leaderboards">Github.io Hosted Leaderboards</h3>
+<ul>
+<li><a href="https://evalplus.github.io/leaderboard.html">EvalPlus Leaderboard</a></li>
+<li><a href="https://bigcode-bench.github.io/">BigCodeBench</a></li>
+<li><a href="https://github.com/amazon-science/cceval">CrossCodeEval</a></li>
+<li><a href="https://fudanselab-classeval.github.io/">ClassEval</a></li>
+<li><a href="https://crux-eval.github.io/leaderboard.html">CRUXEval</a></li>
+<li><a href="https://codetlingua.github.io/leaderboard.html">Code Lingua</a></li>
+<li><a href="https://evo-eval.github.io/">Evo-Eval</a></li>
+<li><a href="https://github.com/01-ai/HumanEval.jl">HumanEval.jl - Julia version HumanEval with EvalPlus test cases</a></li>
+<li><a href="https://livecodebench.github.io/leaderboard.html">LiveCodeBench</a></li>
+<li><a href="https://sparksofagi.github.io/MHPP/">MHPP</a></li>
+<li><a href="https://github.com/THUDM/NaturalCodeBench">NaturalCodeBench</a></li>
+<li><a href="https://github.com/Leolty/repobench">RepoBench</a></li>
+<li><a href="https://llm4softwaretesting.github.io/">LLM4 Software Testing - TestEval</a></li>
+<li><a href="https://github.com/sylinrl/TruthfulQA">TruthfulQA</a> : Measures the accuracy of LLMs in answering questions without generating misleading or false information. Truthfulness scores across 38 categories of questions.</li>
+<li><a href="https://github.com/evalplus/evalplus">HumanEval+</a> : Evaluates LLMs on programming tasks, focusing on code generation and debugging. <strong>Key Metrics</strong>: Accuracy and efficiency in coding tasks.</li>
+<li><a href="https://flageval.github.io/">FlagEval</a> : A comprehensive platform for evaluating foundation models across multiple dimensions, including performance, safety, and efficiency. <strong>Key Metrics</strong>: Multi-dimensional evaluation scores.</li>
+</ul>
+<h2 id="paperswithcode-hosted-leaderboards">Paperswithcode Hosted Leaderboards</h2>
+<ul>
+<li><a href="https://paperswithcode.com/sota/common-sense-reasoning-on-arc-challenge">Common Sense Reasoning</a> : Assesses LLMs&rsquo; ability to answer complex, science-based questions requiring deep reasoning and knowledge. <strong>Key Metrics</strong>: Accuracy on grade-school science questions.</li>
+<li><a href="https://paperswithcode.com/">Papers With Code</a> : Links AI research papers with code and benchmarks, fostering transparency and reproducibility in machine learning. <strong>Key Metrics</strong>: State-of-the-art (SOTA) results across various tasks.</li>
+</ul>
+<h2 id="chatbot-arena-formerly-lmsys-leadboards">Chatbot Arena (formerly LMSYS) Leadboards:</h2>
+<p>The LMSYS Chatbot Arena Leaderboard is a comprehensive ranking platform that assesses the performance of large language models (LLMs) in conversational tasks. It uses a combination of human feedback and automated scoring to evaluate models</p>
+<ul>
+<li><a href="https://lmarena.ai/?leaderboard">Chatbot Arena (formerly LMSYS): Free AI Chat to Compare &amp; Test Best AI Chatbots</a></li>
+<li><a href="https://klu.ai/glossary/lmsys-leaderboard">LMSYS Chatbot Arena Leaderboard — Klu</a></li>
+<li><a href="https://huggingface.co/spaces/lmarena-ai/chatbot-arena-leaderboard">Chatbot Arena</a> : A crowdsourced platform where users compare LLMs in head-to-head battles, ranking models based on user satisfaction and conversational performance. <strong>Key Metrics</strong>: User ratings, win rates, and response quality.</li>
+</ul>
+<h2 id="miscellaneous-leaderboards">Miscellaneous Leaderboards</h2>
+<ul>
+<li><a href="https://klu.ai/llm-leaderboard">Klu.ai</a></li>
+<li><a href="https://livebench.ai/">LiveBench</a></li>
+<li><a href="https://llm.extractum.io/list">extractum.io - OpenLLM Leaderboard</a></li>
+<li><a href="https://openlm.ai/chatbot-arena/">OpenLM.ai - Chatbot Arena</a></li>
+<li><a href="https://aider.chat/docs/leaderboards">Aider.chat - LLM Leaderboards | aider</a></li>
+<li><a href="https://www.swebench.com/">SWE-bench</a></li>
+<li><a href="https://leaderboard.tabbyml.com/">TabbyML Leaderboard</a></li>
+<li><a href="https://artificialanalysis.ai/leaderboards/models">Open LLM Leaderboard</a> : Tracks and ranks open-source language models (LLMs) across various benchmarks, such as accuracy, reasoning, and commonsense understanding. <strong>Key Metrics</strong>: Quality, price, performance, and speed (tokens per second, latency).</li>
+<li><a href="https://arxiv.org/abs/2412.18551">Libra-Leaderboard</a> : Evaluates the safety and trustworthiness of LLMs, focusing on risks like misinformation, bias, and adversarial attacks. <strong>Key Metrics</strong>: Safety and capability balance, distance-to-optimal-score method.</li>
+<li><a href="https://leaderboard.allenai.org/arc/submissions/public">ARC Leaderboard</a></li>
+<li><a href="https://rowanzellers.com/hellaswag/">HellaSwag</a> : Evaluates commonsense reasoning in LLMs by testing their ability to complete sentences and scenarios. <strong>Key Metrics</strong>: Accuracy on commonsense reasoning tasks.</li>
+<li><a href="https://dynabench.org/">Dynabench</a> : - Dynabench is a platform for dynamic dataset creation and benchmarking, focusing on evaluating AI models in real-world, adversarial, and evolving scenarios. They have dozens of leadboards for Text, Audio, Language, Code, Vision, Medical, <strong>Key Metrics</strong>: Human-and-model-in-the-loop evaluation, adversarial robustness, and generalization across tasks like NLP and vision.</li>
+<li><a href="https://leaderboards.allenai.org/">Generative AI Leaderboards</a> : Tracks the performance of generative AI models, particularly in natural language generation, image synthesis, and other creative tasks. They have dozens of leaderboards for reasoning, robotics, agents, text, image, and video generation. <strong>Key Metrics</strong>: Perplexity, BLEU, ROUGE, FID (Fréchet Inception Distance), and human evaluation scores.</li>
+<li><a href="https://www.superclueai.com/">SuperCLUE</a> : A Chinese AI evaluation benchmark focusing on large language models (LLMs) and their performance in Chinese language tasks. <strong>Key Metrics</strong>: Accuracy, fluency, and task-specific performance in Chinese NLP tasks.</li>
+</ul>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

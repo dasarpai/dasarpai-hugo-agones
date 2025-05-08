@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LLM Benchmarks on Agones</title>
+    <link>http://localhost:1313/tags/llm-benchmarks/</link>
+    <description>Recent content in LLM Benchmarks on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/llm-benchmarks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Benchmarks Explained</title>
+      <link>http://localhost:1313/dsblog/AI-Benchmarks-Explained/</link>
+      <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/AI-Benchmarks-Explained/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6173-AI-Benchmarks-Explained.jpg&#34; alt=&#34;AI-Benchmarks-Explained&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;ai-benchmarks-explained-essential-components-and-leading-llm-evaluation-techniques&#34;&gt;AI Benchmarks Explained: Essential Components and Leading LLM Evaluation Techniques&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-a-benchmark-in-ai&#34;&gt;What is a Benchmark in AI?&lt;/h2&gt;&#xA;&lt;p&gt;A &lt;strong&gt;benchmark&lt;/strong&gt; in AI is like a standard measurement tool that helps researchers and developers assess how well their artificial intelligence models perform. Just like athletes are judged based on their performance against specific standards, AI models are evaluated against predefined tasks and metrics.&lt;/p&gt;&#xA;&lt;p&gt;Thus, benchmarks are essential tools in the AI development ecosystem. They help ensure that AI models are evaluated fairly and consistently, providing a basis for comparison, improvement, and innovation in the field. By using benchmarks, developers can better understand their models’ capabilities and limitations, ultimately leading to more effective and robust AI systems.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

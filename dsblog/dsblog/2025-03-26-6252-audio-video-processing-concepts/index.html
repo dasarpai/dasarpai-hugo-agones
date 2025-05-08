@@ -1,0 +1,454 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Audio Video Processing Concepts | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2025-03-26-6252-audio-video-processing-concepts/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Audio Video Processing Concepts">
+  <meta property="og:description" content="Foundational Concepts of Audio and Video Processing Whether you are multimedia professional or deep learning Engineer, if you are dealing with audio and video processing, you will need to understand the core concepts of audio and video processing. My this guide is focussed on some of the key concepts of Audio Video processing.
+A digital microphone is a device that captures sound (air pressure variations) and converts it into digital signals. Internally, it contains an analog-to-digital converter (ADC) that performs the conversion from analog audio to digital audio.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-03-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-28T00:00:00+00:00">
+    <meta property="article:tag" content="Audio Processing">
+    <meta property="article:tag" content="Video Processing">
+    <meta property="article:tag" content="Digital Signal Processing">
+    <meta property="article:tag" content="Image Processing">
+    <meta property="article:tag" content="Computer Vision">
+    <meta property="article:tag" content="Machine Learning">
+
+  <meta itemprop="name" content="Audio Video Processing Concepts">
+  <meta itemprop="description" content="Foundational Concepts of Audio and Video Processing Whether you are multimedia professional or deep learning Engineer, if you are dealing with audio and video processing, you will need to understand the core concepts of audio and video processing. My this guide is focussed on some of the key concepts of Audio Video processing.
+A digital microphone is a device that captures sound (air pressure variations) and converts it into digital signals. Internally, it contains an analog-to-digital converter (ADC) that performs the conversion from analog audio to digital audio.">
+  <meta itemprop="datePublished" content="2025-03-28T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-03-28T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1352">
+  <meta itemprop="keywords" content="Digital Signal Processing,Image Processing,Computer Vision,Audio Processing,Video Processing">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Audio Video Processing Concepts">
+  <meta name="twitter:description" content="Foundational Concepts of Audio and Video Processing Whether you are multimedia professional or deep learning Engineer, if you are dealing with audio and video processing, you will need to understand the core concepts of audio and video processing. My this guide is focussed on some of the key concepts of Audio Video processing.
+A digital microphone is a device that captures sound (air pressure variations) and converts it into digital signals. Internally, it contains an analog-to-digital converter (ADC) that performs the conversion from analog audio to digital audio.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6252-audio-video-processing-concepts.jpg" alt="Audio Video Processing Concepts"></p>
+<h1 id="foundational-concepts-of-audio-and-video-processing">Foundational Concepts of Audio and Video Processing</h1>
+<p>Whether you are multimedia professional or deep learning Engineer, if you are dealing with audio and video processing, you will need to understand the core concepts of audio and video processing. My this guide is focussed on some of the key concepts of Audio Video processing.</p>
+<p>A digital microphone is a device that captures sound (air pressure variations) and converts it into digital signals. Internally, it contains an analog-to-digital converter (ADC) that performs the conversion from analog audio to digital audio.</p>
+<p>A digital camera captures light (optical signals) through an image sensor (like CMOS or CCD), which generates analog electrical signals. These signals are then passed through an ADC to be converted into digital image data.</p>
+<h2 id="lets-understand-image-and-colors">Let&rsquo;s understand Image and Colors</h2>
+<p>An <strong>image</strong> is a grid of <strong>pixels</strong>, where each pixel represents the color and intensity of a small part of the image.</p>
+<ul>
+<li>A <strong>black-and-white (grayscale)</strong> image typically has <strong>one channel (layer)</strong>, where each pixel value ranges from <strong>0 (black)</strong> to <strong>255 (white)</strong>.</li>
+<li>A <strong>color image</strong> usually uses <strong>three channels (RGB)</strong></li>
+<li><strong>Red</strong>, <strong>Green</strong>, and <strong>Blue</strong> — each with a value between <strong>0 and 255</strong>, requiring <strong>3 bytes per pixel, visible on the screen</strong>.
+If the image supports <strong>transparency</strong>, it includes a <strong>fourth channel</strong> called <strong>Alpha</strong>, which represents opacity — it&rsquo;s value varies from <strong>0 (fully transparent)</strong> to <strong>255 (fully opaque)</strong>.</li>
+<li>A pixel in an <strong>RGBA image</strong> takes <strong>4 bytes</strong> (1 byte per channel).</li>
+<li>A 1024×1024 RGB image has 2²⁰ pixels, and since each pixel uses 3 bytes, the total uncompressed size is 3 × 2²⁰ = 3,145,728 bytes (~3 MB). If this is a png file (contains alpha channel) then it will take 4 MB space, if it is grayscale image then it will take only 1 MB space.</li>
+</ul>
+<h2 id="lets-understand-sound-and-air-pressure-signals">Let&rsquo;s understand Sound and Air Pressure Signals.</h2>
+<p><strong>Sound</strong> is a continuous <strong>analog signal</strong> created by air pressure variations. But, in digital audio, this signal is captured and sampled at regular intervals.</p>
+<ul>
+<li>A <strong>sample</strong> is one measurement of amplitude at a given point in time.</li>
+<li>The number of samples per second is the <strong>sample rate</strong> (e.g., <strong>44.1kHz</strong> means 44,100 samples per second).</li>
+<li>Each sample can be stored using:
+<ul>
+<li><strong>8-bit (1 byte)</strong> → 256 possible values</li>
+<li><strong>16-bit (2 bytes)</strong> → 65,536 values (more common for quality audio)</li>
+<li><strong>24-bit or 32-bit</strong> → used in high-fidelity applications</li>
+</ul>
+</li>
+<li>Generally, a sample can be represented by one byte, but most modern audio uses <strong>16-bit samples</strong>, meaning <strong>2 bytes per sample</strong>.</li>
+<li>Audio file size
+<ul>
+<li>If Sample rate: <strong>44,100 samples/sec</strong></li>
+<li>and Sample size: <strong>16-bit (2 bytes)</strong> (in Audacity software they refer this as format)</li>
+<li>and Channels: <strong>1 (mono)</strong> (for all voice signals)</li>
+<li>then file size per second = <code>44,100 samples * 2 bytes = 88,200 bytes ≈ 86.1 KB</code></li>
+<li>but for <strong>stereo</strong> (2 channels), it doubles:</li>
+<li><code>44,100 * 2 bytes * 2 channels = 176,400 bytes ≈ 172.3 KB</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="-audio-processing-concepts">🎧 <strong>Audio Processing Concepts</strong></h2>
+<h3 id="1-sampling-rate">1. <strong>Sampling Rate</strong></h3>
+<ul>
+<li>Number of samples taken per second (e.g., <strong>44.1kHz</strong>, <strong>16kHz</strong>).</li>
+<li>Higher rate = more detail, bigger files.</li>
+<li>Common: 44.1kHz (music), 16kHz (speech), 8kHz (telephony).</li>
+</ul>
+<h3 id="2-bit-depth">2. <strong>Bit Depth</strong></h3>
+<ul>
+<li>Number of bits per sample (e.g., <strong>16-bit</strong>, <strong>24-bit</strong>).</li>
+<li>Higher bit depth = more dynamic range.</li>
+</ul>
+<h3 id="3-channels">3. <strong>Channels</strong></h3>
+<ul>
+<li><strong>Mono</strong> = 1 channel, <strong>Stereo</strong> = 2 channels.</li>
+<li>Multichannel = 5.1, 7.1 surround sound.</li>
+</ul>
+<h3 id="4-bitrate">4. <strong>Bitrate</strong></h3>
+<ul>
+<li>Data rate (e.g., <strong>128kbps</strong>, <strong>64kbps</strong>).</li>
+<li>Affects audio quality and file size.</li>
+</ul>
+<h3 id="5-audio-codecs">5. <strong>Audio Codecs</strong></h3>
+<ul>
+<li>Compression algorithms (e.g., <strong>MP3</strong>, <strong>AAC</strong>, <strong>Opus</strong>, <strong>FLAC</strong>).</li>
+<li><strong>Lossy</strong> (MP3) vs <strong>Lossless</strong> (FLAC).</li>
+</ul>
+<h3 id="6-waveform--spectrogram">6. <strong>Waveform &amp; Spectrogram</strong></h3>
+<ul>
+<li>Visual tools to represent audio signals in time (waveform) or frequency (spectrogram).</li>
+</ul>
+<h3 id="7-noise-reduction-equalization-normalization">7. <strong>Noise Reduction, Equalization, Normalization</strong></h3>
+<ul>
+<li>Signal processing techniques for improving or adjusting audio.</li>
+</ul>
+<h3 id="9-decibal-db">9. <strong>Decibal (dB)</strong></h3>
+<h2 id="what-is-movie">What is movie?</h2>
+<p>A movie is a series of images (called frames) played in rapid succession to create the illusion of motion.
+When a tool displays 24 images per second, the human eye perceives continuous movement — this is known as the frame rate (24 fps). Higher frame rates like 60 fps are often used for action sequences or sports, where smoother and more fluid motion is needed.</p>
+<h2 id="-video-processing-concepts">🎥 <strong>Video Processing Concepts</strong></h2>
+<h3 id="1-resolution">1. <strong>Resolution</strong></h3>
+<ul>
+<li>Frame size: <strong>1920x1080 (1080p)</strong>, <strong>1280x720 (720p)</strong>, etc.</li>
+<li>Higher res = sharper image + larger file size.</li>
+</ul>
+<h3 id="2-frame-rate-fps">2. <strong>Frame Rate (fps)</strong></h3>
+<ul>
+<li>Frames per second: <strong>24</strong>, <strong>30</strong>, <strong>60 fps</strong>.</li>
+<li>Higher = smoother motion, but more data. For action movies to capture every transition we need high frame rates. For natural scenes or slow motions or slow documentaries movies we need lower frame rate.</li>
+</ul>
+<h3 id="3-aspect-ratio">3. <strong>Aspect Ratio</strong></h3>
+<ul>
+<li>Width to height ratio (e.g., 16:9, 4:3, 9:16 for vertical videos).</li>
+</ul>
+<h3 id="4-bitrate-1">4. <strong>Bitrate</strong></h3>
+<ul>
+<li>Controls video quality &amp; size (e.g., 1500kbps).</li>
+<li>Can be constant (CBR) or variable (VBR).</li>
+</ul>
+<p>Great — these are crucial video processing concepts, especially for your article! Here&rsquo;s a <strong>more detailed and clarified explanation</strong> for each section so readers can truly understand how these parts work together in a video file:</p>
+<hr>
+<h2 id="-5-video-codecs">🎞️ 5. <strong>Video Codecs</strong></h2>
+<blockquote>
+<p>A <strong>codec</strong> (short for <em>coder-decoder</em>) is an algorithm that <strong>compresses and decompresses video</strong> to reduce file size without (too much) loss of quality.</p></blockquote>
+<p>Popular video codecs:</p>
+<ul>
+<li><strong>H.264 (AVC)</strong>: Most widely supported. Excellent balance of quality, size, and speed. Used in YouTube, streaming, mobile devices.</li>
+<li><strong>H.265 (HEVC)</strong>: Next-gen version of H.264. <strong>~50% better compression</strong> at the same quality — but <strong>requires more processing power</strong> and has <strong>limited hardware support</strong> on older devices.</li>
+<li><strong>VP9</strong>: Open-source alternative to H.265 developed by Google. Used in <strong>YouTube</strong> for higher resolution videos.</li>
+<li><strong>AV1</strong>: Newer open-source codec designed for modern high-res streaming (4K/8K). <strong>Best compression</strong>, but <strong>slower encoding</strong> and not yet universally supported in hardware.</li>
+</ul>
+<h3 id="-summary">👉 Summary:</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Codec</th>
+          <th>Compression</th>
+          <th>Support</th>
+          <th>Use Case</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>H.264</td>
+          <td>Good</td>
+          <td>Universal</td>
+          <td>Standard streaming &amp; recording</td>
+      </tr>
+      <tr>
+          <td>H.265</td>
+          <td>Excellent</td>
+          <td>Limited (older devices may lag)</td>
+          <td>4K, HEVC content</td>
+      </tr>
+      <tr>
+          <td>VP9</td>
+          <td>Very Good</td>
+          <td>Web (Chrome/YouTube)</td>
+          <td>High-res web video</td>
+      </tr>
+      <tr>
+          <td>AV1</td>
+          <td>Best</td>
+          <td>Growing (newer devices)</td>
+          <td>Future-proof streaming</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-6-containers--formats">📦 6. <strong>Containers / Formats</strong></h2>
+<blockquote>
+<p>A <strong>container</strong> is like a box that holds different types of data streams: <strong>video, audio, subtitles, metadata</strong> — all bundled into a single file.</p></blockquote>
+<p>Popular containers:</p>
+<ul>
+<li><strong>MP4</strong>: Most common, supports H.264, H.265. Compatible with nearly everything (browsers, phones, TVs).</li>
+<li><strong>MKV</strong>: Open-source, supports almost any codec, very flexible. Common for high-quality video (e.g., Blu-ray rips).</li>
+<li><strong>MOV</strong>: Apple’s container format. High quality, used in professional editing.</li>
+<li><strong>AVI</strong>: Older Microsoft format, less efficient, but still seen in legacy apps.</li>
+</ul>
+<p>👉 Analogy:<br>
+Think of <strong>codec = language</strong>, and <strong>container = suitcase</strong> that holds the movie + soundtrack + extras.</p>
+<hr>
+<h2 id="-7-color-space--chroma-subsampling">🎨 7. <strong>Color Space &amp; Chroma Subsampling</strong></h2>
+<h3 id="color-space"><strong>Color Space</strong></h3>
+<ul>
+<li>A method of representing color. Common ones:
+<ul>
+<li><strong>RGB</strong>: Red-Green-Blue — used for monitors, raw images.</li>
+<li><strong>YUV</strong> (or YCbCr): Used in video — separates <strong>luma (Y)</strong> = brightness, and <strong>chroma (U/V)</strong> = color.
+<ul>
+<li>Humans perceive brightness better than color, so we can compress color info more heavily — which brings us to&hellip;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="chroma-subsampling"><strong>Chroma Subsampling</strong></h3>
+<ul>
+<li>Technique to reduce file size by lowering color resolution while preserving brightness.</li>
+<li>Formats:
+<ul>
+<li><strong>4:4:4</strong> — no subsampling (full color + brightness)</li>
+<li><strong>4:2:2</strong> — some color reduction</li>
+<li><strong>4:2:0</strong> — most common in compressed video (e.g., H.264)</li>
+</ul>
+</li>
+</ul>
+<p>✅ <strong>4:2:0</strong> means:</p>
+<ul>
+<li>For every 4 luma (Y) samples, only <strong>1 chroma sample</strong> for U and V.</li>
+<li>Result: Good visual quality + great compression.</li>
+</ul>
+<hr>
+<h2 id="-8-keyframes--gop-group-of-pictures">🔁 8. <strong>Keyframes &amp; GOP (Group of Pictures)</strong></h2>
+<p>Video compression doesn’t store every full frame — it stores <strong>changes between frames</strong> to save space.</p>
+<ul>
+<li><strong>I-frame (Intra-coded frame)</strong>: A full image. Like a JPEG. Can be decoded on its own.</li>
+<li><strong>P-frame (Predicted frame)</strong>: Stores changes <strong>from the previous frame</strong>.</li>
+<li><strong>B-frame (Bi-directional frame)</strong>: Stores changes <strong>between previous and future frames</strong>.</li>
+</ul>
+<h3 id="gop--group-of-pictures"><strong>GOP = Group of Pictures</strong></h3>
+<ul>
+<li>A sequence like: <code>I B B P B B P ... I</code></li>
+<li>Starts with an I-frame, followed by P/B-frames.</li>
+<li>Smaller GOP = easier seeking/editing, larger GOP = better compression.</li>
+</ul>
+<hr>
+<h2 id="-common-to-both">🔁 <strong>Common to Both</strong></h2>
+<h3 id="1-transcoding">1. <strong>Transcoding</strong></h3>
+<ul>
+<li>Re-encoding from one format/codec to another.</li>
+</ul>
+<h3 id="2-compression">2. <strong>Compression</strong></h3>
+<ul>
+<li><strong>Lossy</strong> (discard some data) vs <strong>Lossless</strong> (no data loss).</li>
+</ul>
+<h3 id="3-latency--sync">3. <strong>Latency / Sync</strong></h3>
+<ul>
+<li>Keeping audio/video aligned.</li>
+</ul>
+<h3 id="4-streaming-vs-local-playback">4. <strong>Streaming vs Local Playback</strong></h3>
+<ul>
+<li>Adaptive bitrate streaming (HLS, DASH), buffering, encoding-on-the-fly.</li>
+</ul>
+<hr>
+<h2 id="-tools-to-learn">🛠 Tools to Learn</h2>
+<ul>
+<li><strong>FFmpeg</strong> – Swiss Army knife for audio/video.</li>
+<li><strong>Audacity</strong> – Audio editing.</li>
+<li><strong>HandBrake</strong> – GUI video transcoder.</li>
+<li><strong>OBS Studio</strong> – Recording &amp; streaming.</li>
+<li><strong>Adobe Premiere / DaVinci Resolve</strong> – Professional video editing.</li>
+<li><strong>Python Libs</strong> – <code>pydub</code>, <code>moviepy</code>, <code>ffmpeg-python</code>, <code>OpenCV</code> for automation.</li>
+</ul>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

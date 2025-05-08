@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Install Agones on Agones</title>
+    <link>http://localhost:1313/docs/installation/install-agones/</link>
+    <description>Recent content in Install Agones on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <atom:link href="http://localhost:1313/docs/installation/install-agones/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Agones using YAML</title>
+      <link>http://localhost:1313/docs/installation/install-agones/yaml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/installation/install-agones/yaml/</guid>
+      <description>&lt;h2 id=&#34;installing-agones&#34;&gt;Installing Agones&lt;/h2&gt;&#xA;&#xA;&#xA;&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;&#xA;&lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;&#xA;&#xA;    &lt;p&gt;Installing Agones with the &lt;code&gt;install.yaml&lt;/code&gt; file will use pre-generated, well known TLS&#xA;certificates stored in this repository for securing Kubernetes webhooks communication.&lt;/p&gt;&#xA;&lt;p&gt;For production workloads, we &lt;strong&gt;strongly&lt;/strong&gt; recommend using the&#xA;&lt;a href=&#34;http://localhost:1313/docs/installation/install-agones/helm/&#34;&gt;helm installation&lt;/a&gt; which allows you to generate&#xA;new, unique certificates or provide your own certificates. Alternatively,&#xA;you can use &lt;code&gt;helm template&lt;/code&gt; as described &lt;a href=&#34;http://localhost:1313/#customizing-your-install&#34;&gt;below&lt;/a&gt;&#xA;to generate a custom yaml installation file with unique certificates.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;Installing Agones using the pre-generated &lt;code&gt;install.yaml&lt;/code&gt; file is the quickest,&#xA;simplest way to get Agones up and running in your Kubernetes cluster:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Install Agones using Helm</title>
+      <link>http://localhost:1313/docs/installation/install-agones/helm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/installation/install-agones/helm/</guid>
+      <description>&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://helm.sh/&#34;&gt;Helm&lt;/a&gt; package manager 3.2.3+&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/docs/installation/#usage-requirements&#34;&gt;Supported Kubernetes Cluster&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;helm-3&#34;&gt;Helm 3&lt;/h2&gt;&#xA;&lt;h3 id=&#34;installing-the-chart&#34;&gt;Installing the Chart&lt;/h3&gt;&#xA;&lt;p&gt;To install the chart with the release name &lt;code&gt;my-release&lt;/code&gt; using our stable helm repository:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;helm repo add agones https://agones.dev/chart/stable&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;helm repo update&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;helm install my-release --namespace agones-system --create-namespace agones/agones&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;We recommend installing Agones in its own namespaces, such as &lt;code&gt;agones-system&lt;/code&gt; as shown above.&#xA;If you want to use a different namespace, you can use the helm &lt;code&gt;--namespace&lt;/code&gt; parameter to specify.&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

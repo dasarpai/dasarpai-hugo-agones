@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GPT on Agones</title>
+    <link>http://localhost:1313/tags/gpt/</link>
+    <description>Recent content in GPT on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gpt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Variations of Language Model in Huggingface</title>
+      <link>http://localhost:1313/dsblog/Variations-of-Language-Model-in-Huggingface/</link>
+      <pubDate>Thu, 22 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Variations-of-Language-Model-in-Huggingface/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6138-Variations-of-Language-Model-in-Huggingface.jpg&#34; alt=&#34;Variations-of-LanguageModel&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;variations-of-language-model-in-huggingface&#34;&gt;Variations of Language Model in Huggingface&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-the-model-variable-in-huggingface&#34;&gt;What the Model variable in Huggingface?&lt;/h2&gt;&#xA;&lt;p&gt;We know base moels like BERT, T5, GPT2, GPT3 etc are developed by researchers working with different companies. But when we look into huggingface model repository we see other models like GPT2LMHeadModel, GPT2ForSequenceClassification, etc what are these?&lt;/p&gt;&#xA;&lt;p&gt;Huggingface picks up base moel like GPT2, BERT, T5 etc and tune these for specific tasks. Therefore these are different variations of GPT-2 models, such as &lt;code&gt;GPT2LMHeadModel&lt;/code&gt;, &lt;code&gt;GPT2DoubleHeadsModel&lt;/code&gt;, &lt;code&gt;GPT2ForSequenceClassification&lt;/code&gt;, etc., were primarily created by Hugging Face. These are adaptations of the original GPT-2 model released by OpenAI, tailored to fit specific tasks in natural language processing (NLP).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What is LLM</title>
+      <link>http://localhost:1313/dsblog/what-is-llm/</link>
+      <pubDate>Fri, 18 Aug 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/what-is-llm/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6087-What-is-LLM.jpg&#34; alt=&#34;What is LLM&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-large-language-model&#34;&gt;What is Large Language Model&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;LLM stands for &lt;strong&gt;Large Language Model&lt;/strong&gt;. It is a type of artificial intelligence (AI) model that is trained on a massive dataset of text and code. This allows LLMs to learn the statistical relationships between words and phrases, and to generate text that is similar to the text that they were trained on.&lt;/p&gt;&#xA;&lt;p&gt;LLMs are still under development, but they have already been shown to be capable of performing a wide variety of tasks:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Business Usecases of GPT</title>
+      <link>http://localhost:1313/dsblog/Business-Usecases-of-GPT/</link>
+      <pubDate>Wed, 03 May 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Business-Usecases-of-GPT/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6059-Business-Usecases-of-GPT.jpg&#34; alt=&#34;Application of GPT&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;business-usecases-of-gpt&#34;&gt;Business-Usecases-of-GPT&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;You will not lose your job because of AI, but you may lose it because you didn&amp;rsquo;t learn how to use AI in your job.&lt;/p&gt;&#xA;&lt;p&gt;Artificial Intelligence (AI) has become increasingly prevalent in the modern workplace, and one of the most promising applications of AI is the use of Generative Pre-trained Transformer (GPT) models. GPT is a type of deep learning model that is capable of generating human-like text based on a given prompt. It has been used in a wide range of applications, from language translation and sentiment analysis to chatbots and content generation.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

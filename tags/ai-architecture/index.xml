@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Architecture on Agones</title>
+    <link>http://localhost:1313/tags/ai-architecture/</link>
+    <description>Recent content in AI Architecture on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai-architecture/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding LLM GAN and Transformers</title>
+      <link>http://localhost:1313/dsblog/Understanding-LLM-GAN-and-Transformers/</link>
+      <pubDate>Fri, 26 Jul 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Understanding-LLM-GAN-and-Transformers/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6127-Understanding-LLM-GAN-and-Transformers.jpg&#34; alt=&#34;Understanding-LLM-GAN-Transformers&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;understanding-llm-gan-and-transformers&#34;&gt;Understanding LLM, GAN and Transformers&lt;/h1&gt;&#xA;&lt;h2 id=&#34;llm-layers&#34;&gt;LLM Layers&lt;/h2&gt;&#xA;&lt;p&gt;Large Language Models (LLMs) are typically based on Transformer architectures, which consist of several types of layers that work together to process and generate text. Here are the primary kinds of layers found in an LLM:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Embedding Layers&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Token Embedding Layer&lt;/strong&gt;: Converts input tokens (words, subwords, or characters) into dense n dimensional vectors.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Position Embedding Layer&lt;/strong&gt;: Adds positional information to the token embeddings, allowing the model to understand the order of tokens.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Transformer Encoder Layers&lt;/strong&gt;: This layer is found in models, which are designed for generating encoded represenration of the input.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Transformers Demystified A Step-by-Step Guide</title>
+      <link>http://localhost:1313/dsblog/transformers-demystified-a-step-by-step-guide/</link>
+      <pubDate>Thu, 25 Jul 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/transformers-demystified-a-step-by-step-guide/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6113-transformers-demystified-a-step-by-step-guide.jpg&#34; alt=&#34;Transformers Demystified A Step-by-Step Guide&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;transformers-demystified-a-step-by-step-guide&#34;&gt;Transformers Demystified A Step-by-Step Guide&lt;/h1&gt;&#xA;&lt;p&gt;All modern Transformers are based on a paper &amp;ldquo;Attention is all you need&amp;rdquo;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;This was the mother paper of all the transformer architectures we see today around NLP, Multimodal, Deep Learning. It was presented by Ashish Vaswani et al from Deep Learning / Google in 2017. We will discuss following and anything whatever question/observation/idea I have.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The need&#xA;Why this paper was needed? What problem it solved?&lt;/li&gt;&#xA;&lt;li&gt;What is transformer? What is encoder transformer? What is decoder transformer? What is encoder-decoder transformer?&lt;/li&gt;&#xA;&lt;li&gt;What is embedding? What is need for embedding? What are different types of embedding? What embeddingg is proposed in this work&lt;/li&gt;&#xA;&lt;li&gt;What benchmark dataset was used, what metrics were used and what was the performance of this model?&lt;/li&gt;&#xA;&lt;li&gt;Finally we will looks all the calculations with one illustration.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Encourage all to read this &lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;original paper&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

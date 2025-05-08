@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cybersecurity Threats in AI Age on Agones</title>
+    <link>http://localhost:1313/tags/cybersecurity-threats-in-ai-age/</link>
+    <description>Recent content in Cybersecurity Threats in AI Age on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cybersecurity-threats-in-ai-age/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cybersecurity Concepts in AI Age</title>
+      <link>http://localhost:1313/dsblog/cybersecurity-concepts-in-ai-age/</link>
+      <pubDate>Sun, 13 Apr 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/cybersecurity-concepts-in-ai-age/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6258-cybersecurity-concepts-in-ai-age.jpg&#34; alt=&#34;cybersecurity-concepts-in-ai-age&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;ai-and-cybersecurity-threats-attack-vectors-and-defense-mechanisms&#34;&gt;AI and Cybersecurity: Threats, Attack Vectors, and Defense Mechanisms&lt;/h1&gt;&#xA;&lt;p&gt;As artificial intelligence (AI) systems, particularly large language models (LLMs), become integral to cybersecurity frameworks, they offer innovative solutions while introducing novel vulnerabilities. This article explores prompt-based threats, LLM-specific attack vectors, broader cybersecurity concepts in the context of AI, and essential governance and defense tools, alongside emerging trends and considerations.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;prompt-based-threats&#34;&gt;Prompt-Based Threats&lt;/h2&gt;&#xA;&lt;h3 id=&#34;adversarial-prompting&#34;&gt;Adversarial Prompting&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; Crafting prompts designed to exploit weaknesses in an LLM, causing it to fail, misbehave, or reveal vulnerabilities.&lt;br&gt;&#xA;&lt;strong&gt;Goal:&lt;/strong&gt; To identify flaws in how the model interprets or responds to instructions, often for research or security testing.&lt;br&gt;&#xA;&lt;strong&gt;Example:&lt;/strong&gt; A prompt like,&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

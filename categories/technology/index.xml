@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technology on Agones</title>
+    <link>http://localhost:1313/categories/technology/</link>
+    <description>Recent content in Technology on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Audio Video Processing Concepts</title>
+      <link>http://localhost:1313/dsblog/audio-video-processing-concepts/</link>
+      <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/audio-video-processing-concepts/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6252-audio-video-processing-concepts.jpg&#34; alt=&#34;Audio Video Processing Concepts&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;foundational-concepts-of-audio-and-video-processing&#34;&gt;Foundational Concepts of Audio and Video Processing&lt;/h1&gt;&#xA;&lt;p&gt;Whether you are multimedia professional or deep learning Engineer, if you are dealing with audio and video processing, you will need to understand the core concepts of audio and video processing. My this guide is focussed on some of the key concepts of Audio Video processing.&lt;/p&gt;&#xA;&lt;p&gt;A digital microphone is a device that captures sound (air pressure variations) and converts it into digital signals. Internally, it contains an analog-to-digital converter (ADC) that performs the conversion from analog audio to digital audio.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Quantum Physics with Deeper Questions with ChatGPT</title>
+      <link>http://localhost:1313/dsblog/quantum-physics-with-deeper-questions/</link>
+      <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/quantum-physics-with-deeper-questions/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6253-quantum-physics-with-deeper-questions.jpg&#34; alt=&#34;Quantum Physics with Deeper Questions&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;quantum-physics-with-deeper-questions-with-chatgpt&#34;&gt;Quantum Physics with Deeper Questions with ChatGPT&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;I was a physics student during my college years, and I’ve always loved the subject—even today. However, Quantum Physics, despite all my reading and learning, remains a mystery to me. At this stage, who can teach me Quantum Physics effectively? Finding an able professor, aligning my availability with theirs, and hoping they’d be willing to teach me for free seems impossible. So, I turned to a Large Language Model (LLM) for help. I could have explored other LLMs like Grok, Claude, DeepSeek, and many more. I’m not saying the others are bad, nor am I claiming that ChatGPT is the best at providing plausible answers. Whether an answer is correct or plausible also depends on the learner’s ability.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exploring Designer Roles and Their Favorite Free Tools</title>
+      <link>http://localhost:1313/dsblog/exploring-designer-roles-and-their-favorite-free-tools/</link>
+      <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-designer-roles-and-their-favorite-free-tools/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6250-exploring-designer-roles.jpg&#34; alt=&#34;Exploring Designer Roles and Their Favorite Free Tools&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-designer-roles-and-their-favorite-free-tools&#34;&gt;Exploring Designer Roles and Their Favorite Free Tools&lt;/h1&gt;&#xA;&lt;p&gt;In the software business, design plays a huge role, and there are different kinds of designers, each with their own focus areas, responsibilities, and specialized tools.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-different-types-of-designer-roles&#34;&gt;What are Different Types of Designer Roles?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-ui-designer-user-interface-designer&#34;&gt;&lt;strong&gt;1. UI Designer (User Interface Designer)&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Focus:&lt;/strong&gt; Visual design of interfaces (buttons, icons, layout, colors, typography)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Common Tools:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Figma&lt;/li&gt;&#xA;&lt;li&gt;Adobe XD&lt;/li&gt;&#xA;&lt;li&gt;Sketch (macOS)&lt;/li&gt;&#xA;&lt;li&gt;Framer&lt;/li&gt;&#xA;&lt;li&gt;Zeplin (for handoff)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;2-ux-designer-user-experience-designer&#34;&gt;&lt;strong&gt;2. UX Designer (User Experience Designer)&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Focus:&lt;/strong&gt; User journeys, flows, wireframes, usability, research&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

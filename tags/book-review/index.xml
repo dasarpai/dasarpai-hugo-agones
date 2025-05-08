@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Book Review on Agones</title>
+    <link>http://localhost:1313/tags/book-review/</link>
+    <description>Recent content in Book Review on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/book-review/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book Review - Data Science in Marketing Analysis</title>
+      <link>http://localhost:1313/dsblog/bookreview-data-science-for-marketing-analytics/</link>
+      <pubDate>Wed, 26 Oct 2022 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/bookreview-data-science-for-marketing-analytics/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://localhost:1313/assets/images/dspost/dsp6014-BookReview-Data-Science-for-Marketing-Analytics.jpg&#34;&gt;Book Review - Data Science in Marketing Analysis&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;book-review&#34;&gt;BOOK REVIEW&lt;/h1&gt;&#xA;&lt;h2 id=&#34;title-of-the-book-data-science-in-marketing-analysis&#34;&gt;TITLE OF THE BOOK: Data Science in Marketing Analysis&lt;/h2&gt;&#xA;&lt;h2 id=&#34;author-mirza-rahim-baig-gururajan-govindan-and-vishwesh-ravi-shrimali&#34;&gt;AUTHOR: Mirza Rahim Baig, Gururajan Govindan, and Vishwesh Ravi Shrimali&lt;/h2&gt;&#xA;&lt;h2 id=&#34;publisher-packt-publishing&#34;&gt;PUBLISHER: Packt Publishing&lt;/h2&gt;&#xA;&lt;h2 id=&#34;year-2021&#34;&gt;YEAR: 2021&lt;/h2&gt;&#xA;&lt;h2 id=&#34;reviewer-hari-thapliyal-ai-educationist--consultant-founder-dasarpai&#34;&gt;Reviewer: Hari Thapliyal, AI Educationist &amp;amp; Consultant, Founder, dasarpAI&lt;/h2&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;INTRODUCTION&lt;/h2&gt;&#xA;&lt;p&gt;Before writing this book, three authors of this books has written 3 books separately. Mirza Rahim Baig has authored “The Deep Learning Workshop”, Gururajan Govindan authored “The Data Analysis Workshop” and Vishwesh Ravi Shrimali has written a book “The Computer Vision Workshop”. The individual’s experience of writing book on Data Science has made this book easy understandable and lucid book. I am doing this review on the second edition of this book. The first edition was published in 2019 and the second edition is published in 2021. This book contains 637 pages, and it looks heavy on your table but most the content is code example and screenshots of graphs and data tables. This is normal for any good programming book, which wants their reader to understand what code was written and how the output looks like. This book is written in simple English. In the book, authors trying to explain how to work with python, pandas, seaborn and other important python libraries. This book goes beyond the title of this book. It is not only about marketing analysis but also how to develop model using scikit-learn and other machine learning libraries. Copyright of this book is with Packt Publishing.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

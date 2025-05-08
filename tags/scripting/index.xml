@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scripting on Agones</title>
+    <link>http://localhost:1313/tags/scripting/</link>
+    <description>Recent content in Scripting on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/scripting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Shell Scripting and Batch Files</title>
+      <link>http://localhost:1313/dsblog/exploring-shell-scripting-and-batch-files/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-shell-scripting-and-batch-files/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6221-Exploring-Shell-Scripting-and-Batch-Files.jpg&#34; alt=&#34;Exploring Shell Scripting and Batch Files&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-shell-scripting-and-batch-files&#34;&gt;Exploring Shell Scripting and Batch Files&lt;/h1&gt;&#xA;&lt;p&gt;Batch files are scripts that contain a series of commands to be executed by the command-line interpreter. These files can automate repetitive tasks and enhance productivity. In this article, we&amp;rsquo;ll explore creating batch files to set environment variables and execute shell commands in Windows, PowerShell, and Ubuntu, along with additional scripting nuances.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-audience&#34;&gt;The Audience&lt;/h2&gt;&#xA;&lt;p&gt;The audience for this article is&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

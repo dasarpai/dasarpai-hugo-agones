@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open Source Models on Agones</title>
+    <link>http://localhost:1313/tags/open-source-models/</link>
+    <description>Recent content in Open Source Models on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/open-source-models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Reasoning Models in AI Marketplace, Feb 25</title>
+      <link>http://localhost:1313/dsblog/exploring-reasoning-models/</link>
+      <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-reasoning-models/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6229-Exploring-Reasoning-Models.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-reasoning-models-in-ai-marketplace---feb2025&#34;&gt;Exploring Reasoning Models in AI Marketplace - Feb&#39;2025&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-makes-a-model-a&#34;&gt;&lt;strong&gt;What Makes a Model a &amp;ldquo;Reasoning Model&amp;rdquo;?&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;The term &amp;ldquo;reasoning model&amp;rdquo; is not strictly defined but generally refers to models that &lt;strong&gt;explicitly demonstrate structured problem-solving abilities&lt;/strong&gt;, such as:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Logical inference&lt;/strong&gt; (deductive/inductive reasoning)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Multi-step problem-solving&lt;/strong&gt; (e.g., math, coding, puzzles)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Common-sense reasoning&lt;/strong&gt; (understanding implicit context)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Causal reasoning&lt;/strong&gt; (connecting causes and effects).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Modern models achieve this through architectural innovations (e.g., chain-of-thought prompting, sparse attention) and training on datasets enriched with reasoning tasks (e.g., math problems, logic puzzles).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

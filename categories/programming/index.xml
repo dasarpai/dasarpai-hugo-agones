@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Agones</title>
+    <link>http://localhost:1313/categories/programming/</link>
+    <description>Recent content in Programming on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Future of Programming - Capabilities of AI Coding IDEs</title>
+      <link>http://localhost:1313/dsblog/future-of-programming/</link>
+      <pubDate>Mon, 14 Apr 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/future-of-programming/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6259-future-of-programming.jpg&#34; alt=&#34;future-of-programming&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;future-of-programming&#34;&gt;Future of Programming&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;As of April&amp;rsquo; 2025, AI coding IDEs like windsurf, cursor, cline, copilot etc. has these capabilities.&lt;/p&gt;&#xA;&lt;h2 id=&#34;capabilities-of-ai-coding-ides&#34;&gt;Capabilities of AI Coding IDEs&lt;/h2&gt;&#xA;&lt;h3 id=&#34;purpose-built-models-&#34;&gt;Purpose-Built Models 🧠&lt;/h3&gt;&#xA;&lt;p&gt;These are AI models specifically trained or fine-tuned for software development tasks like code generation, debugging, or code understanding.&lt;br&gt;&#xA;&lt;strong&gt;Example:&lt;/strong&gt; Instead of using a general-purpose LLM like GPT-4, Windsurf might use a model trained on GitHub repositories to understand code structure, naming conventions, or common patterns in Python projects.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

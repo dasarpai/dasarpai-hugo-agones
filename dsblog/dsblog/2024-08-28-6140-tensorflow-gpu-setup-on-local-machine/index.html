@@ -1,0 +1,641 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Tensorflow GPU Setup on Local Machine | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2024-08-28-6140-tensorflow-gpu-setup-on-local-machine/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Tensorflow GPU Setup on Local Machine">
+  <meta property="og:description" content="Tensorflow GPU Setup on Local Machine Introduction Tensorflow, pytorch are deep learning libraries or packages. Tensorflow is developed by google and pytorch is developed by Meta. There are some other but these are the most popular one among Machine Learning and Deep Learning Engineers. If you are doing anything significant in NLP, computer vision, voice processing you must have used this library. But the power of the these libraries lies in parallel metrics/tensor computation. For that they use hardwardes like GPU or TPU which has thousands of core and they designed purely for metrics/tensor processing. Intially they were used for gaming purpose but with the surge of AI these machines are in high use and used for model training and inference purpose.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-08-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-08-28T00:00:00+00:00">
+    <meta property="article:tag" content="TensorFlow">
+    <meta property="article:tag" content="GPU Computing">
+    <meta property="article:tag" content="CUDA">
+    <meta property="article:tag" content="Deep Learning Setup">
+    <meta property="article:tag" content="Docker Containers">
+    <meta property="article:tag" content="Development Environment">
+
+  <meta itemprop="name" content="Tensorflow GPU Setup on Local Machine">
+  <meta itemprop="description" content="Tensorflow GPU Setup on Local Machine Introduction Tensorflow, pytorch are deep learning libraries or packages. Tensorflow is developed by google and pytorch is developed by Meta. There are some other but these are the most popular one among Machine Learning and Deep Learning Engineers. If you are doing anything significant in NLP, computer vision, voice processing you must have used this library. But the power of the these libraries lies in parallel metrics/tensor computation. For that they use hardwardes like GPU or TPU which has thousands of core and they designed purely for metrics/tensor processing. Intially they were used for gaming purpose but with the surge of AI these machines are in high use and used for model training and inference purpose.">
+  <meta itemprop="datePublished" content="2024-08-28T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-08-28T00:00:00+00:00">
+  <meta itemprop="wordCount" content="3156">
+  <meta itemprop="keywords" content="TensorFlow GPU Setup,CUDA Installation,Deep Learning Environment,Docker Configuration,GPU Computing,NVIDIA Drivers,Development Setup,Machine Learning Tools">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tensorflow GPU Setup on Local Machine">
+  <meta name="twitter:description" content="Tensorflow GPU Setup on Local Machine Introduction Tensorflow, pytorch are deep learning libraries or packages. Tensorflow is developed by google and pytorch is developed by Meta. There are some other but these are the most popular one among Machine Learning and Deep Learning Engineers. If you are doing anything significant in NLP, computer vision, voice processing you must have used this library. But the power of the these libraries lies in parallel metrics/tensor computation. For that they use hardwardes like GPU or TPU which has thousands of core and they designed purely for metrics/tensor processing. Intially they were used for gaming purpose but with the surge of AI these machines are in high use and used for model training and inference purpose.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6140-Tensorflow-gpu-setup-on-local-machine.jpg" alt="Tensorflow GPU Setup on Local Machine"></p>
+<h1 id="tensorflow-gpu-setup-on-local-machine">Tensorflow GPU Setup on Local Machine</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Tensorflow, pytorch are deep learning libraries or packages. Tensorflow is developed by google and pytorch is developed by Meta. There are some other but these are the most popular one among Machine Learning and Deep Learning Engineers. If you are doing anything significant in NLP, computer vision, voice processing you must have used this library. But the power of the these libraries lies in parallel metrics/tensor computation. For that they use hardwardes like GPU or TPU which has thousands of core and they designed purely for metrics/tensor processing. Intially they were used for gaming purpose but with the surge of AI these machines are in high use and used for model training and inference purpose.</p>
+<p>To install any python libraries we can use pip or conda commands so we can use the same for these libraries. But the problem is many of learners do not have the GPU hardware machines. So even if you install it on cpu machine processing is very slow even with powerful machines. That is where google colab and kaggle come as handy tool for use. Google colab and kaggle provides us free hardware with limited hours GPU which can use used for experimenting or model training. Because these tools are designed for deep learning model training therefore by default they have tensorflow and pytorch installed. But these machines cannot be used for serious business purpose unless you pay them good money. The solution for that is you have your own dedicated GPU machine.</p>
+<p>Now the actually trouble starts, you cannot install tensorflow or pytorch on the gpu machine as you were doing non-gpu machine. You need to make sure gpu hardware is available and being used within the development environemnt. But how do you do that? This article is about that!</p>
+<h2 id="enabling-gpu-for-tensorflow">Enabling GPU for tensorflow</h2>
+<p>Question: When I am using packages like tensorflow or pytorch on my local GPU machine then how to install it so that it is available for the development or deployment environment?</p>
+<h3 id="highlevel-instructions">Highlevel instructions</h3>
+<p>When installing packages that support GPU, ensuring that the GPU is available and utilized in the development environment during model training involves several key steps. These steps ensure that your setup can take full advantage of the GPU for faster computations, especially in deep learning and machine learning tasks</p>
+<ul>
+<li>First you can decide which version of tensorflow or pytorch you want to use.</li>
+<li>You need to use gpu compatable version of these libraries NOT the cpu version of the library.</li>
+<li>Then check compatibility of tensorflow. <a href="https://www.tensorflow.org/guide/versions">https://www.tensorflow.org/guide/versions</a></li>
+<li>Install GPU drivers, CUDA, cuDNN, and the deep learning library (tensorflow, pytorch etc) are compatible. Mismatched versions can lead to errors or inefficient GPU usage. It is time consuming and frustrating if you are just playing with random versions, therefore to avoid this pain do your research and make decision.</li>
+<li>Use nvidia-smi to check whether GPU is being used or not.</li>
+<li>Launch jupyter notebook and write small code to check whether gpu is available within the jupyter environment or not.</li>
+</ul>
+<h2 id="basic-terms">Basic Terms</h2>
+<p><strong>What is GPU?</strong><br>
+The term &ldquo;GPU&rdquo; traditionally stands for &ldquo;Graphics Processing Unit,&rdquo; primarily used for rendering graphics. However, modern GPUs, especially those from NVIDIA, have evolved to handle more than just graphics—they can perform general-purpose computing tasks as well, which is referred to as GPGPU (General-Purpose computing on Graphics Processing Units). With the help of GPGPU, CUDA extends the capabilities of GPUs beyond graphics. It allows developers to write programs that can run on the GPU, making use of its parallel processing power for tasks such as scientific calculations, machine learning, and deep learning.</p>
+<p><strong>What is the difference between Library and API?</strong><br>
+A library is a collection of pre-written code that provides specific functionalities you can directly use in your programs, like functions or classes. An API (Application Programming Interface) is a set of rules and protocols that defines how software components should interact, specifying how to use the functions and classes in a library without providing the actual implementation. Pandas, Numpy are library. In the context of NVIDIA cuBLAS (CUDA Basic Linear Algebra Subroutines) or cuDNN (CUDA Deep Neural Network) are libraries.</p>
+<p><strong>What is NVIDIA Driver</strong>?<br>
+It acts as a bridge between the operating system and the NVIDIA GPU hardware. It allows the OS and applications to utilize the GPU for computing and rendering tasks.
+Both CUDA and cuDNN require the NVIDIA driver to function, as it provides the basic communication and control capabilities with the GPU.</p>
+<p><strong>What is CUDA (Compute Unified Device Architecture)</strong><br>
+A parallel computing platform and programming model developed by NVIDIA. It enables developers to use NVIDIA GPUs for general-purpose processing (GPGPU), which significantly accelerates tasks like deep learning. It requires the NVIDIA driver. CUDA provides the necessary tools and libraries for interacting with the GPU and forms the foundation for libraries like cuDNN.</p>
+<p><strong>What is cuDNN (CUDA Deep Neural Network Library)</strong>?<br>
+A GPU-accelerated library for deep learning, optimized for running operations common in neural networks, such as convolutions, pooling, normalization, and activation functions. It is created by NVIDIA. It is built on top of CUDA, it requires CUDA to function. cuDNN is specifically tailored to accelerate deep learning workloads and is used by many deep learning frameworks.</p>
+<p><strong>What is TensorFlow</strong>?<br>
+An open-source deep learning framework developed by Google. It provides a comprehensive ecosystem for developing, training, and deploying machine learning models, including neural networks. There is another popular deep learning framework PyTorch, it is developed by Meta. TensorFlow can use cuDNN and CUDA for GPU acceleration, which allows TensorFlow to run computations on the GPU for faster processing. TensorFlow relies on cuDNN for optimized deep learning operations and on CUDA for GPU capabilities.</p>
+<p><strong>What is the relationship between NVIDIA Driver, CUDA, cuDNN, TensorFlow?</strong></p>
+<ul>
+<li><strong>NVIDIA Driver</strong> is the base layer, enabling communication with the GPU.</li>
+<li><strong>CUDA</strong> leverages the NVIDIA Driver to provide a platform for GPU-accelerated computing.</li>
+<li><strong>cuDNN</strong> is built on top of CUDA to optimize deep learning tasks.</li>
+<li><strong>TensorFlow</strong> uses both cuDNN and CUDA to perform efficient and accelerated deep learning operations on NVIDIA GPUs.</li>
+</ul>
+<h2 id="what-are-different-options-for-tensorflow-installation">What are different options for Tensorflow Installation?</h2>
+<ol>
+<li>Docker : There are dozens of images on dockerhub. Based on your need you can select a docker image from <a href="https://hub.docker.com/r/tensorflow/tensorflow/tags">the Link</a>.</li>
+</ol>
+<ul>
+<li>Docker in windows. You can install and run the docker in Windows OS.</li>
+<li>Docker in wsl/linux. You can install and run the docker in WSL/Linux.</li>
+</ul>
+<ol start="2">
+<li>pip : Another way to use tensorflow is install the binary (compiled program or wheel) of tensorflow on your machine. For this purpose you need to create your own virtual environment first, then activate that environment and then do the pip installation. Which tensorlfow version you want to install you need to decide that first.</li>
+</ol>
+<ul>
+<li>Windows: This virtual env setting and pip installation can be done on windows os.</li>
+<li>WSL/ Linux: You can also create virtual env in WSL/linux and do pip instllation in that environment.</li>
+</ul>
+<ol start="3">
+<li>Source : For this you can clone the tensorflow repository and build the wheel on your local machine and then install. For build you need other program on your machine which can compile the source code. Refer <a href="https://www.tensorflow.org/install/source">Link</a>. You need to install Bazel, Bazelisk is an easy way to install Bazel and automatically downloads the correct Bazel version for TensorFlow. Then Install Clang. Clang is a C/C++/Objective-C compiler that is compiled in C++ based on LLVM. If LLVM is not installed you need to install that as well. Some of these installation are just download, unzip, copy, paste and sometime you may need to install them properly.</li>
+</ol>
+<ul>
+<li>Windows</li>
+<li>WSL/Linux</li>
+</ul>
+<h2 id="installation-using-docker">Installation using Docker</h2>
+<ol>
+<li>Install docker desktop.</li>
+<li>Install GPU support</li>
+<li>Install NVIDIA Container Toolket. <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html</a></li>
+<li>Configure docker engine</li>
+<li>Configure containerd (for kubernetes)
+1. Configure container runtime
+2. Configuring podman</li>
+<li>Run docker</li>
+<li>sudo systemctl restart docker</li>
+<li>Pull image from dockerhug
+Let&rsquo;s assume you select tensorflow:latest-gpu-jupyter you can pull that image from dockerhub into your docker image, using following command.</li>
+</ol>
+<pre tabindex="0"><code>docker pull tensorflow/tensorflow:latest-gpu-jupyter
+</code></pre><ol start="4">
+<li>Run image in a container</li>
+</ol>
+<h2 id="installation-on-wsllinux">Installation on WSL/Linux</h2>
+<p>When installing packages that support GPU, ensuring that the GPU is available and utilized in the development environment during model training involves several key steps. These steps ensure that your setup can take full advantage of the GPU for faster computations, especially in deep learning and machine learning tasks. Here’s what you need to consider:</p>
+<h3 id="1-ensure-compatible-gpu-drivers-are-installed">1. <strong>Ensure Compatible GPU Drivers are Installed</strong></h3>
+<p>Before using GPU-enabled packages, make sure that the appropriate GPU drivers are installed. For NVIDIA GPUs, you need the NVIDIA driver that matches your GPU hardware.</p>
+<ul>
+<li>
+<p><strong>Check Your GPU</strong>: Identify your GPU using:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvidia-smi
+</span></span></code></pre></div><p>This command should list the GPU details if the drivers are correctly installed.</p>
+<p>Example output</p>
+</li>
+</ul>
+<pre tabindex="0"><code>hari@Hari-MSI:/mnt/c/Users/hari_$ nvidia-smi
+
+Tue Aug 27 17:21:37 2024
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.81         CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 4070 ...    On  |   00000000:01:00.0 Off |                  N/A |
+| N/A   53C    P8              2W /   80W |    7926MiB /   8188MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A        75      C   /python3.11                                 N/A      |
+|    0   N/A  N/A       315      C   /python3.11                                 N/A      |
++-----------------------------------------------------------------------------------------+
+</code></pre><ul>
+<li><strong>Install the Latest Drivers</strong>: Download and install the latest NVIDIA drivers from the <a href="https://www.nvidia.com/Download/index.aspx">NVIDIA website</a>. Make sure to select the correct driver version for your GPU model.</li>
+</ul>
+<p><strong>This will ask you type of NVIDIA GPU (GeForce, Titan, GRID, Networking, NVIDIA RTX/Quadro, NVS, ION etc). It also you Notebooks series (RTX20, RTX30, RTX40, MX500 etc), laptop GPU (RTX 4050, RTX4060, RTX 4070 etc), OS (Windows 11, linux 64bit, FreeBDS x64 etc). After it will show available GeForce Game Ready Driver and NVIDIA Studio Driver page. You can select and download NVIDIA graphics driver.</strong></p>
+<h3 id="2-install-cuda-toolkit">2. <strong>Install CUDA Toolkit</strong></h3>
+<p>CUDA (Compute Unified Device Architecture) is a parallel computing platform and API model created by NVIDIA. Many deep learning libraries use CUDA to access GPU capabilities.</p>
+<ul>
+<li><strong>Download CUDA</strong>: Install the CUDA toolkit that matches your NVIDIA driver version. This can be done from the <a href="https://developer.nvidia.com/cuda-toolkit-archive">CUDA Toolkit Archive</a>.</li>
+<li><strong>Set Environment Variables</strong>: Ensure that CUDA paths are set in your environment variables. For example, on Linux:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#204a87">export</span> <span style="color:#000">PATH</span><span style="color:#ce5c00;font-weight:bold">=</span>/usr/local/cuda-11.2/bin<span style="color:#4e9a06">${</span><span style="color:#000">PATH</span><span style="color:#000;font-weight:bold">:+:</span><span style="color:#4e9a06">${</span><span style="color:#000">PATH</span><span style="color:#4e9a06">}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87">export</span> <span style="color:#000">LD_LIBRARY_PATH</span><span style="color:#ce5c00;font-weight:bold">=</span>/usr/local/cuda-11.2/lib64<span style="color:#4e9a06">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06"></span>                        <span style="color:#4e9a06">${</span><span style="color:#000">LD_LIBRARY_PATH</span><span style="color:#000;font-weight:bold">:+:</span><span style="color:#4e9a06">${</span><span style="color:#000">LD_LIBRARY_PATH</span><span style="color:#4e9a06">}}</span>
+</span></span></code></pre></div><h3 id="3-install-cudnn-cuda-deep-neural-network-library">3. <strong>Install cuDNN (CUDA Deep Neural Network Library)</strong></h3>
+<p>cuDNN is a GPU-accelerated library for deep neural networks, providing highly tuned implementations for standard routines such as forward and backward convolution, pooling, normalization, and activation layers.</p>
+<ul>
+<li>
+<p><strong>Download cuDNN</strong>: You can download it from the <a href="https://developer.nvidia.com/cudnn">NVIDIA cuDNN page</a>.</p>
+</li>
+<li>
+<p><strong>Install cuDNN</strong>: Follow the installation instructions for your operating system. This usually involves copying certain files to the CUDA toolkit directories.</p>
+</li>
+</ul>
+<h3 id="4-install-gpu-compatible-python-libraries">4. <strong>Install GPU-Compatible Python Libraries</strong></h3>
+<p>When using deep learning frameworks like TensorFlow, PyTorch, or others, you need to install the GPU-compatible versions of these libraries. Here&rsquo;s how to do this for some common libraries:</p>
+<ul>
+<li>
+<p><strong>TensorFlow</strong>: Install the GPU version of TensorFlow using:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install tensorflow-gpu
+</span></span></code></pre></div></li>
+<li>
+<p><strong>PyTorch</strong>: Visit the <a href="https://pytorch.org/get-started/locally/">PyTorch website</a> and select your preferences (OS, package manager, Python version, CUDA version). For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+</span></span></code></pre></div><p>This command installs PyTorch with CUDA 11.7 support.</p>
+</li>
+</ul>
+<h3 id="5-verify-gpu-availability-in-your-environment">5. <strong>Verify GPU Availability in Your Environment</strong></h3>
+<p>Once all installations are complete, it’s crucial to verify that the GPU is detected and utilized by your deep learning framework:</p>
+<ul>
+<li>
+<p><strong>TensorFlow</strong>: Check if TensorFlow can access the GPU with:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">tensorflow</span> <span style="color:#204a87;font-weight:bold">as</span> <span style="color:#000">tf</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Num GPUs Available: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87">len</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">tf</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">config</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">list_physical_devices</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;GPU&#39;</span><span style="color:#000;font-weight:bold">)))</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>PyTorch</strong>: Verify GPU availability in PyTorch:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">torch</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Is CUDA available?&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">torch</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">cuda</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">is_available</span><span style="color:#000;font-weight:bold">())</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;CUDA Device Name:&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">torch</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">cuda</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">get_device_name</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">))</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="6-common-troubleshooting-tips">6. <strong>Common Troubleshooting Tips</strong></h3>
+<ul>
+<li>
+<p><strong>Version Compatibility</strong>: Ensure the versions of your GPU drivers, CUDA, cuDNN, and the deep learning library are compatible. Mismatched versions can lead to errors or inefficient GPU usage.</p>
+</li>
+<li>
+<p><strong>Environment Variables</strong>: Double-check that CUDA and cuDNN environment variables are correctly set and point to the appropriate directories.</p>
+</li>
+<li>
+<p><strong>Check Dependencies</strong>: Use <code>nvidia-smi</code> to monitor GPU usage and ensure that your application is utilizing the GPU during model training.</p>
+</li>
+</ul>
+<h3 id="example-setting-up-tensorflow-with-gpu">Example: Setting Up TensorFlow with GPU</h3>
+<p>Here’s a step-by-step example for setting up TensorFlow with GPU:</p>
+<ol>
+<li>
+<p><strong>Install NVIDIA Driver</strong>:</p>
+<ul>
+<li>Download and install the latest driver from the NVIDIA website suitable for your GPU model.</li>
+</ul>
+</li>
+<li>
+<p><strong>Install CUDA Toolkit</strong>:</p>
+<ul>
+<li>Download CUDA 11.2 (if using TensorFlow 2.6) and follow the installation instructions.</li>
+</ul>
+</li>
+<li>
+<p><strong>Install cuDNN</strong>:</p>
+<ul>
+<li>Download cuDNN for CUDA 11.2, extract the files, and copy them to the CUDA directories (e.g., <code>/usr/local/cuda-11.2/lib64</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Install TensorFlow-GPU</strong>:</p>
+<ul>
+<li>Install TensorFlow with GPU support using <code>pip</code>:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install tensorflow-gpu<span style="color:#ce5c00;font-weight:bold">==</span>2.6.0
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Verify Setup</strong>:</p>
+<ul>
+<li>Run a simple TensorFlow script to check if the GPU is recognized:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">tensorflow</span> <span style="color:#204a87;font-weight:bold">as</span> <span style="color:#000">tf</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Num GPUs Available: &#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87">len</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">tf</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">config</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">list_physical_devices</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;GPU&#39;</span><span style="color:#000;font-weight:bold">)))</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<p>By following these steps, you can ensure that your development environment is correctly set up to leverage the GPU for model training, thereby speeding up computations and improving performance.</p>
+<h2 id="important-commands">Important Commands</h2>
+<h1 id="how-to-know-which-ubunto-version-on-my-wsl">How to know which ubunto version on my wsl?</h1>
+<pre tabindex="0"><code>hari@Hari-MSI:/mnt/c/Users/hari_$ lsb_release -a
+
+Output
+	No LSB modules are available.
+	Distributor draft: false
+id: Ubuntu
+	Description:    Ubuntu 22.04.3 LTS
+	Release:        22.04
+	Codename:       jammy
+	
+hari@Hari-MSI:/mnt/c/Users/hari_$ cat /etc/os-release
+
+output
+	PRETTY_NAME=&#34;Ubuntu 22.04.3 LTS&#34;
+	NAME=&#34;Ubuntu&#34;
+	VERSION_ID=&#34;22.04&#34;
+	VERSION=&#34;22.04.3 LTS (Jammy Jellyfish)&#34;
+	VERSION_CODENAME=jammy
+	ID=ubuntu
+	ID_LIKE=debian
+	HOME_URL=&#34;https://www.ubuntu.com/&#34;
+	SUPPORT_URL=&#34;https://help.ubuntu.com/&#34;
+	BUG_REPORT_URL=&#34;https://bugs.launchpad.net/ubuntu/&#34;
+	PRIVACY_POLICY_URL=&#34;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&#34;
+	UBUNTU_CODENAME=jammy
+</code></pre><h2 id="how-to-install-cuda-118-and-cudnn-81-for-tensorflow-2170-gpu">How to install CUDA 11.8 and cuDNN 8.1 for tensorflow-2.17.0-gpu?</h2>
+<h3 id="1-use-a-compatible-tensorflow-docker-image">1. Use a Compatible TensorFlow Docker Image</h3>
+<p>To ensure compatibility, it&rsquo;s easiest to start with a TensorFlow Docker image that already includes the correct versions of CUDA and cuDNN. TensorFlow provides pre-built Docker images with specific versions of CUDA and cuDNN.</p>
+<ul>
+<li><strong>Pull the TensorFlow Docker Image</strong>: Use a TensorFlow Docker image that is known to support CUDA 11.8 and cuDNN 8.1. The <code>tensorflow/tensorflow:2.17.0-gpu</code> tag typically comes with a compatible version of CUDA, but to specifically get CUDA 11.8, you might need to specify a tag like <code>tensorflow/tensorflow:2.17.0-gpu-cuda11.8</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull tensorflow/tensorflow:2.17.0-gpu-cuda11.8
+</span></span></code></pre></div><h3 id="2-verify-cuda-and-cudnn-versions-inside-the-container">2. Verify CUDA and cuDNN Versions Inside the Container</h3>
+<p>After pulling the Docker image, run the container and verify the CUDA and cuDNN versions:</p>
+<ul>
+<li><strong>Run the Docker Container</strong>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --gpus all -it --rm -p 9999:8888 tensorflow/tensorflow:2.17.0-gpu-cuda11.8 bash
+</span></span></code></pre></div><pre><code>This command starts an interactive bash session inside the container.
+</code></pre>
+<ul>
+<li><strong>Check CUDA Version</strong>:</li>
+</ul>
+<p>Inside the container, check the CUDA version:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvcc --version
+</span></span></code></pre></div><p>This should show CUDA 11.8.</p>
+<p>hari@Hari-MSI:/mnt/c/Users/hari_$ nvcc &ndash;version</p>
+<p>nvcc: NVIDIA (R) Cuda compiler driver<br>
+Copyright (c) 2005-2022 NVIDIA Corporation<br>
+Built on Wed_Sep_21_10:33:58_PDT_2022<br>
+Cuda compilation tools, release 11.8, V11.8.89<br>
+Build cuda_11.8.r11.8/compiler.31833905_0</p>
+<p>This was the default cuda with my docker. <br>
+nvcc: NVIDIA (R) Cuda compiler driver <br>
+Copyright (c) 2005-2023 NVIDIA Corporation<br>
+Built on Wed_Nov_22_10:17:15_PST_2023<br>
+Cuda compilation tools, release 12.3, V12.3.107<br>
+Build cuda_12.3.r12.3/compiler.33567101_0</p>
+<ul>
+<li>
+<p><strong>Check cuDNN Version</strong>:</p>
+<p>To check the installed cuDNN version, you can use the following commands inside the container:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat /usr/local/cuda/include/cudnn_version.h <span style="color:#000;font-weight:bold">|</span> grep CUDNN_MAJOR -A <span style="color:#0000cf;font-weight:bold">2</span>
+</span></span></code></pre></div><p>This should confirm cuDNN 8.1.</p>
+</li>
+</ul>
+<h3 id="3-manually-install-cudnn-81-if-needed">3. Manually Install cuDNN 8.1 (if needed)</h3>
+<p>If you find that the cuDNN version isn&rsquo;t 8.1 (though it should be with the right Docker image), you can manually install it:</p>
+<ol>
+<li><strong>Download cuDNN 8.1</strong>: Go to the <a href="https://developer.nvidia.com/cudnn">NVIDIA cuDNN download page</a> and download the cuDNN version 8.1 for CUDA 11.8.</li>
+</ol>
+<pre tabindex="0"><code># following the above link to download cuDNN I got this link commands below.
+https://developer.nvidia.com/cudnn-downloads?target_os=Linux&amp;target_arch=x86_64&amp;Distribution=Ubuntu&amp;target_version=20.04&amp;target_type=deb_local
+
+	wget https://developer.download.nvidia.com/compute/cudnn/9.3.0/local_installers/cudnn-local-repo-ubuntu2004-9.3.0_1.0-1_amd64.deb
+	sudo dpkg -i cudnn-local-repo-ubuntu2004-9.3.0_1.0-1_amd64.deb
+	sudo cp /var/cudnn-local-repo-ubuntu2004-9.3.0/cudnn-*-keyring.gpg /usr/share/keyrings/
+	sudo apt-get update
+	sudo apt-get -y install cudnn
+</code></pre><ol start="2">
+<li><strong>Transfer the cuDNN File into the Docker Container</strong>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker cp /path/to/cudnn-linux-x86_64-8.1.x.x-cuda11.8-archive.tar.xz &lt;container_id&gt;:/root/
+</span></span></code></pre></div><ol start="3">
+<li><strong>Install cuDNN Inside the Docker Container</strong>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -xzvf cudnn-linux-x86_64-8.1.x.x-cuda11.8-archive.tar.xz
+</span></span><span style="display:flex;"><span>cp cudnn-linux-x86_64-8.1.x.x-cuda11.8-archive/include/* /usr/local/cuda/include/
+</span></span><span style="display:flex;"><span>cp cudnn-linux-x86_64-8.1.x.x-cuda11.8-archive/lib/* /usr/local/cuda/lib64/
+</span></span><span style="display:flex;"><span>ldconfig
+</span></span></code></pre></div><h3 id="4-run-jupyter-notebook">4. Run Jupyter Notebook</h3>
+<p>Finally, start Jupyter Notebook in the container:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jupyter notebook --ip<span style="color:#ce5c00;font-weight:bold">=</span>0.0.0.0 --allow-root
+</span></span></code></pre></div><p>You should be able to access Jupyter at <code>http://localhost:9999</code>.</p>
+<h3 id="summary">Summary</h3>
+<ul>
+<li>Use a TensorFlow Docker image with CUDA 11.8 support.</li>
+<li>Verify the CUDA and cuDNN versions inside the container.</li>
+<li>Manually install cuDNN 8.1 if it&rsquo;s not already included.</li>
+<li>Run Jupyter Notebook to start your development.</li>
+</ul>
+<h1 id="nvcc-version">nvcc &ndash;version</h1>
+<pre><code>nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2023 NVIDIA Corporation
+Built on Wed_Nov_22_10:17:15_PST_2023
+Cuda compilation tools, release 12.3, V12.3.107
+Build cuda_12.3.r12.3/compiler.33567101_0
+</code></pre>
+<p><strong>Note:</strong> Check TensorFlow&rsquo;s Compatibility: Visit the official TensorFlow compatibility guide to verify which CUDA and cuDNN versions are supported by TensorFlow 2.17.0. As of recent releases, TensorFlow 2.17.0 is generally compatible with:</p>
+<p>CUDA: 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.8
+cuDNN: 8.1 and later versions</p>
+<h2 id="how-to-install-jupyter-in-docker-container">How to install Jupyter in docker container?</h2>
+<h3 id="steps-to-ensure-jupyter-is-installed-and-accessible">Steps to Ensure Jupyter is Installed and Accessible:</h3>
+<ol>
+<li>
+<p><strong>Start the TensorFlow Container in Interactive Mode:</strong>
+Run the container with a bash shell so you can install Jupyter:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --gpus all -it --rm -p 9999:8888 tensorflow/tensorflow:2.17.0-gpu bash
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Install Jupyter:</strong>
+Once inside the container, install Jupyter Notebook using <code>pip</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install jupyter
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Verify Jupyter Installation:</strong>
+After installation, check if Jupyter is in the PATH by running:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>which jupyter
+</span></span></code></pre></div><p>If this command returns a path (e.g., <code>/usr/local/bin/jupyter</code>), Jupyter is successfully installed.</p>
+</li>
+<li>
+<p><strong>Run Jupyter Notebook:</strong>
+Start the Jupyter Notebook server:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jupyter notebook --ip<span style="color:#ce5c00;font-weight:bold">=</span>0.0.0.0 --allow-root
+</span></span></code></pre></div><p>If you see the Jupyter server starting and showing URLs (as before), this means it is working correctly.</p>
+</li>
+<li>
+<p><strong>Access Jupyter Notebook:</strong></p>
+<ul>
+<li>Open your browser and go to <a href="http://localhost:9999">http://localhost:9999</a>.</li>
+<li>Use the token provided by Jupyter to log in.</li>
+</ul>
+</li>
+</ol>
+<h3 id="troubleshooting">Troubleshooting:</h3>
+<ul>
+<li>
+<p><strong>Container Restart:</strong> If you exit the container, any installed packages will be lost because of the <code>--rm</code> flag. For persistent changes, consider building a custom Docker image or running the container without <code>--rm</code> and then committing the changes.</p>
+</li>
+<li>
+<p><strong>Creating a Custom Docker Image (Optional):</strong>
+If you want a persistent environment, you can create a custom Docker image that includes Jupyter:</p>
+<p>Create a <code>Dockerfile</code> with the following content:</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#4e9a06"> tensorflow/tensorflow:2.17.0-gpu</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">RUN</span> pip install jupyter<span style="color:#a40000">
+</span></span></span></code></pre></div><p>Build and run the Docker image:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker build -t my-tf-jupyter .
+</span></span><span style="display:flex;"><span>docker run --gpus all -it --rm -p 9999:8888 my-tf-jupyter jupyter notebook --ip<span style="color:#ce5c00;font-weight:bold">=</span>0.0.0.0 --allow-root
+</span></span></code></pre></div><p>Above command will show one url on the screen, along with port and token. You can go on browser use this information to access the jupyter notebook.</p>
+<p>You can access this from visual code as well. For that purpose on the kernel when IDE ask you for jupyter server you can give this url information.</p>
+<h2 id="test-gpu-utilization">Test GPU Utilization</h2>
+<pre tabindex="0"><code>import tensorflow as tf
+print(&#34;Num GPUs Available: &#34;, len(tf.config.list_physical_devices(&#39;GPU&#39;)))
+
+# Simple matrix multiplication to test GPU
+with tf.device(&#39;/GPU:0&#39;):
+    a = tf.constant([[1.0, 2.0], [3.0, 4.0]])
+    b = tf.constant([[1.0, 1.0], [0.0, 1.0]])
+    c = tf.matmul(a, b)
+print(c)
+</code></pre><h2 id="if-you-want-to-disable-onednn-custom-operations-for-consistency">If you want to disable oneDNN custom operations for consistency:</h2>
+<pre tabindex="0"><code>export TF_ENABLE_ONEDNN_OPTS=0
+</code></pre><p>You can set this in your Docker container or your host environment if you&rsquo;re running scripts directly</p>
+<h2 id="where-should-i-install-cuda-and-cudnn-libaries">Where should I install CUDA and cuDNN libaries</h2>
+<ul>
+<li>If you are using tensorflow from docker then
+<ul>
+<li>The CUDA and cuDNN libraries must be installed inside the Docker container for TensorFlow to use them.</li>
+</ul>
+</li>
+<li>If you are using tensorflow on your windows then
+<ul>
+<li>The CUDA and CuDNN libraries must be installed inside windows environment.</li>
+</ul>
+</li>
+<li>If you are using tensorflow on linux/wsl then
+<ul>
+<li>it must installed on liux/wsl</li>
+</ul>
+</li>
+</ul>
+<h2 id="how-to-build-new-docker-or-update-existing-docker">How to build new docker? Or update existing docker.</h2>
+<p>Create a folder and go into that folder <br>
+Create a Dockerfile. Write all the command in this.<br>
+go on the command prompt and execute command: docker build -t my-tf-jupyter .</p>
+<h2 id="what-should-be-the-content-of-dockerfile">What should be the content of Dockerfile?</h2>
+<p>FROM tensorflow/tensorflow:2.17.0-gpu <br>
+RUN pip install jupyter</p>
+<p><strong>Author</strong><br>
+Dr Hari Thapliyaal<br>
+dasarpai.com <br>
+linkedin.com/in/harithapliyal</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

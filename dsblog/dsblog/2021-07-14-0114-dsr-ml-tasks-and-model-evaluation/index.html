@@ -1,0 +1,546 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Machine Learning Tasks and Model Evaluation | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2021-07-14-0114-dsr-ml-tasks-and-model-evaluation/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Machine Learning Tasks and Model Evaluation">
+  <meta property="og:description" content="Machine Learning Tasks and Model Evaluation Introduction Machine learning is a subject where we study how to create &amp; evaluate machine learning models. To create these models, we need different types of data. We build models which can help us do various kinds of tasks. There are hundreds of model building techniques and researchers keep adding new techniques, and architectures as when need arises. But, the question is how do you evaluate these models which are output of the model trainings? To evaluate the performance of a model on structured data, or classification/regression/clustering models, we require one kind of metrics. But this becomes complicated when we are dealing with voice, text and audio data. How do you evaluate ten models which are responsible for translation, or locating an object in the image, transcribing voice into text, captioning an image? To solve this problem, standard databases are created and everyone needs to demonstrate the performance of their model, architecture, or approach against that dataset. But, even if you have a baseline dataset, how will you evaluate various NLP or deep learning tasks? For that GLUE, SuperGLUE benchmarks are created.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2021-07-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2021-07-14T00:00:00+00:00">
+    <meta property="article:tag" content="DS Resources">
+    <meta property="article:tag" content="Model Evaluation">
+    <meta property="article:tag" content="Machine Learning Tasks">
+    <meta property="article:tag" content="NLP Tasks">
+    <meta property="article:tag" content="NLP Model Evaluation">
+
+  <meta itemprop="name" content="Machine Learning Tasks and Model Evaluation">
+  <meta itemprop="description" content="Machine Learning Tasks and Model Evaluation Introduction Machine learning is a subject where we study how to create &amp; evaluate machine learning models. To create these models, we need different types of data. We build models which can help us do various kinds of tasks. There are hundreds of model building techniques and researchers keep adding new techniques, and architectures as when need arises. But, the question is how do you evaluate these models which are output of the model trainings? To evaluate the performance of a model on structured data, or classification/regression/clustering models, we require one kind of metrics. But this becomes complicated when we are dealing with voice, text and audio data. How do you evaluate ten models which are responsible for translation, or locating an object in the image, transcribing voice into text, captioning an image? To solve this problem, standard databases are created and everyone needs to demonstrate the performance of their model, architecture, or approach against that dataset. But, even if you have a baseline dataset, how will you evaluate various NLP or deep learning tasks? For that GLUE, SuperGLUE benchmarks are created.">
+  <meta itemprop="datePublished" content="2021-07-14T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2021-07-14T00:00:00+00:00">
+  <meta itemprop="wordCount" content="3061">
+  <meta itemprop="keywords" content="model,evaluation,metrics,,machine,learning,evaluation,,BLEU,score,,GLUE,benchmark,,SuperGLUE,,NLP,tasks,,model,performance,,evaluation,metrics,,machine,translation,metrics,,model,benchmarking">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Machine Learning Tasks and Model Evaluation">
+  <meta name="twitter:description" content="Machine Learning Tasks and Model Evaluation Introduction Machine learning is a subject where we study how to create &amp; evaluate machine learning models. To create these models, we need different types of data. We build models which can help us do various kinds of tasks. There are hundreds of model building techniques and researchers keep adding new techniques, and architectures as when need arises. But, the question is how do you evaluate these models which are output of the model trainings? To evaluate the performance of a model on structured data, or classification/regression/clustering models, we require one kind of metrics. But this becomes complicated when we are dealing with voice, text and audio data. How do you evaluate ten models which are responsible for translation, or locating an object in the image, transcribing voice into text, captioning an image? To solve this problem, standard databases are created and everyone needs to demonstrate the performance of their model, architecture, or approach against that dataset. But, even if you have a baseline dataset, how will you evaluate various NLP or deep learning tasks? For that GLUE, SuperGLUE benchmarks are created.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dsresources/dsr114-ml-tasks-and-model-evaluation.jpg" alt="Deep Learning Tasks and Models"></p>
+<h1 id="machine-learning-tasks-and-model-evaluation">Machine Learning Tasks and Model Evaluation</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Machine learning is a subject where we study how to create &amp; evaluate machine learning models. To create these models, we need different types of data. We build models which can help us do various kinds of tasks. There are hundreds of model building techniques and researchers keep adding new techniques, and architectures as when need arises. But, the question is how do you evaluate these models which are output of the model trainings? To evaluate the performance of a model on structured data, or classification/regression/clustering models, we require one kind of metrics. But this becomes complicated when we are dealing with voice, text and audio data. How do you evaluate ten models which are responsible for translation, or locating an object in the image, transcribing voice into text, captioning an image? To solve this problem, standard databases are created and everyone needs to demonstrate the performance of their model, architecture, or approach against that dataset. But, even if you have a baseline dataset, how will you evaluate various NLP or deep learning tasks? For that GLUE, SuperGLUE benchmarks are created.</p>
+<h2 id="what-is-bleu-benchmark">What is BLEU Benchmark?</h2>
+<p>BLEU (Bilingual Evaluation Understudy) is a metric used to evaluate the quality of machine translation. It is based on the n-gram precision between the machine translation and the reference translation.</p>
+<p>BLEU-1 measures the unigram precision, which is the fraction of unigrams in the machine translation that also appear in the reference translation. A BLEU-1 score of 1 means that the machine translation is a perfect match for the reference translation.</p>
+<p>BLEU-1 is a simple and easy-to-understand metric, but it can be biased towards shorter translations. For example, a machine translation that is twice as long as the reference translation will have a lower BLEU-1 score, even if it is more accurate.</p>
+<p>To address this, BLEU-n metrics were developed, which measure the n-gram precision for n&gt;1. BLEU-4 is the most commonly used BLEU-n metric. A BLEU-4 score of 1 means that the machine translation is a perfect match for the reference translation. However, BLEU-4 scores are typically much lower than 1, and a score of 0.5 or higher is considered to be good.</p>
+<p>BLEU-4 is a simple and easy-to-understand metric, but it can be biased towards shorter translations. For example, a machine translation that is twice as long as the reference translation will have a lower BLEU-4 score, even if it is more accurate.</p>
+<p>Steps to calculate BlLEU score are as following.</p>
+<ol>
+<li>Step1: Calculate N-gram Precision: BLEU calculates precision scores based on matching n-grams (sequences of n words) between the candidate translation and the reference translations. It computes precision scores for 1-gram (unigram), 2-gram (bigram), 3-gram, and 4-gram matches.</li>
+<li>Step2: Brevity Penalty: BLEU also takes into account the length of the candidate translation compared to the reference translations. This is because shorter translations tend to have an advantage in n-gram matching, but they might not convey the full meaning of the source text. BLEU applies a brevity penalty to avoid favoring overly short translations.</li>
+<li>Step3: Compute Geometric Mean: BLEU combines the precision scores of different n-gram matches using a geometric mean. This is done to give a balanced consideration to different n-gram orders. This metric helps in capturing both local and global translation quality.</li>
+<li>Step4: Score Calculation: The BLEU score is calculated by multiplying the geometric mean of the n-gram precisions by the brevity penalty. The result is a value between 0 and 1, where a higher score indicates a better match between the candidate translation and the reference translations.</li>
+</ol>
+<p>It&rsquo;s important to note that while BLEU is widely used for evaluating machine translation systems, it has some limitations. For instance, BLEU relies solely on n-gram matching and does not capture higher-level semantic or syntactic aspects of translation quality. As a result, it may not always align well with human judgments of translation quality, especially when dealing with creative or complex translations.</p>
+<p>Despite its limitations, BLEU remains a widely used and easily computable metric for quick and automated evaluation of machine translation outputs. Researchers often combine BLEU with other metrics or use it as a starting point for evaluation, but more advanced metrics have been developed over time to address its limitations.</p>
+<p>Advantages of using BLEU score:</p>
+<ul>
+<li>It is a simple and easy-to-understand metric.</li>
+<li>It is relatively insensitive to changes in word order.</li>
+<li>It has been shown to be effective in evaluating the performance of machine translation.</li>
+</ul>
+<p>Disadvantages of using BLEU score:</p>
+<ul>
+<li>It can be biased towards shorter translations.</li>
+<li>It does not take into account the semantic similarity between the machine translation and the reference translation.</li>
+<li>It can be difficult to interpret the results of BLEU score for different tasks.</li>
+</ul>
+<h2 id="what-is-glue-benchmark">What is GLUE Benchmark?</h2>
+<p>The <strong>GLUE (General Language Understanding Evaluation)</strong> benchmark is a collection of diverse natural language processing (NLP) tasks designed to evaluate and compare the performance of various machine learning models and techniques in understanding and processing human language. It serves as a standard evaluation framework for assessing the general language understanding capabilities of different models.</p>
+<p>The GLUE benchmark was <strong>introduced in 2018</strong> and consists of a set of <strong>nine different NLP tasks</strong>, covering a wide range of language understanding tasks including sentence classification, sentence similarity, natural language inference, and question answering. Some of the tasks included in GLUE are the Stanford Sentiment Treebank, Multi-Genre Natural Language Inference, and the Recognizing Textual Entailment dataset.</p>
+<p>The primary goal of the GLUE benchmark is to encourage the development of models that can perform well across multiple NLP tasks, thus demonstrating a more comprehensive understanding of human language. The performance of models is measured using a single metric called the GLUE score, which is computed by aggregating the performance of models on individual tasks.</p>
+<p>The GLUE benchmark has been instrumental in advancing the field of NLP and has served as a benchmark for many state-of-the-art models, including various transformer-based architectures like BERT (Bidirectional Encoder Representations from Transformers) and RoBERTa.</p>
+<p>It&rsquo;s worth noting that since the introduction of the GLUE benchmark, other benchmarks like SuperGLUE and XTREME have been developed to address some limitations and provide more challenging evaluation tasks for further advancing the state of NLP research.</p>
+<ul>
+<li><a href="https://gluebenchmark.com/">https://gluebenchmark.com/</a></li>
+<li><a href="https://gluebenchmark.com/leaderboard">https://gluebenchmark.com/leaderboard</a></li>
+<li><a href="https://paperswithcode.com/dataset/glue">https://paperswithcode.com/dataset/glue</a></li>
+</ul>
+<p>The GLUE benchmark is used by companies to evaluate the performance of their NLU models. For example, Google uses the GLUE benchmark to evaluate the performance of its BERT model. The higher the GLUE score, the better the overall performance of the model on various NLP tasks.</p>
+<h2 id="what-are-the-tasks-of-glue-benchmark">What are the Tasks of GLUE Benchmark?</h2>
+<p>The current version of the GLUE benchmark includes the following 9 tasks</p>
+<ul>
+<li>CoLA: A sentence-level grammaticality task.</li>
+<li>SST-2: A binary sentiment classification task.</li>
+<li>MRPC: A sentence-pair similarity task.</li>
+<li>STS-B: A sentence-pair similarity task that measures the semantic relatedness of two sentences.</li>
+<li>QQP: A question-answering task.</li>
+<li>MNLI: A natural language inference task that measures whether a sentence entails another sentence.</li>
+<li>QNLI: A natural language inference task that measures whether a sentence entails a question.</li>
+<li>RTE: A natural language inference task that measures whether a sentence contradicts another sentence.</li>
+<li>WNLI: A word similarity task that measures the similarity between two words.</li>
+</ul>
+<h2 id="what-is-superglue-benchmark">What is SuperGLUE Benchmark?</h2>
+<p>The SuperGLUE (Super General Language Understanding Evaluation) benchmark is an enhanced version of the GLUE benchmark introduced to address its limitations and provide more challenging language understanding tasks for evaluating and comparing the performance of natural language processing (NLP) models. SuperGLUE builds upon the success of GLUE and aims to push the boundaries of NLP research further.</p>
+<p>SuperGLUE was <strong>introduced in 2019</strong> as an extension of GLUE, consisting of a more diverse and difficult set of language understanding tasks. It includes a <strong>total of eight challenging tasks</strong>, including tasks like BoolQ (Boolean Questions), COPA (Choice of Plausible Alternatives), and RTE (Recognizing Textual Entailment), among others. These tasks are carefully designed to require more advanced reasoning and understanding abilities from models.</p>
+<p>The primary objective of SuperGLUE is to evaluate models on a more comprehensive set of tasks that demand higher levels of language comprehension and reasoning capabilities. It provides a broader and more challenging evaluation platform to assess the progress and performance of NLP models beyond what was covered by the original GLUE benchmark.</p>
+<p>Similar to GLUE, SuperGLUE also utilizes a single evaluation metric called the SuperGLUE score to assess model performance across the different tasks. The SuperGLUE benchmark has spurred further research and development in the field of NLP, pushing for advancements in model architectures, training techniques, and performance improvements.</p>
+<p>SuperGLUE has become a prominent benchmark for evaluating the state-of-the-art NLP models, building on the success of GLUE and encouraging the development of more sophisticated models that can tackle complex language understanding tasks.</p>
+<p>It&rsquo;s important to note that the SuperGLUE benchmark, while providing more challenging tasks, is still evolving, and researchers continue to work on expanding and refining the benchmark to further push the boundaries of NLP research.</p>
+<ul>
+<li><a href="https://super.gluebenchmark.com/">https://super.gluebenchmark.com/</a></li>
+<li><a href="https://super.gluebenchmark.com/leaderboard">https://super.gluebenchmark.com/leaderboard</a></li>
+<li><a href="https://paperswithcode.com/dataset/superglue">https://paperswithcode.com/dataset/superglue</a></li>
+</ul>
+<h2 id="glue--superglue-tasks">GLUE &amp; SuperGLUE tasks</h2>
+<p>Below is list of different NLP and Deep Learning tasks for which different benchmark datasets are created and model&rsquo;s perormance is measured against those tasks.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Sno</th>
+          <th>Task</th>
+          <th>Corpus</th>
+          <th>Paper</th>
+          <th>GLUE</th>
+          <th>SuperGLUE</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>Sentence acceptability judgment</td>
+          <td><a href="https://nyu-mll.github.io/CoLA/">CoLA (Corpus of Linguistic Acceptability)</a></td>
+          <td><a href="https://arxiv.org/abs/1805.12471">CoLA Warstadt et al., 2018</a></td>
+          <td>Yes</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Sentiment analysis</td>
+          <td><a href="https://nlp.stanford.edu/sentiment/index.html">SST-2 (Stanford Sentiment Treebank)</a></td>
+          <td><a href="https://nlp.stanford.edu/~socherr/EMNLP2013_RNTN.pdf">SST-2 Socher et al., 2013</a></td>
+          <td>Yes</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Paraphrasing/sentence similarity</td>
+          <td><a href="https://www.microsoft.com/en-us/download/details.aspx?id=52398">MRPC (Microsoft Research Paraphrase Corpus)</a></td>
+          <td><a href="https://aclanthology.org/I05-5002">MRPC Dolan and Brockett, 2005</a></td>
+          <td>Yes</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td></td>
+          <td><a href="http://ixa2.si.ehu.eus/stswiki/index.php/STSbenchmark">STS-B (Semantic Textual Similarity Benchmark)</a></td>
+          <td><a href="https://arxiv.org/abs/1708.00055">STS-B Ceret al., 2017</a></td>
+          <td>Yes</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td></td>
+          <td><a href="https://quoradata.quora.com/First-Quora-Dataset-Release-Question-Pairs">QQP (Quora Question Pairs)</a></td>
+          <td><a href="https://quoradata.quora.com/First-Quora-Dataset-Release-Question-Pairs">QQP Iyer et al., 2017</a></td>
+          <td>Yes</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>Natural language inference</td>
+          <td><a href="https://arxiv.org/abs/1704.05426">MNLI (Multi-Genre Natural Language Inference)</a></td>
+          <td><a href="https://arxiv.org/abs/1704.05426">MNLI Williams et al., 2017</a></td>
+          <td>Yes</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td></td>
+          <td><a href="https://rajpurkar.github.io/SQuAD-explorer/">QNLI (Question-answering Natural Language Inference)</a></td>
+          <td><a href="https://arxiv.org/abs/1606.05250">QNLI Rajpurkar et al.,2016</a></td>
+          <td>Yes</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td></td>
+          <td><a href="https://aclweb.org/aclwiki/Recognizing_Textual_Entailment">RTE (Recognizing Textual Entailment)</a></td>
+          <td><a href="https://link.springer.com/chapter/10.1007/11736790_9">RTE Dagan et al., 2005</a></td>
+          <td>Yes</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td></td>
+          <td><a href="https://github.com/mcdm/CommitmentBank">CB (CommitmentBank)</a></td>
+          <td><a href="https://semanticsarchive.net/Archive/Tg3ZGI2M/Marneffe.pdf">CB De Marneff et al., 2019</a></td>
+          <td>No</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>Sentence completion</td>
+          <td><a href="https://people.ict.usc.edu/~gordon/copa.html">COPA (Choice of Plausible Alternatives)</a></td>
+          <td><a href="https://www.researchgate.net/publication/221251392_Choice_of_Plausible_Alternatives_An_Evaluation_of_Commonsense_Causal_Reasoning">COPA Roemmele et al., 2011</a></td>
+          <td>No</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td>Word sense disambiguation</td>
+          <td><a href="https://pilehvar.github.io/wic/">WiC (Word-in-Context)</a></td>
+          <td><a href="https://arxiv.org/abs/1808.09121">WIC Pilehvar and Camacho-Collados, 2018</a></td>
+          <td>No</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td></td>
+          <td><a href="https://cs.nyu.edu/~davise/papers/WinogradSchemas/WS.html">WNLI (Winograd Natural Language Inference)</a></td>
+          <td><a href=""></a></td>
+          <td>Yes</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td>13</td>
+          <td>Question answering</td>
+          <td><a href="https://cogcomp.org/multirc/">MultiRC (Multi-sentence Reading Comprehension)</a></td>
+          <td><a href="https://aclanthology.org/N18-1023">MultiRC Khashabi et al., 2018</a></td>
+          <td>No</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>14</td>
+          <td></td>
+          <td><a href="https://sheng-z.github.io/ReCoRD-explorer/">ReCoRD (Reading Comprehension with Commonsense Reasoning Dataset)</a></td>
+          <td><a href="https://arxiv.org/abs/1810.12885">ReCoRD Zhang et al., 2018</a></td>
+          <td>No</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>15</td>
+          <td></td>
+          <td><a href="https://github.com/google-research-datasets/boolean-questions">BoolQ (Boolean Questions)</a></td>
+          <td><a href="https://arxiv.org/abs/1905.10044">BoolQ Clark et al., 2019</a></td>
+          <td>No</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>16</td>
+          <td>Common Sense Reasoning</td>
+          <td><a href="https://cs.nyu.edu/~davise/papers/WinogradSchemas/WS.html">WSC (Winograd Schema Challenge)</a></td>
+          <td><a href="https://cs.nyu.edu/~davise/papers/WinogradSchemas/WS.html"></a></td>
+          <td>No</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>17</td>
+          <td></td>
+          <td><a href="">AX-b : Broadcoverage Diagnostic - Mathew&rsquo;s Corr</a></td>
+          <td><a href=""></a></td>
+          <td>No</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>18</td>
+          <td></td>
+          <td><a href="">AX-g : Winogender Shema Diagnostic Gender Parity - Accuracy</a></td>
+          <td><a href=""></a></td>
+          <td>No</td>
+          <td>Yes</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="what-is-the-difference-between-bleu-and-glue">What is the difference between BLEU and GLUE?</h3>
+<p>The <strong>BLEU (Bilingual Evaluation Understudy)</strong> score and the <strong>GLUE (General Language Understanding Evaluation)</strong> score are two different evaluation metrics used in the field of natural language processing (NLP), and they serve different purposes and evaluate different aspects of NLP models.</p>
+<p>BLEU is a metric commonly used to evaluate the <strong>quality of machine translation</strong> systems. It measures the similarity between the machine-generated translations and reference translations provided by human translators. BLEU score is <strong>based on n-gram precision</strong>, where it compares the n-gram sequences (typically up to 4-grams) between the machine-generated output and the reference translations. It assigns a score between 0 and 1, with a higher score indicating better translation quality.</p>
+<p>GLUE, on the other hand, is a benchmark for evaluating the performance of NLP models on a range of language understanding tasks. It provides a single-number evaluation metric that aggregates the performance of a model across multiple tasks, including textual entailment, sentiment analysis, question-answering, and more. The GLUE score is a weighted average of the model&rsquo;s performance on each of these tasks, with higher scores indicating better overall language understanding capabilities.</p>
+<h2 id="what-is-meteor-score">What is METEOR Score?</h2>
+<p><strong>METEOR (Metric for Evaluation of Translation with Explicit ORdering)</strong> is a popular automatic evaluation metric used in the field of Natural Language Processing (NLP) to assess the quality of machine translation outputs. METEOR is designed to measure the overall similarity and alignment between a generated translation and a reference (human-generated) translation, taking into account multiple levels of linguistic analysis.</p>
+<p>Unlike simpler metrics such as BLEU (Bilingual Evaluation Understudy), which primarily focus on measuring n-gram overlaps between the generated and reference translations, METEOR incorporates more sophisticated linguistic features and alignments to provide a more comprehensive evaluation.</p>
+<p>Key features of the METEOR metric include:</p>
+<ul>
+<li>Tokenization and Stemming: METEOR tokenizes and stems both the generated and reference translations to handle variations in word forms and improve alignment.</li>
+<li>Exact Matching and Stem Matching: METEOR calculates the precision and recall of exact word matches as well as matches based on stemmed forms of words, considering synonyms and related words.</li>
+<li>Alignment and Synonymy: METEOR uses a paraphrase database to identify synonyms and related words, which helps in capturing semantically equivalent terms.</li>
+<li>Word Order: METEOR explicitly considers word order and alignment between words in the generated and reference translations.</li>
+<li>Chunk-based Matching: METEOR evaluates matches at the chunk level, which allows for partial credit for translations that have word-level differences but still capture the same meaning.</li>
+<li>Punctuation and Function Words: METEOR takes into account punctuation and function words and their alignment, as they play a role in overall sentence coherence.</li>
+<li>Precision and Recall: METEOR calculates precision and recall scores for each of the above components and combines them to compute the final metric.</li>
+<li>Normalization and Penalty: METEOR applies normalization to the precision and recall scores and incorporates penalty terms to balance precision and recall contributions.</li>
+</ul>
+<p>The final METEOR score is a combination of these individual components, reflecting the quality of the generated translation in terms of semantic content, syntax, word choice, and alignment with the reference translation. METEOR is designed to address some of the limitations of BLEU and provide a more holistic evaluation of translation quality, considering linguistic variations and nuances.</p>
+<p>METEOR has been widely used in machine translation research and competitions, serving as an important tool for comparing and benchmarking different translation systems and approaches. It provides a more comprehensive and linguistically informed perspective on translation quality, making it a valuable addition to the arsenal of NLP evaluation metrics.</p>
+<h2 id="what-is-xtreme-benchmark">What is XTREME Benchmark?</h2>
+<p>The XTREME (Cross-lingual TRansfer Evaluation of Multilingual Encoders) benchmark is a comprehensive evaluation framework <strong>introduced in 2020</strong> for assessing the performance of multilingual models in natural language understanding (NLU) tasks across multiple languages. It aims to evaluate the generalization and transfer capabilities of models in cross-lingual settings.</p>
+<p>XTREME was developed as an extension of previous benchmarks like GLUE and SuperGLUE, with a specific focus on evaluating models&rsquo; <strong>abilities to understand and process languages beyond English</strong>. It includes a diverse range of tasks spanning multiple languages, such as named entity recognition, part-of-speech tagging, machine translation, sentence classification, and question answering, among others.
+Tasks on <a href="https://sites.research.google/xtreme">xtreme bechmark</a></p>
+<ul>
+<li>Sentence-pair Classification</li>
+<li>Structured Prediction</li>
+<li>Question Answering</li>
+<li>Sentence Retrieval</li>
+</ul>
+<p>The main objective of the XTREME benchmark is to encourage the <strong>development of models that can effectively transfer knowledge across different languages</strong>, leveraging pretraining on large-scale multilingual data. By evaluating models on a wide range of languages and tasks, XTREME provides insights into the cross-lingual transfer capabilities and identifies areas for improvement in multilingual NLU.</p>
+<p>Similar to GLUE and SuperGLUE, XTREME utilizes a single metric called the XTREME score to assess the performance of models across the various tasks and languages. The XTREME benchmark serves as an important evaluation platform for advancing research and development in multilingual NLU, fostering the development of models that can effectively handle language diversity and facilitate cross-lingual understanding.</p>
+<p>XTREME has gained significant attention and has been instrumental in driving progress in multilingual NLU, pushing researchers to develop models that exhibit strong cross-lingual transfer capabilities and perform well across a wide range of languages and tasks. The benchmark continues to evolve and expand to include additional languages, tasks, and evaluation metrics to further enhance the evaluation of multilingual models.</p>
+<ul>
+<li><a href="https://sites.research.google/xtreme">https://sites.research.google/xtreme</a></li>
+<li><a href="https://arxiv.org/abs/2003.11080">https://arxiv.org/abs/2003.11080</a></li>
+<li><a href="https://paperswithcode.com/dataset/xtreme">https://paperswithcode.com/dataset/xtreme</a></li>
+</ul>
+<h2 id="what-is-rouge-score">What is ROUGE Score?</h2>
+<p>Recall-Oriented Understudy for Gisting Evaluation is a set of metrics for evaluating the quality of automatic summaries and machine translation. It measures the similarity between a machine-generated summary and a reference summary using overlapping n-grams, word sequences that appear in both the machine-generated summary and the reference summary.</p>
+<p>The most common n-grams used are unigrams, bigrams, and trigrams. ROUGE score calculates the recall of n-grams in the machine-generated summary by comparing them to the reference summaries.</p>
+<p>Formula for calculating ROUGE-N:</p>
+<p>$ROUGE-N = \frac{\sum_{i=1}^{m} \text{card}(S_i \cap R_i)}{\sum_{i=1}^{m} \text{card}(R_i)}$</p>
+<p>where:</p>
+<p>$S_i$ is the set of n-grams in the machine-generated summary<br>
+$R_i$ is the set of n-grams in the reference summary</p>
+<p>m is the maximum n-gram length</p>
+<p>For example, ROUGE-1 measures the overlap of unigrams, ROUGE-2 measures the overlap of bigrams, and ROUGE-L measures the longest common subsequence of the machine-generated summary and the reference summary.</p>
+<p>Advantages of using ROUGE score:</p>
+<ul>
+<li>It is a simple and easy-to-understand metric.</li>
+<li>It is relatively insensitive to changes in word order.</li>
+<li>It has been shown to be effective in evaluating the performance of automatic summaries and machine translation.</li>
+</ul>
+<p>Disadvantages of using ROUGE score:</p>
+<ul>
+<li>It does not take into account the semantic similarity between the machine-generated summary and the reference summary.</li>
+<li>It can be biased towards longer summaries.</li>
+<li>It can be difficult to interpret the results of ROUGE score for different tasks.</li>
+</ul>
+<h2 id="what-is-big-bench">What is BIG-Bench?</h2>
+<p>BIG-Bench is a collaborative benchmark intended to probe large language models and extrapolate their future capabilities. It is a diverse evaluation suite that focuses on tasks believed to be beyond the capabilities of current language models. <a href="https://dasarpai.com/dsblog/nlp-tasks#214-nlp-tasks-from-big-benchmark">214 tasks</a> included in BIG-bench are summarized by keyword.</p>
+<h2 id="deep-learning-tasks--models-on-huggingface-100k-models">Deep Learning Tasks &amp; Models on Huggingface (100K Models)</h2>
+<p>There are many tasks like below for different modalities. And there are different metrics to measure the performance of a model against those tasks. In future I will expend this article, which will contain the metrics for the tasks mentioned below.</p>
+<h3 id="computer-vision-models-6000-models"><a href="https://huggingface.co/models?pipeline_tag=translation">Computer Vision Models</a>, 6000+ Models</h3>
+<p>1 <a href="https://huggingface.co/tasks/depth-estimation">Depth Estimation</a> <br>
+2 <a href="https://huggingface.co/tasks/image-classification">Image Classification</a> <br>
+3 <a href="https://huggingface.co/tasks/image-segmentation">Image Segmentation</a> <br>
+4 <a href="https://huggingface.co/tasks/image-to-image">Image-to-Image</a> <br>
+5 <a href="https://huggingface.co/tasks/object-detection">Object Detection</a> <br>
+6 <a href="https://huggingface.co/tasks/video-classification">Video Classification</a> <br>
+7 <a href="https://huggingface.co/tasks/unconditional-image-generation">Unconditional Image Generation</a> <br>
+8 <a href="https://huggingface.co/tasks/zero-shot-image-classification">Zero-Shot Image Classification</a></p>
+<h3 id="natural-language-processing-models-65000-models"><a href="https://huggingface.co/models?pipeline_tag=text-generation">Natural Language Processing Models</a>, 65000+ Models</h3>
+<p>1 <a href="https://huggingface.co/tasks/conversational">Conversational</a> <br>
+2 <a href="https://huggingface.co/tasks/fill-mask">Fill-Mask</a> <br>
+3 <a href="https://huggingface.co/tasks/question-answering">Question Answering</a> <br>
+4 <a href="https://huggingface.co/tasks/sentence-similarity">Sentence Similarity</a> <br>
+5 <a href="https://huggingface.co/tasks/summarization">Summarization</a> <br>
+6 <a href="https://huggingface.co/tasks/table-question-answering">Table Question Answering</a> <br>
+7 <a href="https://huggingface.co/tasks/text-classification">Text Classification</a> <br>
+8 <a href="https://huggingface.co/tasks/text-generation">Text Generation</a> <br>
+9 <a href="https://huggingface.co/tasks/token-classification">Token Classification</a> <br>
+10 <a href="https://huggingface.co/tasks/translation">Translation</a> <br>
+11 <a href="https://huggingface.co/tasks/zero-shot-classification">Zero-Shot Classification</a></p>
+<h3 id="audio-models-10000-models"><a href="https://huggingface.co/models?pipeline_tag=voice-activity-detection">Audio Models</a>, 10000+ Models</h3>
+<p>1 <a href="https://huggingface.co/tasks/audio-classification">Audio Classification</a> <br>
+2 <a href="https://huggingface.co/tasks/audio-to-audio">Audio-to-Audio</a> <br>
+3 <a href="https://huggingface.co/tasks/automatic-speech-recognition">Automatic Speech Recognition</a> <br>
+4 <a href="https://huggingface.co/tasks/text-to-speech">Text-to-Speech</a> <br>
+5 <a href="https://huggingface.co/models?pipeline_tag=tabular-classification">Tabular</a> <br>
+6 <a href="https://huggingface.co/tasks/tabular-classification">Tabular Classification</a> <br>
+7 <a href="https://huggingface.co/tasks/tabular-regression">Tabular Regression</a></p>
+<h3 id="multimodal-models-9000-models"><a href="https://huggingface.co/models?pipeline_tag=reinforcement-learning">Multimodal Models</a>, 9000+ Models</h3>
+<p>1 <a href="https://huggingface.co/tasks/document-question-answering">Document Question Answering</a> <br>
+2 <a href="https://huggingface.co/tasks/feature-extraction">Feature Extraction</a> <br>
+3 <a href="https://huggingface.co/tasks/image-to-text">​Image-to-Text</a> <br>
+4 <a href="https://huggingface.co/tasks/text-to-image">Text-to-Image</a> <br>
+5 <a href="https://huggingface.co/tasks/text-to-video">Text-to-Video Contribute</a> <br>
+6 <a href="https://huggingface.co/tasks/visual-question-answering">Visual Question Answering</a></p>
+<h3 id="reinforcement-learning-22000-models"><a href="https://huggingface.co/tasks/reinforcement-learning">Reinforcement Learning</a>, 22000+ Models</h3>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

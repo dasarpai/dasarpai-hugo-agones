@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IDE Integration on Agones</title>
+    <link>http://localhost:1313/tags/ide-integration/</link>
+    <description>Recent content in IDE Integration on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ide-integration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Docker and VS Code Integration</title>
+      <link>http://localhost:1313/dsblog/Exploring-Docker-and-VS-Code-Integration/</link>
+      <pubDate>Wed, 02 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Exploring-Docker-and-VS-Code-Integration/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6151-Exploring-Docker-and-VS-Code-Integration.jpg&#34; alt=&#34;Exploring Docker and VS Code Integration&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-docker-and-vs-code-integration&#34;&gt;Exploring Docker and VS Code Integration&lt;/h1&gt;&#xA;&lt;h2 id=&#34;is-this-article-for-me&#34;&gt;Is this article for me?&lt;/h2&gt;&#xA;&lt;p&gt;If you are interested in docker, containers, VS Code and development and looking answers for the following questions then keep reading.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Question: What is use of target in docker container&amp;rsquo;s volume?&lt;/li&gt;&#xA;&lt;li&gt;Question: If I remove the contents of /vscode folder then what will happen?&lt;/li&gt;&#xA;&lt;li&gt;Question: When I have VS Code installed on my machine then why I need &amp;ldquo;VS Code Remote - Containers&amp;rdquo;?&lt;/li&gt;&#xA;&lt;li&gt;Question: Can I use &amp;ldquo;VS Code Remote - Containers&amp;rdquo; with local VS Code?&lt;/li&gt;&#xA;&lt;li&gt;Question: Can I use &amp;ldquo;VS Code Remote - Containers&amp;rdquo; without local VS Code?&lt;/li&gt;&#xA;&lt;li&gt;Question: What are formatters, linters, debuggers, profiler etc other related terms?&lt;/li&gt;&#xA;&lt;li&gt;Question: I have datasets on my local drive d:/project-datasets. How to access them from docker?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;question-what-is-use-of-target-in-docker-containers-volume&#34;&gt;Question: What is use of target in docker container&amp;rsquo;s volume?&lt;/h2&gt;&#xA;&lt;p&gt;I have a volume in container in docker. The volume name is minikube-config.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

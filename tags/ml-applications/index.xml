@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ML Applications on Agones</title>
+    <link>http://localhost:1313/tags/ml-applications/</link>
+    <description>Recent content in ML Applications on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ml-applications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Domain Knowledge in Machine Learning</title>
+      <link>http://localhost:1313/dsblog/Domain-Knowledge-in-Machine-Learning/</link>
+      <pubDate>Sat, 15 Oct 2022 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Domain-Knowledge-in-Machine-Learning/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6015-domain-knowledge-in-machine-learning.jpg&#34; alt=&#34;Domain Knowledge in Machine Learning&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;domain-knowledge-in-machine-learning&#34;&gt;Domain Knowledge in Machine Learning&lt;/h1&gt;&#xA;&lt;p&gt;Let’s say the domain is a restaurant kitchen. A dataset with 3 variables. Two predictors and one predicted. Predictor variables are flour in kilograms and water in liters.  A predicted variable is the number of roti/ bread. You know the model will be something like this.&lt;/p&gt;&#xA;&lt;p&gt;Number of roti (y). = b1 * flour in kg (x1) + b2 * water in liter (x2)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

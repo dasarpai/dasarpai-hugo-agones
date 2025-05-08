@@ -1,0 +1,305 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Exploring GGUF and Other Model Formats | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2024-11-12-6180-exploring-gguf-and-other-model-formats/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Exploring GGUF and Other Model Formats">
+  <meta property="og:description" content="Understanding GGUF and Other Model Formats in Machine Learning As machine learning models continue to grow in complexity, the need for efficient, flexible, and versatile model formats becomes more pronounced. While formats like ONNX, TensorFlow’s SavedModel, and PyTorch’s native format have been around for some time, newer formats like GGUF are gaining attention for their unique benefits. This article explores these formats, their use cases, and how they support various aspects of machine learning, including deployment, compatibility, and optimization.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-11-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-11-12T00:00:00+00:00">
+    <meta property="article:tag" content="GGUF">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="Model Formats">
+    <meta property="article:tag" content="ONNX">
+    <meta property="article:tag" content="TensorFlow">
+    <meta property="article:tag" content="PyTorch">
+
+  <meta itemprop="name" content="Exploring GGUF and Other Model Formats">
+  <meta itemprop="description" content="Understanding GGUF and Other Model Formats in Machine Learning As machine learning models continue to grow in complexity, the need for efficient, flexible, and versatile model formats becomes more pronounced. While formats like ONNX, TensorFlow’s SavedModel, and PyTorch’s native format have been around for some time, newer formats like GGUF are gaining attention for their unique benefits. This article explores these formats, their use cases, and how they support various aspects of machine learning, including deployment, compatibility, and optimization.">
+  <meta itemprop="datePublished" content="2024-11-12T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-11-12T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1159">
+  <meta itemprop="keywords" content="GGUF,ONNX,TensorFlow,PyTorch,Model Compression,Model Optimization,Machine Learning Model Formats">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exploring GGUF and Other Model Formats">
+  <meta name="twitter:description" content="Understanding GGUF and Other Model Formats in Machine Learning As machine learning models continue to grow in complexity, the need for efficient, flexible, and versatile model formats becomes more pronounced. While formats like ONNX, TensorFlow’s SavedModel, and PyTorch’s native format have been around for some time, newer formats like GGUF are gaining attention for their unique benefits. This article explores these formats, their use cases, and how they support various aspects of machine learning, including deployment, compatibility, and optimization.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6180-exploring-gguf.jpg" alt="Understanding GGUF and Other Model Formats in Machine Learning"></p>
+<h1 id="understanding-gguf-and-other-model-formats-in-machine-learning"><strong>Understanding GGUF and Other Model Formats in Machine Learning</strong></h1>
+<p>As machine learning models continue to grow in complexity, the need for efficient, flexible, and versatile model formats becomes more pronounced. While formats like ONNX, TensorFlow’s SavedModel, and PyTorch’s native format have been around for some time, newer formats like GGUF are gaining attention for their unique benefits. This article explores these formats, their use cases, and how they support various aspects of machine learning, including deployment, compatibility, and optimization.</p>
+<h2 id="1-introduction-to-model-formats-in-machine-learning"><strong>1. Introduction to Model Formats in Machine Learning</strong></h2>
+<p>Model formats are designed to standardize the way machine learning models are stored, shared, and deployed. Given that different machine learning frameworks (e.g., TensorFlow, PyTorch) have unique ways of defining models, model formats help bridge the gap by providing a unified structure. They ensure that a model trained on one platform can potentially be used on another, facilitating smoother model deployment and reducing dependencies on specific frameworks.</p>
+<h2 id="2-overview-of-popular-model-formats"><strong>2. Overview of Popular Model Formats</strong></h2>
+<p>Here are some of the most commonly used model formats in machine learning:</p>
+<h3 id="onnx-open-neural-network-exchange"><strong>ONNX (Open Neural Network Exchange)</strong></h3>
+<ul>
+<li><strong>Purpose</strong>: ONNX was created to improve interoperability between different machine learning frameworks.</li>
+<li><strong>Benefits</strong>: ONNX supports many platforms, such as PyTorch, TensorFlow, and scikit-learn, making it ideal for developers working in heterogeneous environments.</li>
+<li><strong>Use Case</strong>: It’s widely used for deploying models across platforms and is particularly strong in environments where models need to be run on multiple platforms like cloud and edge.</li>
+</ul>
+<h3 id="tensorflow-savedmodel"><strong>TensorFlow SavedModel</strong></h3>
+<ul>
+<li><strong>Purpose</strong>: This is TensorFlow’s native format designed for storing models along with metadata about training configurations and preprocessing steps.</li>
+<li><strong>Benefits</strong>: Provides high compatibility with TensorFlow’s ecosystem and supports deployment in both cloud and mobile environments.</li>
+<li><strong>Use Case</strong>: TensorFlow’s SavedModel format is perfect for production environments, especially within the TensorFlow Extended (TFX) pipeline.</li>
+</ul>
+<h3 id="pytorch-pt-or-pth"><strong>PyTorch (.pt or .pth)</strong></h3>
+<ul>
+<li><strong>Purpose</strong>: PyTorch’s default format saves models and parameters, offering flexibility in development.</li>
+<li><strong>Benefits</strong>: Allows for easy model saving and loading during experimentation, with straightforward model serialization.</li>
+<li><strong>Use Case</strong>: Frequently used in research and prototyping due to PyTorch’s flexibility and ease of use.</li>
+</ul>
+<h3 id="pmml-predictive-model-markup-language"><strong>PMML (Predictive Model Markup Language)</strong></h3>
+<ul>
+<li><strong>Purpose</strong>: An XML-based standard for representing machine learning models, which facilitates model sharing.</li>
+<li><strong>Benefits</strong>: Its standardized format means that PMML is widely accepted in enterprise settings and by analytics platforms.</li>
+<li><strong>Use Case</strong>: Common in environments where interoperability across business intelligence tools and analytics platforms is essential.</li>
+</ul>
+<h2 id="3-deep-dive-into-gguf-format"><strong>3. Deep Dive into GGUF Format</strong></h2>
+<p>GGUF is a relatively new addition to the model format ecosystem, designed for high efficiency and interoperability. It targets scenarios where memory efficiency and loading speed are crucial, making it an attractive choice for edge and mobile device deployments.</p>
+<p>GGUF (GPT-Generated Unified Format), introduced as a successor to GGML (GPT-Generated Model Language), was released on the 21st of August, 2023. This format represents a significant step forward in the field of language model file formats, facilitating enhanced storage and processing of large language models like GPT.</p>
+<p>GGML (GPT-Generated Model Language): Developed by Georgi Gerganov, GGML is a tensor library designed for machine learning, facilitating large models and high performance on various hardware, including Apple Silicon.</p>
+<h3 id="key-characteristics-of-gguf"><strong>Key Characteristics of GGUF</strong></h3>
+<ul>
+<li><strong>Efficient Storage</strong>: Optimized binary format that reduces model size while maintaining model weights and architecture information</li>
+<li><strong>Rich Metadata</strong>: Supports extensive metadata storage, including model parameters, tokenizer information, and configuration details</li>
+<li><strong>Versioning Support</strong>: Built-in versioning system to track model variations and updates</li>
+<li><strong>Quantization-Friendly</strong>: Designed to work well with various quantization schemes (4-bit, 5-bit, 8-bit etc.)</li>
+<li><strong>Memory Mapping</strong>: Enables efficient loading of large models through memory mapping</li>
+</ul>
+<p>The GGUF format has been developed with modern machine learning needs in mind, offering advantages in areas like model compression and memory optimization.</p>
+<h3 id="features-and-benefits"><strong>Features and Benefits</strong></h3>
+<ol>
+<li><strong>Compression</strong>: GGUF offers advanced compression capabilities, reducing model size significantly without sacrificing accuracy.</li>
+<li><strong>Speed</strong>: Faster load times make it a preferred format for applications requiring quick model initialization.</li>
+<li><strong>Hardware Optimization</strong>: GGUF is optimized for a range of hardware environments, making it suitable for edge devices, mobile platforms, and GPUs.</li>
+<li><strong>Compatibility</strong>: Supports integration with popular ML frameworks and is extensible, allowing developers to easily incorporate it into existing pipelines.</li>
+</ol>
+<h3 id="comparison-with-other-formats"><strong>Comparison with Other Formats</strong></h3>
+<ul>
+<li><strong>Versus ONNX</strong>: While ONNX focuses on interoperability, GGUF provides enhanced compression and speed, making it better suited for environments with limited resources.</li>
+<li><strong>Versus TensorFlow SavedModel</strong>: TensorFlow’s format is heavily tied to the TensorFlow ecosystem, while GGUF’s flexibility allows for broader usage across various platforms.</li>
+<li><strong>Versus PMML</strong>: GGUF offers more advanced capabilities for deep learning models, whereas PMML is typically used for simpler statistical models and is more common in business analytics.</li>
+</ul>
+<h2 id="4-comparison-of-model-formats-based-on-key-criteria"><strong>4. Comparison of Model Formats Based on Key Criteria</strong></h2>
+<h3 id="compression"><strong>Compression</strong></h3>
+<ul>
+<li><strong>ONNX</strong>: Supports model quantization and compression, although it’s limited compared to GGUF’s capabilities.</li>
+<li><strong>TensorFlow SavedModel</strong>: Does not inherently compress models, though TensorFlow Lite can be used for model optimization.</li>
+<li><strong>PyTorch</strong>: Offers limited built-in compression; however, third-party tools are often used for PyTorch model optimization.</li>
+<li><strong>GGUF</strong>: Designed with compression in mind, making it suitable for applications with strict memory requirements.</li>
+</ul>
+<h3 id="platform-compatibility"><strong>Platform Compatibility</strong></h3>
+<ul>
+<li><strong>ONNX</strong>: Highly compatible across platforms, with support for mobile, cloud, and on-premise deployments.</li>
+<li><strong>TensorFlow SavedModel</strong>: Best suited for TensorFlow environments, but can be converted for mobile and web deployments.</li>
+<li><strong>GGUF</strong>: Versatile enough for a variety of platforms, particularly optimized for edge devices.</li>
+<li><strong>PMML</strong>: More suited to business analytics environments rather than cutting-edge machine learning applications.</li>
+</ul>
+<h3 id="ease-of-conversion"><strong>Ease of Conversion</strong></h3>
+<ul>
+<li><strong>ONNX</strong>: Offers conversion tools from major frameworks like TensorFlow and PyTorch.</li>
+<li><strong>TensorFlow SavedModel</strong>: Conversion to TensorFlow Lite and TensorFlow.js is supported, but it’s less straightforward for non-TensorFlow frameworks.</li>
+<li><strong>GGUF</strong>: Compatible with several ML frameworks, though conversion tools are still emerging as the format gains popularity.</li>
+</ul>
+<h2 id="5-future-of-model-formats"><strong>5. Future of Model Formats</strong></h2>
+<p>The machine learning ecosystem is evolving rapidly, with an increasing focus on resource efficiency, cross-platform compatibility, and specialized deployment. Formats like GGUF are part of this evolution, pushing boundaries in compression and speed. Here’s a look at where model formats might be headed:</p>
+<h3 id="evolving-standards"><strong>Evolving Standards</strong></h3>
+<p>The future likely holds new standards and iterations of formats that cater to evolving demands for optimization, especially as AI expands into IoT and edge applications. We may see continued enhancements to ONNX and TensorFlow’s SavedModel, alongside greater adoption of GGUF for memory-sensitive applications.</p>
+<h3 id="supporting-advanced-ai-techniques"><strong>Supporting Advanced AI Techniques</strong></h3>
+<p>Future model formats may better support the needs of advanced AI techniques like fine-tuning, transfer learning, and multimodal models. As models increasingly combine text, image, and audio data, formats will adapt to support these complex structures.</p>
+<h2 id="6-conclusion"><strong>6. Conclusion</strong></h2>
+<p>Choosing the right model format is essential for ensuring that machine learning applications are efficient, scalable, and compatible with various deployment environments. While established formats like ONNX and TensorFlow’s SavedModel are reliable options, new formats like GGUF bring additional benefits, especially for edge devices and environments where compression and speed are paramount. Each format has its strengths and weaknesses, and selecting the right one will depend on factors like platform compatibility, memory constraints, and deployment needs.</p>
+<p>By understanding these formats and their specific capabilities, practitioners can make informed decisions that enhance their machine learning projects’ efficiency, portability, and overall performance.</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

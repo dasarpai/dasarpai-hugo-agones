@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Agones News on Agones</title>
+    <link>http://localhost:1313/blog/news/</link>
+    <description>Recent content in Agones News on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <atom:link href="http://localhost:1313/blog/news/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Announcing Agones 1.0.0</title>
+      <link>http://localhost:1313/blog/2019/09/25/announcing-agones-1.0.0/</link>
+      <pubDate>Wed, 25 Sep 2019 22:52:15 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/blog/2019/09/25/announcing-agones-1.0.0/</guid>
+      <description>&lt;h2 id=&#34;history&#34;&gt;History&lt;/h2&gt;&#xA;&lt;p&gt;In 2017, Agones started as a collaboration between &lt;a href=&#34;https://www.ubisoft.com&#34;&gt;Ubisoft&lt;/a&gt; and&#xA;&lt;a href=&#34;https://cloud.google.com/&#34;&gt;Google Cloud&lt;/a&gt; to develop a turn-key, open source, solution for running, scaling and&#xA;orchestrating multiplayer dedicated game servers on top of Kubernetes. They shared an equal vision of expanding the&#xA;impact of open source in game development, especially in the infrastructure and multiplayer space, and an equal&#xA;understanding of the power and capabilities of Kubernetes and how it could be extended to work with dedicated,&#xA;authoritative, simulation game servers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Welcome to the new Agones Website!</title>
+      <link>http://localhost:1313/blog/2019/01/17/welcome-to-the-new-agones-website/</link>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/blog/2019/01/17/welcome-to-the-new-agones-website/</guid>
+      <description>&lt;p&gt;Welcome to the new Agones website!&lt;/p&gt;&#xA;&lt;p&gt;We&amp;rsquo;ve implemented a new website, to enable lots of new functionality that we&amp;rsquo;re hoping to&#xA;take advantage of now and in the future:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Ability to support multiple languages&lt;/li&gt;&#xA;&lt;li&gt;Able to write documentation for new features, but keep them hidden until they are released.&lt;/li&gt;&#xA;&lt;li&gt;Search!&lt;/li&gt;&#xA;&lt;li&gt;Pretty Pictures! 😊&lt;/li&gt;&#xA;&lt;li&gt;Easy access to older versions of the documentation&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Big thanks to &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; for being the static site generator, and the&#xA;&lt;a href=&#34;https://github.com/google/docsy&#34;&gt;docsy&lt;/a&gt; team for the core documentation theme 👍&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

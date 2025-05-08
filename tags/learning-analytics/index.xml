@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learning Analytics on Agones</title>
+    <link>http://localhost:1313/tags/learning-analytics/</link>
+    <description>Recent content in Learning Analytics on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/learning-analytics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI in School Education</title>
+      <link>http://localhost:1313/dsblog/AI-in-School-Education/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/AI-in-School-Education/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6109-AI-Usecases-in-Education.jpg&#34; alt=&#34;AI in School Education&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;ai-in-school-education&#34;&gt;AI in School Education&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In the ever-evolving landscape of education, a technological revolution is quietly reshaping the way students learn, teachers instruct, and schools operate. At the heart of this transformation lies Artificial Intelligence (AI), an omnipresent force poised to revolutionize school education as we know it.&lt;/p&gt;&#xA;&lt;p&gt;AI&amp;rsquo;s emergence in education isn&amp;rsquo;t just a fleeting trend; it&amp;rsquo;s a paradigm shift with the potential to personalize learning experiences, empower educators, and reimagine the traditional classroom setup. From tailored lesson plans to administrative efficiency, AI is heralding a new era where education transcends boundaries and embraces innovation at its core.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

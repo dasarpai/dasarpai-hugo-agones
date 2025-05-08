@@ -1,0 +1,813 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Implementing Secure Authentication and Authorization | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/implementing-secure-authentication-and-authorization/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Implementing Secure Authentication and Authorization">
+  <meta property="og:description" content="Implementing Secure Authentication and Authorization Introduction Imagine you’ve created a website that sells data science courses—a valuable resource for aspiring data scientists. To maximize its potential, you want to ensure that free courses are available to everyone, while paid courses are accessible only to those who have purchased them. To achieve this, you need a robust login system (authentication) to verify users and an authorization system to control access based on their purchases. However, building and maintaining these systems can be a significant challenge—a headache, even—for a variety of reasons. In this article, we’ll explore what authentication and authorization mean in this context, why maintaining them is so complex, and how you can implement effective solutions to protect your content and satisfy your users.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-03-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="Authentication and Authorization">
+    <meta property="article:tag" content="Secure User Authentication">
+    <meta property="article:tag" content="User Authorization">
+    <meta property="article:tag" content="Security in Web Development">
+    <meta property="article:tag" content="Authentication vs Authorization">
+    <meta property="article:tag" content="Access Control in Web Development">
+
+  <meta itemprop="name" content="Implementing Secure Authentication and Authorization">
+  <meta itemprop="description" content="Implementing Secure Authentication and Authorization Introduction Imagine you’ve created a website that sells data science courses—a valuable resource for aspiring data scientists. To maximize its potential, you want to ensure that free courses are available to everyone, while paid courses are accessible only to those who have purchased them. To achieve this, you need a robust login system (authentication) to verify users and an authorization system to control access based on their purchases. However, building and maintaining these systems can be a significant challenge—a headache, even—for a variety of reasons. In this article, we’ll explore what authentication and authorization mean in this context, why maintaining them is so complex, and how you can implement effective solutions to protect your content and satisfy your users.">
+  <meta itemprop="datePublished" content="2025-03-20T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="3065">
+  <meta itemprop="keywords" content="Implementing Secure Authentication and Authorization,Secure User Authentication,User Authorization,Security in Web Development,Authentication vs Authorization">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Implementing Secure Authentication and Authorization">
+  <meta name="twitter:description" content="Implementing Secure Authentication and Authorization Introduction Imagine you’ve created a website that sells data science courses—a valuable resource for aspiring data scientists. To maximize its potential, you want to ensure that free courses are available to everyone, while paid courses are accessible only to those who have purchased them. To achieve this, you need a robust login system (authentication) to verify users and an authorization system to control access based on their purchases. However, building and maintaining these systems can be a significant challenge—a headache, even—for a variety of reasons. In this article, we’ll explore what authentication and authorization mean in this context, why maintaining them is so complex, and how you can implement effective solutions to protect your content and satisfy your users.">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p><img src="/assets/images/dspost/dsp6246-implementing-secure-authentication-and-authorization.jpg" alt="Implementing Secure Authentication and Authorization"></p>
+<h1 id="implementing-secure-authentication-and-authorization">Implementing Secure Authentication and Authorization</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Imagine you&rsquo;ve created a website that sells data science courses—a valuable resource for aspiring data scientists. To maximize its potential, you want to ensure that free courses are available to everyone, while paid courses are accessible only to those who have purchased them. To achieve this, you need a robust <strong>login system (authentication)</strong> to verify users and an <strong>authorization system</strong> to control access based on their purchases. However, building and maintaining these systems can be a significant challenge—a headache, even—for a variety of reasons. In this article, we&rsquo;ll explore what authentication and authorization mean in this context, why maintaining them is so complex, and how you can implement effective solutions to protect your content and satisfy your users.</p>
+<p>Note: You can expend this example to anything which you are selling online. The purpose of this article is to help learns understand</p>
+<ul>
+<li>What is authentication and authorization</li>
+<li>Why maintaining them is so complex</li>
+<li>How you can implement effective solutions to protect your resources</li>
+<li>What are ready made solutions which you can integrate.</li>
+</ul>
+<h2 id="understanding-authentication-and-authorization">Understanding Authentication and Authorization</h2>
+<p>Before tackling the complexities, let’s define the two key components you’ll need for your website:</p>
+<ul>
+<li>
+<p><strong>Authentication</strong>: This is the process of confirming a user’s identity. Think of it as showing your ID at a club entrance to prove who you are. On your website, authentication involves users entering credentials—typically a username and password—which your system verifies against stored records. If the credentials match, the user is logged in, and their identity is confirmed.</p>
+</li>
+<li>
+<p><strong>Authorization</strong>: Once a user’s identity is verified, authorization determines what they’re allowed to do. It’s like having a VIP pass that grants access to exclusive areas. For your site, authorization ensures that users can only access the courses they’ve paid for, while free courses remain open to all authenticated (or even unauthenticated) users.</p>
+</li>
+</ul>
+<p>Together, these systems form the backbone of your website’s access control, ensuring that your intellectual property is protected and your paying customers receive the value they expect.</p>
+<h2 id="the-challenges-of-maintaining-authentication-and-authorization-systems">The Challenges of Maintaining Authentication and Authorization Systems</h2>
+<p>While the concept seems straightforward, implementing and maintaining these systems is far from simple. Here are the primary reasons why it can become a significant headache:</p>
+<ol>
+<li>
+<p><strong>Security Risks</strong><br>
+Security is the foundation of any authentication and authorization system. A flaw in authentication could allow hackers to impersonate users, while an authorization error might grant access to paid courses without payment or vice versa. Protecting against threats like data breaches, SQL injection, or phishing requires secure password storage (e.g., hashing with salts), robust encryption, and constant vigilance to stay ahead of evolving security threats. If you are a small company focussed on creating great quality content then you simply cannot manage this with your own efforts or small team.</p>
+</li>
+<li>
+<p><strong>User Management Complexity</strong><br>
+Managing user accounts involves multiple processes: registration, login, password recovery, and possibly account deletion. Each step must be secure and user-friendly. For example, during registration, you might need to verify email addresses to prevent fake accounts, adding an extra layer of complexity to the system. When you have online presence and people all over the world are accessing your website all the time, they are using different kind of devices, different browsers, different versions of operating systems, different internet connectivity, different education level, etc. After they make payment if they cannot access their account due to any reason it is legal and reputational headache for you.</p>
+</li>
+<li>
+<p><strong>Session Management</strong><br>
+After a user logs in, you need to track their session to maintain their authenticated state as they navigate your site. This typically involves issuing session tokens or cookies, ensuring they’re transmitted securely (e.g., over HTTPS), and setting appropriate expiration times to balance security and convenience. It become more challenges when people are using multiple devices to access their content or different machine level users on the same machine.</p>
+</li>
+<li>
+<p><strong>Granular Access Control</strong><br>
+For authorization, you need a way to track which courses each user has purchased and restrict access accordingly. This likely requires a database that links users to their purchases, along with logic to check these permissions every time a user tries to access a course. As your course catalog grows, managing these relationships becomes increasingly intricate.</p>
+</li>
+<li>
+<p><strong>Payment Integration</strong><br>
+Since your paid courses involve financial transactions, you’ll need to integrate with a payment gateway. This adds complexity, as you must ensure payments are processed securely, handle failed transactions, and accurately update your authorization system once a purchase is confirmed. This is challenge because of different currency, different payment gateway, different payment method, internet connectivity etc.</p>
+</li>
+<li>
+<p><strong>Scalability Concerns</strong><br>
+As your website gains popularity, the number of users and courses may increase significantly. Your authentication and authorization systems must handle this growth without slowing down or crashing, requiring scalable infrastructure and efficient database design. For this you need CDN (content delivery network) and load balancer. But they should be integrated with your authentication and authorization system.</p>
+</li>
+<li>
+<p><strong>Balancing Security and User Experience</strong><br>
+While security is critical, an overly complex login or access process can frustrate users. For instance, requiring multiple steps to log in or frequent re-authentication might drive learners away. Striking the right balance is a constant challenge. Sometime they are locked in vicious cycle and there is no way to login. For example they forgot the password, but to change the password they need phone, which they lost 2 hours back, and get the new phone they need money and to get the money they need unlock the ATM withdrawal from the banking mobile app and for that they need phone.</p>
+</li>
+<li>
+<p><strong>Legal and Compliance Requirements</strong><br>
+Handling user data and payments means complying with regulations like the General Data Protection Regulation (GDPR) in Europe or the California Consumer Privacy Act (CCPA) in the U.S. These laws dictate how you collect, store, and process personal information, adding legal complexity to your technical workload.</p>
+</li>
+<li>
+<p><strong>Ongoing Maintenance and Updates</strong><br>
+Technology and security threats evolve rapidly. To keep your systems secure and functional, you’ll need to regularly update software, patch vulnerabilities, and monitor for suspicious activity—an ongoing commitment that demands time and resources.</p>
+</li>
+<li>
+<p><strong>Error Handling and User Support</strong><br>
+Things will go wrong: users will forget passwords, payments will fail, or access issues will arise. Your system must handle these errors gracefully, and you’ll need to provide support channels to assist users, further increasing the operational burden.</p>
+</li>
+</ol>
+<p>These challenges highlight why maintaining authentication and authorization systems can feel overwhelming. However, with the right approach, you can mitigate these issues and build a reliable solution.</p>
+<h2 id="solutions-to-simplify-authentication-and-authorization">Solutions to Simplify Authentication and Authorization</h2>
+<p>Fortunately, you don’t have to tackle this headache alone. Here are practical strategies to implement and maintain an effective system for your data science course website:</p>
+<h3 id="use-specialized-platforms">Use Specialized Platforms</h3>
+<p>Consider a <strong>Content Management System (CMS)</strong> or <strong>Learning Management System (LMS)</strong> like <strong>Moodle</strong>, <strong>Teachable</strong>, or <strong>Thinkific</strong>. These platforms often include built-in authentication and authorization features designed for course delivery, saving you the effort of custom development. For other e-commerce related stuff you have other platforms like <strong>Shopify</strong>, <strong>WooCommerce</strong>, <strong>Magento</strong> etc.</p>
+<h3 id="leverage-third-party-authentication-services">Leverage Third-Party Authentication Services</h3>
+<p>Instead of building a login system from scratch, consider using established identity providers like <strong>Auth0</strong>, <strong>Okta</strong>, or <strong>Firebase Authentication</strong>. These services handle:</p>
+<ul>
+<li>Secure user registration and login.</li>
+<li>Password recovery workflows.</li>
+<li>Optional features like social logins (e.g., Google or Facebook).<br>
+By outsourcing authentication, you reduce security risks and development time while benefiting from their expertise in user management.</li>
+</ul>
+<h3 id="implement-flexible-authorization-models">Implement Flexible Authorization Models</h3>
+<p>For controlling access to courses, adopt an authorization framework:</p>
+<ul>
+<li><strong>Role-Based Access Control (RBAC)</strong>: Assign users roles like “free user” or “paid user.” Free users access only free courses, while paid users get broader permissions.</li>
+<li><strong>Attribute-Based Access Control (ABAC)</strong>: For finer control, use attributes (e.g., “purchased Course A”) to grant access to specific courses. ABAC suits your needs better since access depends on individual purchases rather than broad roles.<br>
+Integrate this with a database that records purchases and checks permissions dynamically.</li>
+</ul>
+<h3 id="integrate-trusted-payment-gateways">Integrate Trusted Payment Gateways</h3>
+<p>Simplify payment processing with services like <strong>Stripe</strong>, <strong>PayPal</strong>, or <strong>Square</strong>. These gateways:</p>
+<ul>
+<li>Handle secure transactions.</li>
+<li>Provide APIs to confirm payments and update your authorization records.</li>
+<li>Reduce your responsibility for payment-related security compliance (e.g., PCI DSS).</li>
+</ul>
+<h3 id="design-for-scalability">Design for Scalability</h3>
+<p>Use cloud-based infrastructure (e.g., AWS, Google Cloud) that scales automatically with demand. Optimize your database and caching (e.g., Redis) to handle increased traffic as your user base grows.</p>
+<h3 id="enhance-user-experience">Enhance User Experience</h3>
+<ul>
+<li>Implement <strong>Single Sign-On (SSO)</strong> if using an identity provider, allowing users to log in once and access all services.</li>
+<li>Provide clear instructions for login, course access, and troubleshooting.</li>
+<li>Offer responsive support via email or chat to resolve issues quickly.</li>
+</ul>
+<h3 id="ensure-legal-compliance">Ensure Legal Compliance</h3>
+<p>Consult a legal expert to understand applicable data protection laws. Alternatively, use tools and services that offer compliance features (e.g., GDPR-ready user consent forms) to streamline adherence.</p>
+<h3 id="commit-to-regular-maintenance">Commit to Regular Maintenance</h3>
+<p>Schedule periodic security audits, update software libraries, and monitor logs for unusual activity. Automated tools can alert you to potential issues, keeping your system secure over time.</p>
+<h2 id="using-supabase-or-firebase">Using Supabase or Firebase</h2>
+<p>Supabase and Firebase are both <strong>Backend-as-a-Service (BaaS)</strong> platforms that play a crucial role in building online course systems by providing pre-built backend infrastructure. This allows developers to focus on creating the front-end experience and course content rather than managing servers, databases, and other backend complexities.</p>
+<hr>
+<h3 id="the-role-of-supabase-and-firebase-in-online-course-systems">The Role of Supabase and Firebase in Online Course Systems</h3>
+<h4 id="1-authentication-verifying-user-identity">1. Authentication: Verifying User Identity</h4>
+<p>Both Supabase and Firebase provide robust <strong>authentication services</strong>, a critical component for your course platform where only paid users should access premium content.</p>
+<ul>
+<li><strong>Firebase Authentication</strong>: Offers a variety of sign-in methods, including email/password, social logins (e.g., Google, Facebook), anonymous logins, and phone authentication. For your system, users could register and log in using their email or social accounts, with Firebase handling the secure verification process.</li>
+<li><strong>Supabase Authentication</strong>: Similarly supports email/password, OAuth (e.g., Google, GitHub), and magic links (passwordless login via email). It integrates seamlessly with PostgreSQL’s Row-Level Security (RLS) for fine-grained access control.</li>
+</ul>
+<p><strong>Role in our System</strong>:<br>
+Authentication ensures that users must log in to access any restricted content. For free courses, you could allow anonymous or guest access (Firebase supports this natively), while requiring full authentication for paid courses.</p>
+<hr>
+<h4 id="2-authorization-controlling-course-access">2. Authorization: Controlling Course Access</h4>
+<p>Authorization determines what authenticated users can access—key for ensuring only paying learners get premium courses.</p>
+<ul>
+<li><strong>Firebase Authorization</strong>: Uses <strong>Security Rules</strong> (for Realtime Database or Firestore) or <strong>Cloud Functions</strong> to define access permissions. You’d store purchase data (e.g., in Firestore) and write rules or logic to check if a user has paid for a course before granting access.</li>
+<li><strong>Supabase Authorization</strong>: Leverages <strong>Row-Level Security (RLS)</strong> in PostgreSQL, allowing you to define policies directly in the database. For example, a policy could restrict course data to users whose purchase records match the course ID.</li>
+</ul>
+<p><strong>Role in our System</strong>:<br>
+Authorization links user accounts to their purchased courses. Supabase’s RLS might be simpler for SQL-savvy developers, while Firebase’s rules suit those comfortable with NoSQL. Both ensure free courses are universally accessible while paid ones are locked down.</p>
+<hr>
+<h4 id="3-database-management-storing-course-and-user-data">3. Database Management: Storing Course and User Data</h4>
+<p>An online course system needs a database to store user profiles, course details, purchase history, and progress tracking.</p>
+<ul>
+<li><strong>Firebase Database</strong>: Offers two NoSQL options:
+<ul>
+<li><strong>Realtime Database</strong>: Great for simple, real-time data syncing (e.g., live course updates).</li>
+<li><strong>Firestore</strong>: More scalable, with a document-collection structure suited for structured data like user profiles and course metadata.</li>
+</ul>
+</li>
+<li><strong>Supabase Database</strong>: Uses <strong>PostgreSQL</strong>, a relational database that excels at handling complex relationships (e.g., users, courses, payments) with SQL queries and joins.</li>
+</ul>
+<p><strong>Role in our System</strong>:<br>
+The database stores course content metadata (e.g., titles, descriptions, free/paid status) and user data (e.g., email, purchased courses). Firebase’s NoSQL is faster to set up for simple structures, while Supabase’s relational model shines if you need to query relationships, like “which users bought Course X?”</p>
+<hr>
+<h4 id="4-file-storage-hosting-course-content">4. File Storage: Hosting Course Content</h4>
+<p>Courses often include videos, PDFs, or images, requiring secure file storage.</p>
+<ul>
+<li><strong>Firebase Storage</strong>: Provides a cloud-based solution integrated with Google Cloud Storage. You can upload course materials and serve them via secure URLs, with access controlled by Security Rules.</li>
+<li><strong>Supabase Storage</strong>: Offers object storage with a CDN, allowing you to store and serve files like videos or lecture notes. Access is managed via RLS or storage policies tied to user authentication.</li>
+</ul>
+<p><strong>Role in our System</strong>:<br>
+Storage hosts your course materials. Paid content URLs can be restricted to authorized users, while free content can be publicly accessible. Both platforms handle large files and scale with demand.</p>
+<hr>
+<h4 id="5-real-time-features-enhancing-interactivity">5. Real-Time Features: Enhancing Interactivity</h4>
+<p>Real-time updates can make your platform dynamic (e.g., live Q&amp;A, progress syncing).</p>
+<ul>
+<li><strong>Firebase Realtime Capabilities</strong>: Built-in with Realtime Database and Firestore, enabling instant data syncing across devices—ideal for live course notifications or collaborative features.</li>
+<li><strong>Supabase Realtime</strong>: Uses PostgreSQL’s replication to stream database changes via WebSockets, offering real-time updates for features like live quizzes or user progress.</li>
+</ul>
+<p><strong>Role in our System</strong>:<br>
+Real-time functionality could notify users of new free courses or update their progress as they complete paid lessons. Firebase’s out-of-the-box syncing is simpler, while Supabase requires some setup but integrates with its relational database.</p>
+<hr>
+<h4 id="6-serverless-functions-custom-logic-and-payment-integration">6. Serverless Functions: Custom Logic and Payment Integration</h4>
+<p>You’ll need custom backend logic for tasks like processing payments and updating access.</p>
+<ul>
+<li><strong>Firebase Cloud Functions</strong>: Run serverless JavaScript/TypeScript code triggered by events (e.g., a purchase updates Firestore). Integrates easily with payment gateways like Stripe.</li>
+<li><strong>Supabase Edge Functions</strong>: Similar serverless functions (in JavaScript/TypeScript) that can handle payment webhooks or custom authorization logic, deployed globally for low latency.</li>
+</ul>
+<p><strong>Role in our System</strong>:<br>
+After a user pays via a gateway like Stripe, a function updates their purchase record, granting access to the course. Both platforms simplify this without requiring you to manage servers.</p>
+<hr>
+<h4 id="7-apis-connecting-front-end-to-back-end">7. APIs: Connecting Front-End to Back-End</h4>
+<p>Your website needs APIs to fetch course data and user info.</p>
+<ul>
+<li><strong>Firebase APIs</strong>: Provides client SDKs (e.g., JavaScript, Flutter) for direct database access, reducing the need for custom APIs, though REST APIs are available.</li>
+<li><strong>Supabase APIs</strong>: Auto-generates RESTful APIs from your PostgreSQL schema, plus a GraphQL option, making it easy to query data from any front-end.</li>
+</ul>
+<p><strong>Role in our System</strong>:<br>
+APIs deliver course lists (free and paid) to your front-end and handle user-specific data like enrolled courses. Supabase’s auto-generated APIs are a time-saver for relational data, while Firebase’s SDKs streamline NoSQL access.</p>
+<hr>
+<h3 id="key-differences-in-their-roles">Key Differences in Their Roles</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Firebase</th>
+          <th>Supabase</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Database Type</strong></td>
+          <td>NoSQL (Firestore, Realtime DB)</td>
+          <td>Relational (PostgreSQL)</td>
+      </tr>
+      <tr>
+          <td><strong>Ease of Setup</strong></td>
+          <td>Faster for simple apps, less config</td>
+          <td>More setup but greater control</td>
+      </tr>
+      <tr>
+          <td><strong>Authorization</strong></td>
+          <td>Security Rules, Cloud Functions</td>
+          <td>Row-Level Security (RLS)</td>
+      </tr>
+      <tr>
+          <td><strong>Open-Source</strong></td>
+          <td>Proprietary (Google)</td>
+          <td>Open-source, self-hosting option</td>
+      </tr>
+      <tr>
+          <td><strong>Cost Model</strong></td>
+          <td>Per read/write, can escalate</td>
+          <td>Per storage, unlimited API requests</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><strong>Firebase</strong> excels in rapid development and real-time features, making it ideal if you want to quickly launch a course platform with minimal backend setup. Its integration with Google services (e.g., Analytics) adds value for tracking user engagement.</li>
+<li><strong>Supabase</strong> shines for developers comfortable with SQL, offering more control over data relationships and a transparent, predictable pricing model. It’s a strong fit if your course system grows complex or you prefer avoiding vendor lock-in.</li>
+</ul>
+<hr>
+<h3 id="how-they-fit-your-specific-needs">How They Fit Your Specific Needs</h3>
+<p>For our website:</p>
+<ul>
+<li><strong>Login System (Authentication)</strong>: Both handle this effortlessly. Firebase offers more sign-in options, while Supabase’s magic links add a modern touch.</li>
+<li><strong>Authorization System</strong>: Supabase’s RLS simplifies restricting paid courses to buyers via database policies. Firebase requires more manual rule-writing or function logic.</li>
+<li><strong>Headache Reduction</strong>: Firebase’s all-in-one ecosystem reduces setup time but may limit flexibility. Supabase offloads some complexity with its open-source nature and third-party integrations (e.g., for payments), though it requires more initial configuration.</li>
+</ul>
+<hr>
+<h3 id="recommendation">Recommendation</h3>
+<ul>
+<li><strong>Choose Firebase</strong> if you prioritize speed, simplicity, and real-time features, and don’t mind a NoSQL structure or potential cost unpredictability as usage grows.</li>
+<li><strong>Choose Supabase</strong> if you need relational data handling (e.g., linking users, courses, and payments), value open-source flexibility, and prefer predictable costs for scaling.</li>
+</ul>
+<h2 id="what-about-using-google-cloud-console-or-github-authentication">What about using Google Cloud Console or Github Authentication?</h2>
+<h3 id="overview-of-each-authentication-method">Overview of Each Authentication Method</h3>
+<ol>
+<li>
+<p><strong>Supabase Authentication</strong></p>
+<ul>
+<li>A <strong>Backend-as-a-Service (BaaS)</strong> feature built on PostgreSQL, providing email/password, OAuth (e.g., Google, GitHub), and magic link logins.</li>
+<li>Tightly integrated with Supabase’s database and storage, using Row-Level Security (RLS) for authorization.</li>
+<li>Designed for full-stack app development with minimal server management.</li>
+</ul>
+</li>
+<li>
+<p><strong>Firebase Authentication</strong></p>
+<ul>
+<li>Another <strong>BaaS</strong> feature from Google, offering email/password, social logins (e.g., Google, Facebook), anonymous logins, and phone auth.</li>
+<li>Integrated with Firebase’s NoSQL databases (Firestore, Realtime Database) and storage, using Security Rules for authorization.</li>
+<li>Aimed at rapid app development with a serverless architecture.</li>
+</ul>
+</li>
+<li>
+<p><strong>Google Cloud Console-Based Authentication</strong></p>
+<ul>
+<li>Refers to authentication tools within Google Cloud Platform (GCP), such as:
+<ul>
+<li><strong>OAuth 2.0</strong>: Managed via Google Cloud Identity or APIs for app-to-app or user authentication.</li>
+<li><strong>Service Accounts</strong>: Machine-to-machine authentication using JSON key files.</li>
+<li><strong>API Keys</strong>: Simple tokens for accessing GCP APIs or services.</li>
+</ul>
+</li>
+<li>Typically used for securing GCP resources (e.g., Compute Engine, Cloud Storage) or building custom APIs.</li>
+<li>It can be used for authentication of our application. But it makes more sense if our app is used some google services. For example google docs, emails, calendar, map, gcp resources, analytics etc. But, even if you are not using these google services you can use google&rsquo;s autentication system.</li>
+</ul>
+</li>
+<li>
+<p><strong>GitHub-Based Auth App (OAuth App)</strong></p>
+<ul>
+<li>Uses GitHub’s OAuth flow to authenticate users via their GitHub accounts.</li>
+<li>Common for apps requiring GitHub-specific access (e.g., repositories) but can be adapted for general login.</li>
+<li>Google offers two kinds of authentications</li>
+<li><strong>OAuth App</strong></li>
+<li><strong>Personal Access Token (PAT)</strong></li>
+</ul>
+</li>
+</ol>
+<h2 id="googles-api-keys-oauth-20-and-service-accounts">Google&rsquo;s <strong>API Keys</strong>, <strong>OAuth 2.0</strong>, and <strong>Service Accounts</strong>:</h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Attribute</strong></th>
+          <th><strong>API Key</strong></th>
+          <th><strong>OAuth 2.0</strong></th>
+          <th><strong>Service Account</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Description</strong></td>
+          <td>A unique identifier used to authenticate applications accessing public APIs that don&rsquo;t require user data.</td>
+          <td>A protocol that allows applications to access user data with the user&rsquo;s consent, without sharing passwords.</td>
+          <td>A special account used for server-to-server authentication, allowing applications to access resources without user intervention.</td>
+      </tr>
+      <tr>
+          <td><strong>Use Cases</strong></td>
+          <td>- Accessing public data or services (e.g., Google Maps, Google Analytics).</td>
+          <td>- Accessing user-specific data (e.g., user profile information, calendars).<br>- Integrating with Google services on behalf of users.</td>
+          <td>- Server-to-server interactions (e.g., accessing Google Cloud services).<br>- Applications acting on behalf of users in an enterprise environment.</td>
+      </tr>
+      <tr>
+          <td><strong>User Interaction</strong></td>
+          <td>Minimal; no user consent required.</td>
+          <td>High; users must authenticate and grant permissions.</td>
+          <td>None; operates without user involvement.</td>
+      </tr>
+      <tr>
+          <td><strong>Security Considerations</strong></td>
+          <td>Less secure; if exposed, can be used by unauthorized parties.</td>
+          <td>Secure; tokens have limited scope and lifespan.</td>
+          <td>Secure; requires proper key management and permissions.</td>
+      </tr>
+      <tr>
+          <td><strong>Example</strong></td>
+          <td>Using an API key to access public data from Google Maps.</td>
+          <td>Implementing OAuth 2.0 to allow users to log in with their Google account and access their calendar data. citeturn0search0</td>
+          <td>Utilizing a service account to access Google Cloud Storage for storing course materials without user intervention. citeturn0search1</td>
+      </tr>
+  </tbody>
+</table>
+<div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a><a href="/categories/security-in-web-development" class="category-badge">Security in Web Development</a><a href="/categories/web-development" class="category-badge">Web Development</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/authentication-and-authorization" class="category-badge">Authentication and Authorization</a><a href="/tags/secure-user-authentication" class="category-badge">Secure User Authentication</a><a href="/tags/user-authorization" class="category-badge">User Authorization</a><a href="/tags/security-in-web-development" class="category-badge">Security in Web Development</a><a href="/tags/authentication-vs-authorization" class="category-badge">Authentication vs Authorization</a><a href="/tags/access-control-in-web-development" class="category-badge">Access Control in Web Development</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=Implementing%20Secure%20Authentication%20and%20Authorization&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fimplementing-secure-authentication-and-authorization%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fimplementing-secure-authentication-and-authorization%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fimplementing-secure-authentication-and-authorization%2f&title=Implementing%20Secure%20Authentication%20and%20Authorization" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fimplementing-secure-authentication-and-authorization%2f&title=Implementing%20Secure%20Authentication%20and%20Authorization" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=Implementing%20Secure%20Authentication%20and%20Authorization&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fimplementing-secure-authentication-and-authorization%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/code-review-with-coderabbit-ai/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">CodeReview with CodeRabbit AI - A Better Way to Automate Code Reviews</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/grok3model-and-sanskrit/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">Grok 3 Model and Sanskrit</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#understanding-authentication-and-authorization">Understanding Authentication and Authorization</a></li>
+    <li><a href="#the-challenges-of-maintaining-authentication-and-authorization-systems">The Challenges of Maintaining Authentication and Authorization Systems</a></li>
+    <li><a href="#solutions-to-simplify-authentication-and-authorization">Solutions to Simplify Authentication and Authorization</a>
+      <ul>
+        <li><a href="#use-specialized-platforms">Use Specialized Platforms</a></li>
+        <li><a href="#leverage-third-party-authentication-services">Leverage Third-Party Authentication Services</a></li>
+        <li><a href="#implement-flexible-authorization-models">Implement Flexible Authorization Models</a></li>
+        <li><a href="#integrate-trusted-payment-gateways">Integrate Trusted Payment Gateways</a></li>
+        <li><a href="#design-for-scalability">Design for Scalability</a></li>
+        <li><a href="#enhance-user-experience">Enhance User Experience</a></li>
+        <li><a href="#ensure-legal-compliance">Ensure Legal Compliance</a></li>
+        <li><a href="#commit-to-regular-maintenance">Commit to Regular Maintenance</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-supabase-or-firebase">Using Supabase or Firebase</a>
+      <ul>
+        <li><a href="#the-role-of-supabase-and-firebase-in-online-course-systems">The Role of Supabase and Firebase in Online Course Systems</a></li>
+        <li><a href="#key-differences-in-their-roles">Key Differences in Their Roles</a></li>
+        <li><a href="#how-they-fit-your-specific-needs">How They Fit Your Specific Needs</a></li>
+        <li><a href="#recommendation">Recommendation</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-about-using-google-cloud-console-or-github-authentication">What about using Google Cloud Console or Github Authentication?</a>
+      <ul>
+        <li><a href="#overview-of-each-authentication-method">Overview of Each Authentication Method</a></li>
+      </ul>
+    </li>
+    <li><a href="#googles-api-keys-oauth-20-and-service-accounts">Google&rsquo;s <strong>API Keys</strong>, <strong>OAuth 2.0</strong>, and <strong>Service Accounts</strong>:</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

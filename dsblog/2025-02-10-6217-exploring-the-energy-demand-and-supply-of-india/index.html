@@ -1,0 +1,567 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Exploring the Energy Demand and Supply of India | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2025-02-10-6217-exploring-the-energy-demand-and-supply-of-india/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Exploring the Energy Demand and Supply of India">
+  <meta property="og:description" content="Exploring the Energy Demand and Supply of India Introduction When India talks about becoming a Vishwa Guru (World Leader), Vishwa Mitra (Friend of the World), the Leader of the South, or an AI Superpower, we must first understand our own electricity demand and supply. Without this understanding, these grand aspirations will remain mere words in the 21st century.
+I know energy experts are already discussing these issues, but those of us in AI development and semiconductor manufacturing also need to be on the same page. We cannot pursue narrow, isolated advancements without acknowledging our energy requirements. In this article, I aim to provoke my fellow data science community members in India to think critically about this issue—ask questions, analyze the situation, raise concerns in the right forums, and develop solutions.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-02-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-10T00:00:00+00:00">
+    <meta property="article:tag" content="Energy">
+    <meta property="article:tag" content="India">
+
+  <meta itemprop="name" content="Exploring the Energy Demand and Supply of India">
+  <meta itemprop="description" content="Exploring the Energy Demand and Supply of India Introduction When India talks about becoming a Vishwa Guru (World Leader), Vishwa Mitra (Friend of the World), the Leader of the South, or an AI Superpower, we must first understand our own electricity demand and supply. Without this understanding, these grand aspirations will remain mere words in the 21st century.
+I know energy experts are already discussing these issues, but those of us in AI development and semiconductor manufacturing also need to be on the same page. We cannot pursue narrow, isolated advancements without acknowledging our energy requirements. In this article, I aim to provoke my fellow data science community members in India to think critically about this issue—ask questions, analyze the situation, raise concerns in the right forums, and develop solutions.">
+  <meta itemprop="datePublished" content="2025-02-10T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-02-10T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2316">
+  <meta itemprop="keywords" content="Energy Demand in India,Electricity Supply in India,Renewable Energy for Data Centers,AI Energy Requirements,Energy Sustainability in India,India Data Center Energy,Green Energy for AI in India">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exploring the Energy Demand and Supply of India">
+  <meta name="twitter:description" content="Exploring the Energy Demand and Supply of India Introduction When India talks about becoming a Vishwa Guru (World Leader), Vishwa Mitra (Friend of the World), the Leader of the South, or an AI Superpower, we must first understand our own electricity demand and supply. Without this understanding, these grand aspirations will remain mere words in the 21st century.
+I know energy experts are already discussing these issues, but those of us in AI development and semiconductor manufacturing also need to be on the same page. We cannot pursue narrow, isolated advancements without acknowledging our energy requirements. In this article, I aim to provoke my fellow data science community members in India to think critically about this issue—ask questions, analyze the situation, raise concerns in the right forums, and develop solutions.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6217-Exploring-the-Energy-Demand-and-Supply-of-India.jpg" alt="Exploring the Energy Demand and Supply of India"></p>
+<h1 id="exploring-the-energy-demand-and-supply-of-india">Exploring the Energy Demand and Supply of India</h1>
+<h2 id="introduction">Introduction</h2>
+<p>When India talks about becoming a <em>Vishwa Guru</em> (World Leader), <em>Vishwa Mitra</em> (Friend of the World), the <em>Leader of the South</em>, or an <em>AI Superpower</em>, we must first understand our own electricity demand and supply. Without this understanding, these grand aspirations will remain mere words in the 21st century.</p>
+<p>I know energy experts are already discussing these issues, but those of us in AI development and semiconductor manufacturing also need to be on the same page. We cannot pursue narrow, isolated advancements without acknowledging our energy requirements. In this article, I aim to provoke my fellow data science community members in India to think critically about this issue—ask questions, analyze the situation, raise concerns in the right forums, and develop solutions.</p>
+<p>I am not from an energy background, but I have come to see this as a critical issue. With a growing population and rising aspirations, both of the existing and new generations, it is imperative that we engage in discussions on energy sustainability.</p>
+<p>Some time ago, I wondered why major companies were not establishing data centers in India and why I had to rely on web hosting or AI solution hosting on American, European, or Japanese servers—and in the future, possibly Chinese servers. As of today, security concerns prevent us from using Chinese infrastructure, but if security is the issue, then American and European platforms are not necessarily safer either. We have already seen the situation with Russia.</p>
+<p>This article does not aim to provide answers or solutions — it is meant to spark thought and discussion.</p>
+<h2 id="what-the-electricity-demand-and-supply-in-india-usa-and-gloal">What the Electricity demand and supply in India, USA and Gloal?</h2>
+<p>Here&rsquo;s a table summarizing the electricity consumption and generation data for 2023 and projections for 2030, including global, U.S., and India-specific figures, along with data center electricity demands:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Category</strong></th>
+          <th><strong>Global (TWh)</strong></th>
+          <th><strong>United States (TWh)</strong></th>
+          <th><strong>India (TWh)</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Electricity Demand (2023)</strong></td>
+          <td>29,471</td>
+          <td>4,000</td>
+          <td>1,500</td>
+      </tr>
+      <tr>
+          <td><strong>Electricity Demand (2030 Projection)</strong></td>
+          <td>52,000–71,000</td>
+          <td>4,500</td>
+          <td>2,000</td>
+      </tr>
+      <tr>
+          <td><strong>Electricity Generation (2023)</strong></td>
+          <td>29,925</td>
+          <td>4,100</td>
+          <td>1,600</td>
+      </tr>
+      <tr>
+          <td><strong>Data Center Electricity Demand (2023)</strong></td>
+          <td>130</td>
+          <td>50</td>
+          <td>10</td>
+      </tr>
+      <tr>
+          <td><strong>Data Center Electricity Demand (2030 Projection)</strong></td>
+          <td>307</td>
+          <td>88</td>
+          <td>20</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>
+<p><strong>Electricity Demand (2023):</strong> Global electricity demand reached a record high of 29,471 TWh in 2023. <a href="https://ember-energy.org/latest-insights/global-electricity-review-2024/electricity-transition-in-2023/">ember-energy</a> The U.S. consumed approximately 4,000 TWh, and India&rsquo;s demand was around 1,500 TWh.</p>
+</li>
+<li>
+<p><strong>Electricity Demand (2030 Projection):</strong> Projections indicate that global electricity demand could rise to between 52,000 and 71,000 TWh by 2030, driven by factors such as electrification and economic growth. [mckinsey.com/](<a href="https://www.mckinsey.com/industries/oil-and-gas/our-insights/global-energy-perspective-2023-power-outlook">https://www.mckinsey.com/industries/oil-and-gas/our-insights/global-energy-perspective-2023-power-outlook</a> The U.S. demand is expected to increase to 4,500 TWh, and India&rsquo;s to 2,000 TWh.</p>
+</li>
+<li>
+<p><strong>Electricity Generation (2023):</strong> Global electricity generation in 2023 was approximately 29,925 TWh. <a href="https://www.energyinst.org/statistical-review">energyinst.org</a> The U.S. generated about 4,100 TWh, and India around 1,600 TWh.</p>
+</li>
+<li>
+<p><strong>Data Center Electricity Demand (2023):</strong> In 2023, global data centers consumed about 130 TWh. <a href="https://www.oxfordenergy.org/wpcms/wp-content/uploads/2025/01/Global-electricity-demand.pdf">oxfordenergy.org</a> The U.S. accounted for 50 TWh, and India for 10 TWh.</p>
+</li>
+<li>
+<p><strong>Data Center Electricity Demand (2030 Projection):</strong> By 2030, global data center electricity demand is projected to increase to 307 TWh. <a href="https://www.oxfordenergy.org/wpcms/wp-content/uploads/2025/01/Global-electricity-demand.pdf">oxfordenergy.org</a> The U.S. is expected to consume 88 TWh, and India 20 TWh.</p>
+</li>
+</ul>
+<h2 id="how-much-power-each-grid-generate-in-india">How much power each grid generate in India?</h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Region</strong></th>
+          <th><strong>States Covered</strong></th>
+          <th><strong>Installed Capacity (GW)</strong></th>
+          <th><strong>Percentage of National Total</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Western</strong></td>
+          <td>Gujarat, Maharashtra, Madhya Pradesh, Chhattisgarh, Goa, Dadra and Nagar Haveli, Daman and Diu</td>
+          <td>149.13</td>
+          <td>~35%</td>
+      </tr>
+      <tr>
+          <td><strong>Northern</strong></td>
+          <td>Delhi, Haryana, Punjab, Rajasthan, Uttar Pradesh, Uttarakhand, Himachal Pradesh, Jammu &amp; Kashmir, Chandigarh, Ladakh</td>
+          <td>149.13</td>
+          <td>~35%</td>
+      </tr>
+      <tr>
+          <td><strong>Southern</strong></td>
+          <td>Andhra Pradesh, Karnataka, Kerala, Tamil Nadu, Telangana, Lakshadweep</td>
+          <td>117.68</td>
+          <td>~25%</td>
+      </tr>
+      <tr>
+          <td><strong>Eastern</strong></td>
+          <td>West Bengal, Odisha, Bihar, Jharkhand, Sikkim, Andaman &amp; Nicobar Islands</td>
+          <td>46.28</td>
+          <td>~10%</td>
+      </tr>
+      <tr>
+          <td><strong>North-Eastern</strong></td>
+          <td>Assam, Arunachal Pradesh, Manipur, Meghalaya, Mizoram, Nagaland, Tripura, Sikkim</td>
+          <td>5.10</td>
+          <td>~1%</td>
+      </tr>
+      <tr>
+          <td><strong>Total</strong></td>
+          <td>All India</td>
+          <td><strong>462</strong></td>
+          <td><strong>100%</strong></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="why-the-cost-of-energy-in-india-cheaper">Why the cost of energy in India cheaper?</h2>
+<h3 id="1-energy-source--generation-mix"><strong>1. Energy Source &amp; Generation Mix</strong></h3>
+<ul>
+<li><strong>India relies heavily on coal (~70% of electricity production)</strong>, which is domestically available and cheaper than imported fuels.</li>
+<li><strong>Renewable energy (solar, wind, hydro) is growing</strong>, contributing to lower generation costs.</li>
+<li>The USA, in contrast, has <strong>higher reliance on natural gas and nuclear energy</strong>, which can be more expensive.</li>
+</ul>
+<h3 id="2-government-subsidies--regulation"><strong>2. Government Subsidies &amp; Regulation</strong></h3>
+<ul>
+<li><strong>Indian government provides subsidies</strong> to make electricity affordable, especially for residential and agricultural use.</li>
+<li><strong>Cross-subsidization:</strong> Industrial and commercial users pay <strong>higher rates</strong>, which helps lower residential costs.</li>
+<li>In the USA, electricity prices are more market-driven and <strong>less subsidized</strong>.</li>
+</ul>
+<h3 id="3-lower-infrastructure--labor-costs"><strong>3. Lower Infrastructure &amp; Labor Costs</strong></h3>
+<ul>
+<li><strong>Building power plants, maintaining grids, and labor costs are cheaper in India</strong> than in developed countries.</li>
+<li>The USA has <strong>higher wages, stricter regulations, and expensive infrastructure upgrades</strong>, increasing costs.</li>
+</ul>
+<h3 id="4-currency-value--purchasing-power-parity"><strong>4. Currency Value &amp; Purchasing Power Parity</strong></h3>
+<ul>
+<li>India’s currency (INR) is weaker compared to the USD, meaning <strong>energy costs less in dollar terms</strong>.</li>
+<li>In purchasing power terms, India&rsquo;s lower costs reflect <strong>overall lower living expenses</strong>.</li>
+</ul>
+<h3 id="5-different-electricity-market-models"><strong>5. Different Electricity Market Models</strong></h3>
+<ul>
+<li><strong>India has a government-controlled electricity market</strong>, where prices are regulated.</li>
+<li>The <strong>USA has a deregulated electricity market</strong> in many states, leading to price variations and sometimes higher costs.</li>
+</ul>
+<h3 id="6-demand-patterns--consumption-differences"><strong>6. Demand Patterns &amp; Consumption Differences</strong></h3>
+<ul>
+<li><strong>Per capita electricity consumption in India is much lower (~1,200 kWh per year) compared to the USA (~12,000 kWh per year).</strong></li>
+<li>Lower demand per household <strong>reduces infrastructure and transmission stress</strong>, keeping costs lower.</li>
+</ul>
+<h3 id="7-grid-efficiency--transmission-costs"><strong>7. Grid Efficiency &amp; Transmission Costs</strong></h3>
+<ul>
+<li><strong>India’s power grid losses are high (~18% due to theft &amp; inefficiencies),</strong> but production remains cheap.</li>
+<li>In the <strong>USA, power transmission is costly</strong>, especially in large states like <strong>California</strong> where long-distance transmission is required.</li>
+</ul>
+<h3 id="conclusion"><strong>Conclusion</strong></h3>
+<p>India&rsquo;s <strong>cheaper electricity is due to coal reliance, subsidies, lower labor &amp; infrastructure costs, and government regulation</strong>. However, industrial and commercial users in India <strong>pay higher rates</strong>, which balances the system.</p>
+<h2 id="why-the-cost-of-electricy-in-the-france-is-the-cheap">Why the cost of Electricy in the France is the cheap?</h2>
+<p>While France&rsquo;s electricity prices have historically been lower than many European countries due to its significant reliance on nuclear energy, recent trends indicate a rise in costs.</p>
+<h3 id="current-electricity-prices-in-france"><strong>Current Electricity Prices in France:</strong></h3>
+<ul>
+<li>
+<p><strong>Average Price:</strong> As of May 2023, the average electricity price in France was approximately €0.2062 per kWh. citeturn0search0</p>
+</li>
+<li>
+<p><strong>Recent Increases:</strong> In 2017, the price was about €0.10 per kWh, but it has since risen to around €0.27 per kWh, nearly tripling over the past few years. citeturn0search1</p>
+</li>
+</ul>
+<h3 id="comparison-with-other-countries"><strong>Comparison with Other Countries:</strong></h3>
+<ul>
+<li>
+<p><strong>United States:</strong> Electricity prices vary significantly across the U.S., ranging from approximately $0.15 to $0.50 per kWh, depending on the state.</p>
+</li>
+<li>
+<p><strong>India:</strong> Electricity costs are generally lower, averaging around ₹7 to ₹10 per kWh (approximately $0.08 to $0.12).</p>
+</li>
+</ul>
+<h3 id="factors-influencing-france"><strong>Factors Influencing France&rsquo;s Electricity Prices:</strong></h3>
+<ul>
+<li>
+<p><strong>Nuclear Energy Costs:</strong> While nuclear energy has historically provided low-cost electricity, recent investments in safety and infrastructure have increased production costs.</p>
+</li>
+<li>
+<p><strong>Market Dynamics:</strong> Fluctuations in energy markets and increased demand have contributed to rising electricity prices.</p>
+</li>
+</ul>
+<p><strong>Conclusion:</strong></p>
+<p>While France&rsquo;s electricity prices were once among the lowest in Europe, recent increases have narrowed the gap. Currently, France&rsquo;s electricity prices are higher than those in India but comparable to or slightly lower than those in many parts of the United States.</p>
+<h2 id="why-dont-we-have-many-datacenters-in-india">Why don&rsquo;t we have many datacenters in India?</h2>
+<p>If electricity cost is so cheap in India then why don&rsquo;t we have many data centres in India like we have another part of world?</p>
+<p>Even though <strong>electricity is cheaper in India</strong>, several other factors influence the <strong>data center industry</strong>. Here’s why <strong>India doesn’t have as many large-scale data centers as regions like the USA or Europe</strong>:</p>
+<h3 id="1-infrastructure-challenges"><strong>1. Infrastructure Challenges</strong></h3>
+<ul>
+<li><strong>Power Reliability Issues</strong> → While electricity is <strong>cheap</strong>, <strong>power outages and grid instability</strong> in some regions make it <strong>less attractive for 24/7 data center operations</strong>.</li>
+<li><strong>Cooling &amp; Climate</strong> → Many Indian cities have <strong>hot &amp; humid climates</strong>, which <strong>increase cooling costs</strong> compared to <strong>colder regions like Northern Europe, Canada, or the US West Coast</strong> (where natural cooling reduces expenses).</li>
+</ul>
+<h3 id="2-latency--proximity-to-users"><strong>2. Latency &amp; Proximity to Users</strong></h3>
+<ul>
+<li><strong>Major data centers are built closer to large user bases &amp; businesses</strong> to <strong>reduce latency</strong>.</li>
+<li><strong>India’s internet infrastructure has been improving</strong>, but it still lags behind the USA or Europe in ultra-low-latency fiber networks.</li>
+<li><strong>Tech companies prioritize locations closer to North America &amp; Europe</strong> since that’s where their primary customers are.</li>
+</ul>
+<h3 id="3-land--real-estate-costs"><strong>3. Land &amp; Real Estate Costs</strong></h3>
+<ul>
+<li><strong>Urban land prices in India (especially in Mumbai, Bangalore, Delhi) are very high</strong>, making large-scale data center expansion costly.</li>
+<li><strong>Countries like the USA have large, cheap rural areas</strong> where massive data centers can be built more affordably (e.g., Texas, Utah, Oregon).</li>
+</ul>
+<h3 id="4-government-policies--regulations"><strong>4. Government Policies &amp; Regulations</strong></h3>
+<ul>
+<li><strong>Until recently, India&rsquo;s data localization policies were unclear</strong>, making international companies hesitant.</li>
+<li><strong>Some nations offer tax incentives for data centers</strong>, which India <strong>didn’t focus on until recently</strong>.</li>
+</ul>
+<h3 id="5-water--environmental-concerns"><strong>5. Water &amp; Environmental Concerns</strong></h3>
+<ul>
+<li><strong>Data centers require a lot of water for cooling.</strong></li>
+<li><strong>India has water scarcity in many regions</strong>, making cooling solutions difficult compared to water-rich areas in the USA, Canada, or Europe.</li>
+</ul>
+<h3 id="6-network-infrastructure--connectivity"><strong>6. Network Infrastructure &amp; Connectivity</strong></h3>
+<ul>
+<li><strong>India is improving its fiber optics &amp; submarine cable networks</strong>, but it’s still behind countries like the USA, UK, and Singapore.</li>
+<li><strong>Better fiber backbone = lower latency = better performance for global customers</strong>.</li>
+</ul>
+<h3 id="7-political--business-stability"><strong>7. Political &amp; Business Stability</strong></h3>
+<ul>
+<li>Many global corporations prefer <strong>politically stable, predictable economies</strong> for long-term investment.</li>
+<li><strong>India has improved in ease of doing business</strong>, but some foreign companies still <strong>see regulatory unpredictability as a risk</strong>.</li>
+</ul>
+<h3 id="however-things-are-changing"><strong>However, Things Are Changing!</strong></h3>
+<p>India <strong>IS becoming a major data center hub</strong>, thanks to:<br>
+✔ <strong>Cloud companies (AWS, Google, Azure) investing in Indian data centers</strong>.<br>
+✔ <strong>Government support for data localization &amp; digital infrastructure</strong>.<br>
+✔ <strong>Growth of India&rsquo;s digital economy &amp; 5G networks</strong>.</p>
+<p>Major upcoming data center hubs:<br>
+✅ <strong>Mumbai</strong> (biggest data center market)<br>
+✅ <strong>Chennai</strong> (submarine cable landing point)<br>
+✅ <strong>Hyderabad &amp; Bangalore</strong> (tech hubs)<br>
+✅ <strong>Noida &amp; Pune</strong> (upcoming investments)</p>
+<h3 id="conclusion-1"><strong>Conclusion</strong></h3>
+<p>Despite <strong>cheap electricity</strong>, challenges like <strong>power reliability, real estate costs, cooling needs, network latency, and regulatory concerns</strong> have slowed down India&rsquo;s <strong>data center expansion</strong>. However, with <strong>growing cloud demand, infrastructure improvements, and government support</strong>, India is now <strong>becoming a key player</strong> in the global <strong>data center industry</strong>.</p>
+<h2 id="can-we-use-indian-oceans-for-data-center-cooling">Can we use Indian oceans for data center cooling?</h2>
+<p>Yes, <strong>using the Indian Ocean for data center cooling</strong> is a viable idea, but it comes with challenges and opportunities. Let&rsquo;s break it down:</p>
+<hr>
+<h3 id="-advantages-of-using-the-indian-ocean-for-data-center-cooling">✅ <strong>Advantages of Using the Indian Ocean for Data Center Cooling</strong></h3>
+<h4 id="1-free--sustainable-cooling"><strong>1. Free &amp; Sustainable Cooling</strong></h4>
+<ul>
+<li><strong>Seawater cooling</strong> can <strong>significantly reduce energy consumption</strong> for cooling, which is a major cost in data centers.</li>
+<li>The deep ocean water remains <strong>cooler (~4°C at depths below 1000m)</strong>, making it ideal for <strong>natural heat exchange</strong>.</li>
+</ul>
+<h4 id="2-reduction-in-carbon-footprint"><strong>2. Reduction in Carbon Footprint</strong></h4>
+<ul>
+<li><strong>Traditional cooling systems (HVAC &amp; chillers) use a lot of electricity</strong>, leading to carbon emissions.</li>
+<li><strong>Seawater cooling eliminates the need for energy-intensive air conditioning</strong>, making data centers greener.</li>
+</ul>
+<h4 id="3-inspired-by-existing-projects"><strong>3. Inspired by Existing Projects</strong></h4>
+<ul>
+<li><strong>Google&rsquo;s Floating Data Center Patent (2008)</strong> proposed <strong>ocean-based data centers</strong>.</li>
+<li><strong>Microsoft’s Project Natick</strong> successfully tested <strong>underwater data centers</strong> off the coast of Scotland.</li>
+<li>Countries like <strong>Finland &amp; Norway</strong> already use <strong>seawater cooling for data centers</strong>.</li>
+</ul>
+<h4 id="4-indias-coastal-advantage"><strong>4. India’s Coastal Advantage</strong></h4>
+<ul>
+<li><strong>India has a 7,500 km coastline</strong>, with major tech hubs near the ocean (<strong>Mumbai, Chennai, Visakhapatnam, Kochi</strong>).</li>
+<li><strong>Chennai and Mumbai already host major submarine cables</strong>, making them ideal for ocean-cooled data centers.</li>
+</ul>
+<hr>
+<h3 id="-challenges--risks">❌ <strong>Challenges &amp; Risks</strong></h3>
+<h4 id="1-corrosion--maintenance-issues"><strong>1. Corrosion &amp; Maintenance Issues</strong></h4>
+<ul>
+<li><strong>Saltwater is highly corrosive</strong>, requiring special materials for piping and infrastructure.</li>
+<li><strong>Biofouling (marine life growth on pipes)</strong> can block cooling systems.</li>
+</ul>
+<h4 id="2-regulatory--environmental-concerns"><strong>2. Regulatory &amp; Environmental Concerns</strong></h4>
+<ul>
+<li>Governments require <strong>environmental impact assessments</strong> to ensure marine life isn’t harmed.</li>
+<li><strong>Dumping hot water back into the ocean</strong> can disrupt local ecosystems if not managed properly.</li>
+</ul>
+<h4 id="3-upfront-infrastructure-costs"><strong>3. Upfront Infrastructure Costs</strong></h4>
+<ul>
+<li>Setting up <strong>pumps, deep-water pipelines, and heat exchangers</strong> requires <strong>high initial investment</strong>.</li>
+<li>It may take <strong>years to recover costs</strong>, even if long-term savings exist.</li>
+</ul>
+<h4 id="4-natural-disaster-risks"><strong>4. Natural Disaster Risks</strong></h4>
+<ul>
+<li>India’s <strong>east coast faces cyclones</strong>, and undersea infrastructure must withstand extreme weather.</li>
+<li><strong>Tsunamis &amp; sea-level rise</strong> could pose long-term threats to coastal data centers.</li>
+</ul>
+<hr>
+<h3 id="-future-possibilities">🚀 <strong>Future Possibilities</strong></h3>
+<h4 id="1-floating--underwater-data-centers"><strong>1. Floating &amp; Underwater Data Centers</strong></h4>
+<ul>
+<li>India could experiment with <strong>floating or submerged data centers</strong> (similar to <strong>Microsoft’s Natick project</strong>).</li>
+<li><strong>Tethered deep-sea data centers</strong> could use natural deep-water cooling <strong>without harming marine ecosystems</strong>.</li>
+</ul>
+<h4 id="2-hybrid-renewable-energy--cooling"><strong>2. Hybrid Renewable Energy &amp; Cooling</strong></h4>
+<ul>
+<li>Combining <strong>offshore wind &amp; wave energy</strong> with <strong>ocean cooling</strong> could create a <strong>self-sustaining green data center</strong>.</li>
+</ul>
+<h4 id="3-strategic-locations-for-ocean-cooled-data-centers"><strong>3. Strategic Locations for Ocean-Cooled Data Centers</strong></h4>
+<ul>
+<li><strong>Mumbai</strong> → Close to major cloud providers &amp; submarine cables.</li>
+<li><strong>Chennai</strong> → Well-connected to global internet infrastructure.</li>
+<li><strong>Lakshadweep / Andaman Islands</strong> → Potential for experimental floating data centers.</li>
+</ul>
+<h2 id="other-question-related-to-energy-for-you-to-explore">Other Question Related to Energy for you to explore</h2>
+<h3 id="1-energy-efficiency--consumption-in-data-centers"><strong>1. Energy Efficiency &amp; Consumption in Data Centers</strong></h3>
+<ul>
+<li>How much power do data centers consume globally, and how does it compare to India&rsquo;s total electricity usage?</li>
+<li>What percentage of a data center&rsquo;s electricity goes to <strong>computing vs. cooling vs. networking</strong>?</li>
+<li>How do <strong>Hyperscale vs. Edge data centers</strong> differ in energy consumption?</li>
+</ul>
+<h3 id="2-renewable-energy--sustainability"><strong>2. Renewable Energy &amp; Sustainability</strong></h3>
+<ul>
+<li>How much of India&rsquo;s electricity is generated from <strong>renewable sources (solar, wind, hydro)?</strong></li>
+<li>Are global cloud providers (AWS, Google, Azure) using <strong>100% renewable energy</strong> for their Indian data centers?</li>
+<li>What are the <strong>best locations in India for renewable energy-powered data centers</strong>?</li>
+</ul>
+<h3 id="3-power-costs--infrastructure"><strong>3. Power Costs &amp; Infrastructure</strong></h3>
+<ul>
+<li>How does <strong>electricity cost vary across Indian states</strong> for industrial/data center use?</li>
+<li>What is the cost of <strong>diesel backup generators</strong> for power outages in India?</li>
+<li>How much power <strong>do Indian AI training clusters</strong> consume compared to US or European clusters?</li>
+</ul>
+<h3 id="4-cooling--climate-impact"><strong>4. Cooling &amp; Climate Impact</strong></h3>
+<ul>
+<li>What is the <strong>cooling power requirement for an AI-based data center</strong> in a hot climate like India?</li>
+<li>How do <strong>liquid cooling vs. air cooling vs. submerged cooling</strong> compare in efficiency?</li>
+<li>Can data centers use <strong>natural cooling</strong> in colder Indian regions (like Ladakh, Himachal Pradesh)?</li>
+</ul>
+<h3 id="5-global-energy-comparison"><strong>5. Global Energy Comparison</strong></h3>
+<ul>
+<li>Which country has the <strong>cheapest &amp; most stable electricity</strong> for running AI models?</li>
+<li>Why do tech giants build data centers in countries like <strong>Iceland, Norway, and Finland</strong>?</li>
+<li>What are the <strong>power densities of AI data centers vs. traditional data centers</strong>?</li>
+</ul>
+<h3 id="6-future-of-ai-compute--power-demand"><strong>6. Future of AI Compute &amp; Power Demand</strong></h3>
+<ul>
+<li>How much power will <strong>AI models like GPT-5 or GPT-6</strong> require in the future?</li>
+<li>Will India’s <strong>electric grid be able to support Exascale AI computing?</strong></li>
+<li>Can we build <strong>energy-efficient AI chips</strong> that consume less power?</li>
+</ul>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

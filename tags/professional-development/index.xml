@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Professional Development on Agones</title>
+    <link>http://localhost:1313/tags/professional-development/</link>
+    <description>Recent content in Professional Development on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/professional-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLM Skills and Human Skills</title>
+      <link>http://localhost:1313/dsblog/LLM-Skills-and-Human-Skills/</link>
+      <pubDate>Sun, 04 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/LLM-Skills-and-Human-Skills/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6130-LLM-Skills-and-Human-Skills.jpg&#34; alt=&#34;LLM-Skills-and-Human-Skills&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;llm-skills-and-human-skills&#34;&gt;LLM Skills and Human Skills&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-skill&#34;&gt;What is skill?&lt;/h2&gt;&#xA;&lt;p&gt;A skill is the ability to perform a task or activity effectively and efficiently. It involves applying knowledge, experience, and techniques to achieve specific outcomes. Skills can be categorized into various types, including:&lt;/p&gt;&#xA;&lt;p&gt;Hard Skills: Technical abilities that are often measurable and specific to a job or field, such as programming, writing, or playing an instrument.&lt;/p&gt;&#xA;&lt;p&gt;Soft Skills: Interpersonal and personal attributes that enable someone to interact effectively with others, such as communication, teamwork, and problem-solving.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

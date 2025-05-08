@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Model Monitoring on Agones</title>
+    <link>http://localhost:1313/tags/model-monitoring/</link>
+    <description>Recent content in Model Monitoring on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/model-monitoring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MLOps Tools</title>
+      <link>http://localhost:1313/dsblog/MLOps-Tools/</link>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/MLOps-Tools/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6137-MLOps-Tools.jpg&#34; alt=&#34;MLOps-Tools&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;mlops-tools&#34;&gt;MLOps Tools&lt;/h1&gt;&#xA;&lt;p&gt;MLOps (Machine Learning Operations) is a set of practices and tools designed to streamline and automate the deployment, monitoring, and management of machine learning models in production environments. It combines principles from both DevOps (Development Operations) and machine learning to ensure that ML models are deployed efficiently, managed effectively, and maintained reliably throughout their lifecycle.&lt;/p&gt;&#xA;&lt;p&gt;MLOps ensures:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Efficiency: Automates repetitive tasks, reducing manual effort and speeding up model deployment.&lt;/li&gt;&#xA;&lt;li&gt;Consistency: Ensures consistent and reliable model performance through standardized processes.&lt;/li&gt;&#xA;&lt;li&gt;Scalability: Facilitates scaling of models and infrastructure to handle increased workloads.&lt;/li&gt;&#xA;&lt;li&gt;Reliability: Enhances the reliability of ML systems by monitoring performance and quickly addressing issues.&lt;/li&gt;&#xA;&lt;li&gt;Compliance: Helps meet regulatory and compliance requirements by managing data security and model governance&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;mlops-activities&#34;&gt;MLOps Activities&lt;/h2&gt;&#xA;&lt;p&gt;MLOps (Machine Learning Operations) encompasses a wide range of activities that are essential for developing, deploying, and maintaining machine learning models in production. Below is a comprehensive list of activities involved in MLOps:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security Automation on Agones</title>
+    <link>http://localhost:1313/tags/security-automation/</link>
+    <description>Recent content in Security Automation on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/security-automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Usecases in Cybersecurity</title>
+      <link>http://localhost:1313/dsblog/AI-Usecases-in-Cybersecurity/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/AI-Usecases-in-Cybersecurity/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6135-AI-Usecases-in-Cybersecurity.jpg&#34; alt=&#34;AI-Usecases-in-Cybersecurity&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;ai-usecases-in-cybersecurity&#34;&gt;AI Usecases in Cybersecurity&lt;/h1&gt;&#xA;&lt;h1 id=&#34;ai-in-cyber-security-ethics-related-challenges-and-usecases&#34;&gt;AI in Cyber Security, Ethics Related Challenges and Usecases&lt;/h1&gt;&#xA;&lt;h2 id=&#34;ai-usecases-in-cyber-security&#34;&gt;AI Usecases in Cyber Security&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Threat Detection and Response&#xA;AI can enhance the detection and response to cybersecurity threats by:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Anomaly Detection&lt;/strong&gt;: AI models can analyze network traffic and user behavior to identify unusual patterns that may indicate a security breach.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Malware Detection&lt;/strong&gt;: Machine learning algorithms can be trained to recognize malware based on its behavior and characteristics.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Phishing Detection&lt;/strong&gt;: AI can analyze emails and web pages to detect phishing attempts by recognizing patterns and indicators typical of phishing.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Intrusion Detection Systems (IDS):&lt;/strong&gt; AI-powered IDS can detect unauthorized access and potential threats by analyzing network traffic and user behavior in real-time.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Endpoint Protection:&lt;/strong&gt; AI can enhance endpoint protection by continuously monitoring devices for suspicious activity and automatically responding to threats.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Predictive Analytics&#xA;AI can be used to predict potential security incidents before they occur by:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

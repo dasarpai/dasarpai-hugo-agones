@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mathematics for Data Science on Agones</title>
+    <link>http://localhost:1313/tags/mathematics-for-data-science/</link>
+    <description>Recent content in Mathematics for Data Science on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/mathematics-for-data-science/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mathematics for Data Scientist</title>
+      <link>http://localhost:1313/dsblog/maths-for-ds/</link>
+      <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/maths-for-ds/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dsresources/dsr104-Mathematics-for-Data-Scientist.jpg&#34; alt=&#34;Mathematics for Data Scientist&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;mathematics-for-data-scientist&#34;&gt;Mathematics for Data Scientist&lt;/h1&gt;&#xA;&lt;p&gt;To excel in the field of data science, especially as a data scientist, I would recommend you have good command over the topics mentioned below. These are the topics from mathematics and statistics. There are many YouTube channels that you can use for this purpose. Because this is 10+2 level mathematics, and it is just a matter of revision. So I am not offering any course unless there is a specific need for some group, organization.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

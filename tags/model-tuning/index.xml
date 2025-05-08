@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Model Tuning on Agones</title>
+    <link>http://localhost:1313/tags/model-tuning/</link>
+    <description>Recent content in Model Tuning on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/model-tuning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Model Tuning with VertexAI</title>
+      <link>http://localhost:1313/dsblog/Model-Tuning-with-VertexAI/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Model-Tuning-with-VertexAI/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6081-Model-Tuning-with-VertexAI.jpg&#34; alt=&#34;Model Tuning with VertexAI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;tuning-large-language-model-with-vertexai&#34;&gt;Tuning Large Language Model with VertexAI&lt;/h1&gt;&#xA;&lt;h2 id=&#34;why-model-tuning&#34;&gt;Why Model Tuning?&lt;/h2&gt;&#xA;&lt;p&gt;Tuning is required when you want the model to learn something niche or specific that deviates from general language patterns.&lt;/p&gt;&#xA;&lt;h2 id=&#34;goal-of-tuning&#34;&gt;Goal of Tuning&lt;/h2&gt;&#xA;&lt;h3 id=&#34;classification&#34;&gt;Classification&lt;/h3&gt;&#xA;&lt;p&gt;prompt: &amp;ldquo;Classify the following text into one of the following classes: [business, entertainment].&amp;rdquo;&lt;/p&gt;&#xA;&lt;h3 id=&#34;summarization&#34;&gt;Summarization&lt;/h3&gt;&#xA;&lt;p&gt;prompt: &amp;ldquo;Summarize: Jessica: That sounds great! See you in Times Square! Alexander: See you at 10!&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;response: &amp;ldquo;#Person1 and #Person2 agree to meet at Times Square at 10:00 AM.&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

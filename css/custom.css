@@ -1,0 +1,172 @@
+/* static/css/custom.css */
+
+/* css for social share  */
+.social-share {
+    display: flex;
+    gap: 12px;
+    margin-top: 1em;
+  }
+  
+  .social-share a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #eee;
+    color: #3772ff;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .social-share a:hover {
+    background-color: #ddd;
+    transform: scale(1.1);
+  }
+  
+  .social-share i {
+    font-size: 18px;
+  }
+  
+
+  /* css for categories on side bar  */
+  .card-header {
+    margin-top: 1rem; /* Adjust the value as needed */
+  }
+
+  /* css for categories on footer of article  */
+
+  .category-section {
+    margin-top: 1.5rem !important; /* Adds space between the nav bar and this section */
+  }
+  
+  .category-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  
+  .category-badge {
+    background-color: #007bff; /* Bootstrap blue */
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .category-badge:hover {
+    background-color: #0056b3;
+  }
+  
+
+/* css for author image  */
+  .author-image {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%; /* circular image */
+    object-fit: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  .td-author-box__avatar {
+    margin-top: 2rem; /* Adjust the value as needed */
+  }
+  
+
+/*css for toc*/
+/* TOC Container */
+.custom-toc {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Heading */
+.custom-toc__heading {
+  background-color: #c0392b; /* reddish */
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 8rem;
+  text-align: center;
+}
+
+/* Remove default list styles */
+.custom-toc ul,
+.custom-toc ol {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+/* TOC items */
+.custom-toc li {
+  border-bottom: 1px solid #eee;
+  margin: 0;
+  padding: 0.3em 0;
+}
+
+/* Last item no border */
+.custom-toc li:last-child {
+  border-bottom: none;
+}
+
+/* TOC links */
+.custom-toc a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s, color 0.2s;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* Hover effect */
+.custom-toc a:hover {
+  background: #f5f5f5;
+  color: #c0392b;
+}
+
+/* Selected item (active anchor) */
+.custom-toc .active,
+.custom-toc a.active {
+  background: #ffeaea;
+  color: #c0392b;
+  font-weight: bold;
+}
+
+
+/*css for the first image of article*/ 
+/* Add spacing and rounded corners to the first image in the article content */
+.td-main img:first-of-type {
+  margin-top: 2rem;
+  border-radius: 16px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* css for footer menu */
+
+.td-footer__menu a {
+  color: #fff !important;
+}
+.td-footer__menu a:hover {
+  color: #ffce54 !important; /* Optional: yellowish on hover, or choose your preferred color */
+}
+
+.td-footer__menu ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.sidebar-first-card {
+  margin-top: 5rem;
+}

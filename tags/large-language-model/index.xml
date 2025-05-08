@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Large Language Model on Agones</title>
+    <link>http://localhost:1313/tags/large-language-model/</link>
+    <description>Recent content in Large Language Model on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/large-language-model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quantum Physics with Deeper Questions with ChatGPT</title>
+      <link>http://localhost:1313/dsblog/quantum-physics-with-deeper-questions/</link>
+      <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/quantum-physics-with-deeper-questions/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6253-quantum-physics-with-deeper-questions.jpg&#34; alt=&#34;Quantum Physics with Deeper Questions&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;quantum-physics-with-deeper-questions-with-chatgpt&#34;&gt;Quantum Physics with Deeper Questions with ChatGPT&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;I was a physics student during my college years, and I’ve always loved the subject—even today. However, Quantum Physics, despite all my reading and learning, remains a mystery to me. At this stage, who can teach me Quantum Physics effectively? Finding an able professor, aligning my availability with theirs, and hoping they’d be willing to teach me for free seems impossible. So, I turned to a Large Language Model (LLM) for help. I could have explored other LLMs like Grok, Claude, DeepSeek, and many more. I’m not saying the others are bad, nor am I claiming that ChatGPT is the best at providing plausible answers. Whether an answer is correct or plausible also depends on the learner’s ability.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exploring Ollama &amp; LM Studio</title>
+      <link>http://localhost:1313/dsblog/Exploring-Ollama/</link>
+      <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Exploring-Ollama/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6143-Exploring-Ollama.jpg&#34; alt=&#34;Exploring Ollama &amp;amp; LM Studio&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-ollama--lm-studio&#34;&gt;Exploring Ollama &amp;amp; LM Studio&lt;/h1&gt;&#xA;&lt;h2 id=&#34;is-this-article-for-me&#34;&gt;Is this article for me?&lt;/h2&gt;&#xA;&lt;p&gt;If you are looking answers to the following questions, then this article is for you:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Question: What is Ollama? Is it like Docker?&lt;/li&gt;&#xA;&lt;li&gt;Question: How is Ollama different from Docker?&lt;/li&gt;&#xA;&lt;li&gt;Question: How to install ollama on my machine?&lt;/li&gt;&#xA;&lt;li&gt;Question: How to create customized LLM Model (docker like image)?&lt;/li&gt;&#xA;&lt;li&gt;Question: What are the LLM available on ollama?&lt;/li&gt;&#xA;&lt;li&gt;Question: Can we integrate these hundreds with different UI like ChatGPT?&lt;/li&gt;&#xA;&lt;li&gt;Question: If I want to use all these Ollama models via Jupyter Notebook then what to do?&lt;/li&gt;&#xA;&lt;li&gt;Question: Does Ollama have plugins like github copilot? Can I use those from my visual code?&lt;/li&gt;&#xA;&lt;li&gt;Question: What kind of software are LM Studio or Ollama?&lt;/li&gt;&#xA;&lt;li&gt;Question: What is LM Studio and how different it is from Ollama?&lt;/li&gt;&#xA;&lt;li&gt;Question: What are different formats to save model, specifically LLMs?&lt;/li&gt;&#xA;&lt;li&gt;Question: What is gguf model extention?&lt;/li&gt;&#xA;&lt;li&gt;Question: If I have finetuned my models using clouds like aws sagemaker, vertexai, azure and kept there then can I use them inside my ollama and LM Studio?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;question-what-is-ollama-is-it-like-docker&#34;&gt;Question: What is Ollama? Is it like Docker?&lt;/h2&gt;&#xA;&lt;p&gt;Ollama is a platform designed to make running and interacting with large language models (LLMs) easier. It abstracts away the complexities of managing LLM models, GPU resources, and related configurations by offering a simple CLI interface. With Ollama, you can run, manage, and deploy LLMs locally or in various cloud environments without having to worry about the intricate details of setting up environments, downloading models, or configuring them.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

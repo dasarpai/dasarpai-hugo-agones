@@ -1,0 +1,404 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>EDA &amp; Feature Engineering 101 | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2021-08-24-6008-eda-feature-engineering-101/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="EDA & Feature Engineering 101">
+  <meta property="og:description" content="What is EDA? EDA means Exploratory Data Analysis. The purpose of data analysis is to explore. Exploration means try to understand what kind of data I have in my hand. Using EDA we try to get the answer to the following questions.
+What kind of data is this? (file format, volume of data, number of columns, metadata data of image/video/audio or some feedback in English or other languages, or tabular data, etc) How complex is this data? (How many files are there? primary key? how these files are connected to each other? is nested data in some files? is some field having nested data, etc.) Is this data sufficient for meeting our ultimate goal, i.e. Model building? Is there any missing data? Data needed but not given by the business or not available at all or costly to get that data etc. Are there any missing values? In the given dataset do we have complete information or some values are missing for some records or some columns? What are different independent and dependent fields? Is there any relationship between different independent variables of the dataset? If yes then how strong is that relationship? Are observations independent or tightly coupled like we see in time-series data? In the data scient project lifecycle, EDA is not a sequential, one-time, isolated process. Till the time data is not ready for modeling we keep doing EDA and cleaning the data. So, EDA is followed by a list of decisions taken to clean the dataset, and finally, data cleaning steps are implemented. If the dataset is not in the good shape after the first iteration of EDA we continue EDA in the next cycle. In this article, I am not referring to EDA as just visualizing and understanding the dataset but all the steps required till the dataset is not ready for modeling.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2020-08-24T15:50:00+05:30">
+    <meta property="article:modified_time" content="2020-08-24T15:50:00+05:30">
+    <meta property="article:tag" content="Feature Engineering">
+    <meta property="article:tag" content="EDA">
+    <meta property="article:tag" content="Exploratory Data Analysis">
+    <meta property="article:tag" content="Data Analysis">
+    <meta property="article:tag" content="Machine Learning">
+
+  <meta itemprop="name" content="EDA & Feature Engineering 101">
+  <meta itemprop="description" content="What is EDA? EDA means Exploratory Data Analysis. The purpose of data analysis is to explore. Exploration means try to understand what kind of data I have in my hand. Using EDA we try to get the answer to the following questions.
+What kind of data is this? (file format, volume of data, number of columns, metadata data of image/video/audio or some feedback in English or other languages, or tabular data, etc) How complex is this data? (How many files are there? primary key? how these files are connected to each other? is nested data in some files? is some field having nested data, etc.) Is this data sufficient for meeting our ultimate goal, i.e. Model building? Is there any missing data? Data needed but not given by the business or not available at all or costly to get that data etc. Are there any missing values? In the given dataset do we have complete information or some values are missing for some records or some columns? What are different independent and dependent fields? Is there any relationship between different independent variables of the dataset? If yes then how strong is that relationship? Are observations independent or tightly coupled like we see in time-series data? In the data scient project lifecycle, EDA is not a sequential, one-time, isolated process. Till the time data is not ready for modeling we keep doing EDA and cleaning the data. So, EDA is followed by a list of decisions taken to clean the dataset, and finally, data cleaning steps are implemented. If the dataset is not in the good shape after the first iteration of EDA we continue EDA in the next cycle. In this article, I am not referring to EDA as just visualizing and understanding the dataset but all the steps required till the dataset is not ready for modeling.">
+  <meta itemprop="datePublished" content="2020-08-24T15:50:00+05:30">
+  <meta itemprop="dateModified" content="2020-08-24T15:50:00+05:30">
+  <meta itemprop="wordCount" content="3770">
+  <meta itemprop="keywords" content="exploratory,data,analysis,,feature,engineering,,data,preprocessing,,data,cleaning,,feature,selection,,data,visualization,,statistical,analysis,,data,transformation,,outlier,detection,,data,preparation">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="EDA & Feature Engineering 101">
+  <meta name="twitter:description" content="What is EDA? EDA means Exploratory Data Analysis. The purpose of data analysis is to explore. Exploration means try to understand what kind of data I have in my hand. Using EDA we try to get the answer to the following questions.
+What kind of data is this? (file format, volume of data, number of columns, metadata data of image/video/audio or some feedback in English or other languages, or tabular data, etc) How complex is this data? (How many files are there? primary key? how these files are connected to each other? is nested data in some files? is some field having nested data, etc.) Is this data sufficient for meeting our ultimate goal, i.e. Model building? Is there any missing data? Data needed but not given by the business or not available at all or costly to get that data etc. Are there any missing values? In the given dataset do we have complete information or some values are missing for some records or some columns? What are different independent and dependent fields? Is there any relationship between different independent variables of the dataset? If yes then how strong is that relationship? Are observations independent or tightly coupled like we see in time-series data? In the data scient project lifecycle, EDA is not a sequential, one-time, isolated process. Till the time data is not ready for modeling we keep doing EDA and cleaning the data. So, EDA is followed by a list of decisions taken to clean the dataset, and finally, data cleaning steps are implemented. If the dataset is not in the good shape after the first iteration of EDA we continue EDA in the next cycle. In this article, I am not referring to EDA as just visualizing and understanding the dataset but all the steps required till the dataset is not ready for modeling.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6008-EDA101.jpg" alt="EDA &amp; Feature Engineering"></p>
+<h2 id="what-is-eda">What is EDA?</h2>
+<p>EDA means Exploratory Data Analysis. The purpose of data analysis is to explore. Exploration means try to understand what kind of data I have in my hand. Using EDA we try to get the answer to the following questions.</p>
+<ul>
+<li>What kind of data is this? (file format, volume of data, number of columns, metadata data of image/video/audio or some feedback in English or other languages, or tabular data, etc)</li>
+<li>How complex is this data? (How many files are there? primary key? how these files are connected to each other? is nested data in some files? is some field having nested data, etc.)</li>
+<li>Is this data sufficient for meeting our ultimate goal, i.e. Model building?</li>
+<li>Is there any missing data? Data needed but not given by the business or not available at all or costly to get that data etc.</li>
+<li>Are there any missing values? In the given dataset do we have complete information or some values are missing for some records or some columns?</li>
+<li>What are different independent and dependent fields?</li>
+<li>Is there any relationship between different independent variables of the dataset? If yes then how strong is that relationship?</li>
+<li>Are observations independent or tightly coupled like we see in time-series data?</li>
+</ul>
+<p>In the data scient project lifecycle, EDA is not a sequential, one-time, isolated process. Till the time data is not ready for modeling we keep doing EDA and cleaning the data. So, EDA is followed by a list of decisions taken to clean the dataset, and finally, data cleaning steps are implemented. If the dataset is not in the good shape after the first iteration of EDA we continue EDA in the next cycle. In this article, I am not referring to EDA as just visualizing and understanding the dataset but all the steps required till the dataset is not ready for modeling.</p>
+<h2 id="importance-of-eda">Importance of EDA</h2>
+<p>Any data scientist can tell you the importance of a clean dataset. In the absence of a clean and balanced dataset expecting a good AI model is like expecting water in the desert. It looks it is there but it is never there. Just having lots of data is not exciting enough for creating a model. We, data scientists, are in love with data, playing with different kinds of data, extracting data from different sources, combining data so that it starts making sense, cleaning the data so that visualizing patterns is easy, creating features so that a robust model can be created is a thrill for us. As much complex, a dataset is that much exciting is the journey of creating a clean dataset.</p>
+<p>When people enter into the data science field they get some training on the tool and about the capabilities of those tools. But in the absence of an overall approach and process, they develop a bad model without realizing their EDA and Feature Engineering work is not solid enough. We all know an age-old saying that a fool with a tool is still a fool. What is the use of learning all the tools if we cannot use that tool properly? The processes are as important as the tool is. From my experience, I am describing below a high-level process that will help you doing good EDA and creating a clean and balance dataset along with feature engineering.</p>
+<p>I am not diving into the steps required before the dataset creation. There is different complexity there and that is more focused on the data engineering side. Therefore in this article keeping that outside. Example steps given below are just sample and do not think it is a final or exhaustive list. Depending upon your dataset, project objective, tools, and hardware resources available you need to add or remove some of the steps I am describing below.</p>
+<p><strong>Note</strong>: Application programmer, DBA, Database developer calls “fields” and but in data science, the same thing is referred to as a column, feature. I may use both of these terms, therefore do not assume these are different things. Similarly “record” in data science/ statistics is referred to as observation, record, sample. I may use all these terms therefore do not get confused around these terms.</p>
+<h2 id="eda-stage-1-basic-exploration">EDA Stage 1: Basic Exploration</h2>
+<p><strong>Understanding Dataset and Datatypes:</strong> EDA means Exploratory Data Analysis. The purpose of this step is to understand the dataset at a high level. We need to understand the file format of data files, volume, character set, etc. I look at basic exploration as following 3 steps.</p>
+<h3 id="eda-stage-11-understanding-the-dataset-as-a-file">EDA Stage 1.1: Understanding the dataset as a file.</h3>
+<ul>
+<li>How big is a file?</li>
+<li>How many files are there?</li>
+<li>Is there any data dictionary available?</li>
+<li>What kind of file format (CSV, Excel, JSON, text, etc)?</li>
+<li>Is it tabular data or image data with pixel values?</li>
+<li>Is it a text file containing customer feedback, describing products, or short stories?</li>
+<li>How to load in the memory? Sometimes files are in GB or TB. Other times files are in zip format, etc.</li>
+<li>What Charset is used (sometimes data may be in different languages like Hindi, Tamil, French, Chinese, Japanese, etc)?</li>
+<li>How many records, how many columns are there in the dataset?</li>
+<li>Is a data dictionary needed? If needed and not provided can we create a data dictionary or do we need to request from the data provider?</li>
+</ul>
+<h3 id="eda-stage-12-understanding-fieldscolumns">EDA Stage 1.2: Understanding fields/columns</h3>
+<ul>
+<li>Are column names given making sense? Sometimes they are just named as 1,2,3 etc.?</li>
+<li>Are column names proper? Sometimes all upper letters, all lower letters, unnecessary space, special character, etc.</li>
+<li>What are column technical data type numeric/bool/text/float/object/date/datetime etc?</li>
+<li>What are column business data types nominal/ordinal/continuous?</li>
+<li>What is the content of columns? Date format? Is number with currency code? Decimal is coma or dot etc?</li>
+<li>Apply business common sense and look for more interesting columns. Are they present in the dataset? If you expect something which is not there then make a note of that.</li>
+<li>Missing value in any column? Which column? What are you expecting there? How much % are missing values?</li>
+<li>Sometimes data given to you is coming from a data entry form that has default values like select, none, all, etc. While filling the form if a user does not select anything then these values go into the database directly. In fact, they are null values. We need to treat them properly.</li>
+</ul>
+<h3 id="eda-stage-13-look-for-the-target-field">EDA Stage 1.3: Look for the target field.</h3>
+<ul>
+<li>What kind of problem. Classification, Clustering, Regression? Supervised/ unsupervised?</li>
+<li>If supervised classification problem then the dataset is balanced or not? If the dataset is not balanced then we may need to balance it by using some sampling techniques.</li>
+<li>If supervised regression problem then the distribution of target column is normal or heavily tailed? If the distribution is not normal then we may need to make it normal by using some transformation.</li>
+<li>Any missing data in the target column. If the target value is missing then we need to handle it properly.</li>
+<li>Target column is a single value or a vector?</li>
+</ul>
+<h2 id="eda-stage-2-univariate-bivariate--multivariate-analysis">EDA Stage 2: Univariate, Bivariate &amp; Multivariate Analysis</h2>
+<h3 id="eda-stage-21-univariate-check-the-distribution-of-each-field">EDA Stage 2.1: Univariate: Check the distribution of each field.</h3>
+<ul>
+<li>In the case of a continuous column, a column has normal distribution or not? For example, for the sales column, you can plot a histogram and check whether the average sale is a median sale or not? Let us assume a dataset has 10K sales transaction records and the average sale is $500 then it does not mean 5000 transactions are less than $500 (average sale) and the remaining 5000 transactions are more than $500. If a column is not normally distributed then we need to do some transformation.</li>
+<li>In the case of ordinal values, a column has uniform distribution or not? For example, if a column is “education” then plot a bar chart and see whether all education groups are equally represented or most of the people in the dataset are illiterate people or something else.</li>
+<li>If data is heavily tailed? If yes then which side? For example, if your column has the GDP of nations then this distribution will be heavily right-tailed. I guess more than 80% of countries will have one high peak and the rest will tail long on the right side.</li>
+<li>If data skewed? which side, left or right? What is the business meaning of this skewness? For example, if the distribution of the age column is right-skewed it means the dataset has more representation from young people. Keep in mind that skewed data may not be tailed.</li>
+<li>How many outlier values? Can you put them in a percentage like .001%?</li>
+</ul>
+<h3 id="eda-stage-22-bivariate-analysis-relationship-between-each-column-and-target-field">EDA Stage 2.2: Bivariate Analysis: Relationship between each column and target field.</h3>
+<ul>
+<li>Check how each field is connected to the target field. Random (no relation), positive (increase with the increase of column value), negative (decreases with the increase of column value)</li>
+<li>Check how strong is relationship. This will give you an idea, which variable contributes more to the prediction of the target variable.</li>
+</ul>
+<h3 id="eda-stage-23-bivariate-analysis-check-co-linearity-of-all-fields">EDA Stage 2.3: Bivariate Analysis: Check co-linearity of all fields.</h3>
+<ul>
+<li>We know income has a relationship with expense, wealth has a relationship with comfort, blood pressure has a relationship with anxiety, etc. If you check these independent variables they move heavily with each other. This is called co-linearity. Co-linear variables are not good for the model. Identify which pair of variables have high co-linearity. Note: In a pair of high co-linear features you need to drop one.</li>
+<li>Make a list of which variables can be dropped due to high co-linearity</li>
+</ul>
+<h3 id="eda-stage-23-multivariate-analysis">EDA Stage 2.3: Multivariate Analysis:</h3>
+<ul>
+<li>Let us say one independent variable is education and it has 10 categories. Generally, we know education and income have a relationship. But this relationship is not equally strong for all education levels. For example, if you check the distribution of income columns for uneducated people you will find a different kind of relationship (outliers will be there, maybe some uneducated criminal or uneducated politician has huge wealth or some uneducated lucky person got some lottery and started his own business). So this distribution has different average, median, and SD. But, if you check the income distribution of Ph.D. holders that distribution will have different average, median, and SD (You will observe outliers here as well, for example, some Ph.D. holders without a job because of many reasons). </li>
+<li>Analyze how these different categories of an independent variable will impact the prediction ability of your model.</li>
+</ul>
+<h2 id="the-decision-for-data-cleaning">The decision for Data Cleaning</h2>
+<p>By this time you have not done any data cleaning. But you have understood what kind of cleaning is needed, what needs to be cleaned etc. In this stage, you take a decision on what needs to be cleaned, and how that cleaning can be performed.</p>
+<ol>
+<li><strong>Decision 1.1: Take the Decision which field is important and which is not.</strong> For example, some columns may have 80% null value columns some have 10% null values. Take a decision, which columns to be removed completely. Sometimes 99% values in a column are the same. So mark those for removal.</li>
+<li><strong>Decision 1.2: How to treat null values</strong>: Null value doesn’t mean only these are null values in the column. Sometimes default values of a form are pushed into a dataset can be the null value. For example ‘select’, ‘ ‘, ‘pickup’ etc.</li>
+<li><strong>Decision 1.3: Null value Records:</strong> For example, some records may have 80% null value columns some have 10% null values. Take a decision which records should be removed completely. </li>
+<li><strong>Decision 1.4: Null value of Continuous Column:</strong> If some column has continuous and some values are missing then how will you fill the null values. In this case, mostly you will choose the mean of that column. But sometimes you can take a different strategy to fill this numeric null value field.</li>
+<li><strong>Decision 1.5: Null value of Categorical Column:</strong> If some column has categorical values, say quality grade or education, etc then how will you fill the null value for a record? In most cases, you can use the median value of the column. But you can use a different strategy.</li>
+<li><strong>Decision 1.7:</strong> Sometimes null values can be filled with mode values. Is there any column that needs this treatment?</li>
+<li><strong>Decision 1.8: Usage of Tool:</strong> You want to do the null value imputations manually or you want to use tools like sklearn.simpleimputer, sklearn.iterativeimputer, sklearn.KNNimputer etc.</li>
+<li><strong>Decision 1.9: Usage of Model:</strong> Sometimes you create a basic linear regression model using non-null value records and columns. The target column for this model training can be a field that you want to impute and you can use this for null value imputation for a particular column. This way you need to create as many models as many null value columns are there in the dataset. This approach works if any record has a maximum of one null value column. For the ordinal value column, you can use algorithms such as logistic regression, KNN, etc.</li>
+</ol>
+<h2 id="the-decision-to-address-data-imbalance-issue">The decision to Address Data Imbalance Issue</h2>
+<ol>
+<li><strong>Decision 2.1:</strong> Oversampling: Generate records for a class that is under-sampled. This makes sense when an under-sampled class is very precious and too little data is available for this class. For example, a bank transaction dataset, which has fraud and non-fraud transactions. Fraud transactions are extremely less and very precious data.</li>
+<li><strong>Decision 2.2:</strong> Undersampling: Remove records of a class that is over-sampled. This makes sense when you have lots of data and you can afford to through away some without any risk.</li>
+<li><strong>Decision 2.3:</strong> If over sample then which technique ROS, SMOTE, etc.</li>
+</ol>
+<h2 id="data-cleaning">Data Cleaning</h2>
+<p>By the time you reach here, you have some action plan to clean the dataset. Now, perform the following actions as per the decision taken in previous steps. Make a note, by the time you finish this step data still, may not be normally distributed, and in future steps, we may need to do feature engineering.</p>
+<ul>
+<li>Null value handling.</li>
+<li>Outlier Handling.</li>
+<li>Target Imbalance Handling.</li>
+<li>Independent Variable Imbalance Handling.</li>
+</ul>
+<h2 id="eda-stage-3">EDA Stage 3</h2>
+<p>After cleaning the dataset if you perform the following steps you will find the dataset is balanced and clean. But if you still observe some imbalance or distribution issue then you can take a call and perform previous steps once again on this clean dataset. Perform these steps to know whether you should move ahead or once again iterate the data cleaning cycle.</p>
+<ul>
+<li>Data distribution of each field. – Univariate</li>
+<li>Distribution of each continuous data field for target field (continuous) – Univariate</li>
+<li>Distribution of each continuous data field for each value of the target field (categorical). – Multivariate</li>
+<li>Distribution of each categorical data field for target field (continuous). – Multivariate</li>
+<li>Distribution of each Categorical data field for each value of target field (categorical). – Multivariate</li>
+<li>Check co-linearity of all fields. – Bivariate</li>
+<li>Oversample – smote, adasyn, random oversampler</li>
+</ul>
+<h2 id="feature-engineering">Feature Engineering</h2>
+<p>By the time you reach here, you will notice some of the continuous fields still do not have a normal distribution. So now you need to visualize what kind of transformation will turn that field into a normal distribution. There are chances you need some other features which are not there in the dataset. For example, you have longitude and latitude information but you want to calculate the distance between taxi pick up and drop points. You can create a distance feature. In this process, you may need to drop some existing fields. You need to perform the following steps.</p>
+<ol>
+<li>Based on domain expertise you can create some useful features. For example create distance from longitude, latitude. Create speed from distance and time. Create throughput from requests and time etc.</li>
+<li>If a certain column is not normally distributed then based on data science experience you can create some useful features. Use log, exp, power, inverse math functions with various base numbers. You can remove the original variable. A final variable should be normally distributed. You can also use boxcox.</li>
+</ol>
+<h2 id="eda-stage-4">EDA Stage 4</h2>
+<p>By the time you reach this stage, your dataset must be completely ready for modeling. But how will you know that? Perform one more round of EDA. Follow the steps mentioned earlier. If you still find some glitch then perform cleaning and feature engineering steps as mentioned earlier.</p>
+<h2 id="eda-complete">EDA Complete</h2>
+<p>At this stage EDA is complete and we can use our dataset for model training. Future steps are not related to EDA but in order to visualize the complete lifecycle, I am explaining them in short so that aspiring data scientists can visualize the complete project life cycle.</p>
+<h2 id="creating-dataset-for-training">Creating Dataset for Training</h2>
+<p>When a dataset is ready we can use it for training. But if we use a complete dataset for the training then it is impossible for us to know how the model performs on the unseen data. After training, if you evaluate the model performance using a training dataset then it is like checking the memorization ability of a child. There are some children who can memorize everything but that is not called learning. The real test of learning is when you are able to apply what you have learned to unseen data, situations, etc. To achieve this we need to split our dataset into train and test datasets. Sometimes test dataset is given to us by the customer and it is used for UAT. In that case, our split dataset is called train and validation datasets and not train, test datasets. We need to follow these steps to make the training dataset ready for training purposes.</p>
+<ul>
+<li>Decide how much data is needed for training. Generally, 70% to 80% of data is used for the training, and the remaining data is used for testing.</li>
+<li>Create Train, Test /Validation Dataset.</li>
+<li>Scale all columns of the Train dataset. There are many techniques of scaling but most techniques are standard scaler or min-max scaler. </li>
+<li>Save the scaler and use it to fit the test/validation data just before your want to test the performance of your newly created model.</li>
+</ul>
+<h2 id="modeling">Modeling</h2>
+<p>This is the place where we create the main juice. This is the place for which all data preparation was done. For different kinds of problem statements, there are different kinds of algorithms. We have hundreds of algorithms. These algorithms are developed by various researchers and most of them are freely available for our implementation. Linear Regression, Logistic Regression, KMean, KNN, Random Forest, Decision Tree are just a few names. On the other side, we have deep learning-based architecture, and data scientists need to create a neural network to develop different models. During model creation, we need to develop different models with different sets of hyperparameters. For model development, we need the following steps.</p>
+<ul>
+<li>Select an algorithm and create multiple models with that algorithm and a different set of hyperparameters.</li>
+<li>Create multiple models with multiple algorithm and multiple set of hyperparameters.</li>
+<li>Establish metrics for model performance. Model performance metrics can be r2, rmse, accuracy, recall, precision, roc-auc, error rate, etc.</li>
+<li>Check the model performance on the train dataset.</li>
+</ul>
+<h2 id="model-evaluation">Model Evaluation</h2>
+<p>In this step, we evaluate various models created against the test or validation dataset. Generally, we follow these steps for model evaluation.</p>
+<ul>
+<li>Transform the data as was done before training. Use the same transformer you created for training data transformation.</li>
+<li>Scale the validation/test dataset from the scale created earlier. (Transformation and scaling on test/validation dataset are done just before the testing the model.)</li>
+<li>Predict the results using the model and test/validation data.</li>
+<li>Evaluate the performance of the model using the metrics selected.</li>
+</ul>
+<h2 id="model-selection">Model Selection</h2>
+<p>In this step, we select a model for final deployment. Metrics, which we get in the previous step are definitely the main influencer in model selection but we also need to keep in mind the size of the model, hardware available, performance of the model in terms of time, other processing required for prediction, for example, transformation, scaling, etc. To select a final model for deployment we need to follow these steps.</p>
+<ul>
+<li>Prepare an excel sheet. Write the name of each model along with hyperparameters and all the parameters which we will use for selecting model selection.</li>
+<li>Complete this excel sheet using the performance data of each model.</li>
+<li>Assign a weight to different parameters and get a final score of each model. For example, the time taken to predict may have higher weightage compare to the weightage of the accuracy of the model.</li>
+<li>Schedule a meeting with the sponsor and present him/her performance of different models, and time-based performance. Also discuss with them resources required to run and monitor the model.</li>
+<li>If explainablity is another criterion then convince yourself how you will explain the prediction of the model to the customer.</li>
+<li>Convince management and yourself and select the best model for deployment.</li>
+</ul>
+<h2 id="model-deployment">Model Deployment</h2>
+<p>For model development, we used various libraries, programming languages, and a particular operating system. In the production environment before we put our model, we need to make sure that any update to these libraries (because of other models on the production environment) or update in OS patches should not lead to model failure. To avoid this we need to dockerize our model with all the packages and then put this docker on the public or private app server. Based on the business and security requirement you enable certain ports and IP addresses via which our model can be consumed.</p>
+<h2 id="exposing-model-via-user-interface">Exposing Model via User Interface</h2>
+<p>To consume the above model user must enter some data which can be input for the model. For the data input and model output display, we need to create a user interface. This user interface will call the above model using the service name. The service is available on a certain IP address and port number. Service will return results and our UI should show the result to the customer. This work is done by the web development team. They develop a web app and deploy that on a webserver.</p>
+<h2 id="model-monitoring">Model Monitoring</h2>
+<p>When a model is serving users all the data input from the customer is captured in the system. The data recorded and used for model monitoring are following but not limited to this.</p>
+<ul>
+<li>Input parameters (given by the user)</li>
+<li>Model prediction (given by service)</li>
+<li>Time-taken to predict (recorded by the service)</li>
+<li>The time period of the day when requests come</li>
+<li>The IP address from where the request coming</li>
+<li>The customer is happy about the prediction (feedback captured on the UI screen)</li>
+<li>etc.</li>
+</ul>
+<p>All the above data is used for performance evaluation and model retraining or retiring a model.</p>
+<h2 id="summary">Summary</h2>
+<p>In this article, we learned.</p>
+<ul>
+<li>What is EDA?</li>
+<li>The iterative nature of EDA and Data cleaning</li>
+<li>Importance of feature scaling</li>
+<li>Importance of feature engineering</li>
+<li>Different steps are required for data cleaning and imbalance handling.</li>
+<li>What are the different stages of a data science project life cycle.</li>
+</ul>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

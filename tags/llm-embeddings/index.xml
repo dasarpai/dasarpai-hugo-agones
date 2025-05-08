@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LLM Embeddings on Agones</title>
+    <link>http://localhost:1313/tags/llm-embeddings/</link>
+    <description>Recent content in LLM Embeddings on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/llm-embeddings/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Dense Embedding Models in AI</title>
+      <link>http://localhost:1313/dsblog/Exploring-Dense-Embedding-Models-in-AI/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Exploring-Dense-Embedding-Models-in-AI/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6157-Exploring-Dense-Embedding-Models-in-AI.jpg&#34; alt=&#34;Exploring Dense Embedding Models in AI&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-dense-embedding-in-ai&#34;&gt;What is dense embedding in AI?&lt;/h2&gt;&#xA;&lt;p&gt;Dense embeddings are critical in many AI applications, particularly in deep learning, where they help reduce data complexity and enhance the model’s ability to generalize from patterns in data.&lt;/p&gt;&#xA;&lt;p&gt;In artificial intelligence (AI), &lt;strong&gt;dense embedding&lt;/strong&gt; refers to a method of representing data (like words, sentences, images, or other inputs) as dense vectors in a continuous, lower-dimensional (lessor number of dimensions) space. These vectors, known as &lt;strong&gt;embeddings&lt;/strong&gt;, encode semantic information, enabling AI models to work with data in a more meaningful way.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

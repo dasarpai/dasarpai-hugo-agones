@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design Patterns on Agones</title>
+    <link>http://localhost:1313/tags/design-patterns/</link>
+    <description>Recent content in Design Patterns on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/design-patterns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Decorator Function</title>
+      <link>http://localhost:1313/dsblog/Python-Decorator-Function/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Python-Decorator-Function/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6074-Python-Decorator-Function.jpg&#34; alt=&#34;Python Decorator Function&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;python-decorator-function&#34;&gt;Python Decorator Function&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-decorator-function-in-python&#34;&gt;What is Decorator Function in Python&lt;/h2&gt;&#xA;&lt;p&gt;In Python, a decorator is a special type of function that allows you to modify or extend the behavior of other functions or methods. Decorators provide a convenient way to add functionality to functions without modifying their code directly. They are commonly used for tasks such as logging, authorization, caching, and more.&lt;/p&gt;&#xA;&lt;p&gt;A decorator function takes *&lt;em&gt;another function as an argument&lt;/em&gt;, adds some functionality to it, and returns a new function that includes the original function&amp;rsquo;s behavior along with the additional functionality.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

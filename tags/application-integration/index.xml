@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Application Integration on Agones</title>
+    <link>http://localhost:1313/tags/application-integration/</link>
+    <description>Recent content in Application Integration on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/application-integration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Google Firebase</title>
+      <link>http://localhost:1313/dsblog/Exploring-Firebase/</link>
+      <pubDate>Sat, 12 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Exploring-Firebase/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6159-Exploring-Firebase.jpg&#34; alt=&#34;Exploring Firebase&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-firebase&#34;&gt;Exploring Firebase&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-firebase&#34;&gt;What is Firebase?&lt;/h2&gt;&#xA;&lt;p&gt;Originally, Firebase started as a product called &lt;strong&gt;Envolve&lt;/strong&gt; in 2011, which was a real-time chat service. It was co-founded by &lt;strong&gt;James Tamplin&lt;/strong&gt; and &lt;strong&gt;Andrew Lee&lt;/strong&gt;. While developing Envolve, they realized that developers were using its real-time system to sync application data, not just chat messages. This led them to pivot and create Firebase as a real-time database product in 2012. Google acquired Firebase in &lt;strong&gt;2014&lt;/strong&gt; and integrated it into its broader ecosystem, expanding it into a full-fledged platform for app development.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

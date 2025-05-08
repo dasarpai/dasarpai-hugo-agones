@@ -1,0 +1,355 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>A Guide to Model Fine Tuning with OpenAI API | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2023-07-02-6068-a-guide-to-model-fine-tuning-with-openai-api/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="A Guide to Model Fine Tuning with OpenAI API">
+  <meta property="og:description" content="A Guide to Model Fine Tuning with OpenAI API Account Setup and API Key Generation Go to openai, sign up there and create your account. After than you need to create an API using API Key Link. You need to copy the api key and you replace the text below &lt;OPENAI_API_KEY&gt;. Being string the key should be within “”. Keeping security in mind it is highly recommended that you do not put the API in the code file. Keep it at some secured place and read that file to fetch the API key. OpenAI gives you USD 5 free usage. After that you need to pay. For that you need to setup your credit card details on their system. They are very fair on the charges, just keep track of your usage. If you don’t use any of their service they won’t charge anything for just having account with them. While doing any model finetuning or prediction openai tells you how much they will charge you for that particular command. My suggestion is if you are just experimenting then keep your dataset small so that you can manage your learning with USD 10-20.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2023-07-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-07-02T00:00:00+00:00">
+    <meta property="article:tag" content="NLP">
+    <meta property="article:tag" content="AI Transformers">
+    <meta property="article:tag" content="Deep Learning">
+    <meta property="article:tag" content="OpenAI">
+    <meta property="article:tag" content="Model Fine-Tuning">
+    <meta property="article:tag" content="API Integration">
+
+  <meta itemprop="name" content="A Guide to Model Fine Tuning with OpenAI API">
+  <meta itemprop="description" content="A Guide to Model Fine Tuning with OpenAI API Account Setup and API Key Generation Go to openai, sign up there and create your account. After than you need to create an API using API Key Link. You need to copy the api key and you replace the text below &lt;OPENAI_API_KEY&gt;. Being string the key should be within “”. Keeping security in mind it is highly recommended that you do not put the API in the code file. Keep it at some secured place and read that file to fetch the API key. OpenAI gives you USD 5 free usage. After that you need to pay. For that you need to setup your credit card details on their system. They are very fair on the charges, just keep track of your usage. If you don’t use any of their service they won’t charge anything for just having account with them. While doing any model finetuning or prediction openai tells you how much they will charge you for that particular command. My suggestion is if you are just experimenting then keep your dataset small so that you can manage your learning with USD 10-20.">
+  <meta itemprop="datePublished" content="2023-07-02T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2023-07-02T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1538">
+  <meta itemprop="keywords" content="OpenAI API,Model Fine-tuning,Transfer Learning,Language Models,API Integration,Machine Learning,GPT Models,Custom Models">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="A Guide to Model Fine Tuning with OpenAI API">
+  <meta name="twitter:description" content="A Guide to Model Fine Tuning with OpenAI API Account Setup and API Key Generation Go to openai, sign up there and create your account. After than you need to create an API using API Key Link. You need to copy the api key and you replace the text below &lt;OPENAI_API_KEY&gt;. Being string the key should be within “”. Keeping security in mind it is highly recommended that you do not put the API in the code file. Keep it at some secured place and read that file to fetch the API key. OpenAI gives you USD 5 free usage. After that you need to pay. For that you need to setup your credit card details on their system. They are very fair on the charges, just keep track of your usage. If you don’t use any of their service they won’t charge anything for just having account with them. While doing any model finetuning or prediction openai tells you how much they will charge you for that particular command. My suggestion is if you are just experimenting then keep your dataset small so that you can manage your learning with USD 10-20.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6068-A-Guide-to-Model-Fine-Tuning-with-OpenAI-API.jpg" alt="A Guide to Model Fine Tuning with OpenAI API"></p>
+<h1 id="a-guide-to-model-fine-tuning-with-openai-api">A Guide to Model Fine Tuning with OpenAI API</h1>
+<h2 id="account-setup-and-api-key-generation">Account Setup and API Key Generation</h2>
+<p>Go to <a href="https://platform.openai.com/">openai</a>, sign up there and create your account. After than you need to create an API using <a href="https://platform.openai.com/account/api-keys">API Key Link</a>. You need to copy the api key and you replace the text below &lt;OPENAI_API_KEY&gt;. Being string the key should be within &ldquo;&rdquo;. Keeping security in mind it is highly recommended that you do not put the API in the code file. Keep it at some secured place and read that file to fetch the API key. OpenAI gives you USD 5 free usage. After that you need to pay. For that you need to setup your credit card details on their system. They are very fair on the charges, just keep track of your usage. If you don&rsquo;t use any of their service they won&rsquo;t charge anything for just having account with them. While doing any model finetuning or prediction openai tells you how much they will charge you for that particular command. My suggestion is if you are just experimenting then keep your dataset small so that you can manage your learning with USD 10-20.</p>
+<p>You can go to <a href="https://colab.research.google.com/">https://colab.research.google.com/</a>. If you do not have account on google then you need can create one. After this your need to launch a notebook (colab notebook).</p>
+<p>Here you need to install open .</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>pip install <span style="color:#f92672">--</span>upgrade openai
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>export OPENAI_API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;OPENAI_API_KEY&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> openai
+</span></span></code></pre></div><h2 id="data-preperation">Data Preperation</h2>
+<ul>
+<li><a href="https://platform.openai.com/docs/guides/fine-tuning/preparing-your-dataset">Guidelines</a></li>
+</ul>
+<h3 id="create-train-and-validation-dataset-from-your-jsonl-file">Create train and validation dataset from your jsonl file:</h3>
+<p>Your data must be a JSONL document, where each line is a prompt-completion pair corresponding to a training example.</p>
+<p>Command below will create train and validation dataset from the JSONL file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>openai tools fine_tunes<span style="color:#f92672">.</span>prepare_data <span style="color:#f92672">-</span>f <span style="color:#f92672">&lt;</span>LOCAL_FILE<span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><h3 id="jsonl-format-is-as-below">jsonl format is as below</h3>
+<p>{&ldquo;prompt&rdquo;: &ldquo;<prompt text>&rdquo; + &ldquo;\n\n###\n\n&rdquo;, &ldquo;completion&rdquo;: &ldquo;<ideal generated text>&rdquo; + &ldquo;\n or ###&rdquo;}  <br>
+{&ldquo;prompt&rdquo;: &ldquo;<prompt text>&rdquo;, &ldquo;completion&rdquo;: &ldquo;<ideal generated text>&rdquo;}  <br>
+{&ldquo;prompt&rdquo;: &ldquo;<prompt text>&rdquo;, &ldquo;completion&rdquo;: &ldquo;<ideal generated text>&rdquo;}</p>
+<h3 id="promot-design-for-classification">Promot Design for Classification</h3>
+<ul>
+<li>Use a separator at the end of the prompt, e.g. \n\n###\n\n. Remember to also append this separator when you eventually make requests to your model.</li>
+<li>Choose classes that map to a single token. At inference time, specify max_tokens=1 since you only need the first token for classification.</li>
+<li>Ensure that the prompt + completion doesn&rsquo;t exceed 2048 tokens, including the separator</li>
+<li>Aim for at least ~100 examples per class</li>
+<li>To get class log probabilities you can specify logprobs=5 (for 5 classes) when using your model
+Ensure that the dataset used for finetuning is very similar in structure and type of task as what the model will be used for</li>
+</ul>
+<h4 id="prompt-example1">Prompt Example1</h4>
+<ul>
+<li>{&ldquo;prompt&rdquo;:&ldquo;Company: BHFF insurance\nProduct: allround insurance\nAd:One stop shop for all your insurance needs!\nSupported:&rdquo;, &ldquo;completion&rdquo;:&quot; yes&quot;}</li>
+<li>{&ldquo;prompt&rdquo;:&ldquo;Company: Loft conversion specialists\nProduct: -\nAd:Straight teeth in weeks!\nSupported:&rdquo;, &ldquo;completion&rdquo;:&quot; no&quot;}</li>
+</ul>
+<h4 id="prompt-example2">Prompt Example2</h4>
+<ul>
+<li>{&ldquo;prompt&rdquo;:&ldquo;Overjoyed with the new iPhone! -&gt;&rdquo;, &ldquo;completion&rdquo;:&quot; positive&quot;}</li>
+<li>{&ldquo;prompt&rdquo;:&quot;@lakers disappoint for a third straight night <a href="https://t.co/38EFe43">https://t.co/38EFe43</a> -&gt;&quot;, &ldquo;completion&rdquo;:&quot; negative&quot;}</li>
+</ul>
+<h4 id="prompt-example3">Prompt Example3</h4>
+<ul>
+<li>{&ldquo;prompt&rdquo;:&ldquo;Subject: &lt;email_subject&gt;\nFrom:&lt;customer_name&gt;\nDate:<date>\nContent:&lt;email_body&gt;\n\n###\n\n&rdquo;, &ldquo;completion&rdquo;:&quot; &lt;numerical_category&gt;&quot;}</li>
+<li>{&ldquo;prompt&rdquo;:&ldquo;Subject: Update my address\nFrom:Joe Doe\nTo:support@ourcompany.com\nDate:2021-06-03\nContent:Hi,\nI would like to update my billing address to match my delivery address.\n\nPlease let me know once done.\n\nThanks,\nJoe\n\n###\n\n&rdquo;, &ldquo;completion&rdquo;:&quot; 4&quot;}</li>
+</ul>
+<h3 id="prompt-design-for-conditional-generation">Prompt Design for Conditional Generation</h3>
+<p>Conditional generation is a problem where the content needs to be generated given some kind of input. This includes paraphrasing, summarizing, entity extraction, product description writing given specifications, chatbots and many others. For this type of problem we recommend:</p>
+<ul>
+<li>Use a separator at the end of the prompt, e.g. \n\n###\n\n. Remember to also append this separator when you eventually make requests to your model.</li>
+<li>Use an ending token at the end of the completion, e.g. END</li>
+<li>Remember to add the ending token as a stop sequence during inference, e.g. stop=[&quot; END&quot;]</li>
+<li>Aim for at least ~500 examples</li>
+<li>Ensure that the prompt + completion doesn&rsquo;t exceed 2048 tokens, including the separator</li>
+<li>Ensure the examples are of high quality and follow the same desired format</li>
+<li>Ensure that the dataset used for finetuning is very similar in structure and type of task as what the model will be used for</li>
+<li>Using Lower learning rate and only 1-2 epochs tends to work better for these use cases</li>
+</ul>
+<h4 id="prompt-example1-1">Prompt Example1</h4>
+<ul>
+<li>{&ldquo;prompt&rdquo;:&quot;<Product Name>\n<Wikipedia description>\n\n###\n\n&quot;, &ldquo;completion&rdquo;:&quot; <engaging ad> END&quot;}</li>
+<li>{&ldquo;prompt&rdquo;:&ldquo;Samsung Galaxy Feel\nThe Samsung Galaxy Feel is an Android smartphone developed by Samsung Electronics exclusively for the Japanese market. The phone was released in June 2017 and was sold by NTT Docomo. It runs on Android 7.0 (Nougat), has a 4.7 inch display, and a 3000 mAh battery.\nSoftware\nSamsung Galaxy Feel runs on Android 7.0 (Nougat), but can be later updated to Android 8.0 (Oreo).\nHardware\nSamsung Galaxy Feel has a 4.7 inch Super AMOLED HD display, 16 MP back facing and 5 MP front facing cameras. It has a 3000 mAh battery, a 1.6 GHz Octa-Core ARM Cortex-A53 CPU, and an ARM Mali-T830 MP1 700 MHz GPU. It comes with 32GB of internal storage, expandable to 256GB via microSD. Aside from its software and hardware specifications, Samsung also introduced a unique a hole in the phone&rsquo;s shell to accommodate the Japanese perceived penchant for personalizing their mobile phones. The Galaxy Feel&rsquo;s battery was also touted as a major selling point since the market favors handsets with longer battery life. The device is also waterproof and supports 1seg digital broadcasts using an antenna that is sold separately.\n\n###\n\n&rdquo;, &ldquo;completion&rdquo;:&ldquo;Looking for a smartphone that can do it all? Look no further than Samsung Galaxy Feel! With a slim and sleek design, our latest smartphone features high-quality picture and video capabilities, as well as an award winning battery life. END&rdquo;}</li>
+</ul>
+<h4 id="prompt-example2-1">Prompt Example2</h4>
+<ul>
+<li>{&ldquo;prompt&rdquo;:&quot;&lt;any text, for example news article&gt;\n\n###\n\n&quot;, &ldquo;completion&rdquo;:&quot; &lt;list of entities, separated by a newline&gt; END&quot;}</li>
+<li>{&ldquo;prompt&rdquo;:&ldquo;Portugal will be removed from the UK&rsquo;s green travel list from Tuesday, amid rising coronavirus cases and concern over a &quot;Nepal mutation of the so-called Indian variant&quot;. It will join the amber list, meaning holidaymakers should not visit and returnees must isolate for 10 days&hellip;\n\n###\n\n&rdquo;, &ldquo;completion&rdquo;:&quot; Portugal\nUK\nNepal mutation\nIndian variant END&quot;}</li>
+</ul>
+<h4 id="prompt-example3-1">Prompt Example3</h4>
+<ul>
+<li>{&ldquo;prompt&rdquo;:&ldquo;Summary: <summary of the interaction so far>\n\nSpecific information:<for example order details in natural language>\n\n###\n\nCustomer: <message1>\nAgent: <response1>\nCustomer: <message2>\nAgent:&rdquo;, &ldquo;completion&rdquo;:&quot; <response2>\n&quot;}</li>
+<li>{&ldquo;prompt&rdquo;:&ldquo;Summary: <summary of the interaction so far>\n\nSpecific information:<for example order details in natural language>\n\n###\n\nCustomer: <message1>\nAgent: <response1>\nCustomer: <message2>\nAgent: <response2>\nCustomer: <message3>\nAgent:&rdquo;, &ldquo;completion&rdquo;:&quot; <response3>\n&quot;}</li>
+</ul>
+<h4 id="prompt-example4">Prompt Example4</h4>
+<ul>
+<li>{&ldquo;prompt&rdquo;:&ldquo;Item=handbag, Color=army_green, price=$99, size=S-&gt;&rdquo;, &ldquo;completion&rdquo;:&quot; This stylish small green handbag will add a unique touch to your look, without costing you a fortune.&quot;}</li>
+<li>{&ldquo;prompt&rdquo;:&ldquo;Item is a handbag. Colour is army green. Price is midrange. Size is small.-&gt;&rdquo;, &ldquo;completion&rdquo;:&quot; This stylish small green handbag will add a unique touch to your look, without costing you a fortune.&quot;}</li>
+</ul>
+<h2 id="customize-your-model-name">Customize your model name</h2>
+<p>Whether you want to create a custom model for the NLP task in your hand or you want to further refine the existing customized model. You can use the command below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>openai api fine_tunes<span style="color:#f92672">.</span>create <span style="color:#f92672">-</span>t test<span style="color:#f92672">.</span>jsonl <span style="color:#f92672">-</span>m ada <span style="color:#f92672">--</span>suffix <span style="color:#e6db74">&#34;custom model name&#34;</span>
+</span></span></code></pre></div><p>&ldquo;custom model name&rdquo; can be &ldquo;ada&rdquo;, &ldquo;babbage&rdquo;, &ldquo;curie&rdquo;, or &ldquo;davinci&rdquo;. If you already have created a customized model like &ldquo;ft-some-customized-model&rdquo; then you can name that instead of davinci, ada etc.</p>
+<h2 id="analyse-finetuned-model">Analyse Finetuned model</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>openai api fine_tunes<span style="color:#f92672">.</span>results <span style="color:#f92672">-</span>i <span style="color:#f92672">&lt;</span>YOUR_FINE_TUNE_JOB_ID<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&gt;</span> results<span style="color:#f92672">.</span>csv 
+</span></span></code></pre></div><p>The results.csv file contains a row for each training step, where a step refers to one forward and backward pass on a batch of data. In addition to the step number, each row contains the following fields corresponding to that step:</p>
+<ul>
+<li>elapsed_tokens: the number of tokens the model has seen so far (including repeats)</li>
+<li>elapsed_examples: the number of examples the model has seen so far (including repeats), where one example is one - element in your batch. For example, if batch_size = 4, each step will increase elapsed_examples by 4.
+training_loss: loss on the training batch</li>
+<li>training_sequence_accuracy: the percentage of completions in the training batch for which the model&rsquo;s predicted tokens matched the true completion tokens exactly. For example, with a batch_size of 3, if your data contains the completions [[1, 2], [0, 5], [4, 2]] and the model predicted [[1, 1], [0, 5], [4, 2]], this accuracy will be 2/3 = 0.67</li>
+<li>training_token_accuracy: the percentage of tokens in the training batch that were correctly predicted by the model. For example, with a batch_size of 3, if your data contains the completions [[1, 2], [0, 5], [4, 2]] and the model predicted [[1, 1], [0, 5], [4, 2]], this accuracy will be 5/6 = 0.83</li>
+</ul>
+<h2 id="hyperparameters">Hyperparameters</h2>
+<ul>
+<li>model: &ldquo;ada&rdquo;, &ldquo;babbage&rdquo;, &ldquo;curie&rdquo;, or &ldquo;davinci&rdquo;.</li>
+<li>n_epochs - defaults to 4.</li>
+<li>batch_size - defaults to ~0.2%</li>
+<li>learning_rate_multiplier - defaults to 0.05, 0.1, or 0.2 depending on final batch_size. Try values in the range 0.02 to 0.2. Empirically, we&rsquo;ve found that larger learning rates often perform better with larger batch sizes.</li>
+<li>compute_classification_metrics - defaults to False. If True, for fine-tuning for classification tasks, computes classification-specific metrics (accuracy, F-1 score, etc) on the validation set at the end of every epoch.</li>
+</ul>
+<h2 id="delete-finetuned-model">Delete finetuned model</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>openai<span style="color:#f92672">.</span>Model<span style="color:#f92672">.</span>delete(FINE_TUNED_MODEL)
+</span></span></code></pre></div><h2 id="create-embedding">Create Embedding</h2>
+<p>You can use OpenAI api to create embedding. For this you can use &ldquo;ada&rdquo; model.</p>
+<h3 id="python-example1">Python Example1</h3>
+<p>To get the the embedding of a sentence.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>response <span style="color:#f92672">=</span> openai<span style="color:#f92672">.</span>Embedding<span style="color:#f92672">.</span>create(
+</span></span><span style="display:flex;"><span>    input<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Your text string goes here&#34;</span>,
+</span></span><span style="display:flex;"><span>    model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-embedding-ada-002&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>embeddings <span style="color:#f92672">=</span> response[<span style="color:#e6db74">&#39;data&#39;</span>][<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;embedding&#39;</span>]
+</span></span></code></pre></div><h3 id="python-example2">Python Example2</h3>
+<p>To create an embedding for the entire dataset.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_embedding</span>(text, model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-embedding-ada-002&#34;</span>):
+</span></span><span style="display:flex;"><span>   text <span style="color:#f92672">=</span> text<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> openai<span style="color:#f92672">.</span>Embedding<span style="color:#f92672">.</span>create(input <span style="color:#f92672">=</span> [text], model<span style="color:#f92672">=</span>model)[<span style="color:#e6db74">&#39;data&#39;</span>][<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;embedding&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;ada_embedding&#39;</span>] <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>combined<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: get_embedding(x, model<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;text-embedding-ada-002&#39;</span>))   
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;output/embedded_1k_reviews.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)   
+</span></span></code></pre></div><h2 id="pricing">Pricing</h2>
+<h3 id="embedding-price">Embedding Price</h3>
+<p>Usage is priced per input token, at a rate of $0.0004 per 1000 tokens, or about ~3,000 pages per US dollar (assuming ~800 tokens per page):</p>
+<h3 id="usage--charges">Usage &amp; Charges</h3>
+<ul>
+<li><a href="https://platform.openai.com/account/usage">Usage</a></li>
+<li><a href="https://platform.openai.com/account/rate-limits">Rate Limits</a></li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Hope this quick tutorial will help you in your Prompt Engineering and model finetuning using OpenAI API.</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research Methodology on Agones</title>
+    <link>http://localhost:1313/tags/research-methodology/</link>
+    <description>Recent content in Research Methodology on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/research-methodology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Journey from Master to PhD in Data Science and AI</title>
+      <link>http://localhost:1313/dsblog/journey-from-master-to-phd/</link>
+      <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/journey-from-master-to-phd/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6100-Journey-from-MS-to-Phd.jpg&#34; alt=&#34;My Journey from Master to PhD in Data Science and AI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;my-journey-from-master-to-phd-in-data-science-and-ai&#34;&gt;My Journey from Master to PhD in Data Science and AI&lt;/h1&gt;&#xA;&lt;p&gt;I have been in software development between 1993 to 2009. Some of these years were in senior leadership roles in delivery management, project management, CMMI, ISO, ISMS, PMO, etc. In 2010 I moved into project management training and consulting. In 2018, I was considering going back to technology but this time I wanted to pick up a completely new stack of technology. I decided I would move into Data Science and AI. I knew AI as much as any typical software development person in senior management knew about this. It means I was highly confident that I could pick this up quickly. On top of that lots of content is available on the internet, many YouTube channels, and many courses are available. I thought it should be a cakewalk for me. I started learning this technology in my own way in my committed free time. Within 5-6 months after lots of study I started realizing this was the way to get the knowledge but it could not help me get confident to solve the problem. The more I learned, the more I felt that I did not know how much I needed to learn or how far I needed to go.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to do Literature Review</title>
+      <link>http://localhost:1313/dsblog/How-To-Do-Literature-Review/</link>
+      <pubDate>Thu, 17 Aug 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/How-To-Do-Literature-Review/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6086-How-To-Do-Literature-Review.jpg&#34; alt=&#34;How to do Literature Review&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;how-to-conduct-literature-review&#34;&gt;How to Conduct Literature Review?&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Literature Review (LR) or Literature Survey (LS) is a process that helps you to browse the libraries, literature, articles, books, conference proceedings, etc. The objective of this process is to study the work of other researchers in the field and around the topic you are interested in. This is one of the heaviest work in any research work. If you are not on track or this process is taking unusually longer time, then it means you don&amp;rsquo;t have any guiding process or best practices in place. As per my experience during my MS in Data Science and Ph.D./DBA in AI-Natural Language Processing, I am writing my thoughts in this article. I am sure it will help you, especially if you are entering in the field of research.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

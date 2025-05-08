@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Latest Information on Agones</title>
+    <link>http://localhost:1313/tags/latest-information/</link>
+    <description>Recent content in Latest Information on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/latest-information/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adapting AI Models to the Latest Information: Methods and Approaches</title>
+      <link>http://localhost:1313/dsblog/adapting-ai-models-to-the-latest-information/</link>
+      <pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/adapting-ai-models-to-the-latest-information/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6202-Adapting-AI-Models-to-the-Latest-Information.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;adapting-ai-models-to-the-latest-information-methods-and-approaches&#34;&gt;Adapting AI Models to the Latest Information: Methods and Approaches&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Artificial Intelligence offers numerous advantages over traditional search engines like Google or Bing, but it also has a notable limitation: its knowledge is often frozen in the past. Unless a model is retrained or updated with newly available data, it cannot respond effectively to current business, political, social, or scientific developments.&lt;/p&gt;&#xA;&lt;p&gt;To address this limitation, one popular approach is &lt;strong&gt;Retrieval-Augmented Generation (RAG)&lt;/strong&gt;, a method that combines AI models with up-to-date external data sources. You may have come across RAG frequently in recent discussions about AI advancements.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

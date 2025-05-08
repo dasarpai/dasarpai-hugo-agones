@@ -1,0 +1,766 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Understanding LLM GAN and Transformers | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/Understanding-LLM-GAN-and-Transformers/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Understanding LLM GAN and Transformers">
+  <meta property="og:description" content="Understanding LLM, GAN and Transformers LLM Layers Large Language Models (LLMs) are typically based on Transformer architectures, which consist of several types of layers that work together to process and generate text. Here are the primary kinds of layers found in an LLM:
+Embedding Layers:
+Token Embedding Layer: Converts input tokens (words, subwords, or characters) into dense n dimensional vectors. Position Embedding Layer: Adds positional information to the token embeddings, allowing the model to understand the order of tokens. Transformer Encoder Layers: This layer is found in models, which are designed for generating encoded represenration of the input.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-07-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="Large Language Models">
+    <meta property="article:tag" content="GANs">
+    <meta property="article:tag" content="Transformers">
+    <meta property="article:tag" content="Deep Learning">
+    <meta property="article:tag" content="AI Architecture">
+    <meta property="article:tag" content="Neural Networks">
+
+  <meta itemprop="name" content="Understanding LLM GAN and Transformers">
+  <meta itemprop="description" content="Understanding LLM, GAN and Transformers LLM Layers Large Language Models (LLMs) are typically based on Transformer architectures, which consist of several types of layers that work together to process and generate text. Here are the primary kinds of layers found in an LLM:
+Embedding Layers:
+Token Embedding Layer: Converts input tokens (words, subwords, or characters) into dense n dimensional vectors. Position Embedding Layer: Adds positional information to the token embeddings, allowing the model to understand the order of tokens. Transformer Encoder Layers: This layer is found in models, which are designed for generating encoded represenration of the input.">
+  <meta itemprop="datePublished" content="2024-07-26T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="2050">
+  <meta itemprop="keywords" content="LLM Architecture,Generative AI,Transformer Models,Neural Networks,Deep Learning Models,Language Processing,AI Model Comparison,Machine Learning Architecture">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Understanding LLM GAN and Transformers">
+  <meta name="twitter:description" content="Understanding LLM, GAN and Transformers LLM Layers Large Language Models (LLMs) are typically based on Transformer architectures, which consist of several types of layers that work together to process and generate text. Here are the primary kinds of layers found in an LLM:
+Embedding Layers:
+Token Embedding Layer: Converts input tokens (words, subwords, or characters) into dense n dimensional vectors. Position Embedding Layer: Adds positional information to the token embeddings, allowing the model to understand the order of tokens. Transformer Encoder Layers: This layer is found in models, which are designed for generating encoded represenration of the input.">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p><img src="/assets/images/dspost/dsp6127-Understanding-LLM-GAN-and-Transformers.jpg" alt="Understanding-LLM-GAN-Transformers"></p>
+<h1 id="understanding-llm-gan-and-transformers">Understanding LLM, GAN and Transformers</h1>
+<h2 id="llm-layers">LLM Layers</h2>
+<p>Large Language Models (LLMs) are typically based on Transformer architectures, which consist of several types of layers that work together to process and generate text. Here are the primary kinds of layers found in an LLM:</p>
+<ol>
+<li>
+<p><strong>Embedding Layers</strong>:</p>
+<ul>
+<li><strong>Token Embedding Layer</strong>: Converts input tokens (words, subwords, or characters) into dense n dimensional vectors.</li>
+<li><strong>Position Embedding Layer</strong>: Adds positional information to the token embeddings, allowing the model to understand the order of tokens.</li>
+</ul>
+</li>
+<li>
+<p><strong>Transformer Encoder Layers</strong>: This layer is found in models, which are designed for generating encoded represenration of the input.</p>
+<ul>
+<li><strong>Self-Attention Layer</strong>: Computes attention scores to capture dependencies between tokens in the input sequence. It allows the model to weigh the importance of different tokens.</li>
+<li><strong>Feedforward Layer</strong>: Applies a fully connected neural network to each token independently, often consisting of two linear transformations with a non-linear activation function (e.g., ReLU) in between.</li>
+<li><strong>Layer Normalization</strong>: Normalizes the inputs to each sub-layer, improving training stability.</li>
+<li><strong>Residual Connections</strong>: Adds the input of each sub-layer to its output, facilitating gradient flow and improving convergence.</li>
+</ul>
+</li>
+<li>
+<p><strong>Transformer Decoder Layers</strong>: This layer is found in models, which are designed for sequence-to-sequence tasks like translation.</p>
+<ul>
+<li><strong>Masked Self-Attention Layer</strong>: Similar to the self-attention layer in the encoder but with masking to prevent attending to future tokens, ensuring autoregressive generation.</li>
+<li><strong>Encoder-Decoder Attention Layer</strong>: Computes attention scores between the decoder tokens and the encoder&rsquo;s output tokens, allowing the decoder to focus on relevant parts of the input sequence.</li>
+<li><strong>Feedforward Layer, Layer Normalization, and Residual Connections</strong>: As in the encoder layers.</li>
+</ul>
+</li>
+<li>
+<p><strong>Output Layers</strong>:</p>
+<ul>
+<li><strong>Linear Layer</strong>: Projects the final hidden states to the vocabulary size, producing logits for each token in the vocabulary.</li>
+<li><strong>Softmax Layer</strong>: Converts the logits to probabilities, providing a probability distribution over the vocabulary for the next token prediction.</li>
+</ul>
+</li>
+<li>
+<p><strong>Specialized Layers</strong> (in some advanced LLM architectures):</p>
+<ul>
+<li><strong>Attention Mechanisms Variants</strong>: Variants like multi-head attention, relative position encodings, and cross-attention mechanisms.</li>
+<li><strong>Memory Layers</strong>: Augment the model with external memory to store and retrieve long-term dependencies.</li>
+<li><strong>Sparse or Adaptive Attention</strong>: Optimize attention mechanisms for efficiency, especially in handling long sequences.</li>
+<li><strong>Adapter Layers</strong>: Lightweight layers added to pre-trained models to allow <strong>efficient fine-tuning</strong> on new tasks without modifying the original model weights significantly.</li>
+</ul>
+</li>
+</ol>
+<p>Each of these layers plays a crucial role in enabling LLMs to process, understand, and generate natural language effectively. The combination of these layers, particularly the self-attention mechanism and the feedforward neural networks, is what makes the Transformer architecture so powerful for a wide range of NLP tasks.</p>
+<h2 id="some-powerful-llm-and-their-developers">Some Powerful LLM and their developers</h2>
+<p>Here is a list of some recently developed large language models (LLMs) along with their developer organizations:</p>
+<ol>
+<li><strong>GPT-4</strong> - OpenAI</li>
+<li><strong>LLaMA (Large Language Model Meta AI)</strong> - Meta (formerly Facebook)</li>
+<li><strong>Claude</strong> - Anthropic</li>
+<li><strong>PaLM (Pathways Language Model)</strong> - Google</li>
+<li><strong>Grok</strong> - xAI (Elon Musk&rsquo;s AI company)</li>
+<li><strong>Mistral</strong> - Mistral AI</li>
+<li><strong>Falcon</strong> - Technology Innovation Institute (TII) in Abu Dhabi</li>
+<li><strong>Gemini</strong> - Google DeepMind</li>
+<li><strong>Cohere Command R</strong> - Cohere</li>
+<li><strong>Grok</strong> - xAI</li>
+<li><strong>Megatron-Turing NLG</strong> - NVIDIA and Microsoft</li>
+<li><strong>LaMDA</strong> - Google</li>
+<li><strong>BLOOM</strong> - BigScience (collaborative effort)</li>
+<li><strong>ERNIE</strong> - Baidu</li>
+<li><strong>WuDao</strong> - Beijing Academy of Artificial Intelligence (BAAI)</li>
+<li><strong>Co:here</strong> - Cohere</li>
+<li><strong>T5 (Text-to-Text Transfer Transformer)</strong> - Google</li>
+<li><strong>XLNet</strong> - Google and Carnegie Mellon University</li>
+<li><strong>Gopher</strong> - DeepMind</li>
+<li><strong>Jurassic-2</strong> - AI21 Labs</li>
+<li><strong>OPT</strong> - Meta (Facebook)</li>
+</ol>
+<h2 id="architectures-used-by-these-llms">Architectures used by these LLMs</h2>
+<h3 id="decoder-only-architectures">Decoder-Only Architectures:</h3>
+<ol>
+<li><strong>GPT-4</strong> - OpenAI</li>
+<li><strong>Claude</strong> - Anthropic</li>
+<li><strong>Jurassic-2</strong> - AI21 Labs</li>
+<li><strong>OPT</strong> - Meta (Facebook)</li>
+<li><strong>LLaMA</strong> - Meta (Facebook)</li>
+<li><strong>Megatron-Turing NLG</strong> - NVIDIA and Microsoft</li>
+</ol>
+<h3 id="encoder-decoder-architectures">Encoder-Decoder Architectures:</h3>
+<ol>
+<li><strong>PaLM</strong> - Google</li>
+<li><strong>T5 (Text-to-Text Transfer Transformer)</strong> - Google</li>
+<li><strong>Gemini</strong> - Google DeepMind</li>
+<li><strong>BLOOM</strong> - BigScience (collaborative effort)</li>
+</ol>
+<h3 id="encoder-only-architectures">Encoder-Only Architectures:</h3>
+<ol>
+<li><strong>LaMDA</strong> - Google</li>
+<li><strong>Gopher</strong> - DeepMind</li>
+<li><strong>Mistral</strong> - Mistral AI</li>
+<li><strong>Falcon</strong> - Technology Innovation Institute (TII)</li>
+<li><strong>ERNIE</strong> - Baidu</li>
+<li><strong>WuDao</strong> - Beijing Academy of Artificial Intelligence (BAAI)</li>
+<li><strong>Co:here</strong> - Cohere</li>
+<li><strong>XLNet</strong> - Google and Carnegie Mellon University (Note: XLNet is a permutation-based Transformer, which can be seen as a generalization of BERT with an autoregressive component)</li>
+</ol>
+<p>Different architectures are chosen based on the specific requirements and goals of the model, such as whether it is primarily for text generation (decoder-only) or understanding tasks (encoder-only), or for tasks that benefit from both (encoder-decoder).</p>
+<h2 id="what-are-different-gan-architectures-used-in-language-modeling">What are different GAN architectures used in language modeling?</h2>
+<p>GAN-based approaches for language modeling are less common compared to Transformer-based architectures due to the challenges discussed later in this artcile. However, there have been some attempts to use GANs for text generation and language modeling. Here are a few notable GAN-based models and approaches in the realm of language processing:</p>
+<ol>
+<li>
+<p><strong>SeqGAN</strong>:</p>
+<ul>
+<li><strong>Developed by</strong>: University of Illinois at Urbana-Champaign, Microsoft Research, and University of Edinburgh.</li>
+<li><strong>Description</strong>: SeqGAN uses GANs for sequence generation tasks. It treats text generation as a sequential decision-making process and uses a discriminator to evaluate the quality of entire sequences.</li>
+</ul>
+</li>
+<li>
+<p><strong>TextGAN</strong>:</p>
+<ul>
+<li><strong>Developed by</strong>: University of Chinese Academy of Sciences and Peking University.</li>
+<li><strong>Description</strong>: TextGAN is designed for generating realistic text by incorporating a maximum-likelihood objective into the GAN framework. The model uses a discriminator to differentiate between real and generated text and optimizes the generator to produce high-quality text.</li>
+</ul>
+</li>
+<li>
+<p><strong>LeakGAN</strong>:</p>
+<ul>
+<li><strong>Developed by</strong>: Peking University and Microsoft Research.</li>
+<li><strong>Description</strong>: LeakGAN introduces a mechanism to &ldquo;leak&rdquo; the discriminator&rsquo;s information to the generator during training. This helps the generator to produce more realistic and coherent text sequences by leveraging intermediate feedback from the discriminator.</li>
+</ul>
+</li>
+<li>
+<p><strong>RelGAN</strong>:</p>
+<ul>
+<li><strong>Developed by</strong>: University of Chinese Academy of Sciences.</li>
+<li><strong>Description</strong>: RelGAN focuses on improving the training stability and quality of text generation by using relational memory for the generator and a step-wise evaluation for the discriminator.</li>
+</ul>
+</li>
+<li>
+<p><strong>MaliGAN</strong>:</p>
+<ul>
+<li><strong>Developed by</strong>: Carnegie Mellon University and Microsoft Research.</li>
+<li><strong>Description</strong>: MaliGAN aims to address the mode collapse problem in GANs by introducing a new reward function for the generator that mitigates the issues of traditional GAN training in the context of text generation.</li>
+</ul>
+</li>
+<li>
+<p><strong>ColdGANs</strong>:</p>
+<ul>
+<li><strong>Developed by</strong>: Facebook AI Research.</li>
+<li><strong>Description</strong>: ColdGANs use a temperature-based sampling technique to improve the quality and diversity of generated text by stabilizing the training process and reducing mode collapse.</li>
+</ul>
+</li>
+</ol>
+<p>While these models represent notable attempts to apply GANs to language modeling and text generation, they have not achieved the same level of widespread adoption or success as Transformer-based architectures like GPT or BERT. The challenges associated with training GANs for discrete text data and the remarkable performance of Transformer models have led to the latter being the preferred choice for most large-scale language modeling tasks.</p>
+<h2 id="why-researchers-are-not-using-gan-for-developing-llm">Why researchers are not using GAN for developing LLM?</h2>
+<p>Generative Adversarial Networks (GANs) have been incredibly successful in generating realistic images and other types of data, but they are not typically used for large language models (LLMs) due to several challenges and limitations. Here are some key reasons why GANs are not commonly used for LLMs:</p>
+<ol>
+<li>
+<p><strong>Mode Collapse</strong>:</p>
+<ul>
+<li>GANs often suffer from mode collapse, where the generator produces a limited variety of outputs. This is particularly problematic for language generation, where diversity and fluency are crucial.</li>
+</ul>
+</li>
+<li>
+<p><strong>Training Instability</strong>:</p>
+<ul>
+<li>Training GANs can be unstable and difficult to converge. The adversarial training process, involving both a generator and a discriminator, requires careful balancing, which is more challenging in the context of language modeling.</li>
+</ul>
+</li>
+<li>
+<p><strong>Discrete Nature of Language</strong>:</p>
+<ul>
+<li>Language is discrete, whereas GANs are naturally suited for continuous data like images. The discrete nature of language makes it harder to apply gradient-based optimization methods directly, which are essential for GAN training.</li>
+</ul>
+</li>
+<li>
+<p><strong>Evaluation Challenges</strong>:</p>
+<ul>
+<li>Evaluating the quality of generated text is inherently more subjective and challenging compared to images. Objective metrics for language generation (like BLEU, ROUGE) often do not correlate well with human judgment, making it harder to train and evaluate GANs effectively.</li>
+</ul>
+</li>
+<li>
+<p><strong>Large-Scale Data Requirements</strong>:</p>
+<ul>
+<li>LLMs like Transformers are pre-trained on massive amounts of text data using self-supervised learning objectives (e.g., next token prediction, masked language modeling). This approach is straightforward and scales well with large datasets, whereas GANs would require a different setup, potentially increasing complexity.</li>
+</ul>
+</li>
+<li>
+<p><strong>Pre-training and Fine-tuning Paradigm</strong>:</p>
+<ul>
+<li>The Transformer architecture, particularly in models like GPT and BERT, leverages a pre-training and fine-tuning paradigm that has proven to be extremely effective for a wide range of NLP tasks. This approach benefits from transfer learning, where the model can be fine-tuned on specific tasks after being pre-trained on a large corpus.</li>
+</ul>
+</li>
+<li>
+<p><strong>Success of Transformer-Based Architectures</strong>:</p>
+<ul>
+<li>The success of Transformer-based architectures in achieving state-of-the-art performance on numerous NLP benchmarks has set a high standard. These models have shown remarkable capability in capturing complex language patterns and dependencies, making alternative approaches like GANs less attractive.</li>
+</ul>
+</li>
+<li>
+<p><strong>Complexity of Language Generation Tasks</strong>:</p>
+<ul>
+<li>Language generation tasks require maintaining coherence, context, grammar, and meaning over longer sequences, which is challenging for GANs. Transformers, with their attention mechanisms, handle these requirements more effectively.</li>
+</ul>
+</li>
+<li>
+<p><strong>Lack of Need for Adversarial Framework</strong>:</p>
+<ul>
+<li>The adversarial framework of GANs, where a generator tries to fool a discriminator, is not inherently necessary for text generation. Other approaches, like autoregressive models (GPT) or denoising autoencoders (BERT), have proven to be more straightforward and effective for language tasks.</li>
+</ul>
+</li>
+</ol>
+<p>Given these reasons, the research and development community has predominantly focused on Transformer-based architectures for large language models, which have demonstrated superior performance and scalability for a wide range of natural language processing tasks.</p>
+<h2 id="if-encoder-is-for-understanding-and-decoder-for-generation-then-how-come-gpt-decoder-only-architecture-understands-context">If encoder is for understanding and decoder for generation then how come GPT (decoder only architecture), understands context?</h2>
+<p>The distinction between encoder and decoder roles in Transformers is somewhat generalized. While it&rsquo;s true that encoder layers are primarily designed for understanding and decoder layers for generation, the capabilities of a model like ChatGPT (which uses a decoder-only architecture) to understand and generate coherent responses come from the way these models are trained and designed.</p>
+<p>Here&rsquo;s how ChatGPT, despite being a decoder-only model, can effectively understand and respond to input:</p>
+<h3 id="training-methodology">Training Methodology</h3>
+<ol>
+<li>
+<p><strong>Autoregressive Training</strong>:</p>
+<ul>
+<li>ChatGPT and similar models are trained using an autoregressive approach, where the model learns to predict the next token in a sequence given all the previous tokens. This means that during training, the model is exposed to vast amounts of text and learns to generate contextually relevant tokens based on the preceding context.</li>
+</ul>
+</li>
+<li>
+<p><strong>Self-Attention Mechanism</strong>:</p>
+<ul>
+<li>The self-attention mechanism allows the model to consider the entire context of the input sequence when generating each token. This enables the model to weigh the importance of different tokens and capture long-range dependencies in the text.</li>
+</ul>
+</li>
+<li>
+<p><strong>Context Window</strong>:</p>
+<ul>
+<li>During inference, the model takes a prompt or an input document and generates a response based on the context provided by the input tokens. The self-attention mechanism ensures that the model can &ldquo;understand&rdquo; the input by attending to relevant parts of the context while generating each token.</li>
+</ul>
+</li>
+</ol>
+<h3 id="understanding-in-decoder-only-models">Understanding in Decoder-Only Models</h3>
+<ol>
+<li>
+<p><strong>Contextual Embeddings</strong>:</p>
+<ul>
+<li>When the model generates a token, it relies on contextual embeddings that represent the entire input sequence up to that point. These embeddings capture the meaning and nuances of the input, enabling the model to generate contextually appropriate responses.</li>
+</ul>
+</li>
+<li>
+<p><strong>Implicit Understanding</strong>:</p>
+<ul>
+<li>Although the model doesn&rsquo;t have a separate encoder for explicit understanding, the layers of the decoder effectively perform this role implicitly. The multi-layered architecture allows the model to build a deep representation of the input sequence, which includes understanding syntax, semantics, and context.</li>
+</ul>
+</li>
+<li>
+<p><strong>Pre-training on Diverse Data</strong>:</p>
+<ul>
+<li>Models like ChatGPT are pre-trained on diverse datasets that include a wide range of language patterns, topics, and contexts. This extensive pre-training allows the model to generalize well and understand various inputs during inference.</li>
+</ul>
+</li>
+</ol>
+<h3 id="fine-tuning">Fine-Tuning</h3>
+<ol>
+<li>
+<p><strong>Instruction Following</strong>:</p>
+<ul>
+<li>Fine-tuning on instruction-following datasets helps models like ChatGPT improve their ability to respond accurately to user prompts. This fine-tuning involves training the model on examples where it is required to follow specific instructions or respond to questions based on the provided context.</li>
+</ul>
+</li>
+<li>
+<p><strong>Reinforcement Learning with Human Feedback (RLHF)</strong>:</p>
+<ul>
+<li>Methods like RLHF further refine the model&rsquo;s responses to align with human preferences, ensuring that the generated text is coherent, relevant, and contextually appropriate.</li>
+</ul>
+</li>
+</ol>
+<h3 id="practical-example">Practical Example</h3>
+<ul>
+<li>When given an input document, ChatGPT processes the entire input sequence through its self-attention mechanism, allowing it to understand the context and generate a response that is coherent and relevant. This process is similar to how a human might read and comprehend a passage before responding to questions about it.</li>
+</ul>
+<p>In summary, while encoder layers are traditionally associated with understanding and decoder layers with generation, the self-attention mechanism and the autoregressive training of models like ChatGPT enable them to effectively understand and generate text, making them versatile in both roles.</p>
+<p><strong>Author</strong><br>
+Dr Hari Thapliyaal<br>
+dasarpai.com <br>
+linkedin.com/in/harithapliyal</p>
+<div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/large-language-models" class="category-badge">Large Language Models</a><a href="/tags/gans" class="category-badge">GANs</a><a href="/tags/transformers" class="category-badge">Transformers</a><a href="/tags/deep-learning" class="category-badge">Deep Learning</a><a href="/tags/ai-architecture" class="category-badge">AI Architecture</a><a href="/tags/neural-networks" class="category-badge">Neural Networks</a><a href="/tags/machine-learning" class="category-badge">Machine Learning</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=Understanding%20LLM%20GAN%20and%20Transformers&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fUnderstanding-LLM-GAN-and-Transformers%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fUnderstanding-LLM-GAN-and-Transformers%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fUnderstanding-LLM-GAN-and-Transformers%2f&title=Understanding%20LLM%20GAN%20and%20Transformers" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fUnderstanding-LLM-GAN-and-Transformers%2f&title=Understanding%20LLM%20GAN%20and%20Transformers" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=Understanding%20LLM%20GAN%20and%20Transformers&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fUnderstanding-LLM-GAN-and-Transformers%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/transformers-demystified-a-step-by-step-guide/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">Transformers Demystified A Step-by-Step Guide</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/what-is-unicode-and-how-does-it-works/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">What is Unicode and how does it works?</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#llm-layers">LLM Layers</a></li>
+    <li><a href="#some-powerful-llm-and-their-developers">Some Powerful LLM and their developers</a></li>
+    <li><a href="#architectures-used-by-these-llms">Architectures used by these LLMs</a>
+      <ul>
+        <li><a href="#decoder-only-architectures">Decoder-Only Architectures:</a></li>
+        <li><a href="#encoder-decoder-architectures">Encoder-Decoder Architectures:</a></li>
+        <li><a href="#encoder-only-architectures">Encoder-Only Architectures:</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-are-different-gan-architectures-used-in-language-modeling">What are different GAN architectures used in language modeling?</a></li>
+    <li><a href="#why-researchers-are-not-using-gan-for-developing-llm">Why researchers are not using GAN for developing LLM?</a></li>
+    <li><a href="#if-encoder-is-for-understanding-and-decoder-for-generation-then-how-come-gpt-decoder-only-architecture-understands-context">If encoder is for understanding and decoder for generation then how come GPT (decoder only architecture), understands context?</a>
+      <ul>
+        <li><a href="#training-methodology">Training Methodology</a></li>
+        <li><a href="#understanding-in-decoder-only-models">Understanding in Decoder-Only Models</a></li>
+        <li><a href="#fine-tuning">Fine-Tuning</a></li>
+        <li><a href="#practical-example">Practical Example</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

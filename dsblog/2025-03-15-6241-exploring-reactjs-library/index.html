@@ -1,0 +1,414 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Exploring Reactjs Library | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2025-03-15-6241-exploring-reactjs-library/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Exploring Reactjs Library">
+  <meta property="og:description" content="Why this another article around React? There is no dearth of React tutorial and guide on the internet then why this article?
+The learning process can be quite diverse, and people come from different backgrounds and experiences. Some may prefer a more structured approach, while others may enjoy exploring concepts through Q&amp;A formats. This article aims to provide a concise introduction to React.js, also known as React, by exploring the most common questions people have about this popular JavaScript library. Whether you’re a beginner looking to learn the basics or an experienced developer wanting to know more about React, this article should provide you with a solid foundation.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-03-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-15T00:00:00+00:00">
+    <meta property="article:tag" content="Reactjs">
+    <meta property="article:tag" content="React Library">
+    <meta property="article:tag" content="Frontend Development">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="UI Components">
+
+  <meta itemprop="name" content="Exploring Reactjs Library">
+  <meta itemprop="description" content="Why this another article around React? There is no dearth of React tutorial and guide on the internet then why this article?
+The learning process can be quite diverse, and people come from different backgrounds and experiences. Some may prefer a more structured approach, while others may enjoy exploring concepts through Q&amp;A formats. This article aims to provide a concise introduction to React.js, also known as React, by exploring the most common questions people have about this popular JavaScript library. Whether you’re a beginner looking to learn the basics or an experienced developer wanting to know more about React, this article should provide you with a solid foundation.">
+  <meta itemprop="datePublished" content="2025-03-15T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-03-15T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1729">
+  <meta itemprop="keywords" content="Reactjs Tutorial for Beginners,Learn React Library,React Frontend Development,JavaScript Library,UI Components in React">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exploring Reactjs Library">
+  <meta name="twitter:description" content="Why this another article around React? There is no dearth of React tutorial and guide on the internet then why this article?
+The learning process can be quite diverse, and people come from different backgrounds and experiences. Some may prefer a more structured approach, while others may enjoy exploring concepts through Q&amp;A formats. This article aims to provide a concise introduction to React.js, also known as React, by exploring the most common questions people have about this popular JavaScript library. Whether you’re a beginner looking to learn the basics or an experienced developer wanting to know more about React, this article should provide you with a solid foundation.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6241-Exploring-Reactjs-Library.jpg" alt="React Logo"></p>
+<h2 id="why-this-another-article-around-react">Why this another article around React?</h2>
+<p>There is no dearth of React tutorial and guide on the internet then why this article?</p>
+<p>The learning process can be quite diverse, and people come from different backgrounds and experiences. Some may prefer a more structured approach, while others may enjoy exploring concepts through Q&amp;A formats. This article aims to provide a concise introduction to React.js, also known as React, by exploring the most common questions people have about this popular JavaScript library. Whether you&rsquo;re a beginner looking to learn the basics or an experienced developer wanting to know more about React, this article should provide you with a solid foundation.</p>
+<p>This kind of article is not a replacement for practical working experience. If you have some previous experience it helps
+in revision. If you are new to React it help you understanding the possibilities. If you a manager or architect it helps understand what work can be done with React.</p>
+<h2 id="history-behind-react">History Behind React</h2>
+<p>When Facebook introduced React in <strong>2013</strong>, it wasn’t just another JavaScript library—it was a response to major challenges in building complex web applications.</p>
+<p><strong>This was the time when</strong></p>
+<ul>
+<li>Facebook was rapidly growing, and its <strong>News Feed</strong> and <strong>chat system</strong> required frequent updates.</li>
+<li>Existing JavaScript frameworks (like jQuery, Backbone.js) led to <strong>spaghetti code</strong> with <strong>messy DOM manipulations</strong>.</li>
+<li>As the UI became more interactive, keeping track of <strong>state changes</strong> became a nightmare.</li>
+</ul>
+<p><strong>The Problem was:</strong></p>
+<ul>
+<li>Updating the DOM was slow</li>
+<li>State management was hard</li>
+<li>Code became difficult to maintain</li>
+<li>Re-rendering the entire UI was inefficient</li>
+</ul>
+<p>Facebook was exploring better way to build UI that updates efficiently.</p>
+<p><strong>Before React</strong></p>
+<ul>
+<li>Frameworks like <strong>AngularJS</strong> used <strong>two-way data binding</strong>, where changes in the UI automatically updated the model and vice versa, it led to <strong>performance issues</strong> in large applications.</li>
+<li>Because of too many dependencies, a small changes in one part of the UI triggered unexpected updates elsewhere.  Developers struggled debug and track how changes propagated.</li>
+<li>JavaScript frameworks manipulated the <strong>real DOM</strong> directly, which was <strong>slow and expensive</strong>.  Every small UI update caused <strong>repaints and reflows</strong>, slowing down applications.</li>
+<li>Developers used <strong>template-based approaches</strong> (like Handlebars, AngularJS), but they weren’t reusable. UI components were difficult to share and maintain.</li>
+<li>Facebook’s engineering teams were working on multiple features <strong>simultaneously</strong>.  As the codebase grew, <strong>merging and maintaining UI code became difficult</strong>.</li>
+<li>Facebook developers <strong>Jordan Walke</strong> and his team experimented with a <strong>functional approach to UI development</strong>.  They built <strong>React as an internal tool</strong> for the Facebook Ads team. It was so effective that Facebook decided to <strong>open-source it in 2013</strong>.</li>
+</ul>
+<p>They introduce</p>
+<ul>
+<li>a <strong>one-way data flow</strong> where updates are predictable.</li>
+<li>React introduced a <strong>Virtual DOM</strong>, a lightweight copy of the real DOM.</li>
+<li>UI was broken into <strong>reusable components</strong> (buttons, forms, modals, etc.).</li>
+<li>Components managed their <strong>own state</strong>, making the code cleaner and modular.</li>
+<li>A UI library that allows teams to <strong>work independently</strong> while maintaining a <strong>consistent experience</strong>.</li>
+</ul>
+<h2 id="introductory-questions">Introductory Questions</h2>
+<h3 id="what-it-is"><strong>What it is:</strong></h3>
+<p>React is a library, not a framework, meaning it provides tools and functions for building user interfaces, but it doesn&rsquo;t dictate how your application should be structured.</p>
+<h3 id="what-are-the-key-features-of-react">What are the Key Features of React?</h3>
+<ul>
+<li>Component-Based: React applications are built using reusable components, which are independent and self-contained UI blocks.
+Virtual DOM: React uses a virtual DOM to efficiently update the user interface, minimizing direct manipulation of the actual DOM for better performance.</li>
+<li>JSX: React uses JSX, a syntax extension to JavaScript that allows you to write HTML-like structures within your JavaScript code, making it easier to define UI elements.</li>
+<li>Declarative: React encourages a declarative approach to UI development, meaning you describe what the UI should look like, and React handles the rendering and updates.</li>
+<li>Open Source: React is an open source library, developed and maintained by Facebook and a large community of developers.</li>
+</ul>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li>Single-Page Applications (SPAs): React is well-suited for building SPAs, where the entire application runs within a single web page, and user interactions update the UI without full page reloads.</li>
+<li>Mobile Applications: React Native, a framework built on React, allows developers to build native mobile apps (Android and iOS) using React&rsquo;s component-based architecture.</li>
+<li>Web Applications: React is widely used for building complex web applications with dynamic and interactive user interfaces.</li>
+</ul>
+<p><strong>Why it&rsquo;s popular:</strong></p>
+<ul>
+<li>Performance: React&rsquo;s virtual DOM and efficient update mechanisms lead to fast and responsive applications.</li>
+<li>Reusability: Components can be easily reused across different parts of an application, promoting code maintainability and efficiency.</li>
+<li>Large Community: React has a large and active community, providing ample resources, libraries, and support.</li>
+<li>Learnability: React&rsquo;s component-based approach and declarative nature make it relatively easy to learn and use.</li>
+</ul>
+<p><strong>Alternatives:</strong></p>
+<ul>
+<li>While React is a popular choice, other JavaScript libraries and frameworks for building user interfaces include Angular and Vue.js.</li>
+</ul>
+<h2 id="beginner-level-questions">Beginner-Level Questions</h2>
+<h3 id="what-is-react"><strong>What is React?</strong></h3>
+<p>React is a JavaScript library for building interactive user interfaces, primarily using components.</p>
+<h3 id="who-created-react"><strong>Who created React?</strong></h3>
+<p>React was created by Facebook in 2013.</p>
+<h3 id="what-is-jsx"><strong>What is JSX?</strong></h3>
+<p>JSX is a syntax extension for JavaScript that looks like HTML and is used in React to define UI elements.</p>
+<h3 id="what-is-a-component-in-react"><strong>What is a component in React?</strong></h3>
+<p>A component is a reusable piece of UI, like a button or a card, written as a JavaScript function or class.</p>
+<h3 id="whats-the-difference-between-functional-and-class-components"><strong>What’s the difference between functional and class components?</strong></h3>
+<p>Functional components are simple JavaScript functions, while class components are ES6 classes with lifecycle methods and state.</p>
+<h3 id="how-do-you-create-a-functional-component"><strong>How do you create a functional component?</strong></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">MyComponent</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">div</span>&gt;<span style="color:#a6e22e">Hello</span>, <span style="color:#a6e22e">React</span><span style="color:#f92672">!</span>&lt;/<span style="color:#f92672">div</span>&gt;;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="what-is-the-purpose-of"><strong>What is the purpose of <code>render()</code> in a class component?</strong></h3>
+<p>It defines what the component will display on the screen.</p>
+<h3 id="what-are-props-in-react"><strong>What are props in React?</strong></h3>
+<p>Props (short for properties) are read-only data passed from a parent component to a child component.</p>
+<h3 id="how-do-you-pass-props-to-a-component"><strong>How do you pass props to a component?</strong></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">MyComponent</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;John&#34;</span> /&gt;
+</span></span></code></pre></div><h3 id="what-is-the-virtual-dom"><strong>What is the virtual DOM?</strong></h3>
+<p>The virtual DOM is a lightweight copy of the real DOM that React uses to optimize updates.</p>
+<h2 id="intermediate-level-questions">Intermediate-Level Questions</h2>
+<h3 id="what-is-state-in-react"><strong>What is state in React?</strong></h3>
+<p>State is a built-in object in React components that holds dynamic data and triggers re-renders when updated.</p>
+<h3 id="how-do-you-initialize-state-in-a-functional-component"><strong>How do you initialize state in a functional component?</strong></h3>
+<p>Use the <code>useState</code> hook:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">count</span>, <span style="color:#a6e22e">setCount</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#ae81ff">0</span>);
+</span></span></code></pre></div><h3 id="what-does-the"><strong>What does the <code>useState</code> hook do?</strong></h3>
+<p>It adds state to functional components and returns the current state value and a function to update it.</p>
+<h3 id="how-do-you-update-state"><strong>How do you update state?</strong></h3>
+<p>Call the state updater function, e.g., <code>setCount(count + 1)</code>.</p>
+<h3 id="what-is-the"><strong>What is the <code>useEffect</code> hook used for?</strong></h3>
+<p>It handles side effects in functional components, like data fetching or subscriptions.</p>
+<h3 id="how-do-you-write-a"><strong>How do you write a <code>useEffect</code> hook?</strong></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">useEffect</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Component mounted&#34;</span>);
+</span></span><span style="display:flex;"><span>}, []);
+</span></span></code></pre></div><h3 id="whats-the-role-of-the-dependency-array-in"><strong>What’s the role of the dependency array in <code>useEffect</code>?</strong></h3>
+<p>It tells React when to re-run the effect; an empty array (<code>[]</code>) means it runs only once on mount.</p>
+<h3 id="what-are-event-handlers-in-react"><strong>What are event handlers in React?</strong></h3>
+<p>Functions that respond to user actions, like clicks, e.g., <code>onClick={() =&gt; alert(&quot;Clicked&quot;)}</code>.</p>
+<h3 id="what-is-conditional-rendering"><strong>What is conditional rendering?</strong></h3>
+<p>Displaying different UI based on conditions, e.g., <code>{isLoggedIn ? &lt;UserDashboard /&gt; : &lt;Login /&gt;}</code>.</p>
+<h3 id="how-do-you-loop-through-a-list-in-react"><strong>How do you loop through a list in React?</strong></h3>
+<p>Use <code>map()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">item</span> =&gt; &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">id</span>}&gt;{<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">name</span>}&lt;/<span style="color:#f92672">li</span>&gt;)
+</span></span></code></pre></div><h2 id="advanced-level-questions">Advanced-Level Questions</h2>
+<h3 id="what-are-react-hooks"><strong>What are React hooks?</strong></h3>
+<p>Hooks are functions that let you use state and other React features in functional components.</p>
+<h3 id="what-is-the-1"><strong>What is the <code>useContext</code> hook?</strong></h3>
+<p>It provides a way to access context (shared data) without prop drilling.</p>
+<h3 id="how-do-you-create-a-custom-hook"><strong>How do you create a custom hook?</strong></h3>
+<p>Write a function that uses built-in hooks:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">useCustomHook</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">value</span>, <span style="color:#a6e22e">setValue</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> [<span style="color:#a6e22e">value</span>, <span style="color:#a6e22e">setValue</span>];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="what-is-prop-drilling"><strong>What is prop drilling?</strong></h3>
+<p>Passing props through multiple layers of components to reach a deeply nested child.</p>
+<h3 id="how-can-you-avoid-prop-drilling"><strong>How can you avoid prop drilling?</strong></h3>
+<p>Use the Context API or state management libraries like Redux.</p>
+<h3 id="what-is-the-context-api"><strong>What is the Context API?</strong></h3>
+<p>A React feature to share global data (e.g., themes) across components without passing props manually.</p>
+<h3 id="what-is-a-higher-order-component-hoc"><strong>What is a higher-order component (HOC)?</strong></h3>
+<p>An HOC is a function that takes a component and returns a new component with added functionality.</p>
+<h3 id="how-do-you-write-an-hoc"><strong>How do you write an HOC?</strong></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">withLogging</span>(<span style="color:#a6e22e">WrappedComponent</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">props</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Rendering&#34;</span>, <span style="color:#a6e22e">props</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">WrappedComponent</span> {<span style="color:#a6e22e">...props</span>} /&gt;;
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="what-is-the-purpose-of-1"><strong>What is the purpose of <code>React.memo</code>?</strong></h3>
+<p>It memoizes a component to prevent unnecessary re-renders if props don’t change.</p>
+<h3 id="what-are-controlled-components"><strong>What are controlled components?</strong></h3>
+<p>Form elements whose value is controlled by React state, e.g., <code>&lt;input value={value} onChange={handleChange} /&gt;</code>.</p>
+<h3 id="what-are-uncontrolled-components"><strong>What are uncontrolled components?</strong></h3>
+<p>Form elements that manage their own state via the DOM, accessed with refs.</p>
+<h3 id="what-is-the-2"><strong>What is the <code>useRef</code> hook?</strong></h3>
+<p>It creates a mutable reference that persists across renders, often used to access DOM elements.</p>
+<h3 id="how-do-you-optimize-react-performance"><strong>How do you optimize React performance?</strong></h3>
+<p>Use <code>React.memo</code>, lazy loading, code splitting, and avoid unnecessary re-renders.</p>
+<h3 id="what-is-lazy-loading-in-react"><strong>What is lazy loading in React?</strong></h3>
+<p>Loading components only when needed using <code>React.lazy</code> and <code>Suspense</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">LazyComponent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">lazy</span>(() =&gt; <span style="color:#66d9ef">import</span>(<span style="color:#e6db74">&#39;./Component&#39;</span>));
+</span></span></code></pre></div><h3 id="what-is-the-purpose-of-keys-in-react-lists"><strong>What is the purpose of keys in React lists?</strong></h3>
+<p>Keys help React identify which items have changed, added, or removed in a list.</p>
+<h3 id="what-is-reconciliation-in-react"><strong>What is reconciliation in React?</strong></h3>
+<p>The process where React compares the virtual DOM with the real DOM to determine updates.</p>
+<h3 id="what-is-a-portal-in-react"><strong>What is a portal in React?</strong></h3>
+<p>A way to render children into a DOM node outside the parent hierarchy, using <code>ReactDOM.createPortal</code>.</p>
+<h3 id="what-is-the-3"><strong>What is the <code>useReducer</code> hook?</strong></h3>
+<p>A hook for managing complex state logic, similar to Redux reducers.</p>
+<h3 id="how-do-you-handle-forms-in-react"><strong>How do you handle forms in React?</strong></h3>
+<p>Use controlled components with state or libraries like Formik for complex forms.</p>
+<h3 id="what-is-server-side-rendering-ssr-in-react"><strong>What is server-side rendering (SSR) in React?</strong></h3>
+<p>Rendering React components on the server to send HTML to the client, improving SEO and performance.</p>
+<h3 id="what-is-the-difference-between-ssr-and-static-site-generation-ssg"><strong>What is the difference between SSR and static site generation (SSG)?</strong></h3>
+<p>SSR renders pages on each request; SSG pre-renders pages at build time.</p>
+<h3 id="what-is-react-router"><strong>What is React Router?</strong></h3>
+<p>A library for handling navigation and routing in React applications.</p>
+<h3 id="how-do-you-fetch-data-in-react"><strong>How do you fetch data in React?</strong></h3>
+<p>Use <code>fetch</code> or <code>axios</code> inside <code>useEffect</code> or a custom hook.</p>
+<h3 id="what-is-redux"><strong>What is Redux?</strong></h3>
+<p>A state management library for predictable state updates across a React app.</p>
+<h3 id="what-are-react-fragments"><strong>What are React fragments?</strong></h3>
+<p>A way to group elements without adding extra nodes to the DOM, e.g., <code>&lt;&gt;&lt;div&gt;1&lt;/div&gt;&lt;div&gt;2&lt;/div&gt;&lt;/&gt;</code>.</p>
+<h3 id="what-is-the-difference-between"><strong>What is the difference between <code>useEffect</code> and <code>useLayoutEffect</code>?</strong></h3>
+<p><code>useEffect</code> runs after rendering; <code>useLayoutEffect</code> runs synchronously before painting.</p>
+<h3 id="how-do-you-test-react-components"><strong>How do you test React components?</strong></h3>
+<p>Use tools like Jest and React Testing Library to write unit and integration tests.</p>
+<h3 id="what-is-a-suspense-component"><strong>What is a suspense component?</strong></h3>
+<p>A feature to handle loading states, e.g., <code>&lt;Suspense fallback={&lt;Loading /&gt;}&gt;</code>.</p>
+<h3 id="what-are-error-boundaries"><strong>What are error boundaries?</strong></h3>
+<p>Components that catch JavaScript errors in their child tree and display a fallback UI.</p>
+<h3 id="how-do-you-implement-an-error-boundary"><strong>How do you implement an error boundary?</strong></h3>
+<p>Use a class component with <code>componentDidCatch</code> and <code>static getDerivedStateFromError</code>.</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

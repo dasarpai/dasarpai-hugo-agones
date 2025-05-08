@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flutter on Agones</title>
+    <link>http://localhost:1313/tags/flutter/</link>
+    <description>Recent content in Flutter on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building AI-Powered Flutter Apps: Best Practices for Folder Structure</title>
+      <link>http://localhost:1313/dsblog/Building-AI-Powered-Flutter-Apps/</link>
+      <pubDate>Fri, 27 Sep 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Building-AI-Powered-Flutter-Apps/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6146-Building-AI-Powered-Flutter-Apps.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;building-ai-powered-flutter-apps-best-practices-for-folder-structure&#34;&gt;Building AI-Powered Flutter Apps: Best Practices for Folder Structure&lt;/h1&gt;&#xA;&lt;h2 id=&#34;is-this-article-for-you&#34;&gt;Is this article for you?&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;You want to create a Flutter application but are unsure of which folders should be part of your project.&lt;/li&gt;&#xA;&lt;li&gt;You’ve recently joined a Flutter project team and are struggling to understand why there are so many folders and what they contain. If you create a file, you’re not sure where it should go.&lt;/li&gt;&#xA;&lt;li&gt;Your customer wants to add AI features to an existing Flutter project, and you don’t know where to place the ML models.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;If you want to add AI features to a Flutter app but don&amp;rsquo;t have an existing AI model, and your team or company is responsible for creating them, it&amp;rsquo;s recommended to keep AI model development separate from the Flutter project. Once the model is ready, you can either embed it within the Flutter app or consume it via an API.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

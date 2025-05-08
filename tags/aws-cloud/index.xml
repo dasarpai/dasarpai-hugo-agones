@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS Cloud on Agones</title>
+    <link>http://localhost:1313/tags/aws-cloud/</link>
+    <description>Recent content in AWS Cloud on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/aws-cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Comprehensive Guide to 210&#43; AWS Services</title>
+      <link>http://localhost:1313/dsblog/AWS-Cloud-Service-Catalog/</link>
+      <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/AWS-Cloud-Service-Catalog/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6063-AWS-Cloud-Service-Catalog.jpg&#34; alt=&#34;AWS Cloud Service Catalog&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;a-comprehensive-guide-to-210-aws-services&#34;&gt;A Comprehensive Guide to 210+ AWS Services&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Exploring 210+ Cloud Services and Their Purposes&lt;/strong&gt;&lt;br&gt;&#xA;All these services are availalbe at &lt;a href=&#34;https://us-east-1.console.aws.amazon.com/console/services?region=us-east-1&#34;&gt;Link&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Amazon Web Services (AWS) is a suite of cloud computing services that runs on the same infrastructure that Amazon uses for its e-commerce website. AWS offers a broad set of global compute, storage, database, AI, analytics, application, and deployment services that help organizations move faster, lower IT costs, and scale applications.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

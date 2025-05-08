@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Interaction on Agones</title>
+    <link>http://localhost:1313/tags/ai-interaction/</link>
+    <description>Recent content in AI Interaction on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai-interaction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Prompt Engineering</title>
+      <link>http://localhost:1313/dsblog/Introduction-to-Prompt-Engineering/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Introduction-to-Prompt-Engineering/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6080-Introduction-to-Prompt-Engineering.jpg&#34; alt=&#34;Introduction to Prompt Engineering&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction-to-prompt-best-engineering&#34;&gt;Introduction to Prompt Best Engineering&lt;/h1&gt;&#xA;&lt;p&gt;Prompts can contain questions, instructions, contextual information, examples, and partial input for the model to complete or continue. After the model receives a prompt, depending on the type of model being used, it can generate text, embeddings, code, images, videos, music, and more. Below are &lt;strong&gt;14 examples of good prompts&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;example-1-entity-input&#34;&gt;Example 1 (Entity input)&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Classify the following items as [large, small].&#xD;&#xA;Elephant&#xD;&#xA;Mouse&#xD;&#xA;Snail&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;example-2-completion-input&#34;&gt;Example 2 (completion input)&lt;/h2&gt;&#xA;&lt;p&gt;You can write a prompt like&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

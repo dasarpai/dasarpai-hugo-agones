@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Common Integration Patterns on Agones</title>
+    <link>http://localhost:1313/docs/integration-patterns/</link>
+    <description>Recent content in Common Integration Patterns on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/integration-patterns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Matchmaker requests a GameServer from a Fleet</title>
+      <link>http://localhost:1313/docs/integration-patterns/allocation-from-fleet/</link>
+      <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/integration-patterns/allocation-from-fleet/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;../../../diagrams/gameserver-lifecycle.puml.png&#34; alt=&#34;Allocated Lifecycle Sequence Diagram&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;sample-gameserverallocation&#34;&gt;Sample &lt;code&gt;GameServerAllocation&lt;/code&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Since Agones will automatically add the label &lt;code&gt;agones.dev/fleet&lt;/code&gt; to a &lt;code&gt;GameServer&lt;/code&gt; of a given &lt;code&gt;Fleet&lt;/code&gt;, we can use that&#xA;label selector to target a specific &lt;code&gt;Fleet&lt;/code&gt; by name. In this instance, we are targeting the &lt;code&gt;Fleet&lt;/code&gt; &lt;code&gt;xonotic&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;apiVersion&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;allocation.agones.dev/v1&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;kind&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;GameServerAllocation&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;spec&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;selectors&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - &lt;span style=&#34;color:#f92672&#34;&gt;matchLabels&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;agones.dev/fleet&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;xonotic&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;next-steps&#34;&gt;Next Steps:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read the various specification references.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Review the &lt;a href=&#34;http://localhost:1313/docs/reference/gameserver/&#34;&gt;GameServer&lt;/a&gt; spec.&lt;/li&gt;&#xA;&lt;li&gt;Review the &lt;a href=&#34;http://localhost:1313/docs/reference/fleet/&#34;&gt;Fleet&lt;/a&gt; spec.&lt;/li&gt;&#xA;&lt;li&gt;Review the &lt;a href=&#34;http://localhost:1313/docs/reference/gameserverallocation/&#34;&gt;GameServerAllocation&lt;/a&gt; spec.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Review the specifics of &lt;a href=&#34;http://localhost:1313/docs/guides/health-checking/&#34;&gt;Health Checking&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;See all the commands the &lt;a href=&#34;http://localhost:1313/docs/guides/client-sdks/&#34;&gt;Client SDK&lt;/a&gt; provides - we only show a few here!&lt;/li&gt;&#xA;&lt;li&gt;Check out the &lt;a href=&#34;http://localhost:1313/docs/advanced/allocator-service/&#34;&gt;Allocator Service&lt;/a&gt; as a richer alternative to &lt;code&gt;GameServerAllocation&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;li&gt;If you aren&amp;rsquo;t familiar with the term &lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/pods/pod/&#34;&gt;Pod&lt;/a&gt;, this should provide a reference.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Matchmaker requires game server process registration</title>
+      <link>http://localhost:1313/docs/integration-patterns/matchmaker-registration/</link>
+      <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/integration-patterns/matchmaker-registration/</guid>
+      <description>&lt;p&gt;In this scenario, the &lt;code&gt;GameServer&lt;/code&gt; process will need to self Allocate when informed by the matchmaker that players&#xA;are being sent to them.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../../diagrams/gameserver-reserved.puml.png&#34; alt=&#34;Reserved Lifecycle Sequence Diagram&#34;&gt;&lt;/p&gt;&#xA;&#xA;&#xA;&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;&#xA;&lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;&#xA;&#xA;    This does relinquish control over how &lt;code&gt;GameServers&lt;/code&gt; are packed across the cluster to the external matchmaker. It is likely&#xA;it will not do as good a job at packing and scaling as Agones.&#xA;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;h2 id=&#34;next-steps&#34;&gt;Next Steps:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read the various references, including the&#xA;&lt;a href=&#34;http://localhost:1313/docs/reference/gameserver/&#34;&gt;GameServer&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/docs/reference/fleet/&#34;&gt;Fleet&lt;/a&gt;&#xA;reference materials.&lt;/li&gt;&#xA;&lt;li&gt;Review the specifics of &lt;a href=&#34;http://localhost:1313/docs/guides/health-checking/&#34;&gt;Health Checking&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;See all the commands the &lt;a href=&#34;http://localhost:1313/docs/guides/client-sdks/&#34;&gt;Client SDK&lt;/a&gt; provides - we only show a&#xA;few here!&lt;/li&gt;&#xA;&lt;li&gt;If you aren&amp;rsquo;t familiar with the term &lt;a href=&#34;https://kubernetes.io/docs/concepts/workloads/pods/pod/&#34;&gt;Pod&lt;/a&gt;, this should&#xA;provide a reference.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Canary Testing a new Fleet</title>
+      <link>http://localhost:1313/docs/integration-patterns/canary-testing/</link>
+      <pubDate>Tue, 27 Jul 2021 23:49:14 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/integration-patterns/canary-testing/</guid>
+      <description>&lt;p&gt;To &lt;a href=&#34;https://martinfowler.com/bliki/CanaryRelease.html&#34;&gt;canary release/test&lt;/a&gt; a new &lt;code&gt;Fleet&lt;/code&gt;,&#xA;we can run a small, fixed size &lt;code&gt;Fleet&lt;/code&gt; of the new version of our GameServer, while also running the current stable&#xA;production version.&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;Allocations&lt;/code&gt; can then &lt;code&gt;prefer&lt;/code&gt; to come from the canary &lt;code&gt;Fleet&lt;/code&gt;, but if all &lt;code&gt;GameServers&lt;/code&gt; are already allocated from the&#xA;canary &lt;code&gt;Fleet&lt;/code&gt;, players will be allocated to the current stable Fleets.&lt;/p&gt;&#xA;&lt;p&gt;Over time, if the monitoring of those playing on the canary &lt;code&gt;Fleet&lt;/code&gt; is working as expected, the size of the canary&#xA;&lt;code&gt;Fleet&lt;/code&gt; can be grown until you feel confident in its stability.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reusing Allocated GameServers for more than one game session</title>
+      <link>http://localhost:1313/docs/integration-patterns/reusing-gameservers/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/integration-patterns/reusing-gameservers/</guid>
+      <description>&lt;p&gt;Having a &lt;code&gt;GameServer&lt;/code&gt; terminate after a single player session is better for packing and optimisation of&#xA;infrastructure usage, as well as safety to ensure the process returns to an absolute zero state.&lt;/p&gt;&#xA;&lt;p&gt;However, depending on the &lt;code&gt;GameServer&lt;/code&gt; startup time, or other factors there may be reasons you wish to reuse a&#xA;&lt;code&gt;GameServer&lt;/code&gt; for &lt;em&gt;n&lt;/em&gt; number of sessions before finally shutting it down.&lt;/p&gt;&#xA;&lt;p&gt;The &amp;ldquo;magic trick&amp;rdquo; to this is knowing that the &lt;code&gt;GameServer&lt;/code&gt; process can call&#xA;&lt;a href=&#34;http://localhost:1313/docs/guides/client-sdks/#ready&#34;&gt;&lt;code&gt;SDK.Ready()&lt;/code&gt;&lt;/a&gt; to return to a &lt;code&gt;Ready&lt;/code&gt;&#xA;state after the &lt;code&gt;GameServer&lt;/code&gt; has been allocated.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>High Density GameServers</title>
+      <link>http://localhost:1313/docs/integration-patterns/high-density-gameservers/</link>
+      <pubDate>Tue, 31 Aug 2021 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/integration-patterns/high-density-gameservers/</guid>
+      <description>&lt;p&gt;Depending on the setup and resource requirements of your game server process, sometimes it can be a more economical&#xA;use of resources to run multiple concurrent game sessions from within a single &lt;code&gt;GameServer&lt;/code&gt; instance.&lt;/p&gt;&#xA;&lt;p&gt;The tradeoff here is that this requires more management on behalf of the integrated game server process and external&#xA;systems, since it works around the common Kubernetes and/or Agones container lifecycle.&lt;/p&gt;&#xA;&lt;p&gt;Here are two different approaches to solving this problem with Agones:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Allocating based on GameServer Player Capacity</title>
+      <link>http://localhost:1313/docs/integration-patterns/player-capacity/</link>
+      <pubDate>Tue, 31 Aug 2021 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/integration-patterns/player-capacity/</guid>
+      <description>&lt;p&gt;Using this approach, we are able to be able to make an Allocation request that is akin to: &amp;ldquo;Find me a &lt;code&gt;GameServer&lt;/code&gt;&#xA;that is already allocated, with room for &lt;em&gt;n&lt;/em&gt; number of players, and if one is not available, allocate me a &lt;code&gt;Ready&lt;/code&gt;&#xA;&lt;code&gt;GameServer&lt;/code&gt;&amp;rdquo;.&lt;/p&gt;&#xA;&lt;p&gt;Common applications of this type of allocation are Lobby servers where players await matchmaking, or a&#xA;persistent world server where players connect and disconnect from a large map.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

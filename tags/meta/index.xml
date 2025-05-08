@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meta on Agones</title>
+    <link>http://localhost:1313/tags/meta/</link>
+    <description>Recent content in Meta on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/meta/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Ollama &amp; LM Studio</title>
+      <link>http://localhost:1313/dsblog/Exploring-Ollama/</link>
+      <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Exploring-Ollama/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6143-Exploring-Ollama.jpg&#34; alt=&#34;Exploring Ollama &amp;amp; LM Studio&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-ollama--lm-studio&#34;&gt;Exploring Ollama &amp;amp; LM Studio&lt;/h1&gt;&#xA;&lt;h2 id=&#34;is-this-article-for-me&#34;&gt;Is this article for me?&lt;/h2&gt;&#xA;&lt;p&gt;If you are looking answers to the following questions, then this article is for you:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Question: What is Ollama? Is it like Docker?&lt;/li&gt;&#xA;&lt;li&gt;Question: How is Ollama different from Docker?&lt;/li&gt;&#xA;&lt;li&gt;Question: How to install ollama on my machine?&lt;/li&gt;&#xA;&lt;li&gt;Question: How to create customized LLM Model (docker like image)?&lt;/li&gt;&#xA;&lt;li&gt;Question: What are the LLM available on ollama?&lt;/li&gt;&#xA;&lt;li&gt;Question: Can we integrate these hundreds with different UI like ChatGPT?&lt;/li&gt;&#xA;&lt;li&gt;Question: If I want to use all these Ollama models via Jupyter Notebook then what to do?&lt;/li&gt;&#xA;&lt;li&gt;Question: Does Ollama have plugins like github copilot? Can I use those from my visual code?&lt;/li&gt;&#xA;&lt;li&gt;Question: What kind of software are LM Studio or Ollama?&lt;/li&gt;&#xA;&lt;li&gt;Question: What is LM Studio and how different it is from Ollama?&lt;/li&gt;&#xA;&lt;li&gt;Question: What are different formats to save model, specifically LLMs?&lt;/li&gt;&#xA;&lt;li&gt;Question: What is gguf model extention?&lt;/li&gt;&#xA;&lt;li&gt;Question: If I have finetuned my models using clouds like aws sagemaker, vertexai, azure and kept there then can I use them inside my ollama and LM Studio?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;question-what-is-ollama-is-it-like-docker&#34;&gt;Question: What is Ollama? Is it like Docker?&lt;/h2&gt;&#xA;&lt;p&gt;Ollama is a platform designed to make running and interacting with large language models (LLMs) easier. It abstracts away the complexities of managing LLM models, GPU resources, and related configurations by offering a simple CLI interface. With Ollama, you can run, manage, and deploy LLMs locally or in various cloud environments without having to worry about the intricate details of setting up environments, downloading models, or configuring them.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

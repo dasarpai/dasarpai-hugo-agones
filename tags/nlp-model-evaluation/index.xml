@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NLP Model Evaluation on Agones</title>
+    <link>http://localhost:1313/tags/nlp-model-evaluation/</link>
+    <description>Recent content in NLP Model Evaluation on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nlp-model-evaluation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Comprehensive Guide to Evaluate Generative Models</title>
+      <link>http://localhost:1313/dsblog/guide-to-evaluate-generative-models/</link>
+      <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/guide-to-evaluate-generative-models/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6240-Guide-to-Evaluate-Generative-Models.jpg&#34; alt=&#34;Generative Models&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;a-comprehensive-guide-to-evaluate-generative-models&#34;&gt;A Comprehensive Guide to Evaluate Generative Models&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In the rapidly evolving landscape of artificial intelligence, generative models have emerged as powerful tools capable of creating lifelike images, coherent text narratives, and even realistic audio. From large language models (LLMs) like GPT, Gemini, and Claude to image generators like Stable Diffusion, these systems are reshaping creativity, communication, and problem-solving. However, their potential is only as good as our ability to evaluate them effectively.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Machine Learning Tasks and Model Evaluation</title>
+      <link>http://localhost:1313/dsblog/ml-tasks-and-model-evaluation/</link>
+      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/ml-tasks-and-model-evaluation/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dsresources/dsr114-ml-tasks-and-model-evaluation.jpg&#34; alt=&#34;Deep Learning Tasks and Models&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;machine-learning-tasks-and-model-evaluation&#34;&gt;Machine Learning Tasks and Model Evaluation&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Machine learning is a subject where we study how to create &amp;amp; evaluate machine learning models. To create these models, we need different types of data. We build models which can help us do various kinds of tasks. There are hundreds of model building techniques and researchers keep adding new techniques, and architectures as when need arises. But, the question is how do you evaluate these models which are output of the model trainings? To evaluate the performance of a model on structured data, or classification/regression/clustering models, we require one kind of metrics. But this becomes complicated when we are dealing with voice, text and audio data. How do you evaluate ten models which are responsible for translation, or locating an object in the image, transcribing voice into text, captioning an image? To solve this problem, standard databases are created and everyone needs to demonstrate the performance of their model, architecture, or approach against that dataset. But, even if you have a baseline dataset, how will you evaluate various NLP or deep learning tasks? For that GLUE, SuperGLUE benchmarks are created.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

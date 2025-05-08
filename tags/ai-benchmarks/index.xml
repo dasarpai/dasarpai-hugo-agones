@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Benchmarks on Agones</title>
+    <link>http://localhost:1313/tags/ai-benchmarks/</link>
+    <description>Recent content in AI Benchmarks on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai-benchmarks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NLP BenchMarks</title>
+      <link>http://localhost:1313/dsblog/NLP-BenchMarks1/</link>
+      <pubDate>Wed, 03 Jul 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/NLP-BenchMarks1/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6120-NLP-BenchMarks.jpg&#34; alt=&#34;NLP-BenchMarks&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;nlp-benchmarks&#34;&gt;NLP BenchMarks&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-language-model&#34;&gt;What is Language Model?&lt;/h2&gt;&#xA;&lt;p&gt;A &lt;strong&gt;language model&lt;/strong&gt; is a computational model that understands and generates human language. It learns the patterns and structure of a language by analyzing large amounts of text data, allowing it to predict the next word in a sequence or generate coherent text. Language models are used in applications like text generation, translation, speech recognition, chatbots, and sentiment analysis.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-to-create-language-model&#34;&gt;How to create Language Model?&lt;/h2&gt;&#xA;&lt;p&gt;Modern language models often use neural networks, especially transformer-based architectures like GPT and BERT, to capture complex language patterns and context. Techniques like tokenization, Embedding. Contextual Understanding are combined together in different architecture, different hyperparameters, different datasets and this produces a model which predict the next word.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

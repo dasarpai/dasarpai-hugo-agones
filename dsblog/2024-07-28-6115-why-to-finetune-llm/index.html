@@ -1,0 +1,573 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Why to Finetune LLM? | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2024-07-28-6115-why-to-finetune-llm/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Why to Finetune LLM?">
+  <meta property="og:description" content="Finetuning, Fewshot Learning, Why and How? Why to finetune a LLM? Fine-tuning a large language model (LLM) can provide several benefits, depending on your specific needs and objectives. Here are some key reasons to consider fine-tuning an LLM:
+Domain Specialization:
+Fine-tuning allows the model to become more proficient in specific domains, such as medical, legal, or technical fields, by training it on domain-specific data. Task Adaptation:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-07-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-07-28T00:00:00+00:00">
+    <meta property="article:tag" content="LLM Fine-Tuning">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="Model Training">
+    <meta property="article:tag" content="AI Customization">
+    <meta property="article:tag" content="Language Models">
+    <meta property="article:tag" content="Transfer Learning">
+
+  <meta itemprop="name" content="Why to Finetune LLM?">
+  <meta itemprop="description" content="Finetuning, Fewshot Learning, Why and How? Why to finetune a LLM? Fine-tuning a large language model (LLM) can provide several benefits, depending on your specific needs and objectives. Here are some key reasons to consider fine-tuning an LLM:
+Domain Specialization:
+Fine-tuning allows the model to become more proficient in specific domains, such as medical, legal, or technical fields, by training it on domain-specific data. Task Adaptation:">
+  <meta itemprop="datePublished" content="2024-07-28T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-07-28T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2933">
+  <meta itemprop="keywords" content="LLM Fine-tuning,Model Training,AI Model Customization,Transfer Learning,Language Model Adaptation,Few-Shot Learning,Model Optimization,AI Training">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Why to Finetune LLM?">
+  <meta name="twitter:description" content="Finetuning, Fewshot Learning, Why and How? Why to finetune a LLM? Fine-tuning a large language model (LLM) can provide several benefits, depending on your specific needs and objectives. Here are some key reasons to consider fine-tuning an LLM:
+Domain Specialization:
+Fine-tuning allows the model to become more proficient in specific domains, such as medical, legal, or technical fields, by training it on domain-specific data. Task Adaptation:">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6115-why-to-finetune-llm.jpg" alt="Why to Finetune LLM?"></p>
+<h1 id="finetuning-fewshot-learning-why-and-how">Finetuning, Fewshot Learning, Why and How?</h1>
+<h2 id="why-to-finetune-a-llm">Why to finetune a LLM?</h2>
+<p>Fine-tuning a large language model (LLM) can provide several benefits, depending on your specific needs and objectives. Here are some key reasons to consider fine-tuning an LLM:</p>
+<ol>
+<li>
+<p><strong>Domain Specialization</strong>:</p>
+<ul>
+<li>Fine-tuning allows the model to become more proficient in specific domains, such as medical, legal, or technical fields, by training it on domain-specific data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Task Adaptation</strong>:</p>
+<ul>
+<li>Customize the model to perform better on particular tasks such as sentiment analysis, summarization, question-answering, translation, or other NLP tasks that require specialized knowledge.</li>
+</ul>
+</li>
+<li>
+<p><strong>Improved Performance</strong>:</p>
+<ul>
+<li>Enhance the model&rsquo;s performance by fine-tuning it on high-quality, relevant data, reducing errors and increasing accuracy for specific applications.</li>
+</ul>
+</li>
+<li>
+<p><strong>Personalization</strong>:</p>
+<ul>
+<li>Adapt the model to align with specific user preferences, company guidelines, or industry standards, providing more personalized responses and outputs.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cost Efficiency</strong>:</p>
+<ul>
+<li>Fine-tuning can be more cost-effective than training a new model from scratch, especially when computational resources are limited.</li>
+<li>Entering long context and instruction everytime in the prompt is costly because you are paying for input tokens.</li>
+</ul>
+</li>
+<li>
+<p><strong>Language and Cultural Adaptation</strong>:</p>
+<ul>
+<li>Tailor the model to better understand and generate text in specific languages, dialects, or cultural contexts, improving its relevance and usability for particular user bases.</li>
+</ul>
+</li>
+<li>
+<p><strong>Handling Biases</strong>:</p>
+<ul>
+<li>Address and mitigate biases present in the base model by fine-tuning it on balanced and representative datasets, promoting fairness and inclusivity in its outputs.</li>
+</ul>
+</li>
+<li>
+<p><strong>Updating Knowledge</strong>:</p>
+<ul>
+<li>Incorporate the latest information and data, ensuring the model remains up-to-date with recent developments, trends, and knowledge.</li>
+</ul>
+</li>
+<li>
+<p><strong>Regulatory Compliance</strong>:</p>
+<ul>
+<li>Ensure that the model complies with specific regulatory or legal requirements by fine-tuning it on compliant datasets and guidelines.</li>
+</ul>
+</li>
+<li>
+<p><strong>Enhanced Security and Privacy</strong>:</p>
+<ul>
+<li>Fine-tune the model on proprietary or sensitive datasets in a secure environment to maintain data privacy and security.</li>
+</ul>
+</li>
+<li>
+<p><strong>Brand Voice and Style</strong>:</p>
+<ul>
+<li>Adapt the model to reflect a specific brand&rsquo;s voice, tone, and style, ensuring consistency in communication and content generation.</li>
+</ul>
+</li>
+</ol>
+<p>Fine-tuning an LLM involves training the pre-trained model on a new dataset specific to your needs while adjusting its weights to improve performance on the target tasks. This process leverages the vast knowledge the model has already acquired, enhancing it with specific information and capabilities relevant to your use case.</p>
+<h2 id="what-is-fewshot-learning">What is fewshot learning?</h2>
+<p>Assume I have a task where I want large langue model to convert words of different languages or different script into english 1,2,3 etc. For that I am using gpt4.0 with 20 shots. After this whatever number I give to the model it is able to translate correctly. This is a good example of few-shot learning. No weight is adjusted during the fewshot learning.</p>
+<h2 id="what-is-the-meaning-of-this-1-shot-3-shot-5-shot-7-shot-learing">What is the meaning of this 1-shot, 3-shot, 5-shot, 7-shot learing?</h2>
+<p>The terms &ldquo;1-shot&rdquo;, &ldquo;3-shot&rdquo;, &ldquo;5-shot&rdquo;, &ldquo;7-shot&rdquo;,  etc., refer to the number of examples provided to the model during the evaluation phase of few-shot learning. Few-shot learning is a technique where a model is given a small number of examples to understand the task before being evaluated. Here&rsquo;s a brief explanation of each term:</p>
+<ul>
+<li>
+<p><strong>1-shot Learning</strong>: The model is given one example of the task to learn from before being tested. This helps in assessing how well the model can generalize from a single instance.</p>
+</li>
+<li>
+<p><strong>3-shot Learning</strong>: The model is provided with three examples to learn from before the evaluation. This gives a bit more context than 1-shot but still requires strong generalization capabilities.</p>
+</li>
+<li>
+<p><strong>5-shot Learning</strong>: The model is given five examples to understand the task before being tested. This allows the model to see a variety of instances to better understand the task requirements.</p>
+</li>
+<li>
+<p><strong>7-shot Learning</strong>: The model learns from seven examples before being evaluated. This provides more context and helps the model to generalize better than lower-shot scenarios.</p>
+</li>
+<li>
+<p><strong>25-shot Learning</strong>: The model is provided with twenty-five examples to learn from. This is typically used in more complex tasks where more examples are needed to grasp the nuances.</p>
+</li>
+</ul>
+<h3 id="why-use-few-shot-learning">Why Use Few-Shot Learning?</h3>
+<p>Few-shot learning is valuable because it assesses a model&rsquo;s ability to generalize from a small number of examples. This mimics real-world scenarios where large labeled datasets may not be available. It helps in understanding the model&rsquo;s capability to adapt to new tasks with minimal guidance, which is crucial for versatile AI systems.</p>
+<h3 id="examples-in-context">Examples in Context</h3>
+<ul>
+<li><strong>MMLU (5-shot)</strong>: The model is shown five examples of each academic subject before being tested.</li>
+<li><strong>AGIEval English (3-5 shot)</strong>: The model learns from three to five examples for each English proficiency task.</li>
+<li><strong>CommonSenseQA (7-shot)</strong>: Seven examples are given to the model to teach common sense reasoning before evaluation.</li>
+<li><strong>Winogrande (5-shot)</strong>: The model receives five examples to resolve sentence ambiguities before being tested.</li>
+<li><strong>BIG-Bench Hard (3-shot, CoT)</strong>: The model is provided with three examples for each challenging task, using chain-of-thought prompting.</li>
+</ul>
+<p>This approach helps to benchmark how well language models can adapt to new tasks with limited information.</p>
+<h2 id="what-happens-in-the-model-during-few-shot-learning">What happens in the model during few shot learning?</h2>
+<p>During few-shot learning, a pre-trained model uses a small number of examples provided as part of the prompt to understand how to perform a specific task. Here’s a detailed breakdown of what happens in the model during this process:</p>
+<h3 id="contextual-understanding">Contextual Understanding</h3>
+<ol>
+<li>
+<p><strong>Pre-Trained Knowledge</strong>: The model, having been pre-trained on a large corpus of data, already possesses a vast amount of general knowledge about language, facts, and various tasks. This foundational knowledge is crucial for few-shot learning.</p>
+</li>
+<li>
+<p><strong>Task Presentation</strong>: When the model is presented with a few-shot task, it receives a prompt that includes a few examples (shots) of input-output pairs. These examples are intended to illustrate the task the model is expected to perform.</p>
+</li>
+</ol>
+<h3 id="example-processing">Example Processing</h3>
+<ol start="3">
+<li>
+<p><strong>Pattern Recognition</strong>: The model analyzes the provided examples to recognize patterns and relationships between inputs and outputs. For instance, in a question-answering task, it observes how questions are structured and how answers are formulated.</p>
+</li>
+<li>
+<p><strong>Contextual Embedding</strong>: The model generates embeddings (dense vector representations) for the inputs and outputs in the examples. These embeddings capture the semantic information and context of the examples, helping the model understand the task.</p>
+</li>
+</ol>
+<h3 id="generalization">Generalization</h3>
+<ol start="5">
+<li><strong>Inference</strong>: Using its pre-trained knowledge and the patterns identified from the few examples, the model generalizes to infer the rules or the method required to perform the task. This step relies heavily on the model’s ability to generalize from limited data.</li>
+</ol>
+<h3 id="application">Application</h3>
+<ol start="6">
+<li><strong>Prediction</strong>: Once the model has inferred the task’s rules, it applies this understanding to make predictions on new, unseen inputs. It uses the context from the examples to guide its responses.</li>
+</ol>
+<h3 id="example-workflow">Example Workflow</h3>
+<p>Let’s consider a few-shot learning task where the model is required to perform sentiment analysis:</p>
+<h4 id="few-shot-prompt">Few-Shot Prompt</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Example 1:
+</span></span><span style="display:flex;"><span>Input: &#34;The movie was fantastic and very entertaining.&#34;
+</span></span><span style="display:flex;"><span>Output: &#34;Positive&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 2:
+</span></span><span style="display:flex;"><span>Input: &#34;I did not enjoy the film; it was too long and boring.&#34;
+</span></span><span style="display:flex;"><span>Output: &#34;Negative&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Example 3:
+</span></span><span style="display:flex;"><span>Input: &#34;The acting was mediocre, but the plot was interesting.&#34;
+</span></span><span style="display:flex;"><span>Output: &#34;Neutral&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>New Input: &#34;The visuals were stunning, but the story lacked depth.&#34;
+</span></span><span style="display:flex;"><span>Output:
+</span></span></code></pre></div><h4 id="model-process">Model Process</h4>
+<ol>
+<li>
+<p><strong>Analyze Examples</strong>: The model reads the examples and identifies that they are instances of sentiment analysis, where the task is to determine whether the sentiment expressed in each sentence is positive, negative, or neutral.</p>
+</li>
+<li>
+<p><strong>Generate Embeddings</strong>: It creates embeddings for the inputs and outputs of the examples, capturing the semantic information and sentiment expressed in each sentence.</p>
+</li>
+<li>
+<p><strong>Infer Rules</strong>: The model uses the examples to infer that it needs to classify the sentiment of the new input sentence based on the patterns it recognized (e.g., words like &ldquo;fantastic&rdquo; indicate positive sentiment, while &ldquo;boring&rdquo; indicates negative sentiment).</p>
+</li>
+<li>
+<p><strong>Predict Output</strong>: The model applies its understanding to the new input (&ldquo;The visuals were stunning, but the story lacked depth.&rdquo;) and predicts the output based on the context and rules inferred from the examples. In this case, it might predict &ldquo;Neutral&rdquo; or &ldquo;Mixed&rdquo; sentiment.</p>
+</li>
+</ol>
+<h3 id="key-points">Key Points</h3>
+<ul>
+<li><strong>No Fine-Tuning</strong>: During few-shot learning, the model&rsquo;s weights are not updated. Instead, it leverages its pre-trained knowledge and the few provided examples to make predictions.</li>
+<li><strong>Flexibility</strong>: Few-shot learning showcases the model’s flexibility and adaptability to new tasks with minimal data.</li>
+<li><strong>Efficiency</strong>: It is an efficient way to evaluate and utilize large language models without requiring extensive additional training data.</li>
+</ul>
+<p>In essence, few-shot learning allows a model to quickly adapt to new tasks by understanding and generalizing from a few examples, leveraging its pre-trained knowledge and powerful pattern recognition capabilities.</p>
+<h2 id="fewshot-learning-with-prompt-engineering-and-finetuing-with-machine-learning">Fewshot learning with prompt engineering and finetuing with machine learning.</h2>
+<h3 id="few-shot-learning">Few-Shot Learning</h3>
+<p><strong>Definition</strong>: Few-shot learning involves providing a pre-trained model with a few examples (shots) of a task at evaluation time to help the model understand and perform the task.</p>
+<p><strong>Required Skills</strong>:</p>
+<ol>
+<li><strong>Prompt Engineering</strong>: This involves designing effective prompts that guide the model to perform the desired task accurately. Skills in crafting clear, concise, and informative prompts are crucial.
+<ul>
+<li><strong>Example Selection</strong>: Choosing representative examples that effectively illustrate the task.</li>
+<li><strong>Contextualization</strong>: Structuring the prompt to provide sufficient context for the model to understand the task.</li>
+<li><strong>Instruction Design</strong>: Writing clear instructions that help the model understand what it is supposed to do.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Usage</strong>: Few-shot learning is typically used when:</p>
+<ul>
+<li>You need to quickly adapt a model to new tasks without extensive data or computational resources.</li>
+<li>You want to leverage a pre-trained model’s existing capabilities with minimal additional input.</li>
+<li>You are working in environments where collecting large datasets is impractical or impossible.</li>
+</ul>
+<h3 id="fine-tuning">Fine-Tuning</h3>
+<p><strong>Definition</strong>: Fine-tuning involves training a pre-trained model further on a specific dataset to adjust its weights for improved performance on a particular task.</p>
+<p><strong>Required Skills</strong>:</p>
+<ol>
+<li>
+<p><strong>Machine Learning</strong>: A strong understanding of machine learning principles and practices.</p>
+<ul>
+<li><strong>Model Training</strong>: Knowledge of how to train models, including setting hyperparameters, managing training loops, and handling overfitting.</li>
+<li><strong>Data Preprocessing</strong>: Skills in cleaning, normalizing, and preparing data for training.</li>
+<li><strong>Evaluation Metrics</strong>: Understanding and selecting appropriate metrics to evaluate model performance.</li>
+<li><strong>Optimization</strong>: Familiarity with optimization techniques and algorithms used in training models.</li>
+<li><strong>Programming</strong>: Proficiency in programming languages and frameworks used for machine learning, such as Python with TensorFlow, PyTorch, or Hugging Face Transformers.</li>
+</ul>
+</li>
+<li>
+<p><strong>Domain Knowledge</strong>: Understanding the specific domain or task for which the model is being fine-tuned.</p>
+<ul>
+<li><strong>Dataset Curation</strong>: Ability to gather and curate datasets that are representative of the task.</li>
+<li><strong>Task-Specific Adjustments</strong>: Making task-specific modifications to the model or training process.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Usage</strong>: Fine-tuning is typically used when:</p>
+<ul>
+<li>You have access to a substantial amount of task-specific data.</li>
+<li>You need to significantly improve a model’s performance on a specific task.</li>
+<li>You want to adapt a pre-trained model to specialized domains or tasks that require more than just few-shot examples.</li>
+</ul>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><strong>Few-Shot Learning</strong>: Relies on prompt engineering skills to craft effective examples and instructions for the model to perform tasks with minimal additional data.</li>
+<li><strong>Fine-Tuning</strong>: Requires machine learning expertise to further train a pre-trained model on a specific dataset, adjusting its weights to optimize performance for a particular task.</li>
+</ul>
+<p>Both approaches leverage pre-trained models but are used in different contexts and require different sets of skills to implement effectively.</p>
+<h2 id="after-we-finetune-chatgpt35-model-can-we-download-the-finetued-model">After we finetune chatgpt3.5 model can we download the finetued model?</h2>
+<p>Now a days we see there are many gpt under the explore gpt section in chatgpt app. All these gpts are created using fewshot learning?</p>
+<p>The GPTs you see under the &ldquo;Explore GPT&rdquo; section in the ChatGPT app are not all created using few-shot learning in the traditional sense. Instead, they can be created and customized through different methods that involve varying degrees of training and fine-tuning. Here’s a breakdown of how these GPTs are generally created and customized:</p>
+<h3 id="1-custom-gpts">1. <strong>Custom GPTs</strong></h3>
+<p><strong>Custom GPTs</strong> are created using the following approaches:</p>
+<ul>
+<li>
+<p><strong>Prompt Engineering</strong>: Some GPTs use advanced prompt engineering to guide the model’s behavior. This involves designing detailed prompts or instructions that tailor the model&rsquo;s responses to specific types of queries or tasks. It can include examples, templates, or structured prompts that help the model handle particular kinds of interactions.</p>
+</li>
+<li>
+<p><strong>Instruction Tuning</strong>: Custom GPTs can be tuned to follow specific instructions or behave in a particular way based on the provided guidelines. This involves designing prompts and guidelines that instruct the model on how to respond to various inputs.</p>
+</li>
+<li>
+<p><strong>Fine-Tuning</strong>: Some GPTs may undergo fine-tuning on task-specific datasets to improve their performance on particular tasks or domains. Fine-tuning adjusts the model&rsquo;s weights based on additional training data that is relevant to the intended use case.</p>
+</li>
+</ul>
+<h3 id="2-few-shot-learning">2. <strong>Few-Shot Learning</strong></h3>
+<p><strong>Few-Shot Learning</strong> involves providing a few examples in the prompt to guide the model&rsquo;s responses. This technique is useful for:</p>
+<ul>
+<li>
+<p><strong>Providing Examples</strong>: Showing the model a few examples of the type of responses or behavior you expect, which helps it generate similar responses to new inputs.</p>
+</li>
+<li>
+<p><strong>Task Adaptation</strong>: Adapting the model to handle specific types of queries or tasks based on the examples provided in the prompt.</p>
+</li>
+</ul>
+<h3 id="3-combination-of-methods">3. <strong>Combination of Methods</strong></h3>
+<ul>
+<li><strong>Hybrid Approach</strong>: Many custom GPTs use a combination of prompt engineering and fine-tuning. For instance, they might use few-shot examples within the prompt for specific interactions while also being fine-tuned on additional data to improve their performance in a particular domain.</li>
+</ul>
+<h3 id="examples-of-custom-gpt-creation">Examples of Custom GPT Creation</h3>
+<ul>
+<li>
+<p><strong>Customer Support GPT</strong>: A custom GPT designed for customer support might use prompt engineering to include specific examples of common customer queries and appropriate responses. It might also be fine-tuned on historical customer service data.</p>
+</li>
+<li>
+<p><strong>Creative Writing GPT</strong>: A GPT for creative writing might be prompted with examples of different writing styles and genres, and it could be fine-tuned on a corpus of literary texts to better handle creative tasks.</p>
+</li>
+</ul>
+<h3 id="summary-1">Summary</h3>
+<ul>
+<li><strong>Few-Shot Learning</strong>: Involves using examples in the prompt to guide the model&rsquo;s behavior without changing the model&rsquo;s weights.</li>
+<li><strong>Custom GPTs</strong>: Can be created using a variety of methods, including prompt engineering, instruction tuning, and fine-tuning.</li>
+<li><strong>Explore GPT Section</strong>: Features GPTs that may use different combinations of these techniques to cater to specific use cases or tasks.</li>
+</ul>
+<p>In essence, while few-shot learning is one method used to create and customize GPTs, many of the GPTs in the &ldquo;Explore GPT&rdquo; section may also involve additional techniques and customizations beyond just few-shot learning.</p>
+<h2 id="can-we-finetune-gpt35-gpt40-or-gemini-model">Can we finetune GPT3.5, GPT4.0 or Gemini Model?</h2>
+<p>As of the latest available information:</p>
+<h3 id="fine-tuning-gpt-35"><strong>Fine-Tuning GPT-3.5</strong></h3>
+<p>Yes, you can fine-tune GPT-3.5 through OpenAI&rsquo;s platform. Fine-tuning allows you to customize the model on specific datasets to better suit your particular needs. Here&rsquo;s how it typically works:</p>
+<ol>
+<li><strong>Prepare Data</strong>: Create a dataset with examples of the inputs and desired outputs.</li>
+<li><strong>Upload Data</strong>: Use the OpenAI API to upload your dataset.</li>
+<li><strong>Fine-Tune</strong>: Use the API to initiate the fine-tuning process, which adjusts the model&rsquo;s weights based on your data.</li>
+<li><strong>Access</strong>: Once fine-tuned, you can access the customized model via the OpenAI API for your specific use cases.</li>
+</ol>
+<h3 id="fine-tuning-gpt-40"><strong>Fine-Tuning GPT-4.0</strong></h3>
+<p>Currently, OpenAI does not provide public access to fine-tune GPT-4. This model is typically used in a &ldquo;few-shot&rdquo; or &ldquo;zero-shot&rdquo; manner where the model is prompted with examples or tasks without adjusting its internal weights.</p>
+<h3 id="fine-tuning-gemini-models"><strong>Fine-Tuning Gemini Models</strong></h3>
+<p>As of now, fine-tuning capabilities for Gemini models (developed by Google DeepMind) have not been publicly disclosed. These models are generally accessed and used through APIs provided by Google, and any customization is usually done via prompt engineering or similar methods rather than direct fine-tuning.</p>
+<h3 id="summary-2"><strong>Summary</strong></h3>
+<ul>
+<li><strong>GPT-3.5</strong>: Fine-tuning is available through the OpenAI platform.</li>
+<li><strong>GPT-4.0</strong>: Fine-tuning is not publicly available. Usage is typically via prompt engineering.</li>
+<li><strong>Gemini Models</strong>: Fine-tuning capabilities are not publicly disclosed. Customization is typically done via prompt engineering or API configurations.</li>
+</ul>
+<h3 id="alternative-approaches"><strong>Alternative Approaches</strong></h3>
+<p>For models where direct fine-tuning is not available, consider:</p>
+<ol>
+<li><strong>Prompt Engineering</strong>: Designing detailed prompts to guide the model&rsquo;s behavior without changing its internal weights.</li>
+<li><strong>Embedding-Based Methods</strong>: Using vector embeddings to represent specific data and leveraging these embeddings for tasks like similarity search or classification.</li>
+<li><strong>Open-Source Models</strong>: Fine-tuning open-source models like GPT-2, GPT-3 (via EleutherAI), or other alternatives available through platforms like Hugging Face, which allows for more control over the training process and deployment.</li>
+</ol>
+<p>By leveraging these approaches, you can tailor the behavior of advanced models to better fit your specific needs, even if direct fine-tuning is not an option.</p>
+<h2 id="after-we-finetune-chatgpt35-model-can-we-download-the-finetued-model-1">After we finetune chatgpt3.5 model can we download the finetued model?</h2>
+<p>As of the latest information available, when you fine-tune a model like ChatGPT-3.5 through OpenAI, you cannot download the fine-tuned model directly. Here’s how it typically works:</p>
+<h3 id="fine-tuning-and-model-access">Fine-Tuning and Model Access</h3>
+<ol>
+<li>
+<p><strong>Fine-Tuning Process</strong>:</p>
+<ul>
+<li><strong>Training</strong>: You can use the OpenAI API to fine-tune a model on your specific dataset. During this process, the model’s weights are adjusted based on the training data you provide.</li>
+<li><strong>Access</strong>: Once the fine-tuning process is complete, you receive access to the fine-tuned model through the OpenAI API. This allows you to use the model for inference (i.e., generating responses based on the fine-tuned knowledge) via API calls.</li>
+</ul>
+</li>
+<li>
+<p><strong>Model Availability</strong>:</p>
+<ul>
+<li><strong>No Direct Download</strong>: OpenAI does not provide an option to download the fine-tuned model itself. Instead, you interact with the fine-tuned model through the API.</li>
+<li><strong>API-Based Usage</strong>: You can integrate the fine-tuned model into your applications or systems by making API requests. This way, you benefit from the fine-tuning without needing direct access to the model files.</li>
+</ul>
+</li>
+</ol>
+<h3 id="alternative-approaches-1">Alternative Approaches</h3>
+<p>If you need direct access to a model for local usage or modification, consider the following alternatives:</p>
+<ol>
+<li>
+<p><strong>Use Open-Source Models</strong>:</p>
+<ul>
+<li><strong>Smaller Models</strong>: For local fine-tuning and model management, you can use open-source models like GPT-2 or GPT-3, which may be available through frameworks such as Hugging Face Transformers. These models allow you to fine-tune and download them for local use.</li>
+</ul>
+</li>
+<li>
+<p><strong>Custom Models</strong>:</p>
+<ul>
+<li><strong>Local Training</strong>: For more control over the model and its deployment, consider training your models from scratch or fine-tuning open-source variants on your infrastructure.</li>
+</ul>
+</li>
+</ol>
+<h3 id="summary-3">Summary</h3>
+<ul>
+<li><strong>ChatGPT-3.5 Fine-Tuning</strong>: Fine-tuning is done via the OpenAI API, and you interact with the fine-tuned model through API requests.</li>
+<li><strong>Direct Download</strong>: Downloading the fine-tuned model itself is not supported by OpenAI.</li>
+<li><strong>Alternatives</strong>: Use open-source models or local training methods if direct access to the model is needed.</li>
+</ul>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

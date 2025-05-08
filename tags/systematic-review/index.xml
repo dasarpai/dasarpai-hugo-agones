@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Systematic Review on Agones</title>
+    <link>http://localhost:1313/tags/systematic-review/</link>
+    <description>Recent content in Systematic Review on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/systematic-review/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to do Literature Review</title>
+      <link>http://localhost:1313/dsblog/How-To-Do-Literature-Review/</link>
+      <pubDate>Thu, 17 Aug 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/How-To-Do-Literature-Review/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6086-How-To-Do-Literature-Review.jpg&#34; alt=&#34;How to do Literature Review&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;how-to-conduct-literature-review&#34;&gt;How to Conduct Literature Review?&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Literature Review (LR) or Literature Survey (LS) is a process that helps you to browse the libraries, literature, articles, books, conference proceedings, etc. The objective of this process is to study the work of other researchers in the field and around the topic you are interested in. This is one of the heaviest work in any research work. If you are not on track or this process is taking unusually longer time, then it means you don&amp;rsquo;t have any guiding process or best practices in place. As per my experience during my MS in Data Science and Ph.D./DBA in AI-Natural Language Processing, I am writing my thoughts in this article. I am sure it will help you, especially if you are entering in the field of research.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

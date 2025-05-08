@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Integration on Agones</title>
+    <link>http://localhost:1313/tags/integration/</link>
+    <description>Recent content in Integration on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/integration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Make.com: A Comprehensive Guide to Automation and Its Alternatives</title>
+      <link>http://localhost:1313/dsblog/exploring-make-com-a-comprehensive-guide/</link>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-make-com-a-comprehensive-guide/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6200-Exploring-Make-com-A-Comprehensive-Guide.jpg&#34; alt=&#34;Exploring Make.com - A Comprehensive Guide to Automation and Its Alternatives&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-makecom---a-comprehensive-guide-to-automation-and-its-alternatives&#34;&gt;Exploring Make.com - A Comprehensive Guide to Automation and Its Alternatives&lt;/h1&gt;&#xA;&lt;p&gt;Make.com is an automation platform that allows users to create custom workflows between various apps and services. With its intuitive interface and powerful automation capabilities, Make.com is an excellent choice for automating tasks, streamlining processes, and increasing productivity. In this guide, we&amp;rsquo;ll explore the features and capabilities of Make.com and discuss its alternatives for automation and integration. Whether you&amp;rsquo;re a business owner, developer, or simply someone looking to automate tasks, this guide will provide you with a comprehensive overview of Make.com and its competitors.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

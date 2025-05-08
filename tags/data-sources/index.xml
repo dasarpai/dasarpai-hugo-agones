@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Sources on Agones</title>
+    <link>http://localhost:1313/tags/data-sources/</link>
+    <description>Recent content in Data Sources on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/data-sources/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Navigating the Data Landscape: Exploring Data Sources, Databases, and ETL Tools for Machine Learning Projects</title>
+      <link>http://localhost:1313/dsblog/navigating-the-data=landscape/</link>
+      <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/navigating-the-data=landscape/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dsresources/dsr116-Data-Sources-Databases-ETL-Tools.jpg&#34; alt=&#34;Data Sources, Databases, ETL Tools&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;navigating-the-data-landscape&#34;&gt;Navigating the Data Landscape:&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Exploring Data Sources, Databases, and ETL Tools for Machine Learning Projects&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Data sources: Data sources refer to the origins or locations from which data is collected or generated. They can include various platforms, systems, devices, or applications that generate or store data, such as databases, APIs, files, sensors, social media platforms, or web services.&lt;/p&gt;&#xA;&lt;p&gt;Databases: Databases are organized collections of structured data that are stored, managed, and accessed using database management systems (DBMS). They provide a structured way to store and retrieve data efficiently, enabling data storage, retrieval, manipulation, and querying operations for various applications.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

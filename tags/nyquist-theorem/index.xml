@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nyquist Theorem on Agones</title>
+    <link>http://localhost:1313/tags/nyquist-theorem/</link>
+    <description>Recent content in Nyquist Theorem on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nyquist-theorem/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Frequencies in Time and Space: Understanding Nyquist Theorem &amp; its Applications</title>
+      <link>http://localhost:1313/dsblog/frequencies-in-time-and-space/</link>
+      <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/frequencies-in-time-and-space/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6265-frequencies-in-time-and-space.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;applications-of-nyquists-theorem&#34;&gt;Applications of Nyquists theorem&lt;/h1&gt;&#xA;&lt;h2 id=&#34;can-the-nyquist-shannon-sampling-theorem-applies-to-light-signals&#34;&gt;Can &lt;strong&gt;the Nyquist-Shannon sampling theorem applies to light signals&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;-first-what-kind-of-light-are-we-talking-about&#34;&gt;🌈 First: What Kind of &amp;ldquo;Light&amp;rdquo; Are We Talking About?&lt;/h3&gt;&#xA;&lt;p&gt;When we say &lt;strong&gt;light&lt;/strong&gt;, we could mean a few different things depending on the context:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Visible light waves&lt;/strong&gt; (very high frequency, in the hundreds of THz)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Modulated light signals&lt;/strong&gt; (like in fiber optics or Li-Fi)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Video/images&lt;/strong&gt; (captured with cameras, representing light intensity)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Scientific measurements&lt;/strong&gt; (astronomy, laser pulses, etc.)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Each of these uses light differently — and &lt;strong&gt;sampling theory applies to all&lt;/strong&gt;, though how we use it depends on the application.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

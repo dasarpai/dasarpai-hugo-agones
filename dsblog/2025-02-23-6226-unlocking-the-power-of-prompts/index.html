@@ -1,0 +1,522 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Unlocking the Power of Prompts: A Comprehensive Guide to Prompt Engineering | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2025-02-23-6226-unlocking-the-power-of-prompts/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Unlocking the Power of Prompts: A Comprehensive Guide to Prompt Engineering">
+  <meta property="og:description" content="Unlocking the Power of Prompts Introduction What can you do with Art of Prompting and powerful AI Models? You can use prompts to accomplish almost any task that requires human intelligence. However, prompting is just one part of the process—you also need a powerful model to execute these prompts effectively.
+The models can be:
+Cloud-based proprietary models like ChatGPT, Gemini, and Sonnet. Open-source models hosted on the cloud like LLaMa, DeepSeek, and Qwen. Proprietary models deployed on your organization’s internal infrastructure. Open-source models running on your organization’s infrastructure. For general personal use, these models are often available with limited usage and warranty. However, for commercial applications requiring higher reliability and guarantees, paid plans are necessary. The cost of these models is decreasing by a factor of 10 each year. In the near future, we will have even more powerful models available for free or at a nominal cost.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-02-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-23T00:00:00+00:00">
+    <meta property="article:tag" content="Prompt Engineering">
+    <meta property="article:tag" content="AI Prompting">
+    <meta property="article:tag" content="The Art of Prompting">
+    <meta property="article:tag" content="AI Models">
+    <meta property="article:tag" content="Cloud-Based Proprietary Models">
+    <meta property="article:tag" content="Prompt Engineering Techniques">
+
+  <meta itemprop="name" content="Unlocking the Power of Prompts: A Comprehensive Guide to Prompt Engineering">
+  <meta itemprop="description" content="Unlocking the Power of Prompts Introduction What can you do with Art of Prompting and powerful AI Models? You can use prompts to accomplish almost any task that requires human intelligence. However, prompting is just one part of the process—you also need a powerful model to execute these prompts effectively.
+The models can be:
+Cloud-based proprietary models like ChatGPT, Gemini, and Sonnet. Open-source models hosted on the cloud like LLaMa, DeepSeek, and Qwen. Proprietary models deployed on your organization’s internal infrastructure. Open-source models running on your organization’s infrastructure. For general personal use, these models are often available with limited usage and warranty. However, for commercial applications requiring higher reliability and guarantees, paid plans are necessary. The cost of these models is decreasing by a factor of 10 each year. In the near future, we will have even more powerful models available for free or at a nominal cost.">
+  <meta itemprop="datePublished" content="2025-02-23T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-02-23T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1771">
+  <meta itemprop="keywords" content="Prompt Engineering Tutorial,Prompt Engineering Guide,The Art of Prompting,AI Models,Cloud-based Proprietary Models,Prompt Engineering Techniques,RL Applications,Exploration vs. Exploitation in RL,Value-Based vs. Policy-Based Methods in RL">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Unlocking the Power of Prompts: A Comprehensive Guide to Prompt Engineering">
+  <meta name="twitter:description" content="Unlocking the Power of Prompts Introduction What can you do with Art of Prompting and powerful AI Models? You can use prompts to accomplish almost any task that requires human intelligence. However, prompting is just one part of the process—you also need a powerful model to execute these prompts effectively.
+The models can be:
+Cloud-based proprietary models like ChatGPT, Gemini, and Sonnet. Open-source models hosted on the cloud like LLaMa, DeepSeek, and Qwen. Proprietary models deployed on your organization’s internal infrastructure. Open-source models running on your organization’s infrastructure. For general personal use, these models are often available with limited usage and warranty. However, for commercial applications requiring higher reliability and guarantees, paid plans are necessary. The cost of these models is decreasing by a factor of 10 each year. In the near future, we will have even more powerful models available for free or at a nominal cost.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6226-Unlocking-the-Power-of-Prompting.jpg" alt="Unlocking the Power of Prompts"></p>
+<h1 id="unlocking-the-power-of-prompts">Unlocking the Power of Prompts</h1>
+<h2 id="introduction">Introduction</h2>
+<p>What can you do with Art of Prompting and powerful AI Models? You can use prompts to accomplish almost any task that requires human intelligence. However, prompting is just one part of the process—you also need a powerful model to execute these prompts effectively.</p>
+<p>The models can be:</p>
+<ul>
+<li><strong>Cloud-based proprietary models</strong> like ChatGPT, Gemini, and Sonnet.</li>
+<li><strong>Open-source models hosted on the cloud</strong> like LLaMa, DeepSeek, and Qwen.</li>
+<li><strong>Proprietary models deployed on your organization&rsquo;s internal infrastructure.</strong></li>
+<li><strong>Open-source models running on your organization&rsquo;s infrastructure.</strong></li>
+</ul>
+<p>For general personal use, these models are often available with limited usage and warranty. However, for commercial applications requiring higher reliability and guarantees, paid plans are necessary. The cost of these models is decreasing by a factor of 10 each year. In the near future, we will have even more powerful models available for free or at a nominal cost.</p>
+<p>Here’s a sneak peek into the possibilities of what you can achieve with prompts and these models.</p>
+<h3 id="technology--development"><strong>Technology &amp; Development</strong></h3>
+<ol>
+<li><strong>Software Development &amp; Engineering</strong> – Write code, troubleshoot bugs, and architect systems.</li>
+<li><strong>Cybersecurity &amp; Ethical Hacking</strong> – Analyze vulnerabilities, penetration testing, and security best practices.</li>
+<li><strong>Data Science &amp; Machine Learning</strong> – Build models, analyze data, and generate insights.</li>
+<li><strong>Blockchain &amp; Web3 Development</strong> – Create smart contracts, DeFi applications, and NFT projects.</li>
+</ol>
+<h3 id="education--learning"><strong>Education &amp; Learning</strong></h3>
+<ol>
+<li><strong>Lesson Planning &amp; Teaching</strong> – Create study guides, curriculum outlines, and educational exercises.</li>
+<li><strong>Research &amp; Fact-Checking</strong> – Summarize research papers and verify information.</li>
+<li><strong>Language Learning &amp; Translation</strong> – Generate language exercises, translate text, and provide grammar tips.</li>
+</ol>
+<h3 id="creative--content-generation"><strong>Creative &amp; Content Generation</strong></h3>
+<ol>
+<li><strong>Storytelling &amp; Creative Writing</strong> – Generate short stories, novels, scripts, poetry, and plot ideas.</li>
+<li><strong>Blog Writing &amp; Articles</strong> – Write informative, persuasive, or SEO-optimized articles.</li>
+<li><strong>Copywriting &amp; Advertising</strong> – Create compelling marketing copy, headlines, and slogans.</li>
+<li><strong>Screenwriting &amp; Scripts</strong> – Develop dialogues, film scripts, and interactive storytelling.</li>
+<li><strong>Speech Writing</strong> – Write persuasive speeches for various occasions.</li>
+</ol>
+<h3 id="business--marketing"><strong>Business &amp; Marketing</strong></h3>
+<ol>
+<li><strong>Business Strategy &amp; Analysis</strong> – Create business models, case studies, and market research.</li>
+<li><strong>Marketing Strategy &amp; Branding</strong> – Develop content calendars, social media strategies, and brand positioning.</li>
+<li><strong>Sales &amp; Lead Generation</strong> – Write cold emails, sales pitches, and negotiation strategies.</li>
+<li><strong>Public Relations &amp; Crisis Management</strong> – Craft press releases and crisis response strategies.</li>
+</ol>
+<h3 id="product-development--innovation"><strong>Product Development &amp; Innovation</strong></h3>
+<ol>
+<li><strong>Brainstorming &amp; Ideation</strong> – Generate ideas for startups, products, and problem-solving.</li>
+<li><strong>User Experience (UX) &amp; Product Design</strong> – Develop wireframes, feature lists, and usability improvements.</li>
+<li><strong>Prototyping &amp; MVP Development</strong> – Outline minimum viable products and agile development roadmaps.</li>
+</ol>
+<h3 id="personal-development--productivity"><strong>Personal Development &amp; Productivity</strong></h3>
+<ol>
+<li><strong>Time Management &amp; Goal Setting</strong> – Generate to-do lists, productivity frameworks, and habit trackers.</li>
+<li><strong>Mindset &amp; Motivation</strong> – Develop self-improvement techniques and inspirational content.</li>
+<li><strong>Journaling &amp; Reflection</strong> – Provide prompts for introspection and gratitude journaling.</li>
+</ol>
+<h3 id="finance--investment"><strong>Finance &amp; Investment</strong></h3>
+<ol>
+<li><strong>Personal Finance &amp; Budgeting</strong> – Create budget plans, savings strategies, and financial advice.</li>
+<li><strong>Stock Market &amp; Crypto Analysis</strong> – Analyze market trends and suggest investment strategies.</li>
+<li><strong>Business Finance &amp; Valuation</strong> – Conduct financial modeling, forecasts, and valuation techniques.</li>
+</ol>
+<h3 id="health--wellness"><strong>Health &amp; Wellness</strong></h3>
+<ol>
+<li><strong>Mental Health &amp; Well-Being</strong> – Generate mindfulness exercises and coping strategies.</li>
+<li><strong>Fitness &amp; Workout Plans</strong> – Create personalized exercise routines and meal plans.</li>
+<li><strong>Medical Research &amp; Diagnostics</strong> – Provide symptom checkers and medical explanations.</li>
+</ol>
+<h3 id="legal--compliance"><strong>Legal &amp; Compliance</strong></h3>
+<ol>
+<li><strong>Legal Contracts &amp; Policies</strong> – Draft agreements, privacy policies, and legal notices.</li>
+<li><strong>Compliance &amp; Risk Management</strong> – Generate regulatory checklists and governance frameworks.</li>
+</ol>
+<h3 id="entertainment--gaming"><strong>Entertainment &amp; Gaming</strong></h3>
+<ol>
+<li><strong>Game Development &amp; Storytelling</strong> – Create characters, level designs, and game mechanics.</li>
+<li><strong>Board Games &amp; Puzzles</strong> – Develop new game concepts and brainteasers.</li>
+</ol>
+<h3 id="science--engineering"><strong>Science &amp; Engineering</strong></h3>
+<ol>
+<li><strong>Scientific Research &amp; Experiments</strong> – Summarize studies and design experiments.</li>
+<li><strong>Engineering &amp; Robotics</strong> – Develop technical blueprints and mechanical designs.</li>
+</ol>
+<h3 id="ai--automation"><strong>AI &amp; Automation</strong></h3>
+<ol>
+<li><strong>AI Ethics &amp; Philosophy</strong> – Generate discussions on AI impact and ethics.</li>
+<li><strong>Prompt Engineering</strong> – Optimize prompts for AI models and fine-tune responses.</li>
+<li><strong>AI Agents &amp; Automation</strong> – Build AI workflows and robotic process automation (RPA).</li>
+</ol>
+<h2 id="example-prompts-for-various-professional-tasks">Example prompts for various professional tasks</h2>
+<p>To try these models you can use various <a href="/dsblog/AI-Resources.md">AI Models, Products, or Services.</a></p>
+<h3 id="-creating-music">🎵 <strong>Creating Music</strong></h3>
+<ol>
+<li>Generate lyrics for a [genre] song about [topic].</li>
+<li>Compose a melody in the style of [artist/genre].</li>
+<li>Suggest chord progressions for a [mood] song.</li>
+<li>Create a song structure with verses, chorus, and bridge for a [theme] track.</li>
+<li>Generate a beat pattern for a [BPM] tempo in [genre].</li>
+<li>Provide mixing and mastering tips for a [style] track.</li>
+<li>Suggest instruments to use in a [mood] composition.</li>
+<li>Write a rap verse with [syllables per line] and a [rhyme scheme].</li>
+<li>Create a soundtrack for a [video game/movie scene] with [emotional tone].</li>
+<li>Develop a concept album idea with a central theme and tracklist.</li>
+</ol>
+<hr>
+<h3 id="-creating-artwork">🎨 <strong>Creating Artwork</strong></h3>
+<ol>
+<li>Generate a concept for a digital painting of [scene/subject].</li>
+<li>Suggest color palettes for a [mood/style] artwork.</li>
+<li>Describe a futuristic cityscape with cyberpunk aesthetics.</li>
+<li>Create an idea for a surrealist artwork combining [elements].</li>
+<li>Design a character for a fantasy world with unique traits.</li>
+<li>Generate prompts for AI art in [style/medium] with [specific features].</li>
+<li>Suggest composition techniques for a dynamic action scene.</li>
+<li>Create a storyboard for an animated short film about [theme].</li>
+<li>Design a logo for a [brand/company] using [color scheme].</li>
+<li>Generate a tattoo design with symbolic meaning about [topic].</li>
+</ol>
+<hr>
+<h3 id="-creating-a-business-plan">📈 <strong>Creating a Business Plan</strong></h3>
+<ol>
+<li>Outline a business plan for a [industry] startup.</li>
+<li>Identify key target audiences for a [product/service].</li>
+<li>Develop a unique value proposition for a new [business type].</li>
+<li>Suggest marketing strategies for launching [product/service].</li>
+<li>Create a financial forecast for the next [years] for a [business].</li>
+<li>Generate a SWOT analysis for a [industry] business.</li>
+<li>Outline a competitive analysis for entering [market].</li>
+<li>Define key performance indicators (KPIs) for a [type] business.</li>
+<li>Suggest funding sources and investor pitch ideas for [business].</li>
+<li>Write an executive summary for a startup in [industry].</li>
+</ol>
+<hr>
+<h3 id="-creating-a-project-plan">📌 <strong>Creating a Project Plan</strong></h3>
+<ol>
+<li>Develop a roadmap for a [type] project over [time period].</li>
+<li>Break down project milestones and deliverables for [goal].</li>
+<li>Generate a risk management strategy for [project type].</li>
+<li>Define roles and responsibilities for a team working on [project].</li>
+<li>Suggest tools and frameworks to manage [project type].</li>
+<li>Outline a communication plan for stakeholders in [project].</li>
+<li>Create an agile sprint plan for a software development project.</li>
+<li>Develop a timeline for launching a new [product/service].</li>
+<li>Suggest automation tools to improve efficiency in [project].</li>
+<li>Generate documentation structure for tracking progress in [project].</li>
+</ol>
+<hr>
+<h3 id="-writing-code">💻 <strong>Writing Code</strong></h3>
+<ol>
+<li>Generate a Python script to [perform task].</li>
+<li>Write a function to optimize [algorithm] in [language].</li>
+<li>Implement a REST API using [framework] for [use case].</li>
+<li>Develop a web scraper for [website] using [library].</li>
+<li>Write a SQL query to retrieve [specific data] from [database].</li>
+<li>Generate a chatbot using [framework] for [purpose].</li>
+<li>Implement a microservice architecture for [system].</li>
+<li>Create a script to automate [repetitive task].</li>
+<li>Build a data pipeline for [dataset] using [tools].</li>
+<li>Develop a game prototype in [game engine].</li>
+</ol>
+<hr>
+<h3 id="-code-refactoring">🔧 <strong>Code Refactoring</strong></h3>
+<ol>
+<li>Optimize this function for performance: [code snippet].</li>
+<li>Refactor this legacy code to modern standards: [code snippet].</li>
+<li>Improve the readability of this code: [code snippet].</li>
+<li>Convert this procedural code into object-oriented code: [code snippet].</li>
+<li>Identify potential security vulnerabilities in this code: [code snippet].</li>
+<li>Replace repetitive code with a reusable function: [code snippet].</li>
+<li>Convert this Python script into a more efficient algorithm.</li>
+<li>Implement best practices for error handling in this code.</li>
+<li>Optimize memory usage in this function: [code snippet].</li>
+<li>Rewrite this code using a functional programming approach.</li>
+</ol>
+<hr>
+<h3 id="-code-review">✅ <strong>Code Review</strong></h3>
+<ol>
+<li>Provide feedback on the efficiency of this function: [code snippet].</li>
+<li>Identify potential bugs in this code: [code snippet].</li>
+<li>Suggest improvements for code readability: [code snippet].</li>
+<li>Check for security vulnerabilities in this API endpoint.</li>
+<li>Recommend best practices for this database schema.</li>
+<li>Analyze this code for maintainability and scalability.</li>
+<li>Review this machine learning model for potential improvements.</li>
+<li>Identify unnecessary dependencies in this project.</li>
+<li>Suggest performance optimizations for this backend service.</li>
+<li>Review this frontend code for responsiveness and accessibility.</li>
+</ol>
+<hr>
+<h3 id="-creating-ai-agents">🤖 <strong>Creating AI Agents</strong></h3>
+<ol>
+<li>Design an AI chatbot for [industry/use case].</li>
+<li>Generate prompt engineering strategies for fine-tuning [LLM].</li>
+<li>Develop a recommendation system for [e-commerce/platform].</li>
+<li>Implement an AI-based customer support agent.</li>
+<li>Create a self-learning AI agent for [task].</li>
+<li>Define the architecture for a multi-agent AI system.</li>
+<li>Develop a sentiment analysis model for social media monitoring.</li>
+<li>Build an AI-powered document summarization tool.</li>
+<li>Generate a dataset for training an AI model in [domain].</li>
+<li>Optimize AI model performance for real-time applications.</li>
+</ol>
+<h2 id="prompt-ideas-for-social-media-and-marketers"><strong>Prompt Ideas for Social Media and Marketers</strong></h2>
+<p>With countless AI prompts available, finding the right one can be overwhelming. To simplify your workflow, we&rsquo;ve curated a list of the most effective prompt ideas for blogging, SEO, and marketing.</p>
+<h3 id="social-media-prompts"><strong>Social Media Prompts</strong></h3>
+<ol>
+<li>
+<p><strong>Instagram Captions for Posts &amp; Reels</strong><br>
+<em>Prompt:</em> &ldquo;Write a catchy Instagram caption for [Describe Post]. Use emojis and popular hashtags.&rdquo;</p>
+</li>
+<li>
+<p><strong>Create an Instagram Carousel</strong><br>
+<em>Prompt:</em> &ldquo;Generate a slide-by-slide breakdown for an Instagram carousel on: [Enter Topic]. Include image suggestions.&rdquo;</p>
+</li>
+<li>
+<p><strong>Twitter Bio &amp; Tweet Generation</strong><br>
+<em>Prompt:</em> &ldquo;Write an engaging Twitter bio for a [Profession/Industry].&rdquo;
+<em>Prompt:</em> &ldquo;Generate 10 tweets for a [Profession/Business]. Include relevant hashtags.&rdquo;</p>
+</li>
+<li>
+<p><strong>YouTube Video Scripts &amp; Descriptions</strong><br>
+<em>Prompt:</em> &ldquo;Write a script and description for a YouTube video titled: [Enter Title].&rdquo;</p>
+</li>
+<li>
+<p><strong>LinkedIn Content Calendar</strong><br>
+<em>Prompt:</em> &ldquo;Create a month-long LinkedIn content calendar for: [Your Business]. Include daily post ideas with hashtags.&rdquo;</p>
+</li>
+<li>
+<p><strong>Facebook Ad Copy &amp; Content Strategy</strong><br>
+<em>Prompt:</em> &ldquo;Write a high-converting Facebook ad for: [Describe Product].&rdquo;
+<em>Prompt:</em> &ldquo;Develop a two-week Facebook content strategy for: [Describe Business].&rdquo;</p>
+</li>
+</ol>
+<hr>
+<h3 id="ecommerce-prompts"><strong>eCommerce Prompts</strong></h3>
+<ol>
+<li>
+<p><strong>Write Product Descriptions</strong><br>
+<em>Prompt:</em> &ldquo;Create a compelling product description for: [Enter Product Name]. Include three key sections.&rdquo;</p>
+</li>
+<li>
+<p><strong>Optimize Landing Page Copy</strong><br>
+<em>Prompt:</em> &ldquo;Write SEO-optimized landing page copy for: [Enter Product]. Include an engaging headline, CTA, and FAQs.&rdquo;</p>
+</li>
+<li>
+<p><strong>Ad Strategy for eCommerce Products</strong><br>
+<em>Prompt:</em> &ldquo;Develop a marketing campaign for: [Enter Product]. Include target audience, messaging, and ad channels.&rdquo;</p>
+</li>
+</ol>
+<hr>
+<h3 id="business--marketing-prompts"><strong>Business &amp; Marketing Prompts</strong></h3>
+<ol>
+<li>
+<p><strong>Email Optimization</strong><br>
+<em>Prompt:</em> &ldquo;Polish this email to sound professional and engaging: [Enter Email Text]. Include three subject line options.&rdquo;</p>
+</li>
+<li>
+<p><strong>Write a Job Posting</strong><br>
+<em>Prompt:</em> &ldquo;Create a job posting for [Job Title]. List responsibilities, skills, and benefits.&rdquo;</p>
+</li>
+<li>
+<p><strong>Generate a Business Model Canvas</strong><br>
+<em>Prompt:</em> &ldquo;Develop a business model canvas for a [Type of Business]. Organize responses in a consulting-style table.&rdquo;</p>
+</li>
+<li>
+<p><strong>Logo &amp; Branding Ideas</strong><br>
+<em>Prompt:</em> &ldquo;Suggest three unique logo design ideas for: [Business Name &amp; Industry]. Describe each concept.&rdquo;</p>
+</li>
+<li>
+<p><strong>Domain Name Suggestions</strong><br>
+<em>Prompt:</em> &ldquo;Generate .com domain name ideas for: [Business Name &amp; Industry]. Keep names under eight characters.&rdquo;</p>
+</li>
+<li>
+<p><strong>Write a Job Offer Email</strong><br>
+<em>Prompt:</em> &ldquo;Create a professional job offer email with details on [Job Title, Salary, Company Name].&rdquo;</p>
+</li>
+</ol>
+<hr>
+<h3 id="local-business-promotion-prompts"><strong>Local Business Promotion Prompts</strong></h3>
+<ol>
+<li>
+<p><strong>Generate Blog Ideas for Local Businesses</strong><br>
+<em>Prompt:</em> &ldquo;List blog topics promoting local attractions near: [Your Business Location].&rdquo;</p>
+</li>
+<li>
+<p><strong>Create a Local SEO Strategy</strong><br>
+<em>Prompt:</em> &ldquo;Develop a detailed local SEO plan for: [Your Business Type]. Focus on keywords, backlinks, and reviews.&rdquo;</p>
+</li>
+<li>
+<p><strong>Hyper-Local Advertising Strategy</strong><br>
+<em>Prompt:</em> &ldquo;Plan an ad campaign targeting customers within 10 miles of: [Business Location]. Suggest best platforms and messaging.&rdquo;</p>
+</li>
+</ol>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

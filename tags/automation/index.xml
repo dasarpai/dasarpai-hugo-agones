@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automation on Agones</title>
+    <link>http://localhost:1313/tags/automation/</link>
+    <description>Recent content in Automation on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Make.com: A Comprehensive Guide to Automation and Its Alternatives</title>
+      <link>http://localhost:1313/dsblog/exploring-make-com-a-comprehensive-guide/</link>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-make-com-a-comprehensive-guide/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6200-Exploring-Make-com-A-Comprehensive-Guide.jpg&#34; alt=&#34;Exploring Make.com - A Comprehensive Guide to Automation and Its Alternatives&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-makecom---a-comprehensive-guide-to-automation-and-its-alternatives&#34;&gt;Exploring Make.com - A Comprehensive Guide to Automation and Its Alternatives&lt;/h1&gt;&#xA;&lt;p&gt;Make.com is an automation platform that allows users to create custom workflows between various apps and services. With its intuitive interface and powerful automation capabilities, Make.com is an excellent choice for automating tasks, streamlining processes, and increasing productivity. In this guide, we&amp;rsquo;ll explore the features and capabilities of Make.com and discuss its alternatives for automation and integration. Whether you&amp;rsquo;re a business owner, developer, or simply someone looking to automate tasks, this guide will provide you with a comprehensive overview of Make.com and its competitors.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MLOps Tools</title>
+      <link>http://localhost:1313/dsblog/MLOps-Tools/</link>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/MLOps-Tools/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6137-MLOps-Tools.jpg&#34; alt=&#34;MLOps-Tools&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;mlops-tools&#34;&gt;MLOps Tools&lt;/h1&gt;&#xA;&lt;p&gt;MLOps (Machine Learning Operations) is a set of practices and tools designed to streamline and automate the deployment, monitoring, and management of machine learning models in production environments. It combines principles from both DevOps (Development Operations) and machine learning to ensure that ML models are deployed efficiently, managed effectively, and maintained reliably throughout their lifecycle.&lt;/p&gt;&#xA;&lt;p&gt;MLOps ensures:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Efficiency: Automates repetitive tasks, reducing manual effort and speeding up model deployment.&lt;/li&gt;&#xA;&lt;li&gt;Consistency: Ensures consistent and reliable model performance through standardized processes.&lt;/li&gt;&#xA;&lt;li&gt;Scalability: Facilitates scaling of models and infrastructure to handle increased workloads.&lt;/li&gt;&#xA;&lt;li&gt;Reliability: Enhances the reliability of ML systems by monitoring performance and quickly addressing issues.&lt;/li&gt;&#xA;&lt;li&gt;Compliance: Helps meet regulatory and compliance requirements by managing data security and model governance&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;mlops-activities&#34;&gt;MLOps Activities&lt;/h2&gt;&#xA;&lt;p&gt;MLOps (Machine Learning Operations) encompasses a wide range of activities that are essential for developing, deploying, and maintaining machine learning models in production. Below is a comprehensive list of activities involved in MLOps:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Demystifying DevOps, MLOps, and DataOps</title>
+      <link>http://localhost:1313/dsblog/Demystifying-DevOps-MLOps-and-DataOps/</link>
+      <pubDate>Thu, 08 Jun 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Demystifying-DevOps-MLOps-and-DataOps/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6066-Demystifying-DevOps-MLOps-and-DataOps.jpg&#34; alt=&#34;All Resources to Learn Data Science&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;demystifying-devops-mlops-and-dataops&#34;&gt;Demystifying DevOps, MLOps, and DataOps:&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Bridging the Gap between Software Development, Machine Learning, and Data Managemen&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;what-is-devops&#34;&gt;What is DevOps&lt;/h2&gt;&#xA;&lt;p&gt;DevOps, short for Development and Operations, is a set of practices, principles, and cultural philosophies that aim to improve collaboration and efficiency between software development teams and IT operations teams. It emphasizes the integration of software development and IT operations, breaking down traditional silos and fostering a collaborative approach throughout the entire software delivery lifecycle.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Will AI Replace Human?</title>
+      <link>http://localhost:1313/dsblog/Will-AI-Replace-Human/</link>
+      <pubDate>Thu, 19 Jan 2023 08:33:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Will-AI-Replace-Human/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6038-Will-AI-Replace-Human.jpg&#34; alt=&#34;Will AI Replace Human&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;artificial-intelligence-can-replace-human&#34;&gt;Artificial Intelligence can Replace Human?&lt;/h1&gt;&#xA;&lt;p&gt;The Success of ChatGPT has taken the world by storm. Unless you are not living in some cave you already know what is happening. People are asking questions like will AI replace humans? What will happen to our jobs? What are the challenges? I thought let me write my thought on this. There was significant overlap between these phases, so don&amp;rsquo;t assume that when one phase was over then only the second started.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

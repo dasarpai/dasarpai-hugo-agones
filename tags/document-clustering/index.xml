@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Document Clustering on Agones</title>
+    <link>http://localhost:1313/tags/document-clustering/</link>
+    <description>Recent content in Document Clustering on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/document-clustering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Topic Modeling with BERT</title>
+      <link>http://localhost:1313/dsblog/topic-modeling-with-bert/</link>
+      <pubDate>Mon, 13 Nov 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/topic-modeling-with-bert/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6105-Topic-Modeling-with-BERT.jpg&#34; alt=&#34;Topic Modeling with BERT&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;topic-modeling-with-bert&#34;&gt;Topic Modeling with BERT&lt;/h1&gt;&#xA;&lt;p&gt;Key steps in BERTopic modelling are as following.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Use &amp;ldquo;Sentence Embedding&amp;rdquo; models to embed the sentences of the article&lt;/li&gt;&#xA;&lt;li&gt;Reduce the dimensionality of embedding using UMAP&lt;/li&gt;&#xA;&lt;li&gt;Cluster these documents (reduced dimensions) using HDBSAN&lt;/li&gt;&#xA;&lt;li&gt;Use c-TF-IDF extract keywords, their frequency and IDF for each cluster.&lt;/li&gt;&#xA;&lt;li&gt;MMR: Maximize Candidate Relevance. How many words in a topic can represent the topic?&lt;/li&gt;&#xA;&lt;li&gt;Intertopic Distance Map&lt;/li&gt;&#xA;&lt;li&gt;Use similarity matrix (heatmap), dandogram (hierarchical map), to visualize the topics and key_words.&lt;/li&gt;&#xA;&lt;li&gt;Traction of topic over time period. Some may be irrelevant and for other traction may be increasing or decreasing.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;installation&#34;&gt;Installation&lt;/h1&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Installation, with sentence-transformers, can be done using pypi:&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install bertopic&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# If you want to install BERTopic with other embedding models, you can choose one of the following:&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Choose an embedding backend&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install bertopic[flair, gensim, spacy, use]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Topic modeling with images&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install bertopic[vision]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;supported-topic-modelling-techniques&#34;&gt;Supported Topic Modelling Techniques&lt;/h1&gt;&#xA;&lt;p&gt;BERTopic supports all kinds of topic modeling techniques as below.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

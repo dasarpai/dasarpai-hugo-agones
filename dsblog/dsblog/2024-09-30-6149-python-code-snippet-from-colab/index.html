@@ -1,0 +1,473 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Python Code Snippnet from Colab | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2024-09-30-6149-python-code-snippet-from-colab/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Python Code Snippnet from Colab">
+  <meta property="og:description" content="Python Code Snippnet from Colab What is snippet? A snippet is a small, reusable piece of code designed to perform a specific task or solve a particular problem. It’s often just a few lines long and is meant to be quickly inserted into a larger program to save time or avoid re-writing commonly used functions.
+Key Features of a Snippet: Short and specific: Snippets usually address a single functionality or task, such as reading a file, making a network request, or sorting data. Reusable: Snippets can be reused in multiple projects without modification. Pre-tested: Snippets are typically pre-tested, so you can trust them to work in many situations. Contextual: A snippet often relies on a specific environment or language and may need to be adapted slightly to fit your use case. Example of a Snippet: For example, if you frequently need to read a file in Python, you might save a snippet like this:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-09-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-09-30T00:00:00+00:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Python Programming">
+    <meta property="article:tag" content="OOPs">
+
+  <meta itemprop="name" content="Python Code Snippnet from Colab">
+  <meta itemprop="description" content="Python Code Snippnet from Colab What is snippet? A snippet is a small, reusable piece of code designed to perform a specific task or solve a particular problem. It’s often just a few lines long and is meant to be quickly inserted into a larger program to save time or avoid re-writing commonly used functions.
+Key Features of a Snippet: Short and specific: Snippets usually address a single functionality or task, such as reading a file, making a network request, or sorting data. Reusable: Snippets can be reused in multiple projects without modification. Pre-tested: Snippets are typically pre-tested, so you can trust them to work in many situations. Contextual: A snippet often relies on a specific environment or language and may need to be adapted slightly to fit your use case. Example of a Snippet: For example, if you frequently need to read a file in Python, you might save a snippet like this:">
+  <meta itemprop="datePublished" content="2024-09-30T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-09-30T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1721">
+  <meta itemprop="keywords" content="Console programming,Command-line interface,Developer console,Terminal vs. command prompt,Remote console access,IDE console,Database console,Embedded systems console,Cloud console,Debugging console,Server console">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Python Code Snippnet from Colab">
+  <meta name="twitter:description" content="Python Code Snippnet from Colab What is snippet? A snippet is a small, reusable piece of code designed to perform a specific task or solve a particular problem. It’s often just a few lines long and is meant to be quickly inserted into a larger program to save time or avoid re-writing commonly used functions.
+Key Features of a Snippet: Short and specific: Snippets usually address a single functionality or task, such as reading a file, making a network request, or sorting data. Reusable: Snippets can be reused in multiple projects without modification. Pre-tested: Snippets are typically pre-tested, so you can trust them to work in many situations. Contextual: A snippet often relies on a specific environment or language and may need to be adapted slightly to fit your use case. Example of a Snippet: For example, if you frequently need to read a file in Python, you might save a snippet like this:">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6149-Python-Code-Snippnet-from-Colab.jpg" alt="Python Code Snippnet from Colab"></p>
+<h1 id="python-code-snippnet-from-colab">Python Code Snippnet from Colab</h1>
+<h2 id="what-is-snippet">What is snippet?</h2>
+<p>A <strong>snippet</strong> is a small, reusable piece of code designed to perform a specific task or solve a particular problem. It’s often just a few lines long and is meant to be quickly inserted into a larger program to save time or avoid re-writing commonly used functions.</p>
+<h3 id="key-features-of-a-snippet">Key Features of a Snippet:</h3>
+<ul>
+<li><strong>Short and specific</strong>: Snippets usually address a single functionality or task, such as reading a file, making a network request, or sorting data.</li>
+<li><strong>Reusable</strong>: Snippets can be reused in multiple projects without modification.</li>
+<li><strong>Pre-tested</strong>: Snippets are typically pre-tested, so you can trust them to work in many situations.</li>
+<li><strong>Contextual</strong>: A snippet often relies on a specific environment or language and may need to be adapted slightly to fit your use case.</li>
+</ul>
+<h3 id="example-of-a-snippet">Example of a Snippet:</h3>
+<p>For example, if you frequently need to read a file in Python, you might save a snippet like this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># A snippet to read a file</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">with</span> <span style="color:#204a87">open</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;file.txt&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#39;r&#39;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">as</span> <span style="color:#000">file</span><span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">file</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">data</span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><p>This snippet can be used in any Python project to quickly read a file.</p>
+<p><strong>Note:</strong> If you want, you can convert above code into a function and put inside module. But many times it does not make sense to create a function for this kind of work, rather using a code snippet makes things simple.</p>
+<h3 id="how-snippets-differ-from-libraries-packages-and-modules">How Snippets Differ from Libraries, Packages, and Modules:</h3>
+<ul>
+<li><strong>Snippets</strong> are small, standalone bits of code. They are typically just individual functions or a few lines of logic.</li>
+<li><strong>Libraries</strong> and <strong>packages</strong> are more structured, containing many functions and classes, often packaged for broader reuse.</li>
+<li><strong>Modules</strong> are Python files containing reusable code, often more complex than snippets.</li>
+<li><strong>Frameworks</strong> provide a full set of tools, including snippets but also structures and conventions for building large applications.</li>
+</ul>
+<h3 id="where-snippets-are-used">Where Snippets are Used:</h3>
+<ul>
+<li><strong>Code editors</strong>: Many code editors like Visual Studio Code, PyCharm, and Sublime Text offer built-in snippets that can be quickly inserted into your code.</li>
+<li><strong>Online resources</strong>: Websites like StackOverflow and GitHub Gist are filled with snippets shared by developers for specific tasks.</li>
+<li><strong>Google Colab</strong>: Snippets are available as pre-built, reusable blocks of code to solve common data science tasks.</li>
+</ul>
+<p>Snippets save time and effort, allowing developers to focus on more complex or unique aspects of their projects.</p>
+<h2 id="what-is-colab-code-snippet">What is Colab Code Snippet?</h2>
+<p>If you want to do anything in Colab in Python language, don&rsquo;t spend time writing code from scratch. There are rich code snippets available from Google Colab that you can use to save a significant amount of time. This is especially useful for beginners who are starting their journey and struggle to write code, but it&rsquo;s also helpful for experts because, after all, it takes time to think, write, and test code.</p>
+<p>And why does it matter whether the library was created by you, a project team member, or Google? As long as you understand what you want and the code snippet helps achieve that, use it without feeling guilty about not writing the code yourself.</p>
+<p>After all, business is not about writing code, but about solving social and business problems. If there’s a solution available in the form of libraries, snippets, or templates, using them is the wise choice. Just make sure you understand what each line of code is doing.</p>
+<h2 id="colab-snippets-sep2024">Colab snippets (Sep'2024)</h2>
+<p>This keeps growing.</p>
+<ol>
+<li>Adding form fields in Colab</li>
+<li>Apply QA_PIXEL cloud mask to Landsat 8</li>
+<li>Authenticate to GCP</li>
+<li>Calculate mean NDVI on the 10km buffer around Paris using Sentinel-2</li>
+<li>Camera Capture</li>
+<li>Cross-output communication</li>
+<li>Display SRTM DEM over Seattle</li>
+<li>display.Javascript to execute JavaScript from Python</li>
+<li>Downloading files or importing data from Google Drive</li>
+<li>Downloading files to your local file system</li>
+<li>Evaluate a Javascript expression from Python with eval_js</li>
+<li>Filter Landsat 8 to a date range</li>
+<li>Gemini: Connecting to Gemini</li>
+<li>Gemini: Creating a prompt</li>
+<li>Hiding code</li>
+<li>Importing a library that is not in Colaboratory</li>
+<li>Importing data directly from Google Sheets</li>
+<li>Importing data from Google Sheets</li>
+<li>Install <a href="http://scitools.org.uk/cartopy/docs/latest/">cartopy</a></li>
+<li>Install 7zip reader <a href="https://pypi.python.org/pypi/libarchive">libarchive</a></li>
+<li>Install GraphViz &amp; <a href="https://pypi.python.org/pypi/pydot">PyDot</a></li>
+<li>Javascript to Python communication</li>
+<li>Jupyter Comms</li>
+<li>Jupyter Widgets</li>
+<li>Listing files in Google Drive</li>
+<li>Mask out Sentinel-2 pixels above 100 m using SRTM</li>
+<li>Mount a Cloud Storage location into the local filesystem</li>
+<li>Mounting Google Drive in your VM</li>
+<li>Open files from GCS with gsutil</li>
+<li>Open files from GCS with the Cloud Storage Python API</li>
+<li>Open files from GitHub</li>
+<li>Open files from Google Drive</li>
+<li>Open files from your local file system</li>
+<li>Output Handling</li>
+<li>Pandas DataFrame: Create from lists of values</li>
+<li>Pandas DataFrame: Drop duplicate rows</li>
+<li>Pandas DataFrame: Explode a column containing dictionary values into multiple columns</li>
+<li>Pandas DataFrame: Extract values using regexp (regular expression)</li>
+<li>Pandas DataFrame: Filter by Timestamp in DatetimeIndex using <code>.loc[]</code></li>
+<li>Pandas DataFrame: Filter by Timestamp using TimeDelta string</li>
+<li>Pandas DataFrame: Ignore one Column</li>
+<li>Pandas DataFrame: Intersect Indexes</li>
+<li>Pandas DataFrame: Query by regexp (regular expression)</li>
+<li>Pandas DataFrame: Query by Timestamp above a value</li>
+<li>Pandas DataFrame: Query by variable value</li>
+<li>Pandas DataFrame: Query for Timestamp between two values</li>
+<li>Pandas DataFrame: Query using variable value as a column name</li>
+<li>Pandas DataFrame: Rename multiple Columns</li>
+<li>Pandas DataFrame: Reshape to have 1 row per value in a list column</li>
+<li>Pandas DataFrame: Select all rows from A that are not in B, using the index</li>
+<li>Pandas DataFrame: Select rows by an attribute of a column value</li>
+<li>Pandas DataFrame: Sort the count of rows grouped on columns</li>
+<li>Pandas Timestamp: Convert string to Timestamp</li>
+<li>Pandas Timestamp: Convert string to Timestamp, using date only</li>
+<li>Pandas: Create a TimeDelta from a string</li>
+<li>Pandas: Create a TimeDelta using <code>unit</code></li>
+<li>Pandas: Create a TimeDelta using available kwargs</li>
+<li>Pandas: DataFrames: Group Timeseries by Frequency</li>
+<li>Pandas: Describe Timestamp values in a column</li>
+<li>Pandas: display dataframes as interactive tables</li>
+<li>Pandas: Replace NaN values in a Column</li>
+<li>Pausing output processing</li>
+<li>Saving data to Google Drive</li>
+<li>Saving data to Google Sheets</li>
+<li>Saving data with gsutil</li>
+<li>Saving data with the Cloud Storage Python API</li>
+<li>Serving resources</li>
+<li>Show a bar chart of MODIS land cover classes</li>
+<li>Show a line chart of CHIRPS precipitation</li>
+<li>Show average yearly temperatures over California</li>
+<li>Show NDVI from Sentinel-2 SR over Milan</li>
+<li>Show NDVI over Rio using Landsat 8</li>
+<li>Showing CV2 Images</li>
+<li>Tagged Outputs</li>
+<li>Third-party Jupyter widgets</li>
+<li>Use BigQuery DataFrames</li>
+<li>Using BigQuery with Cloud API</li>
+<li>Using BigQuery with Pandas API</li>
+<li>Visualization: Bar Plot in Altair</li>
+<li>Visualization: Histogram in Altair</li>
+<li>Visualization: Interactive Brushing in Altair</li>
+<li>Visualization: Interactive Scatter Plot in Altair</li>
+<li>Visualization: Linked Brushing in Altair</li>
+<li>Visualization: Linked Scatter-Plot and Histogram in Altair</li>
+<li>Visualization: Scatter Plot with Rolling Mean in Altair</li>
+<li>Visualization: Stacked Histogram in Altair</li>
+<li>Visualization: Time Series Line Plot in Altair</li>
+</ol>
+<h2 id="difference-between-framework-package-library-module">Difference between Framework, Package, Library, Module</h2>
+<p>Here’s a detailed comparison table of <strong>module</strong>, <strong>library</strong>, <strong>package</strong>, and <strong>framework</strong> based on different variables:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Variable</strong></th>
+          <th><strong>Module</strong></th>
+          <th><strong>Library</strong></th>
+          <th><strong>Package</strong></th>
+          <th><strong>Framework</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Made of</strong></td>
+          <td>A single file containing <strong>functions</strong> and <strong>classes</strong>.</td>
+          <td>Multiple <strong>files</strong> with functions and classes; serves a specific purpose.</td>
+          <td>Multiple <strong>libraries</strong> and/or <strong>modules</strong> grouped together.</td>
+          <td>A collection of <strong>packages</strong>, <strong>libraries</strong>, and <strong>modules</strong> organized for building applications.</td>
+      </tr>
+      <tr>
+          <td><strong>Purpose</strong></td>
+          <td>Used for small, specific functionality.</td>
+          <td>Provides specific functionalities to be used <strong>when needed</strong>.</td>
+          <td>Organizes related functionality and can be reused across projects.</td>
+          <td>Provides a full <strong>structure</strong> for building applications with rules and guidelines.</td>
+      </tr>
+      <tr>
+          <td><strong>Installation</strong></td>
+          <td>Typically just <strong>copied</strong> or included in the same project.</td>
+          <td>Installed using package managers like <strong>pip</strong> or <strong>npm</strong>.</td>
+          <td>Installed using package managers like <strong>pip</strong> or <strong>npm</strong>.</td>
+          <td>Installed using package managers like <strong>pip</strong>, <strong>npm</strong>, or specialized tools.</td>
+      </tr>
+      <tr>
+          <td><strong>Control</strong></td>
+          <td>The code <strong>calls</strong> the module whenever needed.</td>
+          <td>The user <strong>calls</strong> the library functions whenever necessary.</td>
+          <td>The user <strong>imports</strong> and uses packages across multiple libraries.</td>
+          <td>The framework controls the <strong>flow</strong> of the project; your code fits within the framework’s structure.</td>
+      </tr>
+      <tr>
+          <td><strong>Structure</strong></td>
+          <td>No predefined structure; just a file.</td>
+          <td>No specific structure required; can be used anywhere in the project.</td>
+          <td>May require a specific directory structure for <strong>complex packages</strong>.</td>
+          <td>Requires a well-defined structure, often with prebuilt directories and files like <code>views</code>, <code>models</code>.</td>
+      </tr>
+      <tr>
+          <td><strong>Dependency</strong></td>
+          <td>May depend on other modules but generally <strong>self-contained</strong>.</td>
+          <td>Can depend on other libraries; dependencies managed via <strong>pip</strong>.</td>
+          <td>Can include multiple libraries and modules with <strong>interdependencies</strong>.</td>
+          <td>May have <strong>many dependencies</strong> and third-party packages included.</td>
+      </tr>
+      <tr>
+          <td><strong>Reusability</strong></td>
+          <td>Reusable but mostly within the same project.</td>
+          <td>Highly reusable across multiple projects.</td>
+          <td>Reusable across multiple projects, typically contains more functionality than libraries.</td>
+          <td>Framework code can be reused within projects but often requires adherence to framework-specific guidelines.</td>
+      </tr>
+      <tr>
+          <td><strong>Flexibility</strong></td>
+          <td>Extremely flexible and can be used anywhere.</td>
+          <td>Flexible, usable in any part of the project, without structural constraints.</td>
+          <td>Mostly flexible but organized, sometimes following naming conventions.</td>
+          <td>Less flexible, as the framework imposes a certain <strong>structure and rules</strong>.</td>
+      </tr>
+      <tr>
+          <td><strong>Inversion of Control (IoC)</strong></td>
+          <td>No inversion of control. You are in full control of the flow.</td>
+          <td>No inversion of control. You control the code flow.</td>
+          <td>You control the code flow, but packages can have entry points.</td>
+          <td>The framework controls when and where your code is executed.</td>
+      </tr>
+      <tr>
+          <td><strong>Scale</strong></td>
+          <td>Small-scale, limited to specific functionality within a project.</td>
+          <td>Medium-scale, provides specific functionality but doesn&rsquo;t organize a project.</td>
+          <td>Medium to large-scale, organizes functionalities and libraries.</td>
+          <td>Large-scale, providing everything needed to organize and manage an entire project or application.</td>
+      </tr>
+      <tr>
+          <td><strong>Examples</strong></td>
+          <td>A single Python file defining utility functions.</td>
+          <td><code>matplotlib</code>, <code>requests</code>, <code>NumPy</code></td>
+          <td><code>scikit-learn</code>, <code>pandas</code>, <code>TensorFlow</code></td>
+          <td><code>Django</code>, <code>Flask</code>, <code>React</code>, <code>Angular</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="additional-notes">Additional Notes:</h3>
+<ul>
+<li><strong>Modules</strong>: Small and self-contained, often written directly as part of a project.</li>
+<li><strong>Libraries</strong>: More general-purpose and can be applied to a wide variety of projects without imposing structure.</li>
+<li><strong>Packages</strong>: More organized collections that can be shared across multiple projects, combining multiple related libraries.</li>
+<li><strong>Frameworks</strong>: Full application structures that provide a skeleton for the entire project and guide development.
+.</li>
+</ul>
+<h2 id="a-newest-snippet-added-in-sep2024">A Newest snippet added in Sep'2024</h2>
+<p><strong>Gemini: Creating a prompt.</strong> <br>
+This rich example shows how you can create and configure complex prompts for Gemini.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># @title Create a prompt</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">google.generativeai</span> <span style="color:#204a87;font-weight:bold">as</span> <span style="color:#000">genai</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">from</span> <span style="color:#000">google.colab</span> <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">userdata</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">api_key_name</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;GOOGLE_API_KEY&#39;</span> <span style="color:#8f5902;font-style:italic"># @param {type: &#34;string&#34;}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">prompt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;What is the velocity of an unladen swallow?&#39;</span> <span style="color:#8f5902;font-style:italic"># @param {type: &#34;string&#34;}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">system_instructions</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;You have a tendency to speak in riddles.&#39;</span> <span style="color:#8f5902;font-style:italic"># @param {type: &#34;string&#34;}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">model</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;gemini-1.5-flash&#39;</span> <span style="color:#8f5902;font-style:italic"># @param {type: &#34;string&#34;} [&#34;gemini-1.0-pro&#34;, &#34;gemini-1.5-pro&#34;, &#34;gemini-1.5-flash&#34;]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">temperature</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0.5</span> <span style="color:#8f5902;font-style:italic"># @param {type: &#34;slider&#34;, min: 0, max: 2, step: 0.05}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">stop_sequence</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;&#39;</span> <span style="color:#8f5902;font-style:italic"># @param {type: &#34;string&#34;}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">model</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#4e9a06">&#39;gemini-1.0-pro&#39;</span> <span style="color:#204a87;font-weight:bold">and</span> <span style="color:#000">system_instructions</span> <span style="color:#204a87;font-weight:bold">is</span> <span style="color:#204a87;font-weight:bold">not</span> <span style="color:#204a87;font-weight:bold">None</span><span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">system_instructions</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">None</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;</span><span style="color:#4e9a06">\x1b</span><span style="color:#4e9a06">[31m(WARNING: System instructions ignored, gemini-1.0-pro does not support system instructions)</span><span style="color:#4e9a06">\x1b</span><span style="color:#4e9a06">[0m&#39;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">model</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#4e9a06">&#39;gemini-1.0-pro&#39;</span> <span style="color:#204a87;font-weight:bold">and</span> <span style="color:#000">temperature</span> <span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">temperature</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;</span><span style="color:#4e9a06">\x1b</span><span style="color:#4e9a06">[34m(INFO: Temperature set to 1, gemini-1.0-pro does not support temperature &gt; 1)</span><span style="color:#4e9a06">\x1b</span><span style="color:#4e9a06">[0m&#39;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">system_instructions</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#4e9a06">&#39;&#39;</span><span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">system_instructions</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">api_key</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">userdata</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">api_key_n</span>
+</span></span></code></pre></div>
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

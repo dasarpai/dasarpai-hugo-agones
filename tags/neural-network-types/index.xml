@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Neural Network Types on Agones</title>
+    <link>http://localhost:1313/tags/neural-network-types/</link>
+    <description>Recent content in Neural Network Types on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/neural-network-types/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Neural Network</title>
+      <link>http://localhost:1313/dsblog/Introduction-to-Neural-Network/</link>
+      <pubDate>Tue, 17 Jan 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Introduction-to-Neural-Network/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6034-Introduction-to-Neural-Network.jpg&#34; alt=&#34;Introduction to Neural Network&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction-to-neural-network&#34;&gt;Introduction to Neural Network&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction-to-a-perceptron&#34;&gt;Introduction to a Perceptron&lt;/h2&gt;&#xA;&lt;p&gt;A perceptron is a type of artificial neural network that can be used for binary classification. It is a simple model that consists of a single layer of artificial neurons and is used to classify input data into one of two categories. The perceptron algorithm learns the weights of the artificial neurons by adjusting them based on the input data and the desired output. The perceptron is considered a basic building block for more complex neural networks.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

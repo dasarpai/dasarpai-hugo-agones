@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistical Distributions on Agones</title>
+    <link>http://localhost:1313/tags/statistical-distributions/</link>
+    <description>Recent content in Statistical Distributions on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/statistical-distributions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Statistics Interview Question for Data Scientist</title>
+      <link>http://localhost:1313/dsblog/Statistics-Interview-Question-for-Data-Scientist/</link>
+      <pubDate>Fri, 06 Jan 2023 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Statistics-Interview-Question-for-Data-Scientist/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6025-Statistics-Interview-Question-for-Data-Scientist.jpg&#34; alt=&#34;Statistics Interview Question for Data Scientist&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;statistics-interview-question-for-data-scientist&#34;&gt;Statistics Interview Question for Data Scientist&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;In this question-answer blog, I will try to answer that every question starts with an example rather than a theory or definition (some unavoidable variation may be possible). I firmly believe if examples are clear, then a human mind is smart enough in generalizing, creating theories and definitions.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The purpose of this blog is not to give you clear-cut definitions of important concepts of statistics but help you in visualizing the ideas in your mind. So that even without the definitions you understand what a particular idea means.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

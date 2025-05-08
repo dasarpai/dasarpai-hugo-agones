@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Attention Mechanism on Agones</title>
+    <link>http://localhost:1313/tags/attention-mechanism/</link>
+    <description>Recent content in Attention Mechanism on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/attention-mechanism/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Transformers Demystified A Step-by-Step Guide</title>
+      <link>http://localhost:1313/dsblog/transformers-demystified-a-step-by-step-guide/</link>
+      <pubDate>Thu, 25 Jul 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/transformers-demystified-a-step-by-step-guide/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6113-transformers-demystified-a-step-by-step-guide.jpg&#34; alt=&#34;Transformers Demystified A Step-by-Step Guide&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;transformers-demystified-a-step-by-step-guide&#34;&gt;Transformers Demystified A Step-by-Step Guide&lt;/h1&gt;&#xA;&lt;p&gt;All modern Transformers are based on a paper &amp;ldquo;Attention is all you need&amp;rdquo;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;This was the mother paper of all the transformer architectures we see today around NLP, Multimodal, Deep Learning. It was presented by Ashish Vaswani et al from Deep Learning / Google in 2017. We will discuss following and anything whatever question/observation/idea I have.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The need&#xA;Why this paper was needed? What problem it solved?&lt;/li&gt;&#xA;&lt;li&gt;What is transformer? What is encoder transformer? What is decoder transformer? What is encoder-decoder transformer?&lt;/li&gt;&#xA;&lt;li&gt;What is embedding? What is need for embedding? What are different types of embedding? What embeddingg is proposed in this work&lt;/li&gt;&#xA;&lt;li&gt;What benchmark dataset was used, what metrics were used and what was the performance of this model?&lt;/li&gt;&#xA;&lt;li&gt;Finally we will looks all the calculations with one illustration.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Encourage all to read this &lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;original paper&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What Are Transformers in AI</title>
+      <link>http://localhost:1313/dsblog/What-Are-Transformers-in-AI/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/What-Are-Transformers-in-AI/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6031-What-are-Transformers-in-AI.jpg&#34; alt=&#34;What-are-Transformers-in-AI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-are-transformers-in-ai&#34;&gt;What Are Transformers in AI&lt;/h1&gt;&#xA;&lt;h2 id=&#34;transformer-architecture&#34;&gt;Transformer Architecture&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/transformer/transformer-arch.jpg&#34; alt=&#34;Transformer&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;&#xA;&lt;p&gt;Whether GPT, ChatGPT, DALL-E, Whisper, Satablity AI or whatever significant you see in the AI worlds nowdays it is because of Transformer Architecture. Transformers are a type of neural network architecture that have several properties that make them effective for modeling data with long-range dependencies. They generally feature a combination of multi-headed attention mechanisms, residual connections, layer normalization, feedforward connections, and positional embeddings.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

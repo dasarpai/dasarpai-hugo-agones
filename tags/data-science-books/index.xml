@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Science Books on Agones</title>
+    <link>http://localhost:1313/tags/data-science-books/</link>
+    <description>Recent content in Data Science Books on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/data-science-books/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Science, AI, ML, eBooks, PDF Books</title>
+      <link>http://localhost:1313/dsblog/ds-ai-ml-books/</link>
+      <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/ds-ai-ml-books/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dsresources/dsr120-Data-Science-AI-ML-eBooks-PDF-Books.jpg&#34; alt=&#34;DS, AI, ML, Books Available&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;online-data-science-ai-ml-content&#34;&gt;Online Data Science, AI, ML Content&lt;/h1&gt;&#xA;&lt;p&gt;Data Science, AI, Machine Learning, Books/ Guide/ Reports/ Presentations / Jupyter Notebook Available.&lt;/p&gt;&#xA;&lt;p&gt;All these books are available in pdf format at &lt;a href=&#34;https://drive.google.com/drive/folders/14wS6JWWDsZ2TEXCD9A7jgLVCEVEd1Mpb?usp=sharing&#34; target=&#34;_blank&#34;&gt; this link&lt;/a&gt;. I update this page less frequently but keep adding books in the repo. The list below may not contain the name you are looking for. Therefore, it is suggested to visit the link mentioned earlier. This link contains excellent presentations Book, (PPT), Handbook, Report, Articles (ARTC), Book, Booklet, eBook, Notebook, Notes, PAPER, GUIDE, TOC, Syllabus, LINKS, Handbook, Chapter, Tool, BROC – Broacher on Machine Learning, Deep Learning, NLP, Statistics, Reinforcement Learning, GAN. Approx 800 pdf files which inclues 350+ books.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

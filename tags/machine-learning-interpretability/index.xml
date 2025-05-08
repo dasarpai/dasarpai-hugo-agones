@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning Interpretability on Agones</title>
+    <link>http://localhost:1313/tags/machine-learning-interpretability/</link>
+    <description>Recent content in Machine Learning Interpretability on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/machine-learning-interpretability/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is XAI?</title>
+      <link>http://localhost:1313/dsblog/What-is-XAI/</link>
+      <pubDate>Fri, 15 May 2020 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/What-is-XAI/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6003-XAI.jpg&#34; alt=&#34;XAI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-xai&#34;&gt;What is XAI?&lt;/h1&gt;&#xA;&lt;h2 id=&#34;xai-in-simple-language&#34;&gt;XAI in Simple Language!&lt;/h2&gt;&#xA;&lt;p&gt;The discipline of Data Science and AI has introduced many terms into discussions that might seem complicated at first. In reality, many of these terms are intuitive and straightforward when considered from a natural intelligence perspective. However, from a technological standpoint, they can be complex. To understand XAI, let’s explore a few examples.&lt;/p&gt;&#xA;&lt;p&gt;All AI or ML-based systems rely on data for training. Once trained, the system works by providing answers or predictions based on input data. The quality of these answers depends on factors such as the algorithm used, the quantity and quality of the data, and hyperparameters, among others.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

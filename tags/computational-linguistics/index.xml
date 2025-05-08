@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computational Linguistics on Agones</title>
+    <link>http://localhost:1313/tags/computational-linguistics/</link>
+    <description>Recent content in Computational Linguistics on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/computational-linguistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NLP Tasks</title>
+      <link>http://localhost:1313/dsblog/nlp-tasks/</link>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/nlp-tasks/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6085-NLP-Tasks.jpg&#34; alt=&#34;NLP Tasks&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;nlp-tasks&#34;&gt;NLP Tasks&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Processing words of any language and driving some meaning from these is as old as the human language. Recently, AI momentum is taking on many of these language-processing tasks. Here is the summary of these NLP tasks, this list is continuously growing. Researchers keep creating a dataset for these tasks in different languages. Other researchers keep devising new ways to solve these tasks with better performance. They come up with a new architecture, a new set of hyperparameters, a new pipeline, etc. In summary, as of today, there are around 55 tasks. Hundreds of datasets and research papers exist around these. You can check on &lt;a href=&#34;https://paperswithcode.com/&#34;&gt;PaperWithCode&lt;/a&gt; or &lt;a href=&#34;https://huggingface.co/&#34;&gt;Hggingface&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

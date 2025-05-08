@@ -1,0 +1,380 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Introduction to Container Registry | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2024-10-20-6167-introduction-to-container-registry/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Introduction to Container Registry">
+  <meta property="og:description" content="Introduction to Container Registry What is Container Registry? A container registry is a central store or service where container images are stored, managed and distributed. Container images are packaged applications that include the code, dependencies, libraries and configuration to run in any environment that supports containerization, like Docker or Kubernetes.
+Key aspects of a Container Registry:
+Storing Images: Container registries act as a storage for container images, where developers can push and pull images as needed. These images are often versioned and tagged so you can track different versions of an application.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-10-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-20T00:00:00+00:00">
+    <meta property="article:tag" content="Container Registry">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="Kubernetes">
+    <meta property="article:tag" content="OCI">
+    <meta property="article:tag" content="Oracle Cloud">
+    <meta property="article:tag" content="Container Orchestration">
+
+  <meta itemprop="name" content="Introduction to Container Registry">
+  <meta itemprop="description" content="Introduction to Container Registry What is Container Registry? A container registry is a central store or service where container images are stored, managed and distributed. Container images are packaged applications that include the code, dependencies, libraries and configuration to run in any environment that supports containerization, like Docker or Kubernetes.
+Key aspects of a Container Registry:
+Storing Images: Container registries act as a storage for container images, where developers can push and pull images as needed. These images are often versioned and tagged so you can track different versions of an application.">
+  <meta itemprop="datePublished" content="2024-10-20T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-10-20T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1614">
+  <meta itemprop="keywords" content="Kubernetes,Docker,container orchestration,container management,CI/CD,scaling containers,load balancing,self-healing containers,Kubernetes vs Docker,container clusters,Kubernetes features,persistent storage">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Introduction to Container Registry">
+  <meta name="twitter:description" content="Introduction to Container Registry What is Container Registry? A container registry is a central store or service where container images are stored, managed and distributed. Container images are packaged applications that include the code, dependencies, libraries and configuration to run in any environment that supports containerization, like Docker or Kubernetes.
+Key aspects of a Container Registry:
+Storing Images: Container registries act as a storage for container images, where developers can push and pull images as needed. These images are often versioned and tagged so you can track different versions of an application.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6167-Introduction-to-Container-Registry.jpg" alt="Introduction to Container Registry"></p>
+<h1 id="introduction-to-container-registry">Introduction to Container Registry</h1>
+<h2 id="what-is-container-registry">What is Container Registry?</h2>
+<p>A container registry is a central store or service where container images are stored, managed and distributed. Container images are packaged applications that include the code, dependencies, libraries and configuration to run in any environment that supports containerization, like Docker or Kubernetes.</p>
+<p><strong>Key aspects of a Container Registry:</strong></p>
+<ul>
+<li>
+<p>Storing Images: Container registries act as a storage for container images, where developers can push and pull images as needed. These images are often versioned and tagged so you can track different versions of an application.</p>
+</li>
+<li>
+<p>Public vs. Private: Public Registry: Open to everyone.</p>
+</li>
+<li>
+<p>Image Management: The registry provides tools to manage images, versioning and sometimes vulnerability scanning. Developers can search, update or delete images as needed.</p>
+</li>
+<li>
+<p>Authentication and Access Control: A private registry often provides mechanisms to authenticate users and control who can access or manage specific images.</p>
+</li>
+<li>
+<p>Integration with CI/CD Pipelines: Container registries integrate with CI/CD pipelines to automate the process of building, storing and deploying containerized applications.</p>
+</li>
+</ul>
+<h2 id="what-are-popular-container-registries">What are Popular Container Registries?</h2>
+<ul>
+<li><strong>Docker Hub</strong>: The most widely used public container registry.</li>
+<li><strong>Google Container Registry (GCR)</strong>: A private registry service by Google Cloud.</li>
+<li><strong>Amazon Elastic Container Registry (ECR)</strong>: A scalable registry offered by AWS.</li>
+<li><strong>Azure Container Registry (ACR)</strong>: A managed registry service by Microsoft Azure.</li>
+<li><strong>GitLab Container Registry (GHCR)</strong>: GitLab’s built-in container registry, enabling users to build and store Docker images.</li>
+<li><strong>Oracle Cloud Infrastructure (OCI) Container Registry (OCIR)</strong></li>
+<li><strong>IBM Cloud Container Registry</strong></li>
+<li><strong>Red Hat - Quay</strong>,  it&rsquo;s commonly used with OpenShift but can also be used standalone.</li>
+</ul>
+<h2 id="what-is-oracle-container-registry">What is Oracle Container Registry</h2>
+<p>Oracle Container Registry is a fully managed Docker registry service provided by Oracle Cloud Infrastructure (OCI). It allows you to store, manage, and distribute Docker container images securely within your OCI environment. This service is designed to support the development and deployment of containerized applications in Oracle Cloud.</p>
+<h3 id="key-features-of-ocir">Key Features of OCIR</h3>
+<ol>
+<li>
+<p><strong>Secure Storage</strong>: Safely store and manage your Docker images in Oracle Cloud.</p>
+</li>
+<li>
+<p><strong>Access Control</strong>: Utilize OCI Identity and Access Management (IAM) to control access to your container images.</p>
+</li>
+<li>
+<p><strong>Integration with OCI Services</strong>: Seamlessly works with other OCI services like Kubernetes Engine (OKE) and Functions.</p>
+</li>
+<li>
+<p><strong>Private Repositories</strong>: Create private repositories to store proprietary images.</p>
+</li>
+<li>
+<p><strong>Image Scanning</strong>: Automatically scan images for vulnerabilities to enhance security.</p>
+</li>
+<li>
+<p><strong>Geo-replication</strong>: Replicate images across regions for improved availability and performance.</p>
+</li>
+<li>
+<p><strong>Retention Policies</strong>: Set up policies to automatically manage the lifecycle of your images.</p>
+</li>
+<li>
+<p><strong>REST API Support</strong>: Automate registry operations using REST APIs.</p>
+</li>
+</ol>
+<h3 id="benefits-of-ocir">Benefits of OCIR</h3>
+<ul>
+<li><strong>Simplified Container Management</strong>: Centralize your container image storage and distribution.</li>
+<li><strong>Enhanced Security</strong>: Benefit from Oracle&rsquo;s enterprise-grade security features.</li>
+<li><strong>Improved CI/CD Workflows</strong>: Integrate easily with your existing development and deployment pipelines.</li>
+<li><strong>Cost-Effective</strong>: Pay only for the storage you use, with no additional charges for data transfer within the same region.</li>
+</ul>
+<p>Container Registry is an essential tool for organizations looking to streamline their container-based application development and deployment processes in Oracle Cloud Infrastructure.</p>
+<p>Note: Similarly you can explore other container registries. They more or less have similar capabilities.</p>
+<h2 id="are-all-these-container-registries-free">Are all these container registries free?</h2>
+<p>No, most of these container registries are not free. You need to check the pricing details for each of them.</p>
+<h2 id="the-cli-commands-to-manage-all-these-container-registries-are-same">The CLI commands to manage all these container registries are same?</h2>
+<p>No, the CLI commands to manage all these container registries are different. You need to check the documentation for each of them to get the exact commands. But they are similar and revolves around the same concepts like push, pull, tag, delete, list, etc.</p>
+<h2 id="does-all-these-container-registry-supports-cicd">Does all these container registry supports CI/CD?</h2>
+<p>Yes, most of these container registries supports CI/CD. You can use the same CI/CD tools to push and pull images to these registries.</p>
+<p>Most of these registries provide hooks, APIs, or direct integrations with popular CI/CD tools like Jenkins, GitLab CI, GitHub Actions, CircleCI, and others to automate the process of building, testing, storing, and deploying container images.</p>
+<h2 id="why-do-we-need-kubernetes-when-docker-is-doing-the-work">Why do we need Kubernetes when Docker is doing the work?</h2>
+<p>While Docker handles the <strong>creation, packaging, and running of containers</strong>, <strong>Kubernetes</strong> adds another layer by helping you manage and orchestrate those containers at scale.</p>
+<h3 id="1-container-orchestration-at-scale">1. <strong>Container Orchestration at Scale</strong></h3>
+<ul>
+<li><strong>Docker</strong> allows you to run individual containers, but when you have many containers running across multiple machines or environments, managing them manually becomes complicated. Kubernetes automates the deployment, scaling, and management of containerized applications across clusters of machines.</li>
+<li><strong>Why Kubernetes</strong>: It schedules containers across different nodes in a cluster, ensuring the right container is running on the right machine, automatically balancing workloads.</li>
+</ul>
+<h3 id="2-self-healing-capabilities">2. <strong>Self-healing Capabilities</strong></h3>
+<ul>
+<li><strong>Docker</strong> does not automatically restart containers if they crash or fail. You can manually restart them or use Docker Swarm, but it’s limited in advanced self-healing.</li>
+<li><strong>Why Kubernetes</strong>: Kubernetes monitors the health of your containers and services. If a container crashes, Kubernetes automatically restarts it, and if a node fails, it reschedules the containers on a different node. It also supports <strong>rolling updates</strong> and <strong>rollback</strong> to ensure smooth updates with minimal downtime.</li>
+</ul>
+<h3 id="3-load-balancing-and-service-discovery">3. <strong>Load Balancing and Service Discovery</strong></h3>
+<ul>
+<li><strong>Docker</strong> lacks built-in mechanisms to efficiently distribute traffic across multiple containers or provide service discovery in a complex architecture.</li>
+<li><strong>Why Kubernetes</strong>: Kubernetes comes with built-in <strong>load balancing</strong> and <strong>service discovery</strong> mechanisms. It ensures traffic is routed to the correct container and balances the load across replicas, maintaining high availability for services.</li>
+</ul>
+<h3 id="4-horizontal-scaling">4. <strong>Horizontal Scaling</strong></h3>
+<ul>
+<li><strong>Docker</strong> doesn’t provide a built-in solution for scaling containers up or down automatically based on demand.</li>
+<li><strong>Why Kubernetes</strong>: Kubernetes can automatically scale your application horizontally by increasing or decreasing the number of container replicas in response to real-time traffic or resource demands (using <strong>Horizontal Pod Autoscaling</strong>).</li>
+</ul>
+<h3 id="5-multi-hostcluster-support">5. <strong>Multi-host/Cluster Support</strong></h3>
+<ul>
+<li><strong>Docker</strong> runs containers on a single machine, and while Docker Swarm allows for simple clustering, it doesn’t offer the advanced multi-host orchestration that modern applications need.</li>
+<li><strong>Why Kubernetes</strong>: Kubernetes was designed to run containers across a <strong>cluster of machines</strong>, managing networking, storage, and security across the entire cluster. It allows for <strong>multi-cloud and hybrid cloud</strong> deployments, offering flexibility across different environments.</li>
+</ul>
+<h3 id="6-storage-orchestration">6. <strong>Storage Orchestration</strong></h3>
+<ul>
+<li><strong>Docker</strong> can manage local storage for individual containers but doesn’t natively support persistent storage or coordinate storage needs across multiple containers.</li>
+<li><strong>Why Kubernetes</strong>: Kubernetes manages <strong>persistent storage</strong> for containers. It provides support for various storage backends (such as local storage, cloud provider storage, NFS, etc.) and allows you to attach/detach persistent storage volumes as needed, making sure containers can access data even if they are moved or rescheduled.</li>
+</ul>
+<h3 id="7-declarative-configuration-infrastructure-as-code">7. <strong>Declarative Configuration (Infrastructure as Code)</strong></h3>
+<ul>
+<li><strong>Docker</strong> does allow for some level of container configuration using Docker Compose or Dockerfiles, but these are primarily for single-node setups.</li>
+<li><strong>Why Kubernetes</strong>: Kubernetes follows a <strong>declarative</strong> approach through <strong>YAML</strong> configuration files. This allows you to define the desired state of the system (e.g., how many replicas, what resources to use) and lets Kubernetes ensure that the system matches this state. If something deviates (e.g., a container fails), Kubernetes will act to bring the system back to the desired state.</li>
+</ul>
+<h3 id="8-network-abstraction-and-management">8. <strong>Network Abstraction and Management</strong></h3>
+<ul>
+<li><strong>Docker</strong> uses basic networking to allow communication between containers, but when containers run across different hosts, Docker’s network management becomes cumbersome.</li>
+<li><strong>Why Kubernetes</strong>: Kubernetes uses <strong>networking layers</strong> that abstract away the complexities of cross-host communication. It provides a <strong>flat network space</strong> across the cluster, enabling containers to communicate with each other as if they were on the same machine, regardless of where they’re actually running.</li>
+</ul>
+<h3 id="9-secret-and-configuration-management">9. <strong>Secret and Configuration Management</strong></h3>
+<ul>
+<li><strong>Docker</strong> can manage some secrets or configurations, but these must be handled manually, and it lacks sophisticated built-in tools for managing sensitive information.</li>
+<li><strong>Why Kubernetes</strong>: Kubernetes provides native support for <strong>Secrets</strong> and <strong>ConfigMaps</strong>, allowing you to manage sensitive information (like API keys or passwords) and configuration data for your applications in a secure and efficient manner, without embedding them into your container images.</li>
+</ul>
+<h3 id="10-rolling-updates-and-canary-deployments">10. <strong>Rolling Updates and Canary Deployments</strong></h3>
+<ul>
+<li><strong>Docker</strong> doesn’t have built-in mechanisms for performing controlled, rolling updates to containers or canary deployments.</li>
+<li><strong>Why Kubernetes</strong>: Kubernetes supports <strong>rolling updates</strong> and <strong>canary deployments</strong>, allowing you to update your applications in a controlled manner without downtime. You can progressively roll out new versions, monitor performance, and roll back in case of failure.</li>
+</ul>
+<h3 id="11-cross-platform-compatibility-multi-cloud-and-hybrid-deployments">11. <strong>Cross-platform Compatibility (Multi-cloud and Hybrid Deployments)</strong></h3>
+<ul>
+<li><strong>Docker</strong> can run containers on different platforms, but managing a complex multi-cloud or hybrid cloud environment with just Docker can be difficult.</li>
+<li><strong>Why Kubernetes</strong>: Kubernetes is platform-agnostic, allowing you to run containers across <strong>multiple clouds</strong>, <strong>on-premises environments</strong>, and <strong>hybrid architectures</strong>. It provides a consistent environment to deploy and manage containers across different infrastructures.</li>
+</ul>
+<h3 id="12-security-management">12. <strong>Security Management</strong></h3>
+<ul>
+<li><strong>Docker</strong> provides basic container security but lacks built-in security policies for managing clusters at scale.</li>
+<li><strong>Why Kubernetes</strong>: Kubernetes offers granular <strong>security controls</strong> like <strong>RBAC (Role-Based Access Control)</strong>, <strong>Network Policies</strong>, and <strong>Pod Security Policies</strong>. You can enforce who can access certain resources and apply network isolation between different parts of your application.</li>
+</ul>
+<h3 id="13-extensibility-and-ecosystem">13. <strong>Extensibility and Ecosystem</strong></h3>
+<ul>
+<li><strong>Docker</strong> is primarily focused on containerization and running containers, with a limited set of orchestration features.</li>
+<li><strong>Why Kubernetes</strong>: Kubernetes has a large and growing <strong>ecosystem</strong> of plugins, tools, and extensions. It’s highly extensible, allowing you to add custom resource definitions (CRDs), integrate monitoring solutions like Prometheus, logging systems like Fluentd, and security tools. The ecosystem supports a wide range of operational needs, from observability to security to networking.</li>
+</ul>
+<p>In nutshell, <strong>Docker</strong> is excellent for building, packaging, and running containers, but once you move beyond simple setups or want to manage containers across multiple hosts, <strong>Kubernetes</strong> becomes essential for <strong>orchestration</strong>. It handles the <strong>scheduling, scaling, self-healing</strong>, and <strong>networking</strong> of containers in a robust, automated way, making it suitable for large-scale, production-grade environments. <strong>Docker manages containers</strong>, while <strong>Kubernetes manages clusters of containers</strong>. Kubernetes makes complex, distributed applications easier to deploy, scale, and maintain.</p>
+<h2 id="hashtags">Hashtags</h2>
+<p>#Kubernetes #Docker #ContainerOrchestration #DevOps #CloudNative #CICD #ScalingContainers #LoadBalancing #SelfHealing #CloudComputing #DevOpsAutomation #KubernetesFeatures</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Synthetic Data on Agones</title>
+    <link>http://localhost:1313/tags/synthetic-data/</link>
+    <description>Recent content in Synthetic Data on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/synthetic-data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Synthetic Data Generation Capabilities</title>
+      <link>http://localhost:1313/dsblog/Exploring-Synthetic-Data-Generation-Capabilities/</link>
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Exploring-Synthetic-Data-Generation-Capabilities/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6163-Exploring-Synthetic-Data-Generation-Capabilities.jpg&#34; alt=&#34;Exploring Synthetic Data Generation Capabilities&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-synthetic-data-generation-capabilities&#34;&gt;Exploring Synthetic Data Generation Capabilities&lt;/h1&gt;&#xA;&lt;h2 id=&#34;is-this-article-for-me&#34;&gt;Is this article for me?&lt;/h2&gt;&#xA;&lt;p&gt;Are you looking answers to these questions?&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;What is Synthetic Data?&lt;/li&gt;&#xA;&lt;li&gt;What is data anonymization?&lt;/li&gt;&#xA;&lt;li&gt;What are different techniques for generating Anonymized Data?&lt;/li&gt;&#xA;&lt;li&gt;Why is anonymizing not sufficient to address PII data issues?&lt;/li&gt;&#xA;&lt;li&gt;When there is lots of data available around then why do we need synthetic data?&lt;/li&gt;&#xA;&lt;li&gt;What are the challenges in synthetic data generation?&lt;/li&gt;&#xA;&lt;li&gt;What are the tools for Synthetic Data Generator for Marketing&lt;/li&gt;&#xA;&lt;li&gt;What are the tools for Graph Synthetic Data generation?&lt;/li&gt;&#xA;&lt;li&gt;List of popular synthetic data generation tools for different industries&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-is-synthetic-data&#34;&gt;What is Synthetic Data?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Synthetic data&lt;/strong&gt; is artificially generated data that mimics the characteristics and statistical properties of real-world data but is not derived directly from real-world events or observations. It is created using algorithms, simulations, or models to represent patterns, structures, and relationships found in actual datasets. Synthetic data can take various forms, such as text, images, audio, or structured tabular data, depending on the context. It is used across various industries to train AI models, simulate environments, and conduct research.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

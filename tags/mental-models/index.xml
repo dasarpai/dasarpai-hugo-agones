@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mental Models on Agones</title>
+    <link>http://localhost:1313/tags/mental-models/</link>
+    <description>Recent content in Mental Models on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/mental-models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cognitive Biases</title>
+      <link>http://localhost:1313/dsblog/cognitive-biases/</link>
+      <pubDate>Wed, 22 Feb 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/cognitive-biases/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6051-Cognitive-Biases.jpg&#34; alt=&#34;Cognitive Bias&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;cognitive-biases&#34;&gt;Cognitive Biases&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Cognitive biases are the systematic errors that occur when individuals deviate from rational decision-making. These biases are a result of our brain&amp;rsquo;s ability to process information, which can sometimes lead to irrational thinking and decision-making. As data science continues to advance, it is critical to understand how cognitive biases can impact AI, ML, NLP, deep learning, and robotics. Cognitive biases can lead to biased data collection, modeling, and decision-making processes, which can ultimately impact the accuracy and effectiveness of these technologies.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

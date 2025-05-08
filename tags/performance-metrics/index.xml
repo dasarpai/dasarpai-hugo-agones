@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Performance Metrics on Agones</title>
+    <link>http://localhost:1313/tags/performance-metrics/</link>
+    <description>Recent content in Performance Metrics on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/performance-metrics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Machine Learning Metrics</title>
+      <link>http://localhost:1313/dsblog/Machine-Learning-Metrics/</link>
+      <pubDate>Mon, 21 Aug 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Machine-Learning-Metrics/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6092-Machine-Learning-Metrics.jpg&#34; alt=&#34;Comprehensive Glossary of LLM&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;machine-learning-metrics&#34;&gt;Machine Learning Metrics&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In Machine Learning projects whether classical machine learning, deep learning, computer vision, speech processing, NLP, or any other ML project we keep building different models with different datasets. But how to know that for a particular problem model X is the best one? For that, we need to evaluate these models against certain metrics. What metrics we pick, depends upon the problem statement, data imbalance, type of data, etc. In this article, we will explore an exhaustive list of ML Metrics.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

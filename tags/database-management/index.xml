@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database Management on Agones</title>
+    <link>http://localhost:1313/tags/database-management/</link>
+    <description>Recent content in Database Management on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/database-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Serverless databases</title>
+      <link>http://localhost:1313/dsblog/Serverless-databases/</link>
+      <pubDate>Tue, 23 Jul 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Serverless-databases/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6125-Serverless-databases.jpg&#34; alt=&#34;Serverless-databases&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;serverless-databases&#34;&gt;Serverless databases&lt;/h1&gt;&#xA;&lt;p&gt;A &lt;strong&gt;serverless database&lt;/strong&gt; is a type of database service that automatically manages infrastructure and scaling, allowing developers to focus solely on building applications without having to worry about server provisioning, capacity planning, or database maintenance.&lt;/p&gt;&#xA;&lt;h3 id=&#34;key-characteristics-of-serverless-databases&#34;&gt;Key Characteristics of Serverless Databases:&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Automatic Scaling&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Serverless databases automatically scale up or down based on demand. They adjust resources such as CPU and memory dynamically, depending on the workload, ensuring optimal performance without manual intervention.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;No Server Management&lt;/strong&gt;:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

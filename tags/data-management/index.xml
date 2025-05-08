@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Management on Agones</title>
+    <link>http://localhost:1313/tags/data-management/</link>
+    <description>Recent content in Data Management on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/data-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Selecting Database for Project</title>
+      <link>http://localhost:1313/dsblog/Selecting-Database-for-Project/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Selecting-Database-for-Project/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6154-Selecting-Database-for-Project.jpg&#34; alt=&#34;Selecting Database for Project&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;essential-database-selection-criteria-for-modern-applications&#34;&gt;Essential Database Selection Criteria for Modern Applications&lt;/h1&gt;&#xA;&lt;h2 id=&#34;is-this-article-for-me&#34;&gt;Is this article for me?&lt;/h2&gt;&#xA;&lt;p&gt;If you are looking answer for these questions then &amp;ldquo;Yes&amp;rdquo;.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;What parameters should you consider to choose a database for your project?&lt;/li&gt;&#xA;&lt;li&gt;What are different data formats for bigdata?&lt;/li&gt;&#xA;&lt;li&gt;What is the difference between OCR and Parquet data formats?&lt;/li&gt;&#xA;&lt;li&gt;What is CAP Theorem?&lt;/li&gt;&#xA;&lt;li&gt;What is the difference between Sharding and Partitioning&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-parameters-should-you-consider-to-choose-a-database-for-your-project&#34;&gt;What parameters should you consider to choose a database for your project?&lt;/h2&gt;&#xA;&lt;p&gt;When you are developing an application which need to store the data or you need to pull data from some format for your project work that time you need to take care of many parameters. Sometimes it looks there is an ovbious choice to go for a certain type of database for some specific work but most of the time it is challenging. What are those aspects of a database which you need to take care of?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SQL and Relational Algebra</title>
+      <link>http://localhost:1313/dsblog/relational-algebra/</link>
+      <pubDate>Mon, 14 Aug 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/relational-algebra/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6084-Relational-Algebra.jpg&#34; alt=&#34;Relational Algebra&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;sql-and-relational-algebra&#34;&gt;SQL and Relational Algebra&lt;/h1&gt;&#xA;&lt;p&gt;Relational algebra (RA) is considered as a procedural query language where the user tells the system to carry out a set of operations to obtain the desired results. i.e. The user tells what data should be retrieved from the database and how to retrieve it.&lt;/p&gt;&#xA;&lt;p&gt;Relational algebra notions can be implemtned via any any SQL language like PL/SQL, TSQL, SQLite SQL, DB2 SQL, MariaDB SQL, FireBird SQL, PSQL, ANSI SQL commands in any databases like MySQL, PostgreSQL, Oracle, SQLServer SQL server.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Data Lake vs Data Warehouse vs Data Mart</title>
+      <link>http://localhost:1313/dsblog/Datalake-vs-Data-Warehouse/</link>
+      <pubDate>Wed, 25 Jan 2023 08:33:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Datalake-vs-Data-Warehouse/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6040-Datalake-vs-Data-Warehouse.jpg&#34; alt=&#34;Datalake vs Data Warehouse&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-the-difference-between-data-lake-and-data-warehouse&#34;&gt;What is the difference between Data Lake and Data Warehouse?&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;A data warehouse is a system used for reporting and data analysis, and is considered a &amp;ldquo;single version of the truth.&amp;rdquo; It typically includes a subset of an organization&amp;rsquo;s data that is specifically structured for querying and reporting. A data lake, on the other hand, is a more flexible and general-purpose system for storing raw, unstructured data. Data in a lake can be stored in its original format and can be used for a variety of purposes, including reporting and analysis. Data warehouse is more structured while data lake is unstructured. Data warehouse is optimized for reporting and analytics while data lake is optimized for storing and processing large amount of raw data.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Type of Databases</title>
+      <link>http://localhost:1313/dsblog/Type-of-Databases/</link>
+      <pubDate>Wed, 25 Jan 2023 08:33:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Type-of-Databases/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6041-Type-of-Databases.jpg&#34; alt=&#34;Type of Databases&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-are-the-various-types-of-databases&#34;&gt;What are the various types of databases?&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In the 21st Century, Data is the real oil of machines. There are different kinds of oils and there are different kinds of containers. Similarly, there are different kinds of data and there are different kinds of database software to manage these databases. Broadly we call them SQL and NoSQL databases. But In the NoSQL, there are some other finer groups for specific purposes. Let&amp;rsquo;s look into these.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dealing with Sensitive Data</title>
+      <link>http://localhost:1313/dsblog/2020-03-10-6001-dealing-with-sensitive-data/</link>
+      <pubDate>Tue, 10 Mar 2020 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/2020-03-10-6001-dealing-with-sensitive-data/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6001-Dealing-with-Sensitive-Data.jpg&#34; alt=&#34;XAI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;dealing-with-sensitive-data&#34;&gt;Dealing with Sensitive Data&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;One of the biggest problems for a Data Science project team is to protect the data. We know, data is the basic raw material for building any supervised or unsupervised models. We cannot make a without data. Let’s assume you are working for an eCommerce retail company like Amazon; or in the health domain with some big hospital chain or government hospital; or in the banking industry with some big bank like Bank of America, Standard Charted, SBI, or ICICI Bank. They have huge data. That data can be used to develop ML models. These models can help them to serve their customers or other stakeholders in a better and efficient way. To develop these models, data should be given to the Data Science team. When the data is moving out from the production environment to the project environment, there is no guarantee that data will not fall in the wrong hands and will not be misused during the project or post the project completion. When the data is moving within the same company, there are lesser chances of this disaster. But when the company is giving data to third parties or vendors, then there are high chances.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

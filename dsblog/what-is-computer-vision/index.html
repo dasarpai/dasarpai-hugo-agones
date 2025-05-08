@@ -1,0 +1,668 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>What is Computer Vision | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/what-is-computer-vision/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="What is Computer Vision">
+  <meta property="og:description" content="What is Computer vision? Background In the digital world, scientists are working hard to create machines and robots that can interact with humans the way humans interact with each other. You cannot interact with another human being around if you are not aware of the objects and background around you. There are many ways to know the things around us. We can know them through smell; without looking anything around we can tell, here is a rose flower or samosa or sugar factory around. Without looking we can tell whether a train is coming or going, a person is going or coming, this is a song sung by Lata Mangeshkar. Without looking I can tell this is smooth or rough, hard or soft, cold or hot. In all these cases we could identify the objects and things around us without using our eyes.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2022-12-28T15:50:00+05:30">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="Computer Vision">
+    <meta property="article:tag" content="Image Processing">
+    <meta property="article:tag" content="Deep Learning">
+    <meta property="article:tag" content="Neural Networks">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="AI Applications">
+
+  <meta itemprop="name" content="What is Computer Vision">
+  <meta itemprop="description" content="What is Computer vision? Background In the digital world, scientists are working hard to create machines and robots that can interact with humans the way humans interact with each other. You cannot interact with another human being around if you are not aware of the objects and background around you. There are many ways to know the things around us. We can know them through smell; without looking anything around we can tell, here is a rose flower or samosa or sugar factory around. Without looking we can tell whether a train is coming or going, a person is going or coming, this is a song sung by Lata Mangeshkar. Without looking I can tell this is smooth or rough, hard or soft, cold or hot. In all these cases we could identify the objects and things around us without using our eyes.">
+  <meta itemprop="datePublished" content="2022-12-28T15:50:00+05:30">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="2307">
+  <meta itemprop="keywords" content="computer,vision,,image,processing,,object,detection,,facial,recognition,,neural,networks,,deep,learning,,machine,perception,,visual,AI,,image,analysis,,computer,vision,applications">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What is Computer Vision">
+  <meta name="twitter:description" content="What is Computer vision? Background In the digital world, scientists are working hard to create machines and robots that can interact with humans the way humans interact with each other. You cannot interact with another human being around if you are not aware of the objects and background around you. There are many ways to know the things around us. We can know them through smell; without looking anything around we can tell, here is a rose flower or samosa or sugar factory around. Without looking we can tell whether a train is coming or going, a person is going or coming, this is a song sung by Lata Mangeshkar. Without looking I can tell this is smooth or rough, hard or soft, cold or hot. In all these cases we could identify the objects and things around us without using our eyes.">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p><img src="/assets/images/dspost/dsp6018-What-is-Computer-Vision.jpg" alt="What is Computer Vision"></p>
+<h1 id="what-is-computer-vision">What is Computer vision?</h1>
+<h2 id="background">Background</h2>
+<p>In the digital world, scientists are working hard to create machines and robots that can interact with humans the way humans interact with each other. You cannot interact with another human being around if you are not aware of the objects and background around you. There are many ways to know the things around us. We can know them through smell; without looking anything around we can tell, here is a rose flower or samosa or sugar factory around. Without looking we can tell whether a train is coming or going, a person is going or coming, this is a song sung by Lata Mangeshkar. Without looking I can tell this is smooth or rough, hard or soft, cold or hot. In all these cases we could identify the objects and things around us without using our eyes.</p>
+<p>But the truth of life is, we know most of the things around us just by looking. Even if we can smell, till the time we don&rsquo;t see we don’t believe in the existence of things. That is why there is a saying in English &ldquo;Seeing is Believing&rdquo;. So, vision is a very important part of human survival ands human interaction with the environment around him. Thus, if we want to create machines or robots which are environmentally aware then they should have the ability to see, the vision. If a machine can see and understand the objects in the environment then we can say a computer has vision, Computer Vision.</p>
+<h2 id="how-computer-vision-works">How Computer Vision Works?</h2>
+<h3 id="human-vision">Human Vision</h3>
+<p>You may be thinking we see through our eyes, therefore if a machine has a camera installed on it will be able to see. But, this is not true. The eyes are an important part of our seeing process but the process of seeing is very complex. Subjects like optical physics, vision science, psychophysics, Opthalmology, and brain science deals with the process of seeing. With the help of eyes functions and brain functions, vision happens in the human brain. Eyes are not only what we see on the surface, but there are also complex layers combined that form a biological machine called an eye (human in-built camera). But after seeing a rose flower, the camera is not aware that it is a rose flower, no matter how many years that camera is exposed to that rose flower. But, even a human child can identify anything simply by just one time looking or one-time training. The human brain is a very complex biological machine and it has some parts that deal with processing the signals which come inside the brain via vision channels (nerves/cables). The process of vision also involves association with existing knowledge, then only I can identify whether I have seen this thing earlier or it is a completely new thing for me. The process of storing vision data, searching vision data in the human brain, and analyzing the data happens at an extremely fast speed. For doing this work energy come from oxygen and blood circulation.</p>
+<h3 id="who-sees-the-seen">Who sees the seen?</h3>
+<p>This is a philosophical question, but it is worth touching on. When the eyes get reflected light from objects say a rose, the brain processes the light signals and finally through a complex process identifies the object from which light reflects, it is a rose. Here who is helping me to see? My eyes and my brain. But, who is seeing (means who is the seer of the seen)? This answer is difficult to answer and philosophers and scientists have a long unending debate around this. Science says the human brain sees. Philosopher says then who is seeing that part of the brain which is experiencing that &ldquo;I am a seer&rdquo;? Is that seer locatable in the human brain, or the human body? Is it local? Can it be localized? First of all, does this seer has physical nature? If that is not physical then there is no question of localization.</p>
+<p>What is physical? That which can be sensed through our physical senses or our scientific instruments. By this definition light is physical, the smell is physical, air is physical, and energy is physical. A few years back there was something that we couldn&rsquo;t sense using our senses or our machines but today we can sense that because of our advanced technology. So a few years back what was non-physical became physical today? This is not how logic or science works. Truth is the truth always that does change because of time, space and situations. Is there anything, which is non-physical for always; keeping your future technologies in the mind? Emotions of love, hate, jealousy, etc are physical because you can measure them very well in the coming time. What about consciousness? Is it physical? But the question comes, what is consciousness? What is awareness? It is a complicated question and human beings of all time, philosophers, thinkers, and scientists keep dwelling on this subject and trying to answer this differently. Nowadays, the new sciences are gaining momentum and attraction from the intellectuals and thinkers of all religions, communities, and scientists of all the different streams. It is mind sciences. Just to remind you, brain sciences are different than mind sciences.</p>
+<h3 id="computer-vision---how-visioning-happens-in-machine">Computer Vision - How Visioning Happens in Machine</h3>
+<p>Computer scientists took inspiration from brain scientists and they want to simulate the human brain and its working in computers. This gave rise to neural networks. Earlier, the term neural networks were referring to the human brain, nowadays when people are discussing neural networks they are discussing about computer neural networks. A computer neural network has multiple layers as a human brain has, each layer has multiple neurons (like a human brain, a human brain has approx 100 billion neurons in it), but all the brains are not active all the time. Based on the input certain neurons become active in some parts of the brain. What neuron will become active by seeing what or listening to what, this is all part of human training, heredity, and human brain design? Some of that is in our control and some is not. Similarly what neurons will be activated in the next layer of the computer neural networks depends upon what activation function is used, and what input has come. There are many activation functions and many kinds of layers. When an image is given to a computer, it is nothing but a bunch of pixels for the computer. Each pixel is one byte so it can have a value between 0 to 255. When a 16-megapixel camera captures a photo then the image has 16 megapixels. More the pixels, the better the quality of the image. We have sharper contours between different objects in the image. When these 16MB images are given to a computer neural network, and they go through different layers then different layers do different work. But ultimately all the layers are identifying different features from the given image. These features can be contours, edges, regions of interest points, colors, and color intensity, in the case of a face (it may be eyes, nose, mouth, ear, forehead, lips, etc), in the case of a car (body, bonnet, headlight, number plate, window, mirror, glass, etc). Using these features computer can learn what is there in the image.</p>
+<p><img src="/assets/images/dspost/cv/NeuralNetwork.jpg" alt="Human Neural Network vs Computer Neural Network"><br>
+<strong>Human Neural Network vs Computer Neural Network</strong></p>
+<p><img src="/assets/images/dspost/cv/How-Computer-See-Image.png" alt="How-Computer-See-Image"><br>
+<strong>How Computer See an Image</strong></p>
+<h2 id="how-does-visioning-happen-in-computers">How does Visioning happen in computers?</h2>
+<p>To get the computer vision work done from a computer we need to input the image or video frames to a neural network. There are different kinds of neural networks. The architectures of these neural networks were created using some programming languages like python, scala, and java. After that, using input images these neural works are trained. Before the training of neural networks, the neurons and connection of the neural network have no weight &amp; biases (W&amp;B) or random W&amp;B. During the training process these W&amp;B are learned in such a way that whatever work a network is supposed to do, that work is done with minimum error. There are many kinds of layers in the entire architecture. Some common names for these are the convolution layer, deconvolution layer, recurrent layer, activation layer, dropout layer, pooling layer, dense layer, etc. Each of these layers has many variants. Depending upon the computer vision task these layers can be chosen in the architecture.</p>
+<p>During the training pixel values of the input image are processed from left to right in the architecture. These numbers go through different layers and W&amp;B are learned. When calculations are happening from left to right (input to output) this is called a feed-forward pass. But when calculations are happening from right to left that is called a backward pass. The purpose of a forward pass is the calculation of the gradients/slopes or learning W&amp;B of the neuron, and the purpose of a backward pass is to update the old values of the W&amp;B of these neurons. There are many techniques to perform these steps. During the training process, each image/frame is scanned multiple times. How many times all the images are scanned is called an epoch. During the training process, when will the training stop, this decision depends upon the data scientist. It can be decided based on the performance or accuracy results has been achieved, the number of times the image scan is done, or other parameters.</p>
+<p>When training is complete, W&amp;B has been learned by the neural network then we have a model ready. Now, this model can be used for the final prediction or performing the task for which we created the model.</p>
+<h2 id="computer-vision-tasks">Computer Vision Tasks</h2>
+<ul>
+<li>Image Classification<br>
+<img src="/assets/images/dspost/cv/Classification.jpg" alt="Classification"></li>
+<li>Image Localization or Object Detection<br>
+<img src="/assets/images/dspost/cv/Object-Detection.png" alt="Object-Detection"></li>
+<li>Semantic Segmentation <br>
+<img src="/assets/images/dspost/cv/semantic_segmentation.png" alt="semantic_segmentation"></li>
+<li>Instance Segmentation<br>
+<img src="/assets/images/dspost/cv/instance_segmentation.png" alt="instance_segmentation"><br>
+<a href="http://www.cs.toronto.edu/~tingwuwang/semantic_segmentation.pdf">Source: Semantic Segmentation Presentation</a></li>
+<li>Edge Detection <br>
+<img src="/assets/images/dspost/cv/Edge-Detection.png" alt="Edge-Detection"></li>
+<li>Pose Detection <br>
+<img src="/assets/images/dspost/cv/Pose-Detection.png" alt="Pose-Detection"></li>
+<li>2d Pose Estimation
+<img src="/assets/images/dspost/cv/2d-pose-estimation.jpg" alt="2d-pose-estimation"></li>
+<li>3D Pose Estimation<br>
+<img src="/assets/images/dspost/cv/3D-Pose-Estimation.png" alt="3D-Pose-Estimation"></li>
+<li>Video motion analysis<br>
+<img src="/assets/images/dspost/cv/MotionView-Tennis-Swing.gif" alt="MotionView-Tennis-Swing-Video-Analysis-Coaching-Software-for-Sports"></li>
+<li>Image Restoration<br>
+<img src="/assets/images/dspost/cv/Image-Restoration.jpg" alt="Image-Restoration"></li>
+<li>Visual Relationship Detection : It is the ability to decipher what relationship does the two objects share<br>
+<img src="/assets/images/dspost/cv/Visual-Relationship-Detection.png" alt="Visual-Relationship-Detection"><br>
+<a href="https://www.kaggle.com/c/google-ai-open-images-visual-relationship-track">Source: Kaggle-Google AI</a></li>
+<li>Image Reconstruction <br>
+<img src="/assets/images/dspost/cv/Image-Reconstruction.png" alt="Image-Reconstruction"></li>
+<li>Photo Inpainting<br>
+<img src="/assets/images/dspost/cv/Photo-Inpainting.png" alt="Photo-Inpainting"></li>
+<li>Face Recognition<br>
+<img src="/assets/images/dspost/cv/face-recognition.png" alt="face-recognition"></li>
+<li>Emotion Recognition
+<img src="/assets/images/dspost/cv/Emotion-Recognition.jpg" alt="Emotion-Recognition"></li>
+<li>3D image construction from a photograph <br>
+<img src="/assets/images/dspost/cv/2d-image-to-3d-image.png" alt="2d-image-to-3d-image"></li>
+<li>Image Style Transfer<br>
+<img src="/assets/images/dspost/cv/Style-Transfer.png" alt="Style-Transfer"><br>
+<img src="/assets/images/dspost/cv/Styling-Zebras-and-Horses.png" alt="Styling-Zebras-and-Horses"></li>
+<li>Image Colorization<br>
+<img src="/assets/images/dspost/cv/Image-Colorization.png" alt="Image-Colorization"></li>
+<li>Image Synthesis : Image synthesis is the process of artificially generating images that contain some particular desired content.<br>
+<img src="/assets/images/dspost/cv/Image-Synthesis.jpg" alt="Image-Synthesis"></li>
+<li>Image Captioning<br>
+<img src="/assets/images/dspost/cv/Image-Captioning.png" alt="Image-Captioning"></li>
+<li>OCR (Optical character reader)<br>
+<img src="/assets/images/dspost/cv/hindi-ocr.jpg" alt="Hindi OCR"></li>
+<li>Generating a textual description of an image</li>
+<li>Generating a textual description of each object in an image</li>
+<li>Synthesizing an image based on a textual description</li>
+<li>Tracking People and Vehicles</li>
+<li>Image Labelling/ Annotation Tool</li>
+<li>Video Tracking</li>
+<li>Art Generation</li>
+<li>Headshot Generator</li>
+<li>Photo Upscaler</li>
+<li>Object Remover</li>
+<li>Background Remover</li>
+<li>Art Personalizer</li>
+<li>Picture Colorizer</li>
+<li>Picture Restorer</li>
+<li>Face Enhancer</li>
+<li>Color Generator</li>
+<li>Social Distancing
+<img src="/assets/images/dspost/cv/social-distancing-detection.webp" alt="Social distancing"></li>
+</ul>
+<h2 id="applications-of-computer-vision">Applications of Computer Vision</h2>
+<p>Computer vision can be used as follows.</p>
+<ul>
+<li>In the field of human motion analysis like sports, medicine, intelligent video analytics, and physical therapy</li>
+<li>Manufacturing and to count and track microorganisms like bacteria and viruses.</li>
+<li>Self-driving cars</li>
+<li>Augmented reality : Augmented reality (AR) is a method of providing an experience of the natural surroundings with a computer-generated augmentation appropriate to the surroundings</li>
+<li>Medical imaging : X-rays and 3D scans like MRIs are classified into diseases like pneumonia and cancer.</li>
+<li>Intelligent video analytics (IVA) : CCTV cameras are present—in retail venues to understand how shoppers are interacting with products, in factories, airports and transport hubs to track queue lengths and access to restricted areas.</li>
+<li>Manufacturing and Construction</li>
+<li>Retail<br>
+<img src="/assets/images/dspost/cv/Retil-cold-beverage.png" alt="Retil-cold-beverage"></li>
+</ul>
+<h3 id="computer-vision-security-and-survilance">Computer Vision Security and Survilance</h3>
+<ul>
+<li>Human Detection Application</li>
+<li>People Movement Analysis Application</li>
+<li>Person Recognition Application</li>
+<li>Weapon Detection Application <br>
+<img src="/assets/images/dspost/cv/weapon-detection.webp" alt="weapon-detection"></li>
+<li>Human Behavior Understanding Application</li>
+<li>Virtual Fencing Application</li>
+<li>Traffic Incident Detection Application</li>
+<li>Vehicle Surveillance Application</li>
+<li>Vehicle Identification Application<br>
+<img src="/assets/images/dspost/cv/Vehicle-Number-Detection.png" alt="Vehicle-Number-Detection"></li>
+<li>Traffic Safety Applications Application</li>
+<li>Illegal Activity Detection Application</li>
+<li>Anomaly Detection Application</li>
+<li>Safety Assessment Application</li>
+<li>Infrastructure Security Application</li>
+<li>Emergency Management Application</li>
+<li>Video Summarization Later in this article, we will provide more information about those and more applications. Let’s jump right into the topic!</li>
+<li>Unattended Vehicles</li>
+<li>Unattended Luggage  <br>
+<img src="/assets/images/dspost/cv/Unattended-Luggage.png" alt="Unattended-Luggage"></li>
+<li>Wrong Parking <br>
+<img src="/assets/images/dspost/cv/Vehicle-Wrong-Parking.png" alt="Vehicle-Wrong-Parking"></li>
+<li>Parking Lot Detection <br>
+<img src="/assets/images/dspost/cv/Parking-Lot-Detection.png" alt="Parking-Lot-Detection"></li>
+</ul>
+<h3 id="computer-vision-in-healthcare">Computer Vision In Healthcare</h3>
+<ul>
+<li>Tumor Detection Application</li>
+<li>Medical Imaging Application</li>
+<li>Cancer Detection Application <br>
+<img src="/assets/images/dspost/cv/Medical-Imaing-x-ray-chest.jpg" alt="Medical-Imaing-x-ray-chest"></li>
+<li>Medical Training Application</li>
+<li>Combating Covid-19 Application</li>
+<li>Health Monitoring Application</li>
+<li>Machine-assisted Diagnosis Application</li>
+<li>Timely Detection Of Disease Application</li>
+<li>Remote Patient Monitoring Application</li>
+<li>Lean Management in Healthcare</li>
+</ul>
+<h3 id="automotive-industry">Automotive Industry</h3>
+<ul>
+<li>Type: Automation systems, to conduct tasks otherwise carried out by human operators, reduce human error, as well as production line robots.</li>
+<li>Type: Intelligent systems, to generate insights, early-detect issues that lead to costly business interruptions, facilitate planning, monitor the shop floor and inventory to make better decisions faster.</li>
+<li>Type: Quality control systems, to automatically inspect possible production failures or part defects during assembly or in the final product.</li>
+</ul>
+<h3 id="computer-vision-in-manufacturing">Computer Vision In Manufacturing</h3>
+<ul>
+<li>Pandemic Protective Measures Application</li>
+<li>Quality Inspection and Control Application</li>
+<li>Optimizing Supply Chains Application</li>
+<li>Equipment Monitoring and Predictive Maintenance Application</li>
+<li>Lean Manufacturing Application</li>
+<li>Safety of Workforce and Equipment Application</li>
+<li>Detecting Product Defects Application</li>
+<li>Real-time Barcode Reading Application</li>
+<li>Automated Product Assembly Application</li>
+<li>Maintaining Packaging Standards</li>
+</ul>
+<h3 id="logistics">Logistics</h3>
+<ul>
+<li>Traceability and tracking of objects Application <br>
+<img src="/assets/images/dspost/cv/Tracking-People-and-Vehicles.jpg" alt="Tracking-People-and-Vehicles"></li>
+<li>Volumetric properties of goods Application</li>
+<li>Inspection and quality control of goods Application</li>
+<li>Equipment condition monitoring Application</li>
+<li>Occupancy of storage and traffic areas Application</li>
+<li>Security and protection of infrastructure Application</li>
+<li>Process modeling and simulation Application</li>
+<li>Optimize manual picking and packing Application</li>
+<li>Manually operated handling systems or vehicles Application</li>
+<li>Automated handling systems Application</li>
+<li>Visual documentation and Risk management</li>
+<li>Tracking Warehouse Movements <br>
+<img src="/assets/images/dspost/cv/Video-analytics-Warehouse.jpg" alt="Video-analytics-Warehouse"></li>
+</ul>
+<h3 id="construction">Construction</h3>
+<p><img src="/assets/images/dspost/cv/Construction.png" alt="Construction"></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Human vision is a very precious technology to navigate the world around us, communicate with others, and survive. Similarly, computer vision is an extremely powerful technology to communicate with humans, other machines, and robots. It can perform various tasks as mentioned above. State of the Art (SOTA) computer vision models like DALL-E started challenging human artists. Above mentioned applications are just the tip of the iceberg. You think about any task which you do with your eye-brain coordination and you can perform that with computer vision. In the future, you are going to see many more applications of this technology, and at the same time, this technology will be far superior with advanced algorithms, new hardware, and new application architectures.</p>
+<div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/computer-vision" class="category-badge">Computer Vision</a><a href="/tags/image-processing" class="category-badge">Image Processing</a><a href="/tags/deep-learning" class="category-badge">Deep Learning</a><a href="/tags/neural-networks" class="category-badge">Neural Networks</a><a href="/tags/machine-learning" class="category-badge">Machine Learning</a><a href="/tags/ai-applications" class="category-badge">AI Applications</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=What%20is%20Computer%20Vision&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fwhat-is-computer-vision%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fwhat-is-computer-vision%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fwhat-is-computer-vision%2f&title=What%20is%20Computer%20Vision" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fwhat-is-computer-vision%2f&title=What%20is%20Computer%20Vision" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=What%20is%20Computer%20Vision&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fwhat-is-computer-vision%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/The-Science-of-Reasoning/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">The Science of Reasoning</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/AI-in-Energy-Management/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">AI in Energy Management</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#background">Background</a></li>
+    <li><a href="#how-computer-vision-works">How Computer Vision Works?</a>
+      <ul>
+        <li><a href="#human-vision">Human Vision</a></li>
+        <li><a href="#who-sees-the-seen">Who sees the seen?</a></li>
+        <li><a href="#computer-vision---how-visioning-happens-in-machine">Computer Vision - How Visioning Happens in Machine</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-does-visioning-happen-in-computers">How does Visioning happen in computers?</a></li>
+    <li><a href="#computer-vision-tasks">Computer Vision Tasks</a></li>
+    <li><a href="#applications-of-computer-vision">Applications of Computer Vision</a>
+      <ul>
+        <li><a href="#computer-vision-security-and-survilance">Computer Vision Security and Survilance</a></li>
+        <li><a href="#computer-vision-in-healthcare">Computer Vision In Healthcare</a></li>
+        <li><a href="#automotive-industry">Automotive Industry</a></li>
+        <li><a href="#computer-vision-in-manufacturing">Computer Vision In Manufacturing</a></li>
+        <li><a href="#logistics">Logistics</a></li>
+        <li><a href="#construction">Construction</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

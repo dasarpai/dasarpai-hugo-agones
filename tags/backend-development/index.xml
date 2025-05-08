@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backend Development on Agones</title>
+    <link>http://localhost:1313/tags/backend-development/</link>
+    <description>Recent content in Backend Development on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/backend-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>REST API</title>
+      <link>http://localhost:1313/dsblog/REST-API/</link>
+      <pubDate>Thu, 04 Jul 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/REST-API/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6121-REST-API.jpg&#34; alt=&#34;REST-API&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;rest-api&#34;&gt;REST API&lt;/h1&gt;&#xA;&lt;p&gt;An API (Application Programming Interface) is a set of rules and protocols that allows one software application to interact with another. It defines the methods and data formats that applications can use to communicate with each other, enabling them to request and exchange information.&lt;/p&gt;&#xA;&lt;p&gt;Here are some key aspects of an API:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Interface&lt;/strong&gt;: The API provides a specific set of functions and endpoints that can be used to interact with a system or service. These functions define what operations can be performed, such as retrieving data, updating information, or triggering actions.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

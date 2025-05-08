@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure AI on Agones</title>
+    <link>http://localhost:1313/tags/azure-ai/</link>
+    <description>Recent content in Azure AI on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/azure-ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft AI Products</title>
+      <link>http://localhost:1313/dsblog/microsoft-ai-products/</link>
+      <pubDate>Sat, 07 Dec 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/microsoft-ai-products/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6184-Microsoft-AI-Products.jpg&#34; alt=&#34;Microsoft-AI-Products&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;microsoft-ai-products&#34;&gt;Microsoft AI Products&lt;/h1&gt;&#xA;&lt;p&gt;Microsoft offers several tools and platforms for AI and machine learning, comparable to Google&amp;rsquo;s Vertex AI and Google AI Studio. These tools are integrated within Microsoft Azure, its cloud computing platform, and are designed for various user profiles, ranging from data scientists and ML engineers to business analysts and citizen developers.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-azure-machine-learning-azure-ml&#34;&gt;&lt;strong&gt;1. Azure Machine Learning (Azure ML)&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Azure Machine Learning&lt;/strong&gt; is Microsoft&amp;rsquo;s counterpart to &lt;strong&gt;Vertex AI&lt;/strong&gt; and is an end-to-end machine learning platform for building, training, deploying, and managing ML models at scale.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

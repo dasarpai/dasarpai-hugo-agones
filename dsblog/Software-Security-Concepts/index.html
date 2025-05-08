@@ -1,0 +1,746 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Software Security Concepts | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/Software-Security-Concepts/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Software Security Concepts">
+  <meta property="og:description" content="Software Security Concepts As of today, this article is answering following questions related to software security. In future, I will add more concepts here.
+What are the major ideas which we need to understand while creating security architecture of any app? What is the difference between authentication and authorization? What is OAuth? Can you share popular Compliance and Regulatory Requirements around various industries? What are the major ideas which we need to understand while creating security architecture of any app? The security architecture of an application encompasses various concepts and strategies designed to protect the application’s data, resources, and services from threats. Here are the main ideas and concepts typically involved:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-07-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="Cybersecurity">
+    <meta property="article:tag" content="Software Development">
+    <meta property="article:tag" content="Security Protocols">
+    <meta property="article:tag" content="Information Security">
+    <meta property="article:tag" content="Data Protection">
+    <meta property="article:tag" content="Network Security">
+
+  <meta itemprop="name" content="Software Security Concepts">
+  <meta itemprop="description" content="Software Security Concepts As of today, this article is answering following questions related to software security. In future, I will add more concepts here.
+What are the major ideas which we need to understand while creating security architecture of any app? What is the difference between authentication and authorization? What is OAuth? Can you share popular Compliance and Regulatory Requirements around various industries? What are the major ideas which we need to understand while creating security architecture of any app? The security architecture of an application encompasses various concepts and strategies designed to protect the application’s data, resources, and services from threats. Here are the main ideas and concepts typically involved:">
+  <meta itemprop="datePublished" content="2024-07-27T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="1935">
+  <meta itemprop="keywords" content="Software Security,Cybersecurity Concepts,Information Security,Security Protocols,Data Protection,Network Security,Security Architecture,Security Standards">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Software Security Concepts">
+  <meta name="twitter:description" content="Software Security Concepts As of today, this article is answering following questions related to software security. In future, I will add more concepts here.
+What are the major ideas which we need to understand while creating security architecture of any app? What is the difference between authentication and authorization? What is OAuth? Can you share popular Compliance and Regulatory Requirements around various industries? What are the major ideas which we need to understand while creating security architecture of any app? The security architecture of an application encompasses various concepts and strategies designed to protect the application’s data, resources, and services from threats. Here are the main ideas and concepts typically involved:">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p><img src="/assets/images/dspost/dsp6132-Software-Security-Concepts.jpg" alt="Software-Security-Concepts"></p>
+<h1 id="software-security-concepts">Software Security Concepts</h1>
+<p>As of today, this article is answering following questions related to software security. In future, I will add more concepts here.</p>
+<ul>
+<li>What are the major ideas which we need to understand while creating security architecture of any app?</li>
+<li>What is the difference between authentication and authorization?</li>
+<li>What is OAuth?</li>
+<li>Can you share popular Compliance and Regulatory Requirements around various industries?</li>
+</ul>
+<h2 id="what-are-the-major-ideas-which-we-need-to-understand-while-creating-security-architecture-of-any-app">What are the major ideas which we need to understand while creating security architecture of any app?</h2>
+<p>The security architecture of an application encompasses various concepts and strategies designed to protect the application&rsquo;s data, resources, and services from threats. Here are the main ideas and concepts typically involved:</p>
+<h3 id="1-authentication">1. <strong><a href="/dsblog/Software-Security-Concepts/#authentication">Authentication</a></strong></h3>
+<ul>
+<li><strong>Definition</strong>: Verifying the identity of users or systems interacting with the application.</li>
+<li><strong>Methods</strong>: Passwords, biometrics, multi-factor authentication (MFA), single sign-on (SSO).</li>
+</ul>
+<h3 id="2-authorization">2. <strong><a href="/dsblog/Software-Security-Concepts/#authorization">Authorization</a></strong></h3>
+<ul>
+<li><strong>Definition</strong>: Determining what authenticated users or systems are allowed to do.</li>
+<li><strong>Methods</strong>: Role-based access control (RBAC), attribute-based access control (ABAC), access control lists (ACLs).</li>
+</ul>
+<h3 id="3-encryption">3. <strong>Encryption</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Protecting data by converting it into a secure format that is unreadable without a decryption key.</li>
+<li><strong>Types</strong>: Symmetric encryption (same key for encryption and decryption), asymmetric encryption (public and private keys), data-at-rest encryption, data-in-transit encryption.</li>
+</ul>
+<h3 id="4-integrity">4. <strong>Integrity</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Ensuring data remains accurate and unaltered during storage and transmission.</li>
+<li><strong>Methods</strong>: Hashing, digital signatures, checksums.</li>
+</ul>
+<h3 id="5-non-repudiation">5. <strong>Non-repudiation</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Ensuring that a party in a communication cannot deny the authenticity of their signature on a document or a message that they sent.</li>
+<li><strong>Methods</strong>: Digital signatures, audit trails.</li>
+</ul>
+<h3 id="6-auditing-and-logging">6. <strong>Auditing and Logging</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Recording and monitoring activities to detect and respond to security incidents.</li>
+<li><strong>Methods</strong>: Event logs, transaction logs, audit trails.</li>
+</ul>
+<h3 id="7-network-security">7. <strong>Network Security</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Protecting data during transmission over networks.</li>
+<li><strong>Methods</strong>: Firewalls, intrusion detection/prevention systems (IDS/IPS), virtual private networks (VPNs), secure socket layer (SSL)/transport layer security (TLS).</li>
+</ul>
+<h3 id="8-application-security">8. <strong>Application Security</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Implementing measures within the application to protect against threats.</li>
+<li><strong>Methods</strong>: Secure coding practices, input validation, error handling, patch management.</li>
+</ul>
+<h3 id="9-data-protection">9. <strong>Data Protection</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Ensuring the confidentiality, integrity, and availability of data.</li>
+<li><strong>Methods</strong>: Data masking, encryption, backup and recovery strategies.</li>
+</ul>
+<h3 id="10-identity-and-access-management-iam">10. <strong>Identity and Access Management (IAM)</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Managing digital identities and controlling access to resources.</li>
+<li><strong>Components</strong>: User provisioning, authentication, authorization, user directories, identity governance.</li>
+</ul>
+<h3 id="11-security-policies-and-governance">11. <strong>Security Policies and Governance</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Defining and enforcing security rules and procedures.</li>
+<li><strong>Components</strong>: Security policies, standards, guidelines, compliance requirements.</li>
+</ul>
+<h3 id="12-risk-management">12. <strong>Risk Management</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Identifying, assessing, and mitigating risks to the application&rsquo;s security.</li>
+<li><strong>Methods</strong>: Threat modeling, risk assessments, vulnerability assessments, penetration testing.</li>
+</ul>
+<h3 id="13-incident-response">13. <strong>Incident Response</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Preparing for, detecting, and responding to security breaches or incidents.</li>
+<li><strong>Components</strong>: Incident response plan, security operations center (SOC), forensic analysis.</li>
+</ul>
+<h3 id="14-physical-security">14. <strong>Physical Security</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Protecting physical hardware and infrastructure that supports the application.</li>
+<li><strong>Methods</strong>: Access controls, surveillance, environmental controls (e.g., fire suppression).</li>
+</ul>
+<h3 id="15-security-awareness-and-training">15. <strong>Security Awareness and Training</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Educating users and administrators about security best practices and policies.</li>
+<li><strong>Methods</strong>: Training programs, phishing simulations, security awareness campaigns.</li>
+</ul>
+<h3 id="16-compliance-and-regulatory-requirements">16. <strong><a href="/dsblog/Software-Security-Concepts/#can-you-share-popular-compliance-and-regulatory-requirements-around-various-industries">Compliance and Regulatory Requirements</a></strong></h3>
+<ul>
+<li><strong>Definition</strong>: Adhering to legal and regulatory standards relevant to the application and its data.</li>
+<li><strong>Examples</strong>: GDPR, HIPAA, PCI-DSS.</li>
+</ul>
+<p>By integrating these concepts into the security architecture, an application can better defend against threats, ensure data protection, and maintain the trust of its users and stakeholders.</p>
+<h2 id="what-is-the-difference-between-authentication-and-authorization">What is the difference between authentication and authorization?</h2>
+<p><strong>Authentication</strong> and <strong>authorization</strong> are two fundamental concepts in security, often used together but distinct in their roles and functions:</p>
+<h3 id="authentication">Authentication</h3>
+<p><strong>Authentication</strong> is the process of verifying the identity of a user or entity. It answers the question: &ldquo;Who are you?&rdquo;</p>
+<ul>
+<li><strong>Purpose</strong>: To confirm the identity of the user.</li>
+<li><strong>Process</strong>: Users typically provide credentials such as a username and password, biometrics, or other authentication factors (e.g., two-factor authentication).</li>
+<li><strong>Outcome</strong>: Successful authentication results in the system recognizing the user as a legitimate entity, granting access to the user&rsquo;s account or session.</li>
+</ul>
+<h3 id="authorization">Authorization</h3>
+<p><strong>Authorization</strong> is the process of determining what an authenticated user is allowed to do. It answers the question: &ldquo;What are you allowed to do?&rdquo;</p>
+<ul>
+<li><strong>Purpose</strong>: To grant or deny permissions to resources or actions based on the user&rsquo;s identity and role.</li>
+<li><strong>Process</strong>: Once authenticated, the system checks the user&rsquo;s permissions or roles to decide what resources they can access and what actions they can perform.</li>
+<li><strong>Outcome</strong>: Successful authorization allows the user to access specific resources or perform certain actions. Failed authorization results in access being denied.</li>
+</ul>
+<h3 id="key-differences">Key Differences</h3>
+<ol>
+<li>
+<p><strong>Focus</strong>:</p>
+<ul>
+<li>Authentication focuses on verifying the identity of the user.</li>
+<li>Authorization focuses on granting or denying permissions to authenticated users.</li>
+</ul>
+</li>
+<li>
+<p><strong>Order</strong>:</p>
+<ul>
+<li>Authentication occurs first. A system needs to know who the user is before it can decide what they are allowed to do.</li>
+<li>Authorization occurs after authentication. Once the user&rsquo;s identity is verified, the system checks their permissions.</li>
+</ul>
+</li>
+<li>
+<p><strong>Mechanism</strong>:</p>
+<ul>
+<li>Authentication uses methods like passwords, biometrics, security tokens, etc.</li>
+<li>Authorization uses policies, roles, access control lists (ACLs), etc.</li>
+</ul>
+</li>
+</ol>
+<h3 id="example-scenario">Example Scenario</h3>
+<p>Imagine a user logging into an online banking system:</p>
+<ol>
+<li><strong>Authentication</strong>: The user enters their username and password. The system verifies these credentials and confirms the user’s identity.</li>
+<li><strong>Authorization</strong>: Once authenticated, the system checks the user&rsquo;s permissions. For example, the user may have permission to view their account balance, transfer money, and pay bills, but not to access the bank&rsquo;s administrative functions.</li>
+</ol>
+<p>In summary, authentication is about verifying who you are, while authorization is about verifying what you have access to. Both are critical components of security in any system.</p>
+<h2 id="what-is-oauth">What is OAuth?</h2>
+<p>OAuth (Open Authorization) is an open standard for access delegation commonly used as a way to grant websites or applications limited access to user information without exposing passwords. It is widely used for logging into third-party services using an account from a major provider like Google, Facebook, Twitter, etc.</p>
+<p>OAuth is often misunderstood as an authentication protocol, but it is primarily an authorization framework. OAuth (Open Authorization) is a protocol that allows third-party applications to obtain limited access to a user&rsquo;s resources without exposing their credentials. It focuses on granting access (authorization) rather than verifying identity (authentication).</p>
+<p>Here’s how OAuth works in a nutshell:</p>
+<ol>
+<li><strong>Resource Owner</strong>: The user who owns the data or resource.</li>
+<li><strong>Client</strong>: The application or website that wants to access the user’s data.</li>
+<li><strong>Authorization Server</strong>: The server that authenticates the user and grants access tokens.</li>
+<li><strong>Resource Server</strong>: The server hosting the protected resources (data).</li>
+</ol>
+<h3 id="oauth-process">OAuth Process</h3>
+<ol>
+<li><strong>User Initiates Request</strong>: The user starts by requesting access to the client (app).</li>
+<li><strong>Authorization Request</strong>: The client redirects the user to the authorization server with a request for access.</li>
+<li><strong>User Authentication and Authorization</strong>: The user authenticates (logs in) with the authorization server and approves the client’s access request.</li>
+<li><strong>Authorization Code</strong>: If the user approves, the authorization server redirects the user back to the client with an authorization code.</li>
+<li><strong>Access Token Request</strong>: The client exchanges the authorization code for an access token from the authorization server.</li>
+<li><strong>Access Token Granted</strong>: The authorization server issues an access token to the client.</li>
+<li><strong>Accessing Resources</strong>: The client uses the access token to access the resource server on behalf of the user.</li>
+</ol>
+<h3 id="benefits-of-oauth">Benefits of OAuth</h3>
+<ul>
+<li><strong>Security</strong>: Reduces the need for users to share passwords with third-party applications.</li>
+<li><strong>User Control</strong>: Users can grant and revoke access permissions.</li>
+<li><strong>Scalability</strong>: Works with various devices and platforms.</li>
+<li><strong>Interoperability</strong>: Standardized, widely adopted protocol.</li>
+</ul>
+<h3 id="common-use-cases">Common Use Cases</h3>
+<ul>
+<li>Single Sign-On (SSO): Logging into multiple services with one set of credentials.</li>
+<li>API Authorization: Allowing applications to interact with other services on behalf of a user.</li>
+<li>Mobile and Desktop Applications: Securing access to resources across different platforms.</li>
+</ul>
+<p>OAuth is available in two major versions, OAuth 1.0a and OAuth 2.0, with OAuth 2.0 being the more widely adopted and modern version.</p>
+<h2 id="can-you-share-popular-compliance-and-regulatory-requirements-around-various-industries">Can you share popular Compliance and Regulatory Requirements around various industries?</h2>
+<h3 id="1-finance-and-banking">1. <strong>Finance and Banking</strong></h3>
+<ul>
+<li><strong>PCI DSS (Payment Card Industry Data Security Standard)</strong>: Standards for organizations handling credit card transactions to ensure secure processing, storage, and transmission of cardholder data.</li>
+<li><strong>SOX (Sarbanes-Oxley Act)</strong>: U.S. law to protect investors from fraudulent financial reporting by corporations, ensuring accuracy and integrity in financial disclosures.</li>
+<li><strong>GLBA (Gramm-Leach-Bliley Act)</strong>: U.S. law that requires financial institutions to explain how they share and protect their customers&rsquo; private information.</li>
+<li><strong>Basel III</strong>: International regulatory framework for banks to improve risk management, regulation, and supervision, focusing on maintaining adequate capital and liquidity.</li>
+</ul>
+<h3 id="2-healthcare">2. <strong>Healthcare</strong></h3>
+<ul>
+<li><strong>HIPAA (Health Insurance Portability and Accountability Act)</strong>: U.S. law to protect sensitive patient health information from being disclosed without the patient&rsquo;s consent or knowledge.</li>
+<li><strong>HITECH (Health Information Technology for Economic and Clinical Health Act)</strong>: Promotes the adoption and meaningful use of health information technology, enhancing HIPAA&rsquo;s privacy and security protections.</li>
+<li><strong>GDPR (General Data Protection Regulation)</strong>: European regulation that applies to any entity handling personal data of EU citizens, including sensitive health data, focusing on privacy and data protection.</li>
+<li><strong>FDA (Food and Drug Administration) Regulations</strong>: Ensure the safety and efficacy of drugs, medical devices, and other healthcare products in the U.S.</li>
+</ul>
+<h3 id="3-technology-and-telecommunications">3. <strong>Technology and Telecommunications</strong></h3>
+<ul>
+<li><strong>GDPR (General Data Protection Regulation)</strong>: European regulation for data protection and privacy for all individuals within the EU and the European Economic Area.</li>
+<li><strong>CCPA (California Consumer Privacy Act)</strong>: Provides California residents with rights regarding their personal information, including the right to know, delete, and opt-out of the sale of personal information.</li>
+<li><strong>COPPA (Children&rsquo;s Online Privacy Protection Act)</strong>: U.S. law protecting the privacy of children under 13, requiring parental consent for data collection.</li>
+<li><strong>FISMA (Federal Information Security Management Act)</strong>: U.S. law aimed at protecting federal information and information systems from threats.</li>
+</ul>
+<h3 id="4-retail-and-e-commerce">4. <strong>Retail and E-commerce</strong></h3>
+<ul>
+<li><strong>PCI DSS (Payment Card Industry Data Security Standard)</strong>: Applies to any organization that accepts credit card payments, ensuring the secure handling of cardholder data.</li>
+<li><strong>GDPR (General Data Protection Regulation)</strong>: Impacts any e-commerce businesses handling data of EU citizens, focusing on data protection and privacy.</li>
+<li><strong>CCPA (California Consumer Privacy Act)</strong>: Affects retailers and e-commerce businesses dealing with personal data of California residents, providing data privacy rights.</li>
+</ul>
+<h3 id="5-energy-and-utilities">5. <strong>Energy and Utilities</strong></h3>
+<ul>
+<li><strong>NERC CIP (North American Electric Reliability Corporation Critical Infrastructure Protection)</strong>: Standards to ensure the security of the bulk electric system in North America.</li>
+<li><strong>FERC (Federal Energy Regulatory Commission) Regulations</strong>: Governs the interstate transmission of electricity, natural gas, and oil in the U.S., ensuring fair and reliable energy practices.</li>
+<li><strong>ISO 27001</strong>: International standard for information security management systems, relevant to protecting sensitive data within the energy sector.</li>
+</ul>
+<h3 id="6-manufacturing">6. <strong>Manufacturing</strong></h3>
+<ul>
+<li><strong>ISO 9001</strong>: International standard for quality management systems, ensuring products and services meet customer and regulatory requirements.</li>
+<li><strong>ISO 14001</strong>: International standard for environmental management systems, helping organizations improve environmental performance.</li>
+<li><strong>REACH (Registration, Evaluation, Authorization, and Restriction of Chemicals)</strong>: EU regulation addressing the production and use of chemical substances, ensuring high levels of protection for human health and the environment.</li>
+</ul>
+<h3 id="7-aerospace-and-defense">7. <strong>Aerospace and Defense</strong></h3>
+<ul>
+<li><strong>ITAR (International Traffic in Arms Regulations)</strong>: U.S. regulations controlling the export and import of defense-related articles and services.</li>
+<li><strong>DFARS (Defense Federal Acquisition Regulation Supplement)</strong>: Regulations governing the procurement process for the U.S. Department of Defense, including cybersecurity requirements.</li>
+<li><strong>NIST SP 800-171</strong>: Guidelines for protecting controlled unclassified information (CUI) in non-federal systems and organizations, relevant to defense contractors.</li>
+</ul>
+<h3 id="8-education">8. <strong>Education</strong></h3>
+<ul>
+<li><strong>FERPA (Family Educational Rights and Privacy Act)</strong>: U.S. law protecting the privacy of student education records, giving parents and eligible students rights over their education records.</li>
+<li><strong>COPPA (Children&rsquo;s Online Privacy Protection Act)</strong>: Applies to educational institutions collecting personal information from children under 13, requiring parental consent.</li>
+</ul>
+<h3 id="9-government">9. <strong>Government</strong></h3>
+<ul>
+<li><strong>FISMA (Federal Information Security Management Act)</strong>: U.S. law aimed at protecting federal information and information systems from threats.</li>
+<li><strong>GDPR (General Data Protection Regulation)</strong>: Applies to government entities handling personal data of EU citizens, ensuring data protection and privacy.</li>
+</ul>
+<p>These regulations are designed to protect sensitive information, ensure privacy, and maintain the integrity and security of data across various industries. Compliance with these regulations is crucial for organizations to avoid legal penalties, build trust with customers, and safeguard their operations.</p>
+<div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/cybersecurity" class="category-badge">Cybersecurity</a><a href="/tags/software-development" class="category-badge">Software Development</a><a href="/tags/security-protocols" class="category-badge">Security Protocols</a><a href="/tags/information-security" class="category-badge">Information Security</a><a href="/tags/data-protection" class="category-badge">Data Protection</a><a href="/tags/network-security" class="category-badge">Network Security</a><a href="/tags/security-best-practices" class="category-badge">Security Best Practices</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=Software%20Security%20Concepts&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fSoftware-Security-Concepts%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fSoftware-Security-Concepts%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fSoftware-Security-Concepts%2f&title=Software%20Security%20Concepts" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fSoftware-Security-Concepts%2f&title=Software%20Security%20Concepts" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=Software%20Security%20Concepts&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fSoftware-Security-Concepts%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/Stanford-Alpaca/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">Stanford Alpaca</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/why-to-finetune-llm/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">Why to Finetune LLM?</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-are-the-major-ideas-which-we-need-to-understand-while-creating-security-architecture-of-any-app">What are the major ideas which we need to understand while creating security architecture of any app?</a>
+      <ul>
+        <li><a href="#1-authentication">1. <strong><a href="#authentication">Authentication</a></strong></a></li>
+        <li><a href="#2-authorization">2. <strong><a href="#authorization">Authorization</a></strong></a></li>
+        <li><a href="#3-encryption">3. <strong>Encryption</strong></a></li>
+        <li><a href="#4-integrity">4. <strong>Integrity</strong></a></li>
+        <li><a href="#5-non-repudiation">5. <strong>Non-repudiation</strong></a></li>
+        <li><a href="#6-auditing-and-logging">6. <strong>Auditing and Logging</strong></a></li>
+        <li><a href="#7-network-security">7. <strong>Network Security</strong></a></li>
+        <li><a href="#8-application-security">8. <strong>Application Security</strong></a></li>
+        <li><a href="#9-data-protection">9. <strong>Data Protection</strong></a></li>
+        <li><a href="#10-identity-and-access-management-iam">10. <strong>Identity and Access Management (IAM)</strong></a></li>
+        <li><a href="#11-security-policies-and-governance">11. <strong>Security Policies and Governance</strong></a></li>
+        <li><a href="#12-risk-management">12. <strong>Risk Management</strong></a></li>
+        <li><a href="#13-incident-response">13. <strong>Incident Response</strong></a></li>
+        <li><a href="#14-physical-security">14. <strong>Physical Security</strong></a></li>
+        <li><a href="#15-security-awareness-and-training">15. <strong>Security Awareness and Training</strong></a></li>
+        <li><a href="#16-compliance-and-regulatory-requirements">16. <strong><a href="#can-you-share-popular-compliance-and-regulatory-requirements-around-various-industries">Compliance and Regulatory Requirements</a></strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#what-is-the-difference-between-authentication-and-authorization">What is the difference between authentication and authorization?</a>
+      <ul>
+        <li><a href="#authentication">Authentication</a></li>
+        <li><a href="#authorization">Authorization</a></li>
+        <li><a href="#key-differences">Key Differences</a></li>
+        <li><a href="#example-scenario">Example Scenario</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-is-oauth">What is OAuth?</a>
+      <ul>
+        <li><a href="#oauth-process">OAuth Process</a></li>
+        <li><a href="#benefits-of-oauth">Benefits of OAuth</a></li>
+        <li><a href="#common-use-cases">Common Use Cases</a></li>
+      </ul>
+    </li>
+    <li><a href="#can-you-share-popular-compliance-and-regulatory-requirements-around-various-industries">Can you share popular Compliance and Regulatory Requirements around various industries?</a>
+      <ul>
+        <li><a href="#1-finance-and-banking">1. <strong>Finance and Banking</strong></a></li>
+        <li><a href="#2-healthcare">2. <strong>Healthcare</strong></a></li>
+        <li><a href="#3-technology-and-telecommunications">3. <strong>Technology and Telecommunications</strong></a></li>
+        <li><a href="#4-retail-and-e-commerce">4. <strong>Retail and E-commerce</strong></a></li>
+        <li><a href="#5-energy-and-utilities">5. <strong>Energy and Utilities</strong></a></li>
+        <li><a href="#6-manufacturing">6. <strong>Manufacturing</strong></a></li>
+        <li><a href="#7-aerospace-and-defense">7. <strong>Aerospace and Defense</strong></a></li>
+        <li><a href="#8-education">8. <strong>Education</strong></a></li>
+        <li><a href="#9-government">9. <strong>Government</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

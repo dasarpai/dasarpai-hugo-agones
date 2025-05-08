@@ -1,0 +1,912 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Exploring GraphDB and Neo4j - A Guide to Graph Databases | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2025-03-11-6237-exploring-graphdb-and-neo4j/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Exploring GraphDB and Neo4j - A Guide to Graph Databases">
+  <meta property="og:description" content="RDBMS vs. Neo4j (Cypher) Command Comparison Are GraphDB faster than RDBMS? Graph databases (GraphDBs) can be faster than relational databases (RDBMS) in scenarios that involve complex relationships and deep traversals, but they are not always universally faster. It depends on the query type, data structure, and use case.
+When GraphDBs Are Faster Than RDBMS Highly Connected Data (Deep Relationships)
+Example: Finding friends-of-friends in a social network. GraphDB Advantage: Uses index-free adjacency, meaning each node stores direct references to its neighbors, making traversal O(1) per hop. RDBMS Disadvantage: Requires multiple JOINs across tables, which can become expensive, leading to O(n²) or worse in deep relationships. Example Query: “Find all friends-of-friends of a user.”">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-03-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-10T00:00:00+00:00">
+    <meta property="article:tag" content="Graph Databases">
+    <meta property="article:tag" content="GraphDB">
+    <meta property="article:tag" content="Neo4j">
+    <meta property="article:tag" content="NoSQL Databases">
+    <meta property="article:tag" content="Graph Database Advantages">
+    <meta property="article:tag" content="Graph Database Performance">
+
+  <meta itemprop="name" content="Exploring GraphDB and Neo4j - A Guide to Graph Databases">
+  <meta itemprop="description" content="RDBMS vs. Neo4j (Cypher) Command Comparison Are GraphDB faster than RDBMS? Graph databases (GraphDBs) can be faster than relational databases (RDBMS) in scenarios that involve complex relationships and deep traversals, but they are not always universally faster. It depends on the query type, data structure, and use case.
+When GraphDBs Are Faster Than RDBMS Highly Connected Data (Deep Relationships)
+Example: Finding friends-of-friends in a social network. GraphDB Advantage: Uses index-free adjacency, meaning each node stores direct references to its neighbors, making traversal O(1) per hop. RDBMS Disadvantage: Requires multiple JOINs across tables, which can become expensive, leading to O(n²) or worse in deep relationships. Example Query: “Find all friends-of-friends of a user.”">
+  <meta itemprop="datePublished" content="2025-03-10T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-03-10T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2844">
+  <meta itemprop="keywords" content="Graph database basics,Graph database advantages,GraphDB vs Neo4j,Graph database performance,Graph database applications">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exploring GraphDB and Neo4j - A Guide to Graph Databases">
+  <meta name="twitter:description" content="RDBMS vs. Neo4j (Cypher) Command Comparison Are GraphDB faster than RDBMS? Graph databases (GraphDBs) can be faster than relational databases (RDBMS) in scenarios that involve complex relationships and deep traversals, but they are not always universally faster. It depends on the query type, data structure, and use case.
+When GraphDBs Are Faster Than RDBMS Highly Connected Data (Deep Relationships)
+Example: Finding friends-of-friends in a social network. GraphDB Advantage: Uses index-free adjacency, meaning each node stores direct references to its neighbors, making traversal O(1) per hop. RDBMS Disadvantage: Requires multiple JOINs across tables, which can become expensive, leading to O(n²) or worse in deep relationships. Example Query: “Find all friends-of-friends of a user.”">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6237-Exploring-GraphDB-and-Neo4j.jpg" alt="Exploring GraphDB and Neo4j"></p>
+<h1 id="rdbms-vs-neo4j-cypher-command-comparison">RDBMS vs. Neo4j (Cypher) Command Comparison</h1>
+<h2 id="are-graphdb-faster-than-rdbms">Are GraphDB faster than RDBMS?</h2>
+<p>Graph databases (GraphDBs) can be <strong>faster</strong> than relational databases (RDBMS) in scenarios that involve <strong>complex relationships and deep traversals</strong>, but they are not always universally faster. It depends on the <strong>query type, data structure, and use case</strong>.</p>
+<h3 id="when-graphdbs-are-faster-than-rdbms"><strong>When GraphDBs Are Faster Than RDBMS</strong></h3>
+<p><strong>Highly Connected Data (Deep Relationships)</strong></p>
+<ul>
+<li><strong>Example:</strong> Finding friends-of-friends in a social network.</li>
+<li><strong>GraphDB Advantage:</strong> Uses <strong>index-free adjacency</strong>, meaning each node stores direct references to its neighbors, making traversal <strong>O(1)</strong> per hop.</li>
+<li><strong>RDBMS Disadvantage:</strong> Requires multiple <strong>JOINs</strong> across tables, which can become expensive, leading to <strong>O(n²) or worse</strong> in deep relationships.</li>
+</ul>
+<p><strong>Example Query:</strong> &ldquo;Find all friends-of-friends of a user.&rdquo;</p>
+<ul>
+<li><strong>GraphDB (Neo4j):</strong>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MATCH (p:Person {name: &#39;Alice&#39;})-[:FRIEND*2]-&gt;(fof)
+RETURN fof
+</code></pre></li>
+<li><strong>RDBMS (SQL with JOINs):</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">SELECT</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">DISTINCT</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">f2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">friends</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">f1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">JOIN</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">friends</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">f2</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">ON</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">f1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">friend_id</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">f2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">person_id</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">WHERE</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">f1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">person_id</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">SELECT</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">id</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">persons</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">WHERE</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">name</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;Alice&#39;</span><span style="color:#000;font-weight:bold">);</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span></code></pre></div></li>
+</ul>
+<p><strong>Recursive Queries</strong></p>
+<ul>
+<li><strong>Example:</strong> Finding shortest paths (e.g., route optimization).</li>
+<li><strong>GraphDB Advantage:</strong> Uses <em><em>native graph traversal algorithms (e.g., Dijkstra, A</em>)</em>*, which are <strong>optimized for pathfinding</strong>.</li>
+<li><strong>RDBMS Disadvantage:</strong> SQL requires <strong>recursive Common Table Expressions (CTEs)</strong>, which are computationally expensive.</li>
+</ul>
+<p><strong>Dynamic Schema &amp; Evolving Relationships</strong></p>
+<ul>
+<li><strong>Example:</strong> Adding new types of relationships on the fly.</li>
+<li><strong>GraphDB Advantage:</strong> <strong>Schema-less</strong> or <strong>flexible schema</strong>, so new relationships can be added without altering existing data structures.</li>
+<li><strong>RDBMS Disadvantage:</strong> Requires <strong>schema migrations</strong> and adding foreign keys, which can be complex and costly.</li>
+</ul>
+<h3 id="when-rdbms-are-faster-than-graphdbs"><strong>When RDBMS Are Faster Than GraphDBs</strong></h3>
+<p><strong>Simple Queries &amp; Large, Flat Datasets</strong></p>
+<ul>
+<li><strong>Example:</strong> Retrieving millions of customer records based on indexed attributes.</li>
+<li><strong>RDBMS Advantage:</strong> <strong>Indexes (B-trees, hash indexes)</strong> are highly optimized for <strong>fast lookups</strong>.</li>
+<li><strong>GraphDB Disadvantage:</strong> Nodes are optimized for relationships, not for flat, tabular scans.</li>
+</ul>
+<p><strong>OLTP Workloads (High Transactional Volume)</strong></p>
+<ul>
+<li><strong>Example:</strong> Banking transactions with ACID compliance.</li>
+<li><strong>RDBMS Advantage:</strong> Designed for <strong>highly structured transactions</strong>.</li>
+<li><strong>GraphDB Disadvantage:</strong> Some graph databases struggle with <strong>high transaction throughput</strong>.</li>
+</ul>
+<p><strong>Aggregations &amp; Reporting (OLAP Queries)</strong></p>
+<ul>
+<li><strong>Example:</strong> Summing up total sales across millions of transactions.</li>
+<li><strong>RDBMS Advantage:</strong> SQL engines like <strong>PostgreSQL, MySQL, and Snowflake</strong> are <strong>optimized for large aggregations</strong>.</li>
+<li><strong>GraphDB Disadvantage:</strong> Graph traversal is <strong>node-by-node</strong>, making bulk aggregations slower.</li>
+</ul>
+<hr>
+<p><strong>When to Use GraphDB vs. RDBMS</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Use Case</strong></th>
+          <th><strong>GraphDB (Neo4j, ArangoDB, TigerGraph)</strong></th>
+          <th><strong>RDBMS (PostgreSQL, MySQL, Oracle)</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Social Networks</strong></td>
+          <td>✅ Fast relationship queries</td>
+          <td>❌ Expensive JOINs</td>
+      </tr>
+      <tr>
+          <td><strong>Recommendation Engines</strong></td>
+          <td>✅ Graph traversals (collaborative filtering)</td>
+          <td>❌ Multiple JOINs</td>
+      </tr>
+      <tr>
+          <td><strong>Fraud Detection</strong></td>
+          <td>✅ Pattern recognition in networks</td>
+          <td>❌ Complex SQL queries</td>
+      </tr>
+      <tr>
+          <td><strong>Pathfinding (e.g., Google Maps)</strong></td>
+          <td>✅ Shortest path algorithms</td>
+          <td>❌ Recursive CTEs are slow</td>
+      </tr>
+      <tr>
+          <td><strong>E-commerce Transactions</strong></td>
+          <td>❌ Not optimized for bulk inserts</td>
+          <td>✅ ACID-compliant transactions</td>
+      </tr>
+      <tr>
+          <td><strong>Data Warehousing &amp; BI</strong></td>
+          <td>❌ Slow aggregations</td>
+          <td>✅ Optimized for OLAP</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Final Verdict</strong> 🎯</p>
+<ul>
+<li>Use <strong>GraphDB</strong> when your queries involve <strong>deep relationships, recursive paths, or network analysis</strong>.</li>
+<li>Use <strong>RDBMS</strong> when dealing with <strong>structured, transactional, and analytical workloads</strong>.</li>
+</ul>
+<h2 id="when-database-is-highly-normalized-upto-35-or-4-degree-than-does-graphdb-makes-more-sense">When database is highly normalized upto 3.5 or 4 degree than does graphdb makes more sense?</h2>
+<p>Yes, when a relational database is <strong>highly normalized (3.5NF, 4NF, or beyond)</strong>, a <strong>GraphDB often makes more sense</strong>—especially if queries frequently involve <strong>complex relationships and multi-table JOINs</strong>. Why GraphDB Is Better for Highly Normalized Data?</p>
+<p><strong>JOIN Explosion in RDBMS</strong></p>
+<ul>
+<li>In <strong>3NF, 4NF normalization</strong>, data is split into many tables to remove redundancy.</li>
+<li>Queries require <strong>multiple JOINs</strong> to reconstruct meaningful relationships.</li>
+<li><strong>GraphDB eliminates JOINs</strong> by directly linking related entities.</li>
+</ul>
+<p><strong>Example: Academic Database (Students, Courses, Professors)</strong></p>
+<ul>
+<li><strong>RDBMS (Highly Normalized)</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">SELECT</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">name</span><span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">c</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">title</span><span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">p</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">name</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">students</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">s</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">JOIN</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">enrollments</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">e</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">ON</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">id</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">student_id</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">JOIN</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">courses</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">c</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">ON</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">course_id</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">c</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">id</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">JOIN</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">professors</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">p</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">ON</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">c</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">professor_id</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">p</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">id</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">WHERE</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">name</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;Alice&#39;</span><span style="color:#000;font-weight:bold">;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span></code></pre></div></li>
+<li><strong>GraphDB (Neo4j)</strong>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MATCH (s:Student {name: &#39;Alice&#39;})-[:ENROLLED_IN]-&gt;(c:Course)&lt;-[:TEACHES]-(p:Professor)
+RETURN s, c, p;
+</code></pre></li>
+<li><strong>GraphDB Wins</strong>: No need for JOINs; relationships are direct.</li>
+</ul>
+<hr>
+<p><strong>Performance Gains in Recursive Queries</strong></p>
+<ul>
+<li><strong>In RDBMS</strong>, recursive relationships (e.g., <strong>hierarchies, bill of materials</strong>) use:
+<ul>
+<li><strong>Recursive Common Table Expressions (CTEs)</strong></li>
+<li><strong>Self-JOINs</strong></li>
+</ul>
+</li>
+<li><strong>GraphDB natively supports deep traversals</strong> with efficient pathfinding algorithms.</li>
+</ul>
+<p><strong>Example: &ldquo;Find a Manager’s Reporting Chain (All Subordinates)&rdquo;</strong></p>
+<ul>
+<li><strong>RDBMS: Uses Recursive CTEs</strong>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">WITH</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">RECURSIVE</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">hierarchy</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">AS</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000;font-weight:bold">(</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">   </span><span style="color:#204a87;font-weight:bold">SELECT</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">id</span><span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">name</span><span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">manager_id</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">employees</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">WHERE</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">id</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">101</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">   </span><span style="color:#204a87;font-weight:bold">UNION</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">ALL</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">   </span><span style="color:#204a87;font-weight:bold">SELECT</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">id</span><span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">name</span><span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">manager_id</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">   </span><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">employees</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">e</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">   </span><span style="color:#204a87;font-weight:bold">JOIN</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">hierarchy</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">h</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">ON</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">manager_id</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">h</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">id</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#000;font-weight:bold">)</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">SELECT</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">hierarchy</span><span style="color:#000;font-weight:bold">;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span></code></pre></div></li>
+<li><strong>GraphDB (Neo4j) Uses Simple Traversal</strong>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MATCH (m:Manager {draft: false
+</code></pre></li>
+</ul>
+<p>id: 101})&lt;-[:REPORTS_TO*]-(e:Employee)
+RETURN e;</p>
+<pre tabindex="0"><code>- **GraphDB Wins**: No recursive CTEs, just **direct traversal**.
+
+---
+
+**Better for Many-to-Many Relationships**
+- **RDBMS** uses **junction tables** for many-to-many (M:N) relationships.
+- **GraphDB** stores them **natively** as edges.
+
+**Example: Authors and Books (M:N)**
+- **RDBMS: Requires Junction Table**
+</code></pre><p>Authors (id, name)
+Books (id, title)
+Author_Book (author_id, book_id)  &lt;&ndash; Many-to-Many Table</p>
+<pre tabindex="0"><code>Query:
+```sql
+SELECT a.name, b.title
+FROM authors a
+JOIN author_book ab ON a.id = ab.author_id
+JOIN books b ON ab.book_id = b.id;
+</code></pre><ul>
+<li><strong>GraphDB: Direct Relationship</strong>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MATCH (a:Author)-[:WROTE]-&gt;(b:Book)
+RETURN a, b;
+</code></pre></li>
+<li><strong>GraphDB Wins</strong>: No need for a join table.</li>
+</ul>
+<hr>
+<p><strong>When RDBMS Still Makes Sense</strong><br>
+✔ <strong>If the database is normalized but used mainly for transactional (OLTP) workloads.</strong><br>
+✔ <strong>If the system relies heavily on ACID transactions (e.g., banking, ERP).</strong><br>
+✔ <strong>If queries mostly involve flat tables without complex relationships.</strong></p>
+<hr>
+<p><strong>Final Verdict</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Factor</strong></th>
+          <th><strong>GraphDB (Neo4j, ArangoDB, TigerGraph)</strong></th>
+          <th><strong>RDBMS (PostgreSQL, MySQL, Oracle)</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Deep Joins (3.5NF, 4NF Queries)</strong></td>
+          <td>✅ Eliminates JOINs</td>
+          <td>❌ JOIN-heavy queries slow down</td>
+      </tr>
+      <tr>
+          <td><strong>Recursive Queries (Hierarchy, Paths)</strong></td>
+          <td>✅ Faster with built-in traversal</td>
+          <td>❌ Recursive CTEs are expensive</td>
+      </tr>
+      <tr>
+          <td><strong>Many-to-Many Relationships</strong></td>
+          <td>✅ Direct edges</td>
+          <td>❌ Needs extra join tables</td>
+      </tr>
+      <tr>
+          <td><strong>Schema Evolution (Flexibility)</strong></td>
+          <td>✅ Schema-less or flexible</td>
+          <td>❌ Requires schema migrations</td>
+      </tr>
+      <tr>
+          <td><strong>Flat Data &amp; Aggregations</strong></td>
+          <td>❌ Not optimized</td>
+          <td>✅ Faster for OLAP queries</td>
+      </tr>
+  </tbody>
+</table>
+<p>✔ <strong>Use GraphDB</strong> if your normalized database has deep relationships.<br>
+✔ <strong>Use RDBMS</strong> if your use case is more transactional and structured.</p>
+<h2 id="node-of-graphdb-vs-record-of-rdbms">Node (of GraphDB) vs. Record (of RDBMS)</h2>
+<p>You can think of a node in a graph database is somewhat analogous to a record in a relational database (RDBMS).</p>
+<p>Similarities to RDBMS records:</p>
+<ul>
+<li>Both store data as properties/fields</li>
+<li>Both can be uniquely identified (primary key in RDBMS, node ID in Neo4j)</li>
+<li>Both contain related information about a single entity</li>
+</ul>
+<p>Key differences:</p>
+<ol>
+<li><strong>Multiple labels vs. single table</strong>: A node can have multiple labels, while a record belongs to exactly one table</li>
+<li><strong>Schema flexibility</strong>: Nodes with the same label can have different properties, while records in the same table must conform to the table&rsquo;s schema</li>
+<li><strong>Relationship representation</strong>: Nodes directly link to other nodes via relationships, while RDBMS records use foreign keys and joins</li>
+<li><strong>Property flexibility</strong>: You can easily add properties to nodes without affecting other nodes, unlike tables where adding columns affects all records</li>
+</ol>
+<p>The biggest conceptual difference is how relationships are handled. In a graph database, relationships are first-class citizens with their own properties, providing a more natural way to represent complex networks of connected data compared to join tables in relational databases.</p>
+<p>So while you can draw this parallel as a starting point for understanding, it&rsquo;s important to recognize that graph databases like Neo4j represent a fundamentally different approach to data modeling.</p>
+<h2 id="can-a-node-have-mutiple-labels">Can a node have mutiple Labels?</h2>
+<p>Yes, in Neo4j a node can have multiple labels. This is one of the flexible features of Neo4j&rsquo;s property graph model. Label is like table of RDBMS. It means a record (node) can be part of multiple tables (labels)!</p>
+<p>For example, you could create a node with multiple labels like this:</p>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">CREATE (p:Person:Employee:Manager {name: &#39;John Doe&#39;, employeedraft: false
+id: &#39;12345&#39;})
+</code></pre><p>This node has three labels: Person, Employee, and Manager, plus properties for name and employeeId.</p>
+<p>Multiple labels are useful for:</p>
+<ol>
+<li><strong>Classification</strong>: A node can belong to multiple categories simultaneously</li>
+<li><strong>Inheritance-like modeling</strong>: You can have general labels (Person) and more specific ones (Employee, Manager)</li>
+<li><strong>Filtering efficiency</strong>: You can use the most specific label in queries for better performance</li>
+</ol>
+<p>When querying, you can match on any combination of these labels:</p>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MATCH (p:Person) RETURN p          // Returns all persons
+MATCH (p:Employee) RETURN p        // Returns all employees
+MATCH (p:Person:Manager) RETURN p  // Returns only persons who are also managers
+</code></pre><p>This multi-label approach gives you flexibility in how you model and query your graph data.</p>
+<h2 id="fundamental-difference-between-rdbms-sql-vs-neo4j-cypher-command">Fundamental Difference between RDBMS (SQL) vs. Neo4j (Cypher) Command</h2>
+<ol>
+<li>
+<p><strong>Data Model</strong>:</p>
+<ul>
+<li>RDBMS: Tables, rows, and columns with rigid schemas</li>
+<li>Neo4j: Nodes (with labels), relationships, and properties with flexible schemas</li>
+</ul>
+</li>
+<li>
+<p><strong>Relationships</strong>:</p>
+<ul>
+<li>RDBMS: Implemented through foreign keys and JOIN operations</li>
+<li>Neo4j: First-class citizens with their own properties and types</li>
+</ul>
+</li>
+<li>
+<p><strong>Query Approach</strong>:</p>
+<ul>
+<li>RDBMS: Set-based operations on tables</li>
+<li>Neo4j: Pattern matching through the graph</li>
+</ul>
+</li>
+<li>
+<p><strong>Schema Requirements</strong>:</p>
+<ul>
+<li>RDBMS: Schema must be defined before data is added</li>
+<li>Neo4j: Schema-optional (can add properties dynamically)</li>
+</ul>
+</li>
+<li>
+<p><strong>Multi-Entity Modeling</strong>:</p>
+<ul>
+<li>RDBMS: An entity belonging to multiple categories requires multiple tables or complex inheritance strategies</li>
+<li>Neo4j: Simply add multiple labels to a node</li>
+</ul>
+</li>
+</ol>
+<p>When transitioning from relational thinking to graph thinking, focus on how entities relate to each other rather than how data fits into tables. The most powerful aspect of graph databases is their ability to represent complex, interconnected data naturally and query these relationships efficiently.</p>
+<h2 id="understanding-graphql-with-sql-commands">Understanding GraphQL with SQL Commands</h2>
+<p>Those who understand SQL commands will find it easier to learn GraphQL. Here&rsquo;s a comparison of RDBMS (SQL) and Neo4j (Cypher) commands:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Operation</th>
+          <th>RDBMS (SQL)</th>
+          <th>Neo4j (Cypher)</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Create Data Structure</strong></td>
+          <td><code>CREATE TABLE Person (id INT PRIMARY KEY, name VARCHAR(255))</code></td>
+          <td>`CREATE (n:Person {draft: false</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>id: 1, name: &lsquo;John&rsquo;})`</td>
+          <td>Neo4j is schema-optional; no need to define structure before adding data</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Insert Data</strong></td>
+          <td><code>INSERT INTO Person (id, name) VALUES (1, 'John')</code></td>
+          <td>`CREATE (n:Person {draft: false</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>id: 1, name: &lsquo;John&rsquo;})`</td>
+          <td>Same command creates both structure and data in Neo4j</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Add Field/Property</strong></td>
+          <td><code>ALTER TABLE Person ADD age INT</code></td>
+          <td>Just add property: `MATCH (p:Person {draft: false</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>id: 1}) SET p.age = 30`</td>
+          <td>No schema alteration needed in Neo4j</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Update Data</strong></td>
+          <td><code>UPDATE Person SET name = 'Johnny' WHERE id = 1</code></td>
+          <td>`MATCH (p:Person {draft: false</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>id: 1}) SET p.name = &lsquo;Johnny&rsquo;`</td>
+          <td>Both use filtering to target updates</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Query All</strong></td>
+          <td><code>SELECT * FROM Person</code></td>
+          <td><code>MATCH (p:Person) RETURN p</code></td>
+          <td>Similar concept but different syntax</td>
+      </tr>
+      <tr>
+          <td><strong>Filter Data</strong></td>
+          <td><code>SELECT * FROM Person WHERE name = 'John'</code></td>
+          <td><code>MATCH (p:Person) WHERE p.name = 'John' RETURN p</code></td>
+          <td>Similar conditional filtering</td>
+      </tr>
+      <tr>
+          <td><strong>Join Tables</strong></td>
+          <td><code>SELECT * FROM Person p JOIN Order o ON p.id = o.person_id</code></td>
+          <td><code>MATCH (p:Person)-[:PLACED]-&gt;(o:Order) RETURN p, o</code></td>
+          <td>Relationships are explicit in Neo4j</td>
+      </tr>
+      <tr>
+          <td><strong>Aggregation</strong></td>
+          <td><code>SELECT COUNT(*) FROM Person</code></td>
+          <td><code>MATCH (p:Person) RETURN COUNT(p)</code></td>
+          <td>Similar aggregation functions</td>
+      </tr>
+      <tr>
+          <td><strong>Delete Data</strong></td>
+          <td><code>DELETE FROM Person WHERE id = 1</code></td>
+          <td>`MATCH (p:Person {draft: false</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>id: 1}) DELETE p`</td>
+          <td>Similar concept</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Create Index</strong></td>
+          <td><code>CREATE INDEX idx_person_name ON Person(name)</code></td>
+          <td><code>CREATE INDEX FOR (p:Person) ON (p.name)</code></td>
+          <td>Both improve query performance</td>
+      </tr>
+      <tr>
+          <td><strong>Multiple Table/Label Query</strong></td>
+          <td><code>SELECT * FROM Person p, Employee e WHERE p.id = e.person_id</code></td>
+          <td><code>MATCH (n:Person:Employee) RETURN n</code></td>
+          <td>In Neo4j, a single node can have multiple labels</td>
+      </tr>
+      <tr>
+          <td><strong>Subquery</strong></td>
+          <td><code>SELECT * FROM Person WHERE id IN (SELECT person_id FROM Employee)</code></td>
+          <td><code>MATCH (p:Person) WHERE EXISTS { MATCH (p)-[:WORKS_AT]-&gt;(:Company) } RETURN p</code></td>
+          <td>Different approach to nested queries</td>
+      </tr>
+      <tr>
+          <td><strong>Transactions</strong></td>
+          <td><code>BEGIN; [operations]; COMMIT;</code></td>
+          <td><code>BEGIN; [operations]; COMMIT;</code></td>
+          <td>Similar transaction concepts</td>
+      </tr>
+      <tr>
+          <td><strong>Create Relationship</strong></td>
+          <td>Create join table or foreign keys</td>
+          <td><code>MATCH (a:Person), (b:Company) WHERE a.id = 1 AND b.id = 2 CREATE (a)-[:WORKS_AT]-&gt;(b)</code></td>
+          <td>Relationships are first-class citizens in Neo4j</td>
+      </tr>
+      <tr>
+          <td><strong>Multiple Joins</strong></td>
+          <td><code>SELECT * FROM Person p JOIN Order o ON p.id = o.person_id JOIN Product pr ON o.product_id = pr.id</code></td>
+          <td><code>MATCH (p:Person)-[:PLACED]-&gt;(o:Order)-[:CONTAINS]-&gt;(pr:Product) RETURN p, o, pr</code></td>
+          <td>Path traversal is more intuitive in Neo4j</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="how-to-represent-relationships-in-neo4j">How to represent relationships in Neo4j</h2>
+<p>This Cypher query is written for <strong>Neo4j</strong> and is checking whether a <code>Person</code> node (<code>p</code>) has an outgoing <code>WORKS_AT</code> relationship to a <code>Company</code> node. If such a relationship exists, it returns the <code>Person</code> node.</p>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MATCH (p:Person)
+WHERE EXISTS { MATCH (p)-[:WORKS_AT]-&gt;(:Company) }
+RETURN p
+</code></pre><ol>
+<li>
+<p><strong><code>MATCH (p:Person)</code></strong></p>
+<ul>
+<li>Finds all nodes with the <code>Person</code> label and assigns them to <code>p</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>WHERE EXISTS { MATCH (p)-[:WORKS_AT]-&gt;(:Company) }</code></strong></p>
+<ul>
+<li>Uses a subquery inside <code>EXISTS { ... }</code> to check if there is at least one <code>Company</code> node connected to <code>p</code> via a <code>WORKS_AT</code> relationship.</li>
+<li>If such a relationship exists, the <code>Person</code> node is included in the final result.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>RETURN p</code></strong></p>
+<ul>
+<li>Returns all <code>Person</code> nodes that satisfy the condition.</li>
+</ul>
+</li>
+</ol>
+<p>Why It Works This Way:</p>
+<ul>
+<li>The <strong>subquery in <code>EXISTS</code></strong> ensures that the <code>p</code> node is only included in the result if there is at least one matching <code>Company</code> node.</li>
+<li>The <strong>matching inside <code>EXISTS</code> does not introduce new variables</strong> but simply checks for the existence of a pattern.</li>
+</ul>
+<p>More Intuitive Alternative:<br>
+Instead of using <code>EXISTS</code>, you could write:</p>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MATCH (p:Person)-[:WORKS_AT]-&gt;(:Company)
+RETURN p
+</code></pre><p>This directly matches only those <code>Person</code> nodes that have a <code>WORKS_AT</code> relationship, which is arguably more intuitive.</p>
+<h2 id="data-storage-techniques-of-graphdb-and-rdbms">Data storage techniques of Graphdb and RDBMS</h2>
+<p>Graph databases like <strong>Neo4j, ArangoDB, and TigerGraph</strong> use <strong>native graph storage</strong> that optimizes <strong>traversal speed and relationship lookups</strong>. Let&rsquo;s break it down:</p>
+<hr>
+<h3 id="-storage-of-nodes-entities"><strong>🟢 Storage of Nodes (Entities)</strong></h3>
+<p>Nodes in a GraphDB are like <strong>rows in an RDBMS table</strong>, but they are stored with the following properties:</p>
+<ul>
+<li><strong>Node ID</strong> (Unique identifier)</li>
+<li><strong>Labels (Types)</strong> (e.g., <code>Person</code>, <code>Company</code>)</li>
+<li><strong>Properties</strong> (Key-value pairs like <code>name: &quot;Alice&quot;, age: 30</code>)</li>
+<li><strong>Pointers to Relationships</strong> (Instead of storing foreign keys)</li>
+</ul>
+<p>📌 <strong>How it&rsquo;s Stored:</strong><br>
+Most GraphDBs use <strong>linked lists, adjacency lists, or key-value stores</strong> for nodes.</p>
+<ol>
+<li><strong>Adjacency List Representation</strong> (Common in Neo4j)</li>
+</ol>
+<pre tabindex="0"><code>Node Table:
+┌────────┬─────────┬───────────────┬───────────┐
+│ NodeID │ Label   │ Properties    │ Relations │
+├────────┼─────────┼───────────────┼───────────┤
+│ 1      │ Person  │ {name: Alice} │ [R1, R3]  │
+│ 2      │ Company │ {name: Acme}  │ [R2]      │
+└────────┴─────────┴───────────────┴───────────┘
+</code></pre><ol start="2">
+<li><strong>Key-Value Storage (Common in TigerGraph)</strong></li>
+</ol>
+<pre tabindex="0"><code>Key: NodeID
+Value: {Label: Person, Properties: {name: &#34;Alice&#34;, age: 30}}
+</code></pre><p>📌 <strong>Advantages Over RDBMS:</strong><br>
+✔ No need for foreign keys → <strong>Faster lookups</strong><br>
+✔ Supports <strong>flexible schema</strong> → Nodes can have varying properties<br>
+✔ Stores direct pointers to relationships → <strong>Avoids costly JOINs</strong></p>
+<hr>
+<h3 id="-storage-of-relationships-edges"><strong>🔵 Storage of Relationships (Edges)</strong></h3>
+<p>Relationships (edges) are <strong>first-class citizens</strong> in a GraphDB, unlike RDBMS where they are derived using JOINs.</p>
+<p>A relationship contains:</p>
+<ul>
+<li><strong>Relationship ID</strong> (Unique identifier)</li>
+<li><strong>Type</strong> (e.g., <code>WORKS_AT</code>, <code>FRIEND</code>)</li>
+<li><strong>Start Node ID &amp; End Node ID</strong></li>
+<li><strong>Properties</strong> (e.g., <code>{since: 2022}</code>)</li>
+<li><strong>Bidirectional Pointers</strong> (For fast traversal)</li>
+</ul>
+<p>📌 <strong>How it&rsquo;s Stored:</strong></p>
+<ol>
+<li><strong>Doubly Linked List Representation (Neo4j)</strong></li>
+</ol>
+<pre tabindex="0"><code>Relationship Table:
+┌───────┬────────┬────────┬───────────────┬────────────┐
+│ RelID │ Type   │ Start  │ End           │ Properties │
+├───────┼────────┼────────┼───────────────┼────────────┤
+│ R1    │ FRIEND │ 1 (Alice) │ 3 (Bob) │ {since: 2020} |
+│ R2    │ WORKS_AT │ 1 (Alice) │ 2 (Acme) │ {since: 2022} |
+└───────┴────────┴────────┴───────────────┴────────────┘
+</code></pre><ol start="2">
+<li><strong>Pointer-Based Storage (Optimized for Fast Traversal)</strong></li>
+</ol>
+<pre tabindex="0"><code>(Alice) --&gt; [Pointer to R2] --&gt; (Acme)
+</code></pre><p>📌 <strong>Advantages Over RDBMS:</strong><br>
+✔ <strong>O(1) Traversal</strong> → Direct memory pointers to related nodes<br>
+✔ <strong>No Need for Join Tables</strong> → Avoids costly <code>JOIN</code> operations<br>
+✔ <strong>Relationship Metadata</strong> → Can store properties like <code>{since: 2022}</code></p>
+<hr>
+<h3 id="key-differences-between-node-and-relationship-storage"><strong>Key Differences Between Node and Relationship Storage</strong></h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Feature</strong></th>
+          <th><strong>Node Storage</strong></th>
+          <th><strong>Relationship Storage</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Data Type</strong></td>
+          <td>Entity (Person, Company)</td>
+          <td>Connection (e.g., FRIEND, WORKS_AT)</td>
+      </tr>
+      <tr>
+          <td><strong>Primary Key</strong></td>
+          <td>Unique Node ID</td>
+          <td>Unique Relationship ID</td>
+      </tr>
+      <tr>
+          <td><strong>Storage Format</strong></td>
+          <td>Adjacency List, Key-Value Store</td>
+          <td>Linked List, Pointer-based</td>
+      </tr>
+      <tr>
+          <td><strong>Has Properties?</strong></td>
+          <td>✅ Yes</td>
+          <td>✅ Yes</td>
+      </tr>
+      <tr>
+          <td><strong>Pointer to Other Nodes?</strong></td>
+          <td>✅ Yes (stores relation pointers)</td>
+          <td>✅ Yes (start &amp; end node pointers)</td>
+      </tr>
+      <tr>
+          <td><strong>Optimized For</strong></td>
+          <td>Entity lookups</td>
+          <td>Fast relationship traversal</td>
+      </tr>
+      <tr>
+          <td><strong>Equivalent in RDBMS</strong></td>
+          <td>Table row</td>
+          <td>Foreign key / Join table</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong>Example: How GraphDB Stores a Social Network</strong>
+Consider this scenario:<br>
+📌 Alice (draft: false
+id:1) is <strong>friends with</strong> Bob (draft: false
+id:3) and works at Acme (draft: false
+id:2).</p>
+<h3 id="-node-storage"><strong>🟢 Node Storage</strong></h3>
+<pre tabindex="0"><code>Node 1: {Label: Person, Name: &#34;Alice&#34;} → Points to [R1, R2]
+Node 2: {Label: Company, Name: &#34;Acme&#34;}  → Points to [R2]
+Node 3: {Label: Person, Name: &#34;Bob&#34;}   → Points to [R1]
+</code></pre><h3 id="-relationship-storage"><strong>🔵 Relationship Storage</strong></h3>
+<pre tabindex="0"><code>R1: {Type: FRIEND, Start: 1, End: 3, Since: 2020}
+R2: {Type: WORKS_AT, Start: 1, End: 2, Since: 2022}
+</code></pre><h3 id="-querying-the-relationship"><strong>💡 Querying the Relationship</strong></h3>
+<ul>
+<li><strong>GraphDB Query (Neo4j)</strong></li>
+</ul>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MATCH (a:Person {name: &#34;Alice&#34;})-[:WORKS_AT]-&gt;(c:Company)
+RETURN a, c;
+</code></pre><ul>
+<li><strong>RDBMS Query (SQL with JOINs)</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">SELECT</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">p</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">name</span><span style="color:#000;font-weight:bold">,</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">c</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">name</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">persons</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">p</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">JOIN</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">works_at</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">w</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">ON</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">p</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">id</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">w</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">person_id</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">JOIN</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">companies</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">c</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">ON</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">w</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">company_id</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#204a87;font-weight:bold">c</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">id</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">WHERE</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">p</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">name</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;Alice&#39;</span><span style="color:#000;font-weight:bold">;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span></code></pre></div><p><strong>GraphDB Wins</strong> because it <strong>directly accesses</strong> connected nodes instead of doing <code>JOINs</code>!</p>
+<hr>
+<h3 id="final-verdict-why-graphdb-storage-is-better-for-relationships"><strong>Final Verdict: Why GraphDB Storage is Better for Relationships</strong></h3>
+<p>✔ <strong>Nodes store direct references to relationships</strong> → Faster lookup<br>
+✔ <strong>Relationships store both start and end pointers</strong> → No need for foreign keys<br>
+✔ <strong>Traversal is O(1) compared to O(n) in SQL JOINs</strong><br>
+✔ <strong>Relationships can have metadata (e.g., &ldquo;since: 2022&rdquo;)</strong></p>
+<p><strong>TL;DR:</strong></p>
+<ul>
+<li><strong>Nodes</strong> store <strong>entity data</strong> + pointers to relationships.</li>
+<li><strong>Relationships</strong> store <strong>start &amp; end node references</strong> + metadata.</li>
+<li><strong>GraphDB eliminates foreign keys and JOINs</strong>, leading to <strong>faster relationship queries</strong>.</li>
+</ul>
+<h2 id="cypher-code-analysis">Cypher Code Analysis</h2>
+<p>Let&rsquo;s assume we have following Information on Movies:</p>
+<p>&ldquo;The Matrix&rdquo; (Action, Sci-Fi)<br>
+&ldquo;Forrest Gump&rdquo; (Drama, Comedy)<br>
+&ldquo;The Shawshank Redemption&rdquo; (Drama)</p>
+<p>We observe here that there are 4 Genres:</p>
+<p>Action<br>
+Comedy<br>
+Drama<br>
+Sci-Fi</p>
+<h3 id="how-to-write-query-in-neo4j---graphdb">How to write query in Neo4j - GraphDB</h3>
+<p>For the sake of brevity I am not using Create, Merge and Match syntax here.</p>
+<pre tabindex="0"><code>(TheMatrix:Movie {title: &#34;The Matrix&#34;, imdbRating: 8.7})
+-[:IN_GENRE]
+-&gt;(Action:Genre {name: &#34;Action&#34;})
+  (TheMatrix)
+-[:IN_GENRE]
+-&gt;(SciFi:Genre {name: &#34;Sci-Fi&#34;})
+
+(ForrestGump:Movie {title: &#34;Forrest Gump&#34;, imdbRating: 8.8})
+-[:IN_GENRE]
+-&gt;(Drama:Genre {name: &#34;Drama&#34;})
+  (ForrestGump)
+-[:IN_GENRE]
+-&gt;(Comedy:Genre {name: &#34;Comedy&#34;})
+
+(Shawshank:Movie {title: &#34;The Shawshank Redemption&#34;, imdbRating: 9.3})
+-[:IN_GENRE]
+-&gt;(Drama:Genre {name: &#34;Drama&#34;})
+</code></pre><h3 id="lets-understand-the-format">Let&rsquo;s understand the format</h3>
+<p><strong>Code for writing node</strong></p>
+<pre tabindex="0"><code>###syntax for node 
+(: {}) ##syntax
+
+###template 
+(variable_name:label_name {pair of property_and_values})
+
+###abstract example
+(name_of_movie1:movie {title:&#34;Title_of_Movie1&#34;,   
+Director_Name: &#34;Name of the director for Movie1&#34;,   
+Producer_Name: &#34;Name_of_Producer for movie1&#34;,   
+Rating: &#34;Value_of_Rating_of_Movie1&#34;})  
+
+###concreate example 
+(TheMatrix:Movie {title: &#34;The Matrix&#34;, imbdRating: 8.7}
+</code></pre><h3 id="code-for-writing-relationship">Code for writing Relationship</h3>
+<pre tabindex="0"><code>###syntax for relationship
+()-[:]-&gt;() 
+
+
+###template
+(node1)-[:relation_name]-&gt;(node2) 
+
+##abstract example
+(movie1)-[:relation_name]-&gt;(genre1) 
+
+###Concrete Example
+
+(TheMatrix:Movie {title: &#34;The Matrix&#34;, imbdRating: 8.7}   
+### (varable:label {property_of_label: property_of_value, and_other_properties}
+-[:IN_GENRE]                                            ### -[:Relation_Name]
+-&gt;(Action:Genre {name: &#34;Action&#34;})                       ### -&gt;(another_node)
+</code></pre><h2 id="how-to-install-neo4j-on-local-machine">How to install Neo4j on local machine?</h2>
+<ul>
+<li><a href="https://neo4j.com/download/">https://neo4j.com/download/</a></li>
+<li>For application of GraphDB in AI you can refer to this github repo:  <a href="https://github.com/dasarpai/Advanced-QA-and-RAG-Series">Advanced-QA-and-RAG-Series</a></li>
+</ul>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

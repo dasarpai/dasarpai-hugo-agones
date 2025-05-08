@@ -1,0 +1,376 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>NLP BenchMarks | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2024-07-03-6120-nlp-benchmarks/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="NLP BenchMarks">
+  <meta property="og:description" content="NLP BenchMarks What is Language Model? A language model is a computational model that understands and generates human language. It learns the patterns and structure of a language by analyzing large amounts of text data, allowing it to predict the next word in a sequence or generate coherent text. Language models are used in applications like text generation, translation, speech recognition, chatbots, and sentiment analysis.
+How to create Language Model? Modern language models often use neural networks, especially transformer-based architectures like GPT and BERT, to capture complex language patterns and context. Techniques like tokenization, Embedding. Contextual Understanding are combined together in different architecture, different hyperparameters, different datasets and this produces a model which predict the next word.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-07-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-07-03T00:00:00+00:00">
+    <meta property="article:tag" content="Natural Language Processing">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="AI Benchmarks">
+    <meta property="article:tag" content="Language Models">
+    <meta property="article:tag" content="Performance Evaluation">
+    <meta property="article:tag" content="NLP Testing">
+
+  <meta itemprop="name" content="NLP BenchMarks">
+  <meta itemprop="description" content="NLP BenchMarks What is Language Model? A language model is a computational model that understands and generates human language. It learns the patterns and structure of a language by analyzing large amounts of text data, allowing it to predict the next word in a sequence or generate coherent text. Language models are used in applications like text generation, translation, speech recognition, chatbots, and sentiment analysis.
+How to create Language Model? Modern language models often use neural networks, especially transformer-based architectures like GPT and BERT, to capture complex language patterns and context. Techniques like tokenization, Embedding. Contextual Understanding are combined together in different architecture, different hyperparameters, different datasets and this produces a model which predict the next word.">
+  <meta itemprop="datePublished" content="2024-07-03T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-07-03T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1579">
+  <meta itemprop="keywords" content="NLP Benchmarks,Language Model Evaluation,AI Performance Metrics,GLUE Benchmark,SuperGLUE,Model Testing,Natural Language Understanding,Performance Assessment">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NLP BenchMarks">
+  <meta name="twitter:description" content="NLP BenchMarks What is Language Model? A language model is a computational model that understands and generates human language. It learns the patterns and structure of a language by analyzing large amounts of text data, allowing it to predict the next word in a sequence or generate coherent text. Language models are used in applications like text generation, translation, speech recognition, chatbots, and sentiment analysis.
+How to create Language Model? Modern language models often use neural networks, especially transformer-based architectures like GPT and BERT, to capture complex language patterns and context. Techniques like tokenization, Embedding. Contextual Understanding are combined together in different architecture, different hyperparameters, different datasets and this produces a model which predict the next word.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6120-NLP-BenchMarks.jpg" alt="NLP-BenchMarks"></p>
+<h1 id="nlp-benchmarks">NLP BenchMarks</h1>
+<h2 id="what-is-language-model">What is Language Model?</h2>
+<p>A <strong>language model</strong> is a computational model that understands and generates human language. It learns the patterns and structure of a language by analyzing large amounts of text data, allowing it to predict the next word in a sequence or generate coherent text. Language models are used in applications like text generation, translation, speech recognition, chatbots, and sentiment analysis.</p>
+<h2 id="how-to-create-language-model">How to create Language Model?</h2>
+<p>Modern language models often use neural networks, especially transformer-based architectures like GPT and BERT, to capture complex language patterns and context. Techniques like tokenization, Embedding. Contextual Understanding are combined together in different architecture, different hyperparameters, different datasets and this produces a model which predict the next word.</p>
+<h2 id="what-are-popular-language-models">What are popular Language Models?</h2>
+<p>These models have been developed by leading tech companies and research organizations, reflecting advancements in natural language processing and understanding.</p>
+<ol>
+<li><strong>GPT-3.5</strong> (Generative Pre-trained Transformer 3.5) - Created by OpenAI</li>
+<li><strong>GPT-4</strong> - Created by OpenAI</li>
+<li><strong>BERT</strong> (Bidirectional Encoder Representations from Transformers) - Created by Google</li>
+<li><strong>T5</strong> (Text-To-Text Transfer Transformer) - Created by Google</li>
+<li><strong>PaLM</strong> (Pathways Language Model) - Created by Google</li>
+<li><strong>LaMDA</strong> (Language Model for Dialogue Applications) - Created by Google</li>
+<li><strong>LLaMA</strong> (Large Language Model Meta AI) - Created by Meta (Facebook)</li>
+<li><strong>Claude</strong> - Created by Anthropic</li>
+<li><strong>Bloom</strong> - Created by BigScience (an open collaboration)</li>
+<li><strong>Mistral</strong> - Created by Mistral AI</li>
+<li><strong>Falcon</strong> - Created by Technology Innovation Institute (TII), UAE</li>
+<li><strong>ChatGPT</strong> - Created by OpenAI</li>
+<li><strong>XLNet</strong> - Created by Google and Carnegie Mellon University</li>
+<li><strong>ERNIE</strong> (Enhanced Representation through Knowledge Integration) - Created by Baidu</li>
+</ol>
+<h2 id="how-do-we-know-which-model-is-the-best">How Do We Know Which Model is the Best?</h2>
+<p>LLM are not created for any specific tasks in mind. Earlier to LLM, NLP models were developed keeping specific problem(s) in mind. These specific problems may be classification, topic modelling, story generation, NER tagging, POS tagging etc.</p>
+<p>To measure the model&rsquo;s performance we need model (LLM or NLP), metric (like accuracy, precision, recall, BLEU, GLUE), and a dataset.</p>
+<p>To answer the question of model evaluation and comparison, research organizations have created several highly curated, labeled datasets. These datasets serve as benchmarks, each uniquely designed for specific tasks. These Benchmarks not only include these datasets but also provide corresponding metrics for evaluation. When researchers want to claim that their model outperforms others, they must use these benchmark datasets and metrics to validate their model&rsquo;s performance. Importantly, these benchmarks are not intended for training purposes. Additionally, in evaluating the efficiency of the model resource consumption and latency also plays a critical role. A model offering only marginal improvements but requiring significantly more resources may not be preferred for commercial applications.</p>
+<h2 id="what-is-score-leaderboard">What is score leaderboard?</h2>
+<p>We discussed earlier there are hundreds of Benchmark datasets and dozens of metrics. There are hundreds of organizations, individuals or group who keep develop new models, these models are evaluated by developers, reviewers or leaderboard publishers. And the final results are published in a tabular structure on a website. Every researcher&rsquo;s model&rsquo;s performance are shown on the score leaderboard. It helps community to understand which model to pickup for what specific tasks. There are dozens of score leaderboard published by different organizations. These score leaderboards may be specialized for particular modality or language or any other speciality.</p>
+<h2 id="what-are-popular-leaderboards">What are popular leaderboards?</h2>
+<p>Leaderboards serve as crucial benchmarks for researchers and developers to gauge the performance of their models against state-of-the-art systems.</p>
+<ol>
+<li>
+<p><strong>OpenAI Leaderboard</strong>:</p>
+<ul>
+<li>Focuses on GPT models and their various capabilities across different domains.</li>
+<li>Evaluates models based on tasks like text completion, code generation, translation, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>SuperGLUE</strong>:</p>
+<ul>
+<li>A benchmark leaderboard designed to evaluate LLMs on more complex natural language understanding tasks.</li>
+<li>Tasks include question answering, natural language inference, and word sense disambiguation.</li>
+</ul>
+</li>
+<li>
+<p><strong>EleutherAI Leaderboard</strong>:</p>
+<ul>
+<li>Showcases various LLMs, especially open-source ones, and evaluates them on different tasks.</li>
+<li>Provides comparisons between models like GPT-J, GPT-Neo, and others.</li>
+</ul>
+</li>
+<li>
+<p><strong>BIG-bench</strong> (Beyond the Imitation Game Benchmark):</p>
+<ul>
+<li>Evaluates models on a wide range of tasks, including reasoning, knowledge, and language understanding.</li>
+<li>Created to assess models in areas where human-level performance has not yet been achieved.</li>
+</ul>
+</li>
+<li>
+<p><strong>HELM (Holistic Evaluation of Language Models)</strong>:</p>
+<ul>
+<li>Focuses on comprehensive evaluation metrics beyond just accuracy, including robustness, fairness, and efficiency.</li>
+<li>Considers multiple dimensions of model performance.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hugging Face Leaderboard</strong>:</p>
+<ul>
+<li>Provides a platform for comparing LLMs across various datasets and tasks.</li>
+<li>Includes benchmarks for natural language understanding, generation, and more.</li>
+</ul>
+</li>
+<li>
+<p><strong>ARC (AI2 Reasoning Challenge) Leaderboard</strong>:</p>
+<ul>
+<li>Measures the performance of LLMs on scientific and commonsense reasoning tasks.</li>
+<li>Aimed at evaluating models on question-answering tasks that require deeper understanding.</li>
+</ul>
+</li>
+<li>
+<p><strong>WMT (Workshop on Machine Translation) Leaderboard</strong>:</p>
+<ul>
+<li>Focuses on evaluating LLMs on translation tasks across different language pairs.</li>
+<li>Often used for benchmarking state-of-the-art translation models.</li>
+</ul>
+</li>
+<li>
+<p><strong>MMLU (Massive Multitask Language Understanding) Leaderboard</strong>:</p>
+<ul>
+<li>Designed to evaluate models across a wide range of tasks, including exams, quizzes, and professional certification tests.</li>
+<li>Tests the generalization ability of LLMs across diverse domains.</li>
+</ul>
+</li>
+</ol>
+<h2 id="are-benchmarks-for-nlp-and-llm-different">Are Benchmarks for NLP and LLM different?</h2>
+<p>Nowadays, large language models (LLMs) are often associated with multimodal capabilities, encompassing text, audio, image, and video. However, when we refer to language models, we specifically mean text-based models. Keeping this in mind, NLP and Text capabilities of LLM models, while potentially different, should be evaluated using the same benchmarks to ensure a consistent and fair assessment.</p>
+<h2 id="what-are-the-popular-nlpllm-benchmarks">What are the Popular NLP/LLM Benchmarks?</h2>
+<p>Here are some important benchmarks commonly used in evaluating Large Language Models (LLMs). These benchmarks provide a comprehensive overview of various capabilities and aspects of LLMs, from knowledge and reasoning to coding and conversational skills. These benchmarks help in assessing different aspects of LLM performance, such as language understanding, reasoning, coding, and truthfulness, providing a standardized way to compare models and identify areas for improvement. For further details, you can explore the sources and learn more about how these benchmarks are applied and the specific datasets they use. Each of these benhmark has extremely curated labelled dataset.</p>
+<p>Some of the popular benchmarks datasets are as below.</p>
+<ol>
+<li>
+<p><strong>Graduate-Level Google-Proof Q&amp;A (GPQA)</strong>: GPQA is a challenging dataset designed to evaluate the capabilities of Large Language Models (LLMs) and scalable oversight mechanisms. Introduced by researchers, GPQA comprises 448 multiple-choice questions across the domains of biology, physics, and chemistry, crafted by domain experts to ensure high quality and difficulty. There are three variations of the test dataset with variable question lengths: extended (546), main (448), and diamond (198).</p>
+</li>
+<li>
+<p><strong>Undergraduate-level knowledge (MMLU)</strong>: The MMLU (Massive Multitask Language Understanding) benchmark is hosted on GitHub and evaluates knowledge across various subjects, including humanities, social sciences, and STEM fields, from elementary to professional levels.  <a href="https://github.com/hendrycks/test">MMLU Leadboard</a></p>
+</li>
+<li>
+<p><strong>Coding proficiency (HumanEval)</strong>: HumanEval assesses a model&rsquo;s ability to understand and generate code through programming problems. Information and the dataset are available on the OpenAI GitHub repository <a href="https://github.com/openai/human-eval">HumanEval</a></p>
+</li>
+<li>
+<p><strong>GLUE (General Language Understanding Evaluation)</strong>: GLUE&rsquo;s main GitHub page, which includes various tasks for evaluating language understanding, is available <a href="https://github.com/nyu-mll/GLUE-baselines">here</a>.</p>
+</li>
+<li>
+<p><strong>SuperGLUE</strong>: As an improved version of GLUE, more challenging tasks are included in SuperGLUE. Information is available on its website <a href="https://super.gluebenchmark.com/">here</a>.</p>
+</li>
+<li>
+<p><strong>Question Answering (SQuAD and AI2 Reasoning Challenge)</strong>: SQuAD (Stanford Question Answering Dataset) and the AI2 Reasoning Challenge are benchmarks for reading comprehension and reasoning. SQuAD information is available on its official website <a href="https://rajpurkar.github.io/SQuAD-explorer/">here</a>, and ARC details are on GitHub <a href="https://github.com/allenai/arc">here</a>.</p>
+</li>
+<li>
+<p><strong>TruthfulQA</strong>: The benchmark comprises 817 questions that span 38 categories, including health, law, finance and politics. We crafted questions that some humans would answer falsely due to a false belief or misconception. To perform well, models must avoid generating false answers learned from imitating human texts. <a href="https://github.com/sylinrl/TruthfulQA"></a></p>
+</li>
+<li>
+<p><strong>Mathematical Reasoning (MATH and GSM8K)</strong>: MATH includes competition-level math problems, with its GitHub repository <a href="https://github.com/hendrycks/math">here</a>, and GSM8K focuses on grade school math problems, available <a href="https://github.com/openai/grade-school-math">here</a>.</p>
+</li>
+<li>
+<p><strong>Chatbot performance (Chatbot Arena and MT Bench)</strong>: These benchmarks assess conversational fluency and goal-oriented success. More details about the Chatbot Arena can be found <a href="https://huggingface.co/spaces/stanford-crfm/arena">here</a>, while MT Bench is available <a href="https://github.com/lm-sys/FastChat">here</a>.</p>
+</li>
+<li>
+<p><strong>Commonsense reasoning (HellaSwag)</strong>: This benchmark focuses on evaluating real-world reasoning tasks by presenting scenarios with plausible and deceptive endings. Details and the dataset for HellaSwag can be found on GitHub <a href="https://github.com/rowanz/hellaswag">here</a>.</p>
+</li>
+<li>
+<p><strong>MBPP (Mostly Basic Python Programming)</strong>: MBPP focuses on evaluating Python programming tasks and is available on GitHub <a href="https://huggingface.co/datasets/google-research-datasets/mbpp">here</a>.</p>
+</li>
+<li>
+<p><strong>DROP (Discrete Reasoning Over Paragraphs)</strong>: DROP assesses reading comprehension and reasoning abilities by asking models to manipulate information from text. You can find it on GitHub <a href="https://paperswithcode.com/dataset/drop">here</a>.</p>
+</li>
+<li>
+<p><strong>BBHard (BigBench)</strong>: BIG-Bench Hard (BBH) is a subset of the BIG-Bench, a diverse evaluation suite for language models. BBH focuses on a suite of 23 challenging tasks from BIG-Bench that were found to be beyond the capabilities of current language models. These tasks are ones where prior language model evaluations did not outperform the average human-rater. The BBH tasks require multi-step reasoning, and it was found that few-shot prompting without Chain-of-Thought (CoT), as done in the BIG-Bench evaluations, substantially underestimates the best performance and capabilities of language models. When CoT prompting was applied to BBH tasks, it enabled PaLM to surpass the average human-rater performance on 10 of the 23 tasks, and Codex to surpass the average human-rater performance on 17 of the 23 tasks. <a href="https://github.com/google/BIG-bench">GitHub BigBench</a>. <a href="https://paperswithcode.com/dataset/bbh">paperswithcode</a></p>
+</li>
+<li>
+<p><strong>AI2 Reasoning Challenge (ARC)</strong>: The AI2’s Reasoning Challenge (ARC) dataset is a multiple-choice question-answering dataset, containing questions from science exams from grade 3 to grade 9. The dataset is split in two partitions: Easy and Challenge, where the latter partition contains the more difficult questions that require reasoning. Most of the questions have 4 answer choices, with &lt;1% of all the questions having either 3 or 5 answer choices. ARC includes a supporting KB of 14.3M unstructured text passages. <a href="https://paperswithcode.com/dataset/arc">ARC</a>. <a href="https://paperswithcode.com/sota/common-sense-reasoning-on-arc-easy">ARC Easy</a>, <a href="https://paperswithcode.com/sota/common-sense-reasoning-on-arc-challenge">ARC Challenge</a>.</p>
+</li>
+</ol>
+<h2 id="resources">Resources:</h2>
+<ul>
+<li><a href="https://www.vellum.ai/blog/llm-benchmarks-overview-limits-and-model-comparison">https://www.vellum.ai/blog/llm-benchmarks-overview-limits-and-model-comparison</a></li>
+<li><a href="https://www.turing.com/resources/understanding-llm-evaluation-and-benchmarks">https://www.turing.com/resources/understanding-llm-evaluation-and-benchmarks</a></li>
+<li><a href="https://humanloop.com/blog/llm-benchmarks">https://humanloop.com/blog/llm-benchmarks</a></li>
+<li><a href="https://www.confident-ai.com/blog/the-current-state-of-benchmarking-llms">https://www.confident-ai.com/blog/the-current-state-of-benchmarking-llms</a></li>
+<li><a href="https://arize.com/blog-course/llm-leaderboards-benchmarks/">https://arize.com/blog-course/llm-leaderboards-benchmarks/</a></li>
+<li><a href="https://deepgram.com/learn/llm-benchmarks-guide-to-evaluating-language-models">https://deepgram.com/learn/llm-benchmarks-guide-to-evaluating-language-models</a></li>
+</ul>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

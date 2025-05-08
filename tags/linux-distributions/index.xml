@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux Distributions on Agones</title>
+    <link>http://localhost:1313/tags/linux-distributions/</link>
+    <description>Recent content in Linux Distributions on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux-distributions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding Linux Distributions</title>
+      <link>http://localhost:1313/dsblog/Exploring-Linux-Distributions/</link>
+      <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Exploring-Linux-Distributions/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6160-Exploring-Linux-Distributions.jpg&#34; alt=&#34;Understanding Linux Distributions&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;understanding-linux-distributions&#34;&gt;Understanding Linux Distributions&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-are-linux-distributions&#34;&gt;What are Linux Distributions?&lt;/h2&gt;&#xA;&lt;p&gt;A &lt;strong&gt;Linux distribution&lt;/strong&gt; (often abbreviated as &amp;ldquo;distro&amp;rdquo;) is a version of the Linux operating system that includes the Linux kernel along with a variety of software packages, libraries, and system tools. Distributions vary in their package management systems, user interfaces, included software, and target audiences. They cater to different user needs, from desktop usage to server environments, embedded systems, and more.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

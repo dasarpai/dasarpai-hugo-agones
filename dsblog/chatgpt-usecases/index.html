@@ -1,0 +1,550 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>ChatGPT Usecases | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/chatgpt-usecases/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="ChatGPT Usecases">
+  <meta property="og:description" content="What is ChatGPT? ChatGPT is general purpose - “chat model” from OpenAI. It is a language model, which means if you type some text then it can understand and respond to you appropriately. At this point in time, it is not accepting voice commands, neither able to process images or videos. A general-purpose model means it can understand the question coming from any domain of life. A domain may be vertical or horizontal. A vertical domain means where a vendor is supplying a product or service for a specific type of customer. A horizontal domain is where a vendor supplies products or services for all types of customer. Healthcare, banking, logistic, insurance, agriculture, philosophy, history, and economics are one kind of verticals whereas BPO, Quality Management, Software Development, Taxation, HR, IT Security, Accounting, Office Administration, Catering, and Entertainment are other kind of domains. A general-purpose model can understand the questions from all aspects of life whether business vertical or horizontal or normal daily family or conflicts with other group members, family members, etc.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2023-01-04T15:50:00+05:30">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="NLP">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="Natural Language Processing">
+    <meta property="article:tag" content="ChatGPT">
+    <meta property="article:tag" content="GPT3">
+    <meta property="article:tag" content="OpenAI">
+
+  <meta itemprop="name" content="ChatGPT Usecases">
+  <meta itemprop="description" content="What is ChatGPT? ChatGPT is general purpose - “chat model” from OpenAI. It is a language model, which means if you type some text then it can understand and respond to you appropriately. At this point in time, it is not accepting voice commands, neither able to process images or videos. A general-purpose model means it can understand the question coming from any domain of life. A domain may be vertical or horizontal. A vertical domain means where a vendor is supplying a product or service for a specific type of customer. A horizontal domain is where a vendor supplies products or services for all types of customer. Healthcare, banking, logistic, insurance, agriculture, philosophy, history, and economics are one kind of verticals whereas BPO, Quality Management, Software Development, Taxation, HR, IT Security, Accounting, Office Administration, Catering, and Entertainment are other kind of domains. A general-purpose model can understand the questions from all aspects of life whether business vertical or horizontal or normal daily family or conflicts with other group members, family members, etc.">
+  <meta itemprop="datePublished" content="2023-01-04T15:50:00+05:30">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="1401">
+  <meta itemprop="keywords" content="ChatGPT,applications,,GPT,use,cases,,AI,language,models,,natural,language,processing,,conversational,AI,,OpenAI,technology,,AI,automation,,business,applications,,content,generation,,AI,assistant">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ChatGPT Usecases">
+  <meta name="twitter:description" content="What is ChatGPT? ChatGPT is general purpose - “chat model” from OpenAI. It is a language model, which means if you type some text then it can understand and respond to you appropriately. At this point in time, it is not accepting voice commands, neither able to process images or videos. A general-purpose model means it can understand the question coming from any domain of life. A domain may be vertical or horizontal. A vertical domain means where a vendor is supplying a product or service for a specific type of customer. A horizontal domain is where a vendor supplies products or services for all types of customer. Healthcare, banking, logistic, insurance, agriculture, philosophy, history, and economics are one kind of verticals whereas BPO, Quality Management, Software Development, Taxation, HR, IT Security, Accounting, Office Administration, Catering, and Entertainment are other kind of domains. A general-purpose model can understand the questions from all aspects of life whether business vertical or horizontal or normal daily family or conflicts with other group members, family members, etc.">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p><img src="/assets/images/dspost/dsp6019-ChatGPT-Usecases.jpg" alt="ChatGPT Usecases"></p>
+<h1 id="what-is-chatgpt">What is ChatGPT?</h1>
+<p>ChatGPT is <strong>general purpose</strong> - &ldquo;chat model&rdquo; from OpenAI. It is a <strong>language model</strong>, which means if you type some text then it can understand and respond to you appropriately. At this point in time, it is not accepting voice commands, neither able to process images or videos. A <strong>general-purpose model</strong> means it can understand the question coming from any domain of life. A domain may be vertical or horizontal. A vertical domain means where a vendor is supplying a product or service for a specific type of customer. A horizontal domain is where a vendor supplies products or services for all types of customer.  Healthcare, banking, logistic, insurance, agriculture, philosophy, history, and economics are one kind of verticals whereas
+BPO, Quality Management, Software Development, Taxation, HR, IT Security, Accounting, Office Administration, Catering, and Entertainment are other kind of domains. A <strong>general-purpose model</strong> can understand the questions from all aspects of life whether business vertical or horizontal or normal daily family or conflicts with other group members, family members, etc.</p>
+<p>Creating a general-purpose model is an extremely difficult task in AI. We are at the start of of 2023 and OpenAI&rsquo;s chat GPT is storming the market. With this kind of large language model, the AI journey is going to be very interesting. It is going to impact: the way we think, ask questions, solve problems, engage with others, share knowledge, value knowledge, and almost everything wherever knowledge is the key. In the coming time, people will improve their existing knowledge/information/data products. They will come up with domain-specific new products and the heart of those systems is going to be ChatGPT or similar products of the future. To create a ChatGPT kind of model you need millions of dollars, lots of data, hardware, and lots of time. But, running these systems is not easy in any way. You need expensive hardware to compute the parameters of these large language models. OpenAI said to perform a simple query on ChatGPT,  it takes 4-5 times more resources than the resources required on Google. But the kinds of results ChatGPT provides are far superior to SEO-optimized links thrown by Google on the screen. It is going to challenge Google.</p>
+<p>And wait, all this is based on GPT3. GPT4 is going to storm the market in the next couple of weeks or months.</p>
+<h1 id="chatgpt-usecases">ChatGPT Usecases.</h1>
+<p>As I mentioned ChatGPT is a general-purpose language model system, therefore, I tried to ask different kinds of questions from this and took screenshots of the answer that it has thrown for me. I have spent some good time on this, explored it, and created many good use-case scenarios. But in the case of ChatGPT sky is the limit, you can do much more than what I am sharing with you. Let&rsquo;s see some applications of ChatGPT.</p>
+<h2 id="career-counselling-with-chatgpt">Career Counselling with ChatGPT</h2>
+<p>Whether you are starting your career or in the mid of your career or want to switch your career, you have lots of questions. You don&rsquo;t get the right person to brainstorm or recommend. I asked some questions to ChatGPT and it can engage in a very interesting way and provide guidance like any human excerpt will provide.</p>
+<p><img src="/assets/images/dspost/chatgpt/ChatGPT-Career-Counselling.png" alt="Career-Counselling-with-ChatGPT"></p>
+<h2 id="fixing-website-coding-issue-with-chatgpt">Fixing Website Coding Issue with ChatGPT</h2>
+<p>I wanted to fix some issues which were related to website migration and it was having an impact on Google search. It gave me a correct solution with code.</p>
+<p><img src="/assets/images/dspost/chatgpt/ChatGPT-Fixing-Website-Coding-Issue.png" alt="Fixing-Website-Coding-Issue-with-ChatGPT"></p>
+<h2 id="learning-history-with-chatgpt">Learning History with ChatGPT</h2>
+<p>Normally we get obsessed with history and think it is fact. I asked some questions on history and it was much more mature than our TV debaters.</p>
+<p><img src="/assets/images/dspost/chatgpt/ChatGPT-Teaching-History.png" alt="Learning-History-with-ChatGPT"></p>
+<h2 id="poetry-with-chatgpt">Poetry with ChatGPT</h2>
+<p>Poetry is a work of a creative and artistic mind. It is not easy to write poetry that too on any subject. I asked ChatGPT to write Shakespearian-style poetry on “time and life”. And it will force you to think if this machine is not thinking then what is thinking?</p>
+<p><img src="/assets/images/dspost/chatgpt/ChatGPT-Writing-Poetry.png" alt="Poetry-with-ChatGPT"></p>
+<h2 id="predicting-jobmarket-trends-with-chatgpt">Predicting Jobmarket Trends with ChatGPT</h2>
+<p>After giving a context I asked ChatGPT to predict the impact of that on the Job market. And it is telling me all the pros and cons.</p>
+<p><img src="/assets/images/dspost/chatgpt/ChatGPT-Predicting-Market-Trends.png" alt="Predicting-Jobmarket-Trends-with-ChatGPT"></p>
+<h2 id="seo-keyword-search">SEO Keyword Search</h2>
+<p>Keyword planning is very tiring, boring, and painful work (at least for me). I provided some ideas to ChatGPT and asked it to recommend some keywords. It recommended some words, when I tried traffic for these words then it is reasonably good.</p>
+<p><img src="/assets/images/dspost/chatgpt/ChatGPT-SEO-Keyword-Search.png" alt="SEO-Keyword-Search"></p>
+<h2 id="translation-from-sanskrit-to-english-with-chatgpt">Translation from Sanskrit to English with ChatGPT</h2>
+<p>Sanskrit is a complex language. The translation is not easy. I asked chatGPT to translate this sloka into English and Vola!</p>
+<p><img src="/assets/images/dspost/chatgpt/ChatGPT-Translating-Sanskrit-Sloka.png" alt="Translating-Sanskrit-Sloka-with-ChatGPT"></p>
+<h2 id="google-search-vs-chatgpt-problem-solving">Google Search vs ChatGPT Problem Solving</h2>
+<p>I asked the same technical question to google search and chatGPT. But chatGPT gives me the answer which I can apply and solve my problem. And google search is giving me hundreds of links many of which are ads!</p>
+<p><img src="/assets/images/dspost/chatgpt/Answer-of-Google-vs-ChatGPT.jpg" alt="Answer-of-Google-vs-ChatGPT"></p>
+<h2 id="investment-advice">Investment Advice</h2>
+<p>On investment we have many questions, and we solve those in our way. I just wanted to check whether ChatGPT can solve this simple puzzle and what approach it takes for this, and here is the answer.
+<img src="/assets/images/dspost/chatgpt/ChatGPT-Investment-Advice.jpg" alt="Investment-Advice"></p>
+<h2 id="solving-coding-problems-like-leet">Solving Coding Problems like Leet</h2>
+<p>Coding questions of Leet are of very high quality. I didn&rsquo;t want to go into a complex problem, so provided URL of a simple question, and here is the answer. It is giving the entire code you can write into the code window and execute flawlessly or with minimum change.</p>
+<p><img src="/assets/images/dspost/chatgpt/ChatGPT-SolvingLeet-Problems.jpg" alt="SolvingLeet-Problem"></p>
+<h2 id="explain-complex-subject-matter">Explain Complex Subject Matter</h2>
+<p>I asked it to explain to me Quantum Computing in simple words and see what can be simpler than this.</p>
+<p><img src="/assets/images/dspost/chatgpt/ChatGPT-Explaining-Complex-Concepts.jpg" alt="ChatGPT-Simple-Quantum-Computing-Explanation"></p>
+<h2 id="write-ads-with-chatgpt">Write Ads with ChatGPT</h2>
+<p>Creating unique ads is always challenging. It is a very creative work. I thought to try creating some Facebook ads with ChatGPT. If you give better context and engage more then you can better answer than this.</p>
+<p><img src="/assets/images/dspost/chatgpt/ChatGPT-Creating-facebook-ads.jpg" alt="ChatGPT-facebook-ad"></p>
+<h2 id="creating-product-description-with-chatgpt">Creating Product Description with ChatGPT</h2>
+<p>Here I wanted to create a product description of Indian Thali. And see how it is describing the product and listing items.</p>
+<p><img src="/assets/images/dspost/chatgpt/ChatGPT-Creating-Product-Description.jpg" alt="North-Indian-Food-Platter"></p>
+<h2 id="create-a-wordpress-plugin">Create a WordPress plugin</h2>
+<p>Writing WordPress plug is a complicated task. Because it needs to take care of the existing framework and where to write that code. Apart from that when you want to integrate that with other systems like Twitter or Facebook it becomes more complicated. But ChatGPT is a good friend as well.</p>
+<p><img src="/assets/images/dspost/chatgpt/ChatGPT-Create-WordPress-Plugin-for-Twitter.jpg" alt="ChatGPT-Create-WordPress-Plugin-for-Twitter"></p>
+<h2 id="audit-and-fix-existing-code">Audit and fix existing code</h2>
+<p>If you have some issue with your code, and ask ChatGPT to review the code. This it can tell you what is wrong in the code and how to fix it.</p>
+<h2 id="customized-meal-plan">Customized Meal Plan</h2>
+<p>Most of my friends know I am very particular about my food. This time I had a long argument with ChatGPT about the food finally it suggested me something. I am not going to eat it. But see how it is remembering all the past discussions and improving answers every next time.</p>
+<p><img src="/assets/images/dspost/chatgpt/ChatGPT-Indian-Vegetarian-Meal-Plan.jpg" alt="ChatGPT-Indian-Vegetarian-Meal-Plan"></p>
+<h2 id="customzied-workout-plan">Customzied Workout Plan</h2>
+<p>This time I asked ChatGPT about exercise, body fitness, and Yoga. Now see, how it is understanding the difference and adjusting the workout plan.</p>
+<p><img src="/assets/images/dspost/chatgpt/ChatGPT-Morning-Workout-Plan.jpg" alt="ChatGPT-Morning-Workout-Plan"></p>
+<h2 id="generate-ideas">Generate Ideas</h2>
+<p>I asked ChatGPT to generate some ideas on a specific topic and it gives me a long list of ideas.
+<img src="/assets/images/dspost/chatgpt/ChatGPT-IdeaGeneration.jpg" alt="ChatGPT-IdeaGeneration"></p>
+<h2 id="summarise-article-or-books">Summarise Article or Books.</h2>
+<p>Sometimes you are in hurry and don’t have time to read a good book. Now, you won’t complain about that. Ask ChatGPT to summarise that for you. You can read that summary or listen to the summary.</p>
+<p><img src="/assets/images/dspost/chatgpt/ChatGPT-Summarize-Sapiens-Book.jpg" alt="ChatGPT-Summarize-Sapiens-Book"></p>
+<h1 id="conclusion">Conclusion</h1>
+<p>ChatGPT is very promising and disruptive technology from OpenAI. Shortly, it is going to change the market in a big way. How search market going to shape? Microsoft along with OpenAI has a stake in ChatGPT, so how it is going to affect services from Bing, and consequently, how is it going to affect the search market? What will be the cost of search services? What will be the impact of this on the advertisement business? What are the new products going to come into the market etc? We just need to wait and watch for the answers to these questions. If you are a technology investor/enthusiast then you must be planning to ride this huge wave. If you are an information consumer then your way of consuming information is going to change. It is going to shake many of the jobs from the market and going to create new job opportunities. It is a time for you to learn it now and shape your career before ChatGPT-based AI products and services destroy it for you.</p>
+<div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/nlp" class="category-badge">NLP</a><a href="/tags/machine-learning" class="category-badge">Machine Learning</a><a href="/tags/natural-language-processing" class="category-badge">Natural Language Processing</a><a href="/tags/chatgpt" class="category-badge">ChatGPT</a><a href="/tags/gpt3" class="category-badge">GPT3</a><a href="/tags/openai" class="category-badge">OpenAI</a><a href="/tags/ai-applications" class="category-badge">AI Applications</a><a href="/tags/language-models" class="category-badge">Language Models</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=ChatGPT%20Usecases&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fchatgpt-usecases%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fchatgpt-usecases%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fchatgpt-usecases%2f&title=ChatGPT%20Usecases" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fchatgpt-usecases%2f&title=ChatGPT%20Usecases" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=ChatGPT%20Usecases&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fchatgpt-usecases%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/AI-in-Energy-Management/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">AI in Energy Management</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/gpt-usecases/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">GPT Usecases</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#career-counselling-with-chatgpt">Career Counselling with ChatGPT</a></li>
+    <li><a href="#fixing-website-coding-issue-with-chatgpt">Fixing Website Coding Issue with ChatGPT</a></li>
+    <li><a href="#learning-history-with-chatgpt">Learning History with ChatGPT</a></li>
+    <li><a href="#poetry-with-chatgpt">Poetry with ChatGPT</a></li>
+    <li><a href="#predicting-jobmarket-trends-with-chatgpt">Predicting Jobmarket Trends with ChatGPT</a></li>
+    <li><a href="#seo-keyword-search">SEO Keyword Search</a></li>
+    <li><a href="#translation-from-sanskrit-to-english-with-chatgpt">Translation from Sanskrit to English with ChatGPT</a></li>
+    <li><a href="#google-search-vs-chatgpt-problem-solving">Google Search vs ChatGPT Problem Solving</a></li>
+    <li><a href="#investment-advice">Investment Advice</a></li>
+    <li><a href="#solving-coding-problems-like-leet">Solving Coding Problems like Leet</a></li>
+    <li><a href="#explain-complex-subject-matter">Explain Complex Subject Matter</a></li>
+    <li><a href="#write-ads-with-chatgpt">Write Ads with ChatGPT</a></li>
+    <li><a href="#creating-product-description-with-chatgpt">Creating Product Description with ChatGPT</a></li>
+    <li><a href="#create-a-wordpress-plugin">Create a WordPress plugin</a></li>
+    <li><a href="#audit-and-fix-existing-code">Audit and fix existing code</a></li>
+    <li><a href="#customized-meal-plan">Customized Meal Plan</a></li>
+    <li><a href="#customzied-workout-plan">Customzied Workout Plan</a></li>
+    <li><a href="#generate-ideas">Generate Ideas</a></li>
+    <li><a href="#summarise-article-or-books">Summarise Article or Books.</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

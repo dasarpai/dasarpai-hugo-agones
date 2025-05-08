@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting Started on Agones</title>
+    <link>http://localhost:1313/docs/getting-started/</link>
+    <description>Recent content in Getting Started on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quickstart: Create a Game Server</title>
+      <link>http://localhost:1313/docs/getting-started/create-gameserver/</link>
+      <pubDate>Wed, 02 Jan 2019 06:35:31 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/getting-started/create-gameserver/</guid>
+      <description>&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;The following prerequisites are required to create a GameServer:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;A Kubernetes cluster with the UDP port range 7000-8000 open on each node. &lt;a href=&#34;http://localhost:1313/docs/installation/creating-cluster/gke/#creating-the-firewall&#34;&gt;Creating the firewall.&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Agones controller installed in the targeted cluster&lt;/li&gt;&#xA;&lt;li&gt;kubectl properly configured&lt;/li&gt;&#xA;&lt;li&gt;Netcat which is already installed on most Linux/macOS distributions, for windows you can use &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/install-win10&#34;&gt;WSL&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;If you don’t have a Kubernetes cluster you can follow &lt;a href=&#34;http://localhost:1313/site/docs/installation/&#34;&gt;these instructions&lt;/a&gt; to create a cluster on Google Kubernetes Engine (GKE), Minikube or Azure Kubernetes Service (AKS), and install Agones.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Quickstart: Create a Game Server Fleet</title>
+      <link>http://localhost:1313/docs/getting-started/create-fleet/</link>
+      <pubDate>Wed, 02 Jan 2019 06:42:20 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/getting-started/create-fleet/</guid>
+      <description>&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;The following prerequisites are required to create a GameServer:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;A Kubernetes cluster with the UDP port range 7000-8000 open on each node. &lt;a href=&#34;http://localhost:1313/docs/installation/creating-cluster/gke/#creating-the-firewall&#34;&gt;Creating the firewall.&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Agones controller installed in the targeted cluster&lt;/li&gt;&#xA;&lt;li&gt;kubectl properly configured&lt;/li&gt;&#xA;&lt;li&gt;Netcat which is already installed on most Linux/macOS distributions, for windows you can use &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/install-win10&#34;&gt;WSL&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;If you don’t have a Kubernetes cluster you can follow &lt;a href=&#34;http://localhost:1313/site/docs/installation/&#34;&gt;these instructions&lt;/a&gt; to create a cluster on Google Kubernetes Engine (GKE), Minikube or Azure Kubernetes Service (AKS), and install Agones.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Quickstart: Create a Fleet Autoscaler</title>
+      <link>http://localhost:1313/docs/getting-started/create-fleetautoscaler/</link>
+      <pubDate>Wed, 02 Jan 2019 06:42:33 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/getting-started/create-fleetautoscaler/</guid>
+      <description>&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;p&gt;It is assumed that you have followed the instructions to &lt;a href=&#34;http://localhost:1313/docs/getting-started/create-fleet/&#34;&gt;Create a Game Server Fleet&lt;/a&gt;&#xA;and you have a running fleet of game servers.&lt;/p&gt;&#xA;&lt;h2 id=&#34;objectives&#34;&gt;Objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Create a Fleet Autoscaler in Kubernetes using Agones custom resource.&lt;/li&gt;&#xA;&lt;li&gt;Watch the Fleet scale up when allocating GameServers&lt;/li&gt;&#xA;&lt;li&gt;Watch the Fleet scale down when shutting down allocated GameServers&lt;/li&gt;&#xA;&lt;li&gt;Edit the autoscaler specification to apply live changes&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;1-create-a-fleet-autoscaler&#34;&gt;1. Create a Fleet Autoscaler&lt;/h3&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s create a Fleet Autoscaler using the following command :&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Quickstart: Create a Fleet Autoscaler with Webhook Policy</title>
+      <link>http://localhost:1313/docs/getting-started/create-webhook-fleetautoscaler/</link>
+      <pubDate>Wed, 02 Jan 2019 06:42:44 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/getting-started/create-webhook-fleetautoscaler/</guid>
+      <description>&lt;p&gt;In some cases, your game servers may need to use custom logic for scaling your fleet that is more complex than what&#xA;can be expressed using the Buffer policy in the fleetautoscaler. This guide shows how you can extend Agones&#xA;with an autoscaler webhook to implement a custom autoscaling policy.&lt;/p&gt;&#xA;&lt;p&gt;When you use an autoscaler webhook the logic computing the number of target replicas is delegated to an external&#xA;HTTP/S endpoint, such as one provided by a Kubernetes deployment and service in the same cluster (as shown in the&#xA;examples below). The fleetautoscaler will send a request to the webhook autoscaler&amp;rsquo;s &lt;code&gt;/scale&lt;/code&gt; endpoint every sync&#xA;period (currently 30s) with a JSON body, and scale the target fleet based on the data that is returned.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Quickstart: Edit a Game Server</title>
+      <link>http://localhost:1313/docs/getting-started/edit-first-gameserver-go/</link>
+      <pubDate>Wed, 02 Jan 2019 06:42:56 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/getting-started/edit-first-gameserver-go/</guid>
+      <description>&lt;p&gt;This guide addresses Google Kubernetes Engine and Minikube.  We would welcome a Pull Request to expand this to include other platforms as well.&lt;/p&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;A &lt;a href=&#34;https://golang.org/dl/&#34;&gt;Go&lt;/a&gt; environment&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.docker.com/get-started/&#34;&gt;Docker&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Agones installed on GKE or Minikube&lt;/li&gt;&#xA;&lt;li&gt;kubectl properly configured&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;To install on GKE, follow the install instructions (if you haven&amp;rsquo;t already) at&#xA;&lt;a href=&#34;http://localhost:1313/docs/installation/creating-cluster/gke/&#34;&gt;Setting up a Google Kubernetes Engine (GKE) cluster&lt;/a&gt;.&#xA;Also complete the &amp;ldquo;Enabling creation of RBAC resources&amp;rdquo; and &amp;ldquo;Installing Agones&amp;rdquo; sets of instructions on the same page.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

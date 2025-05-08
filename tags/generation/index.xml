@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Generation on Agones</title>
+    <link>http://localhost:1313/tags/generation/</link>
+    <description>Recent content in Generation on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/generation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hunyuan3D 2.0: Scaling Diffusion Models for High Resolution Textured 3D Assets Generation</title>
+      <link>http://localhost:1313/dsblog/hunyuan3d-20/</link>
+      <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/hunyuan3d-20/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6267-hunyuan3d-20.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;hunyuan3d-20-high-resolution-textured-3d-asset-generation&#34;&gt;Hunyuan3D 2.0: High-Resolution Textured 3D Asset Generation&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Briefing Document:&lt;/strong&gt; Hunyuan3D 2.0&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Source:&lt;/strong&gt; &lt;a href=&#34;https://arxiv.org/pdf/2501.12202&#34;&gt;Hunyuan3D 2.0&lt;/a&gt; Hunyuan3D 2.0: Scaling Diffusion Models for High Resolution Textured 3D Assets Generation&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Purpose:&lt;/strong&gt; This document summarizes the key aspects of the Hunyuan3D 2.0 system, a large-scale 3D synthesis system for generating high-resolution textured 3D assets.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Hunyuan3D Team (Multiple contributors listed in the source).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Publication Date:&lt;/strong&gt; Appears to be January 2025, based on the arXiv identifier (2501.12202).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,468 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Adapting AI Models to the Latest Information: Methods and Approaches | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2025-01-17-6202-adapting-ai-models-to-the-latest-information-methods-and-approaches/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Adapting AI Models to the Latest Information: Methods and Approaches">
+  <meta property="og:description" content="Adapting AI Models to the Latest Information: Methods and Approaches Introduction Artificial Intelligence offers numerous advantages over traditional search engines like Google or Bing, but it also has a notable limitation: its knowledge is often frozen in the past. Unless a model is retrained or updated with newly available data, it cannot respond effectively to current business, political, social, or scientific developments.
+To address this limitation, one popular approach is Retrieval-Augmented Generation (RAG), a method that combines AI models with up-to-date external data sources. You may have come across RAG frequently in recent discussions about AI advancements.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-01-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-17T00:00:00+00:00">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Models">
+    <meta property="article:tag" content="Latest Information">
+
+  <meta itemprop="name" content="Adapting AI Models to the Latest Information: Methods and Approaches">
+  <meta itemprop="description" content="Adapting AI Models to the Latest Information: Methods and Approaches Introduction Artificial Intelligence offers numerous advantages over traditional search engines like Google or Bing, but it also has a notable limitation: its knowledge is often frozen in the past. Unless a model is retrained or updated with newly available data, it cannot respond effectively to current business, political, social, or scientific developments.
+To address this limitation, one popular approach is Retrieval-Augmented Generation (RAG), a method that combines AI models with up-to-date external data sources. You may have come across RAG frequently in recent discussions about AI advancements.">
+  <meta itemprop="datePublished" content="2025-01-17T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-01-17T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1986">
+  <meta itemprop="keywords" content="adapting ai models to the latest information,ai models methods and approaches,keeping ai models up to date,latest information in ai,ai models update strategies,ai information retrieval,ai knowledge graph">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Adapting AI Models to the Latest Information: Methods and Approaches">
+  <meta name="twitter:description" content="Adapting AI Models to the Latest Information: Methods and Approaches Introduction Artificial Intelligence offers numerous advantages over traditional search engines like Google or Bing, but it also has a notable limitation: its knowledge is often frozen in the past. Unless a model is retrained or updated with newly available data, it cannot respond effectively to current business, political, social, or scientific developments.
+To address this limitation, one popular approach is Retrieval-Augmented Generation (RAG), a method that combines AI models with up-to-date external data sources. You may have come across RAG frequently in recent discussions about AI advancements.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6202-Adapting-AI-Models-to-the-Latest-Information.jpg" alt=""></p>
+<h1 id="adapting-ai-models-to-the-latest-information-methods-and-approaches">Adapting AI Models to the Latest Information: Methods and Approaches</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Artificial Intelligence offers numerous advantages over traditional search engines like Google or Bing, but it also has a notable limitation: its knowledge is often frozen in the past. Unless a model is retrained or updated with newly available data, it cannot respond effectively to current business, political, social, or scientific developments.</p>
+<p>To address this limitation, one popular approach is <strong>Retrieval-Augmented Generation (RAG)</strong>, a method that combines AI models with up-to-date external data sources. You may have come across RAG frequently in recent discussions about AI advancements.</p>
+<p>However, RAG is not the only solution. In this article, we will explore various other techniques that enable AI models to adopt new knowledge and provide answers based on the latest information. These methods focus on leveraging external data, enhancing model adaptability, and fine-tuning models to remain relevant and effective in dynamic environments.</p>
+<p>Let’s dive into the alternatives.</p>
+<h2 id="what-are-different-techniques-of-updating-intelligence-of-ai">What are different techniques of updating Intelligence of AI?</h2>
+<h3 id="1-fine-tuning-with-updated-data">1. <strong>Fine-Tuning with Updated Data</strong></h3>
+<ul>
+<li>Regularly fine-tune models on newly available datasets to incorporate recent knowledge.</li>
+<li>This is effective for domain-specific tasks where new data can be assimilated into the model.</li>
+<li>Example: Fine-tuning GPT models on updated medical journals or financial news for enhanced relevance.</li>
+</ul>
+<h3 id="2-plug-and-play-modules-adapters">2. <strong>Plug-and-Play Modules (Adapters)</strong></h3>
+<ul>
+<li>Use lightweight adapter models trained on recent data while keeping the base model fixed.</li>
+<li>Adapters can be swapped in and out to update knowledge without full model retraining.</li>
+<li>Example: Low-Rank Adaptation (LoRA) to quickly integrate new scientific papers or trends.</li>
+</ul>
+<h3 id="3-hybrid-models-symbolic--neural">3. <strong>Hybrid Models (Symbolic + Neural)</strong></h3>
+<ul>
+<li>Combine neural networks with symbolic reasoning systems.</li>
+<li>Symbolic systems (e.g., knowledge graphs) can dynamically integrate and query external, up-to-date knowledge sources.</li>
+<li>Example: Using Neo4j or RDF for dynamic fact-checking in AI-powered virtual assistants.</li>
+</ul>
+<h3 id="4-knowledge-bases-and-ontologies">4. <strong>Knowledge Bases and Ontologies</strong></h3>
+<ul>
+<li>Leverage structured knowledge bases (e.g., Wikidata, Google Knowledge Graph) for factual updates.</li>
+<li>Dynamic updates to these databases ensure queries are answered with the latest facts.</li>
+<li>Example: Using SPARQL queries to fetch real-time information for AI-powered question-answering systems.</li>
+</ul>
+<h3 id="5-prompt-engineering-with-apis">5. <strong>Prompt Engineering with APIs</strong></h3>
+<ul>
+<li>Use APIs to fetch real-time data and integrate it into model prompts.</li>
+<li>This approach combines generative AI capabilities with up-to-the-minute information.</li>
+<li>Example: Embedding API results (e.g., weather, stock prices) into prompts to generate accurate responses.</li>
+</ul>
+<h3 id="6-streaming-data-integration">6. <strong>Streaming Data Integration</strong></h3>
+<ul>
+<li>Incorporate real-time data streams into models using tools like Kafka or Elasticsearch.</li>
+<li>Models can query indexed data streams for answers based on the latest events.</li>
+<li>Example: Real-time news summarization or answering questions about live sports events.</li>
+</ul>
+<h3 id="7-interactive-learning-systems">7. <strong>Interactive Learning Systems</strong></h3>
+<ul>
+<li>Use reinforcement learning with human feedback (RLHF) or active learning to continuously refine model knowledge.</li>
+<li>Example: Models retrained based on user interactions or corrections, such as OpenAI’s ChatGPT feedback loops.</li>
+</ul>
+<h3 id="8-augmented-knowledge-injection">8. <strong>Augmented Knowledge Injection</strong></h3>
+<ul>
+<li>Periodically update models by injecting pre-processed external knowledge into their latent space.</li>
+<li>This avoids full retraining but enhances context understanding.</li>
+<li>Example: Adding summarized insights from new research papers into embeddings.</li>
+</ul>
+<h3 id="9-semantic-search-integration">9. <strong>Semantic Search Integration</strong></h3>
+<ul>
+<li>Combine a semantic search engine with the model to retrieve and rank contextually relevant information dynamically.</li>
+<li>Example: Using a vector database (like Pinecone or FAISS) for document embeddings and linking it to the AI model for retrieval.</li>
+</ul>
+<h3 id="10-multi-modal-models-with-external-inputs">10. <strong>Multi-Modal Models with External Inputs</strong></h3>
+<ul>
+<li>Use multi-modal models that can process text, images, and other inputs alongside real-time data.</li>
+<li>Example: Combining text-based Q&amp;A with visual data from charts or real-time geospatial data for weather analysis.</li>
+</ul>
+<h3 id="11-on-demand-query-execution">11. <strong>On-Demand Query Execution</strong></h3>
+<ul>
+<li>Equip models with capabilities to execute SQL or API queries directly for live data retrieval.</li>
+<li>Example: A model querying a SQL database for inventory details when prompted.</li>
+</ul>
+<h3 id="12-human-in-the-loop-hitl">12. <strong>Human-in-the-Loop (HITL)</strong></h3>
+<ul>
+<li>Use humans to verify and inject updated knowledge during model interactions, creating a feedback loop for improvement.</li>
+<li>Example: Content moderation teams updating AI with breaking news in real-time.</li>
+</ul>
+<h3 id="13-knowledge-distillation-from-new-models">13. <strong>Knowledge Distillation from New Models</strong></h3>
+<ul>
+<li>Transfer knowledge from newer, specialized models into existing models via distillation.</li>
+<li>Example: Using a smaller, task-specific model to teach a larger model new domain knowledge.</li>
+</ul>
+<h3 id="14-cognitive-architecture-systems">14. <strong>Cognitive Architecture Systems</strong></h3>
+<ul>
+<li>Use architectures like ACT-R or SOAR that mimic human reasoning to adapt dynamically to new inputs.</li>
+<li>Example: Adaptive AI systems in gaming or dynamic decision-making.</li>
+</ul>
+<h2 id="how-to-create-adaptors-and-how-to-use-them">How to create Adaptor&rsquo;s and how to use them?</h2>
+<p>We can create different adaptors for a selected LLM. These adapators are domain specific, therefore we need domain specific data to create these. We also need original model and then we can create dozens of adaptor with different domain knowledge and use those adaptor along with original model to answer.</p>
+<h3 id="1-training-adapters-with-domain-specific-data">1. <strong>Training Adapters with Domain-Specific Data</strong></h3>
+<ul>
+<li><strong>Base Model</strong>: Start with a large, pre-trained model (e.g., GPT, BERT).</li>
+<li><strong>Domain Data</strong>: Collect domain-specific datasets for each area of expertise (e.g., finance, healthcare, legal, etc.).</li>
+<li><strong>Adapter Training</strong>: Train lightweight adapter modules on the domain data while keeping the base model&rsquo;s parameters frozen. These adapters are small neural network layers inserted between the layers of the original model.
+<ul>
+<li>This approach avoids retraining the entire model, saving computational resources.</li>
+<li>Each adapter learns domain-specific features without interfering with the original model.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-creating-multiple-adapters">2. <strong>Creating Multiple Adapters</strong></h3>
+<ul>
+<li>You can create multiple adapters, each trained on data from a different domain (e.g., Adapter A for finance, Adapter B for healthcare, etc.).</li>
+<li>This modularity allows for easy switching between adapters based on the context or domain of the query.</li>
+</ul>
+<h3 id="3-using-adapters-for-inference">3. <strong>Using Adapters for Inference</strong></h3>
+<ul>
+<li>During inference, the base model and the adapter work together:
+<ul>
+<li>The <strong>base model</strong> provides general language understanding.</li>
+<li>The <strong>adapter</strong> augments it with domain-specific knowledge, tailoring the response to the desired domain.</li>
+</ul>
+</li>
+<li>Adapters are selectively loaded into the base model based on the task or input. For example:
+<ul>
+<li>Finance-related queries -&gt; Load the Finance Adapter.</li>
+<li>Healthcare-related queries -&gt; Load the Healthcare Adapter.</li>
+</ul>
+</li>
+</ul>
+<h3 id="benefits-of-this-approach">Benefits of This Approach:</h3>
+<ul>
+<li><strong>Scalability</strong>: You can create dozens of adapters for different domains without retraining the base model.</li>
+<li><strong>Efficiency</strong>: Adapters are lightweight and computationally efficient compared to fine-tuning the entire model.</li>
+<li><strong>Modularity</strong>: Adapters can be easily swapped in or combined for multi-domain applications.</li>
+</ul>
+<h3 id="example-scenario">Example Scenario:</h3>
+<ol>
+<li><strong>Base Model</strong>: A general-purpose language model like BERT or GPT.</li>
+<li><strong>Domain Adapters</strong>:
+<ul>
+<li>Adapter A: Trained on financial news and datasets.</li>
+<li>Adapter B: Trained on medical literature.</li>
+<li>Adapter C: Trained on legal documents.</li>
+</ul>
+</li>
+<li><strong>Inference</strong>:
+<ul>
+<li>Query: &ldquo;Explain inflation trends in 2024&rdquo; -&gt; Use Adapter A (Finance).</li>
+<li>Query: &ldquo;Symptoms of diabetes&rdquo; -&gt; Use Adapter B (Healthcare).</li>
+</ul>
+</li>
+</ol>
+<p>By using this modular approach, you achieve a flexible, domain-specific adaptation without losing the general capabilities of the original model.</p>
+<h2 id="where-do-we-add-these-adapter-layer-during-the-training">Where do we add these Adapter layer during the training?</h2>
+<p>Adapters are typically <strong>inserted within the layers of the original base model</strong>, rather than just at the end.</p>
+<h3 id="1-insertion-points-of-adapters">1. <strong>Insertion Points of Adapters</strong></h3>
+<ul>
+<li><strong>Between Transformer Layers</strong>: Adapters are usually added <strong>between the layers of the transformer architecture</strong> in models like BERT, GPT, or T5.
+<ul>
+<li>For example, in a 12-layer transformer, an adapter module might be inserted after each attention block or feed-forward network within a layer.</li>
+</ul>
+</li>
+<li>This allows the adapters to capture and modify intermediate representations, making them highly effective for domain-specific tasks.</li>
+</ul>
+<h3 id="2-why-adapters-are-inserted-within-layers">2. <strong>Why Adapters Are Inserted Within Layers</strong></h3>
+<ul>
+<li><strong>Fine-Grained Control</strong>: By being integrated into each layer, adapters can influence intermediate computations, providing more precise domain-specific adjustments.</li>
+<li><strong>Efficient Adaptation</strong>: Adapters only modify a small portion of the model&rsquo;s forward pass, keeping the rest of the base model intact.</li>
+<li><strong>Preservation of Base Knowledge</strong>: Since the original model remains frozen, its general knowledge isn&rsquo;t overwritten, and adapters act as an augmentation layer.</li>
+</ul>
+<h3 id="3-structure-of-an-adapter">3. <strong>Structure of an Adapter</strong></h3>
+<p>An adapter module is usually lightweight and consists of:</p>
+<ul>
+<li><strong>Down-Projection</strong>: Reduces the dimensionality of the input (e.g., from 768 to 64 dimensions).</li>
+<li><strong>Non-Linear Activation</strong>: Applies a non-linearity like ReLU or GeLU.</li>
+<li><strong>Up-Projection</strong>: Projects the reduced dimensions back to the original size (e.g., from 64 to 768 dimensions).</li>
+<li><strong>Skip Connection</strong>: The original input is added back to the adapter&rsquo;s output to preserve the base model&rsquo;s knowledge (residual connection).</li>
+</ul>
+<h3 id="4-examples-of-adapter-placement">4. <strong>Examples of Adapter Placement</strong></h3>
+<ul>
+<li>In <strong>BERT</strong>:
+<ul>
+<li>Adapters are placed after the <strong>feed-forward layer</strong> or <strong>attention block</strong> in each transformer layer.</li>
+</ul>
+</li>
+<li>In <strong>T5</strong>:
+<ul>
+<li>Adapters are added to both the <strong>encoder</strong> and <strong>decoder layers</strong>, allowing domain adaptation in both input understanding and output generation.</li>
+</ul>
+</li>
+<li>In <strong>GPT</strong>:
+<ul>
+<li>Adapters are inserted within the <strong>decoder blocks</strong> after key sub-components like the multi-head attention or feed-forward layers.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-flexibility-in-placement">5. <strong>Flexibility in Placement</strong></h3>
+<p>The placement of adapters can vary depending on the use case:</p>
+<ul>
+<li><strong>Shallow Adapters</strong>: Placed only in the lower layers of the model. Suitable for tasks where surface-level domain knowledge is sufficient.</li>
+<li><strong>Deep Adapters</strong>: Placed in the upper layers. Useful for tasks requiring complex reasoning or deep domain-specific understanding.</li>
+<li><strong>Full Adapters</strong>: Placed in all transformer layers for comprehensive domain adaptation.</li>
+</ul>
+<h3 id="benefits-of-in-layer-placement">Benefits of In-Layer Placement:</h3>
+<ol>
+<li><strong>Versatility</strong>: Adapters can tweak representations at multiple stages of the model&rsquo;s computation.</li>
+<li><strong>Lightweight</strong>: Only a few additional parameters are added at each layer, minimizing computational overhead.</li>
+<li><strong>Composability</strong>: Multiple adapters for different domains can be used together, even selectively activated at different layers.</li>
+</ol>
+<p>This strategic placement is key to adapters&rsquo; success in making models domain-aware while preserving their general-purpose capabilities.</p>
+<h2 id="in-decoder-transformers-irrespetive-of-techniques-used-we-predict-the-next-toekn">In Decoder Transformers, irrespetive of techniques used, we predict the next toekn.</h2>
+<p><strong>All transformer-based language models, regardless of the method used (e.g., fine-tuning, adapters, RAG, etc.), rely on predicting the next token</strong> during both training and inference. This next-token prediction is at the core of their functionality. Here&rsquo;s a breakdown:</p>
+<h3 id="1-core-mechanism-next-token-prediction">1. <strong>Core Mechanism: Next-Token Prediction</strong></h3>
+<ul>
+<li>The fundamental task of models like GPT, BERT, or T5 is to predict the probability distribution of the <strong>next token</strong> given a sequence of prior tokens.</li>
+<li><strong>Training Objective</strong>: These models are trained to minimize the error (e.g., cross-entropy loss) between the predicted token probabilities and the actual tokens in the training data.
+<ul>
+<li>For <strong>causal language models</strong> (e.g., GPT), they predict the next token in a left-to-right fashion.</li>
+<li>For <strong>masked language models</strong> (e.g., BERT), they predict missing (masked) tokens within a sequence.</li>
+</ul>
+</li>
+<li>At inference, they generate the next token iteratively until a stopping condition is met (e.g., end of sentence or reaching token limit).</li>
+</ul>
+<h3 id="2-how-this-applies-to-all-methods">2. <strong>How This Applies to All Methods</strong></h3>
+<p>Regardless of how the model is fine-tuned, adapted, or augmented, the prediction task remains the same:</p>
+<ul>
+<li><strong>Fine-Tuning</strong>: Adjusts the model weights to improve token predictions for a specific domain or task.</li>
+<li><strong>Adapters</strong>: Modify intermediate representations to make token predictions more domain-relevant.</li>
+<li><strong>Retrieval-Augmented Generation (RAG)</strong>: Retrieves external knowledge, integrates it into the context, and feeds the extended input back to the model for next-token prediction.</li>
+<li><strong>Prompt Engineering</strong>: Reformulates the input so that the model can use its next-token prediction capability to produce the desired output.</li>
+</ul>
+<h3 id="3-why-next-token-prediction-works-for-diverse-tasks">3. <strong>Why Next-Token Prediction Works for Diverse Tasks</strong></h3>
+<p>The power of next-token prediction lies in how language tasks can be reformulated as a sequence modeling problem:</p>
+<ul>
+<li><strong>Question-Answering</strong>: Predict the next tokens that form the answer after a given question.</li>
+<li><strong>Translation</strong>: Predict the tokens in the target language after seeing the input text in the source language.</li>
+<li><strong>Summarization</strong>: Predict a condensed version of the input tokens.</li>
+<li><strong>Code Generation</strong>: Predict the next tokens that form valid code based on the input.</li>
+<li><strong>Reasoning</strong>: Predict the logical conclusion as the next token(s) based on prior context.</li>
+</ul>
+<h3 id="4-in-practice">4. <strong>In Practice</strong></h3>
+<p>Even when advanced methods like adapters, fine-tuning, or retrieval are applied, these techniques influence the <strong>context</strong> or <strong>internal representations</strong>, but the model&rsquo;s underlying behavior is still about maximizing the likelihood of the next token. For example:</p>
+<ul>
+<li>In RAG, the external retrieval adds additional context tokens for the model to consider during next-token prediction.</li>
+<li>In adapter-based approaches, the adapters influence intermediate computations, but the ultimate output is still token-by-token generation.</li>
+</ul>
+<h3 id="5-implications-of-next-token-prediction">5. <strong>Implications of Next-Token Prediction</strong></h3>
+<ul>
+<li><strong>Generality</strong>: Since every language task can be broken down into sequential token prediction, the same model architecture works for a wide range of applications.</li>
+<li><strong>Limitations</strong>: Next-token prediction does not inherently ensure reasoning, factual accuracy, or coherence over long contexts, leading to challenges like hallucinations or irrelevant outputs.</li>
+<li><strong>Flexibility</strong>: Advanced methods like retrieval, fine-tuning, and adapters enhance the model&rsquo;s ability to predict better tokens without altering the fundamental process.</li>
+</ul>
+<p>So, no matter what strategy is employed, <strong>the essence of transformer-based models always boils down to predicting the next token, one step at a time.</strong></p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

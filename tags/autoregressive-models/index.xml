@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Autoregressive Models on Agones</title>
+    <link>http://localhost:1313/tags/autoregressive-models/</link>
+    <description>Recent content in Autoregressive Models on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/autoregressive-models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>State of the Art Image Generation Models in Computer Vision: A Comprehensive Overview</title>
+      <link>http://localhost:1313/dsblog/state-of-the-art-image-generation-models-in-computer-vision/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/state-of-the-art-image-generation-models-in-computer-vision/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6219-State-of-the-Art-Computer-Vision-Models.jpg&#34; alt=&#34;State-of-the-Art 3D Image Generation Models&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;state-of-the-art-computer-vision-models&#34;&gt;State of the Art Computer Vision Models&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-are-the-different-methods-of-image-generation&#34;&gt;What are the different methods of Image generation?&lt;/h2&gt;&#xA;&lt;p&gt;There are several methods for image generation. Diffusion models are currently the  state-of-the-art  due to their balance of quality, flexibility, and scalability. However, other methods like GANs and autoregressive models remain relevant for specific use cases. Let&amp;rsquo;s see them one by one.&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-diffusion-models&#34;&gt;&lt;strong&gt;1. Diffusion Models&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Diffusion models are a class of generative models that work by gradually adding noise to data (e.g., images) and then learning to reverse this process to generate new data. Here&amp;rsquo;s how it works:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

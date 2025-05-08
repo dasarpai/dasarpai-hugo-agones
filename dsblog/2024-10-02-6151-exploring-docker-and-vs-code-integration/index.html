@@ -1,0 +1,726 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Exploring Docker and VS Code Integration | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2024-10-02-6151-exploring-docker-and-vs-code-integration/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Exploring Docker and VS Code Integration">
+  <meta property="og:description" content="Exploring Docker and VS Code Integration Is this article for me? If you are interested in docker, containers, VS Code and development and looking answers for the following questions then keep reading.
+Question: What is use of target in docker container’s volume? Question: If I remove the contents of /vscode folder then what will happen? Question: When I have VS Code installed on my machine then why I need “VS Code Remote - Containers”? Question: Can I use “VS Code Remote - Containers” with local VS Code? Question: Can I use “VS Code Remote - Containers” without local VS Code? Question: What are formatters, linters, debuggers, profiler etc other related terms? Question: I have datasets on my local drive d:/project-datasets. How to access them from docker? Question: What is use of target in docker container’s volume? I have a volume in container in docker. The volume name is minikube-config.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-10-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-02T00:00:00+00:00">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="Visual Studio Code">
+    <meta property="article:tag" content="Development Tools">
+    <meta property="article:tag" content="DevOps">
+    <meta property="article:tag" content="Containerization">
+    <meta property="article:tag" content="Development Environment">
+
+  <meta itemprop="name" content="Exploring Docker and VS Code Integration">
+  <meta itemprop="description" content="Exploring Docker and VS Code Integration Is this article for me? If you are interested in docker, containers, VS Code and development and looking answers for the following questions then keep reading.
+Question: What is use of target in docker container’s volume? Question: If I remove the contents of /vscode folder then what will happen? Question: When I have VS Code installed on my machine then why I need “VS Code Remote - Containers”? Question: Can I use “VS Code Remote - Containers” with local VS Code? Question: Can I use “VS Code Remote - Containers” without local VS Code? Question: What are formatters, linters, debuggers, profiler etc other related terms? Question: I have datasets on my local drive d:/project-datasets. How to access them from docker? Question: What is use of target in docker container’s volume? I have a volume in container in docker. The volume name is minikube-config.">
+  <meta itemprop="datePublished" content="2024-10-02T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-10-02T00:00:00+00:00">
+  <meta itemprop="wordCount" content="3922">
+  <meta itemprop="keywords" content="Docker integration,VS Code containers,development environments,DevContainers,containerized development,VS Code extensions,remote development,development workflow,container management">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exploring Docker and VS Code Integration">
+  <meta name="twitter:description" content="Exploring Docker and VS Code Integration Is this article for me? If you are interested in docker, containers, VS Code and development and looking answers for the following questions then keep reading.
+Question: What is use of target in docker container’s volume? Question: If I remove the contents of /vscode folder then what will happen? Question: When I have VS Code installed on my machine then why I need “VS Code Remote - Containers”? Question: Can I use “VS Code Remote - Containers” with local VS Code? Question: Can I use “VS Code Remote - Containers” without local VS Code? Question: What are formatters, linters, debuggers, profiler etc other related terms? Question: I have datasets on my local drive d:/project-datasets. How to access them from docker? Question: What is use of target in docker container’s volume? I have a volume in container in docker. The volume name is minikube-config.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6151-Exploring-Docker-and-VS-Code-Integration.jpg" alt="Exploring Docker and VS Code Integration"></p>
+<h1 id="exploring-docker-and-vs-code-integration">Exploring Docker and VS Code Integration</h1>
+<h2 id="is-this-article-for-me">Is this article for me?</h2>
+<p>If you are interested in docker, containers, VS Code and development and looking answers for the following questions then keep reading.</p>
+<ul>
+<li>Question: What is use of target in docker container&rsquo;s volume?</li>
+<li>Question: If I remove the contents of /vscode folder then what will happen?</li>
+<li>Question: When I have VS Code installed on my machine then why I need &ldquo;VS Code Remote - Containers&rdquo;?</li>
+<li>Question: Can I use &ldquo;VS Code Remote - Containers&rdquo; with local VS Code?</li>
+<li>Question: Can I use &ldquo;VS Code Remote - Containers&rdquo; without local VS Code?</li>
+<li>Question: What are formatters, linters, debuggers, profiler etc other related terms?</li>
+<li>Question: I have datasets on my local drive d:/project-datasets. How to access them from docker?</li>
+</ul>
+<h2 id="question-what-is-use-of-target-in-docker-containers-volume">Question: What is use of target in docker container&rsquo;s volume?</h2>
+<p>I have a volume in container in docker. The volume name is minikube-config.</p>
+<p>This volume has following information. What does this mean?</p>
+<p>Container name: magical_williams
+Image : mcr.microsoft.com/devcontainers/universal:2
+Port: &ndash;
+Target /workspaces/microsoft-generative-ai-for-beginners
+/var/lib/docker
+/home/vscode/.minikube
+/vscode
+/tmp/vscode-wayland-95f9fcad-6416-4d07-b97f-5a14dcefde96.sock</p>
+<p><strong>Answer:</strong><br>
+This output provides details about a Docker container&rsquo;s configuration and volumes. Here&rsquo;s what each section means:</p>
+<h3 id="container-information">Container Information:</h3>
+<ol>
+<li>
+<p><strong>Container Name</strong>: <code>magical_williams</code></p>
+<ul>
+<li>The container has been given the name <code>magical_williams</code>. Docker names containers by default unless specified otherwise.</li>
+</ul>
+</li>
+<li>
+<p><strong>Image</strong>: <code>mcr.microsoft.com/devcontainers/universal:2</code></p>
+<ul>
+<li>The container is using an image from Microsoft&rsquo;s container registry, specifically the <code>devcontainers/universal</code> image, version <code>2</code>. This is likely a pre-configured development environment with a variety of tools.</li>
+</ul>
+</li>
+<li>
+<p><strong>Port/Target</strong>: <code>--</code></p>
+<ul>
+<li>This section is empty, indicating that no ports have been explicitly published or mapped to the host from this container.</li>
+</ul>
+</li>
+</ol>
+<h3 id="volume-mounts-paths-inside-the-container">Volume Mounts (Paths inside the container):</h3>
+<ol>
+<li>
+<p><strong><code>/workspaces/microsoft-generative-ai-for-beginners</code></strong>:</p>
+<ul>
+<li>A directory inside the container, likely containing the workspace for a project related to generative AI for beginners. This might be where your project or code resides.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>/var/lib/docker</code></strong>:</p>
+<ul>
+<li>This directory typically holds Docker&rsquo;s internal data, such as images, containers, volumes, and more. However, in this case, it’s mounted in the container for some reason, possibly for direct manipulation of Docker resources.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>/home/vscode/.minikube</code></strong>:</p>
+<ul>
+<li>This path suggests that <code>minikube</code> (a tool for running Kubernetes locally) is installed or configured in this container. The <code>.minikube</code> directory usually holds configurations and state for <code>minikube</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>/vscode</code></strong>:</p>
+<ul>
+<li>This is likely a path associated with VS Code, especially given the container is using a <code>vscode</code> environment. This could hold various configuration files, extensions, or project settings.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>/tmp/vscode-wayland-95f9fcad-6416-4d07-b97f-5a14dcefde96.sock</code></strong>:</p>
+<ul>
+<li>This appears to be a socket file used for communication between processes within the container, likely related to Wayland (a display server protocol) or VS Code&rsquo;s remote server functionality.</li>
+</ul>
+</li>
+</ol>
+<h2 id="question-if-i-remove-the-contents-of-vscode-folder-then-what-will-happen">Question: If I remove the contents of /vscode folder then what will happen?</h2>
+<p>If you remove the contents of the <code>/vscode</code> folder inside your Docker container, the following things might happen depending on what the folder contains:</p>
+<ol>
+<li>
+<p><strong>VS Code Server Settings and Configurations</strong>:</p>
+<ul>
+<li>The <code>/vscode</code> folder likely contains settings, extensions, or workspace configurations related to VS Code. Deleting it could result in:
+<ul>
+<li>Loss of any <strong>installed VS Code extensions</strong> inside the container.</li>
+<li>Removal of <strong>workspace-specific settings</strong> (e.g., <code>.vscode/settings.json</code>), which could affect how the project behaves or looks inside the VS Code editor.</li>
+<li>Loss of configurations for things like <strong>formatters, linters, debuggers</strong>, or other tools integrated with VS Code.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Remote Development Connectivity</strong>:</p>
+<ul>
+<li>If you&rsquo;re using <strong>&ldquo;VS Code Remote - Containers&rdquo;</strong>, this folder may hold the <strong>VS Code server</strong> that runs inside the container to communicate with your local VS Code instance. Removing the folder could:
+<ul>
+<li>Cause VS Code to lose connection to the container or fail to work with it until the VS Code server is reinstalled or reset.</li>
+<li>Potentially disrupt the remote development workflow until VS Code reestablishes itself in the container.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Temporary Files and Cache</strong>:</p>
+<ul>
+<li>If the folder contains temporary files or caches, these will be recreated when necessary (e.g., when you open VS Code in the container again), but it might cause:
+<ul>
+<li>A slight delay as the <strong>environment and extensions are reloaded</strong> the next time you use VS Code with the container.</li>
+<li>Some loss of <strong>unsaved configurations</strong> if there were custom settings being temporarily held in that folder.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="impact-summary">Impact Summary:</h3>
+<ul>
+<li><strong>Workspace-related settings and extensions</strong> would be reset or lost.</li>
+<li><strong>VS Code Remote development setup</strong> might break until the necessary components (VS Code server) are reinitialized.</li>
+<li><strong>Temporary files</strong> would be recreated but could cause minor delays.</li>
+</ul>
+<p>If you rely on VS Code extensions and configurations for your development environment, it&rsquo;s best to avoid removing this folder unless you&rsquo;re prepared to reinstall or reset those settings.</p>
+<h2 id="question-when-i-have-vs-code-installed-on-my-machine-then-why-i-need-vs-code-remote---containers">Question: When I have VS Code installed on my machine then why I need &ldquo;VS Code Remote - Containers&rdquo;?</h2>
+<p>VS Code is a powerful code editor that can run locally on your machine. However, <strong>&ldquo;VS Code Remote - Containers&rdquo;</strong> offers additional benefits, particularly for scenarios where isolating your development environment from your local machine is crucial. Here’s why you might want to use <strong>&ldquo;VS Code Remote - Containers&rdquo;</strong> even if you have VS Code installed locally:</p>
+<h3 id="1-consistent-development-environment">1. <strong>Consistent Development Environment</strong></h3>
+<ul>
+<li><strong>Problem</strong>: Different projects often require different development environments (e.g., Python versions, Node.js versions, specific libraries). Setting these up locally can create conflicts between projects.</li>
+<li><strong>Solution</strong>: <strong>Remote - Containers</strong> allow you to define a Docker-based environment for each project. Inside a container, you can:
+<ul>
+<li>Use different programming languages and dependencies without affecting your local system.</li>
+<li>Ensure consistency across team members. If you share the container setup, every developer gets the same environment.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-avoiding">2. <strong>Avoiding &ldquo;It works on my machine&rdquo; Issues</strong></h3>
+<ul>
+<li><strong>Problem</strong>: Code that works on your local machine might not work on another system, due to differences in operating systems, installed tools, or versions.</li>
+<li><strong>Solution</strong>: By using Docker containers, you can <strong>run the same environment</strong> across different machines. The code you write in the container will behave the same on any machine that runs that container.</li>
+</ul>
+<h3 id="3-simplified-dependency-management">3. <strong>Simplified Dependency Management</strong></h3>
+<ul>
+<li><strong>Problem</strong>: Installing dependencies globally on your machine can cause version conflicts. Managing dependencies for multiple projects can become messy.</li>
+<li><strong>Solution</strong>: With Remote - Containers, each project gets its own containerized environment. You can install project-specific tools, dependencies, and configurations inside the container, ensuring isolation from other projects and your host machine.</li>
+</ul>
+<h3 id="4-support-for-multiple-platforms">4. <strong>Support for Multiple Platforms</strong></h3>
+<ul>
+<li><strong>Problem</strong>: You may need to work on projects that require an environment different from your host OS. For example, you might need to work on a <strong>Linux-based project</strong> from a <strong>Windows or macOS</strong> machine.</li>
+<li><strong>Solution</strong>: Docker allows you to run Linux-based containers on any platform, so you can develop inside a Linux environment even if you&rsquo;re on Windows or macOS.</li>
+</ul>
+<h3 id="5-lightweight-virtualization">5. <strong>Lightweight Virtualization</strong></h3>
+<ul>
+<li><strong>Problem</strong>: Setting up virtual machines (VMs) for different environments can be resource-intensive and time-consuming.</li>
+<li><strong>Solution</strong>: Docker containers are much lighter than full virtual machines. <strong>Remote - Containers</strong> lets you achieve a VM-like experience (isolated, reproducible environments) but with lower resource overhead and faster startup times.</li>
+</ul>
+<h3 id="6-pre-configured-development-containers">6. <strong>Pre-configured Development Containers</strong></h3>
+<ul>
+<li><strong>Problem</strong>: Setting up development environments can be tedious and prone to errors.</li>
+<li><strong>Solution</strong>: You can use <strong>DevContainers</strong> (pre-configured development environments) to quickly start working. These containers can come with all necessary tools pre-installed, reducing setup time. You can also define your own environment in a <code>.devcontainer</code> configuration file to ensure the environment is ready for development as soon as it’s launched.</li>
+</ul>
+<h3 id="7-better-integration-with-cloud-or-remote-servers">7. <strong>Better Integration with Cloud or Remote Servers</strong></h3>
+<ul>
+<li><strong>Problem</strong>: If you work with cloud services, remote servers, or staging environments, it&rsquo;s difficult to replicate their exact environments locally.</li>
+<li><strong>Solution</strong>: <strong>Remote - Containers</strong> let you run VS Code directly inside a container that could mimic your cloud or production environment. This allows you to test code in an environment closer to where it will eventually run.</li>
+</ul>
+<h3 id="8-clean-local-system">8. <strong>Clean Local System</strong></h3>
+<ul>
+<li><strong>Problem</strong>: Installing various tools, SDKs, and libraries on your local system over time can clutter your machine, consume disk space, and cause conflicts.</li>
+<li><strong>Solution</strong>: With <strong>Remote - Containers</strong>, all tools, compilers, interpreters, and dependencies are installed inside containers, keeping your host system clean and reducing the risk of conflicts between tools.</li>
+</ul>
+<h3 id="9-security-and-isolation">9. <strong>Security and Isolation</strong></h3>
+<ul>
+<li><strong>Problem</strong>: Running code on your local machine can pose security risks, especially when working with untrusted code.</li>
+<li><strong>Solution</strong>: Containers provide an additional layer of isolation between the code and your host system, reducing the risk of malicious code affecting your local environment.</li>
+</ul>
+<h3 id="10-easier-collaboration">10. <strong>Easier Collaboration</strong></h3>
+<ul>
+<li><strong>Problem</strong>: When multiple team members work on the same project, they often need to have identical environments.</li>
+<li><strong>Solution</strong>: By sharing a container configuration (<code>.devcontainer</code> folder), everyone on the team can easily spin up the exact same environment, ensuring consistency and reducing the &ldquo;it works on my machine&rdquo; problems.</li>
+</ul>
+<h3 id="summary">Summary:</h3>
+<p>While VS Code installed locally is powerful, <strong>&ldquo;VS Code Remote - Containers&rdquo;</strong> provides a more consistent, isolated, and flexible development environment. This approach solves issues related to dependency conflicts, cross-platform development, environment consistency, and allows for easier project sharing and collaboration. It effectively creates a reproducible environment for your code, isolated from your local system, which is particularly useful for complex, multi-tool, or multi-language projects.</p>
+<h2 id="question-can-i-use-vs-code-remote---containers-with-local-vs-code">Question: Can I use &ldquo;VS Code Remote - Containers&rdquo; with local VS Code?</h2>
+<p>Yes, you can absolutely use <strong>&ldquo;VS Code Remote - Containers&rdquo;</strong> with your local VS Code installation! Here&rsquo;s how it works and what you need to do:</p>
+<h3 id="how-vs-code-remote---containers-works-with-local-vs-code">How &ldquo;VS Code Remote - Containers&rdquo; Works with Local VS Code</h3>
+<ul>
+<li><strong>&ldquo;VS Code Remote - Containers&rdquo;</strong> allows your locally installed VS Code to connect to a <strong>Docker container</strong> running either on your local machine or on a remote server.</li>
+<li>When using this feature, VS Code runs a <strong>remote server</strong> inside the Docker container. Your local VS Code interface (the editor UI) connects to that remote server and interacts with files, dependencies, and tools inside the container.</li>
+<li>This way, your <strong>VS Code UI stays local</strong>, but the actual development environment is running inside a container, isolating the dependencies and configurations for that particular project.</li>
+</ul>
+<h3 id="requirements">Requirements</h3>
+<ol>
+<li>
+<p><strong>Docker</strong>:</p>
+<ul>
+<li>You need Docker installed and running on your local machine. &ldquo;VS Code Remote - Containers&rdquo; requires Docker to manage and run containers.
+<ul>
+<li><strong>For Windows/macOS</strong>: You can use <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a>.</li>
+<li><strong>For Linux</strong>: You can install Docker following your distro&rsquo;s instructions.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>VS Code</strong>:</p>
+<ul>
+<li>You need the latest version of VS Code installed on your machine.</li>
+</ul>
+</li>
+<li>
+<p><strong>&ldquo;VS Code Remote - Containers&rdquo; Extension</strong>:</p>
+<ul>
+<li>Install the <strong>Remote - Containers</strong> extension from the Visual Studio Code marketplace. You can do this directly within VS Code:
+<ul>
+<li>Go to the <strong>Extensions</strong> tab (or press <code>Ctrl+Shift+X</code>).</li>
+<li>Search for <strong>&ldquo;Remote - Containers&rdquo;</strong> and install it.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="how-to-use-vs-code-remote---containers-locally">How to Use &ldquo;VS Code Remote - Containers&rdquo; Locally</h3>
+<h4 id="step-1-install-docker-and-the-vs-code-remote---containers-extension">Step 1: Install Docker and the &ldquo;VS Code Remote - Containers&rdquo; Extension</h4>
+<ul>
+<li>Ensure Docker is installed and running.</li>
+<li>Install the <strong>Remote - Containers</strong> extension as described above.</li>
+</ul>
+<h4 id="step-2-set-up-a-devcontainer">Step 2: Set Up a DevContainer</h4>
+<p>You can either create a <strong>new containerized development environment</strong> or connect to an <strong>existing container</strong>.</p>
+<h5 id="option-1-use-an-existing-container">Option 1: Use an Existing Container</h5>
+<ol>
+<li><strong>Attach VS Code to an existing container</strong>:
+<ul>
+<li>If you already have a Docker container running, open the <strong>Command Palette</strong> (<code>Ctrl+Shift+P</code>) and type <code>Remote-Containers: Attach to Running Container</code>.</li>
+<li>Select the container you want to work in from the list, and VS Code will open a new window connected to that container.</li>
+</ul>
+</li>
+</ol>
+<h5 id="option-2-create-a-devcontainer-from-a-folder">Option 2: Create a DevContainer from a Folder</h5>
+<ol>
+<li><strong>Open your local project folder</strong> in VS Code.</li>
+<li>Press <code>Ctrl+Shift+P</code> and run <code>Remote-Containers: Add Development Container Configuration Files...</code>.</li>
+<li>VS Code will offer several predefined container templates (Node.js, Python, etc.), or you can customize your own by modifying the <code>.devcontainer/devcontainer.json</code> file.</li>
+<li>Once the configuration is set up, press <code>Ctrl+Shift+P</code> and run <code>Remote-Containers: Reopen in Container</code>. This will:
+<ul>
+<li>Build a Docker container as per your devcontainer configuration.</li>
+<li>Reopen VS Code inside the container, where you can develop in the isolated environment.</li>
+</ul>
+</li>
+</ol>
+<h3 id="what-happens-after-setting-it-up">What Happens After Setting It Up?</h3>
+<ol>
+<li><strong>Local Code, Containerized Environment</strong>: You’ll still see your local files, but all the tools, compilers, and dependencies you need for development will be running in the container.</li>
+<li><strong>Consistent Environment</strong>: Any dependencies you install will only exist inside the container. This avoids polluting your local environment or causing version conflicts with other projects.</li>
+<li><strong>VS Code UI stays local</strong>: The editor remains on your machine, so performance is responsive. Only the code execution, dependencies, and environment run inside the container.</li>
+</ol>
+<h3 id="benefits-of-using-vs-code-remote---containers-locally">Benefits of Using &ldquo;VS Code Remote - Containers&rdquo; Locally</h3>
+<ul>
+<li><strong>Local Isolation</strong>: Even though your VS Code is running locally, the project is isolated in a container, so you avoid cluttering your local machine with project-specific dependencies.</li>
+<li><strong>Environment Consistency</strong>: You can ensure that the environment inside the container remains consistent across different machines or team members, even if you&rsquo;re working locally.</li>
+<li><strong>Seamless Debugging</strong>: You can debug your code inside the container just as you would locally, but with the added benefit of the isolated environment.</li>
+<li><strong>Cross-platform Development</strong>: On a Windows or macOS machine, you can easily run a Linux-based development environment using Docker, which is especially useful for projects that need to run in Linux environments (like production servers).</li>
+</ul>
+<h3 id="summary-1">Summary</h3>
+<p>Even though you have VS Code installed locally, <strong>&ldquo;VS Code Remote - Containers&rdquo;</strong> helps you set up and work within Docker containers for development. This gives you the benefits of isolated environments, consistent setups across teams or projects, and a cleaner local system—all while still using your local VS Code editor.</p>
+<h2 id="question-can-i-use-vs-code-remote---containers-without-local-vs-code">Question: Can I use &ldquo;VS Code Remote - Containers&rdquo; without local VS Code?</h2>
+<p>Yes, you can use <strong>&ldquo;VS Code Remote - Containers&rdquo;</strong> without having VS Code installed <strong>locally</strong> by using <strong>GitHub Codespaces</strong> or <strong>Visual Studio Code for the Web</strong>. Both options allow you to develop in a containerized environment directly from your web browser without needing to install VS Code on your local machine.</p>
+<p>Here’s how each option works:</p>
+<h3 id="1-github-codespaces">1. <strong>GitHub Codespaces</strong></h3>
+<p>GitHub Codespaces provides a cloud-hosted development environment where you can use VS Code in your browser, connected to a containerized environment.</p>
+<h4 id="how-it-works">How it works:</h4>
+<ul>
+<li><strong>Cloud-hosted containers</strong>: GitHub Codespaces runs your development environment in a container in the cloud, and you access it via a web-based version of VS Code.</li>
+<li><strong>Full VS Code experience in the browser</strong>: You get all the features of VS Code, including extensions, debugging, and a terminal, but it’s all running in the browser.</li>
+<li><strong>Pre-configured environments</strong>: Like with &ldquo;VS Code Remote - Containers&rdquo;, you can define the environment using a <code>.devcontainer</code> configuration file, ensuring that your container is set up with the exact tools and dependencies you need.</li>
+</ul>
+<h4 id="how-to-get-started-with-github-codespaces">How to get started with GitHub Codespaces:</h4>
+<ol>
+<li><strong>Sign in to GitHub</strong>.</li>
+<li>Navigate to a repository you want to work on.</li>
+<li>Click the <strong>Code</strong> button, and if Codespaces is enabled for your account, you’ll see the <strong>&ldquo;Codespaces&rdquo;</strong> tab.</li>
+<li>From there, you can create a new codespace, which launches a browser-based VS Code environment that is containerized.</li>
+<li>You can define a <code>.devcontainer/devcontainer.json</code> file in the repository to customize the container environment, similar to how you would with &ldquo;VS Code Remote - Containers&rdquo;.</li>
+</ol>
+<h4 id="benefits-of-github-codespaces">Benefits of GitHub Codespaces:</h4>
+<ul>
+<li><strong>No local setup required</strong>: You don’t need to install Docker, VS Code, or any development tools on your machine.</li>
+<li><strong>Fully hosted environment</strong>: Everything runs in the cloud, so your local system remains untouched.</li>
+<li><strong>Access from any device</strong>: You can access your development environment from any machine, anywhere, as long as you have a web browser and internet access.</li>
+</ul>
+<h3 id="2-visual-studio-code-for-the-web-vscodedev">2. <strong>Visual Studio Code for the Web (vscode.dev)</strong></h3>
+<p>VS Code for the Web is a lightweight version of VS Code that runs directly in your browser. While it&rsquo;s more limited than the desktop version, it does support containerized environments when used with <strong>GitHub repositories</strong>.</p>
+<h4 id="how-it-works-1">How it works:</h4>
+<ul>
+<li>You can access VS Code in the browser by visiting <a href="https://vscode.dev">vscode.dev</a> and opening a repository hosted on GitHub.</li>
+<li>For container-based development, this web-based VS Code can access <strong>GitHub Codespaces</strong>, allowing you to run your code inside a Docker container in the cloud.</li>
+</ul>
+<h4 id="how-to-use-it">How to use it:</h4>
+<ol>
+<li>Go to <a href="https://vscode.dev">vscode.dev</a>.</li>
+<li>Sign in with your GitHub account.</li>
+<li>Open a repository that has a <code>.devcontainer</code> folder and configuration.</li>
+<li>You can link the environment to <strong>GitHub Codespaces</strong>, which runs the containerized environment in the cloud.</li>
+</ol>
+<h4 id="limitations">Limitations:</h4>
+<ul>
+<li>While <strong>VS Code for the Web</strong> can edit files and work with basic Git integration, it does not run local code directly. For more complex setups (like debugging or running code), you’ll need to connect it to a GitHub Codespace that runs the container in the cloud.</li>
+</ul>
+<h3 id="summary-2">Summary:</h3>
+<p>You can use <strong>&ldquo;VS Code Remote - Containers&rdquo;</strong> without installing VS Code locally by leveraging <strong>GitHub Codespaces</strong> or <strong>VS Code for the Web</strong>. Both of these services allow you to work in containerized environments directly from your browser. With <strong>GitHub Codespaces</strong>, you get a full-featured cloud-based development environment, while <strong>VS Code for the Web</strong> offers a lightweight option that can be linked to cloud-based containers for more powerful functionality.</p>
+<h2 id="question-what-are-formatters-linters-debuggers-profiler-etc-other-related-terms">Question: What are formatters, linters, debuggers, profiler etc other related terms?</h2>
+<p>Here’s a list of related terms in the category of <strong>development tools</strong> and <strong>programming environment utilities</strong>, starting from <strong>formatters</strong>, <strong>linters</strong>, and <strong>debuggers</strong>:</p>
+<h3 id="1-formatters">1. <strong>Formatters</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that automatically format code according to a predefined style guide, ensuring consistency in code appearance.</li>
+<li>Examples: Prettier, Black (Python), clang-format (C++), ESLint (JavaScript with formatting).</li>
+</ul>
+<h3 id="2-linters">2. <strong>Linters</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that analyze source code to flag programming errors, bugs, stylistic errors, and suspicious constructs.</li>
+<li>Examples: ESLint (JavaScript), PyLint (Python), RuboCop (Ruby), JSHint (JavaScript).</li>
+</ul>
+<h3 id="3-debuggers">3. <strong>Debuggers</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that allow developers to inspect, step through, and fix code by providing real-time feedback on the execution flow and variable states.</li>
+<li>Examples: GDB (C/C++), LLDB (LLVM), PDB (Python), Chrome DevTools (JavaScript), Node.js Debugger.</li>
+</ul>
+<h3 id="4-test-runners">4. <strong>Test Runners</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that automate running tests on your codebase to check for errors or ensure expected behavior.</li>
+<li>Examples: Mocha (JavaScript), Jest (JavaScript), PyTest (Python), JUnit (Java), RSpec (Ruby).</li>
+</ul>
+<h3 id="5-static-code-analyzers">5. <strong>Static Code Analyzers</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that analyze source code without executing it, typically used to detect vulnerabilities, bugs, or compliance issues.</li>
+<li>Examples: SonarQube, Coverity, Bandit (Python), FindBugs (Java).</li>
+</ul>
+<h3 id="6-profilers">6. <strong>Profilers</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that help you analyze the performance of your application by tracking function execution times, memory usage, and other performance metrics.</li>
+<li>Examples: Py-Spy (Python), perf (Linux), Chrome DevTools (JavaScript), Valgrind (C/C++), VisualVM (Java).</li>
+</ul>
+<h3 id="7-build-tools">7. <strong>Build Tools</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that automate the creation of executable applications from source code, handling tasks like compiling, linking, and packaging.</li>
+<li>Examples: Make (C/C++), Gradle (Java), Maven (Java), Webpack (JavaScript), CMake (C/C++).</li>
+</ul>
+<h3 id="8-package-managers">8. <strong>Package Managers</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that automate the process of installing, upgrading, configuring, and managing dependencies for projects.</li>
+<li>Examples: npm (JavaScript), pip (Python), yarn (JavaScript), Composer (PHP), Cargo (Rust).</li>
+</ul>
+<h3 id="9-dependency-analyzers">9. <strong>Dependency Analyzers</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that analyze project dependencies, ensuring compatibility, checking for updates, and identifying security vulnerabilities.</li>
+<li>Examples: npm audit (JavaScript), Pipenv (Python), Snyk (multiple languages).</li>
+</ul>
+<h3 id="10-code-coverage-tools">10. <strong>Code Coverage Tools</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that measure how much of your source code is covered by automated tests, helping you identify untested code paths.</li>
+<li>Examples: Istanbul (JavaScript), Coverage.py (Python), JaCoCo (Java), SimpleCov (Ruby).</li>
+</ul>
+<h3 id="11-cicd-tools-continuous-integrationcontinuous-deployment">11. <strong>CI/CD Tools (Continuous Integration/Continuous Deployment)</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that automate the process of testing, integrating, and deploying code changes, ensuring smoother and more frequent releases.</li>
+<li>Examples: Jenkins, CircleCI, Travis CI, GitHub Actions, GitLab CI.</li>
+</ul>
+<h3 id="12-version-control-systems-vcs">12. <strong>Version Control Systems (VCS)</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that track changes to your source code over time, allowing collaboration and versioning of your codebase.</li>
+<li>Examples: Git, Mercurial, Subversion (SVN), Perforce.</li>
+</ul>
+<h3 id="13-code-review-tools">13. <strong>Code Review Tools</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Platforms or tools used to review and comment on code before it is merged into the main codebase.</li>
+<li>Examples: GitHub Pull Requests, GitLab Merge Requests, Crucible, Gerrit.</li>
+</ul>
+<h3 id="14-task-runners">14. <strong>Task Runners</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that automate repetitive development tasks such as minifying files, running tests, and compiling source code.</li>
+<li>Examples: Gulp (JavaScript), Grunt (JavaScript), Rake (Ruby).</li>
+</ul>
+<h3 id="15-integrating-development-environments-ides">15. <strong>Integrating Development Environments (IDEs)</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Software applications that provide comprehensive facilities to computer programmers for software development.</li>
+<li>Examples: Visual Studio Code, IntelliJ IDEA, PyCharm, Eclipse, Sublime Text.</li>
+</ul>
+<h3 id="16-code-snippet-managers">16. <strong>Code Snippet Managers</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools or plugins that help store and manage reusable pieces of code (snippets).</li>
+<li>Examples: SnippetLab, CodeBox, GitHub Gists, Quiver.</li>
+</ul>
+<h3 id="17-code-style-checkers">17. <strong>Code Style Checkers</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that ensure code follows specific coding conventions or style guides.</li>
+<li>Examples: ESLint (JavaScript), Checkstyle (Java), Stylelint (CSS), Flake8 (Python).</li>
+</ul>
+<h3 id="18-continuous-monitoring-tools">18. <strong>Continuous Monitoring Tools</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that monitor the application’s behavior in production, often for performance metrics or security vulnerabilities.</li>
+<li>Examples: Prometheus, New Relic, Datadog, Grafana.</li>
+</ul>
+<h3 id="19-shells-and-terminals">19. <strong>Shells and Terminals</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Command-line interfaces where developers can execute commands directly to interact with their systems or containers.</li>
+<li>Examples: Bash, Zsh, PowerShell, Fish, Windows Terminal.</li>
+</ul>
+<h3 id="20-cloud-based-ides">20. <strong>Cloud-based IDEs</strong></h3>
+<ul>
+<li><strong>Definition</strong>: IDEs that run in the cloud, allowing you to write, debug, and run code directly in a web browser.</li>
+<li>Examples: GitHub Codespaces, Gitpod, Replit, AWS Cloud9.</li>
+</ul>
+<h3 id="21-virtualization-and-container-tools">21. <strong>Virtualization and Container Tools</strong></h3>
+<ul>
+<li><strong>Definition</strong>: Tools that create isolated environments for running and testing software, allowing easy replication of environments across different systems.</li>
+<li>Examples: Docker, Kubernetes, Vagrant, LXC (Linux Containers).</li>
+</ul>
+<p>These terms are commonly used in modern software development to streamline the coding process, automate workflows, and ensure high-quality code. Each plays a role in making development faster, more consistent, and more reliable.</p>
+<h2 id="question-i-have-datasets-on-my-local-drive-dproject-datasets-how-to-access-them-from-docker">Question: I have datasets on my local drive d:/project-datasets. How to access them from docker?</h2>
+<p>To access datasets stored on your local drive (<code>d:/project-datasets</code>) from a Docker container, you need to <strong>mount</strong> the local directory into the container as a <strong>volume</strong>. This allows the container to access files from your host machine.</p>
+<p>Here’s a step-by-step guide on how to achieve this:</p>
+<h3 id="steps-to-access-local-datasets-from-docker">Steps to Access Local Datasets from Docker</h3>
+<h4 id="1-run-the-docker-container-with-a-volume-mount">1. <strong>Run the Docker Container with a Volume Mount</strong></h4>
+<p>When you run your Docker container, you can use the <code>-v</code> (or <code>--volume</code>) option to mount the local directory (<code>d:/project-datasets</code>) into the container’s file system. This will allow the container to access the files from your local drive.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># for linux local drive</span>
+</span></span><span style="display:flex;"><span>docker run -v /host/project-datasets:/container/directory &lt;image-name&gt;
+</span></span></code></pre></div><p>On Windows, the syntax changes slightly since Docker treats the <code>C:</code> and other local drives as mounted volumes under <code>/mnt</code>. For the <code>D:</code> drive, the path becomes <code>/mnt/d</code>.</p>
+<h5 id="example-command">Example Command:</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># for windows local drive</span>
+</span></span><span style="display:flex;"><span>docker run -v /mnt/d/project-datasets:/data &lt;image-name&gt;
+</span></span></code></pre></div><h4 id="2-verify-the-mount-in-the-container">2. <strong>Verify the Mount in the Container</strong></h4>
+<p>Once the container is running, you can check whether the volume is mounted correctly by opening a shell inside the container and navigating to the <code>/data</code> directory (or whatever path you specified).</p>
+<h5 id="steps-to-verify">Steps to Verify:</h5>
+<ol>
+<li>
+<p>Open a terminal in the running container:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker exec -it &lt;container-name&gt; /bin/bash
+</span></span></code></pre></div><p>Replace <code>&lt;container-name&gt;</code> with the name or ID of the running container.</p>
+</li>
+<li>
+<p>(OR) Navigate to the mounted directory and list the files:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /data
+</span></span><span style="display:flex;"><span>ls
+</span></span></code></pre></div><p>You should see the contents of your local <code>d:/project-datasets</code> directory.</p>
+</li>
+</ol>
+<h4 id="3-accessing-files-from-the-mounted-volume-in-your-code">3. <strong>Accessing Files from the Mounted Volume in Your Code</strong></h4>
+<p>Once the volume is mounted, your containerized application (Python, Node.js, etc.) can access the files directly from the mounted directory (<code>/data</code> in this example).</p>
+<p>For example, in Python:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Access a CSV file from the mounted directory</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;/data/my-dataset.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>print(df<span style="color:#f92672">.</span>head())
+</span></span></code></pre></div><h3 id="additional-considerations">Additional Considerations</h3>
+<h4 id="file-permissions">File Permissions</h4>
+<ul>
+<li>Docker may adjust permissions when mounting volumes. If you encounter permission issues, you might need to change permissions inside the container.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod -R <span style="color:#ae81ff">777</span> /data
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="bind-mount-vs-named-volumes">Bind Mount vs. Named Volumes</h4>
+<ul>
+<li>The above method is an example of a <strong>bind mount</strong>. You could also use <strong>named volumes</strong> if you want Docker to manage the storage, but for accessing specific local files, bind mounts are more common.</li>
+</ul>
+<h4 id="windows-specific-notes">Windows-Specific Notes</h4>
+<ul>
+<li>If Docker Desktop is not running in <strong>Linux containers mode</strong> or if you’re using <strong>WSL2</strong>, ensure that the drive (<code>D:</code>) is shared with Docker Desktop. You can verify this in the <strong>Settings</strong> → <strong>Resources</strong> → <strong>File Sharing</strong> section.</li>
+</ul>
+<h4 id="mounting-on-docker-compose">Mounting on Docker Compose</h4>
+<p>If you&rsquo;re using <strong>Docker Compose</strong>, you can specify the volume mount in the <code>docker-compose.yml</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">app</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">&lt;image-name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/mnt/d/project-datasets:/data</span>
+</span></span></code></pre></div><h3 id="summary-3">Summary</h3>
+<p>To access datasets from your local <code>d:/project-datasets</code> folder in Docker:</p>
+<ul>
+<li>Use the <code>-v</code> option to mount the local directory into the container.</li>
+<li>On Windows, paths are mapped to <code>/mnt/&lt;drive-letter&gt;</code>.</li>
+<li>After mounting, the container can access and manipulate files as if they were local to it.</li>
+</ul>
+<h2 id="hashtags">Hashtags</h2>
+<p>#VSCode
+#Docker
+#DevTools
+#RemoteDevelopment
+#Containers
+#DevOps
+#Programming
+#CodeQuality
+#Debugging
+#SoftwareDevelopment</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

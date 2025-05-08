@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maths in AI on Agones</title>
+    <link>http://localhost:1313/tags/maths-in-ai/</link>
+    <description>Recent content in Maths in AI on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/maths-in-ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Distances in Machine Learning</title>
+      <link>http://localhost:1313/dsblog/Distances-in-Machine-Learning/</link>
+      <pubDate>Sun, 27 Aug 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Distances-in-Machine-Learning/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6093-Distances-in-Machine-Learning.jpg&#34; alt=&#34;Distances in Machine Learning&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;distances-in-machine-learning&#34;&gt;Distances in Machine Learning&lt;/h1&gt;&#xA;&lt;p&gt;Every sample, record, word, sentence, object, image etc in the Machine learning language is called vector. If we want to measure the similarity or dissimilarity between two data points then we need distance function.&lt;/p&gt;&#xA;&lt;p&gt;Distance metrics play a crucial role in various machine learning algorithms, including clustering, classification, and anomaly detection. Different distance measures capture different types of relationships between data points.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

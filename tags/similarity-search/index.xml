@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Similarity Search on Agones</title>
+    <link>http://localhost:1313/tags/similarity-search/</link>
+    <description>Recent content in Similarity Search on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/similarity-search/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is Pinecone</title>
+      <link>http://localhost:1313/dsblog/What-is-Pinecone/</link>
+      <pubDate>Sun, 03 Sep 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/What-is-Pinecone/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6097-What-is-Pinecone.jpg&#34; alt=&#34;What is Pinecone&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-pinecone&#34;&gt;What is pinecone?&lt;/h2&gt;&#xA;&lt;p&gt;Pinecone is a managed vector database that provides vector search (or “similarity search”) for developers with a straightforward API and usage-based pricing. It’s free to try. &lt;a href=&#34;https://www.pinecone.io/learn/vector-search-basics/&#34;&gt;Introduction to Vector Search for Developers&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-a-vector-database&#34;&gt;What is a &lt;a href=&#34;https://www.pinecone.io/learn/vector-database/&#34;&gt;Vector Database&lt;/a&gt;?&lt;/h2&gt;&#xA;&lt;p&gt;Your must have heard about relational database, graph database, object datbase. But this article is about Vector Database.&lt;/p&gt;&#xA;&lt;p&gt;All AI Models need data for training and inference purposes. This data may be of different modalities like voice, image, text, tabular, etc. To train the model or to get the prediction from the model we need to input this data.  We need to devise a mechanism to convert this data into a format where we can perform mathematical operations on this data. This process of converting the original data into some floating point number, which represents the original object is called embedding. We create a vector embedding for each corresponding object. A database where you store these vectors of the objects is called a vector database. If you create the vector embedding for the objects during processing and do not store it for future reference then you waste compute resources to get the embedding and time to do this again and again. Therefore, it makes sense to compute the vector embedding of every object and store that in a vector database, and for doing our work like search, sorting, recommendation, summarisation etc. we use these embeddings from the vector database.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

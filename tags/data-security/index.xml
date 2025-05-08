@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Security on Agones</title>
+    <link>http://localhost:1313/tags/data-security/</link>
+    <description>Recent content in Data Security on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/data-security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLM Security and Ethics Considerations</title>
+      <link>http://localhost:1313/dsblog/LLM-Security-and-Ethics-Considerations/</link>
+      <pubDate>Fri, 02 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/LLM-Security-and-Ethics-Considerations/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6128-LLM-Security-and-Ethics-Considerations.jpg&#34; alt=&#34;LLM-Security-and-Ethics-Considerations&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;llm-security-and-ethics-considerations&#34;&gt;LLM Security and Ethics Considerations&lt;/h1&gt;&#xA;&lt;h2 id=&#34;question-for-my-clients-highly-secured-data-like-health-industry-data-banking-insurnace-internal-security-etc-data-can-i-use-gpt4-for-finetuning&#34;&gt;Question: For my client&amp;rsquo;s highly secured data like health industry data, banking, insurnace, internal security, etc. data can I use gpt4 for finetuning?&lt;/h2&gt;&#xA;&lt;p&gt;For highly sensitive data, such as health industry data, banking information, insurance details, and security data, using models like ChatGPT-3.5 or GPT-4 involves several considerations to ensure security and compliance:&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-security-and-compliance-considerations&#34;&gt;1. &lt;strong&gt;Security and Compliance Considerations&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Data Privacy&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Sensitive Data Handling&lt;/strong&gt;: Ensure that the data used for fine-tuning is handled securely. Fine-tuning models on sensitive data requires stringent data protection measures to prevent unauthorized access or leakage.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Compliance&lt;/strong&gt;: Verify that the use of AI models complies with relevant regulations and standards such as HIPAA (for health data), GDPR (for personal data in the EU), and others specific to your industry.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Access Control&lt;/strong&gt;:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>All about Hashing</title>
+      <link>http://localhost:1313/dsblog/All-about-Hashing/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/All-about-Hashing/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6123-All-about-Hashing.jpg&#34; alt=&#34;All-about-Hashing&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;all-about-hashing&#34;&gt;All about Hashing&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-hashing-function&#34;&gt;What is Hashing function?&lt;/h2&gt;&#xA;&lt;p&gt;A hashing function is a mathematical algorithm that converts an input (or &amp;ldquo;message&amp;rdquo;) into a fixed-size string of bytes, typically a hash code or hash value. This output is usually a short, unique representation of the input data. Examples of common hash functions include MD5, SHA-1, and SHA-256.&lt;/p&gt;&#xA;&lt;p&gt;Hashing is a process where an algorithm (known as a hash function) takes an input (or &amp;ldquo;message&amp;rdquo;) and returns a fixed-size string of bytes. The output, typically a hexadecimal number, appears random. The purpose of hashing is to ensure data integrity and to securely compare large amounts of data.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dealing with Sensitive Data</title>
+      <link>http://localhost:1313/dsblog/2020-03-10-6001-dealing-with-sensitive-data/</link>
+      <pubDate>Tue, 10 Mar 2020 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/2020-03-10-6001-dealing-with-sensitive-data/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6001-Dealing-with-Sensitive-Data.jpg&#34; alt=&#34;XAI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;dealing-with-sensitive-data&#34;&gt;Dealing with Sensitive Data&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;One of the biggest problems for a Data Science project team is to protect the data. We know, data is the basic raw material for building any supervised or unsupervised models. We cannot make a without data. Let’s assume you are working for an eCommerce retail company like Amazon; or in the health domain with some big hospital chain or government hospital; or in the banking industry with some big bank like Bank of America, Standard Charted, SBI, or ICICI Bank. They have huge data. That data can be used to develop ML models. These models can help them to serve their customers or other stakeholders in a better and efficient way. To develop these models, data should be given to the Data Science team. When the data is moving out from the production environment to the project environment, there is no guarantee that data will not fall in the wrong hands and will not be misused during the project or post the project completion. When the data is moving within the same company, there are lesser chances of this disaster. But when the company is giving data to third parties or vendors, then there are high chances.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

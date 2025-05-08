@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Hardware on Agones</title>
+    <link>http://localhost:1313/tags/ai-hardware/</link>
+    <description>Recent content in AI Hardware on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai-hardware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GPU for Data Science Work</title>
+      <link>http://localhost:1313/dsblog/GPU-for-Data-Science-Work/</link>
+      <pubDate>Thu, 26 Jan 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/GPU-for-Data-Science-Work/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6042-GPU-for-Data-Science-Work.jpg&#34; alt=&#34;GPU for Data Science Work&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;gpu-for-data-science-work&#34;&gt;GPU for Data Science Work&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-the-difference-between-microprocessor-cpu-and-gpu&#34;&gt;What is the difference between microprocessor (CPU) and GPU?&lt;/h2&gt;&#xA;&lt;p&gt;A microprocessor and a GPU (graphics processing unit) are both types of processors, but they are designed for different purposes and have different architectures.&lt;/p&gt;&#xA;&lt;p&gt;A microprocessor, also known as a CPU (central processing unit), is the &amp;ldquo;brain&amp;rdquo; of a computer. It is responsible for executing instructions for the operating system and software applications. A microprocessor typically has a small number of cores (1-16) that are optimized for sequential processing, and it is designed to handle a wide variety of tasks, from simple mathematical calculations to complex algorithms.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

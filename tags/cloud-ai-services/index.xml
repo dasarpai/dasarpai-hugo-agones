@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud AI Services on Agones</title>
+    <link>http://localhost:1313/tags/cloud-ai-services/</link>
+    <description>Recent content in Cloud AI Services on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cloud-ai-services/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GenAI Capabilities from AWS, Azure and GCP</title>
+      <link>http://localhost:1313/dsblog/GenAI-Capabilities-from-AWS&#43;GCP&#43;Azure/</link>
+      <pubDate>Wed, 25 Sep 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/GenAI-Capabilities-from-AWS&#43;GCP&#43;Azure/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6144-GenAI-Capabilities-from-AWS&amp;#43;GCP&amp;#43;Azure.jpg&#34; alt=&#34;GenAI Capabilities from AWS, Azure, and Google Cloud&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-battle-for-ai-supremacy-genai-capabilities-from-aws-azure-and-google-cloud&#34;&gt;The Battle for AI Supremacy: GenAI Capabilities from AWS, Azure, and Google Cloud&lt;/h1&gt;&#xA;&lt;h2 id=&#34;is-this-article-for-me&#34;&gt;Is this Article for me?&lt;/h2&gt;&#xA;&lt;p&gt;If you are looking for answer of following questions then this article is for you, else you can skip this.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Who are the major players in GenAI Market?&lt;/li&gt;&#xA;&lt;li&gt;What is their main focus area?&lt;/li&gt;&#xA;&lt;li&gt;What are services they are offering?&lt;/li&gt;&#xA;&lt;li&gt;How to know X1 GenAI service of player one is similar to X2 of player two?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;introduction-genai-capabilities-from-key-players&#34;&gt;Introduction: &lt;strong&gt;GenAI Capabilities from Key Players&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;In recent times, generative AI (GenAI) has made a thunderbolt-like entry into the tech landscape, transforming industries and disrupting traditional workflows with unprecedented speed. As organizations increasingly leverage AI to power intelligent applications and automate tasks, the major cloud providers—Amazon Web Services (AWS), Microsoft Azure, and Google Cloud—are fiercely competing to offer the most comprehensive AI services. These key players have invested heavily in generative AI technologies, aiming to dominate the AI-driven market with powerful tools and scalable infrastructure.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

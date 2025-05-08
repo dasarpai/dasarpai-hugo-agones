@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project Development on Agones</title>
+    <link>http://localhost:1313/tags/project-development/</link>
+    <description>Recent content in Project Development on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/project-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI ML Project Ideas</title>
+      <link>http://localhost:1313/dsblog/AI-Project-Ideas/</link>
+      <pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/AI-Project-Ideas/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6205-AI-Project-Ideas.jpg&#34; alt=&#34;AI Project Ideas&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;ai-project-ideas&#34;&gt;AI Project Ideas&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In your journey of learning and practicing AI project you may find these articles and repositories useful. I found it over many places and compiled them here. Some of the link may break. These are beginner level ideas for AI project. If you are starting your journey then you will find value in exploring these. If you have been seriously for more than 5+ years in AI/ML then your can ignore this article.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

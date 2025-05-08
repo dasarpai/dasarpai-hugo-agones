@@ -1,0 +1,501 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Selecting Database for Project | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2024-10-05-6154-how-to-select-database/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Selecting Database for Project">
+  <meta property="og:description" content="Essential Database Selection Criteria for Modern Applications Is this article for me? If you are looking answer for these questions then “Yes”.
+What parameters should you consider to choose a database for your project? What are different data formats for bigdata? What is the difference between OCR and Parquet data formats? What is CAP Theorem? What is the difference between Sharding and Partitioning What parameters should you consider to choose a database for your project? When you are developing an application which need to store the data or you need to pull data from some format for your project work that time you need to take care of many parameters. Sometimes it looks there is an ovbious choice to go for a certain type of database for some specific work but most of the time it is challenging. What are those aspects of a database which you need to take care of?">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-10-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-05T00:00:00+00:00">
+    <meta property="article:tag" content="Database Design">
+    <meta property="article:tag" content="SQL">
+    <meta property="article:tag" content="NoSQL">
+    <meta property="article:tag" content="Data Architecture">
+    <meta property="article:tag" content="System Design">
+    <meta property="article:tag" content="Data Storage">
+
+  <meta itemprop="name" content="Selecting Database for Project">
+  <meta itemprop="description" content="Essential Database Selection Criteria for Modern Applications Is this article for me? If you are looking answer for these questions then “Yes”.
+What parameters should you consider to choose a database for your project? What are different data formats for bigdata? What is the difference between OCR and Parquet data formats? What is CAP Theorem? What is the difference between Sharding and Partitioning What parameters should you consider to choose a database for your project? When you are developing an application which need to store the data or you need to pull data from some format for your project work that time you need to take care of many parameters. Sometimes it looks there is an ovbious choice to go for a certain type of database for some specific work but most of the time it is challenging. What are those aspects of a database which you need to take care of?">
+  <meta itemprop="datePublished" content="2024-10-05T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-10-05T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2197">
+  <meta itemprop="keywords" content="database selection,SQL vs NoSQL,data architecture,database design,data storage solutions,database management,system architecture,data modeling,database comparison">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Selecting Database for Project">
+  <meta name="twitter:description" content="Essential Database Selection Criteria for Modern Applications Is this article for me? If you are looking answer for these questions then “Yes”.
+What parameters should you consider to choose a database for your project? What are different data formats for bigdata? What is the difference between OCR and Parquet data formats? What is CAP Theorem? What is the difference between Sharding and Partitioning What parameters should you consider to choose a database for your project? When you are developing an application which need to store the data or you need to pull data from some format for your project work that time you need to take care of many parameters. Sometimes it looks there is an ovbious choice to go for a certain type of database for some specific work but most of the time it is challenging. What are those aspects of a database which you need to take care of?">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6154-Selecting-Database-for-Project.jpg" alt="Selecting Database for Project"></p>
+<h1 id="essential-database-selection-criteria-for-modern-applications">Essential Database Selection Criteria for Modern Applications</h1>
+<h2 id="is-this-article-for-me">Is this article for me?</h2>
+<p>If you are looking answer for these questions then &ldquo;Yes&rdquo;.</p>
+<ul>
+<li>What parameters should you consider to choose a database for your project?</li>
+<li>What are different data formats for bigdata?</li>
+<li>What is the difference between OCR and Parquet data formats?</li>
+<li>What is CAP Theorem?</li>
+<li>What is the difference between Sharding and Partitioning</li>
+</ul>
+<h2 id="what-parameters-should-you-consider-to-choose-a-database-for-your-project">What parameters should you consider to choose a database for your project?</h2>
+<p>When you are developing an application which need to store the data or you need to pull data from some format for your project work that time you need to take care of many parameters. Sometimes it looks there is an ovbious choice to go for a certain type of database for some specific work but most of the time it is challenging. What are those aspects of a database which you need to take care of?</p>
+<p>Here are more parameters to consider when selecting a database:</p>
+<ol>
+<li><strong>Scalability:</strong> Ability to handle increasing data load, both vertically (adding resources to a single node) and horizontally (adding more nodes).</li>
+<li><strong>Read/Write Performance:</strong> How efficiently the database handles read and write operations, especially in high-traffic environments.</li>
+<li><strong>Replication and Backup:</strong> Support for data replication across multiple locations or servers to ensure data availability and fault tolerance. If you need to manage this manually then it can be painful.</li>
+<li><strong>Consistency:</strong> How strictly the database maintains consistency across replicas (e.g., eventual consistency in NoSQL vs. strong consistency in relational databases).</li>
+<li><strong>Latency:</strong> The delay between request and response, critical for near to real-time applications.</li>
+<li><strong>Availability:</strong> Ensuring the database is always available, even in the face of network partitions or server failures (related to the CAP theorem).</li>
+<li><strong>Indexing:</strong> Support for creating indexes to optimize query performance, especially for large datasets.</li>
+<li><strong>Sharding:</strong> Ability to partition data across multiple servers for better load distribution and handling large datasets.</li>
+<li><strong>Partitioning:</strong> Support for dividing a table or index into smaller, more manageable pieces for performance and maintenance.</li>
+<li><strong>Security Features:</strong> Encryption, user authentication, access control, and role-based security to ensure data protection.</li>
+<li><strong>Caching Mechanisms:</strong> Built-in support for caching frequently accessed data to improve query performance.</li>
+<li><strong>Data Redundancy:</strong> Mechanisms for duplicating critical data to avoid loss or downtime in case of failures.</li>
+<li><strong>Data Integrity Constraints:</strong> Support for enforcing integrity rules (like primary key, foreign key constraints) to ensure data correctness. If you need to ensure this integrity from the front-end application it becomes inefficient, insecure and unsafe. Someone either from front-end or backend can do the something wrong intentionally or unintentionally.</li>
+<li><strong>Data Retention and Purging:</strong> Policies for retaining and purging data over time to manage storage and regulatory requirements. That policy support is available within database engine or you need to manually take care of this?</li>
+<li><strong>Defined Schema:</strong> Determines whether the database enforces a fixed schema for data structure (e.g., relational databases).</li>
+<li><strong>Alternation in Schema:</strong> Flexibility to modify the schema without disrupting the database operations (e.g., NoSQL databases allow this easily).</li>
+<li><strong>Compression:</strong> The ability of the database to reduce storage size through compression techniques, optimizing space usage.</li>
+<li><strong>Querying:</strong> The efficiency and flexibility of the database’s query language for retrieving data (e.g., SQL, NoSQL query models).</li>
+<li><strong>Distributed vs Central Processing and Storage:</strong> Whether the database is designed for distributed storage and processing across multiple nodes or centralized on a single server.</li>
+<li><strong>Human-Readable Format:</strong> Support for formats like JSON or CSV that make data easily understandable and editable by humans.</li>
+<li><strong>Volume Handling:</strong> The capacity of the database to efficiently manage large volumes of data at scale.</li>
+<li><strong>Concurrent Processing:</strong> How well the database handles multiple simultaneous read/write operations without conflict or delay.</li>
+<li><strong>ACID Transaction Support:</strong> Ensures reliable transactions with atomicity, consistency, isolation, and durability guarantees.</li>
+<li><strong>Audit Trail or Transaction Log:</strong> Maintains a log of all database transactions and changes for traceability and recovery.</li>
+<li><strong>Transaction Isolation Levels:</strong> Levels of isolation between concurrent transactions (e.g., read uncommitted transactions, avoiding repeatable read).</li>
+<li><strong>Cross-Platform Support:</strong> Whether the database can be deployed across different operating systems and environments.</li>
+<li><strong>Eventual vs. Strong Consistency:</strong> In distributed databases, how the system handles consistency between nodes.</li>
+<li><strong>Integration with Analytics Tools:</strong> Native support or integration with analytical tools and libraries (e.g., integration with Hadoop, Spark, or ML libraries). If this support is not available then to use the data for example, for analytics or machine learning purpose, we need to export this into other formats.</li>
+<li><strong>Fault Tolerance and Recovery:</strong> Mechanisms for detecting and recovering from faults without data loss.</li>
+<li><strong>Temporal Data Support:</strong> Native support for time-series data, versioning, and time-bound queries. This ensures consistency, performance, compression etc. Otherwise we need to take care of time, date functions for the transactions.</li>
+<li><strong>Data Types Supported:</strong> Whether the database supports complex data types like JSON, geospatial data, arrays, or nested structures. Putting some json or map or array data in some string variable of the dataset is an inefficient solutions. We need to look for a database which can handle these complex data strictures.</li>
+<li><strong>Migration Support:</strong> Tools or features that make migrating data between different database systems easier. Or tomorrow if you want to migrate into other databases then what will happen?</li>
+<li><strong>Concurrency Control Mechanisms:</strong> Techniques like optimistic/pessimistic locking to ensure proper handling of concurrent transactions.</li>
+<li><strong>Tooling and Ecosystem:</strong> Availability of administrative tools, monitoring systems, and third-party ecosystem support for the database.</li>
+</ol>
+<h2 id="what-are-different-data-formats-for-bigdata">What are different data formats for bigdata?</h2>
+<p>Big data is stored and processed in various formats, depending on the use case, storage mechanism, and processing requirements. Here are some of the most commonly used data formats in the big data ecosystem:</p>
+<h3 id="1-text-based-formats">1. <strong>Text-Based Formats</strong></h3>
+<ul>
+<li><strong>CSV (Comma-Separated Values):</strong>
+<ul>
+<li>Plain text format with rows of data where columns are separated by commas.</li>
+<li>Simple and widely used for structured data.</li>
+<li>Easy to read and write but lacks support for complex data types.</li>
+</ul>
+</li>
+<li><strong>JSON (JavaScript Object Notation):</strong>
+<ul>
+<li>Semi-structured format.</li>
+<li>Hierarchical structure with key-value pairs.</li>
+<li>Great for web-based applications but can be verbose and inefficient for large datasets.</li>
+</ul>
+</li>
+<li><strong>XML (eXtensible Markup Language):</strong>
+<ul>
+<li>A flexible, structured format used to store hierarchical data.</li>
+<li>Self-describing tags make it readable, but it&rsquo;s verbose and complex.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-row-based-formats">2. <strong>Row-Based Formats</strong></h3>
+<ul>
+<li><strong>Avro:</strong>
+<ul>
+<li>A row-based format developed within the Hadoop ecosystem.</li>
+<li>Supports schema evolution, meaning it allows schema changes over time.</li>
+<li>Highly efficient for both serialization and deserialization.</li>
+<li>Great for streaming data, with compact and fast encoding.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-columnar-formats">3. <strong>Columnar Formats</strong></h3>
+<ul>
+<li><strong>Parquet:</strong>
+<ul>
+<li>Columnar storage format that is highly efficient for analytical queries.</li>
+<li>Great for read-heavy workloads, especially when only a subset of columns is required.</li>
+<li>Used in tools like Hadoop, Spark, and AWS Redshift.</li>
+</ul>
+</li>
+<li><strong>ORC (Optimized Row Columnar):</strong>
+<ul>
+<li>Also a columnar format optimized for big data, especially with Hive and Hadoop.</li>
+<li>Offers efficient compression and fast query processing by supporting predicate pushdown.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-binary-formats">4. <strong>Binary Formats</strong></h3>
+<ul>
+<li><strong>Sequence File:</strong>
+<ul>
+<li>A binary format for Hadoop&rsquo;s MapReduce framework.</li>
+<li>Stores key-value pairs in binary format, making it efficient for read and write.</li>
+<li>Lacks schema support and is largely replaced by Avro and Parquet.</li>
+</ul>
+</li>
+<li><strong>Protocol Buffers (Protobuf):</strong>
+<ul>
+<li>A compact binary format used to serialize structured data.</li>
+<li>Developed by Google, it provides a balance between efficiency and flexibility.</li>
+<li>Supports schema evolution like Avro.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-nosql-specific-formats">5. <strong>NoSQL-Specific Formats</strong></h3>
+<ul>
+<li><strong>BSON (Binary JSON):</strong>
+<ul>
+<li>A binary form of JSON, used primarily by MongoDB.</li>
+<li>Allows for rich data types but is more compact and efficient than plain JSON.</li>
+</ul>
+</li>
+<li><strong>HBase KeyValue Format:</strong>
+<ul>
+<li>Specific to HBase, a column-oriented NoSQL database.</li>
+<li>Stores data in the form of key-value pairs optimized for wide-column data models.</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-compressed-formats">6. <strong>Compressed Formats</strong></h3>
+<ul>
+<li><strong>Gzip:</strong>
+<ul>
+<li>Commonly used to compress text-based formats like CSV, JSON, and XML.</li>
+<li>Reduces storage space but may add overhead to processing due to decompression.</li>
+</ul>
+</li>
+<li><strong>Snappy:</strong>
+<ul>
+<li>A fast, block-oriented compression library developed by Google.</li>
+<li>Used by Parquet and Avro for compressing data without compromising speed.</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-log-formats">7. <strong>Log Formats</strong></h3>
+<ul>
+<li><strong>Syslog:</strong>
+<ul>
+<li>Standard log format used for system logs and logging services.</li>
+<li>Typically plain text but can be structured with key-value pairs.</li>
+</ul>
+</li>
+<li><strong>Logstash JSON:</strong>
+<ul>
+<li>JSON-based format used by the ELK (Elasticsearch, Logstash, Kibana) stack for ingesting and storing log data.</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-other-formats">8. <strong>Other Formats</strong></h3>
+<ul>
+<li><strong>Delta Lake:</strong>
+<ul>
+<li>Provides ACID transactions on top of existing data formats like Parquet.</li>
+<li>Often used in data lakes with tools like Apache Spark.</li>
+</ul>
+</li>
+<li><strong>Apache Iceberg:</strong>
+<ul>
+<li>A table format for huge analytic datasets, allowing for versioning, schema evolution, and optimized access patterns.</li>
+</ul>
+</li>
+</ul>
+<p>These formats serve different purposes, depending on the use case, data size, and processing tools. Columnar formats (like Parquet and ORC) are typically more efficient for analytics, while row-based formats (like Avro) work better for streaming and write-heavy applications.</p>
+<h2 id="what-is-the-difference-between-ocr-and-parquet-data-formats">What is the difference between OCR and Parquet data formats?</h2>
+<p><strong>Parquet</strong> and <strong>ORC (Optimized Row Columnar)</strong> are both columnar data formats commonly used in big data environments like Hadoop and Spark, but they have some differences:</p>
+<h3 id="1-parquet">1. <strong>Parquet:</strong></h3>
+<ul>
+<li><strong>Developed by:</strong> Cloudera and Twitter.</li>
+<li><strong>Primary Use Case:</strong> Optimized for read-heavy workloads, particularly in analytical queries where only a subset of columns is required.</li>
+<li><strong>Compression:</strong> Parquet offers flexible compression codecs like Snappy, Gzip, and LZO.</li>
+<li><strong>Compatibility:</strong> Widely supported across various ecosystems like Apache Spark, Hadoop, Hive, and AWS.</li>
+<li><strong>Advantages:</strong> Best for use cases with complex nested data structures (like arrays, structs) and when you need to access specific columns frequently.</li>
+</ul>
+<h3 id="2-orc-optimized-row-columnar">2. <strong>ORC (Optimized Row Columnar):</strong></h3>
+<ul>
+<li><strong>Developed by:</strong> Hortonworks for the Apache Hive project.</li>
+<li><strong>Primary Use Case:</strong> Optimized for heavy read/write operations, especially in Hive-based systems.</li>
+<li><strong>Compression:</strong> ORC provides advanced compression features (like lightweight compression for faster processing) and better compression ratios than Parquet.</li>
+<li><strong>Compatibility:</strong> Highly optimized for Hive but can also work with other tools like Spark.</li>
+<li><strong>Advantages:</strong> Provides better performance for heavy read/write use cases, better support for predicate pushdown, and efficient storage.</li>
+</ul>
+<h3 id="in-brief">In Brief:</h3>
+<ul>
+<li><strong>Parquet</strong> is widely compatible and excels at reading specific columns from large datasets, while <strong>ORC</strong> is optimized for Hive and handles read/write workloads with better compression and query performance for large, structured datasets.</li>
+</ul>
+<h2 id="what-is-cap-theorem">What is CAP Theorem?</h2>
+<p>The <strong>CAP Theorem</strong>, proposed by Eric Brewer, is a fundamental principle that applies to distributed databases. It states that in a distributed system, it is impossible to simultaneously guarantee all three of the following properties:</p>
+<ol>
+<li><strong>Consistency (C):</strong> Every read receives the most recent write or an error. This means all nodes in the system have the same data at any given time, ensuring data integrity.</li>
+<li><strong>Availability (A):</strong> Every request (read or write) receives a non-error response, even if the response is not the most recent one. This ensures that the system is always responsive and up.</li>
+<li><strong>Partition Tolerance (P):</strong> The system continues to operate, even if network partitions (communication failures between some nodes) occur. In other words, the system can tolerate faults that separate parts of the network.</li>
+</ol>
+<h4 id="cap-theorem-in-practice">CAP Theorem in Practice:</h4>
+<p>According to the CAP theorem, a distributed database can only guarantee two out of the three properties at the same time:</p>
+<ul>
+<li><strong>CP (Consistency and Partition Tolerance):</strong> The system will ensure data consistency even if part of the network is unavailable, but it may sacrifice availability. Example: HBase.</li>
+<li><strong>AP (Availability and Partition Tolerance):</strong> The system will remain available and tolerate network partitions, but data consistency may not be guaranteed across all nodes. Example: Cassandra, DynamoDB.</li>
+<li><strong>CA (Consistency and Availability):</strong> The system is always consistent and available but cannot handle network partitions. This is more theoretical, as network failures are inevitable in distributed systems.</li>
+</ul>
+<h2 id="what-is-the-difference-between-sharding-and-partitioning">What is the difference between Sharding and Partitioning</h2>
+<p><strong>Sharding</strong> and <strong>Partitioning</strong> both involve dividing data into smaller, more manageable pieces, but they are used in different contexts and have distinct characteristics:</p>
+<ol>
+<li><strong>Sharding:</strong> Sharding is a form of horizontal partitioning used to distribute data across multiple servers or nodes. Each shard holds a subset of the total data, and the shards work together to form the complete dataset. Sharding is typically used in <strong>distributed databases</strong> to handle large volumes of data and scale out horizontally across multiple machines. Each shard is essentially a separate database. The data is divided based on some criteria (e.g., customer ID, geographic location), and each shard operates independently. MongoDB, Cassandra, and Elasticsearch use sharding to distribute data across multiple nodes for better scalability and performance.</li>
+</ol>
+<ul>
+<li><strong>Benefits:</strong>
+<ul>
+<li>Increased scalability (horizontal scaling).</li>
+<li>Higher performance by distributing the load.</li>
+<li>Fault tolerance, as each shard can be isolated.</li>
+</ul>
+</li>
+<li><strong>Challenges:</strong>
+<ul>
+<li>More complex to manage.</li>
+<li>Requires consistent hashing or logic to route queries to the appropriate shard.</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><strong>Partitioning:</strong> Partitioning refers to splitting data within a <strong>single database</strong> into smaller, more manageable chunks, typically based on some key (e.g., date, region). This is usually done for performance optimization. Partitioning is often used in <strong>large relational databases</strong> (e.g., Oracle, PostgreSQL) to improve query performance and manage data more efficiently. The data is split into partitions based on a well-defined rule but remains within the same database system.</li>
+</ol>
+<ul>
+<li><strong>Types of Partitioning:</strong>
+<ul>
+<li><strong>Horizontal Partitioning:</strong> Divides rows of a table into multiple smaller tables (similar to sharding but within the same database).</li>
+<li><strong>Vertical Partitioning:</strong> Divides columns of a table into separate tables, useful when frequently accessed data differs.</li>
+<li><strong>Range Partitioning:</strong> Data is partitioned based on ranges of a key (e.g., date ranges).</li>
+<li><strong>List Partitioning:</strong> Based on specific values (e.g., different regions or countries).</li>
+<li><strong>Hash Partitioning:</strong> Data is distributed based on a hash function, ensuring even distribution.</li>
+</ul>
+</li>
+<li><strong>Benefits:</strong>
+<ul>
+<li>Improved query performance.</li>
+<li>Simplified maintenance (e.g., purging old partitions).</li>
+<li>Easier backup and recovery operations.</li>
+</ul>
+</li>
+<li><strong>Challenges:</strong>
+<ul>
+<li>More complex query planning.</li>
+<li>Potential skew if the partitioning logic is not evenly distributed.</li>
+</ul>
+</li>
+</ul>
+<h2 id="hashtags">Hashtags</h2>
+<p>#DatabaseSelection
+#BigData
+#DistributedSystems
+#CAPTheorem
+#Sharding
+#Partitioning
+#ACIDTransactions
+#DataStorage
+#DataManagement
+#TechInsights</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

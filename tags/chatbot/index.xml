@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chatbot on Agones</title>
+    <link>http://localhost:1313/tags/chatbot/</link>
+    <description>Recent content in Chatbot on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/chatbot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Perplexity AI</title>
+      <link>http://localhost:1313/dsblog/Introduction-to-Perplexity-AI/</link>
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Introduction-to-Perplexity-AI/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6156-Introduction-to-Perplexity-AI.jpg&#34; alt=&#34;Introduction to Perplexity AI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction-to-perplexity-ai&#34;&gt;Introduction to Perplexity AI&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-perplexity-ai&#34;&gt;What is Perplexity AI?&lt;/h2&gt;&#xA;&lt;p&gt;Perplexity AI Founded in 2022 is based in San Francisco, California. Perplexity AI is an AI-powered search engine that uses a large language model to answer questions and provide information. It is a free, open-source search engine that is built on top of the latest advancements in AI and natural language processing. Perplexity AI distinguishes itself as a unique blend of a search engine and an AI chatbot, offering several features that set it apart from traditional search engines like Google and other AI models such as ChatGPT.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

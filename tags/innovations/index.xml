@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Innovations on Agones</title>
+    <link>http://localhost:1313/tags/innovations/</link>
+    <description>Recent content in Innovations on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/innovations/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shaping Tomorrow with AI: Nvidia’s Innovations in Graphics, Robotics, and Intelligence</title>
+      <link>http://localhost:1313/dsblog/shaping-tomorrow-with-ai-nvidia/</link>
+      <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/shaping-tomorrow-with-ai-nvidia/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6198-shaping-tomorrow-with-ai-nvidia.jpg&#34; alt=&#34;Shaping Tomorrow with AI: Nvidia’s Innovations in Graphics, Robotics, and Intelligence&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;shaping-tomorrow-with-ai-nvidias-innovations-in-graphics-robotics-and-intelligence&#34;&gt;Shaping Tomorrow with AI: Nvidia’s Innovations in Graphics, Robotics, and Intelligence&lt;/h1&gt;&#xA;&lt;p&gt;This article is based on various online resources, including articles and YouTube videos, but is heavily influenced by the NVIDIA CES 2025 Keynote Speech by Jensen Huang.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-tokens-in-ai-and-how-do-they-serve-as-building-blocks-of-intelligence&#34;&gt;&lt;strong&gt;What are tokens in AI, and how do they serve as building blocks of intelligence?&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;In AI, tokens are fundamental units like words or characters that models process to understand and generate human language, serving as the building blocks of intelligence.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

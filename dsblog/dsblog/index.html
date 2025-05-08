@@ -1,0 +1,1581 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/site/dsblog/dsblog/index.xml">
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Data Science Blog | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Data Science Blog">
+  <meta property="og:description" content="Documentation and usage guides on how to develop and host dedicated game servers on top of Agones.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Data Science Blog">
+  <meta itemprop="description" content="Documentation and usage guides on how to develop and host dedicated game servers on top of Agones.">
+  <meta itemprop="datePublished" content="2025-04-27T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-04-27T00:00:00+00:00">
+  <meta itemprop="wordCount" content="6">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Data Science Blog">
+  <meta name="twitter:description" content="Documentation and usage guides on how to develop and host dedicated game servers on top of Agones.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        
+<main class="section-content">
+  <h1>Data Science Blog</h1>
+  <p><p>Welcome to my Data Science Blog!</p>
+</p>
+
+  <p>🛠️ Total child pages: 272</p>
+
+  <ul>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-04-27-6268-what-is-digital-twin/">What is a Digital Twin?</a>
+        <small>(Apr 27, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-04-26-6267-hunyuan3d-2_0_-high-resolution-3dasset-generation/">Hunyuan3D 2.0: Scaling Diffusion Models for High Resolution Textured 3D Assets Generation</a>
+        <small>(Apr 26, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-04-25-6266-whisper_-large-scale-weak-supervision-speech-recognition/">Whisper: Robust Speech Recognition via Large-Scale Weak Supervision</a>
+        <small>(Apr 25, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-04-24-6265-frequencies-in-time-and-space/">Frequencies in Time and Space: Understanding Nyquist Theorem &amp; its Applications</a>
+        <small>(Apr 24, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-04-23-6264-the-real-story-of-nyquist-shannon/">The Real Story of Nyquist, Shannon, and the Science of Sampling</a>
+        <small>(Apr 23, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-04-21-6263-ps-bitnet-b1.58-2b4t/">BitNet b1.58-2B4T: Revolutionary Binary Neural Network for Efficient AI</a>
+        <small>(Apr 21, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-04-19-6262-ollama-setup-and-running-models/">Ollama Setup and Running Models</a>
+        <small>(Apr 19, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-04-17-6261-ps-madam-rag/">Retrieval-Augmented Generation with Conflicting Evidence</a>
+        <small>(Apr 17, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-04-15-6260-ps-llm-internal-encoding-of-truthfulness-and-hallucinations/">LLM Internal Encoding of Truthfulness and Hallucinations</a>
+        <small>(Apr 15, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-04-14-6259-future-of-programming/">Future of Programming - Capabilities of AI Coding IDEs</a>
+        <small>(Apr 14, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-04-13-6258-cybersecurity-concepts-in-ai-age/">Cybersecurity Concepts in AI Age</a>
+        <small>(Apr 13, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-04-09-6257-quantum-physics-and-vedanta/">Quantum Physics and Vedanta: Bridging Science and Philosophy</a>
+        <small>(Apr 11, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-04-07-6256-ai-benchmarks-for-2025/">AI Benchmarks for 2025</a>
+        <small>(Apr 9, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-28-6254-understanding-electronics-chips/">Understanding Electronics Chips</a>
+        <small>(Mar 28, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-27-6253-quantum-physics/">Quantum Physics with Deeper Questions with ChatGPT</a>
+        <small>(Mar 28, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-29-6255-dsr-ai-benchmark-explorer/">Overview of AI Benchmark Explorer Tool</a>
+        <small>(Mar 28, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-26-6252-audio-video-processing-concepts/">Audio Video Processing Concepts</a>
+        <small>(Mar 28, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-25-6251-a-deep-dive-into-ai-model-marketplace-for-business-managers/">A Deep Dive into AI Model Marketplaces for Business Managers</a>
+        <small>(Mar 27, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-24-6250-exploring-designer-roles-and-their-favorite-free-tools/">Exploring Designer Roles and Their Favorite Free Tools</a>
+        <small>(Mar 24, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-23-6249-exploring-hosting-types/">Exploring Hosting Types</a>
+        <small>(Mar 23, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-22-6248-video-editing-concepts/">Video Editing Concepts</a>
+        <small>(Mar 22, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-21-6247-grok3model-and-sanskrit/">Grok 3 Model and Sanskrit</a>
+        <small>(Mar 21, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-20-6246-implementing-secure-authentication-and-authorization/">Implementing Secure Authentication and Authorization</a>
+        <small>(Mar 20, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-18-6245-return-of-sunita-william-from-iss/">Return of Sunita William from ISS</a>
+        <small>(Mar 18, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-18-6244-codereview-with-coderabbit/">CodeReview with CodeRabbit AI - A Better Way to Automate Code Reviews</a>
+        <small>(Mar 18, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-17-6243-what-are-life-science/">What are Life Sciences?</a>
+        <small>(Mar 17, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-16-6242-real-life-application-of-maths/">Real-Life Applications of Mathematics</a>
+        <small>(Mar 16, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-15-6241-exploring-reactjs-library/">Exploring Reactjs Library</a>
+        <small>(Mar 15, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-14-6240-guide-to-evaluate-generative-models/">A Comprehensive Guide to Evaluate Generative Models</a>
+        <small>(Mar 14, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-13-6239-software-development-toolsets-explained/">Software Development Toolsets Explained</a>
+        <small>(Mar 13, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-12-6238-implementing-comments-in-jekyll-blogs/">Implementing Comments in Jekyll Blogs</a>
+        <small>(Mar 12, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-10-6236-understanding-the-business-of-marketplaces/">Understanding the Business of Marketplaces</a>
+        <small>(Mar 10, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-11-6237-exploring-graphdb-and-neo4j/">Exploring GraphDB and Neo4j - A Guide to Graph Databases</a>
+        <small>(Mar 10, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-08-6235-exploring-and-evaluating-ides/">Exploring and Evaluating Integrated Development Environments (IDEs)</a>
+        <small>(Mar 8, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-02-6234-working-with-github-from-wsl-and-windows-folders/">Working with GitHub from WSL and Windows Folders</a>
+        <small>(Mar 2, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-03-01-6233-why-to-use-offline-ai-models/">Why Use Offline AI Models?</a>
+        <small>(Mar 1, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-28-6232-online-coding-tools/">Online Coding Tools: Choosing the Right IDE for Your Project</a>
+        <small>(Feb 28, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-27-6230-basics-of-microcessor-and-microcontroller/">The Basics of Microprocessor and Microcontroller</a>
+        <small>(Feb 27, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-26-6229-exploring-reasoning-models/">Exploring Reasoning Models in AI Marketplace, Feb 25</a>
+        <small>(Feb 26, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-25-6228-exploring-deepseek-r1/">Exploring DeepSeek R1: The AI That Thinks Like a Human</a>
+        <small>(Feb 25, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-24-6227-integrating-ollama-with-openwebui/">Integrating Ollama AI Models and Open WebUI with Docker: A Step-by-Step Guide</a>
+        <small>(Feb 24, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-23-6226-unlocking-the-power-of-prompts/">Unlocking the Power of Prompts: A Comprehensive Guide to Prompt Engineering</a>
+        <small>(Feb 23, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-22-6225-exploring-reinformement-learning-concepts/">Exploring Reinforcement Learning Concepts: A Comprehensive Guide</a>
+        <small>(Feb 22, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-27-6231-dsr-mybookmark-blog-articles/">Bookmark Blog Articles from Browser</a>
+        <small>(Feb 21, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-21-6224-dsr-ai-resources/">AI Resources: Ultimate Collection of Cutting-Edge Tools for AI Enthusiasts</a>
+        <small>(Feb 21, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-20-6223-exploring-possibilities-with-css/">Exploring Possibilities with CSS: A Comprehensive Guide to Advanced CSS Coding</a>
+        <small>(Feb 20, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-19-6222-devenvironment-with-windows&#43;wsl2&#43;docker/">Setting Up a Development Environment with Windows 11, WSL2 and Docker</a>
+        <small>(Feb 19, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-18-6221-exploring-shell-scrips-and-batch-files/">Exploring Shell Scripting and Batch Files</a>
+        <small>(Feb 18, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-17-6220-exploring-the-local-location-of-model/">Exploring the Local Location of Ollama Models on WSL2</a>
+        <small>(Feb 17, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-16-6219-state-of-the-art-computer-vision-models/">State of the Art Image Generation Models in Computer Vision: A Comprehensive Overview</a>
+        <small>(Feb 16, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-14-6218-the-road-of-bharat-llm-goes-via-sanskri/">The Road to Bharat LLMs Goes Via Sanskrit</a>
+        <small>(Feb 14, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-10-6217-exploring-the-energy-demand-and-supply-of-india/">Exploring the Energy Demand and Supply of India</a>
+        <small>(Feb 10, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-02-09-6216-demystify-nvidia-gpus/">Demystifying NVIDIA GPUs</a>
+        <small>(Feb 9, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-31-6215-exploring-tokenization-in-ai/">Exploring Tokenization and Embedding in NLP</a>
+        <small>(Jan 31, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-30-6214-understanding-contextual-embedding-in-transformers/">Understanding Contextual Embedding in Transformers</a>
+        <small>(Jan 30, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-29-6213-understaning-working-of-cnn/">Understanding the Working of CNN</a>
+        <small>(Jan 29, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-28-6212-power-of-chinese-ai-models/">Power of Chinese AI Models</a>
+        <small>(Jan 28, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-27-6211-computer-vision-research-work/">Computer Vision Research Work</a>
+        <small>(Jan 27, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-26-6210-exploring-ai-benchmarks-and-leaderboards/">Exploring AI Benchmarks &amp; Leaderboards</a>
+        <small>(Jan 26, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-25-6209-exploring-types-of-models/">Exploring Types of Models</a>
+        <small>(Jan 25, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-24-6208-understanding-callbacks/">Understanding Callbacks</a>
+        <small>(Jan 24, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-23-6207-exploring-ai-agents/">Exploring AI Agents</a>
+        <small>(Jan 23, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-22-6206-ai-product-ideas-2025/">AI Product Ideas 2025</a>
+        <small>(Jan 22, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-21-6205-aiml-project-ideas/">AI ML Project Ideas</a>
+        <small>(Jan 21, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-20-6204-whatsapp-integration/">WhatsApp Integration: Webhooks, Messaging, and Architecture Design</a>
+        <small>(Jan 20, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-19-6203-unraveling-wireless-communication/">Unraveling Wireless Communication: Key Protocols and Technologies</a>
+        <small>(Jan 19, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-17-6202-adapting-ai-models-to-the-latest-information-methods-and-approaches/">Adapting AI Models to the Latest Information: Methods and Approaches</a>
+        <small>(Jan 17, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-16-6201-navigating-open-source-licensing-in-the-age-of-ai/">Navigating Open-Source Licensing in the Age of AI: Challenges and Considerations</a>
+        <small>(Jan 16, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-16-6200-exploring-make.com-a-comprehensive-guide/">Exploring Make.com: A Comprehensive Guide to Automation and Its Alternatives</a>
+        <small>(Jan 16, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-08-6199-rethinking-ai-infrastructure-advantages-of-on-prem-over-cloud-solutions/">Rethinking AI Infrastructure: Advantages of On-Prem Over Cloud Solutions</a>
+        <small>(Jan 8, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-07-6198-shaping-tomorrow-with-ai-nvidia/">Shaping Tomorrow with AI: Nvidia’s Innovations in Graphics, Robotics, and Intelligence</a>
+        <small>(Jan 7, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-03-6197-ai-predictions-for-2025/">AI Predictions for 2025</a>
+        <small>(Jan 3, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2025-01-02-6196-the-complete-ecosystem-of-software-development/">The Complete Ecosystem of Software Development</a>
+        <small>(Jan 2, 2025)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-12-29-6195-curl-commands/">curl Commands</a>
+        <small>(Dec 29, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-12-28-6194-how-alphafold-is-revolutionizing-protein-science/">How AlphaFold is Revolutionizing Protein Science</a>
+        <small>(Dec 28, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-12-22-6193-openai-12-days-2024-announcements/">OpenAI 12 Days 2024 Announcements</a>
+        <small>(Dec 22, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-12-17-6192-framework-for-using-llm/">Framework for using LLM</a>
+        <small>(Dec 17, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-12-16-6191-ai-imperialism-western-dominance-and-the-future/">AI Imperialism: Western Dominance and the Future of Global Technology </a>
+        <small>(Dec 16, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-12-13-6189-visualizing-transformers-and-attention/">Visualizing Transformers and Attention</a>
+        <small>(Dec 13, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-12-12-6188-exploring-gpus/">Exploring Graphics Processing Units (GPUs)</a>
+        <small>(Dec 12, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-12-10-6187-ai-models-and-creators/">AI Models and Creators</a>
+        <small>(Dec 10, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-12-09-6186-shazam-features/">Features ofShazam Econometrics Software</a>
+        <small>(Dec 9, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-12-08-6185-serverless-llm-deployment/">Serverless LLM Deployment Platform</a>
+        <small>(Dec 8, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-12-07-6184-microsoft-ai-products/">Microsoft AI Products</a>
+        <small>(Dec 7, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-12-06-6183-google-ai-studio-vs-vertexai/">Google AI Studio vs Vertex AI</a>
+        <small>(Dec 6, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-12-05-6182-introduction-to-nvidia-and-products/">Introduction to NVIDIA and Products</a>
+        <small>(Dec 5, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-11-14-6181-navigating-the-llm-infrastructure-landscape/">Navigating the LLM Infrastructure Landscape</a>
+        <small>(Nov 14, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-11-12-6180-exploring-gguf-and-other-model-formats/">Exploring GGUF and Other Model Formats</a>
+        <small>(Nov 12, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-11-11-6179-exploring-anythingllm/">Exploring AnythingLLM</a>
+        <small>(Nov 11, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-11-01-6178-navigating-python-ecosystem/">Navigating Python Ecosystem</a>
+        <small>(Nov 1, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-30-6177-processors-for-html-css-js-code/">Processors for HTML CSS JS Code</a>
+        <small>(Oct 30, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-29-6176-exploring-popular-web-servers/">Exploring Popular Web Server</a>
+        <small>(Oct 29, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-28-6175-exploring-all-dimensions-of-application-development/">Exploring All Dimensions of Application Development</a>
+        <small>(Oct 28, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-27-6174-exploring-llm-app-development/">Exploring LLM Application Development</a>
+        <small>(Oct 27, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-26-6173-ai-benchmarks-explained/">AI Benchmarks Explained</a>
+        <small>(Oct 26, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-25-6172-transfer-learning-key-ai-techniques-explained/">Transfer Learning Key AI Techniques Explained</a>
+        <small>(Oct 25, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-24-6171-types-of-llm/">Types of Large Language Models (LLM)</a>
+        <small>(Oct 24, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-23-6170-nativagting-javascript-ecosystem/">Navigating the JavaScript Ecosystem</a>
+        <small>(Oct 23, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-22-6169-applications-of-genai/">Applications of GenAI</a>
+        <small>(Oct 22, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-21-6168-understanding-jekyll-framework/">Understanding Jekyll Framework</a>
+        <small>(Oct 21, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-20-6167-introduction-to-container-registry/">Introduction to Container Registry</a>
+        <small>(Oct 20, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-19-6166-ai-ml-with-oracle-cloud/">AI/ML with Oracle Cloud</a>
+        <small>(Oct 19, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-18-6165-seo-keyword-planning/">SEO Keyword Planning</a>
+        <small>(Oct 18, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-17-6164-understanding-html-templating-with-python-ruby-php/">Understanding HTML Templating with Python, Ruby, and PHP</a>
+        <small>(Oct 17, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-16-6163-exploring-syntehtic-data-generation-capabilities/">Exploring Synthetic Data Generation Capabilities</a>
+        <small>(Oct 16, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-15-6162-exploring-sql-and-graphql/">Exploring SQL and GraphQL Commands</a>
+        <small>(Oct 15, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-14-6161-exploring-python-package-managers/">Exploring Python Package Manager</a>
+        <small>(Oct 14, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-13-6160-exploring-linux/">Understanding Linux Distributions</a>
+        <small>(Oct 13, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-12-6159-exploring-firebase/">Exploring Google Firebase</a>
+        <small>(Oct 12, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-11-6158-exploring-bundler/">What is Bundler?</a>
+        <small>(Oct 11, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-10-6157-exploring-dense-embedding-models-in-ai/">Exploring Dense Embedding Models in AI</a>
+        <small>(Oct 10, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-08-6156-introduction-to-perplexity-ai/">Introduction to Perplexity AI</a>
+        <small>(Oct 8, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-07-6155-comprehensive-guide-to-git-commands/">Mastering Git: Comprehensive Guide to Git Commands</a>
+        <small>(Oct 7, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-05-6154-how-to-select-database/">Selecting Database for Project</a>
+        <small>(Oct 5, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-04-6153-exploring-apache-hive/">Exploring Apache Hive</a>
+        <small>(Oct 4, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-03-6152-machine-learning-key-concepts/">Machine Learning Key Concepts</a>
+        <small>(Oct 3, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-02-6151-exploring-docker-and-vs-code-integration/">Exploring Docker and VS Code Integration</a>
+        <small>(Oct 2, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-10-01-6150-what-is-automl/">Automated Machine Learning</a>
+        <small>(Oct 1, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-09-30-6149-python-code-snippet-from-colab/">Python Code Snippnet from Colab</a>
+        <small>(Sep 30, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-09-29-6148-everything-about-console/">Everything About Developer Console</a>
+        <small>(Sep 29, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-09-28-6147-google-cloud-security-components/">Navigating Google Cloud Security: Key Components, Roles, and Best Practices</a>
+        <small>(Sep 28, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-09-27-6146-flutter-folder-structure/">Building AI-Powered Flutter Apps: Best Practices for Folder Structure</a>
+        <small>(Sep 27, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-09-26-6145-python-project-folders-and-files/">Python Project Folders and Files</a>
+        <small>(Sep 26, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-09-25-6144-genai-capabilities-from-aws&#43;azure&#43;gcp/">GenAI Capabilities from AWS, Azure and GCP</a>
+        <small>(Sep 25, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-09-18-6143-exploring-ollama/">Exploring Ollama &amp; LM Studio</a>
+        <small>(Sep 18, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-09-17-6142-exploring-github/">Exploring Github</a>
+        <small>(Sep 17, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-08-29-6141-what-is-package-manager/">What is Package Manager?</a>
+        <small>(Aug 29, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-08-28-6140-tensorflow-gpu-setup-on-local-machine/">Tensorflow GPU Setup on Local Machine</a>
+        <small>(Aug 28, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-08-27-6139-all-about-ai-hype/">All About AI Hype</a>
+        <small>(Aug 27, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-08-22-6138-variations-of-language-model-in-huggingface/">Variations of Language Model in Huggingface</a>
+        <small>(Aug 22, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-08-13-6137-mlops-tools/">MLOps Tools</a>
+        <small>(Aug 13, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-08-12-6136-programming-resources/">Programming Resources</a>
+        <small>(Aug 12, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-08-07-6135-ai-usecases-in-cybersecurity/">AI Usecases in Cybersecurity</a>
+        <small>(Aug 7, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-08-06-6134-open-source-vs-closed-source-ai/">Open Source vs Closed Source AI</a>
+        <small>(Aug 6, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-08-05-6133-how-much-memory-needed-for-llm/">How Much Memory Needed for LLM</a>
+        <small>(Aug 5, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-08-04-6130-llm-skills-and-human-skills/">LLM Skills and Human Skills</a>
+        <small>(Aug 4, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-08-04-6129-llm-architecture-and-training/">LLM Architecture and Training</a>
+        <small>(Aug 4, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-08-02-6128-llm-security-and-ethics-considerations/">LLM Security and Ethics Considerations</a>
+        <small>(Aug 2, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-07-28-6115-why-to-finetune-llm/">Why to Finetune LLM?</a>
+        <small>(Jul 28, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-07-27-6114-what-is-unicode/">What is Unicode and how does it works?</a>
+        <small>(Jul 27, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-08-29-6116-stanford-alpaca/">Stanford Alpaca</a>
+        <small>(Jul 27, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-08-04-6132-software-security-concepts/">Software Security Concepts</a>
+        <small>(Jul 27, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-07-26-6127-understanding-llm-gan-and-transformers/">Understanding LLM GAN and Transformers</a>
+        <small>(Jul 26, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-07-25-6113-transformers_demystified_a_step-by-step_guide/">Transformers Demystified A Step-by-Step Guide</a>
+        <small>(Jul 25, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-07-24-6126-dimensionality-reduction-and-visualization/">Dimensionality Reduction and Visualization</a>
+        <small>(Jul 24, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-07-23-6125-serverless-databases/">Serverless databases</a>
+        <small>(Jul 23, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-07-22-6124-ai-in-health-care/">AI in Health Care</a>
+        <small>(Jul 22, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-07-11-6123-all-about-hashing/">All about Hashing</a>
+        <small>(Jul 11, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-07-10-6122-creating-docker-image/">Creating Docker Image</a>
+        <small>(Jul 10, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-07-04-6121-rest-api/">REST API</a>
+        <small>(Jul 4, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-07-03-6120-nlp-benchmarks/">NLP BenchMarks</a>
+        <small>(Jul 3, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-06-30-6119-decoding-windows-user-folder/">Decoding Windows User Folder</a>
+        <small>(Jun 30, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-06-29-6118-decoding-pip-install-operations/">Decoding pip install operations</a>
+        <small>(Jun 29, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-06-28-6117-decoding-docker-commands/">Decoding docker commands</a>
+        <small>(Jun 28, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-01-12-6112-manmath-nath-ramayana-corpus/">Manamath Nath - Ramayana Corpus</a>
+        <small>(Jan 12, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-01-07-6111-km-ganguli-mahabharat-corpus/">KM Ganguli Mahabharat Corpus</a>
+        <small>(Jan 7, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-01-03-6110-ai-in-government/">AI Usecases in Government</a>
+        <small>(Jan 3, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2024-01-02-6109-ai-in-school-education/">AI in School Education</a>
+        <small>(Jan 2, 2024)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-12-27-6108-basics-of-astrology/">Data Science and Basics of Astrology</a>
+        <small>(Dec 27, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-12-04-6107-summary-of-life-changing-selfhelp-books/">Summary of Life Changing Selfhelp Books</a>
+        <small>(Dec 4, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-11-18-6106-empowering-language-with-ai-nlp-capabilities/">Empowering Language with AI NLP Capabilities</a>
+        <small>(Nov 18, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-11-13-6105-topic-modelling-with-bertopic/">Topic Modeling with BERT</a>
+        <small>(Nov 13, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-11-13-6103-graph-of-thoughts/">Graph of Thoughts</a>
+        <small>(Nov 11, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-11-11-6101-basics-of-word-embedding/">Basics of Word Embedding</a>
+        <small>(Nov 11, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-11-08-6100-journey-from-masters-to-phd/">My Journey from Master to PhD in Data Science and AI</a>
+        <small>(Nov 8, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-11-07-6099-compressing-llm/">Compressing Large Language Model</a>
+        <small>(Nov 7, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-11-06-6098-latex-capabilities/">LaTeX Capabilities</a>
+        <small>(Nov 6, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-09-03-6097-what-is-pinecone/">What is Pinecone</a>
+        <small>(Sep 3, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-09-02-6096-ml-model-development-framework/">ML Model Development Framework</a>
+        <small>(Sep 2, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-09-01-6095-ml-model-repository/">ML Model Respository from Pinto0309</a>
+        <small>(Sep 1, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-08-28-6094-python-api-/">Python APIs for Data</a>
+        <small>(Aug 28, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-08-27-6093-distances-in-machine-learning/">Distances in Machine Learning</a>
+        <small>(Aug 27, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-08-24-6091-paperwithcode-resources/">Paper with Code Resources</a>
+        <small>(Aug 22, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-08-22-6090-dsr-important-ai-paper-list/">Important AI Paper List</a>
+        <small>(Aug 22, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-08-26-6092-machine-learning-metrics/">Machine Learning Metrics</a>
+        <small>(Aug 21, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-08-21-6089-comprehensive-glossary-of-llm/">Comprehensive Glossary of LLM, Deep Learning, NLP, and CV Terminology</a>
+        <small>(Aug 21, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-08-18-6087-what-is-llm/">What is LLM</a>
+        <small>(Aug 18, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-08-20-6088-paper-pretrained-language-models-for-text-generation/">Paper-Summary- A Survey Paper# Pretrained Language Models for Text Generation</a>
+        <small>(Aug 18, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-08-17-6086-how-to-do-literature-review/">How to do Literature Review</a>
+        <small>(Aug 17, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-08-15-6085-nlp-tasks/">NLP Tasks</a>
+        <small>(Aug 15, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-08-14-6084-sql_and_relational_algebra/">SQL and Relational Algebra</a>
+        <small>(Aug 14, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-08-11-6083-types-of-questions/">Types of Questions</a>
+        <small>(Aug 11, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-28-6082-google-cloud-api/">Google Cloud APIs</a>
+        <small>(Jul 28, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-24-6081-model-tuning-with-vertexai/">Model Tuning with VertexAI</a>
+        <small>(Jul 24, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-24-6080-introduction-to-prompt-engineering/">Introduction to Prompt Engineering</a>
+        <small>(Jul 24, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-21-6079-database-and-analytics-product-services-from-google-azure-aws/">Database and Analytics Product Services from Google Azure AWS</a>
+        <small>(Jul 21, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-20-6078-ai-product-services-from-google-azure-aws/">AI Product and Services from Google, Azure and AWS</a>
+        <small>(Jul 20, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-19-6077-introduction-to-ml-model-deployment/">Introduction to ML Model Deployment</a>
+        <small>(Jul 19, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-18-6076-aws-sagemaker-jumpstart-models/">AWS SageMaker Jumpstart Models</a>
+        <small>(Jul 18, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-16-6074-python-decorator-function/">Python Decorator Function</a>
+        <small>(Jul 15, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-17-6075-major-llm-developers-reshaping-nlp-advancements/">Major LLM Developers Shaping the AI Landscape</a>
+        <small>(Jul 15, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-15-6073-embedding-with-fasttext/">Embedding with FastText</a>
+        <small>(Jul 15, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-11-6072-python-naming-convention/">Python Naming Convention</a>
+        <small>(Jul 11, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-10-6071-sorting-algorithm-a-summary/">Sorting Algorithm A Summary</a>
+        <small>(Jul 10, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-03-6069-what-is-gan-architecture/">What is GAN Architecture?</a>
+        <small>(Jul 3, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-06-6070-what-is-captcha/">What is CAPTCHA?</a>
+        <small>(Jul 3, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-02-6068-a-guide-to-model-fine-tuning-with-openai-api/">A Guide to Model Fine Tuning with OpenAI API</a>
+        <small>(Jul 2, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-07-01-6067-capabilities-of-ai-transformers/">Capabilities of AI Transformers</a>
+        <small>(Jul 1, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-06-21-6065-model-garden-of-vertexai/">Model Garden of VertexAI</a>
+        <small>(Jun 21, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-06-12-6066-demystifying-devops-mlops-and-dataops/">Demystifying DevOps, MLOps, and DataOps</a>
+        <small>(Jun 8, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-06-08-6064-all-resources-to-learn-data-science/">All Resources to Learn Data Science</a>
+        <small>(Jun 8, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-06-06-6062-azure-services/">Unlocking the Power of Azure- Exploring 300&#43; Cloud Services and Their Purposes</a>
+        <small>(Jun 6, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-06-07-6063-aws-cloud-services/">A Comprehensive Guide to 210&#43; AWS Services</a>
+        <small>(Jun 6, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-06-05-6061-google-cloud-services/">Google Cloud Service Catalog - A Comprehensive Overview of 250&#43; Google Cloud Services</a>
+        <small>(Jun 5, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-06-04-6060-unraveling-the-google-web/">Unraveling the Google Web - Exploring the Purpose of Google&#39;s Websites</a>
+        <small>(Jun 4, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-05-02-6058-godfathers-of-ai/">God Fathers of AI</a>
+        <small>(May 5, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-05-03-6059-business-usecases-of-gpt/">Business Usecases of GPT</a>
+        <small>(May 3, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-05-01-6057-the-interconnectednessof-life-and-data/">The Interconnectedness of Life and Data</a>
+        <small>(May 1, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-04-27-6056-types-of-machine-learning/">Types of Machine Learning</a>
+        <small>(Apr 27, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-04-21-6055-linux-os-directories/">Linux OS Directories</a>
+        <small>(Apr 26, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-02-24-6052-type-of-technologies/">Types of Technologies</a>
+        <small>(Feb 24, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-02-22-6051-congnitive-biases.md/">Cognitive Biases</a>
+        <small>(Feb 22, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-02-07-6050-podcast-lexfridman-samharris-consciousness-freewill-psychedelics/">Podcast Lex Fridman Sam Harris Consciousness Free Will Psychedelics</a>
+        <small>(Feb 7, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-02-06-6049-books-on-conciousness/">Books on Consciousness</a>
+        <small>(Feb 6, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-02-03-6047-responsible-ai/">Responsible AI</a>
+        <small>(Feb 3, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-02-01-6045-cost-functions-and-optimizers-in-machine-learning/">Cost Functions and Optimizers in Machine Learning</a>
+        <small>(Feb 1, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-02-04-6048-application-of-ai-in-bfsi/">Application of AI in BFSI</a>
+        <small>(Jan 28, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-01-26-6042-gpu-for-data-science-work/">GPU for Data Science Work</a>
+        <small>(Jan 26, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-01-26-6041-type-of-databases/">Type of Databases</a>
+        <small>(Jan 25, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-01-25-6039-datalake-vs-data-warehouse/">Data Lake vs Data Warehouse vs Data Mart</a>
+        <small>(Jan 25, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-01-23-6037-ai-usecases-in-agriculture-industry/">AI Usecases in Agriculture Industry</a>
+        <small>(Jan 23, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-01-22-6036-ai-usecases-in-food-processing/">AI Use Cases in Food Processing</a>
+        <small>(Jan 22, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-01-24-6038-will-ai-replace-human/">Will AI Replace Human?</a>
+        <small>(Jan 19, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-01-27-6043-what-is-gan/">What is GAN?</a>
+        <small>(Jan 17, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-01-19-6034-introduction-to-neural-network/">Introduction to Neural Network</a>
+        <small>(Jan 17, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-01-08-6023-timeseries-interview-questions/">Timeseries Interview Questions</a>
+        <small>(Jan 8, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-01-07-6022-linear-regression/">Linear Regression Interview Questions</a>
+        <small>(Jan 7, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-01-10-6025-statistics-interview-question-for-data-scientist/">Statistics Interview Question for Data Scientist</a>
+        <small>(Jan 6, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-01-05-6020-gpt-usecases/">GPT Usecases</a>
+        <small>(Jan 5, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-01-04-6019-chatgpt-usecases/">ChatGPT Usecases</a>
+        <small>(Jan 4, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-02-02-6046-ai-in-energy-management/">AI in Energy Management</a>
+        <small>(Jan 2, 2023)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2022-12-28-6018-what-is-computer-vision/">What is Computer Vision</a>
+        <small>(Dec 28, 2022)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2022-12-21-6017-the-science-of-reasoning/">The Science of Reasoning</a>
+        <small>(Dec 21, 2022)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2022-12-19-6016-what-is-nlp/">What is NLP?</a>
+        <small>(Dec 19, 2022)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2022-10-10-6014-book-data-science-for-marketing-analytics/">Book Review - Data Science in Marketing Analysis</a>
+        <small>(Oct 26, 2022)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2022-10-15-6015-domain-knowledge-for-machine-learning/">Domain Knowledge in Machine Learning</a>
+        <small>(Oct 15, 2022)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2022-10-06-6013-data-science-project-idea/">Data Science/AI Projects Project Ideas</a>
+        <small>(Oct 6, 2022)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-08-22-6006-confusion-matrix-bayesian-theorem/">Confusion Matrix Bayesian Theorem</a>
+        <small>(Aug 22, 2022)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-20-0120-dsr-data-science-books/">Data Science, AI, ML, eBooks, PDF Books</a>
+        <small>(Jul 20, 2022)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-03-0103-dsr-data-science-cheatsheets/">Data Science Cheatsheets</a>
+        <small>(Jul 3, 2022)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-09-30-6012-python-software-development-and-distribution/">Python Software Development and Distribution</a>
+        <small>(Sep 30, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-09-29-6011-300-important-statistical-terms/">300 Important Statistical Terms</a>
+        <small>(Sep 29, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-09-20-6010-directory-structure-of-ml-project/">Folder Structure for ML Project</a>
+        <small>(Sep 20, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-09-17-6009-generalized-ai-model-for-prediction/">Generalized AI Model for Prediction</a>
+        <small>(Sep 17, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-08-20-6007-20-reasons-why-ai-project-fails/">20 Reasons Why AI Project Fails</a>
+        <small>(Aug 20, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2023-01-16-6031-what-are-transformers-in-ai/">What Are Transformers in AI</a>
+        <small>(Aug 3, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-22-0122-dsr-github-repos-for-datascience/">Github Repos for Data Science</a>
+        <small>(Jul 22, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-21-0121-dsr-ai-ml-resources-from-my-diary/">AI ML Resources from My Diary</a>
+        <small>(Jul 21, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-18-0118-dsr-basic-statistics-for-data-science/">Basic Statistics for Data Science</a>
+        <small>(Jul 18, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-17-0117-dsr-data-scientists-and-ai-ml-researchers/">Data Scientists and AI, ML Researchers</a>
+        <small>(Jul 17, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-16-0116-dsr-data-sources-databases-etl-tools/">Navigating the Data Landscape: Exploring Data Sources, Databases, and ETL Tools for Machine Learning Projects</a>
+        <small>(Jul 16, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-15-0115-dsr-datasets/">Thousands of Machine Learning Datasets  </a>
+        <small>(Jul 15, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-14-0114-dsr-ml-tasks-and-model-evaluation/">Machine Learning Tasks and Model Evaluation</a>
+        <small>(Jul 14, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-13-0113-dsr-ml-frameworks-libraries-tools/">Machine Learning Framework, Library, Tools</a>
+        <small>(Jul 13, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-12-0112-dsr-my-daily-tools/">My Daily Tools</a>
+        <small>(Jul 12, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-09-0109-dsr-ai-ml-blogs/">AI, ML, DL Blogs Sites</a>
+        <small>(Jul 12, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-11-0111-dsr-my-favorite-chrome-extensions/">My Favorite Chrome Extensions</a>
+        <small>(Jul 11, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-10-0110-dsr-best-resources-to-learn-python/">Best Resources to Learn Python</a>
+        <small>(Jul 10, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-08-0108-dsr-ai-ml-conferences-and-journals/">AI, ML, Deep Learning, NLP Conferences &amp; Journals</a>
+        <small>(Jul 8, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-07-0107-dsr-best-youtube-channels-to-learn-data-science/">Best YouTube Channels to Learn Data Science</a>
+        <small>(Jul 7, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-06-0106-dsr-high-school-maths-for-data-science/">High School Maths for Data Science</a>
+        <small>(Jul 6, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-05-0105-dsr-important-ai-research-papers/">Important AI Research Papers</a>
+        <small>(Jul 5, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-04-0104-dsr-mathematics-in-data-science/">Mathematics for Data Scientist</a>
+        <small>(Jul 4, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-03-31-6005-how-naive-bayes-classifier-works/">How Naive Bayes Classifier Works</a>
+        <small>(Mar 31, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-03-04-6004-top-10-technologies-of-future/">Top 10 Technologies of Future</a>
+        <small>(Mar 4, 2021)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-08-24-6008-eda-feature-engineering-101/">EDA &amp; Feature Engineering 101</a>
+        <small>(Aug 24, 2020)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-19-0119-dsr-ds-ai-ml-online-course-tutorial-videos/">DS, AI, ML Online Course, Tutorial, Videos</a>
+        <small>(Jul 2, 2020)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-02-0102-dsr-data-science-interview-question-answers/">Data Science Interview Question Answers</a>
+        <small>(Jul 2, 2020)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2021-07-01-0101-dsr-reinforcement-learning-repositories/">Reinforcement Learning Git Repositories</a>
+        <small>(Jul 1, 2020)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2020-05-15-6003-what-is-xai/">What is XAI?</a>
+        <small>(May 15, 2020)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/dsblog/2020-05-02-6002-100&#43;-ai-usecases/">100&#43; High Level AI Usecases and Future Prediction for AI as on 2020</a>
+        <small>(May 2, 2020)</small>
+      </li>
+    
+      <li>
+        <a href="/site/dsblog/Dealing-with-Sensitive-Data/">Dealing with Sensitive Data</a>
+        <small>(Mar 10, 2020)</small>
+      </li>
+    
+  </ul>
+</main>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

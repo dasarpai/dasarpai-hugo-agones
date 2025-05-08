@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning Models on Agones</title>
+    <link>http://localhost:1313/tags/machine-learning-models/</link>
+    <description>Recent content in Machine Learning Models on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/machine-learning-models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generalized AI Model for Prediction</title>
+      <link>http://localhost:1313/dsblog/Generalized-AI-Model-for-Prediction/</link>
+      <pubDate>Fri, 17 Sep 2021 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Generalized-AI-Model-for-Prediction/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6009-Generalized-AI-Model-for-Prediction.jpg&#34; alt=&#34;Generalized AI Model for Prediction&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Can we really Develop AI solutions that can predict human behavior? If you are not a technical person then don’t get overwhelmed by the next paragraph, you can read further, and it will make sense to you.&lt;/p&gt;&#xA;&lt;p&gt;We know the basic equation, y = mx + c. This comes from algebra and trigonometry. Here, y is the predicted value, and x is the input. The x can be a simple scalar value or a vector. Similarly, m is the coefficient in this equation, and it can be a simple scalar value or a vector. If m or x is a vector, then it can hold multiple values. The value of m corresponding to x is also called slope in trigonometry. If a plane is 2 dimensional, then you have one m and one x. But if a plane is complex, and it has, let us say, 10 dimensions then it has 9 m and 9 x. 10th dimensions is predicted by these 9 m and 9 x, using the earlier formula. How that multiplication happens is easy for those who know vector and matrix multiplication, but for others, it is really complicated. So, you can leave it for the time being.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

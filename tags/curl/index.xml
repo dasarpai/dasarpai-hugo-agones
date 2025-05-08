@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Curl on Agones</title>
+    <link>http://localhost:1313/tags/curl/</link>
+    <description>Recent content in Curl on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/curl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>curl Commands</title>
+      <link>http://localhost:1313/dsblog/curl-commands/</link>
+      <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/curl-commands/</guid>
+      <description>&lt;p&gt;!&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6195-curl-commands.jpg&#34; alt=&#34;curl Commands&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-curl-command&#34;&gt;What is curl command?&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;code&gt;curl&lt;/code&gt; command is a versatile command-line tool for transferring data to and from servers using various protocols like HTTP, HTTPS, FTP, etc. It allows you to make requests (GET, POST, PUT, DELETE) to APIs, download/upload files, send data, and debug web interactions directly from the terminal. It supports custom headers, authentication, proxies, and more, making it essential for testing and automation in web development and API integrations.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

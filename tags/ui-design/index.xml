@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UI Design on Agones</title>
+    <link>http://localhost:1313/tags/ui-design/</link>
+    <description>Recent content in UI Design on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ui-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Designer Roles and Their Favorite Free Tools</title>
+      <link>http://localhost:1313/dsblog/exploring-designer-roles-and-their-favorite-free-tools/</link>
+      <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-designer-roles-and-their-favorite-free-tools/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6250-exploring-designer-roles.jpg&#34; alt=&#34;Exploring Designer Roles and Their Favorite Free Tools&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-designer-roles-and-their-favorite-free-tools&#34;&gt;Exploring Designer Roles and Their Favorite Free Tools&lt;/h1&gt;&#xA;&lt;p&gt;In the software business, design plays a huge role, and there are different kinds of designers, each with their own focus areas, responsibilities, and specialized tools.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-different-types-of-designer-roles&#34;&gt;What are Different Types of Designer Roles?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-ui-designer-user-interface-designer&#34;&gt;&lt;strong&gt;1. UI Designer (User Interface Designer)&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Focus:&lt;/strong&gt; Visual design of interfaces (buttons, icons, layout, colors, typography)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Common Tools:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Figma&lt;/li&gt;&#xA;&lt;li&gt;Adobe XD&lt;/li&gt;&#xA;&lt;li&gt;Sketch (macOS)&lt;/li&gt;&#xA;&lt;li&gt;Framer&lt;/li&gt;&#xA;&lt;li&gt;Zeplin (for handoff)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;2-ux-designer-user-experience-designer&#34;&gt;&lt;strong&gt;2. UX Designer (User Experience Designer)&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Focus:&lt;/strong&gt; User journeys, flows, wireframes, usability, research&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

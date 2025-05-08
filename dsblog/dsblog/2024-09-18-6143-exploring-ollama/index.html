@@ -1,0 +1,787 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Exploring Ollama &amp; LM Studio | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2024-09-18-6143-exploring-ollama/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Exploring Ollama & LM Studio">
+  <meta property="og:description" content="Exploring Ollama &amp; LM Studio Is this article for me? If you are looking answers to the following questions, then this article is for you:
+Question: What is Ollama? Is it like Docker? Question: How is Ollama different from Docker? Question: How to install ollama on my machine? Question: How to create customized LLM Model (docker like image)? Question: What are the LLM available on ollama? Question: Can we integrate these hundreds with different UI like ChatGPT? Question: If I want to use all these Ollama models via Jupyter Notebook then what to do? Question: Does Ollama have plugins like github copilot? Can I use those from my visual code? Question: What kind of software are LM Studio or Ollama? Question: What is LM Studio and how different it is from Ollama? Question: What are different formats to save model, specifically LLMs? Question: What is gguf model extention? Question: If I have finetuned my models using clouds like aws sagemaker, vertexai, azure and kept there then can I use them inside my ollama and LM Studio? Question: What is Ollama? Is it like Docker? Ollama is a platform designed to make running and interacting with large language models (LLMs) easier. It abstracts away the complexities of managing LLM models, GPU resources, and related configurations by offering a simple CLI interface. With Ollama, you can run, manage, and deploy LLMs locally or in various cloud environments without having to worry about the intricate details of setting up environments, downloading models, or configuring them.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-09-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-09-18T00:00:00+00:00">
+    <meta property="article:tag" content="LLM">
+    <meta property="article:tag" content="Ollama">
+    <meta property="article:tag" content="Meta">
+    <meta property="article:tag" content="Large Language Model">
+
+  <meta itemprop="name" content="Exploring Ollama & LM Studio">
+  <meta itemprop="description" content="Exploring Ollama &amp; LM Studio Is this article for me? If you are looking answers to the following questions, then this article is for you:
+Question: What is Ollama? Is it like Docker? Question: How is Ollama different from Docker? Question: How to install ollama on my machine? Question: How to create customized LLM Model (docker like image)? Question: What are the LLM available on ollama? Question: Can we integrate these hundreds with different UI like ChatGPT? Question: If I want to use all these Ollama models via Jupyter Notebook then what to do? Question: Does Ollama have plugins like github copilot? Can I use those from my visual code? Question: What kind of software are LM Studio or Ollama? Question: What is LM Studio and how different it is from Ollama? Question: What are different formats to save model, specifically LLMs? Question: What is gguf model extention? Question: If I have finetuned my models using clouds like aws sagemaker, vertexai, azure and kept there then can I use them inside my ollama and LM Studio? Question: What is Ollama? Is it like Docker? Ollama is a platform designed to make running and interacting with large language models (LLMs) easier. It abstracts away the complexities of managing LLM models, GPU resources, and related configurations by offering a simple CLI interface. With Ollama, you can run, manage, and deploy LLMs locally or in various cloud environments without having to worry about the intricate details of setting up environments, downloading models, or configuring them.">
+  <meta itemprop="datePublished" content="2024-09-18T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-09-18T00:00:00+00:00">
+  <meta itemprop="wordCount" content="4881">
+  <meta itemprop="keywords" content="Ollama AI,On-device AI,Local LLM frameworks,AI model management,LangChain integration">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exploring Ollama & LM Studio">
+  <meta name="twitter:description" content="Exploring Ollama &amp; LM Studio Is this article for me? If you are looking answers to the following questions, then this article is for you:
+Question: What is Ollama? Is it like Docker? Question: How is Ollama different from Docker? Question: How to install ollama on my machine? Question: How to create customized LLM Model (docker like image)? Question: What are the LLM available on ollama? Question: Can we integrate these hundreds with different UI like ChatGPT? Question: If I want to use all these Ollama models via Jupyter Notebook then what to do? Question: Does Ollama have plugins like github copilot? Can I use those from my visual code? Question: What kind of software are LM Studio or Ollama? Question: What is LM Studio and how different it is from Ollama? Question: What are different formats to save model, specifically LLMs? Question: What is gguf model extention? Question: If I have finetuned my models using clouds like aws sagemaker, vertexai, azure and kept there then can I use them inside my ollama and LM Studio? Question: What is Ollama? Is it like Docker? Ollama is a platform designed to make running and interacting with large language models (LLMs) easier. It abstracts away the complexities of managing LLM models, GPU resources, and related configurations by offering a simple CLI interface. With Ollama, you can run, manage, and deploy LLMs locally or in various cloud environments without having to worry about the intricate details of setting up environments, downloading models, or configuring them.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6143-Exploring-Ollama.jpg" alt="Exploring Ollama &amp; LM Studio"></p>
+<h1 id="exploring-ollama--lm-studio">Exploring Ollama &amp; LM Studio</h1>
+<h2 id="is-this-article-for-me">Is this article for me?</h2>
+<p>If you are looking answers to the following questions, then this article is for you:</p>
+<ul>
+<li>Question: What is Ollama? Is it like Docker?</li>
+<li>Question: How is Ollama different from Docker?</li>
+<li>Question: How to install ollama on my machine?</li>
+<li>Question: How to create customized LLM Model (docker like image)?</li>
+<li>Question: What are the LLM available on ollama?</li>
+<li>Question: Can we integrate these hundreds with different UI like ChatGPT?</li>
+<li>Question: If I want to use all these Ollama models via Jupyter Notebook then what to do?</li>
+<li>Question: Does Ollama have plugins like github copilot? Can I use those from my visual code?</li>
+<li>Question: What kind of software are LM Studio or Ollama?</li>
+<li>Question: What is LM Studio and how different it is from Ollama?</li>
+<li>Question: What are different formats to save model, specifically LLMs?</li>
+<li>Question: What is gguf model extention?</li>
+<li>Question: If I have finetuned my models using clouds like aws sagemaker, vertexai, azure and kept there then can I use them inside my ollama and LM Studio?</li>
+</ul>
+<h2 id="question-what-is-ollama-is-it-like-docker">Question: What is Ollama? Is it like Docker?</h2>
+<p>Ollama is a platform designed to make running and interacting with large language models (LLMs) easier. It abstracts away the complexities of managing LLM models, GPU resources, and related configurations by offering a simple CLI interface. With Ollama, you can run, manage, and deploy LLMs locally or in various cloud environments without having to worry about the intricate details of setting up environments, downloading models, or configuring them.</p>
+<h3 id="key-features-of-ollama">Key Features of Ollama:</h3>
+<ul>
+<li><strong>Model Management</strong>: Ollama can download and store LLMs in a local cache for you to run, typically in a format optimized for the hardware available (like your local GPU).</li>
+<li><strong>GPU/CPU Utilization</strong>: It detects hardware resources, such as your NVIDIA GPU, and automatically uses them for model acceleration without additional setup.</li>
+<li><strong>Service Setup</strong>: When you install Ollama, it sets up a service running in the background that serves models on an API, so you can interact with them programmatically.</li>
+</ul>
+<h2 id="question-how-is-ollama-different-from-docker">Question: How is Ollama different from Docker?</h2>
+<p>While Ollama and Docker both deal with isolated environments, they serve different purposes:</p>
+<ul>
+<li><strong>Ollama</strong> focuses specifically on running machine learning models, especially large language models, and optimizes resources to make them easily accessible and deployable.</li>
+<li><strong>Docker</strong> is a general-purpose containerization tool that allows you to package applications with their dependencies in isolated environments. It’s used for deploying a wide variety of applications, not just models.</li>
+</ul>
+<p>So, while Docker might also be used to set up machine learning environments or serve models, Ollama is specialized and optimized for the LLM use case.</p>
+<p>In Summary: <strong>Ollama</strong> = Model management platform for LLMs, with easy CLI and automatic resource optimization. <strong>Docker</strong> = General containerization tool for deploying all types of applications in isolated environments.</p>
+<h2 id="question-how-to-install-ollama-on-my-machine">Question: How to install ollama on my machine?</h2>
+<p>Refer: <a href="https://ollama.com/download/linux">https://ollama.com/download/linux</a>, and <a href="https://github.com/ollama/ollama">https://github.com/ollama/ollama</a>, and <a href="https://github.com/ollama/ollama-python">https://github.com/ollama/ollama-python</a></p>
+<ul>
+<li>To download Ollama on linux/wsl: <br>
+curl -fsSL <a href="https://ollama.com/install.sh">https://ollama.com/install.sh</a> | sh</li>
+<li>To run<br>
+ollama run phi3<br>
+<strong><font color=green>http://127.0.0.1:11434/ - ollama is running </font></strong></li>
+</ul>
+<h2 id="question-how-to-create-customized-llm-model-docker-like-image">Question: How to create customized LLM Model (docker like image)?</h2>
+<p>If you know the working of Docker image, container, docker hub, docker command then you will feel at home with ollama commands.</p>
+<p>Step 1: Create a ModelFile</p>
+<pre tabindex="0"><code>FROM llama3.1
+
+# set the temperature to 1 [higher is more creative, lower is more coherent]
+PARAMETER temperature 1
+
+# set the system message
+SYSTEM &#34;&#34;&#34;
+You are Travel Advisor from Air India Airlines. Answer as AI Advisor, the assistant, only.
+&#34;&#34;&#34;
+</code></pre><p>Step 2: Create and run the model</p>
+<pre tabindex="0"><code>ollama create aiadvisor -f ./Modelfile
+ollama run aiadvisor
+&gt;&gt;&gt; hi
+Hello! It&#39;s your friend AI Advisor.
+</code></pre><h2 id="question-what-are-the-llm-available-on-ollama">Question: What are the LLM available on ollama?</h2>
+<p>There are 100+ LLM available via ollama. They have different capabilities in terms of domain task like
+coding, embedding, reasoning, chatting, philosophy, medical, maths, function calling. And in terms of context window 8k, 16k, 24k, 128k etc. And in terms of hardware/gpu required or not to run these.</p>
+<h3 id="chattingassistant">Chatting/Assistant/</h3>
+<ol>
+<li>alfred: A robust conversational model designed to be used for both chat and instruct use cases.</li>
+<li>all-minilm: Embedding models on very large sentence level datasets.</li>
+<li>An experimental 1.1B parameter model trained on the new Dolphin 2.8 dataset by Eric Hartford and based on TinyLlama.</li>
+<li>Aya 23, released by Cohere, is a new family of state-of-the-art, multilingual models that support 23 languages.</li>
+<li>bge-large: Embedding model from BAAI mapping texts to vectors.</li>
+<li>BGE-M3 is a new Embedding model from BAAI distinguished for its versatility in Multi-Functionality, Multi-Linguality, and Multi-Granularity.</li>
+<li>Command R is a Large Language Model optimized for conversational interaction and long context tasks.</li>
+<li>Command R+ is a powerful, scalable large language model purpose-built to excel at real-world enterprise use cases.</li>
+<li>DBRX is an open, general-purpose LLM created by Databricks.</li>
+<li>deepseek-llm: An advanced language model crafted with 2 trillion bilingual tokens.</li>
+<li>deepseek-v2: A strong, economical, and efficient Mixture-of-Experts language model.</li>
+<li>deepseek-v2.5: An upgraded version of DeekSeek-V2 that integrates the general and coding abilities of both DeepSeek-V2-Chat and DeepSeek-Coder-V2-Instruct.</li>
+<li>Dolphin 2.9 is a new model with 8B and 70B sizes by Eric Hartford based on Llama 3 that has a variety of instruction, conversational, and coding skills.</li>
+<li>dolphin-mixtral: Uncensored, 8x7b and 8x22b fine-tuned models based on the Mixtral mixture of experts models that excels at coding tasks. Created by Eric Hartford.</li>
+<li>everythinglm: Uncensored Llama2 based model with support for a 16K context window.</li>
+<li>falcon: A large language model built by the Technology Innovation Institute (TII) for use in summarization, text generation, and chat bots.</li>
+<li>Gemma is a family of lightweight, state-of-the-art open models built by Google DeepMind.</li>
+<li>glm4: A strong multi-lingual general language model with competitive performance to Llama 3.</li>
+<li>goliath: A language model created by combining two fine-tuned Llama 2 70B models into one.</li>
+<li>Google Gemma 2 is a high-performing and efficient model available in three sizes: 2B, 9B, and 27B.</li>
+<li>Hermes 3 is the latest version of the flagship Hermes series of LLMs by Nous Research</li>
+<li>Llama 2 is a collection of foundation language models ranging from 7B to 70B parameters.</li>
+<li>Llama 3.1 is a new state-of-the-art model from Meta available in 8B, 70B and 405B parameter sizes.</li>
+<li>llama2-chinese: Llama 2 based model fine tuned to improve Chinese dialogue ability.</li>
+<li>llama3-chatqa: A model from NVIDIA based on Llama 3 that excels at conversational question answering (QA) and retrieval-augmented generation (RAG).</li>
+<li>llama3-gradient: This model extends LLama-3 8B&rsquo;s context length from 8k to over 1m tokens.</li>
+<li>MegaDolphin-2.2-120b is a transformation of Dolphin-2.2-70b created by interleaving the model with itself.</li>
+<li>Meta Llama 3: The most capable openly available LLM to date</li>
+<li>Mistral OpenOrca is a 7 billion parameter model, fine-tuned on top of the Mistral 7B model using the OpenOrca dataset.</li>
+<li>mistral-nemo: A state-of-the-art 12B model with 128k context length, built by Mistral AI in collaboration with NVIDIA.</li>
+<li>mistral-small: Mistral Small is a lightweight model designed for cost-effective use in tasks like translation and summarization.</li>
+<li>MistralLite is a fine-tuned model based on Mistral with enhanced capabilities of processing long contexts.</li>
+<li>mixtral: A set of Mixture of Experts (MoE) model with open weights by Mistral AI in 8x7b and 8x22b parameter sizes.</li>
+<li>neural-chat: A fine-tuned model based on Mistral with good coverage of domain and language.</li>
+<li>notus: A 7B chat model fine-tuned with high-quality data and based on Zephyr.</li>
+<li>notux: A top-performing mixture of experts model, fine-tuned with high-quality data.</li>
+<li>nous-hermes: General use models based on Llama and Llama 2 from Nous Research.</li>
+<li>nous-hermes2: The powerful family of models by Nous Research that excels at scientific discussion and coding tasks.</li>
+<li>nuextract: A 3.8B model fine-tuned on a private high-quality synthetic dataset for information extraction, based on Phi-3.</li>
+<li>OpenHermes 2.5 is a 7B model fine-tuned by Teknium on Mistral with fully open datasets.</li>
+<li>orca-mini: A general-purpose model ranging from 3 billion parameters to 70 billion, suitable for entry-level hardware.</li>
+<li>Phi-3 is a family of lightweight 3B (Mini) and 14B (Medium) state-of-the-art open models by Microsoft.</li>
+<li>phi3.5: A lightweight AI model with 3.8 billion parameters with performance overtaking similarly and larger sized models.</li>
+<li>Qwen 1.5 is a series of large language models by Alibaba Cloud spanning from 0.5B to 110B parameters</li>
+<li>Qwen2 is a new series of large language models from Alibaba group</li>
+<li>reader-lm: A series of models that convert HTML content to Markdown content, which is useful for content conversion tasks.</li>
+<li>samantha-mistral: A companion assistant trained in philosophy, psychology, and personal relationships. Based on Mistral.</li>
+<li>smollm: A family of small models with 135M, 360M, and 1.7B parameters, trained on a new high-quality dataset.</li>
+<li>solar: A compact, yet powerful 10.7B large language model designed for single-turn conversation.</li>
+<li>Stable LM 2 is a state-of-the-art 1.6B and 12B parameter language model trained on multilingual data in English, Spanish, German, Italian, French, Portuguese, and Dutch.</li>
+<li>stable-beluga: Llama 2 based model fine tuned on an Orca-style dataset. Originally called Free Willy.</li>
+<li>stablelm-zephyr: A lightweight chat model allowing accurate, and responsive output without requiring high-end hardware.</li>
+<li>Starling is a large language model trained by reinforcement learning from AI feedback focused on improving chatbot helpfulness.</li>
+<li>The Nous Hermes 2 model from Nous Research, now trained over Mixtral.</li>
+<li>The TinyLlama project is an open endeavor to train a compact 1.1B Llama model on 3 trillion tokens.</li>
+<li>vicuna: General use chat model based on Llama and Llama 2 with 2K to 16K context sizes.</li>
+<li>Wizard Vicuna is a 13B parameter model based on Llama 2 trained by MelodysDreamj.</li>
+<li>Wizard Vicuna Uncensored is a 7B, 13B, and 30B parameter model based on Llama 2 uncensored by Eric Hartford.</li>
+<li>wizardlm-uncensored: Uncensored version of Wizard LM model</li>
+<li>xwinlm: Conversational model based on Llama 2 that performs competitively on various benchmarks.</li>
+<li>yarn-llama2: An extension of Llama 2 that supports a context of up to 128k tokens.</li>
+<li>yarn-mistral: An extension of Mistral to support context windows of 64K or 128K.</li>
+<li>Yi 1.5 is a high-performing, bilingual language model.</li>
+<li>Zephyr is a series of fine-tuned versions of the Mistral and Mixtral models that are trained to act as helpful assistants.</li>
+</ol>
+<h3 id="multimodal--vision">Multimodal &amp; Vision</h3>
+<ol>
+<li>BakLLaVA is a multimodal (vision) model consisting of the Mistral 7B base model augmented with the LLaVA architecture.</li>
+<li>minicpm-v: A series of multimodal LLMs (MLLMs) designed for vision-language understanding.</li>
+<li>LLaVA is a novel end-to-end trained large multimodal model that combines a vision encoder and Vicuna for general-purpose visual and language understanding.</li>
+<li>llava-llama3: A LLaVA (vision) model fine-tuned from Llama 3 Instruct with better scores in several benchmarks.</li>
+<li>llava-phi3: A new small LLaVA (vision) model fine-tuned from Phi 3 Mini.</li>
+<li>moondream2 is a small vision language model designed to run efficiently on edge devices.</li>
+</ol>
+<h3 id="math">Math</h3>
+<ol>
+<li>llama-pro: An expansion of Llama 2 that specializes in integrating both general language understanding and domain-specific knowledge, particularly in programming and mathematics.</li>
+<li>Qwen2 Math is a series of specialized math language models built upon the Qwen2 LLMs, which significantly outperforms the mathematical capabilities of open-source models and even closed-source models (e.g., GPT4o).</li>
+<li>wizard-math: Model focused on math and logic problems</li>
+</ol>
+<h3 id="coding">Coding</h3>
+<ol>
+<li>codellama: A large language model that can use text prompts to generate and discuss code.</li>
+<li>codegeex4: A versatile model for AI software development scenarios, including code completion.</li>
+<li>codeup: Great code generation model based on Llama2.</li>
+<li>codebooga: A high-performing code instruct model created by merging two existing code models.</li>
+<li>Magicoder is a family of 7B parameter models trained on 75K synthetic instruction data using OSS-Instruct, a novel approach to enlightening LLMs with open-source code snippets.</li>
+<li>wizardcoder: State-of-the-art code generation model</li>
+<li>phind-codellama: Code generation model based on Code Llama.</li>
+<li>dolphincoder: A 7B and 15B uncensored variant of the Dolphin model family that excels at coding, based on StarCoder2.</li>
+<li>granite-code: A family of open foundation models by IBM for Code Intelligence</li>
+<li>deepseek-coder-v2: An open-source Mixture-of-Experts code language model that achieves performance comparable to GPT4-Turbo in code-specific tasks.</li>
+<li>SQLCoder is a code completion model fined-tuned on StarCoder for SQL generation tasks</li>
+<li>StarCoder is a code generation model trained on 80+ programming languages.</li>
+<li>Yi-Coder is a series of open-source code language models that delivers state-of-the-art coding performance with fewer than 10 billion parameters.</li>
+<li>Codestral is Mistral AI’s first-ever code model designed for code generation tasks.</li>
+<li>Falcon2 is an 11B parameters causal decoder-only model built by TII and trained over 5T tokens.</li>
+<li>Stable Code 3B is a coding model with instruct and code completion variants on par with models such as Code Llama 7B that are 2.5x larger.</li>
+<li>StarCoder2 is the next generation of transparently trained open code LLMs that comes in three sizes: 3B, 7B and 15B parameters.</li>
+<li>DeepSeek Coder is a capable coding model trained on two trillion code and natural language tokens.</li>
+<li>CodeQwen1.5 is a large language model pretrained on a large amount of code data.</li>
+<li>Mistral Large 2 is Mistral&rsquo;s new flagship model that is significantly more capable in code generation, mathematics, and reasoning with 128k context window and support for dozens of languages.</li>
+<li>open-orca-platypus2: Merge of the Open Orca OpenChat model and the Garage-bAInd Platypus 2 model. Designed for chat and code generation.</li>
+<li>CodeGemma is a collection of powerful, lightweight models that can perform a variety of coding tasks like fill-in-the-middle code completion, code generation, natural language understanding, mathematical reasoning, and instruction following.</li>
+</ol>
+<h3 id="embedding">Embedding</h3>
+<ol>
+<li>nomic-embed-text: A high-performing open embedding model with a large token context window.</li>
+<li>mxbai-embed-large</li>
+<li>snowflake-arctic-embed: A suite of text embedding models by Snowflake, optimized for performance.</li>
+<li>State-of-the-art large embedding model from mixedbread.ai</li>
+<li>paraphrase-multilingual: Sentence-transformers (embedding) model that can be used for tasks like clustering or semantic search.</li>
+</ol>
+<h3 id="medical">Medical</h3>
+<ol>
+<li>medllama2: Fine-tuned Llama 2 model to answer medical questions based on an open source medical dataset.</li>
+<li>meditron: Open-source medical large language model adapted from Llama 2 to the medical domain.</li>
+</ol>
+<h3 id="function-calling">Function Calling</h3>
+<ol>
+<li>Nexus Raven is a 13B instruction tuned model for function calling tasks.</li>
+<li>llama3-groq-tool-use: A series of models from Groq that represent a significant advancement in open-source AI capabilities for tool use/function calling.</li>
+<li>firefunction-v2: An open weights function calling model based on Llama 3, competitive with GPT-4o function calling capabilities.</li>
+</ol>
+<h3 id="reasoning">Reasoning</h3>
+<ol>
+<li>mathstral: MathΣtral: a 7B model designed for math reasoning and scientific discovery by Mistral AI.</li>
+<li>Phi-2: a 2.7B language model by Microsoft Research that demonstrates outstanding reasoning and language understanding capabilities.</li>
+<li>InternLM2.5 is a 7B parameter model tailored for practical scenarios with outstanding reasoning capability.</li>
+<li>wizardlm2: State of the art large language model from Microsoft AI with improved performance on complex chat, multilingual, reasoning and agent use cases.</li>
+<li>reflection: A high-performing model trained with a new technique called Reflection-tuning that teaches a LLM to detect mistakes in its reasoning and correct course.</li>
+<li>Orca 2 is built by Microsoft research, and are a fine-tuned version of Meta&rsquo;s Llama 2 models. The model is designed to excel particularly in reasoning.</li>
+</ol>
+<h2 id="question-can-we-integrate-these-hundreds-with-different-ui-like-chatgpt">Question: Can we integrate these hundreds with different UI like ChatGPT?</h2>
+<p>Yes, in fact you need NOT  to create any new UI. Hundreds of good UI are available which are integrated with these hundreds of LLMs available on Ollama. You can see below some of the popular UI via which Ollama models can be accessed.</p>
+<ul>
+<li><a href="https://github.com/open-webui/open-webui">Open WebUI</a></li>
+<li><a href="https://github.com/AugustDev/enchanted">Enchanted (macOS native)</a></li>
+<li><a href="https://github.com/fmaclen/hollama">Hollama</a></li>
+<li><a href="https://github.com/ParisNeo/lollms-webui">Lollms-Webui</a></li>
+<li><a href="https://github.com/danny-avila/LibreChat">LibreChat</a></li>
+<li><a href="https://github.com/bionic-gpt/bionic-gpt">Bionic GPT</a></li>
+<li><a href="https://github.com/rtcfirefly/ollama-ui">HTML UI</a></li>
+<li><a href="https://github.com/jikkuatwork/saddle">Saddle</a></li>
+<li><a href="https://github.com/ivanfioravanti/chatbot-ollama">Chatbot UI</a></li>
+<li><a href="https://github.com/mckaywrigley/chatbot-ui">Chatbot UI v2</a></li>
+<li><a href="https://github.com/ollama-interface/Ollama-Gui?tab=readme-ov-file">Typescript UI</a></li>
+<li><a href="https://github.com/richawo/minimal-llm-ui">Minimalistic React UI for Ollama Models</a></li>
+<li><a href="https://github.com/kevinhermawan/Ollamac">Ollamac</a></li>
+<li><a href="https://github.com/enricoros/big-AGI/blob/main/docs/config-local-ollama.md">big-AGI</a></li>
+<li><a href="https://github.com/cheshire-cat-ai/core">Cheshire Cat assistant framework</a></li>
+<li><a href="https://github.com/semperai/amica">Amica</a></li>
+<li><a href="https://github.com/BruceMacD/chatd">chatd</a></li>
+<li><a href="https://github.com/kghandour/Ollama-SwiftUI">Ollama-SwiftUI</a></li>
+<li><a href="https://github.com/langgenius/dify">Dify.AI</a></li>
+<li><a href="https://mindmac.app">MindMac</a></li>
+<li><a href="https://github.com/jakobhoeg/nextjs-ollama-llm-ui">NextJS Web Interface for Ollama</a></li>
+<li><a href="https://msty.app">Msty</a></li>
+<li><a href="https://github.com/Bin-Huang/Chatbox">Chatbox</a></li>
+<li><a href="https://github.com/tgraupmann/WinForm_Ollama_Copilot">WinForm Ollama Copilot</a></li>
+<li><a href="https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web">NextChat</a> with <a href="https://docs.nextchat.dev/models/ollama">Get Started Doc</a></li>
+<li><a href="https://github.com/mmo80/alpaca-webui">Alpaca WebUI</a></li>
+<li><a href="https://github.com/enoch1118/ollamaGUI">OllamaGUI</a></li>
+<li><a href="https://github.com/InternLM/OpenAOE">OpenAOE</a></li>
+<li><a href="https://github.com/leonid20000/OdinRunes">Odin Runes</a></li>
+<li><a href="https://github.com/mrdjohnson/llm-x">LLM-X</a> (Progressive Web App)</li>
+<li><a href="https://github.com/Mintplex-Labs/anything-llm">AnythingLLM (Docker + MacOs/Windows/Linux native app)</a></li>
+<li><a href="https://github.com/rapidarchitect/ollama_basic_chat">Ollama Basic Chat: Uses HyperDiv Reactive UI</a></li>
+<li><a href="https://github.com/drazdra/ollama-chats">Ollama-chats RPG</a></li>
+<li><a href="https://github.com/reid41/QA-Pilot">QA-Pilot</a> (Chat with Code Repository)</li>
+<li><a href="https://github.com/sugarforever/chat-ollama">ChatOllama</a> (Open Source Chatbot based on Ollama with Knowledge Bases)</li>
+<li><a href="https://github.com/Nagi-ovo/CRAG-Ollama-Chat">CRAG Ollama Chat</a> (Simple Web Search with Corrective RAG)</li>
+<li><a href="https://github.com/infiniflow/ragflow">RAGFlow</a> (Open-source Retrieval-Augmented Generation engine based on deep document understanding)</li>
+<li><a href="https://github.com/StreamDeploy-DevRel/streamdeploy-llm-app-scaffold">StreamDeploy</a> (LLM Application Scaffold)</li>
+<li><a href="https://github.com/swuecho/chat">chat</a> (chat web app for teams)</li>
+<li><a href="https://github.com/lobehub/lobe-chat">Lobe Chat</a> with <a href="https://lobehub.com/docs/self-hosting/examples/ollama">Integrating Doc</a></li>
+<li><a href="https://github.com/datvodinh/rag-chatbot.git">Ollama RAG Chatbot</a> (Local Chat with multiple PDFs using Ollama and RAG)</li>
+<li><a href="https://www.nurgo-software.com/products/brainsoup">BrainSoup</a> (Flexible native client with RAG &amp; multi-agent automation)</li>
+<li><a href="https://github.com/Renset/macai">macai</a> (macOS client for Ollama, ChatGPT, and other compatible API back-ends)</li>
+<li><a href="https://github.com/Otacon/olpaka">Olpaka</a> (User-friendly Flutter Web App for Ollama)</li>
+<li><a href="https://github.com/CrazyNeil/OllamaSpring">OllamaSpring</a> (Ollama Client for macOS)</li>
+<li><a href="https://github.com/kartikm7/llocal">LLocal.in</a> (Easy to use Electron Desktop Client for Ollama)</li>
+<li><a href="https://github.com/zeyoyt/ailama">AiLama</a> (A Discord User App that allows you to interact with Ollama anywhere in discord )</li>
+<li><a href="https://github.com/rapidarchitect/ollama_mesop/">Ollama with Google Mesop</a> (Mesop Chat Client implementation with Ollama)</li>
+<li><a href="https://github.com/mateuszmigas/painting-droid">Painting Droid</a> (Painting app with AI integrations)</li>
+<li><a href="https://www.kerlig.com/">Kerlig AI</a> (AI writing assistant for macOS)</li>
+<li><a href="https://github.com/MindWorkAI/AI-Studio">AI Studio</a></li>
+<li><a href="https://github.com/gyopak/sidellama">Sidellama</a> (browser-based LLM client)</li>
+<li><a href="https://github.com/trypromptly/LLMStack">LLMStack</a> (No-code multi-agent framework to build LLM agents and workflows)</li>
+<li><a href="https://boltai.com">BoltAI for Mac</a> (AI Chat Client for Mac)</li>
+<li><a href="https://github.com/av/harbor">Harbor</a> (Containerized LLM Toolkit with Ollama as default backend)</li>
+<li><a href="https://www.jonathanhecl.com/go-crew/">Go-CREW</a> (Powerful Offline RAG in Golang)</li>
+<li><a href="https://github.com/openvmp/partcad/">PartCAD</a> (CAD model generation with OpenSCAD and CadQuery)</li>
+<li><a href="https://github.com/ollama4j/ollama4j-web-ui">Ollama4j Web UI</a> - Java-based Web UI for Ollama built with Vaadin, Spring Boot and Ollama4j</li>
+<li><a href="https://github.com/kspviswa/pyOllaMx">PyOllaMx</a> - macOS application capable of chatting with both Ollama and Apple MLX models.</li>
+<li><a href="https://github.com/saoudrizwan/claude-dev">Claude Dev</a> - VSCode extension for multi-file/whole-repo coding</li>
+<li><a href="https://github.com/kangfenmao/cherry-studio">Cherry Studio</a> (Desktop client with Ollama support)</li>
+<li><a href="https://github.com/1runeberg/confichat">ConfiChat</a> (Lightweight, standalone, multi-platform, and privacy focused LLM chat interface with optional encryption)</li>
+<li><a href="https://github.com/nickthecook/archyve">Archyve</a> (RAG-enabling document library)</li>
+<li><a href="https://github.com/rapidarchitect/ollama-crew-mesop">crewAI with Mesop</a> (Mesop Web Interface to run crewAI with Ollama)</li>
+</ul>
+<p>For mobile UI, you can explore these resources.</p>
+<ul>
+<li><a href="https://github.com/AugustDev/enchanted">Enchanted</a></li>
+<li><a href="https://github.com/Mobile-Artificial-Intelligence/maid">Maid</a></li>
+<li><a href="https://github.com/1runeberg/confichat">ConfiChat</a> (Lightweight, standalone, multi-platform, and privacy focused LLM chat interface with optional encryption)</li>
+</ul>
+<h2 id="question-if-i-want-to-use-all-these-ollama-models-via-jupyter-notebook-then-what-to-do">Question: If I want to use all these Ollama models via Jupyter Notebook then what to do?</h2>
+<p>There are dozens of libraries which integrate ollama models. You can pip install and use these libraries in your python code. Some of these popular libraries are:</p>
+<ul>
+<li><a href="https://python.langchain.com/docs/integrations/llms/ollama">LangChain</a> and <a href="https://js.langchain.com/docs/modules/model_io/models/llms/integrations/ollama">LangChain.js</a> with <a href="https://js.langchain.com/docs/use_cases/question_answering/local_retrieval_qa">example</a></li>
+<li><a href="https://firebase.google.com/docs/genkit/plugins/ollama">Firebase Genkit</a></li>
+<li><a href="https://github.com/crewAIInc/crewAI">crewAI</a></li>
+<li><a href="https://github.com/tmc/langchaingo/">LangChainGo</a> with <a href="https://github.com/tmc/langchaingo/tree/main/examples/ollama-completion-example">example</a></li>
+<li><a href="https://github.com/langchain4j/langchain4j">LangChain4j</a> with <a href="https://github.com/langchain4j/langchain4j-examples/tree/main/ollama-examples/src/main/java">example</a></li>
+<li><a href="https://github.com/Abraxas-365/langchain-rust">LangChainRust</a> with <a href="https://github.com/Abraxas-365/langchain-rust/blob/main/examples/llm_ollama.rs">example</a></li>
+<li><a href="https://gpt-index.readthedocs.io/en/stable/examples/llm/ollama.html">LlamaIndex</a></li>
+<li><a href="https://github.com/BerriAI/litellm">LiteLLM</a></li>
+<li><a href="https://github.com/presbrey/ollamafarm">OllamaFarm for Go</a></li>
+<li><a href="https://github.com/awaescher/OllamaSharp">OllamaSharp for .NET</a></li>
+<li><a href="https://github.com/gbaptista/ollama-ai">Ollama for Ruby</a></li>
+<li><a href="https://github.com/pepperoni21/ollama-rs">Ollama-rs for Rust</a></li>
+<li><a href="https://github.com/jmont-dev/ollama-hpp">Ollama-hpp for C++</a></li>
+<li><a href="https://github.com/ollama4j/ollama4j">Ollama4j for Java</a></li>
+<li><a href="https://modelfusion.dev/integration/model-provider/ollama">ModelFusion Typescript Library</a></li>
+<li><a href="https://github.com/kevinhermawan/OllamaKit">OllamaKit for Swift</a></li>
+<li><a href="https://github.com/breitburg/dart-ollama">Ollama for Dart</a></li>
+<li><a href="https://github.com/cloudstudio/ollama-laravel">Ollama for Laravel</a></li>
+<li><a href="https://github.com/davidmigloz/langchain_dart">LangChainDart</a></li>
+<li><a href="https://github.com/microsoft/semantic-kernel/tree/main/python/semantic_kernel/connectors/ai/ollama">Semantic Kernel - Python</a></li>
+<li><a href="https://github.com/deepset-ai/haystack-integrations/blob/main/integrations/ollama.md">Haystack</a></li>
+<li><a href="https://github.com/brainlid/langchain">Elixir LangChain</a></li>
+<li><a href="https://github.com/JBGruber/rollama">Ollama for R - rollama</a></li>
+<li><a href="https://github.com/hauselin/ollama-r">Ollama for R - ollama-r</a></li>
+<li><a href="https://github.com/lebrunel/ollama-ex">Ollama-ex for Elixir</a></li>
+<li><a href="https://github.com/b-tocs/abap_btocs_ollama">Ollama Connector for SAP ABAP</a></li>
+<li><a href="https://testcontainers.com/modules/ollama/">Testcontainers</a></li>
+<li><a href="https://portkey.ai/docs/welcome/integration-guides/ollama">Portkey</a></li>
+<li><a href="https://github.com/svilupp/PromptingTools.jl">PromptingTools.jl</a> with an <a href="https://svilupp.github.io/PromptingTools.jl/dev/examples/working_with_ollama">example</a></li>
+<li><a href="https://github.com/Project-Llama/llamascript">LlamaScript</a></li>
+<li><a href="https://docs.gollm.co/examples/ollama-example">Gollm</a></li>
+<li><a href="https://github.com/xyproto/ollamaclient">Ollamaclient for Golang</a></li>
+<li><a href="https://gitlab.com/tozd/go/fun">High-level function abstraction in Go</a></li>
+<li><a href="https://github.com/ArdaGnsrn/ollama-php">Ollama PHP</a></li>
+<li><a href="https://github.com/agents-flex/agents-flex">Agents-Flex for Java</a> with <a href="https://github.com/agents-flex/agents-flex/tree/main/agents-flex-llm/agents-flex-llm-ollama/src/test/java/com/agentsflex/llm/ollama">example</a></li>
+</ul>
+<h2 id="question-does-ollama-have-plugins-like-github-copilot-can-i-use-those-from-my-visual-code">Question: Does Ollama have plugins like github copilot? Can I use those from my visual code?</h2>
+<p>Yes, there are many plugins like that for different purpose apart from coding. Even for the coding there are dozens of plugin available with different capabilities. And you need not to pay for these plugins like you have to pay monthly to Micorosoft! Some of those plugins are :</p>
+<ul>
+<li><a href="https://github.com/ex3ndr/llama-coder">Llama Coder</a> (Copilot alternative using Ollama)</li>
+<li><a href="https://github.com/bernardo-bruning/ollama-copilot">Ollama Copilot</a> (Proxy that allows you to use ollama as a copilot like Github copilot)</li>
+<li><a href="https://github.com/logancyang/obsidian-copilot">Copilot for Obsidian plugin</a></li>
+<li><a href="https://github.com/MassimilianoPasquini97/raycast_ollama">Raycast extension</a></li>
+<li><a href="https://github.com/mxyng/discollama">Discollama</a> (Discord bot inside the Ollama discord channel)</li>
+<li><a href="https://github.com/continuedev/continue">Continue</a></li>
+<li><a href="https://github.com/hinterdupfinger/obsidian-ollama">Obsidian Ollama plugin</a></li>
+<li><a href="https://github.com/omagdy7/ollama-logseq">Logseq Ollama plugin</a></li>
+<li><a href="https://github.com/andersrex/notesollama">NotesOllama</a> (Apple Notes Ollama plugin)</li>
+<li><a href="https://github.com/samalba/dagger-chatbot">Dagger Chatbot</a></li>
+<li><a href="https://github.com/mekb-turtle/discord-ai-bot">Discord AI Bot</a></li>
+<li><a href="https://github.com/ruecat/ollama-telegram">Ollama Telegram Bot</a></li>
+<li><a href="https://github.com/ej52/hass-ollama-conversation">Hass Ollama Conversation</a></li>
+<li><a href="https://github.com/abrenneke/rivet-plugin-ollama">Rivet plugin</a></li>
+<li><a href="https://github.com/longy2k/obsidian-bmo-chatbot">Obsidian BMO Chatbot plugin</a></li>
+<li><a href="https://github.com/herval/cliobot">Cliobot</a> (Telegram bot with Ollama support)</li>
+<li><a href="https://github.com/pfrankov/obsidian-local-gpt">Obsidian Local GPT plugin</a></li>
+<li><a href="https://docs.openinterpreter.com/language-model-setup/local-models/ollama">Open Interpreter</a></li>
+<li><a href="https://github.com/rjmacarthy/twinny">twinny</a> (Copilot and Copilot chat alternative using Ollama)</li>
+<li><a href="https://github.com/RussellCanfield/wingman-ai">Wingman-AI</a> (Copilot code and chat alternative using Ollama and Hugging Face)</li>
+<li><a href="https://github.com/n4ze3m/page-assist">Page Assist</a> (Chrome Extension)</li>
+<li><a href="https://github.com/imoize/plasmoid-ollamacontrol">Plasmoid Ollama Control</a> (KDE Plasma extension that allows you to quickly manage/control Ollama model)</li>
+<li><a href="https://github.com/tusharhero/aitelegrambot">AI Telegram Bot</a> (Telegram bot using Ollama in backend)</li>
+<li><a href="https://github.com/yaroslavyaroslav/OpenAI-sublime-text">AI ST Completion</a> (Sublime Text 4 AI assistant plugin with Ollama support)</li>
+<li><a href="https://github.com/kevinthedang/discord-ollama">Discord-Ollama Chat Bot</a> (Generalized TypeScript Discord Bot w/ Tuning Documentation)</li>
+<li><a href="https://github.com/rapmd73/Companion">Discord AI chat/moderation bot</a> Chat/moderation bot written in python. Uses Ollama to create personalities.</li>
+<li><a href="https://github.com/nischalj10/headless-ollama">Headless Ollama</a> (Scripts to automatically install ollama client &amp; models on any OS for apps that depends on ollama server)</li>
+<li><a href="https://github.com/jk011ru/vnc-lm">vnc-lm</a> (A containerized Discord bot with support for attachments and web links)</li>
+<li><a href="https://github.com/SilasMarvin/lsp-ai">LSP-AI</a> (Open-source language server for AI-powered functionality)</li>
+<li><a href="https://github.com/Palm1r/QodeAssist">QodeAssist</a> (AI-powered coding assistant plugin for Qt Creator)</li>
+<li><a href="https://github.com/ECuiDev/obsidian-quiz-generator">Obsidian Quiz Generator plugin</a></li>
+</ul>
+<h2 id="question-what-kind-of-software-are-lm-studio-or-ollama">Question: What kind of software are LM Studio or Ollama?</h2>
+<p>Their role is to facilitate easy use of these models by providing a platform that supports multiple models, offering features like local deployment, training, and experimentation without needing to deal with the complex setup each model requires.</p>
+<p>They are platform or interface for LLM: Both Ollama and LM Studio are software tools that allow users to interact with, run, fine-tune, and experiment with multiple large language models. They are more like model management tools or LLM execution environments rather than models themselves.</p>
+<p>They are Model Hub: These tools serve as hubs where you can load, execute, and work with a variety of pre-trained LLMs. Instead of being limited to one specific model like GPT-4, they allow users to work with models like LLaMA, GPT-3, GPT-4, and others.</p>
+<p>They are Model Runners: Since they enable the running and execution of multiple models.</p>
+<p>They are LLM Execution/Management Tools: They manage various models and allow you to deploy them.</p>
+<p>You can think of them as infrastructure that abstracts away the complexities of working with different LLMs.</p>
+<h2 id="question-what-is-lm-studio-and-how-different-it-is-from-ollama">Question: What is LM Studio and how different it is from Ollama?</h2>
+<p><strong>Ollama</strong> is designed for ease of use and running pre-trained models locally, perfect for developers and non-technical users who prioritize simplicity, privacy, and API-based integration.
+<strong>LM Studio</strong> is a research-oriented tool for AI engineers and researchers who need in-depth control over model fine-tuning, training, and experimentation, with a steeper learning curve but greater flexibility.</p>
+<p>Here&rsquo;s a detailed comparison of <strong>Ollama</strong> and <strong>LM Studio</strong> in terms of their capabilities:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Feature/Capability</strong></th>
+          <th><strong>Ollama</strong></th>
+          <th><strong>LM Studio</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Primary Purpose</strong></td>
+          <td>Run and manage multiple  LLMs locally</td>
+          <td>Research, experimentation, fine-tuning, and training of LLMs</td>
+      </tr>
+      <tr>
+          <td><strong>Supported Models</strong></td>
+          <td>LLaMA, GPT-3, GPT-4, and other popular LLMs</td>
+          <td>LLaMA, GPT, custom LLMs, and more, with a focus on fine-tuning</td>
+      </tr>
+      <tr>
+          <td><strong>Local Model Execution</strong></td>
+          <td>Supports running models locally without cloud dependencies</td>
+          <td>Allows for local execution, including training and experimentation</td>
+      </tr>
+      <tr>
+          <td><strong>Model Fine-tuning/Training</strong></td>
+          <td>No, typically runs pre-trained models</td>
+          <td>Yes, built for fine-tuning LLMs on custom datasets</td>
+      </tr>
+      <tr>
+          <td><strong>Experimentation Tools</strong></td>
+          <td>Minimal experimentation features, more focused on simple deployment</td>
+          <td>Extensive tools for experimenting with models, datasets, and hyperparameters</td>
+      </tr>
+      <tr>
+          <td><strong>Ease of Use</strong></td>
+          <td>Simple, user-friendly interface for non-technical users</td>
+          <td>More advanced, with a steeper learning curve but richer in functionality for researchers</td>
+      </tr>
+      <tr>
+          <td><strong>Hardware Requirements</strong></td>
+          <td>Optimized for running on GPUs or CPUs locally</td>
+          <td>Requires higher-end hardware (GPUs) for fine-tuning and training</td>
+      </tr>
+      <tr>
+          <td><strong>Privacy</strong></td>
+          <td>Strong privacy due to local model execution</td>
+          <td>Supports local execution for privacy, but also scales to cloud-based setups</td>
+      </tr>
+      <tr>
+          <td><strong>API Integration</strong></td>
+          <td>Yes, offers APIs to integrate LLMs into custom applications</td>
+          <td>Primarily a standalone platform, with some ability for integration into workflows</td>
+      </tr>
+      <tr>
+          <td><strong>Cloud Integration</strong></td>
+          <td>Primarily local execution; not designed for cloud-based workflows</td>
+          <td>Supports both local and cloud-based training environments, useful for large-scale training</td>
+      </tr>
+      <tr>
+          <td><strong>Model Deployment</strong></td>
+          <td>Can be deployed locally or integrated via API into applications</td>
+          <td>Typically used for experimentation, research, and training, with some deployment capabilities</td>
+      </tr>
+      <tr>
+          <td><strong>Pre-Trained Models</strong></td>
+          <td>Easy access to pre-trained models (LLaMA, GPT, etc.)</td>
+          <td>Access to a variety of pre-trained models (hugging face and others), with emphasis on customization and fine-tuning</td>
+      </tr>
+      <tr>
+          <td><strong>Target Audience</strong></td>
+          <td>Developers, non-technical users who want easy local LLM access</td>
+          <td>AI researchers, developers, engineers who require deeper control and experimentation</td>
+      </tr>
+      <tr>
+          <td><strong>Community &amp; Support</strong></td>
+          <td>Developer-focused community</td>
+          <td>Strong research community with contributions from AI developers</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="key-capabilities-of-ollama">Key Capabilities of <strong>Ollama</strong>:</h3>
+<ol>
+<li><strong>Run LLMs Locally</strong>: Focuses on running pre-trained models such as GPT-3, GPT-4, and LLaMA on your local machine without requiring cloud dependencies.</li>
+<li><strong>Simple Setup</strong>: Aimed at developers and non-technical users who want easy access to LLMs.</li>
+<li><strong>Privacy &amp; Security</strong>: Since models run locally, no data is sent to external servers, enhancing privacy.</li>
+<li><strong>API Integration</strong>: Provides APIs to integrate models into applications, making it useful for local deployment.</li>
+<li><strong>Resource Optimization</strong>: Automatically manages local system resources, including CPU and GPU, to run models efficiently.</li>
+</ol>
+<h3 id="key-capabilities-of-lm-studio">Key Capabilities of <strong>LM Studio</strong>:</h3>
+<ol>
+<li><strong>Fine-Tuning LLMs</strong>: Supports fine-tuning pre-trained LLMs on custom datasets, ideal for research and development.</li>
+<li><strong>Model Training</strong>: Enables the training of LLMs from scratch or with specific hyperparameter configurations.</li>
+<li><strong>Advanced Experimentation</strong>: Provides tools to run experiments, tweak models, and monitor results for research purposes.</li>
+<li><strong>Customizable Infrastructure</strong>: Gives more control over hardware resources and configuration, allowing for scaling on cloud or local machines.</li>
+<li><strong>Open-Source Platform</strong>: Built for researchers, it has a rich ecosystem of community-driven features and tools.</li>
+</ol>
+<h2 id="question-what-are-different-formats-to-save-model-specifically-llms">Question: What are different formats to save model, specifically LLMs?</h2>
+<p>Large language models (LLMs) can be stored in various formats, each suited for different purposes and platforms.
+These formats cater to different needs, from interoperability between frameworks (ONNX) to specific hardware optimizations (OpenVINO, TensorFlow Lite). The choice of format depends on the specific requirements of the deployment environment and the tools being used.</p>
+<p>Here are some common model formats used for LLMs:</p>
+<h3 id="1-pytorch-"><strong>1. PyTorch (<code>.pt</code>, <code>.pth</code>)</strong></h3>
+<ul>
+<li><strong>Description</strong>: Files with <code>.pt</code> or <code>.pth</code> extensions are commonly used to store PyTorch models. These files contain the model&rsquo;s weights and architecture.</li>
+<li><strong>Usage</strong>: Typically used with PyTorch frameworks for loading and running models.</li>
+<li><strong>Example</strong>: Models saved using <code>torch.save(model.state_dict(), 'model.pth')</code>.</li>
+</ul>
+<h3 id="2-tensorflow-"><strong>2. TensorFlow (<code>.pb</code>, <code>.h5</code>, <code>.tf</code>)</strong></h3>
+<ul>
+<li><strong>Description</strong>: TensorFlow models can be saved in multiple formats:
+<ul>
+<li><strong><code>.pb</code> (Protocol Buffers)</strong>: Used for saving the complete model, including weights and architecture.</li>
+<li><strong><code>.h5</code> (HDF5)</strong>: Used for saving models in Keras (which is a high-level API for TensorFlow).</li>
+<li><strong><code>.tf</code></strong>: Used for saving TensorFlow models in the SavedModel format.</li>
+</ul>
+</li>
+<li><strong>Usage</strong>: Used with TensorFlow for model deployment and inference.</li>
+<li><strong>Example</strong>: Models saved using <code>model.save('model.h5')</code> or <code>tf.saved_model.save(model, 'saved_model')</code>.</li>
+</ul>
+<h3 id="3-onnx-"><strong>3. ONNX (<code>.onnx</code>)</strong></h3>
+<ul>
+<li><strong>Description</strong>: Open Neural Network Exchange (ONNX) is a format for representing deep learning models. It allows interoperability between different deep learning frameworks.</li>
+<li><strong>Usage</strong>: Enables models trained in one framework (like PyTorch) to be used in another (like TensorFlow).</li>
+<li><strong>Example</strong>: Models converted to ONNX using <code>torch.onnx.export(model, inputs, 'model.onnx')</code>.</li>
+</ul>
+<h3 id="4-openvino-"><strong>4. OpenVINO (<code>.bin</code>, <code>.xml</code>)</strong></h3>
+<ul>
+<li><strong>Description</strong>: OpenVINO uses <code>.bin</code> and <code>.xml</code> files to represent optimized models for Intel hardware.</li>
+<li><strong>Usage</strong>: Provides acceleration for inference on Intel devices.</li>
+<li><strong>Example</strong>: Models optimized with OpenVINO are stored in <code>.xml</code> (model structure) and <code>.bin</code> (weights) files.</li>
+</ul>
+<h3 id="5-gguf-"><strong>5. GGUF (<code>.gguf</code>)</strong></h3>
+<ul>
+<li><strong>Description</strong>: Generalized Graph Universal Format (GGUF) is a format used by Meta for storing LLaMA models. It provides a standardized way to store and share large language models.</li>
+<li><strong>Usage</strong>: <font color=green>Specifically designed for LLaMA models but can be used more broadly for LLMs.</font></li>
+<li><strong>Example</strong>: Models saved in GGUF format will have the <code>.gguf</code> file extension.</li>
+</ul>
+<h3 id="6-savedmodel-"><strong>6. SavedModel (<code>SavedModel</code>)</strong></h3>
+<ul>
+<li><strong>Description</strong>: TensorFlow&rsquo;s SavedModel format includes a directory with serialized model weights, graph definitions, and metadata.</li>
+<li><strong>Usage</strong>: TensorFlow&rsquo;s recommended format for serving models in production.</li>
+<li><strong>Example</strong>: SavedModel format directory includes files like <code>saved_model.pb</code> and a variables directory.</li>
+</ul>
+<h3 id="7-core-ml-"><strong>7. Core ML (<code>.mlmodel</code>)</strong></h3>
+<ul>
+<li><strong>Description</strong>: Apple&rsquo;s Core ML format is used for deploying models on iOS, macOS, watchOS, and tvOS.</li>
+<li><strong>Usage</strong>: Used for integrating machine learning models into Apple applications.</li>
+<li><strong>Example</strong>: Models converted to Core ML using tools like <code>coremltools</code>.</li>
+</ul>
+<h3 id="8-tensorflow-lite-"><strong>8. TensorFlow Lite (<code>.tflite</code>)</strong></h3>
+<ul>
+<li><strong>Description</strong>: A format for deploying TensorFlow models on mobile and edge devices. It provides a smaller, more efficient representation of the model.</li>
+<li><strong>Usage</strong>: Optimized for mobile and embedded devices.</li>
+<li><strong>Example</strong>: Models converted to TensorFlow Lite format using <code>tf.lite.TFLiteConverter</code>.</li>
+</ul>
+<h3 id="9-hugging-face-"><strong>9. Hugging Face (<code>.bin</code>, <code>config.json</code>, <code>tokenizer.json</code>)</strong></h3>
+<ul>
+<li><strong>Description</strong>: Hugging Face models typically use <code>.bin</code> files for weights and JSON files for configuration and tokenizers. This format is often associated with the Transformers library.</li>
+<li><strong>Usage</strong>: Used with Hugging Face’s Transformers library for loading and fine-tuning models.</li>
+<li><strong>Example</strong>: Models from Hugging Face&rsquo;s model hub include <code>.bin</code> files for weights and configuration files.</li>
+</ul>
+<h3 id="10-hugging-face-"><strong>10. Hugging Face (<code>.safetensors</code>)</strong></h3>
+<ul>
+<li><strong>Description</strong>: SafeTensors (developed recently by hugging face) is a format developed for safely and efficiently storing tensor data, particularly for large language models. It aims to provide secure and consistent handling of model weights.</li>
+<li><strong>Usage</strong>: Designed to improve safety and integrity in model storage by addressing issues related to file corruption and ensuring the integrity of the model data. It&rsquo;s increasingly used in machine learning and AI communities for its security benefits.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li><strong>Safety</strong>: Ensures data integrity and helps prevent corruption.</li>
+<li><strong>Efficiency</strong>: Optimized for storage and retrieval of large model weights.</li>
+<li><strong>Compatibility</strong>: Designed to be used with various frameworks and tools that support tensor-based models.</li>
+</ul>
+</li>
+</ul>
+<h3 id="summary-of-model-formats-including-safetensors">Summary of Model Formats Including SafeTensors:</h3>
+<ol>
+<li><strong>PyTorch (<code>.pt</code>, <code>.pth</code>)</strong></li>
+<li><strong>TensorFlow (<code>.pb</code>, <code>.h5</code>, <code>.tf</code>)</strong></li>
+<li><strong>ONNX (<code>.onnx</code>)</strong></li>
+<li><strong>Hugging Face (<code>.bin</code>, <code>config.json</code>, <code>tokenizer.json</code>)</strong></li>
+<li><strong>GGUF (<code>.gguf</code>)</strong></li>
+<li><strong>SavedModel (<code>SavedModel</code>)</strong></li>
+<li><strong>Core ML (<code>.mlmodel</code>)</strong></li>
+<li><strong>TensorFlow Lite (<code>.tflite</code>)</strong></li>
+<li><strong>OpenVINO (<code>.bin</code>, <code>.xml</code>)</strong></li>
+<li><strong>SafeTensors (<code>.safetensors</code>)</strong></li>
+</ol>
+<h2 id="question-what-is-gguf-model-extention">Question: What is gguf model extention?</h2>
+<p>The <strong>GGUF</strong> (Generalized Graph Universal Format) is designed to provide a standardized format for storing and sharing large language models. It aims to facilitate the interoperability of models across different platforms and tools. GGUF is particularly associated with Meta’s LLaMA (Large Language Model Meta AI) series of models. It is used for representing the weights and configurations of these models in a way that can be easily loaded and utilized across different environments.</p>
+<p>GGUF format aims:</p>
+<ul>
+<li><strong>Standardization</strong>: GGUF aims to standardize how model data is stored and exchanged, making it easier to work with LLaMA models and potentially other models that adopt this format.</li>
+<li><strong>Efficiency</strong>: The format is designed to efficiently handle the large size of modern language models, ensuring that models can be loaded and processed quickly.</li>
+</ul>
+<h2 id="question-if-i-have-finetuned-my-models-using-clouds-like-aws-sagemaker-vertexai-azure-and-kept-there-then-can-i-use-them-inside-my-ollama-and-lm-studio">Question: If I have finetuned my models using clouds like aws sagemaker, vertexai, azure and kept there then can I use them inside my ollama and LM Studio?</h2>
+<p>Yes, we can use them</p>
+<p><strong>Method 1: API integration</strong></p>
+<ul>
+<li>Obtain the endpoint URL and API key from cloud platform (Vertex/AWS/Azure) ML.</li>
+<li>Prepare your environment for making HTTP requests.</li>
+<li>Send requests to the API endpoint using tools like Python’s requests library.</li>
+<li>Integrate the API calls into LM Studio or other tools.</li>
+<li>Test and validate the integration to ensure it functions correctly.</li>
+</ul>
+<p><strong>Method 2: Model conversion and export</strong><br>
+Export Models: Export models from the cloud services in formats compatible with Ollama (e.g., ONNX, TensorFlow SavedModel). This might involve  transferring the model files. Import into Ollama: If Ollama supports these formats, you can then import the models into Ollama’s environment.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://ollama.com">https://ollama.com</a></li>
+<li><a href="https://github.com/ollama/ollama">https://github.com/ollama/ollama</a></li>
+</ul>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

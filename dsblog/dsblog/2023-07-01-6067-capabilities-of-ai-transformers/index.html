@@ -1,0 +1,1909 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Capabilities of AI Transformers | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2023-07-01-6067-capabilities-of-ai-transformers/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Capabilities of AI Transformers">
+  <meta property="og:description" content="Capabilities of AI Transformers Background Whether GPT, ChatGPT, DALL-E, Whisper, Satablity AI or whatever significant you see in the AI worlds nowdays it is because of Transformer Architecture. Transformers are a type of neural network architecture that have several properties that make them effective for modeling data with long-range dependencies. They generally feature a combination of multi-headed attention mechanisms, residual connections, layer normalization, feedforward connections, and positional embeddings.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2023-07-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-07-01T00:00:00+00:00">
+    <meta property="article:tag" content="NLP">
+    <meta property="article:tag" content="AI Transformers">
+    <meta property="article:tag" content="Deep Learning">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="Neural Networks">
+    <meta property="article:tag" content="Language Models">
+
+  <meta itemprop="name" content="Capabilities of AI Transformers">
+  <meta itemprop="description" content="Capabilities of AI Transformers Background Whether GPT, ChatGPT, DALL-E, Whisper, Satablity AI or whatever significant you see in the AI worlds nowdays it is because of Transformer Architecture. Transformers are a type of neural network architecture that have several properties that make them effective for modeling data with long-range dependencies. They generally feature a combination of multi-headed attention mechanisms, residual connections, layer normalization, feedforward connections, and positional embeddings.">
+  <meta itemprop="datePublished" content="2023-07-01T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2023-07-01T00:00:00+00:00">
+  <meta itemprop="wordCount" content="5786">
+  <meta itemprop="keywords" content="AI Transformers,Natural Language Processing,Deep Learning,Machine Learning Models,Neural Network Architecture,Language Models,BERT,GPT,Transformer Architecture">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Capabilities of AI Transformers">
+  <meta name="twitter:description" content="Capabilities of AI Transformers Background Whether GPT, ChatGPT, DALL-E, Whisper, Satablity AI or whatever significant you see in the AI worlds nowdays it is because of Transformer Architecture. Transformers are a type of neural network architecture that have several properties that make them effective for modeling data with long-range dependencies. They generally feature a combination of multi-headed attention mechanisms, residual connections, layer normalization, feedforward connections, and positional embeddings.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6067-Capabilities-of-AI-Transformers.jpg" alt="Capabilities of AI Transformers"></p>
+<h1 id="capabilities-of-ai-transformers">Capabilities of AI Transformers</h1>
+<h2 id="background">Background</h2>
+<p>Whether GPT, ChatGPT, DALL-E, Whisper, Satablity AI or whatever significant you see in the AI worlds nowdays it is because of Transformer Architecture. Transformers are a type of neural network architecture that have several properties that make them effective for modeling data with long-range dependencies. They generally feature a combination of multi-headed attention mechanisms, residual connections, layer normalization, feedforward connections, and positional embeddings.</p>
+<p>Precursors of Transformers were RNN, LSTM, and GRU architecture. Transformers are based on the 2017 research paper <a href="https://arxiv.org/abs/1706.03762">&ldquo;Attention is All You Need&rdquo;</a></p>
+<p>Initially, Transformers were used for NLP-related tasks. Slowly researchers started exploring the power of the Transformer Architectures and as of 2023 these are used for hundreds of tasks in different AI domains of technologies like:</p>
+<ul>
+<li>Text Models (NLP, NLU, NLG)</li>
+<li>Vision Models (Computer Vision)</li>
+<li>Audio Models (Audio Processing, Classification, Audio Generation)</li>
+<li>Reinforcement (RL) Models</li>
+<li>Time-series Models</li>
+<li>Multimodal: OCR (extract information from scanned documents), video classification, visual QA, table data question answering</li>
+<li>Graph Models</li>
+</ul>
+<p>Starting the journey in 2017, as of now (2023) we have approx 200 Transformer based architectures proposed by various researchers for various purposes. Using these architecture and various benchmark datasets thousands of models have been created which give SOTA performance on various tasks. Based on your need you choose which architecture can help you meet your project objective. There are high chances you will get some pre-trained models which you can use without training (Zero-shot) or small finetuning (one-shot or few-shot) efforts. For that you need to explore <a href="huggingface.co">Huggingface</a> and <a href="https://paperswithcode.com/">PaperWithCode</a></p>
+<p>This articles list all the major Transformer related researcher paper, their object, and capabilities.</p>
+<p><strong>Note :</strong> Name starting with * are not Transformers, most of them are pretransformer age architectures.</p>
+<h2 id="capabilities-of-ai-transformers-1">Capabilities of AI Transformers</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Sno</th>
+          <th>Transformer</th>
+          <th>Objective</th>
+          <th>Summary</th>
+          <th>NLP Tasks</th>
+          <th>CV Tasks</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>*AlexNet</td>
+          <td>Image Classification</td>
+          <td>A deep convolutional neural network architecture for image classification tasks.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>*VGG16</td>
+          <td>Visual Geometry Group Network (16 layers)</td>
+          <td>A deep CNN model with 16 convolutional layers developed by the Visual Geometry Group at Oxford University.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>*VGG19</td>
+          <td>Visual Geometry Group Network (19 layers)</td>
+          <td>A deep CNN model with 19 convolutional layers, an extended version of VGG16.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>*ResNet</td>
+          <td>Residual Networks</td>
+          <td>A deep CNN architecture that introduces residual connections to alleviate the vanishing gradient problem.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>*InceptionResNet</td>
+          <td>Combination of Inception and ResNet</td>
+          <td>A hybrid CNN model that combines the strengths of the Inception and ResNet architectures.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>*ConvNeXt</td>
+          <td>Improved Convolutional Neural Network</td>
+          <td>A convolutional neural network architecture that aims to capture richer spatial relationships in images.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>*DenseNet</td>
+          <td>Dense Connections in Convolutional Networks</td>
+          <td>A densely connected convolutional neural network architecture that encourages feature reuse and reduces the number of parameters.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>*MobileNetV1</td>
+          <td>Mobile-oriented CNN Architecture</td>
+          <td>A lightweight convolutional neural network architecture designed for mobile and embedded devices.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>*Xception</td>
+          <td>Extreme Inception</td>
+          <td>A deep CNN architecture that replaces the standard Inception modules with depthwise separable convolutions.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>EncoderDecoder</td>
+          <td>Sequence-to-sequence modeling</td>
+          <td>A transformer-based model architecture that combines encoder and decoder for sequence-to-sequence tasks such as machine translation.</td>
+          <td>Machine Translation, Text Summarization</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td>*MobileNetV2</td>
+          <td>Improved MobileNet Architecture</td>
+          <td>An enhanced version of MobileNet with improved performance and efficiency.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection</td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td>Data2Vec</td>
+          <td>Embedding data tables</td>
+          <td>A transformer-based model for embedding and encoding structured data tables.</td>
+          <td>Tabular Data Embedding, Data Table Encoding</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>13</td>
+          <td>GPT</td>
+          <td>Language modeling and text generation</td>
+          <td>A transformer-based model trained on a large corpus to generate coherent and contextually relevant text.</td>
+          <td>Text Generation, Text Completion, Language Modeling</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>14</td>
+          <td>BERT</td>
+          <td>Pre-training and fine-tuning on various NLP tasks</td>
+          <td>A transformer-based model widely used for pre-training and fine-tuning on NLP tasks.</td>
+          <td>Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>15</td>
+          <td>MarianMT</td>
+          <td>Multilingual Neural Machine Translation</td>
+          <td>A multilingual neural machine translation model based on the Marian framework.</td>
+          <td>Machine Translation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>16</td>
+          <td>BiT</td>
+          <td>Vision transformer for image classification</td>
+          <td>A vision transformer model pre-trained on large-scale datasets for image classification tasks.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>17</td>
+          <td>Transformer-XL</td>
+          <td>Transformer model with extended context</td>
+          <td>A transformer model architecture that extends the context window, enabling longer-range dependencies.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>18</td>
+          <td>XLM</td>
+          <td>Cross-lingual Language Model</td>
+          <td>A transformer-based model for cross-lingual language understanding and machine translation.</td>
+          <td>Cross-lingual Language Understanding, Machine Translation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>19</td>
+          <td>CTRL</td>
+          <td>Text generation with control codes</td>
+          <td>A transformer-based model that allows fine-grained control over generated text using control codes.</td>
+          <td>Text Generation, Controlled Text Generation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>20</td>
+          <td>GPT-2</td>
+          <td>Language modeling and text generation</td>
+          <td>A transformer-based model similar to GPT but with a smaller architecture, trained on a large corpus to generate coherent and contextually relevant text.</td>
+          <td>Text Generation, Text Completion, Language Modeling</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>21</td>
+          <td>Funnel Transformer</td>
+          <td>Improving the efficiency and effectiveness of transformers</td>
+          <td>A transformer-based model architecture that reduces the computational cost of transformers while maintaining their effectiveness.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>22</td>
+          <td>*EfficientNet B0</td>
+          <td>Efficient and Scalable CNN</td>
+          <td>A family of convolutional neural network architectures that achieve high accuracy with fewer parameters and computations.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection</td>
+      </tr>
+      <tr>
+          <td>23</td>
+          <td>ALBERT</td>
+          <td>Improve the efficiency of BERT</td>
+          <td>A lite version of BERT that uses parameter reduction techniques to achieve faster training and lower memory consumption.</td>
+          <td>Classification, Translation, Named Entity Recognition (NER)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>24</td>
+          <td>EfficientNet</td>
+          <td>Efficient convolutional neural network architecture</td>
+          <td>A convolutional neural network architecture that achieves state-of-the-art performance with significantly fewer parameters.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>25</td>
+          <td>MobileNetV3</td>
+          <td>Efficient Mobile Neural Network for Computer Vision</td>
+          <td>A lightweight and efficient neural network architecture designed for computer vision tasks on mobile devices.</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>26</td>
+          <td>Nezha</td>
+          <td>Neural Encoder for Zero-shot Transfer Learning</td>
+          <td>A transformer-based model that enables zero-shot transfer learning by learning a shared semantic space.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>27</td>
+          <td>BART</td>
+          <td>Text generation and summarization</td>
+          <td>A denoising autoencoder model that can be used for text generation and summarization tasks.</td>
+          <td>Text Generation, Summarization</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>28</td>
+          <td>ERNIE</td>
+          <td>Enhanced representation through knowledge integration</td>
+          <td>A transformer-based model that enhances representation learning by integrating external knowledge sources.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>29</td>
+          <td>ErnieM</td>
+          <td>Enhanced representation through multitask learning</td>
+          <td>A multitask learning framework that enhances representation learning by jointly training multiple downstream NLP tasks.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>30</td>
+          <td>FlauBERT</td>
+          <td>French language representation learning</td>
+          <td>A transformer-based model specifically trained for French language representation learning tasks.</td>
+          <td>French Language Processing, Text Classification</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>31</td>
+          <td>LXMERT</td>
+          <td>Vision and Language Multimodal Transformer</td>
+          <td>A multimodal transformer model that combines vision and language information for various tasks.</td>
+          <td>Visual Question Answering (VQA), Visual Dialog, Image Captioning, Visual Grounding</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>32</td>
+          <td>Pegasus</td>
+          <td>Pre-training with Extracted Gap Sentences for Abstractive Summarization</td>
+          <td>A transformer-based model trained for abstractive text summarization tasks.</td>
+          <td>Text Summarization</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>33</td>
+          <td>XLNet</td>
+          <td>Generalized Autoregressive Pretraining</td>
+          <td>A transformer-based model that leverages permutation-based training to learn bidirectional context.</td>
+          <td>Language Modeling, Text Classification</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>34</td>
+          <td>BioGpt</td>
+          <td>Processing biomedical text</td>
+          <td>A variant of the GPT model specifically designed for processing biomedical text.</td>
+          <td>Biomedical Text Processing, Named Entity Recognition (NER), Clinical Text Understanding</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>35</td>
+          <td>Hubert</td>
+          <td>Automatic speech recognition with transformers</td>
+          <td>A transformer-based model designed for automatic speech recognition tasks.</td>
+          <td>Automatic Speech Recognition</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>36</td>
+          <td>REALM</td>
+          <td>Retrieval-Augmented Language Model</td>
+          <td>A language model augmented with a dense retrieval mechanism to improve performance on text retrieval tasks.</td>
+          <td>Information Retrieval, Text Classification, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>37</td>
+          <td>SpeechToTextTransformer</td>
+          <td>Transformer for Speech-to-Text Conversion</td>
+          <td>A transformer-based model designed specifically for speech-to-text conversion tasks.</td>
+          <td>Speech-to-Text Conversion</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>38</td>
+          <td>XLM-V</td>
+          <td>Cross-lingual Language Understanding</td>
+          <td>A transformer-based model for cross-lingual language understanding, leveraging multilingual embeddings.</td>
+          <td>Cross-lingual Language Understanding</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>39</td>
+          <td>RoBERTa</td>
+          <td>Robustly optimized BERT variant</td>
+          <td>An optimized variant of BERT (Bidirectional Encoder Representations from Transformers) for various NLP tasks.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>40</td>
+          <td>GPT Neo</td>
+          <td>Efficient and scalable variant of GPT</td>
+          <td>A transformer-based model architecture that provides an efficient and scalable variant of GPT for various natural language processing tasks.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>41</td>
+          <td>CamemBERT</td>
+          <td>French language processing and text classification</td>
+          <td>A transformer-based model specifically trained for French language processing and text classification tasks.</td>
+          <td>French Language Processing, Text Classification</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>42</td>
+          <td>DialoGPT</td>
+          <td>Conversational AI chatbot</td>
+          <td>A transformer-based model trained for generating human-like conversational responses.</td>
+          <td>Conversational AI, Chatbot</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>43</td>
+          <td>DistilBERT</td>
+          <td>Distilled version of BERT</td>
+          <td>A smaller and faster version of BERT with a similar performance on various NLP tasks.</td>
+          <td>Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>44</td>
+          <td>LiLT</td>
+          <td>Language learning from transliterated text</td>
+          <td>A transformer-based model for language learning that utilizes transliterated text as training data.</td>
+          <td>Language Learning</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>45</td>
+          <td>LUKE</td>
+          <td>Language Understanding with Knowledge-based Entities</td>
+          <td>A model that integrates knowledge-based entities into transformer-based language understanding tasks.</td>
+          <td>Named Entity Recognition (NER), Relation Extraction, Knowledge Graph Completion</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>46</td>
+          <td>MobileBERT</td>
+          <td>Efficient BERT for Mobile and Edge Devices</td>
+          <td>A compact and efficient version of BERT designed for deployment on mobile and edge devices.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>47</td>
+          <td>MT5</td>
+          <td>Multilingual Text-to-Text Transfer Transformer</td>
+          <td>A transformer-based model capable of multilingual text-to-text transfer learning across various NLP tasks.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>48</td>
+          <td>RAG</td>
+          <td>Retrieval-Augmented Generation</td>
+          <td>A model that combines retrieval and generation methods for open-domain question answering.</td>
+          <td>Open-Domain Question Answering</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>49</td>
+          <td>ConvBERT</td>
+          <td>Text classification and named entity recognition (NER)</td>
+          <td>A transformer-based model for text classification and named entity recognition (NER) tasks.</td>
+          <td>Classification, Named Entity Recognition (NER), Sentiment Analysis</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>50</td>
+          <td>Megatron-GPT2</td>
+          <td>High-performance GPT-2-based language model</td>
+          <td>A high-performance GPT-2-based language model developed using the Megatron framework.</td>
+          <td>Text Generation, Text</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>51</td>
+          <td>PhoBERT</td>
+          <td>Pretrained language model for Vietnamese</td>
+          <td>A pretrained language model specifically designed for the Vietnamese language.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>52</td>
+          <td>RoBERTa-PreLayerNorm</td>
+          <td>RoBERTa with PreLayerNorm</td>
+          <td>A variant of RoBERTa with the PreLayerNorm (PLN) technique, which improves training stability and efficiency.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>53</td>
+          <td>BERTweet</td>
+          <td>Pre-trained BERT models for processing tweets</td>
+          <td>BERT models specifically trained on Twitter data for tweet processing tasks.</td>
+          <td>Classification, Named Entity Recognition (NER), Sentiment Analysis</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>54</td>
+          <td>mBART</td>
+          <td>Multilingual Denoising Autoencoder</td>
+          <td>A multilingual denoising autoencoder based on the BART framework, capable of generating text in multiple languages.</td>
+          <td>Text Generation, Text Completion, Multilingual Language Modeling</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>55</td>
+          <td>Megatron-BERT</td>
+          <td>High-performance BERT-based language model</td>
+          <td>A high-performance BERT-based language model developed using the Megatron framework.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>56</td>
+          <td>SpeechToTextTransformer2</td>
+          <td>Transformer model for Speech-to-Text Conversion</td>
+          <td>Another transformer-based model for speech-to-text conversion, providing an alternative approach.</td>
+          <td>Speech-to-Text Conversion</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>57</td>
+          <td>BERT For Sequence Generation</td>
+          <td>Text generation using BERT-based models</td>
+          <td>Fine-tuned BERT models for sequence generation tasks, such as text generation or summarization.</td>
+          <td>Text Generation, Summarization</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>58</td>
+          <td>ConvNeXT</td>
+          <td>Language modeling and text generation</td>
+          <td>A transformer-based model for language modeling and text generation tasks.</td>
+          <td>Language Modeling, Text Generation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>59</td>
+          <td>ELECTRA</td>
+          <td>Pre-training method for language representation learning</td>
+          <td>A pre-training method that replaces masked language modeling with a generator-discriminator setup for better language representation.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>60</td>
+          <td>Longformer</td>
+          <td>Long-range sequence modeling with transformers</td>
+          <td>A transformer-based model architecture that extends the standard transformer to handle long-range dependencies.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>61</td>
+          <td>RegNet</td>
+          <td>Regularized Convolutional Neural Network</td>
+          <td>A convolutional neural network architecture with regularization techniques for efficient and scalable training.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>62</td>
+          <td>SqueezeBERT</td>
+          <td>Lightweight BERT model with Squeeze-and-Excitation</td>
+          <td>A lightweight variant of BERT with Squeeze-and-Excitation (SE) blocks for efficient training and inference.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>63</td>
+          <td>LayoutLM</td>
+          <td>Text and layout understanding for document analysis</td>
+          <td>A transformer-based model that combines text and layout information for document understanding tasks.</td>
+          <td>Document Understanding, OCR, Named Entity Recognition (NER)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>64</td>
+          <td>MPNet</td>
+          <td>Megatron Pretrained Network</td>
+          <td>A model pretrained using the Megatron framework, designed for various NLP tasks with high performance.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>65</td>
+          <td>VisualBERT</td>
+          <td>Integrating Visual Information with BERT</td>
+          <td>A BERT-based model that incorporates visual information for multimodal understanding.</td>
+          <td>-</td>
+          <td>Vision-Language Tasks, Image Captioning, Visual Question Answering (VQA)</td>
+      </tr>
+      <tr>
+          <td>66</td>
+          <td>Conditional DETR</td>
+          <td>Object detection and instance segmentation</td>
+          <td>A transformer-based model for object detection and instance segmentation tasks.</td>
+          <td>-</td>
+          <td>Object Detection, Instance Segmentation</td>
+      </tr>
+      <tr>
+          <td>67</td>
+          <td>GPTBigCode</td>
+          <td>Code generation for programming languages</td>
+          <td>A transformer-based model trained on a large corpus of code to generate code snippets or complete programs for various programming languages.</td>
+          <td>Code Generation, Programming Language Processing</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>68</td>
+          <td>M-CTC-T</td>
+          <td>Music Transcription with Transformer</td>
+          <td>A transformer-based model designed for music transcription, converting audio into musical notation.</td>
+          <td>Music Transcription</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>69</td>
+          <td>Pix2Struct</td>
+          <td>Image-to-Structure Translation</td>
+          <td>A transformer-based model for translating images into structured representations.</td>
+          <td>-</td>
+          <td>Image-to-Structure Translation</td>
+      </tr>
+      <tr>
+          <td>70</td>
+          <td>ProphetNet</td>
+          <td>Pretrained Sequence-to-Sequence Model</td>
+          <td>A sequence-to-sequence model pretrained for various NLP tasks, based on the transformer architecture.</td>
+          <td>Text Generation, Text Completion, Machine Translation, Summarization</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>71</td>
+          <td>SEW</td>
+          <td>Simple and Efficient Word-level language model</td>
+          <td>A word-level language model that is simple and efficient, designed for various NLP tasks.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>72</td>
+          <td>T5</td>
+          <td>Text-to-Text Transfer Transformer</td>
+          <td>A text-to-text transfer transformer model that can be fine-tuned for various NLP tasks.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>73</td>
+          <td>DeBERTa</td>
+          <td>Improving the effectiveness of BERT</td>
+          <td>A transformer-based model that enhances BERT by addressing its limitations and improving performance on various NLP tasks.</td>
+          <td>Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>74</td>
+          <td>Informer</td>
+          <td>Time series forecasting with transformers</td>
+          <td>A transformer-based model for time series forecasting tasks, capturing long-term dependencies in the data.</td>
+          <td>Time Series Forecasting</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>75</td>
+          <td>LED</td>
+          <td>Language model for efficient decoding</td>
+          <td>A transformer-based language model designed for efficient decoding, suitable for constrained environments.</td>
+          <td>Text Generation, Text Completion, Language Modeling</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>76</td>
+          <td>SwitchTransformers</td>
+          <td>Transformers with Dynamic Routing</td>
+          <td>A library that provides implementations of various transformer models with dynamic routing capabilities.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>77</td>
+          <td>Whisper</td>
+          <td>Unsupervised Representation Learning</td>
+          <td>A transformer-based model for unsupervised representation learning on audio data.</td>
+          <td>Speech Representation Learning</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>78</td>
+          <td>XLM-ProphetNet</td>
+          <td>Cross-lingual Language Generation</td>
+          <td>A transformer-based model for cross-lingual language generation, extending the ProphetNet architecture.</td>
+          <td>Cross-lingual Language Generation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>79</td>
+          <td>XLM-RoBERTa</td>
+          <td>Cross-lingual Language Representation</td>
+          <td>A cross-lingual variant of RoBERTa, providing multilingual representation learning.</td>
+          <td>Cross-lingual Language Representation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>80</td>
+          <td>Deformable DETR</td>
+          <td>Object detection and instance segmentation with deformable attention</td>
+          <td>A transformer-based model for object detection and instance segmentation tasks, incorporating deformable attention mechanisms.</td>
+          <td>-</td>
+          <td>Object Detection, Instance Segmentation</td>
+      </tr>
+      <tr>
+          <td>81</td>
+          <td>FNet</td>
+          <td>Image generation with Fourier features</td>
+          <td>A transformer-based model that generates images using Fourier features instead of traditional positional encodings.</td>
+          <td>-</td>
+          <td>Image Generation</td>
+      </tr>
+      <tr>
+          <td>82</td>
+          <td>GPTSAN-japanese</td>
+          <td>Japanese language variant of GPT for sentiment analysis</td>
+          <td>A version of GPT specifically designed and trained for sentiment analysis tasks in the Japanese language.</td>
+          <td>Japanese Language</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>83</td>
+          <td>SEW-D</td>
+          <td>Deep version of Simple and Efficient Word-level language model</td>
+          <td>A deep variant of SEW for improved performance on NLP tasks.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>84</td>
+          <td>CPM</td>
+          <td>Chinese language processing and text generation</td>
+          <td>A transformer-based model specifically designed for Chinese language processing and text generation tasks.</td>
+          <td>Chinese Language Processing, Text Generation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>85</td>
+          <td>GIT</td>
+          <td>Generating informative text from structured data</td>
+          <td>A transformer-based model that generates informative text, such as explanations or summaries, from structured data inputs.</td>
+          <td>Data-to-Text Generation, Structured Data Processing</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>86</td>
+          <td>LayoutXLM</td>
+          <td>Multilingual document understanding with transformers</td>
+          <td>A transformer-based model for multilingual document understanding, incorporating text and layout information.</td>
+          <td>Multilingual Document Understanding, OCR, Named Entity Recognition (NER)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>87</td>
+          <td>DETR</td>
+          <td>Object detection and instance segmentation</td>
+          <td>A transformer-based model for object detection and instance segmentation tasks.</td>
+          <td>-</td>
+          <td>Object Detection, Instance Segmentation</td>
+      </tr>
+      <tr>
+          <td>88</td>
+          <td>GPT NeoX</td>
+          <td>Further improved version of GPT Neo</td>
+          <td>An advanced version of GPT Neo that incorporates additional enhancements and optimizations for natural language processing tasks.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>89</td>
+          <td>RemBERT</td>
+          <td>Transformer model for code</td>
+          <td>A transformer-based model specifically designed for code-related tasks, such as code generation and understanding.</td>
+          <td>Code Generation, Code Understanding</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>90</td>
+          <td>RoCBert</td>
+          <td>Robustly optimized Chinese BERT variant</td>
+          <td>A Chinese language variant of RoBERTa, optimized for various NLP tasks in Chinese text.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>91</td>
+          <td>TAPAS</td>
+          <td>Table Parsing via Transformer</td>
+          <td>A transformer-based model designed for table parsing, enabling natural language queries over tabular data.</td>
+          <td>Table Parsing, Question Answering (QA) over Tabular Data</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>92</td>
+          <td>UPerNet</td>
+          <td>Unified Perceptual Parsing Network</td>
+          <td>A unified perceptual parsing network based on the transformer model, designed for image segmentation tasks.</td>
+          <td>Semantic Segmentation, Image Parsing</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>93</td>
+          <td>Vision Transformer (ViT)</td>
+          <td>Transformer-based model for image classification</td>
+          <td>A transformer-based model designed for image classification tasks, replacing convolutional layers with self-attention.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>94</td>
+          <td>Wav2Vec2</td>
+          <td>Self-supervised Audio Representation Learning</td>
+          <td>A transformer-based model for self-supervised audio representation learning, capturing phonetic information.</td>
+          <td>Speech Recognition, Speech Representation Learning</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>95</td>
+          <td>PLBart</td>
+          <td>Pre-trained Language model for BART</td>
+          <td>A pre-trained variant of BART (Bidirectional and AutoRegressive Transformers) for various NLP tasks.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>96</td>
+          <td>DiT</td>
+          <td>Vision transformer for image classification</td>
+          <td>A transformer-based model for image classification tasks that applies vision transformers to process image data.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>97</td>
+          <td>DPR</td>
+          <td>Dense Passage Retrieval</td>
+          <td>A transformer-based model for dense passage retrieval, enabling efficient and accurate retrieval of relevant passages.</td>
+          <td>Passage Retrieval, Document Ranking</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>98</td>
+          <td>GLPN</td>
+          <td>Learning global-local patterns in natural language processing</td>
+          <td>A transformer-based model that captures both global and local patterns in text for various natural language processing tasks.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>99</td>
+          <td>LeViT</td>
+          <td>Vision transformer with less computations</td>
+          <td>A vision transformer model that reduces computational requirements by using fewer computations.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>100</td>
+          <td>NAT</td>
+          <td>Neural Architecture Transformer</td>
+          <td>A transformer-based model that learns to design neural architectures for various tasks.</td>
+          <td>Neural Architecture Search, AutoML</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>101</td>
+          <td>TAPEX</td>
+          <td>Transformer model for text and program execution</td>
+          <td>A transformer-based model capable of executing programs described in natural language text.</td>
+          <td>Text-to-Program Execution, Natural Language Processing</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>102</td>
+          <td>VideoMAE</td>
+          <td>Video Motion Analysis Encoder</td>
+          <td>A transformer-based model for video motion analysis tasks, encoding motion information in videos.</td>
+          <td>-</td>
+          <td>Video Motion Analysis, Action Recognition, Video Understanding</td>
+      </tr>
+      <tr>
+          <td>103</td>
+          <td>Wav2Vec2-Conformer</td>
+          <td>Conformer-based variant of Wav2Vec2</td>
+          <td>A variant of Wav2Vec2 that incorporates Conformer architecture, improving its performance on speech-related tasks.</td>
+          <td>Speech Recognition, Speech Representation Learning</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>104</td>
+          <td>CLIP</td>
+          <td>Image-text matching and zero-shot learning</td>
+          <td>A transformer-based model that learns to match images and text, enabling zero-shot learning capabilities.</td>
+          <td>-</td>
+          <td>Image-Text Matching, Zero-Shot Learning</td>
+      </tr>
+      <tr>
+          <td>105</td>
+          <td>XLS-R</td>
+          <td>Cross-lingual Speech Recognition</td>
+          <td>A transformer-based model for cross-lingual speech recognition, trained on multilingual speech data.</td>
+          <td>Cross-lingual Speech Recognition</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>106</td>
+          <td>Audio Spectrogram Transformer</td>
+          <td>Processing audio spectrograms</td>
+          <td>A transformer model specifically designed for processing audio spectrograms.</td>
+          <td>Automatic Speech Recognition (ASR), Sound Classification</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>107</td>
+          <td>M2M100</td>
+          <td>Multilingual Multimodal Transformer</td>
+          <td>A transformer-based model capable of multilingual and multimodal tasks, trained on 100 different languages.</td>
+          <td>Machine Translation, Multilingual Text Classification, Multimodal Tasks</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>108</td>
+          <td>MEGA</td>
+          <td>Multilingual Language Generation with Transformers</td>
+          <td>A transformer-based model for multilingual language generation tasks, capable of producing text in multiple languages.</td>
+          <td>Text Generation, Text Completion, Multilingual Language Modeling</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>109</td>
+          <td>BEiT</td>
+          <td>Vision transformer for image classification</td>
+          <td>Combines concepts from CNNs and transformers for image classification tasks.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>110</td>
+          <td>BigBird-Pegasus</td>
+          <td>Text generation and summarization</td>
+          <td>A variant of the Pegasus model that incorporates the BigBird sparse attention mechanism.</td>
+          <td>Text Generation, Summarization</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>111</td>
+          <td>BigBird-RoBERTa</td>
+          <td>Classification and named entity recognition</td>
+          <td>A variant of the RoBERTa model that incorporates the BigBird sparse attention mechanism.</td>
+          <td>Classification, Named Entity Recognition (NER)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>112</td>
+          <td>CLIPSeg</td>
+          <td>Image segmentation</td>
+          <td>A transformer-based model for image segmentation tasks.</td>
+          <td>-</td>
+          <td>Image Segmentation</td>
+      </tr>
+      <tr>
+          <td>113</td>
+          <td>DPT</td>
+          <td>Object detection and instance segmentation with deformable attention</td>
+          <td>A transformer-based model for object detection and instance segmentation tasks, incorporating deformable attention mechanisms.</td>
+          <td>-</td>
+          <td>Object Detection, Instance Segmentation</td>
+      </tr>
+      <tr>
+          <td>114</td>
+          <td>Perceiver IO</td>
+          <td>Perceiver with Input/output processing</td>
+          <td>A transformer model architecture that handles input and output processing jointly, enabling cross-modal tasks.</td>
+          <td>Multimodal Tasks</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>115</td>
+          <td>Reformer</td>
+          <td>Memory-efficient Transformer</td>
+          <td>A transformer model variant designed to be more memory-efficient by using reversible layers.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>116</td>
+          <td>RoFormer</td>
+          <td>Robustly optimized Transformer variant for images</td>
+          <td>A transformer-based model specifically designed for image-related tasks, leveraging self-attention mechanisms.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>117</td>
+          <td>Swin Transformer</td>
+          <td>Shifted Window Transformer</td>
+          <td>A transformer model that uses shifted windows to capture long-range dependencies in images.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection</td>
+      </tr>
+      <tr>
+          <td>118</td>
+          <td>TrOCR</td>
+          <td>Transformer-based OCR model</td>
+          <td>A transformer-based model designed for Optical Character Recognition (OCR) tasks, converting images to text.</td>
+          <td>Optical Character Recognition (OCR)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>119</td>
+          <td>Wav2Vec2Phoneme</td>
+          <td>Phoneme-level variants of Wav2Vec2</td>
+          <td>Phoneme-level variants of Wav2Vec2 designed for speech recognition tasks at the phoneme level.</td>
+          <td>Phoneme-level Speech Recognition</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>120</td>
+          <td>X-CLIP</td>
+          <td>Cross-modal Learning with CLIP</td>
+          <td>A transformer-based model for cross-modal learning, incorporating the CLIP framework.</td>
+          <td>-</td>
+          <td>Vision-Language Tasks, Cross-modal Learning</td>
+      </tr>
+      <tr>
+          <td>121</td>
+          <td>XLSR-Wav2Vec2</td>
+          <td>Cross-lingual Speech Representation</td>
+          <td>A variant of Wav2Vec2 trained for cross-lingual speech representation learning.</td>
+          <td>Cross-lingual Speech Representation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>122</td>
+          <td>Blenderbot</td>
+          <td>Conversational AI chatbot</td>
+          <td>A chatbot model designed for multi-turn conversations that combines language and dialogue understanding.</td>
+          <td>-</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>123</td>
+          <td>BlenderbotSmall</td>
+          <td>Conversational AI chatbot</td>
+          <td>A smaller version of Blenderbot, designed for multi-turn conversations with language and dialogue understanding capabilities.</td>
+          <td>-</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>124</td>
+          <td>BLIP</td>
+          <td>Image classification and image captioning</td>
+          <td>A transformer-based model for image classification and image captioning tasks.</td>
+          <td>-</td>
+          <td>Image Classification, Image Captioning</td>
+      </tr>
+      <tr>
+          <td>125</td>
+          <td>ByT5</td>
+          <td>Text translation, classification, and question answering</td>
+          <td>A transformer-based model trained on T5 architecture, suitable for text translation, classification, and question answering tasks.</td>
+          <td>Translation, Text Classification, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>126</td>
+          <td>CvT</td>
+          <td>Cross Vision and Transformer</td>
+          <td>A transformer-based model that combines vision and language understanding, enabling cross-modal tasks in computer vision.</td>
+          <td>-</td>
+          <td>Image-Text Matching, Vision-Language Tasks</td>
+      </tr>
+      <tr>
+          <td>127</td>
+          <td>DeBERTa-v2</td>
+          <td>Improved version of DeBERTa</td>
+          <td>An updated version of DeBERTa with improved performance and compatibility for various NLP tasks.</td>
+          <td>Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>128</td>
+          <td>DeiT</td>
+          <td>Vision transformer for image classification</td>
+          <td>A vision transformer model designed for image classification tasks.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>129</td>
+          <td>GroupViT</td>
+          <td>Vision transformer with group-based operations</td>
+          <td>A vision transformer model that incorporates group-based operations to enhance its representation capacity.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>130</td>
+          <td>LayoutLMv2</td>
+          <td>Improved version of LayoutLM for document analysis</td>
+          <td>An enhanced version of LayoutLM with improved performance and additional capabilities for document analysis.</td>
+          <td>Document Understanding, OCR, Named Entity Recognition (NER)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>131</td>
+          <td>MaskFormer</td>
+          <td>Masked Language Modeling with Transformers</td>
+          <td>A transformer-based model architecture for masked language modeling tasks, such as pretraining BERT.</td>
+          <td>Language Modeling, Pretraining BERT</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>132</td>
+          <td>SegFormer</td>
+          <td>Segmentation Transformer for computer vision</td>
+          <td>A transformer-based model designed for image segmentation tasks in computer vision.</td>
+          <td>Semantic Segmentation, Object Detection</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>133</td>
+          <td>Time Series Transformer</td>
+          <td>Transformer model for time series data</td>
+          <td>A transformer-based model designed specifically for time series data analysis and forecasting tasks.</td>
+          <td>Time Series Forecasting, Anomaly Detection, Sequence Modeling</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>134</td>
+          <td>TimeSformer</td>
+          <td>Time Series Transformer for video analysis</td>
+          <td>A transformer-based model for video analysis and action recognition tasks, leveraging temporal information.</td>
+          <td>-</td>
+          <td>Video Action Recognition, Temporal Modeling</td>
+      </tr>
+      <tr>
+          <td>135</td>
+          <td>Trajectory Transformer</td>
+          <td>Transformer model for trajectory forecasting</td>
+          <td>A transformer-based model designed for trajectory forecasting tasks, such as predicting object movement.</td>
+          <td>Trajectory Forecasting, Object Movement Prediction</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>136</td>
+          <td>UniSpeech</td>
+          <td>Unified Speech Recognition and Synthesis Transformer</td>
+          <td>A unified transformer-based model for both speech recognition and speech synthesis tasks.</td>
+          <td>Speech Recognition, Text-to-Speech Synthesis</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>137</td>
+          <td>UniSpeechSat</td>
+          <td>Self-supervised pre-training for UniSpeech</td>
+          <td>A self-supervised pre-training method for UniSpeech, improving its performance on speech-related tasks.</td>
+          <td>Speech Recognition, Text-to-Speech Synthesis</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>138</td>
+          <td>ALIGN</td>
+          <td>Joint representation learning for textual and tabular data</td>
+          <td>Enables joint representation learning by aligning textual and tabular data.</td>
+          <td>Text-Tabular Alignment, Joint Representation Learning</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>139</td>
+          <td>BORT</td>
+          <td>Language modeling and reinforcement learning</td>
+          <td>A transformer-based model for language modeling and reinforcement learning tasks.</td>
+          <td>Language Modeling, Text Generation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>140</td>
+          <td>DePlot</td>
+          <td>Data visualization</td>
+          <td>A transformer-based model that generates interactive and informative visualizations from data.</td>
+          <td>Data Visualization</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>141</td>
+          <td>DETA</td>
+          <td>Document extraction and text analysis</td>
+          <td>A transformer-based model for document extraction, information retrieval, and text analysis tasks.</td>
+          <td>Document Extraction, Information Retrieval, Text Analysis</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>142</td>
+          <td>DiNAT</td>
+          <td>Network traffic anomaly detection</td>
+          <td>A transformer-based model for network traffic anomaly detection, specifically designed for cybersecurity applications.</td>
+          <td>Network Traffic Analysis, Anomaly Detection</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>143</td>
+          <td>Jukebox</td>
+          <td>Music generation with transformers</td>
+          <td>A transformer-based model architecture for generating music with various styles and genres.</td>
+          <td>Music Generation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>144</td>
+          <td>mBART-50</td>
+          <td>Compact version of mBART for resource-constrained</td>
+          <td>A compact version of mBART with reduced parameters and computational requirements.</td>
+          <td>Text Generation, Text Completion, Multilingual Language Modeling</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>145</td>
+          <td>Nyströmformer</td>
+          <td>Approximating Full Transformers with Nyström</td>
+          <td>A transformer variant that approximates full self-attention using the Nyström method for efficiency.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>146</td>
+          <td>ViT Hybrid</td>
+          <td>Hybrid Architecture of Vision Transformer</td>
+          <td>A hybrid architecture that combines vision transformer with convolutional neural networks for image understanding.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>147</td>
+          <td>X-MOD</td>
+          <td>Cross-modal Language Modeling</td>
+          <td>A transformer-based model for cross-modal language modeling, integrating vision and text.</td>
+          <td>-</td>
+          <td>Vision-Language Tasks, Cross-modal Language Modeling</td>
+      </tr>
+      <tr>
+          <td>148</td>
+          <td>BARTpho</td>
+          <td>Text-to-speech synthesis</td>
+          <td>A variant of BART model for text-to-speech synthesis tasks.</td>
+          <td>Text-to-Speech Synthesis</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>149</td>
+          <td>BridgeTower</td>
+          <td>Language modeling and text generation</td>
+          <td>A transformer-based model for language modeling and text generation tasks.</td>
+          <td>Text Generation, Language Modeling</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>150</td>
+          <td>CodeGen</td>
+          <td>Code generation</td>
+          <td>A transformer-based model for generating code.</td>
+          <td>Code Generation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>151</td>
+          <td>GPT-J</td>
+          <td>Japanese language variant of GPT-2</td>
+          <td>A version of GPT-2 specifically designed and trained for Japanese language understanding and generation tasks.</td>
+          <td>Japanese Language Processing, Text Generation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>152</td>
+          <td>LLaMA</td>
+          <td>Label-agnostic learning with transformers</td>
+          <td>A transformer-based model that learns to perform tasks without explicit labels, leveraging self-supervision.</td>
+          <td>Self-Supervised Learning, Representation Learning, Clustering</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>153</td>
+          <td>MarkupLM</td>
+          <td>Transformer for document structure understanding</td>
+          <td>A transformer-based model for understanding document structure and semantic relationships in text.</td>
+          <td>Document Structure Understanding, Semantic Analysis</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>154</td>
+          <td>PoolFormer</td>
+          <td>Pooling-based Vision Transformer</td>
+          <td>A vision transformer model that incorporates pooling operations for handling images of varying sizes.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>155</td>
+          <td>QDQBert</td>
+          <td>Query-Doc Bidirectional Transformer</td>
+          <td>A transformer model specifically designed for query-document ranking and retrieval tasks.</td>
+          <td>Information Retrieval, Question Answering, Document Ranking</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>156</td>
+          <td>ViLT</td>
+          <td>Vision-and-Language Transformer</td>
+          <td>A transformer-based model that combines vision and language understanding for multimodal tasks.</td>
+          <td>-</td>
+          <td>Vision-Language Tasks, Image Captioning, Visual Question Answering (VQA)</td>
+      </tr>
+      <tr>
+          <td>157</td>
+          <td>BARThez</td>
+          <td>Text generation and summarization</td>
+          <td>A variant of BART model trained specifically for the French language.</td>
+          <td>Text Generation, Summarization</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>158</td>
+          <td>Donut</td>
+          <td>Anomaly detection in time series data</td>
+          <td>A transformer-based model for detecting anomalies in time series data, suitable for various applications such as monitoring systems.</td>
+          <td>-</td>
+          <td>Anomaly Detection, Time Series Analysis</td>
+      </tr>
+      <tr>
+          <td>159</td>
+          <td>ImageGPT</td>
+          <td>Image generation with transformers</td>
+          <td>A transformer-based model architecture for generating images based on text prompts.</td>
+          <td>-</td>
+          <td>Image Generation</td>
+      </tr>
+      <tr>
+          <td>160</td>
+          <td>OPT</td>
+          <td>Optimization Pretraining Transformer</td>
+          <td>A transformer model pre-trained for optimization tasks, such as combinatorial optimization and planning.</td>
+          <td>Combinatorial Optimization, Planning</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>161</td>
+          <td>Splinter</td>
+          <td>Speech and Language Integrated Transformer</td>
+          <td>A transformer-based model designed for integrating speech and language tasks.</td>
+          <td>Speech-to-Text Conversion, Speech Recognition, Natural Language Processing</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>162</td>
+          <td>XGLM</td>
+          <td>Cross-lingual Language Modeling</td>
+          <td>A transformer-based model for cross-lingual language modeling, learning representations across languages.</td>
+          <td>Cross-lingual Language Modeling</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>163</td>
+          <td>YOSO</td>
+          <td>You Only Speak Once</td>
+          <td>A transformer-based model for low-resource machine translation, using only monolingual data.</td>
+          <td>Low-resource Machine Translation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>164</td>
+          <td>EfficientFormer</td>
+          <td>Efficient transformer architecture for sequence modeling</td>
+          <td>A transformer-based model architecture designed to improve efficiency and performance for sequence modeling tasks.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Machine Translation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>165</td>
+          <td>ESM</td>
+          <td>Protein structure prediction</td>
+          <td>A transformer-based model for predicting the 3D structure of proteins from their amino acid sequences.</td>
+          <td>Protein Structure Prediction, Bioinformatics</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>166</td>
+          <td>Mask2Former</td>
+          <td>Transformer-based masked image inpainting</td>
+          <td>A transformer-based model for masked image inpainting, reconstructing missing parts of an image.</td>
+          <td>-</td>
+          <td>Image Inpainting</td>
+      </tr>
+      <tr>
+          <td>167</td>
+          <td>MGP-STR</td>
+          <td>Music Generation with Pre-trained Model</td>
+          <td>A pre-trained model for generating music, leveraging a transformer-based architecture.</td>
+          <td>Music Generation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>168</td>
+          <td>NLLB</td>
+          <td>Natural Language Logic Board</td>
+          <td>A model that combines natural language understanding and symbolic logic reasoning for language understanding.</td>
+          <td>Natural Language Understanding, Logic Reasoning</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>169</td>
+          <td>T5v1.1</td>
+          <td>Version 1.1 of the Text-to-Text Transfer Transformer</td>
+          <td>An updated version of the T5 model with improvements and enhancements for better performance.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>170</td>
+          <td>TVLT</td>
+          <td>Tiny Vision-Language Transformer</td>
+          <td>A compact vision-language transformer model designed for efficient processing of vision and language inputs.</td>
+          <td>-</td>
+          <td>Vision-Language Tasks, Image Captioning, Visual Question Answering (VQA)</td>
+      </tr>
+      <tr>
+          <td>171</td>
+          <td>WavLM</td>
+          <td>Language Modeling for Speech</td>
+          <td>A transformer-based model for language modeling on speech data.</td>
+          <td>Speech Language Modeling</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>172</td>
+          <td>XLM-RoBERTa-XL</td>
+          <td>Cross-lingual Language Representation</td>
+          <td>A larger variant of XLM-RoBERTa for cross-lingual language representation learning.</td>
+          <td>Cross-lingual Language Representation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>173</td>
+          <td>Chinese-CLIP</td>
+          <td>Chinese language processing and image-text matching</td>
+          <td>A transformer-based model designed for Chinese language processing and image-text matching tasks.</td>
+          <td>Chinese Language Processing, Image-Text Matching</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>174</td>
+          <td>CLAP</td>
+          <td>Image-text representation learning</td>
+          <td>A transformer-based model for learning joint image-text representations.</td>
+          <td>-</td>
+          <td>Image-Text Representation Learning</td>
+      </tr>
+      <tr>
+          <td>175</td>
+          <td>Decision Transformer</td>
+          <td>Decision-making tasks</td>
+          <td>A transformer-based model designed for decision-making tasks that require complex reasoning and inference.</td>
+          <td>Decision-Making, Reasoning, Inference</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>176</td>
+          <td>BLIP-2</td>
+          <td>Image classification</td>
+          <td>An updated version of BLIP, specializing in image classification tasks.</td>
+          <td>-</td>
+          <td>Image Classification</td>
+      </tr>
+      <tr>
+          <td>177</td>
+          <td>CANINE</td>
+          <td>Document classification</td>
+          <td>A transformer-based model for document classification tasks.</td>
+          <td>Document Classification</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>178</td>
+          <td>Graphormer</td>
+          <td>Graph representation learning with transformers</td>
+          <td>A transformer-based model architecture specifically designed for graph representation learning.</td>
+          <td>Graph Representation Learning, Node Classification, Graph Classification, Graph Generation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>179</td>
+          <td>I-BERT</td>
+          <td>Incremental learning with transformers</td>
+          <td>A transformer-based model architecture that supports incremental learning, allowing continual model updates.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>180</td>
+          <td>MatCha</td>
+          <td>Matching Challenge Transformer</td>
+          <td>A transformer-based model for solving matching challenge tasks, such as natural language inference.</td>
+          <td>Natural Language Inference, Textual Entailment</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>181</td>
+          <td>mLUKE</td>
+          <td>Multilingual Language Understanding with Knowledge</td>
+          <td>A multilingual model that incorporates knowledge-based entities for language understanding tasks.</td>
+          <td>Named Entity Recognition (NER), Relation Extraction, Knowledge Graph Completion</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>182</td>
+          <td>MobileViT</td>
+          <td>Vision Transformer for Mobile and Edge Devices</td>
+          <td>A mobile-friendly version of Vision Transformer, optimized for efficient deployment on mobile and edge devices.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>183</td>
+          <td>OWL-ViT</td>
+          <td>Object-Wide Learning Vision Transformer</td>
+          <td>A vision transformer model designed for object detection and recognition tasks in computer vision.</td>
+          <td>Object Detection, Object Recognition</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>184</td>
+          <td>SpeechT5</td>
+          <td>T5-based model for Speech-to-Text</td>
+          <td>A transformer-based model trained for speech-to-text conversion tasks using the T5 architecture.</td>
+          <td>Speech-to-Text Conversion</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>185</td>
+          <td>Swin Transformer V2</td>
+          <td>Advanced version of Swin Transformer</td>
+          <td>An advanced version of the Swin Transformer model, incorporating improvements for better performance in vision tasks.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>186</td>
+          <td>ViTMAE</td>
+          <td>Vision Transformer for Multi-label Image Classification</td>
+          <td>A vision transformer model designed specifically for multi-label image classification tasks.</td>
+          <td>-</td>
+          <td>Multi-label Image Classification</td>
+      </tr>
+      <tr>
+          <td>187</td>
+          <td>BLOOM</td>
+          <td>Language modeling and text generation</td>
+          <td>A transformer-based model designed for language modeling and text generation tasks.</td>
+          <td>Text Generation, Language Modeling</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>188</td>
+          <td>ConvNeXTV2</td>
+          <td>Language modeling and text generation</td>
+          <td>An improved version of ConvNeXT for language modeling and text generation tasks.</td>
+          <td>Language Modeling, Text Generation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>189</td>
+          <td>CPM-Ant</td>
+          <td>Chinese language processing and text generation</td>
+          <td>An enhanced version of CPM with better performance and compatibility for Chinese language processing and text generation tasks.</td>
+          <td>Chinese Language Processing, Text Generation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>190</td>
+          <td>GPT-Sw3</td>
+          <td>Swedish language variant of GPT</td>
+          <td>A version of GPT specifically designed and trained for Swedish language understanding and generation tasks.</td>
+          <td>Swedish Language Processing, Text Generation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>191</td>
+          <td>LongT5</td>
+          <td>Text-to-Text Transfer Transformer</td>
+          <td>A transformer-based model for text-to-text transfer learning, capable of performing various NLP tasks.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>192</td>
+          <td>OneFormer</td>
+          <td>Transformer for Text-to-Text Transfer Learning</td>
+          <td>A transformer-based model designed for text-to-text transfer learning tasks across multiple languages.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Question Answering (QA)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>193</td>
+          <td>Table Transformer</td>
+          <td>Transformer model for table-related tasks</td>
+          <td>A transformer-based model specifically designed for table-related tasks, such as table understanding and extraction.</td>
+          <td>Table Understanding, Table Extraction</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>194</td>
+          <td>VAN</td>
+          <td>Vision-Adaptive Transformer for Video Analysis</td>
+          <td>A transformer model designed specifically for video analysis tasks, adapting to the dynamic visual context.</td>
+          <td>-</td>
+          <td>Video Classification, Action Recognition, Video Understanding</td>
+      </tr>
+      <tr>
+          <td>195</td>
+          <td>AltCLIP</td>
+          <td>Predicting the relationship between two images</td>
+          <td>A transformer-based model that learns to predict the relationship between two images.</td>
+          <td>-</td>
+          <td>Image-Text Matching, Vision-Language Tasks</td>
+      </tr>
+      <tr>
+          <td>196</td>
+          <td>MVP</td>
+          <td>Multimodal Variational Pretraining</td>
+          <td>A multimodal pretraining framework that combines text and image modalities for various downstream tasks.</td>
+          <td>Multimodal Tasks</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>197</td>
+          <td>NLLB-MOE</td>
+          <td>Natural Language Logic Board with MOE</td>
+          <td>An enhanced version of NLLB that incorporates Mixture of Experts (MOE) for improved performance.</td>
+          <td>Natural Language Understanding, Logic Reasoning</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>198</td>
+          <td>PEGASUS-X</td>
+          <td>Large-Scale Pre-training for Abstractive Summarization</td>
+          <td>A variant of Pegasus with larger model capacity, trained on a large-scale corpus for abstractive summarization.</td>
+          <td>Text Summarization</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>199</td>
+          <td>Swin2SR</td>
+          <td>Swin Transformer for Super-Resolution</td>
+          <td>A variant of the Swin Transformer model specifically designed for super-resolution tasks in computer vision.</td>
+          <td>-</td>
+          <td>Super-Resolution Image Reconstruction</td>
+      </tr>
+      <tr>
+          <td>200</td>
+          <td>UL2</td>
+          <td>Unsupervised Language Learning</td>
+          <td>A transformer-based model designed for unsupervised language learning tasks, leveraging self-supervised learning techniques.</td>
+          <td>Language Modeling, Text Representation Learning</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>201</td>
+          <td>ViTMSN</td>
+          <td>Vision Transformer with Masked Spatial Neurons</td>
+          <td>A vision transformer model with masked spatial neurons, enabling better spatial representation learning.</td>
+          <td>-</td>
+          <td>Image Classification, Object Detection, Semantic Segmentation</td>
+      </tr>
+      <tr>
+          <td>202</td>
+          <td>YOLOS</td>
+          <td>You Only Learn One Sentence</td>
+          <td>A transformer-based model that learns sentence representations for zero-shot classification.</td>
+          <td>Zero-shot Text Classification</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>203</td>
+          <td>FLAN-T5</td>
+          <td>Fast and lightweight adapter-based transformers for T5</td>
+          <td>A transformer-based model architecture that enables efficient and lightweight adaptation of T5 models.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Machine Translation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>204</td>
+          <td>GPT NeoX Japanese</td>
+          <td>Japanese language variant of GPT NeoX</td>
+          <td>A version of GPT NeoX specifically designed and trained for Japanese language understanding and generation tasks.</td>
+          <td>Japanese Language Processing, Text Generation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>205</td>
+          <td>LayoutLMv3</td>
+          <td>Further improved version of LayoutLM for documents</td>
+          <td>An advanced version of LayoutLM that incorporates additional enhancements and optimizations.</td>
+          <td>Document Understanding, OCR, Named Entity Recognition (NER)</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>206</td>
+          <td>FLAN-UL2</td>
+          <td>Fast and lightweight adapter-based transformers for UL2</td>
+          <td>A transformer-based model architecture that enables efficient and lightweight adaptation of UL2 models.</td>
+          <td>Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Machine Translation</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>207</td>
+          <td>FLAVA</td>
+          <td>Fluency and acceptability evaluation for machine translation</td>
+          <td>A transformer-based model that evaluates the fluency and acceptability of machine translations.</td>
+          <td>Machine Translation Evaluation</td>
+          <td>-</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="conclusion">Conclusion</h2>
+<p>The purpose of this article is to give you a general understanding of the capabilities of the Transformer architecture. It is now up to you to decide which architecture is most suitable to your needs based on the task you have in front of you. Afterwards, you can use hugginface or tfhub to see if there are already models that have been trained using these architectures. The chances are that you will be able to complete your work using zero-shot transfer learning are high.</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

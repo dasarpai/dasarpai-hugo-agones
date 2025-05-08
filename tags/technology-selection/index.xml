@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technology Selection on Agones</title>
+    <link>http://localhost:1313/tags/technology-selection/</link>
+    <description>Recent content in Technology Selection on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/technology-selection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Selecting Database for Project</title>
+      <link>http://localhost:1313/dsblog/Selecting-Database-for-Project/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Selecting-Database-for-Project/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6154-Selecting-Database-for-Project.jpg&#34; alt=&#34;Selecting Database for Project&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;essential-database-selection-criteria-for-modern-applications&#34;&gt;Essential Database Selection Criteria for Modern Applications&lt;/h1&gt;&#xA;&lt;h2 id=&#34;is-this-article-for-me&#34;&gt;Is this article for me?&lt;/h2&gt;&#xA;&lt;p&gt;If you are looking answer for these questions then &amp;ldquo;Yes&amp;rdquo;.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;What parameters should you consider to choose a database for your project?&lt;/li&gt;&#xA;&lt;li&gt;What are different data formats for bigdata?&lt;/li&gt;&#xA;&lt;li&gt;What is the difference between OCR and Parquet data formats?&lt;/li&gt;&#xA;&lt;li&gt;What is CAP Theorem?&lt;/li&gt;&#xA;&lt;li&gt;What is the difference between Sharding and Partitioning&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-parameters-should-you-consider-to-choose-a-database-for-your-project&#34;&gt;What parameters should you consider to choose a database for your project?&lt;/h2&gt;&#xA;&lt;p&gt;When you are developing an application which need to store the data or you need to pull data from some format for your project work that time you need to take care of many parameters. Sometimes it looks there is an ovbious choice to go for a certain type of database for some specific work but most of the time it is challenging. What are those aspects of a database which you need to take care of?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

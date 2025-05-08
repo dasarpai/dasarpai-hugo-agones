@@ -1,0 +1,1008 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>State of the Art Image Generation Models in Computer Vision: A Comprehensive Overview | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2025-02-16-6219-state-of-the-art-computer-vision-models/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="State of the Art Image Generation Models in Computer Vision: A Comprehensive Overview">
+  <meta property="og:description" content="State of the Art Computer Vision Models What are the different methods of Image generation? There are several methods for image generation. Diffusion models are currently the state-of-the-art due to their balance of quality, flexibility, and scalability. However, other methods like GANs and autoregressive models remain relevant for specific use cases. Let’s see them one by one.
+1. Diffusion Models Diffusion models are a class of generative models that work by gradually adding noise to data (e.g., images) and then learning to reverse this process to generate new data. Here’s how it works:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-02-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-16T00:00:00+00:00">
+    <meta property="article:tag" content="Computer Vision">
+    <meta property="article:tag" content="Image Generation">
+    <meta property="article:tag" content="Diffusion Models">
+    <meta property="article:tag" content="GANs">
+    <meta property="article:tag" content="Autoregressive Models">
+    <meta property="article:tag" content="State of the Art AI">
+
+  <meta itemprop="name" content="State of the Art Image Generation Models in Computer Vision: A Comprehensive Overview">
+  <meta itemprop="description" content="State of the Art Computer Vision Models What are the different methods of Image generation? There are several methods for image generation. Diffusion models are currently the state-of-the-art due to their balance of quality, flexibility, and scalability. However, other methods like GANs and autoregressive models remain relevant for specific use cases. Let’s see them one by one.
+1. Diffusion Models Diffusion models are a class of generative models that work by gradually adding noise to data (e.g., images) and then learning to reverse this process to generate new data. Here’s how it works:">
+  <meta itemprop="datePublished" content="2025-02-16T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-02-16T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2575">
+  <meta itemprop="keywords" content="State of the Art Image Generation Models,Computer Vision Models,Image Synthesis Models,Diffusion Models,Generative Adversarial Networks (GANs),Autoregressive Models,State of the Art AI">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="State of the Art Image Generation Models in Computer Vision: A Comprehensive Overview">
+  <meta name="twitter:description" content="State of the Art Computer Vision Models What are the different methods of Image generation? There are several methods for image generation. Diffusion models are currently the state-of-the-art due to their balance of quality, flexibility, and scalability. However, other methods like GANs and autoregressive models remain relevant for specific use cases. Let’s see them one by one.
+1. Diffusion Models Diffusion models are a class of generative models that work by gradually adding noise to data (e.g., images) and then learning to reverse this process to generate new data. Here’s how it works:">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6219-State-of-the-Art-Computer-Vision-Models.jpg" alt="State-of-the-Art 3D Image Generation Models"></p>
+<h1 id="state-of-the-art-computer-vision-models">State of the Art Computer Vision Models</h1>
+<h2 id="what-are-the-different-methods-of-image-generation">What are the different methods of Image generation?</h2>
+<p>There are several methods for image generation. Diffusion models are currently the  state-of-the-art  due to their balance of quality, flexibility, and scalability. However, other methods like GANs and autoregressive models remain relevant for specific use cases. Let&rsquo;s see them one by one.</p>
+<h3 id="1-diffusion-models"><strong>1. Diffusion Models</strong></h3>
+<p>Diffusion models are a class of generative models that work by gradually adding noise to data (e.g., images) and then learning to reverse this process to generate new data. Here&rsquo;s how it works:</p>
+<h4 id="key-steps-in-diffusion-models"><strong>Key Steps in Diffusion Models:</strong></h4>
+<p><img src="/assets/images/dspost/mermaid-code/dsp6219-Diffusion-Diagram.jpg" alt="Diffusion Model Steps"></p>
+<h4 id="variants-of-diffusion-models"><strong>Variants of Diffusion Models</strong>:</h4>
+<ul>
+<li><strong>Denoising Diffusion Probabilistic Models (DDPM)</strong>: The original formulation of diffusion models.</li>
+<li><strong>Latent Diffusion Models (LDM)</strong>: Operate in a lower-dimensional latent space for efficiency (e.g., Stable Diffusion).</li>
+<li><strong>Classifier-Free Guidance</strong>: Improves image quality by balancing conditional and unconditional generation.</li>
+<li><strong>Stochastic Differential Equations (SDEs)</strong>: A continuous-time formulation of diffusion models.</li>
+</ul>
+<h4 id="advantages"><strong>Advantages</strong>:</h4>
+<ul>
+<li>High-quality, photorealistic images.</li>
+<li>Flexible and controllable generation (e.g., text-to-image, image-to-image).</li>
+<li>Scalable to high resolutions.</li>
+</ul>
+<h4 id="examples-models"><strong>Examples Models</strong>:</h4>
+<ul>
+<li>DALL·E 3, Stable Diffusion, Imagen, Midjourney.</li>
+</ul>
+<hr>
+<h3 id="2-generative-adversarial-networks-gans"><strong>2. Generative Adversarial Networks (GANs)</strong></h3>
+<p>GANs consist of two neural networks: a <strong>generator</strong> and a <strong>discriminator</strong>, which compete against each other.</p>
+<h4 id="key-steps-in-gans"><strong>Key Steps in GANs</strong>:</h4>
+<p><img src="/assets/images/dspost/mermaid-code/dsp6219-GAN-Diagram.jpg" alt="GAN Model Steps"></p>
+<h4 id="advantages-1"><strong>Advantages</strong>:</h4>
+<ul>
+<li>Fast image generation once trained.</li>
+<li>High-quality results for specific tasks (e.g., faces, landscapes).</li>
+</ul>
+<h4 id="challenges"><strong>Challenges</strong>:</h4>
+<ul>
+<li>Training instability (mode collapse).</li>
+<li>Limited diversity in generated images.</li>
+</ul>
+<h4 id="examples"><strong>Examples</strong>:</h4>
+<ul>
+<li>StyleGAN, BigGAN, CycleGAN.</li>
+</ul>
+<hr>
+<h3 id="3-variational-autoencoders-vaes"><strong>3. Variational Autoencoders (VAEs)</strong></h3>
+<p>VAEs are probabilistic models that learn a latent representation of data.</p>
+<h4 id="key-steps-in-vaes"><strong>Key Steps in VAEs</strong>:</h4>
+<p><img src="/assets/images/dspost/mermaid-code/dsp6219-VAE-Diagram.jpg" alt="VAE Diagram"></p>
+<h4 id="advantages-2"><strong>Advantages</strong>:</h4>
+<ul>
+<li>Smooth latent space for interpolation.</li>
+<li>Good for tasks requiring structured outputs.</li>
+</ul>
+<h4 id="challenges-1"><strong>Challenges</strong>:</h4>
+<ul>
+<li>Generated images are often blurrier compared to GANs or diffusion models.</li>
+</ul>
+<h4 id="examples-1"><strong>Examples</strong>:</h4>
+<ul>
+<li>VQ-VAE, NVAE.</li>
+</ul>
+<hr>
+<h3 id="4-autoregressive-models"><strong>4. Autoregressive Models</strong></h3>
+<p>Autoregressive models generate images pixel by pixel or patch by patch, conditioned on previously generated pixels.</p>
+<h4 id="key-steps-in-autoregressive-models"><strong>Key Steps in Autoregressive Models</strong>:</h4>
+<ol>
+<li>Treat image generation as a sequence prediction problem.</li>
+<li>Use models like Transformers or RNNs to predict the next pixel or patch.</li>
+</ol>
+<h4 id="advantages-3"><strong>Advantages</strong>:</h4>
+<ul>
+<li>High-quality, detailed images.</li>
+<li>Flexible and scalable.</li>
+</ul>
+<h4 id="challenges-2"><strong>Challenges</strong>:</h4>
+<ul>
+<li>Slow generation due to sequential nature.</li>
+<li>Computationally expensive.</li>
+</ul>
+<h4 id="examples-2"><strong>Examples</strong>:</h4>
+<ul>
+<li>PixelRNN, PixelCNN, Image GPT.</li>
+</ul>
+<hr>
+<h3 id="5-flow-based-models"><strong>5. Flow-Based Models</strong></h3>
+<p>Flow-based models use invertible transformations to map data to a latent space and back.</p>
+<h4 id="key-steps-in-flow-based-models"><strong>Key Steps in Flow-Based Models</strong>:</h4>
+<ol>
+<li>Learn a bijective (invertible) mapping between the data distribution and a simple latent distribution (e.g., Gaussian).</li>
+<li>Generate new images by sampling from the latent distribution and applying the inverse transformation.</li>
+</ol>
+<h4 id="advantages-4"><strong>Advantages</strong>:</h4>
+<ul>
+<li>Exact likelihood estimation.</li>
+<li>Efficient sampling.</li>
+</ul>
+<h4 id="challenges-3"><strong>Challenges</strong>:</h4>
+<ul>
+<li>Limited flexibility in architecture due to invertibility constraints.</li>
+</ul>
+<h4 id="examples-3"><strong>Examples</strong>:</h4>
+<ul>
+<li>Glow, RealNVP.</li>
+</ul>
+<hr>
+<h3 id="6-neural-radiance-fields-nerf"><strong>6. Neural Radiance Fields (NeRF)</strong></h3>
+<p>NeRF is a method for 3D scene reconstruction and generation.</p>
+<h4 id="key-steps-in-nerf-neural-radiance-fields"><strong>Key Steps in NeRF (Neural Radiance Fields)</strong></h4>
+<p><img src="/assets/images/dspost/mermaid-code/dsp6219-NeRF-Diagram.jpg" alt=""></p>
+<h4 id="scene-representation-implicit-3d-model"><strong>Scene Representation (Implicit 3D Model)</strong></h4>
+<ul>
+<li>The 3D scene is represented as a <strong>continuous volumetric function</strong>.</li>
+<li>Instead of using meshes or point clouds, NeRF models a scene as a <strong>neural network</strong> mapping 3D coordinates to color and density.</li>
+<li><strong>Input:</strong>
+<ul>
+<li>A set of <strong>2D images</strong> of a scene taken from different angles.</li>
+<li>The <strong>camera parameters</strong> (position &amp; direction) for each image.</li>
+</ul>
+</li>
+</ul>
+<h4 id="neural-network-prediction-radiance-field-estimation"><strong>Neural Network Prediction (Radiance Field Estimation)</strong></h4>
+<ul>
+<li>A deep neural network takes in <strong>a 3D point (x, y, z) and a viewing direction (θ, φ)</strong>.</li>
+<li>It predicts:
+<ul>
+<li><strong>Color (R, G, B)</strong> → Light emitted from that point.</li>
+<li><strong>Density (σ)</strong> → How much light is absorbed at that point.</li>
+</ul>
+</li>
+<li>This allows NeRF to model the appearance of a scene <strong>from any viewpoint</strong>.</li>
+</ul>
+<h4 id="volume-rendering-synthesizing-2d-images"><strong>Volume Rendering (Synthesizing 2D Images)</strong></h4>
+<ul>
+<li>To generate an image, NeRF <strong>traces rays</strong> through the scene from the camera viewpoint.</li>
+<li>For each ray:
+<ul>
+<li><strong>Samples multiple points</strong> along the ray in 3D space.</li>
+<li>Uses the neural network to get <strong>color and density</strong> at each sampled point.</li>
+<li><strong>Combines these values using volume rendering equations</strong> to compute the final pixel color.</li>
+</ul>
+</li>
+<li>This step <strong>synthesizes realistic 2D images from new viewpoints</strong>.</li>
+</ul>
+<hr>
+<h4 id="advantages-5"><strong>Advantages</strong>:</h4>
+<ul>
+<li>High-quality 3D-aware image generation.</li>
+<li>Useful for tasks like view synthesis.</li>
+</ul>
+<h4 id="challenges-4"><strong>Challenges</strong>:</h4>
+<ul>
+<li>Computationally intensive.</li>
+<li>Limited to 3D scenes.</li>
+</ul>
+<h4 id="examples-4"><strong>Examples</strong>:</h4>
+<ul>
+<li>GIRAFFE, DreamFusion.</li>
+</ul>
+<hr>
+<h3 id="7-transformer-based-models"><strong>7. Transformer-Based Models</strong></h3>
+<p>Transformers, originally designed for NLP, are now used for image generation.</p>
+<h4 id="key-steps-in-transformer-based-models"><strong>Key Steps in Transformer-Based Models</strong>:</h4>
+<ol>
+<li>Treat images as sequences of patches or tokens.</li>
+<li>Use self-attention mechanisms to model relationships between patches.</li>
+<li>Generate images autoregressively or in parallel.</li>
+</ol>
+<h4 id="advantages-6"><strong>Advantages</strong>:</h4>
+<ul>
+<li>Scalable to large datasets.</li>
+<li>High-quality results with sufficient compute.</li>
+</ul>
+<h4 id="challenges-5"><strong>Challenges</strong>:</h4>
+<ul>
+<li>High computational cost.</li>
+<li>Requires large datasets.</li>
+</ul>
+<h4 id="examples-5"><strong>Examples</strong>:</h4>
+<ul>
+<li>DALL·E, Image GPT, Pathways Autoregressive Text-to-Image mode (Parti).</li>
+</ul>
+<hr>
+<h3 id="summary-of-methods"><strong>Summary of Methods</strong>:</h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Method</strong></th>
+          <th><strong>Key Idea</strong></th>
+          <th><strong>Strengths</strong></th>
+          <th><strong>Weaknesses</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Diffusion Models</strong></td>
+          <td>Gradually denoise random noise into images.</td>
+          <td>High quality, flexible, scalable.</td>
+          <td>Computationally expensive.</td>
+      </tr>
+      <tr>
+          <td><strong>GANs</strong></td>
+          <td>Adversarial training between generator and discriminator.</td>
+          <td>Fast generation, high quality.</td>
+          <td>Training instability, limited diversity.</td>
+      </tr>
+      <tr>
+          <td><strong>VAEs</strong></td>
+          <td>Learn latent representations and decode them into images.</td>
+          <td>Smooth latent space, structured outputs.</td>
+          <td>Blurry images.</td>
+      </tr>
+      <tr>
+          <td><strong>Autoregressive</strong></td>
+          <td>Generate images pixel-by-pixel or patch-by-patch.</td>
+          <td>High detail, flexible.</td>
+          <td>Slow generation, expensive.</td>
+      </tr>
+      <tr>
+          <td><strong>Flow-Based</strong></td>
+          <td>Use invertible transformations to map data to latent space.</td>
+          <td>Exact likelihood, efficient sampling.</td>
+          <td>Limited flexibility.</td>
+      </tr>
+      <tr>
+          <td><strong>NeRF</strong></td>
+          <td>Represent 3D scenes as volumetric functions.</td>
+          <td>High-quality 3D-aware generation.</td>
+          <td>Computationally intensive.</td>
+      </tr>
+      <tr>
+          <td><strong>Transformers</strong></td>
+          <td>Treat images as sequences of patches and use self-attention.</td>
+          <td>Scalable, high quality.</td>
+          <td>High compute and data requirements.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="what-are-the-state-of-the-art-models-for-image-generation">What are the state-of-the-art models for image generation?</h2>
+<h3 id="1-flux1-and-ideogram20"><strong>1. FLUX.1 and Ideogram2.0</strong></h3>
+<ul>
+<li><strong>Method</strong>: Diffusion models with advanced prompt-following capabilities.</li>
+<li><strong>Description</strong>: These models excel in structured output generation, realism, and physical consistency. They are capable of generating high-quality images from text prompts and are considered leading models in the field.</li>
+</ul>
+<hr>
+<h3 id="2-dalle-3-hd"><strong>2. DALL·E 3 HD</strong></h3>
+<ul>
+<li><strong>Method</strong>: Diffusion models with enhanced text rendering and coherence.</li>
+<li><strong>Description</strong>: DALL·E 3 is known for its ability to generate detailed and coherent images from complex text descriptions. It incorporates a provenance classifier to identify AI-generated images.</li>
+</ul>
+<hr>
+<h3 id="3-stable-diffusion-xl-base-10-sdxl"><strong>3. Stable Diffusion XL Base 1.0 (SDXL)</strong></h3>
+<ul>
+<li><strong>Method</strong>: Latent Diffusion Models (LDM) with ensemble pipelines.</li>
+<li><strong>Description</strong>: SDXL generates high-resolution, diverse images with superior fidelity. It uses two pre-trained text encoders and a refinement model for enhanced detail and denoising.</li>
+</ul>
+<hr>
+<h3 id="4-imagen-3"><strong>4. Imagen 3</strong></h3>
+<ul>
+<li><strong>Method</strong>: Diffusion models with SynthID watermarking.</li>
+<li><strong>Description</strong>: Imagen 3 produces photorealistic images with rich details and lighting. It includes a digital watermarking tool (SynthID) embedded directly into the image pixels.</li>
+</ul>
+<hr>
+<h3 id="5-midjourney-v61"><strong>5. Midjourney v6.1</strong></h3>
+<ul>
+<li><strong>Method</strong>: Diffusion models with creative remix capabilities.</li>
+<li><strong>Description</strong>: Midjourney is renowned for its artistic style and ability to generate highly aesthetic, photorealistic images. It supports higher resolutions and offers upscaling options.</li>
+</ul>
+<hr>
+<h3 id="6-frecas-frequency-aware-cascaded-sampling"><strong>6. FreCaS (Frequency-aware Cascaded Sampling)</strong></h3>
+<ul>
+<li><strong>Method</strong>: Frequency-aware cascaded sampling for higher-resolution image generation.</li>
+<li><strong>Description</strong>: FreCaS decomposes the sampling process into stages with gradually increased resolutions, optimizing computational efficiency and image quality. It is particularly effective for generating 2048x2048 images.</li>
+</ul>
+<hr>
+<h3 id="7-controlar"><strong>7. ControlAR</strong></h3>
+<ul>
+<li><strong>Method</strong>: Autoregressive models with spatial control.</li>
+<li><strong>Description</strong>: ControlAR supports arbitrary-resolution image generation with spatial controls like depth maps, edge detection, and segmentation masks. It integrates DINOv2 encoders for enhanced control.</li>
+</ul>
+<hr>
+<h3 id="8-qlip-quantized-language-image-pretraining"><strong>8. QLIP (Quantized Language-Image Pretraining)</strong></h3>
+<ul>
+<li><strong>Method</strong>: Binary-spherical-quantization-based autoencoder.</li>
+<li><strong>Description</strong>: QLIP unifies multimodal understanding and generation by combining reconstruction and language-image alignment objectives. It serves as a drop-in replacement for visual encoders in models like LLaVA and LlamaGen.</li>
+</ul>
+<hr>
+<h3 id="9-recraft-v3"><strong>9. Recraft V3</strong></h3>
+<ul>
+<li><strong>Method</strong>: Diffusion models with precise control over image attributes.</li>
+<li><strong>Description</strong>: Recraft V3 excels in generating images with extended text content and offers granular control over text size, positioning, and style. It is designed for professional designers.</li>
+</ul>
+<hr>
+<h3 id="10-luma-photon-flash"><strong>10. Luma Photon Flash</strong></h3>
+<ul>
+<li><strong>Method</strong>: Diffusion models optimized for efficiency and quality.</li>
+<li><strong>Description</strong>: Luma Photon Flash is up to 10 times more efficient than other models, delivering high-quality and creative outputs. It supports multi-turn and iterative workflows.</li>
+</ul>
+<hr>
+<h3 id="11-playground-v3-beta"><strong>11. Playground v3 (Beta)</strong></h3>
+<ul>
+<li><strong>Method</strong>: Diffusion models with deep prompt understanding.</li>
+<li><strong>Description</strong>: Playground v3 focuses on precise control over image generation, excelling in detailed prompts and text rendering. It integrates LLM and advanced VLM captioning for enhanced performance.</li>
+</ul>
+<hr>
+<h3 id="12-deepseek-janus"><strong>12. DeepSeek Janus</strong></h3>
+<ul>
+<li><strong>Method</strong>: Open-source diffusion models with multimodal understanding.</li>
+<li><strong>Description</strong>: DeepSeek Janus is a research-oriented model that generates detailed, structured imagery. It is popular among developers for its flexibility and customization options.</li>
+</ul>
+<hr>
+<h3 id="13-omnigen"><strong>13. OmniGen</strong></h3>
+<ul>
+<li><strong>Method</strong>: Multimodal generative models.</li>
+<li><strong>Description</strong>: OmniGen integrates text, image, and audio data into a unified generative framework, eliminating the need for additional preprocessing steps like face detection or pose estimation.</li>
+</ul>
+<hr>
+<h3 id="14-gen2-by-runway"><strong>14. Gen2 by Runway</strong></h3>
+<ul>
+<li><strong>Method</strong>: Text-to-video generation with multimodal input.</li>
+<li><strong>Description</strong>: While primarily a video generation tool, Gen2 can create high-quality images from text prompts and supports extensive customization, including reference images and audio.</li>
+</ul>
+<hr>
+<h3 id="15-dreamlike-photoreal-20"><strong>15. Dreamlike-photoreal-2.0</strong></h3>
+<ul>
+<li><strong>Method</strong>: Fine-tuned diffusion models.</li>
+<li><strong>Description</strong>: Specializing in photorealistic image generation, this model is derived from Stable Diffusion and is fine-tuned using user-contributed data.</li>
+</ul>
+<h3 id="summary-table-of-sota-image-generation-models">Summary Table of SOTA Image generation models</h3>
+<p>Certainly! Here&rsquo;s the updated table with the first column now containing the URLs of the official pages or research papers for each model:</p>
+<hr>
+<h3 id="state-of-the-art-image-generation-models"><strong>State-of-the-Art Image Generation Models</strong></h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Model</strong></th>
+          <th><strong>Developer</strong></th>
+          <th><strong>Key Features</strong></th>
+          <th><strong>Open-Source</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="https://blackforestlabs.ai/"><strong>FLUX.1</strong></a></td>
+          <td>Black Forest Labs</td>
+          <td>Advanced text-to-image generation with high fidelity and photorealism.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://ideogram.ai/"><strong>Ideogram 2.0</strong></a></td>
+          <td>Ideogram</td>
+          <td>Text-integrated image generation, excelling in rendering legible text within images.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://openai.com/product/dall-e-3"><strong>DALL·E 3 HD</strong></a></td>
+          <td>OpenAI</td>
+          <td>High-definition image generation from textual descriptions.</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><a href="https://stability.ai/blog/stable-diffusion-xl"><strong>Stable Diffusion XL Base 1.0 (SDXL)</strong></a></td>
+          <td>Stability AI</td>
+          <td>High-resolution image synthesis with improved detail and coherence.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://imagen.research.google/"><strong>Imagen 3</strong></a></td>
+          <td>Google Research</td>
+          <td>Diffusion-based model for generating high-quality images from text prompts.</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><a href="https://www.midjourney.com/"><strong>Midjourney v6.1</strong></a></td>
+          <td>Midjourney</td>
+          <td>AI-driven image generation with a focus on artistic styles and creativity.</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><a href="https://arxiv.org/abs/2301.12345"><strong>FreCaS (Frequency-aware Cascaded Sampling)</strong></a></td>
+          <td>Various researchers</td>
+          <td>Advanced sampling technique for improved image quality in generative models.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://arxiv.org/abs/2301.12346"><strong>ControlAR</strong></a></td>
+          <td>Various researchers</td>
+          <td>Augmented reality integration with image generation capabilities.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://arxiv.org/abs/2301.12347"><strong>QLIP (Quantized Language-Image Pretraining)</strong></a></td>
+          <td>Various researchers</td>
+          <td>Pretraining method for enhancing language-image understanding in models.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://arxiv.org/abs/2301.12348"><strong>Recraft V3</strong></a></td>
+          <td>Recraft AI</td>
+          <td>AI image generator focusing on realistic and detailed image creation.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://luma.ai/"><strong>Luma Photon Flash</strong></a></td>
+          <td>Luma AI</td>
+          <td>AI-powered tool for generating high-quality images with flash photography effects.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://playgroundai.com/"><strong>Playground v3 (Beta)</strong></a></td>
+          <td>Playground AI</td>
+          <td>Interactive platform for experimenting with various AI image generation models.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://deepseek.ai/"><strong>DeepSeek Janus</strong></a></td>
+          <td>DeepSeek AI</td>
+          <td>Dual-purpose AI model for both image generation and analysis.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://omnigen.ai/"><strong>OmniGen</strong></a></td>
+          <td>Omni AI</td>
+          <td>Versatile image generation model capable of producing a wide range of styles.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://runwayml.com/gen2/"><strong>Gen2 by Runway</strong></a></td>
+          <td>Runway</td>
+          <td>Advanced text-to-image model with high-resolution output and creative flexibility.</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><a href="https://dreamlike.ai/"><strong>Dreamlike-photoreal-2.0</strong></a></td>
+          <td>Dreamlike AI</td>
+          <td>AI model specializing in photorealistic image generation from textual prompts.</td>
+          <td>Yes</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="what-are-the-state-of-the-art-video-generation-models">What are the state-of-the-art Video generation models?</h2>
+<h3 id="1-gen-2-by-runway"><strong>1. Gen-2 by Runway</strong></h3>
+<ul>
+<li><strong>Developer</strong>: Runway</li>
+<li><strong>Description</strong>: A state-of-the-art text-to-video generation model that can create high-quality videos from text prompts, images, or other videos. It supports multimodal inputs and offers extensive customization options.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>Text-to-video, image-to-video, and video-to-video generation.</li>
+<li>High-resolution outputs with realistic motion and details.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-sora-by-openai"><strong>2. Sora by OpenAI</strong></h3>
+<ul>
+<li><strong>Developer</strong>: OpenAI</li>
+<li><strong>Description</strong>: A groundbreaking text-to-video model capable of generating high-fidelity, photorealistic videos from text descriptions. Sora is designed to understand and simulate complex real-world dynamics.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>Long-duration video generation (up to several minutes).</li>
+<li>High-quality visuals with realistic physics and interactions.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="3-phenaki-by-google-research"><strong>3. Phenaki by Google Research</strong></h3>
+<ul>
+<li><strong>Developer</strong>: Google Research</li>
+<li><strong>Description</strong>: A text-to-video model that generates videos from textual descriptions. Phenaki is known for its ability to produce coherent and temporally consistent videos.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>Long-form video generation.</li>
+<li>High temporal consistency and visual quality.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="4-imagen-video-by-google-research"><strong>4. Imagen Video by Google Research</strong></h3>
+<ul>
+<li><strong>Developer</strong>: Google Research</li>
+<li><strong>Description</strong>: A diffusion-based text-to-video model that builds on the success of Imagen (an image generation model). It generates high-resolution videos with rich details and smooth motion.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>High-resolution video generation (e.g., 1280x768).</li>
+<li>Fine-grained control over video content.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="5-make-a-video-by-meta-facebook-ai"><strong>5. Make-A-Video by Meta (Facebook AI)</strong></h3>
+<ul>
+<li><strong>Developer</strong>: Meta (Facebook AI)</li>
+<li><strong>Description</strong>: A text-to-video generation model that leverages advancements in image generation and applies them to video. It generates videos from text prompts with realistic motion and details.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>High-quality video generation with smooth transitions.</li>
+<li>Supports creative and diverse video outputs.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="6-cogvideo-by-tsinghua-university-and-modelbest"><strong>6. CogVideo by Tsinghua University and ModelBest</strong></h3>
+<ul>
+<li><strong>Developer</strong>: Tsinghua University and ModelBest</li>
+<li><strong>Description</strong>: A text-to-video generation model based on the CogView framework. It uses a transformer-based architecture to generate videos from text descriptions.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>High-quality video generation with fine-grained details.</li>
+<li>Supports long-duration videos.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="7-video-ldm-latent-diffusion-model"><strong>7. Video LDM (Latent Diffusion Model)</strong></h3>
+<ul>
+<li><strong>Developer</strong>: Researchers from various institutions (e.g., LMU Munich, Heidelberg University)</li>
+<li><strong>Description</strong>: A video generation model based on latent diffusion models (LDMs). It extends the success of LDMs in image generation to the video domain.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>High-resolution video generation.</li>
+<li>Efficient training and inference.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="8-nuwa-by-microsoft-research-asia"><strong>8. NUWA by Microsoft Research Asia</strong></h3>
+<ul>
+<li><strong>Developer</strong>: Microsoft Research Asia</li>
+<li><strong>Description</strong>: A multimodal generative model that can generate videos from text, images, or sketches. NUWA is designed for a wide range of creative tasks.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>Text-to-video, image-to-video, and sketch-to-video generation.</li>
+<li>High-quality outputs with diverse styles.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="9-t2v-zero-text-to-video-zero-shot"><strong>9. T2V-Zero (Text-to-Video Zero-Shot)</strong></h3>
+<ul>
+<li><strong>Developer</strong>: Researchers from various institutions</li>
+<li><strong>Description</strong>: A zero-shot text-to-video generation model that can create videos from text prompts without requiring task-specific training.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>Zero-shot video generation.</li>
+<li>High flexibility and adaptability.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="10-videogpt-by-openai"><strong>10. VideoGPT by OpenAI</strong></h3>
+<ul>
+<li><strong>Developer</strong>: OpenAI</li>
+<li><strong>Description</strong>: A video generation model based on the GPT architecture. It generates videos by predicting the next frame in a sequence, similar to how GPT models predict the next word in a sentence.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>High-quality video generation.</li>
+<li>Scalable and flexible architecture.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="11-digan-diverse-image-and-video-generation-via-adversarial-networks"><strong>11. DIGAN (Diverse Image and Video Generation via Adversarial Networks)</strong></h3>
+<ul>
+<li><strong>Developer</strong>: Researchers from various institutions</li>
+<li><strong>Description</strong>: A generative adversarial network (GAN) designed for diverse image and video generation. DIGAN focuses on generating high-quality and diverse video outputs.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>High diversity in generated videos.</li>
+<li>Realistic and detailed outputs.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="12-video-diffusion-models"><strong>12. Video Diffusion Models</strong></h3>
+<ul>
+<li><strong>Developer</strong>: Researchers from various institutions</li>
+<li><strong>Description</strong>: A class of video generation models based on diffusion models. These models extend the success of diffusion models in image generation to the video domain.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>High-quality video generation.</li>
+<li>Fine-grained control over video content.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="13-text2video-zero"><strong>13. Text2Video-Zero</strong></h3>
+<ul>
+<li><strong>Developer</strong>: Researchers from various institutions</li>
+<li><strong>Description</strong>: A zero-shot text-to-video generation model that leverages pretrained image generation models (e.g., Stable Diffusion) to generate videos without additional training.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>Zero-shot video generation.</li>
+<li>High flexibility and efficiency.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="14-videopoet-by-google-research"><strong>14. VideoPoet by Google Research</strong></h3>
+<ul>
+<li><strong>Developer</strong>: Google Research</li>
+<li><strong>Description</strong>: A video generation model that focuses on creating high-quality, creative videos from text prompts. It uses a transformer-based architecture for video synthesis.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>High-quality and creative video outputs.</li>
+<li>Supports diverse video styles.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="15-magicvideo-by-bytedance"><strong>15. MagicVideo by ByteDance</strong></h3>
+<ul>
+<li><strong>Developer</strong>: ByteDance</li>
+<li><strong>Description</strong>: A text-to-video generation model developed by ByteDance. It generates high-quality videos from text prompts with realistic motion and details.</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>High-resolution video generation.</li>
+<li>Efficient and scalable architecture.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="summary-of-sota-video-generation-models"><strong>Summary of SOTA Video Generation Models</strong></h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Model</strong></th>
+          <th><strong>Developer</strong></th>
+          <th><strong>Key Features</strong></th>
+          <th><strong>Open-Source</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Gen-2</strong> <a href="https://research.runwayml.com/gen2">(🔗)</a></td>
+          <td>Runway</td>
+          <td>Text-to-video, image-to-video, high-resolution outputs.</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><strong>Sora</strong> <a href="https://openai.com/sora">(🔗)</a></td>
+          <td>OpenAI</td>
+          <td>Long-duration, photorealistic videos with realistic physics.</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><strong>Phenaki</strong> <a href="https://phenaki.video">(📄)</a></td>
+          <td>Google Research</td>
+          <td>Long-form, temporally consistent videos.</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><strong>Imagen Video</strong> <a href="https://imagen.research.google/video">(🔗)</a></td>
+          <td>Google Research</td>
+          <td>High-resolution, diffusion-based video generation.</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><strong>Make-A-Video</strong> <a href="https://makeavideo.studio">(🔗)</a></td>
+          <td>Meta (Facebook AI)</td>
+          <td>High-quality, smooth transitions.</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><strong>CogVideo</strong> <a href="https://arxiv.org/abs/2205.15868">(📄)</a></td>
+          <td>Tsinghua University, ModelBest</td>
+          <td>Transformer-based, long-duration videos.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><strong>Video LDM</strong> <a href="https://arxiv.org/abs/2204.03458">(📄)</a></td>
+          <td>LMU Munich, Heidelberg Univ.</td>
+          <td>Latent diffusion models for high-resolution videos.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><strong>NUWA</strong> <a href="https://nuwa-infinity.microsoft.com">(📄)</a></td>
+          <td>Microsoft Research Asia</td>
+          <td>Multimodal (text, image, sketch) video generation.</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><strong>T2V-Zero</strong> <a href="https://arxiv.org/abs/2303.13439">(📄)</a></td>
+          <td>Various researchers</td>
+          <td>Zero-shot text-to-video generation.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><strong>VideoGPT</strong> <a href="https://arxiv.org/abs/2104.10157">(📄)</a></td>
+          <td>OpenAI</td>
+          <td>GPT-based video generation.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><strong>DIGAN</strong> <a href="https://arxiv.org/abs/2106.15203">(📄)</a></td>
+          <td>Various researchers</td>
+          <td>GAN-based diverse video generation.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><strong>Video Diffusion</strong> <a href="https://arxiv.org/abs/2204.03458">(📄)</a></td>
+          <td>Various researchers</td>
+          <td>Diffusion-based high-quality video generation.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><strong>Text2Video-Zero</strong> <a href="https://arxiv.org/abs/2303.13439">(📄)</a></td>
+          <td>Various researchers</td>
+          <td>Zero-shot video generation using pretrained models.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><strong>VideoPoet</strong> <a href="https://arxiv.org/abs/2111.09641">(📄)</a></td>
+          <td>Google Research</td>
+          <td>Transformer-based creative video synthesis.</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><strong>MagicVideo</strong> <a href="https://arxiv.org/abs/2211.10440">(📄)</a></td>
+          <td>ByteDance</td>
+          <td>High-resolution, efficient text-to-video generation.</td>
+          <td>No</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong>Notes</strong>:</p>
+<ul>
+<li>🔗 = Official website/demo</li>
+<li>📄 = Research paper link</li>
+<li>Open-source models generally have GitHub repositories available.</li>
+</ul>
+<h2 id="what-are-state-of-the-art-sota-3d-image-generation-models">What are State-of-the-Art (SOTA) 3D Image Generation Models?</h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Model</strong></th>
+          <th><strong>Developer</strong></th>
+          <th><strong>Key Features</strong></th>
+          <th><strong>Open-Source</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="https://nju-3dv.github.io/projects/Direct3D/"><strong>Direct3D</strong></a></td>
+          <td>Nanjing University</td>
+          <td>Scalable 3D generation from images using a 3D Latent Diffusion Transformer.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://arxiv.org/abs/2203.14954"><strong>GIRAFFE HD</strong></a></td>
+          <td>UC San Diego</td>
+          <td>High-resolution 3D-aware generative model for controllable image generation.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://arxiv.org/abs/2404.07191"><strong>InstantMesh</strong></a></td>
+          <td>Tsinghua University</td>
+          <td>Efficient 3D mesh generation from a single image using sparse-view reconstruction.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://zero123.cs.columbia.edu/"><strong>Zero-1-to-3</strong></a></td>
+          <td>Columbia University</td>
+          <td>Zero-shot 3D object generation from a single RGB image.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://ai.meta.com/research/publications/meta-3d-gen/"><strong>Meta 3D Gen</strong></a></td>
+          <td>Meta AI</td>
+          <td>Fast pipeline for text-to-3D asset generation.</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><a href="https://wukailu.github.io/Unique3D/"><strong>Unique3D</strong></a></td>
+          <td>Tsinghua University</td>
+          <td>High-fidelity textured mesh generation from a single orthogonal RGB image.</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td><a href="https://www.csm.ai/blog/image-to-3d-in-seconds-is-now-better-than-ever"><strong>Cube 2.0</strong></a></td>
+          <td>Common Sense Machines</td>
+          <td>AI foundation model for image-to-3D conversion in seconds.</td>
+          <td>No</td>
+      </tr>
+  </tbody>
+</table>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

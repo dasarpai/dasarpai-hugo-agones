@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorials on Agones</title>
+    <link>http://localhost:1313/docs/tutorials/</link>
+    <description>Recent content in Tutorials on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tutorial Build and Run a Simple Gameserver (Rust)</title>
+      <link>http://localhost:1313/docs/tutorials/simple-gameserver-rust/</link>
+      <pubDate>Thu, 01 Aug 2019 10:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/tutorials/simple-gameserver-rust/</guid>
+      <description>&lt;h2 id=&#34;objectives&#34;&gt;Objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Run a simple gameserver&lt;/li&gt;&#xA;&lt;li&gt;Understand how the simple gameserver uses the Agones Rust SDK&lt;/li&gt;&#xA;&lt;li&gt;Build a customized version of the simple gameserver&lt;/li&gt;&#xA;&lt;li&gt;Run your customized simple gameserver&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.docker.com/get-started/&#34;&gt;Docker&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Agones installed on GKE&lt;/li&gt;&#xA;&lt;li&gt;kubectl properly configured&lt;/li&gt;&#xA;&lt;li&gt;A local copy of the &lt;a href=&#34;https://github.com/googleforgames/agones/tree/release-1.48.0&#34;&gt;Agones repository&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;A repository for Docker images, such as &lt;a href=&#34;https://hub.docker.com/&#34;&gt;Docker Hub&lt;/a&gt; or &lt;a href=&#34;https://cloud.google.com/container-registry/&#34;&gt;GC Container Registry&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;To install on GKE, follow the install instructions (if you haven&amp;rsquo;t already) at&#xA;&lt;a href=&#34;http://localhost:1313/docs/installation/creating-cluster/gke/&#34;&gt;Setting up a Google Kubernetes Engine (GKE) cluster&lt;/a&gt;.&#xA;Also complete the &amp;ldquo;Installing Agones&amp;rdquo; instructions on the same page.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tutorial Build and Run a Simple Gameserver (node.js)</title>
+      <link>http://localhost:1313/docs/tutorials/simple-gameserver-nodejs/</link>
+      <pubDate>Thu, 01 Aug 2019 10:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/tutorials/simple-gameserver-nodejs/</guid>
+      <description>&lt;h2 id=&#34;objectives&#34;&gt;Objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Run a simple gameserver&lt;/li&gt;&#xA;&lt;li&gt;Understand how the simple gameserver uses the Agones node.js SDK&lt;/li&gt;&#xA;&lt;li&gt;Build a customized version of the simple gameserver&lt;/li&gt;&#xA;&lt;li&gt;Run your customized simple gameserver&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.docker.com/get-started/&#34;&gt;Docker&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Agones installed on GKE&lt;/li&gt;&#xA;&lt;li&gt;kubectl properly configured&lt;/li&gt;&#xA;&lt;li&gt;A local copy of the &lt;a href=&#34;https://github.com/googleforgames/agones/tree/release-1.48.0&#34;&gt;Agones repository&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;A repository for Docker images, such as &lt;a href=&#34;https://hub.docker.com/&#34;&gt;Docker Hub&lt;/a&gt; or &lt;a href=&#34;https://cloud.google.com/container-registry/&#34;&gt;GC Container Registry&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;To install on GKE, follow the install instructions (if you haven&amp;rsquo;t already) at&#xA;&lt;a href=&#34;http://localhost:1313/docs/installation/creating-cluster/gke/&#34;&gt;Setting up a Google Kubernetes Engine (GKE) cluster&lt;/a&gt;.&#xA;Also complete the &amp;ldquo;Installing Agones&amp;rdquo; instructions on the same page.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tutorial Build and Run a Simple Gameserver (C&#43;&#43;)</title>
+      <link>http://localhost:1313/docs/tutorials/simple-gameserver-cpp/</link>
+      <pubDate>Thu, 01 Aug 2019 10:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/tutorials/simple-gameserver-cpp/</guid>
+      <description>&lt;h2 id=&#34;objectives&#34;&gt;Objectives&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Run a simple gameserver&lt;/li&gt;&#xA;&lt;li&gt;Understand how the simple gameserver uses the Agones C++ SDK&lt;/li&gt;&#xA;&lt;li&gt;Build a customized version of the simple gameserver&lt;/li&gt;&#xA;&lt;li&gt;Run your customized simple gameserver&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.docker.com/get-started/&#34;&gt;Docker&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Agones installed on GKE&lt;/li&gt;&#xA;&lt;li&gt;kubectl properly configured&lt;/li&gt;&#xA;&lt;li&gt;A local copy of the &lt;a href=&#34;https://github.com/googleforgames/agones/tree/release-1.48.0&#34;&gt;Agones repository&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;A repository for Docker images, such as &lt;a href=&#34;https://hub.docker.com/&#34;&gt;Docker Hub&lt;/a&gt; or &lt;a href=&#34;https://cloud.google.com/container-registry/&#34;&gt;GC Container Registry&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;To install on GKE, follow the install instructions (if you haven&amp;rsquo;t already) at&#xA;&lt;a href=&#34;http://localhost:1313/docs/installation/creating-cluster/gke/&#34;&gt;Setting up a Google Kubernetes Engine (GKE) cluster&lt;/a&gt;.&#xA;Also complete the &amp;ldquo;Installing Agones&amp;rdquo; instructions on the same page.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

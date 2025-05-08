@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GraphQL on Agones</title>
+    <link>http://localhost:1313/tags/graphql/</link>
+    <description>Recent content in GraphQL on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/graphql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring SQL and GraphQL Commands</title>
+      <link>http://localhost:1313/dsblog/Exploring-SQL-and-GraphQL-Commands/</link>
+      <pubDate>Tue, 15 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Exploring-SQL-and-GraphQL-Commands/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6162-Exploring-SQL-and-GraphQL-Commands.jpg&#34; alt=&#34;Exploring SQL and GraphQL Commands&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-sql-and-graphql-commands&#34;&gt;Exploring SQL and GraphQL Commands&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-sql&#34;&gt;What is SQL?&lt;/h2&gt;&#xA;&lt;p&gt;SQL, or Structured Query Language, is a standardized programming language used for managing and manipulating relational databases. It allows users to perform various operations on the data stored in a database, including:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Data Querying&lt;/strong&gt;: Retrieve specific data from one or more tables using the &lt;code&gt;SELECT&lt;/code&gt; statement.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Data Manipulation&lt;/strong&gt;: Insert new records, update existing records, and delete records using &lt;code&gt;INSERT&lt;/code&gt;, &lt;code&gt;UPDATE&lt;/code&gt;, and &lt;code&gt;DELETE&lt;/code&gt; statements.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Database Structure Management&lt;/strong&gt;: Create, modify, and delete database structures (tables, indexes, views) using Data Definition Language (DDL) commands like &lt;code&gt;CREATE&lt;/code&gt;, &lt;code&gt;ALTER&lt;/code&gt;, and &lt;code&gt;DROP&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Data Control&lt;/strong&gt;: Manage access permissions and control data security with commands like &lt;code&gt;GRANT&lt;/code&gt; and &lt;code&gt;REVOKE&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;SQL is widely used in various database management systems (DBMS) such as MySQL, PostgreSQL, Oracle, Microsoft SQL Server, and SQLite. Its declarative syntax makes it relatively easy to learn and use for both beginners and experienced developers.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

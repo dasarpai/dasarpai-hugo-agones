@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on Agones</title>
+    <link>http://localhost:1313/tags/security/</link>
+    <description>Recent content in Security on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is CAPTCHA?</title>
+      <link>http://localhost:1313/dsblog/What-is-Captcha/</link>
+      <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/What-is-Captcha/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6070-What-is-Captcha.jpg&#34; alt=&#34;What is CAPTCHA?&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-captcha&#34;&gt;What is CAPTCHA?&lt;/h1&gt;&#xA;&lt;p&gt;CAPTCHA stands for &amp;ldquo;Completely Automated Public Turing test to tell Computers and Humans Apart.&amp;rdquo; It is a security mechanism used by websites to determine whether the user is a human or a computer program (bot). CAPTCHAs are typically implemented as tests or challenges presented to the user, which are easy for humans to solve but difficult for bots.&lt;/p&gt;&#xA;&lt;p&gt;The purpose of CAPTCHA is to prevent automated bots from performing actions that are intended for human users, such as &lt;strong&gt;creating accounts, submitting forms, or accessing restricted content&lt;/strong&gt;. By requiring users to complete a CAPTCHA, websites can verify their humanity and protect against &lt;strong&gt;spam, brute-force attacks, data scraping, and other malicious activities&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

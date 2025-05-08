@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Customizable AI Models on Agones</title>
+    <link>http://localhost:1313/tags/customizable-ai-models/</link>
+    <description>Recent content in Customizable AI Models on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/customizable-ai-models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why Use Offline AI Models?</title>
+      <link>http://localhost:1313/dsblog/why-use-offline-ai-models/</link>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/why-use-offline-ai-models/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6233-Why-to-use-offline-ai-models.jpg&#34; alt=&#34;Why to use Offline AI Models&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;why-to-use-offline-ai-models&#34;&gt;Why to use Offline AI Models?&lt;/h1&gt;&#xA;&lt;p&gt;There are dozens of AI companies offering cloud-based AI solutions, and prices have been steadily decreasing over time. These models generally produce high-quality results because they are built with billions or even trillions of parameters and are hosted on world-class infrastructure. Given these advantages, why should we consider offline AI models? In this article, we explore the reasons behind this choice.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

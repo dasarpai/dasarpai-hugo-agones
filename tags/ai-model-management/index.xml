@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Model Management on Agones</title>
+    <link>http://localhost:1313/tags/ai-model-management/</link>
+    <description>Recent content in AI Model Management on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai-model-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Deep Dive into AI Model Marketplaces for Business Managers</title>
+      <link>http://localhost:1313/dsblog/A-Deep-Dive-into-AI-Model-Marketplaces-for-Business-Managers/</link>
+      <pubDate>Thu, 27 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/A-Deep-Dive-into-AI-Model-Marketplaces-for-Business-Managers/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6251-A-Deep-Dive-into-AI-Model-Marketplaces-for-BM.jpg&#34; alt=&#34;AI Model Marketplaces&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;a-deep-dive-into-ai-model-marketplaces-for-business-managers&#34;&gt;A Deep Dive into AI Model Marketplaces for Business Managers&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Artificial Intelligence (AI) is transforming industries, from customer service automation to data-driven decision-making. However, with hundreds of AI models available—ranging from OpenAI’s GPT-4 to Meta’s Llama 3—business leaders face a critical challenge: &lt;strong&gt;Where should they source their AI models?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;AI model marketplaces have emerged as a solution, offering businesses &lt;strong&gt;easy access, cost transparency, and flexibility&lt;/strong&gt; in deploying AI. This guide will help &lt;strong&gt;business managers, CTOs, and decision-makers&lt;/strong&gt; navigate the AI marketplace landscape, compare key providers, and choose the best option for their needs.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

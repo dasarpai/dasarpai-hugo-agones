@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Text Processing on Agones</title>
+    <link>http://localhost:1313/tags/text-processing/</link>
+    <description>Recent content in Text Processing on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/text-processing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is Unicode and how does it works?</title>
+      <link>http://localhost:1313/dsblog/what-is-unicode-and-how-does-it-works/</link>
+      <pubDate>Sat, 27 Jul 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/what-is-unicode-and-how-does-it-works/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6114-what-is-unicode-and-how-does-it-works.jpg&#34; alt=&#34;What is Unicode and how does it works?&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-unicode-and-how-does-it-works&#34;&gt;What is Unicode and how does it works?&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-unicode-a-universal-character-set&#34;&gt;What is Unicode: A Universal Character Set&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Unicode&lt;/strong&gt; is a standard that assigns a unique number to every character, no matter the platform, program, or language. It&amp;rsquo;s like a global dictionary for characters.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Why is it important?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Before Unicode, different systems used different character sets, leading to compatibility issues. For instance, a document created on one system might appear garbled when opened on another. Unicode solved this problem by providing a unified standard.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Empowering Language with AI NLP Capabilities</title>
+      <link>http://localhost:1313/dsblog/empowering-language-with-ainlp-capabilities/</link>
+      <pubDate>Sat, 18 Nov 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/empowering-language-with-ainlp-capabilities/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6106-Empowering-Language-with-AI-NLP-Capabilities.jpg&#34; alt=&#34;Empowering-Language-with-AI-NLP-Capabilities&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;empowering-language-with-ai-nlp-capabilities&#34;&gt;Empowering-Language-with-AI-NLP-Capabilities&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;When envisioning artificial intelligence (AI), the initial images that often come to mind are humanoid robots. However, this perception oversimplifies the vast realm of AI, which is fundamentally distinct from natural intelligence—the inherent cognitive capacity found in living organisms shaped by Mother Nature. Life, in all its forms, from microscopic bacteria to complex human beings, possesses an innate intelligence derived from hydrocarbon-based living cells.&lt;/p&gt;&#xA;&lt;p&gt;The essence of life, intelligence, and consciousness transcends mere philosophical pondering; it&amp;rsquo;s a contentious debate within the scientific community. In the context of AI, the term refers to the intelligence embedded in machines crafted by human ingenuity. This synthetic intelligence is made possible through the integration of chips, predominantly fashioned from silicon—leading to their colloquial designation as silicon chips. Notably, the epicenter of many IT companies is aptly named Silicon Valley.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Basics of Word Embedding</title>
+      <link>http://localhost:1313/dsblog/basics-of-word-embedding/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/basics-of-word-embedding/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6101-Basics-of-Word-Embedding.jpg&#34; alt=&#34;Basics of Word Embedding&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;basics-of-word-embedding&#34;&gt;Basics of Word Embedding&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-context-target-and-window&#34;&gt;What is Context, target and window?&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The &amp;ldquo;context&amp;rdquo; word is the surrounding word.&lt;/li&gt;&#xA;&lt;li&gt;The &amp;ldquo;target&amp;rdquo; word is the middle word.&lt;/li&gt;&#xA;&lt;li&gt;The &amp;ldquo;window distance&amp;rdquo; is number of words (including) between context words and target word. Window distance 1 means, one word surronding the target, one left side context word, one right context word. Two window distance means 2 words left and 2 words right.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s take a sentence&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Embedding with FastText</title>
+      <link>http://localhost:1313/dsblog/Embedding-with-FastText/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Embedding-with-FastText/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6073-Embedding-with-FastText.jpg&#34; alt=&#34;Embedding with FastText&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;embedding-with-fasttext&#34;&gt;Embedding with FastText&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/dsblog/what-is-nlp#what-is-embedding&#34;&gt;What is Embedding?&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;http://localhost:1313/dsblog/what-is-nlp#what-are-different-embedding-types&#34;&gt;What are Different Types of Embedding&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-fasttext&#34;&gt;What is FastText?&lt;/h2&gt;&#xA;&lt;p&gt;FastText is an open-source library for efficient learning of word representations and sentence classification developed by Facebook AI Research. It is designed to handle large-scale text data and provides tools for &lt;strong&gt;training&lt;/strong&gt; and &lt;strong&gt;using word embeddings&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;FastText is an extension of the popular Word2Vec model that not only learns word embeddings but also &lt;strong&gt;considers subword&lt;/strong&gt; information. It represents each word as a bag of character n-grams (subword units), which allows it to capture morphological variations and &lt;strong&gt;handle out-of-vocabulary&lt;/strong&gt; words more effectively.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

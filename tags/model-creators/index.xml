@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Model Creators on Agones</title>
+    <link>http://localhost:1313/tags/model-creators/</link>
+    <description>Recent content in Model Creators on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/model-creators/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Models and Creators</title>
+      <link>http://localhost:1313/dsblog/AI-Models-and-Creators/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/AI-Models-and-Creators/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6187-ai-models-and-creators.jpg&#34; alt=&#34;AI Models and Creators&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;ai-models-and-creators&#34;&gt;AI Models and Creators&lt;/h1&gt;&#xA;&lt;h2 id=&#34;popular-models-and-their-creator&#34;&gt;Popular Models and Their Creator&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Nova - Amazon&lt;/li&gt;&#xA;&lt;li&gt;Gemini, Gemma - Google&lt;/li&gt;&#xA;&lt;li&gt;Granite - Oracle&lt;/li&gt;&#xA;&lt;li&gt;GPT - OpenAI&lt;/li&gt;&#xA;&lt;li&gt;Phi - Microsoft Azure&lt;/li&gt;&#xA;&lt;li&gt;Einstein - Salesforce&lt;/li&gt;&#xA;&lt;li&gt;Joule - SAP&lt;/li&gt;&#xA;&lt;li&gt;Grok - X (formerly Twitter)&lt;/li&gt;&#xA;&lt;li&gt;Llama - Meta&lt;/li&gt;&#xA;&lt;li&gt;Qwen - Alibaba&lt;/li&gt;&#xA;&lt;li&gt;Claude - Anthropic&lt;/li&gt;&#xA;&lt;li&gt;Bard - Google&lt;/li&gt;&#xA;&lt;li&gt;PaLM - Google&lt;/li&gt;&#xA;&lt;li&gt;Mistral - Mistral AI&lt;/li&gt;&#xA;&lt;li&gt;Falcon - Technology Innovation Institute (TII), UAE&lt;/li&gt;&#xA;&lt;li&gt;Gato - DeepMind&lt;/li&gt;&#xA;&lt;li&gt;Jasper - Jasper AI&lt;/li&gt;&#xA;&lt;li&gt;Bloom - BigScience (collaborative project)&lt;/li&gt;&#xA;&lt;li&gt;Ernie - Baidu&lt;/li&gt;&#xA;&lt;li&gt;Alpaca - Stanford University (fine-tuned LLaMA model)&lt;/li&gt;&#xA;&lt;li&gt;Stable Diffusion - Stability AI&lt;/li&gt;&#xA;&lt;li&gt;HuggingChat - Hugging Face&lt;/li&gt;&#xA;&lt;li&gt;Cohere of Command&lt;/li&gt;&#xA;&lt;li&gt;Alpha fold of deepmind&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;models-developed-by-microsoft&#34;&gt;Models Developed by Microsoft&lt;/h2&gt;&#xA;&lt;p&gt;Microsoft has developed or collaborated on several AI models and frameworks, especially as part of its Azure AI ecosystem and its partnership with OpenAI. Below is a list of models and AI systems associated with Microsoft:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

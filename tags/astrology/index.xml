@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Astrology on Agones</title>
+    <link>http://localhost:1313/tags/astrology/</link>
+    <description>Recent content in Astrology on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/astrology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Science and Basics of Astrology</title>
+      <link>http://localhost:1313/dsblog/Basics-of-Astrology/</link>
+      <pubDate>Wed, 27 Dec 2023 08:33:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Basics-of-Astrology/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6108-Basics-of-Astrology.jpg&#34; alt=&#34;Basics of Astrology&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;basics-of-jyotish&#34;&gt;Basics of Jyotish&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In this article I am going to discuss the basics of astrology and the data science aspect of astrology. I am defending here a big case of model retraining and without retraining if we are doing prediction from the old model that won&amp;rsquo;t be effective. Although in today&amp;rsquo;s time of data privacy, secrecy, getting personal data to create a prediction model is very costly or impossible for any corporation. As of today whatever data corporations are using to create the model of health care or public good or promoting a product for that anonymized data can be used but to create astrology models we need actual data. Only the government can get this data but the public doesn&amp;rsquo;t trust the government to create this model for predicting their life. What will be the future of Astrology and Jyotish in the coming time depends upon many factors, one of which is trust between governments and the public. The government can creates astrology models for the well being of the society. Without this, whatever astrology or Jyotish we are doing today it is becoming less trustworthy everyday.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

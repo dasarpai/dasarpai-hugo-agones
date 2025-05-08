@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Guides on Agones</title>
+    <link>http://localhost:1313/docs/guides/</link>
+    <description>Recent content in Guides on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/guides/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Feature Stages</title>
+      <link>http://localhost:1313/docs/guides/feature-stages/</link>
+      <pubDate>Thu, 26 Sep 2019 01:20:41 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/guides/feature-stages/</guid>
+      <description>&lt;h2 id=&#34;supported-versions&#34;&gt;Supported Versions&lt;/h2&gt;&#xA;&lt;p&gt;Agones versions are expressed as x.y.z, where x is the major version, y is the minor version, and z is the patch version&#xA;following &lt;a href=&#34;http://semver.org/&#34;&gt;Semantic Versioning&lt;/a&gt; terminology.&lt;/p&gt;&#xA;&lt;h2 id=&#34;agones-features&#34;&gt;Agones Features&lt;/h2&gt;&#xA;&lt;p&gt;A feature within Agones can be in &lt;code&gt;Alpha&lt;/code&gt;, &lt;code&gt;Beta&lt;/code&gt; or &lt;code&gt;Stable&lt;/code&gt; stage.&lt;/p&gt;&#xA;&lt;h2 id=&#34;feature-gates&#34;&gt;Feature Gates&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;Alpha&lt;/code&gt; and &lt;code&gt;Beta&lt;/code&gt; features can be enabled or disabled through the &lt;code&gt;agones.featureGates&lt;/code&gt; configuration option&#xA;that can be found in the &lt;a href=&#34;http://localhost:1313/docs/installation/install-agones/helm/#configuration&#34;&gt;Helm configuration&lt;/a&gt;&#xA;documentation. &lt;code&gt;Stable&lt;/code&gt; features are always enabled, and exist for upgrade compatibility, and cannot&#xA;be disabled.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Windows Gameservers</title>
+      <link>http://localhost:1313/docs/guides/windows-gameservers/</link>
+      <pubDate>Tue, 27 Apr 2021 23:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/guides/windows-gameservers/</guid>
+      <description>&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;&#xA;&lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;&#xA;&#xA;    Running &lt;code&gt;GameServers&lt;/code&gt; on Windows nodes is currently Alpha, and any feedback&#xA;would be appreciated.&#xA;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;The following prerequisites are required to create a GameServer:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;A Kubernetes cluster with the UDP port range 7000-8000 open on each node. &lt;a href=&#34;http://localhost:1313/docs/installation/creating-cluster/gke/#creating-the-firewall&#34;&gt;Creating the firewall.&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Agones controller installed in the targeted cluster&lt;/li&gt;&#xA;&lt;li&gt;kubectl properly configured&lt;/li&gt;&#xA;&lt;li&gt;Netcat which is already installed on most Linux/macOS distributions, for windows you can use &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/install-win10&#34;&gt;WSL&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;If you don’t have a Kubernetes cluster you can follow &lt;a href=&#34;http://localhost:1313/site/docs/installation/&#34;&gt;these instructions&lt;/a&gt; to create a cluster on Google Kubernetes Engine (GKE), Minikube or Azure Kubernetes Service (AKS), and install Agones.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fleet Updates</title>
+      <link>http://localhost:1313/docs/guides/fleet-updates/</link>
+      <pubDate>Tue, 27 Aug 2019 03:58:19 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/guides/fleet-updates/</guid>
+      <description>&lt;h2 id=&#34;rolling-update-strategy&#34;&gt;Rolling Update Strategy&lt;/h2&gt;&#xA;&lt;p&gt;When Fleets are edited and updated, the default strategy of Agones is to roll the new version of the &lt;code&gt;GameServer&lt;/code&gt;&#xA;out to the entire &lt;code&gt;Fleet&lt;/code&gt;, in a step by step increment and decrement by adding a chunk of the new version and removing&#xA;a chunk of the current set of &lt;code&gt;GameServers&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;This is done while ensuring that &lt;code&gt;Allocated&lt;/code&gt; &lt;code&gt;GameServers&lt;/code&gt; are not deleted&#xA;until they are specifically shutdown through the game servers SDK, as they are expected to have players on them.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GameServer Health Checking</title>
+      <link>http://localhost:1313/docs/guides/health-checking/</link>
+      <pubDate>Thu, 03 Jan 2019 01:20:19 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/guides/health-checking/</guid>
+      <description>&lt;h2 id=&#34;disabling-health-checking&#34;&gt;Disabling Health Checking&lt;/h2&gt;&#xA;&lt;p&gt;By default, health checking is enabled, but it can be turned off by setting the &lt;code&gt;spec.health.disabled&lt;/code&gt; property to&#xA;true.&lt;/p&gt;&#xA;&lt;h2 id=&#34;sdk-api&#34;&gt;SDK API&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;code&gt;Health()&lt;/code&gt; function on the &lt;a href=&#34;http://localhost:1313/docs/guides/client-sdks/&#34;&gt;SDK object&lt;/a&gt; needs to be called at an&#xA;interval less than the &lt;code&gt;spec.health.periodSeconds&lt;/code&gt;&#xA;threshold time to be considered before it will be considered a &lt;code&gt;failure&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The health check will also need to have not been called a consecutive number of times (&lt;code&gt;spec.health.failureThreshold&lt;/code&gt;),&#xA;giving it a chance to heal if it there is an issue.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GameServer Counters and Lists</title>
+      <link>http://localhost:1313/docs/guides/counters-and-lists/</link>
+      <pubDate>Mon, 08 Jan 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/guides/counters-and-lists/</guid>
+      <description>&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;&#xA;    &lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;&#xA;    &lt;p&gt;The Counters and Lists feature is currently &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/docs/guides/feature-stages/#beta&#34;&gt;Beta&lt;/a&gt;&lt;/strong&gt;,&#xA;        and while it is enabled by default it may change in the future.&lt;/p&gt;&#xA;    &lt;p&gt;Use the Feature Gate &lt;code&gt;CountsAndLists&lt;/code&gt; to disable this feature.&lt;/p&gt;&#xA;    &lt;p&gt;See the &lt;a href=&#34;http://localhost:1313/docs/guides/feature-stages/#feature-gates&#34;&gt;Feature Gate documentation&lt;/a&gt; for details on how to disable features.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;Counters and Lists is provided as a way to track arbitrary integer counter values as well as&#xA;lists of values against a &lt;code&gt;GameServer&lt;/code&gt; by a user provided key.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Player Tracking</title>
+      <link>http://localhost:1313/docs/guides/player-tracking/</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/guides/player-tracking/</guid>
+      <description>&lt;div class=&#34;pageinfo pageinfo-info&#34;&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/docs/guides/counters-and-lists/&#34;&gt;Counters and Lists&lt;/a&gt; replaces the Alpha functionality of Player&#xA;Tracking, and Player Tracking will soon be removed from Agones.&lt;/p&gt;&#xA;&lt;p&gt;If you are currently using this Alpha feature, please plan on migrating to use Counters and Lists to ensure it meets&#xA;all your needs.&lt;/p&gt;&#xA;&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;&#xA;    &lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;&#xA;    &lt;p&gt;The Player Tracking feature is currently &lt;strong&gt;&lt;a href=&#34;http://localhost:1313/docs/guides/feature-stages/#alpha&#34;&gt;Alpha&lt;/a&gt;&lt;/strong&gt;,&#xA;        not enabled by default, and may change in the future.&lt;/p&gt;&#xA;&lt;p&gt;Use the FeatureGate  &lt;code&gt;PlayerTracking&lt;/code&gt;&#xA;to enable and test this feature.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Local Game Server</title>
+      <link>http://localhost:1313/docs/guides/local-game-server/</link>
+      <pubDate>Tue, 19 Feb 2019 08:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/guides/local-game-server/</guid>
+      <description>&lt;p&gt;You can register a local game server with Agones. This means you can run an experimental build of your game server in the Agones environment without the need of packaging and deploying it to a fleet. This allows you to quickly iterate on your game server code while still being able to plugin to your Agones environment.&lt;/p&gt;&#xA;&lt;h2 id=&#34;register-your-server-with-agones&#34;&gt;Register your server with Agones&lt;/h2&gt;&#xA;&lt;p&gt;To register your local game server you&amp;rsquo;ll need to know the IP address of the machine running it and the port. With that you&amp;rsquo;ll create a game server config like the one below.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Latency Testing with Multiple Clusters</title>
+      <link>http://localhost:1313/docs/guides/ping-service/</link>
+      <pubDate>Thu, 03 Jan 2019 01:20:30 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/guides/ping-service/</guid>
+      <description>&lt;p&gt;To make latency testing easier, Agones installs with a simple ping service with both HTTP and UDP services that can be called&#xA;for the purpose of timing how long the roundtrip takes for information to be returned from either of these services.&lt;/p&gt;&#xA;&lt;h2 id=&#34;installing&#34;&gt;Installing&lt;/h2&gt;&#xA;&lt;p&gt;By default, Agones installs &lt;a href=&#34;https://kubernetes.io/docs/concepts/services-networking/service/&#34;&gt;Kubernetes Services&lt;/a&gt; for&#xA;both HTTP and the UDP ping endpoints. These can be disabled entirely,&#xA;or disabled individually. See the &lt;a href=&#34;http://localhost:1313/docs/installation/install-agones/helm/&#34;&gt;Helm install guide&lt;/a&gt; for the parameters to&#xA;pass through,&#xA;as well as configuration options.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Metrics</title>
+      <link>http://localhost:1313/docs/guides/metrics/</link>
+      <pubDate>Thu, 03 Jan 2019 03:58:19 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/guides/metrics/</guid>
+      <description>&lt;p&gt;Agones controller exposes metrics via &lt;a href=&#34;https://opencensus.io/&#34;&gt;OpenCensus&lt;/a&gt;. OpenCensus is a single distribution of libraries that collect metrics and distributed traces from your services, we only use it for metrics but it will allow us to support multiple exporters in the future.&lt;/p&gt;&#xA;&lt;p&gt;We choose to start with &lt;a href=&#34;https://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt; as this is the most popular with Kubernetes but it is also compatible with Cloud Monitoring.&#xA;If you need another exporter, check the &lt;a href=&#34;https://opencensus.io/exporters/supported-exporters/go/&#34;&gt;list of supported&lt;/a&gt; exporters. It should be pretty straightforward to register a new one. (GitHub PRs are more than welcome.)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Access Agones via the Kubernetes API</title>
+      <link>http://localhost:1313/docs/guides/access-api/</link>
+      <pubDate>Thu, 03 Jan 2019 01:20:41 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/guides/access-api/</guid>
+      <description>&lt;p&gt;Installing Agones creates several &lt;a href=&#34;https://kubernetes.io/docs/concepts/api-extension/custom-resources&#34;&gt;Custom Resource Definitions (CRD)&lt;/a&gt;,&#xA;which can be accessed and manipulated through the Kubernetes API.&lt;/p&gt;&#xA;&lt;p&gt;The detailed list of Agones CRDs with their parameters could be found here - &lt;a href=&#34;../../reference/agones_crd_api_reference/&#34;&gt;Agones CRD API Reference&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Kubernetes has multiple &lt;a href=&#34;https://kubernetes.io/docs/reference/using-api/client-libraries/&#34;&gt;client libraries&lt;/a&gt;, however,&#xA;at time of writing, only&#xA;the &lt;a href=&#34;https://github.com/kubernetes/client-go&#34;&gt;Go&lt;/a&gt; and&#xA;&lt;a href=&#34;https://github.com/kubernetes-client/python/&#34;&gt;Python&lt;/a&gt; clients are documented to support accessing CRDs.&lt;/p&gt;&#xA;&lt;p&gt;This can be found in the &lt;a href=&#34;https://kubernetes.io/docs/concepts/api-extension/custom-resources/#accessing-a-custom-resource&#34;&gt;Accessing a custom resource&lt;/a&gt;&#xA;section of the Kubernetes documentation.&lt;/p&gt;&#xA;&lt;p&gt;At this time, we recommend interacting with Agones through the Go client that has been generated in this repository,&#xA;but other methods may also work as well.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Troubleshooting</title>
+      <link>http://localhost:1313/docs/guides/troubleshooting/</link>
+      <pubDate>Thu, 03 Jan 2019 01:20:49 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/docs/guides/troubleshooting/</guid>
+      <description>&lt;h2 id=&#34;something-went-wrong-with-my-gameserver&#34;&gt;Something went wrong with my GameServer&lt;/h2&gt;&#xA;&lt;p&gt;If there is something going wrong with your GameServer, there are a few approaches to determining the cause:&lt;/p&gt;&#xA;&lt;h3 id=&#34;run-with-the-local-sdk-server&#34;&gt;Run with the local SDK server&lt;/h3&gt;&#xA;&lt;p&gt;A good first step for seeing what may be going wrong is replicating the issue locally. To do this you can take&#xA;advantage of the Agones &lt;a href=&#34;http://localhost:1313/docs/guides/local-game-server/&#34;&gt;local SDK server&lt;/a&gt;&#xA;, with the following troubleshooting steps:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Run your game server as a local binary against the local SDK server&lt;/li&gt;&#xA;&lt;li&gt;Run your game server container against the local SDK server. It&amp;rsquo;s worth noting that running with&#xA;&lt;code&gt;docker run --network=host ...&lt;/code&gt; can be an easy way to allow your game server container(s) access to the local SDK&#xA;server)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;At each stage, keep an eye on the logs of your game server binary, and the local SDK server, and ensure there are no system&#xA;errors.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

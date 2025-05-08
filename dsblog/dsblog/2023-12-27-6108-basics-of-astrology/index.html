@@ -1,0 +1,432 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Data Science and Basics of Astrology | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2023-12-27-6108-basics-of-astrology/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Data Science and Basics of Astrology">
+  <meta property="og:description" content="Basics of Jyotish Introduction In this article I am going to discuss the basics of astrology and the data science aspect of astrology. I am defending here a big case of model retraining and without retraining if we are doing prediction from the old model that won’t be effective. Although in today’s time of data privacy, secrecy, getting personal data to create a prediction model is very costly or impossible for any corporation. As of today whatever data corporations are using to create the model of health care or public good or promoting a product for that anonymized data can be used but to create astrology models we need actual data. Only the government can get this data but the public doesn’t trust the government to create this model for predicting their life. What will be the future of Astrology and Jyotish in the coming time depends upon many factors, one of which is trust between governments and the public. The government can creates astrology models for the well being of the society. Without this, whatever astrology or Jyotish we are doing today it is becoming less trustworthy everyday.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2023-12-27T08:33:00+05:30">
+    <meta property="article:modified_time" content="2023-12-27T08:33:00+05:30">
+    <meta property="article:tag" content="Astrology">
+    <meta property="article:tag" content="Data Science">
+    <meta property="article:tag" content="Astronomy">
+    <meta property="article:tag" content="Vedic Science">
+    <meta property="article:tag" content="Celestial Objects">
+    <meta property="article:tag" content="Predictive Modeling">
+
+  <meta itemprop="name" content="Data Science and Basics of Astrology">
+  <meta itemprop="description" content="Basics of Jyotish Introduction In this article I am going to discuss the basics of astrology and the data science aspect of astrology. I am defending here a big case of model retraining and without retraining if we are doing prediction from the old model that won’t be effective. Although in today’s time of data privacy, secrecy, getting personal data to create a prediction model is very costly or impossible for any corporation. As of today whatever data corporations are using to create the model of health care or public good or promoting a product for that anonymized data can be used but to create astrology models we need actual data. Only the government can get this data but the public doesn’t trust the government to create this model for predicting their life. What will be the future of Astrology and Jyotish in the coming time depends upon many factors, one of which is trust between governments and the public. The government can creates astrology models for the well being of the society. Without this, whatever astrology or Jyotish we are doing today it is becoming less trustworthy everyday.">
+  <meta itemprop="datePublished" content="2023-12-27T08:33:00+05:30">
+  <meta itemprop="dateModified" content="2023-12-27T08:33:00+05:30">
+  <meta itemprop="wordCount" content="3115">
+  <meta itemprop="keywords" content="Astrology Basics,Data Science in Astrology,Astronomical Calculations,Vedic Astrology,Celestial Patterns,Predictive Models,Ancient Sciences,Modern Astrology">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Data Science and Basics of Astrology">
+  <meta name="twitter:description" content="Basics of Jyotish Introduction In this article I am going to discuss the basics of astrology and the data science aspect of astrology. I am defending here a big case of model retraining and without retraining if we are doing prediction from the old model that won’t be effective. Although in today’s time of data privacy, secrecy, getting personal data to create a prediction model is very costly or impossible for any corporation. As of today whatever data corporations are using to create the model of health care or public good or promoting a product for that anonymized data can be used but to create astrology models we need actual data. Only the government can get this data but the public doesn’t trust the government to create this model for predicting their life. What will be the future of Astrology and Jyotish in the coming time depends upon many factors, one of which is trust between governments and the public. The government can creates astrology models for the well being of the society. Without this, whatever astrology or Jyotish we are doing today it is becoming less trustworthy everyday.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6108-Basics-of-Astrology.jpg" alt="Basics of Astrology"></p>
+<h1 id="basics-of-jyotish">Basics of Jyotish</h1>
+<h2 id="introduction">Introduction</h2>
+<p>In this article I am going to discuss the basics of astrology and the data science aspect of astrology. I am defending here a big case of model retraining and without retraining if we are doing prediction from the old model that won&rsquo;t be effective. Although in today&rsquo;s time of data privacy, secrecy, getting personal data to create a prediction model is very costly or impossible for any corporation. As of today whatever data corporations are using to create the model of health care or public good or promoting a product for that anonymized data can be used but to create astrology models we need actual data. Only the government can get this data but the public doesn&rsquo;t trust the government to create this model for predicting their life. What will be the future of Astrology and Jyotish in the coming time depends upon many factors, one of which is trust between governments and the public. The government can creates astrology models for the well being of the society. Without this, whatever astrology or Jyotish we are doing today it is becoming less trustworthy everyday.</p>
+<h2 id="astrology-is-pure-data-science">Astrology is Pure Data Science</h2>
+<p>Let&rsquo;s say we want to study how safe you drive on the roads, we want to predict whether you will have any accident in the next 30 days or not. Now, ask yourself what factors it depends upon? I will list some variables below. You think about each of these variables and you will realize all these factors have relations with your safe driving and accidents. Relationships may be weak or strong, it may be positive or negative that is a different matter but some relationship is there. Stronger the relation, more important that variable in predicting the outcome.</p>
+<ul>
+<li>Your profession</li>
+<li>Your food habits</li>
+<li>At the time of driving, for long you are hungry</li>
+<li>How long you been driving continuously</li>
+<li>Your age</li>
+<li>How many children you have</li>
+<li>Profession of your spouse</li>
+<li>Your household income</li>
+<li>Age of your children</li>
+<li>Are you heart patient?</li>
+<li>Are you having ABC disease? (this can be long list)</li>
+<li>Do you do meditation</li>
+<li>Do you meditate regularly
+Now you see, we can add 1000 more variables and some variables less and some more influence our driving habit and are useful in predicting the accident.</li>
+</ul>
+<p>Using this data, we ccan reate a model and start predicting an accident or ticket/challan, obviously some of the predictions will be false negative, some will be false positive. But, if a model is having good variables in it then it predicts much better than the random guess.</p>
+<p>In older times, when people were interested in predicting life they were using time related variables. What is more reliable in the cosmos than the movement of planets and stars in the sky? Now people started tracking the movement of these stars in the sky and events on the earth. Fire, earthquake, pandemic, war, rain, crop, fight, loss, gain of individuals, family and of king. And they developed a subject around this, that subject is astrology.</p>
+<p>We must understand relationship doesn&rsquo;t mean causation. For example, if there is heat then an ice cream seller is very happy. There is a relationship between heat and ice cream seller&rsquo;s happiness, more the temperature makes him happy but this relationship doesn&rsquo;t mean icecream seller is happy because of the hot weather. He is happy because of some other reason. His icecream sales are high! Cause of his happiness is his sales, not temperature.</p>
+<p>Similarly when astrologers see some patterns of planets and stars in the sky and they know their patterns are repetitive. The cycle of occurance can vary from hour to day to month to year or century but here is cyclicity. Now they observe the planets, there is cyclicity of the events. We popularly call, history repeats itself in different ways. This relationship between events on the earth and events in the sky has a relationship. Whether there is causation or not, that is a different subject for the study. But if the model is good you cannot deny the relationship.</p>
+<h2 id="why-astrology-is-not-effective-today">Why Astrology is not Effective Today?</h2>
+<p>Thousands years back when we observed the patterns in celestial objects and early life then we developed certain relationship. That time the lifestyle on the earth was different and today it has changed a lot. Although we do the same thing but in different ways. Today we eat, sleep, marry, have children, travel, speak, do agriculture, protect our interest and land, learn, teach, transact etc. And we were doing these things that time also but today we are doing in different ways. Therefore, the variables which we use to create the prediction model (astrology system) have changed. How much prediction quality has suffered, how much is the contribution of today&rsquo;s lifestyle; that is a matter of research. But, without a doubt if we revise the model with new variables of lifestyle we can establish a relationship between celestial objects and earthly life. The beauty of this prediction model is it has thousands of parameters and billions of combinations possible. If we rebuild a model again using changed data on the early life that model will work. Earlier we were using only the human brain to compute those numbers and make predictions, so it was human dependent. Therefore whoever can do fast calculation will be able to do astrology work faster and better. But with today&rsquo;s computers we can do that in seconds. Unfortunately, today we are using computer for astrology calculations but the model is outdated. Therefore prediction capability of the model has suffered.</p>
+<p>We need to keep in mind every model has two aspects, one model building and second is model prediction. Believing in the capabilities of our Rishi and not having confidence in ourselves, we have not built that Jyotish model for thousands of years. We are using that as is, for the prediction. If we pull resources together and rebuild that model it will predict better like any machine learning model.</p>
+<h2 id="does-astrology-treatment-work">Does Astrology Treatment Work?</h2>
+<p>If you have a problem in the left eye and you are sure due to what reason it is then the right medicine at the right place helps. Because we have found the cause and effect, therefore, now knowing the effect (pain on left eye) we can address the cause. Pain is an effect, the cause of the pain is different from the pain. If we can change the cause with external intervention we can alter the effect. This is the way medical treatment works.</p>
+<p>Celestial objects&rsquo; movement and earthly life have a relationship. That can be established without doubt. But to establish the cause of earthly pain, suffering and joy is celestial movement; it is intriguing and complicated. It is another subject of serious research. People believe certain things, but belief is the matter of religion. Science is based on experiments and repetition of those experiments. Beliefs and religion are personal in nature and they are based on customs and traditions. Science is a universal and commonly agreed principle, it does not care about customs and traditions.</p>
+<p>So, when humans want to address the problem of earthly life he knows the power of the human mind. Human mind can manifest any misery, suffering, hell. But the same mind can manifest joy, love, abundance and heaven. So humans try to condition the mind for good, for that purpose we take help from external objects like stone, eating habits, light, ventilation, reading text of religious books etc. Is there any relationship between human wellbeing and doing these activities? Definitely yes, but is there any causation between doing these activities and human well being that is another subject of research. Astrologers, since ages giving those astrological treatments and observing the patterns, found treatment is effective. It doesn&rsquo;t mean there is a cause and effect relationship. By wearing a certain stone or worshiping a certain deity something happens in most of the cases. It proves there is a relationship, it doesn&rsquo;t prove there is any causation.</p>
+<h2 id="sky-observation">Sky observation</h2>
+<ul>
+<li>At any point of the day or night, if we are on the ground without obstacles of a mountain or building then we can see 180 degree space around us. It means whatever planets or stars in the sky we can see, we see half of that what exists not more than that</li>
+<li>Even to see that you need to have a cloud free sky, and no sun above in your seen sky, otherwise sunlight or cloud will hinder the view.</li>
+<li>With our naked eyes we can see very limited sky, we need a telescope to see the deep space, more powerful and more clean sky better view you will have. That is why a telescope which is placed outside of the earth&rsquo;s environment can see and take better pictures of deep space.</li>
+</ul>
+<h2 id="sun-based-astrology">Sun based astrology</h2>
+<ul>
+<li>The entire space is virtually divided into 12 parts.</li>
+<li>The entirety of space around the Earth spans 360 degrees, resulting in each part measuring 30 degrees.</li>
+<li>Earth completes its rotation around the sun, marking a year with 360 degrees, which aligns with the division into 12 months.</li>
+<li>During each month, Earth moves 30 degrees along its orbit around the sun.</li>
+<li>Each virtual part corresponds to a Zodiac sign or Rashi.</li>
+<li>The Zodiac sign is related to the sun&rsquo;s apparent movement in the sky within different Rishis or Zodiac Signs.</li>
+<li>Earth&rsquo;s axial rotation causes day and night.</li>
+<li>Earth&rsquo;s orbital rotation around the sun results in monthly changes, leading to the sun&rsquo;s appearance in different Rashis during different months.</li>
+<li>The Earth&rsquo;s tilted movement around the sun causes the changing seasons.</li>
+<li>The 12 Zodiac signs follow this order:
+<ol>
+<li>Aries (मेष - Mesh)</li>
+<li>Taurus (वृष - Vrish)</li>
+<li>Gemini (मिथुन - Mithun)</li>
+<li>Cancer (कर्क - Kark)</li>
+<li>Leo (सिंह - Simha)</li>
+<li>Virgo (कन्या - Kanya)</li>
+<li>Libra (तुला - Tula)</li>
+<li>Scorpio (वृश्चिक - Vrishchik)</li>
+<li>Sagittarius (धनु - Dhanu)</li>
+<li>Capricorn (मकर - Makar)</li>
+<li>Aquarius (कुंभ - Kumbh)</li>
+<li>Pisces (मीन - Meen)</li>
+</ol>
+</li>
+<li>Earth spends approximately one month in each Zodiac sign, observed as the sun&rsquo;s entry, peak, and exit from that sign.</li>
+<li>When considering the impact of Zodiac signs on earthly life, these three aspects are taken into account.</li>
+</ul>
+<h2 id="moon-based-astrology">Moon based astrology</h2>
+<ul>
+<li>Considering the moon&rsquo;s movement, the space around Earth can be divided into 27 segments.</li>
+<li>The entire space around Earth comprises 360 degrees, making each segment 13 degrees 20 minutes.</li>
+<li>Each segment is referred to as a Nakshatra, similar to the zodiac signs in sun-based astrology.</li>
+<li>Nakshatras are designated by unique names, following this sequence: Ashwini, Bharani, Krittika, Rohini, Mrigashira, Ardra, Punarvasu, Pushya, Ashlesha, Magha, Purva Phalguni, Uttara Phalguni, Hasta, Chitra, Swati, Vishakha, Anuradha, Jyeshtha, Mula, Purva Ashadha, Uttara Ashadha, Shravana, Dhanishta, Shatabhisha, Purva Bhadrapada, Uttara Bhadrapada, Revati.</li>
+<li>The moon typically spends around one day in each Nakshatra. Within a month, from one new moon to the next, the moon traverses all the Nakshatras.</li>
+<li>On average, it takes 29.5 days for the sun to complete its rotation around the earth.</li>
+<li>The moon&rsquo;s movement around the earth determines Tithi, but all Tithis do not have the same duration, nor do they start or end at the same time.</li>
+<li>A lunar month can range from 27 to 32 days.</li>
+<li>According to the lunar calendar, some years may consist of 13 months, known as Malmaas in Bharat, added within the Sravan month and occurring every fourth year.</li>
+<li>The 12 months of the Hindu calendar are as follows:
+<ul>
+<li>Chaitra: March - April</li>
+<li>Vaishakha: April - May</li>
+<li>Jyeshtha: May - June</li>
+<li>Ashadha: June - July</li>
+<li>Shravana: July - August</li>
+<li>Bhadrapada: August - September</li>
+<li>Ashwin: September - October</li>
+<li>Kartika: October - November</li>
+<li>Margashirsha: November - December</li>
+<li>Pausha: December - January</li>
+<li>Magha: January - February</li>
+<li>Phalguna: February - March</li>
+</ul>
+</li>
+<li>Despite some similarities in the names of the 12 months and 27 Nakshatras, there is no direct relationship between them.</li>
+<li>The moon&rsquo;s rotation around the earth is synchronous with its rotation on its own axis, causing us to consistently observe the same face of the moon. The unobservable part is termed the far side, yet it receives sunlight similar to the visible side. Consequently, a day on the moon equals 15 earth days, and 15 nights of the earth. Within one month of the Earth, from the moon&rsquo;s surface you can see only one day and one night.</li>
+<li>Hindu (Panchang), Muslim (Hijri), Jewish, and Chinese calendars are based on the lunar calendar.</li>
+<li>When Hindus create their birth horoscope, they consider both the Sun and Moon, making both the Zodiac sign and Nakshatra significant. It is different thing that nowadays we only remember Zodiac sign and not aware about Nakshatra.</li>
+</ul>
+<h2 id="astronomy-is-not-astrology">Astronomy is not Astrology</h2>
+<p>Astronomy is pure science, it is based on the facts of celestial objects and their movements. It has nothing to do with our perception about those.</p>
+<ol>
+<li>The Sun resides at the center of our solar system, with an approximate radius of 700,000 kilometers.</li>
+<li>Mercury is positioned 58 million kilometers away from the Sun, boasting a radius of approximately 2,500 kilometers and no natural satellite.</li>
+<li>Venus lies 108 million kilometers away from the Sun, having a radius of 6,000 kilometers and no natural satellite.</li>
+<li>Earth is between 147 and 152 million KM away from sun, it has 6.4 K KM radius, and 1  natural satellite.</li>
+<li>Mars is situated 228 million kilometers away from the Sun, with a radius of 3,400 kilometers and two natural satellites.</li>
+<li>Jupiter orbits at a distance of 778 million kilometers from the Sun, exhibiting a massive radius of 70,000 kilometers and possessing 79 natural satellites.</li>
+<li>Saturn is positioned 1,400 million kilometers away from the Sun, with a radius of 58,200 kilometers and 83 natural satellites.</li>
+<li>Uranus orbits at a distance of 2,900 million kilometers from the Sun, having a radius of 25,300 kilometers and 27 natural satellites.</li>
+<li>Neptune is located 4,500 million kilometers away from the Sun, boasting a radius of 24,600 kilometers and possessing 14 natural satellites.</li>
+<li>Pluto&rsquo;s distance from the Sun ranges between 4,500 to 7,400 million kilometers, with a radius of 1,100 kilometers and five natural satellites.</li>
+</ol>
+<ul>
+<li><strong>Distance above are approx. rounded off in thousands</strong></li>
+</ul>
+<h2 id="astrology">Astrology</h2>
+<p>Astrology is based on human perceptions, believe and culture. Yes, it is depending upon the reality around but there is always a gap between the reality and perception about the reality.</p>
+<p>In astrology we have 9 planets, which are different from above.</p>
+<ol>
+<li>Sun (Surya)</li>
+<li>Moon (Chandra)</li>
+<li>Mars (Mangal)</li>
+<li>Mercury (Buddha)</li>
+<li>Jupiter (Brahaspati)</li>
+<li>Venus (Shukra)</li>
+<li>Saturn (Shani)</li>
+<li>Rahu (head of the body)</li>
+<li>Ketu (rest of the body)</li>
+</ol>
+<p>12 Rashi (Zodic Sign) and their lords are as following.</p>
+<ol>
+<li>मेष राशि: मंगल (Mars)</li>
+<li>वृषभ राशि: शुक्र (Venus)</li>
+<li>मिथुन राशि: बुध (Mercury)</li>
+<li>कर्क राशि: चंद्र (Moon)</li>
+<li>सिंह राशि: सूर्य (Sun)</li>
+<li>कन्या राशि: बुध (Mercury)</li>
+<li>तुला राशि: शुक्र (Venus)</li>
+<li>वृश्चिक राशि: मंगल (Traditional), प्लूतो (Modern) (Mars, Pluto)</li>
+<li>धनु राशि: गुरु (Jupiter)</li>
+<li>मकर राशि: शनि (Saturn)</li>
+<li>कुंभ राशि: शनि (Traditional), यूरेनस (Modern) (Saturn, Uranus)</li>
+<li>मीन राशि: गुरु (Jupiter)</li>
+</ol>
+<h2 id="how-to-look-horoscope">How to look Horoscope</h2>
+<ul>
+<li>Lagna horoscope mean the horoscope created based on the planet and stars position in the sky at the time of birth.</li>
+<li>Horscope can be prepared for anything which is created by human or nature. It can be human, building, city, nation, political party, animals etc, anything can have horoscope.</li>
+<li>To create a horoscope on a paper, we create 12 boxes (houses) as below</li>
+</ul>
+<p><img src="/assets/images/dspost/dsp6108-12-Houes-of-Horoscope.jpg" alt="12-Houes-of-Horoscope"></p>
+<ul>
+<li>
+<p>Each house represent some aspect of the life as following.</p>
+<ol>
+<li>First House (Ascendant/Rising): Self-image, personality, appearance.</li>
+<li>Second House: Finances, possessions, values, self-worth.</li>
+<li>Third House: Communication, siblings, short trips, learning.</li>
+<li>Fourth House: Home, family, roots, inner emotions.</li>
+<li>Fifth House: Creativity, romance, children, self-expression.</li>
+<li>Sixth House: Health, work, routines, service.</li>
+<li>Seventh House: Relationships, partnerships, marriage.</li>
+<li>Eighth House: Transformation, shared resources, intimacy.</li>
+<li>Ninth House: Higher learning, travel, philosophy, beliefs.</li>
+<li>Tenth House (Midheaven): Career, public image, achievements.</li>
+<li>Eleventh House: Friendships, community, goals, aspirations.</li>
+<li>Twelfth House: Subconscious, spirituality, hidden matters, isolation.</li>
+</ol>
+</li>
+<li>
+<p>If you want to look into one aspect of the life then you need to look that particular house in horoscope. It gives you overall understanding of the personality of the person. And and it can help you in predictions.</p>
+</li>
+<li>
+<p>Rashi in different houses.</p>
+<ul>
+<li>As per the lagna 12 Rashi will sit in different house (above 12 boxes)</li>
+<li>For a simple example: In a below diagram, if you see 5 is written in the place of 1 (House 1), it means Leo (Zodiac 5th sign) is at the time of birth. then every number will shift by 5. In anticlockwise manner you have write other number 6,7, etc in 2,4, etc boxes/houses. In that case it would look like below. This information come from the Planet and Nakshastra position at the time of birth.</li>
+</ul>
+<p><img src="/assets/images/dspost/dsp6108-12-Rashi-in-Horoscope.jpg" alt="12-Houes-of-Horoscope"></p>
+</li>
+<li>
+<p>Once the above horsope is in place then you can combine following to predict any specific aspect of the life.</p>
+<ul>
+<li>For example you want to check finance then we should look into house number 2.</li>
+<li>What is in the house 2? In our example above, 6 is in the 2nd place. 6 means Virgo</li>
+<li>Lord of Virgo is Mercury. So mercury is taking care of that person&rsquo;s finance.</li>
+<li>Combine the attribute which you want to look, and the attribute of the lord of Zodiac sign, attribute of Nakshatra, Lord of Nakshatra.</li>
+<li>Who else is sitting in that house?</li>
+<li>Who is sitting opposite side of that house?</li>
+<li>Which planets are considered friendly to each other?</li>
+<li>Which planets are considered enemy to each other?</li>
+<li>Enemy planet are sitting together or in oppositve direction</li>
+<li>Friendly planets are sitting together or in opposite direction.</li>
+</ul>
+</li>
+</ul>
+<h3 id="navgrah-or-9-vedic-planets-and-what-they-represents">Navgrah or 9 Vedic planets and what they represents</h3>
+<ol>
+<li>Sun (Surya): Represents vitality, soul, father, authority, government, and confidence.</li>
+<li>Moon (Chandra): Signifies emotions, mind, mother, nurturing instincts, and intuition.</li>
+<li>Mars (Mangal): Governs energy, courage, action, passion, aggression, and siblings.</li>
+<li>Mercury (Budha): Rules intellect, communication, speech, learning, and business acumen.</li>
+<li>Jupiter (Guru/Brihaspati): Signifies wisdom, knowledge, expansion, luck, spirituality, and guidance.</li>
+<li>Venus (Shukra): Represents love, relationships, beauty, creativity, art, luxury, and pleasure.</li>
+<li>Saturn (Shani): Governs discipline, responsibility, hard work, karma, limitations, and longevity.</li>
+<li>Rahu: Signifies desires, obsessions, worldly materialism, ambitions, and unconventional approaches.</li>
+<li>Ketu: Represents spirituality, detachment, liberation, introspection, and karmic lessons.</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>I hope this has given you the idea of astrology, astronomy and the relationship between them. You also learned how astrology is hugely based on the data therefore to have correct prediction we need more data to build the model. We knew the challenges in getting the data and making that model.</p>
+<p>Now we cannot outrightly reject astrology as bogus science, nor do we go blindly after astrology prediction. Take it with that much care which you can handle, too much reliance on this or declaring it bogus subjects (what stars or planets millions mile away can do to humans, etc) both are extreme and should be avoided as much as possible.</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

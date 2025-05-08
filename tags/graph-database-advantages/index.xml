@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graph Database Advantages on Agones</title>
+    <link>http://localhost:1313/tags/graph-database-advantages/</link>
+    <description>Recent content in Graph Database Advantages on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/graph-database-advantages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring GraphDB and Neo4j - A Guide to Graph Databases</title>
+      <link>http://localhost:1313/dsblog/exploring-graphdb-and-neo4j/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-graphdb-and-neo4j/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6237-Exploring-GraphDB-and-Neo4j.jpg&#34; alt=&#34;Exploring GraphDB and Neo4j&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;rdbms-vs-neo4j-cypher-command-comparison&#34;&gt;RDBMS vs. Neo4j (Cypher) Command Comparison&lt;/h1&gt;&#xA;&lt;h2 id=&#34;are-graphdb-faster-than-rdbms&#34;&gt;Are GraphDB faster than RDBMS?&lt;/h2&gt;&#xA;&lt;p&gt;Graph databases (GraphDBs) can be &lt;strong&gt;faster&lt;/strong&gt; than relational databases (RDBMS) in scenarios that involve &lt;strong&gt;complex relationships and deep traversals&lt;/strong&gt;, but they are not always universally faster. It depends on the &lt;strong&gt;query type, data structure, and use case&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;when-graphdbs-are-faster-than-rdbms&#34;&gt;&lt;strong&gt;When GraphDBs Are Faster Than RDBMS&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Highly Connected Data (Deep Relationships)&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Example:&lt;/strong&gt; Finding friends-of-friends in a social network.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;GraphDB Advantage:&lt;/strong&gt; Uses &lt;strong&gt;index-free adjacency&lt;/strong&gt;, meaning each node stores direct references to its neighbors, making traversal &lt;strong&gt;O(1)&lt;/strong&gt; per hop.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;RDBMS Disadvantage:&lt;/strong&gt; Requires multiple &lt;strong&gt;JOINs&lt;/strong&gt; across tables, which can become expensive, leading to &lt;strong&gt;O(n²) or worse&lt;/strong&gt; in deep relationships.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Example Query:&lt;/strong&gt; &amp;ldquo;Find all friends-of-friends of a user.&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

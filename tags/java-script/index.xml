@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java Script on Agones</title>
+    <link>http://localhost:1313/tags/java-script/</link>
+    <description>Recent content in Java Script on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/java-script/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Navigating Python Ecosystem</title>
+      <link>http://localhost:1313/dsblog/Navigating-Python-Ecosystem/</link>
+      <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Navigating-Python-Ecosystem/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6178-Navigating-Python-Ecosystem.jpg&#34; alt=&#34;Navigating Python Ecosystem&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;navigating-python-ecosystem&#34;&gt;Navigating Python Ecosystem&lt;/h1&gt;&#xA;&lt;h2 id=&#34;1-history-of-python-development&#34;&gt;1. &lt;strong&gt;History of Python Development&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Python was created by &lt;strong&gt;Guido van Rossum&lt;/strong&gt; and was first released in 1991. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code compared to other languages like C++ or Java. Significant milestones in Python’s development include:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Python 1.x (1991-2000):&lt;/strong&gt; The initial release introduced core concepts like dynamic typing, exception handling, and module support.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Python 2.x (2000-2020):&lt;/strong&gt; A major update, featuring Unicode support, list comprehensions, and improvements to object-oriented programming. However, the 2.x series was discontinued in 2020.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Python 3.x (2008-present):&lt;/strong&gt; The transition to Python 3 introduced significant changes that broke backward compatibility with Python 2, emphasizing cleaner code, improved consistency, and optimizations.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Python’s growth surged with its adoption in various domains like web development, data science, machine learning, and scripting due to its simplicity, community-driven development, and rich ecosystem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Processors for HTML CSS JS Code</title>
+      <link>http://localhost:1313/dsblog/Processors-for-HTML-CSS-JS-Code/</link>
+      <pubDate>Wed, 30 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Processors-for-HTML-CSS-JS-Code/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6177-Processors-for-HTML-CSS-JS-Code.jpg&#34; alt=&#34;Processors for HTML CSS JS Code&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;processors-for-html-css-and-js-code&#34;&gt;Processors for HTML, CSS, and JS Code&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-are-html-processors&#34;&gt;What are HTML Processors?&lt;/h2&gt;&#xA;&lt;p&gt;HTML processors (or preprocessors) extend HTML functionality by adding new features like templating, reusable components, loops, conditionals, and more. They simplify development by generating standard HTML with enhanced capabilities. Below are some of the most popular HTML processors and what they do:&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-pug-formerly-jade&#34;&gt;1. &lt;strong&gt;Pug (formerly Jade)&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Features&lt;/strong&gt;: Templating, variables, loops, conditionals, mixins, and more concise syntax.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;What it Does&lt;/strong&gt;:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Uses indentation instead of tags and braces, resulting in a cleaner, more readable syntax.&lt;/li&gt;&#xA;&lt;li&gt;Provides support for template logic like loops and conditionals (&lt;code&gt;if&lt;/code&gt;, &lt;code&gt;else&lt;/code&gt;, &lt;code&gt;for&lt;/code&gt;).&lt;/li&gt;&#xA;&lt;li&gt;Mixins allow reusable chunks of code, like buttons or UI components.&lt;/li&gt;&#xA;&lt;li&gt;Supports template inheritance, where layouts can be extended.&lt;/li&gt;&#xA;&lt;li&gt;Compiles into HTML, useful for creating dynamic pages.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud Services on Agones</title>
+    <link>http://localhost:1313/tags/cloud-services/</link>
+    <description>Recent content in Cloud Services on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cloud-services/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Cloud APIs</title>
+      <link>http://localhost:1313/dsblog/Google-Cloud-APIS/</link>
+      <pubDate>Fri, 28 Jul 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Google-Cloud-APIS/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6082-Google-API-Services.jpg&#34; alt=&#34;Google Cloud APIs&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;google-cloud-apis&#34;&gt;Google Cloud APIs&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Hundreds of services from Google are available to consumers as API. Every API has a specific purpose. Over a period of time, google keeps clubbing these API endpoints (a url/place where a service is available), cleaning their code and improving the capabilities of these services. Therefore, sometimes it looks endpoint or pip package is the same, but its API name is different. Recently when google clubbed their many AI APIs they are moved under VertexAI and API endpoint changed to aiplatform.googleapi.com. To bring some clarity for my own sake and some of you may like this, I wrote this article.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A Comprehensive Guide to 210&#43; AWS Services</title>
+      <link>http://localhost:1313/dsblog/AWS-Cloud-Service-Catalog/</link>
+      <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/AWS-Cloud-Service-Catalog/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6063-AWS-Cloud-Service-Catalog.jpg&#34; alt=&#34;AWS Cloud Service Catalog&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;a-comprehensive-guide-to-210-aws-services&#34;&gt;A Comprehensive Guide to 210+ AWS Services&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Exploring 210+ Cloud Services and Their Purposes&lt;/strong&gt;&lt;br&gt;&#xA;All these services are availalbe at &lt;a href=&#34;https://us-east-1.console.aws.amazon.com/console/services?region=us-east-1&#34;&gt;Link&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Amazon Web Services (AWS) is a suite of cloud computing services that runs on the same infrastructure that Amazon uses for its e-commerce website. AWS offers a broad set of global compute, storage, database, AI, analytics, application, and deployment services that help organizations move faster, lower IT costs, and scale applications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Unlocking the Power of Azure- Exploring 300&#43; Cloud Services and Their Purposes</title>
+      <link>http://localhost:1313/dsblog/Azure-Cloud-Service-Catalog/</link>
+      <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Azure-Cloud-Service-Catalog/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6062-Azure-Cloud-Service-Catalog.jpg&#34; alt=&#34;Azure Cloud Service Catalog:&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;unlocking-the-power-of-azure&#34;&gt;Unlocking the Power of Azure&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Exploring 300+ Cloud Services and Their Purposes&lt;/strong&gt;&lt;br&gt;&#xA;All these services are availalbe at &lt;a href=&#34;https://azure.microsoft.com/en-in/products/&#34;&gt;Link:&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Embracing the cloud has become an integral part of modern businesses, and Microsoft Azure stands out as a leading player in the realm of cloud computing. With a staggering portfolio of over 300+ cloud services, Azure offers a rich and diverse ecosystem to meet the ever-evolving needs of organizations across the globe. However, navigating through this extensive array of services can be a daunting task, as it is often challenging to grasp the purpose and potential of each offering. In this comprehensive guide, we aim to unravel the mysteries of Azure and shed light on the vast landscape of its cloud services. Join me on a journey of discovery as we explore, demystify, and showcase the range of Azure&amp;rsquo;s offerings, empowering you to make informed decisions and harness the full power of the Azure.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Google Cloud Service Catalog - A Comprehensive Overview of 250&#43; Google Cloud Services</title>
+      <link>http://localhost:1313/dsblog/Google-Cloud-Service-Catalog/</link>
+      <pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Google-Cloud-Service-Catalog/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6061-Google-Cloud-Service-Catalog.jpg&#34; alt=&#34;Google Cloud Service Catalog&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;google-cloud-service-catalog&#34;&gt;Google Cloud Service Catalog&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;A Comprehensive Overview of 250+ Google Cloud Services&lt;/strong&gt;&lt;br&gt;&#xA;All these services are availalbe at &lt;a href=&#34;https://cloud.google.com&#34;&gt;Link&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In the ever-evolving landscape of cloud computing, Google Cloud entered recently compare to AWS and Azure. But it stands out as a prominent player, offering a vast array of services and solutions to empower businesses and developers. With over 250+ services available, navigating the expansive Google Cloud ecosystem can be a daunting task. However, understanding these services and their functionalities is crucial for harnessing the full potential of the platform and provide the right technical solution of any business problem. In this comprehensive guide, I will take you through the diverse landscape of Google Cloud services, shedding light on their purposes. Whether you are a seasoned cloud professional or new to the Google Cloud environment, this article aims to demystify the complexity and provide you with valuable insights into the extensive toolkit Google Cloud has to offer. You can bookmark this page for future reference.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

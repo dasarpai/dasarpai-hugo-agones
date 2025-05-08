@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Responsive Design on Agones</title>
+    <link>http://localhost:1313/tags/responsive-design/</link>
+    <description>Recent content in Responsive Design on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/responsive-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Possibilities with CSS: A Comprehensive Guide to Advanced CSS Coding</title>
+      <link>http://localhost:1313/dsblog/Exploring-Possibilities-with-CSS/</link>
+      <pubDate>Thu, 20 Feb 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Exploring-Possibilities-with-CSS/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6223-Exploring-Possibilities-with-CSS.jpg&#34; alt=&#34;Exploring Possibilities with CSS: A Comprehensive Guide to Advanced CSS Coding&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-advance-css-coding&#34;&gt;Exploring Advance CSS Coding&lt;/h1&gt;&#xA;&lt;p&gt;HTML give the structure to any website, it is like bone strucutre of the body. But the CSS makes it colorful, give some life imitation ability and make it beautiful, it is like flesh and skin on the bone which makes body alive and beautiful. This tutorial should give you a solid foundation in advanced CSS techniques. Keep practicing, with AI driven coding tools you need not memorize the syntext but you should understand what is possible so that you can imagine how you can use it for  you project.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

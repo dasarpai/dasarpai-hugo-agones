@@ -1,0 +1,872 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Frequencies in Time and Space: Understanding Nyquist Theorem &amp; its Applications | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/frequencies-in-time-and-space/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Frequencies in Time and Space: Understanding Nyquist Theorem & its Applications">
+  <meta property="og:description" content="Applications of Nyquists theorem Can the Nyquist-Shannon sampling theorem applies to light signals 🌈 First: What Kind of “Light” Are We Talking About? When we say light, we could mean a few different things depending on the context:
+Visible light waves (very high frequency, in the hundreds of THz) Modulated light signals (like in fiber optics or Li-Fi) Video/images (captured with cameras, representing light intensity) Scientific measurements (astronomy, laser pulses, etc.) Each of these uses light differently — and sampling theory applies to all, though how we use it depends on the application.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-04-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="Nyquist Theorem">
+    <meta property="article:tag" content="Signals">
+    <meta property="article:tag" content="Time">
+    <meta property="article:tag" content="Space">
+    <meta property="article:tag" content="Sampling">
+    <meta property="article:tag" content="Frequency">
+
+  <meta itemprop="name" content="Frequencies in Time and Space: Understanding Nyquist Theorem & its Applications">
+  <meta itemprop="description" content="Applications of Nyquists theorem Can the Nyquist-Shannon sampling theorem applies to light signals 🌈 First: What Kind of “Light” Are We Talking About? When we say light, we could mean a few different things depending on the context:
+Visible light waves (very high frequency, in the hundreds of THz) Modulated light signals (like in fiber optics or Li-Fi) Video/images (captured with cameras, representing light intensity) Scientific measurements (astronomy, laser pulses, etc.) Each of these uses light differently — and sampling theory applies to all, though how we use it depends on the application.">
+  <meta itemprop="datePublished" content="2025-04-24T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="4061">
+  <meta itemprop="keywords" content="Nyquist theorem,signals,time and space,sampling frequency,light signals,cameras,imaging">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Frequencies in Time and Space: Understanding Nyquist Theorem & its Applications">
+  <meta name="twitter:description" content="Applications of Nyquists theorem Can the Nyquist-Shannon sampling theorem applies to light signals 🌈 First: What Kind of “Light” Are We Talking About? When we say light, we could mean a few different things depending on the context:
+Visible light waves (very high frequency, in the hundreds of THz) Modulated light signals (like in fiber optics or Li-Fi) Video/images (captured with cameras, representing light intensity) Scientific measurements (astronomy, laser pulses, etc.) Each of these uses light differently — and sampling theory applies to all, though how we use it depends on the application.">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p><img src="/assets/images/dspost/dsp6265-frequencies-in-time-and-space.jpg" alt=""></p>
+<h1 id="applications-of-nyquists-theorem">Applications of Nyquists theorem</h1>
+<h2 id="can-the-nyquist-shannon-sampling-theorem-applies-to-light-signals">Can <strong>the Nyquist-Shannon sampling theorem applies to light signals</strong></h2>
+<h3 id="-first-what-kind-of-light-are-we-talking-about">🌈 First: What Kind of &ldquo;Light&rdquo; Are We Talking About?</h3>
+<p>When we say <strong>light</strong>, we could mean a few different things depending on the context:</p>
+<ol>
+<li><strong>Visible light waves</strong> (very high frequency, in the hundreds of THz)</li>
+<li><strong>Modulated light signals</strong> (like in fiber optics or Li-Fi)</li>
+<li><strong>Video/images</strong> (captured with cameras, representing light intensity)</li>
+<li><strong>Scientific measurements</strong> (astronomy, laser pulses, etc.)</li>
+</ol>
+<p>Each of these uses light differently — and <strong>sampling theory applies to all</strong>, though how we use it depends on the application.</p>
+<hr>
+<h3 id="-1-cameras--imaging-sampling-in-space-input">📸 1. <strong>Cameras &amp; Imaging (Sampling in Space)</strong> (Input)</h3>
+<p>Cameras sample <strong>light intensity</strong> in <strong>space</strong> rather than time. Each pixel in a digital camera is like a sample of brightness (or color) at a particular point.</p>
+<ul>
+<li>You can think of <strong>pixel spacing</strong> as the <em>sampling rate</em> in space.</li>
+<li>The <strong>Nyquist theorem</strong> applies to <strong>spatial frequencies</strong> — patterns of light and dark (details).</li>
+<li>If the scene has details finer than the pixel grid can resolve, you get <strong>aliasing</strong> — moiré patterns, jagged edges, or loss of detail.</li>
+</ul>
+<p>🧠 <strong>Rule</strong>: To capture detail of frequency <em>f</em>, you need pixels spaced at least <strong>1/(2f)</strong> apart. This is why we need <strong>high-resolution cameras</strong> to capture fine textures.</p>
+<hr>
+<h3 id="-2-fiber-optics--modulated-light-sampling-in-time-input">🔦 2. <strong>Fiber Optics &amp; Modulated Light (Sampling in Time)</strong> (Input)</h3>
+<p>In communication systems, we often use light (like in <strong>fiber optics</strong>) to transmit <strong>modulated signals</strong> — electrical data is converted into light pulses.</p>
+<p>Those light pulses <strong>carry a signal</strong> that varies over time — just like sound or radio signals.</p>
+<p>✅ In this case:</p>
+<ul>
+<li>The <strong>modulated signal</strong> has a bandwidth (say, up to 50 GHz)</li>
+<li>We use <strong>photodetectors</strong> and <strong>analog-to-digital converters (ADCs)</strong> to sample this signal</li>
+<li>Nyquist theorem applies exactly here: to avoid aliasing, we sample at <strong>at least 2× the bandwidth</strong></li>
+</ul>
+<p>For example: If the optical signal carries 10 GHz of information, we need at least a <strong>20 GHz sampling rate</strong> to faithfully recover it.</p>
+<hr>
+<h3 id="-3-screens-and-displays-output">🖥️ 3. <strong>Screens and Displays</strong> (Output)</h3>
+<p>Just like cameras, screens sample light <strong>in space</strong>. If the display resolution is too low for the content (e.g., showing 4K content on a 720p screen), you lose details — and if you resize improperly, you can get spatial aliasing.</p>
+<hr>
+<h3 id="-4-scientific-light-signals-pulses-lasers-astronomy-input">🌌 4. <strong>Scientific Light Signals (Pulses, Lasers, Astronomy)</strong> (Input)</h3>
+<p>In fields like:</p>
+<ul>
+<li><strong>Laser spectroscopy</strong></li>
+<li><strong>Ultrafast optics</strong></li>
+<li><strong>Astronomy</strong></li>
+</ul>
+<p>… scientists use <strong>sampling theory</strong> to record and reconstruct light pulses over time or frequency.</p>
+<p>For instance:</p>
+<ul>
+<li>An ultrashort laser pulse may have femtosecond resolution.</li>
+<li>Sampling such a pulse requires extremely fast <strong>time-domain detectors</strong>, and Nyquist still dictates the minimum sampling rate needed to resolve the waveform.</li>
+</ul>
+<hr>
+<h3 id="-summary-use-nyquist-for-light">🔑 Summary: Use Nyquist for Light!</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Light Context</th>
+          <th>Sampling Domain</th>
+          <th>Nyquist Applies?</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Cameras</td>
+          <td>Space</td>
+          <td>✅ Yes</td>
+          <td>Sampling spatial detail → avoid moiré &amp; aliasing</td>
+      </tr>
+      <tr>
+          <td>Fiber Optic Signals</td>
+          <td>Time</td>
+          <td>✅ Yes</td>
+          <td>Sample modulated light at ≥2× signal bandwidth</td>
+      </tr>
+      <tr>
+          <td>Displays</td>
+          <td>Space</td>
+          <td>✅ Yes</td>
+          <td>Need enough pixels to resolve the source image</td>
+      </tr>
+      <tr>
+          <td>Scientific Lasers</td>
+          <td>Time/Frequency</td>
+          <td>✅ Yes</td>
+          <td>Ultrafast detection uses sampling theory to reconstruct waveforms</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="what-is-spatial-aliasing-resolution-mismatch"><strong>What is Spatial Aliasing (Resolution Mismatch)?</strong></h2>
+<p>When we talk about aliasing in <strong>displays</strong>, we are mainly concerned with <strong>spatial aliasing</strong>. This happens because the number of pixels on the screen determines the <strong>spatial sampling</strong> rate — how finely you can capture detail in an image.</p>
+<ul>
+<li>
+<p><strong>Spatial resolution</strong>: Think of it as the number of pixels a display has to represent an image. A <strong>720p display</strong> has fewer pixels than a <strong>4K display</strong>, and a <strong>4K display</strong> has fewer pixels than an <strong>8K display</strong>.</p>
+</li>
+<li>
+<p><strong>Mismatched resolution</strong>: If you try to display <strong>8K content</strong> (which has a much higher spatial resolution) on a <strong>4K screen</strong>, the 4K display simply doesn’t have enough pixels to fully represent all the detail in the 8K image. The display has to <strong>downscale</strong> the content to fit. This process may cause <strong>aliasing artifacts</strong> if it&rsquo;s not done properly — such as <strong>mosaic patterns</strong>, <strong>jagged edges</strong>, or <strong>loss of fine details</strong>.</p>
+</li>
+</ul>
+<h2 id="what-is-temporal-aliasing-sampling-in-time"><strong>What is Temporal Aliasing (Sampling in Time)?</strong></h2>
+<p>In contrast, <strong>temporal aliasing</strong> occurs when you&rsquo;re dealing with <strong>time-based signals</strong> like audio or video frames, and it happens when you don&rsquo;t sample frequently enough (i.e., at less than twice the signal frequency). In the case of displays, this can occur in situations like:</p>
+<ul>
+<li>
+<p><strong>Frame rate mismatch</strong>: If a video is encoded at 60 frames per second (fps) but displayed at 30 fps, you may experience <strong>motion blur</strong> or <strong>stuttering</strong>. The frames are not sampled frequently enough to capture the smoothness of the motion.</p>
+</li>
+<li>
+<p><strong>Time-based aliasing</strong> happens in audio or video <strong>capture</strong> (e.g., filming a fast-moving object) but is usually more noticeable when you are <strong>capturing</strong> or <strong>streaming</strong> content than when you&rsquo;re just viewing it.</p>
+</li>
+</ul>
+<h2 id="what-happens-when-show-8k-content-on-a-4k-screen">What happens When Show 8K Content on a 4K Screen?</h2>
+<ul>
+<li><strong>Pixel Density</strong>: The 4K screen is forced to <strong>downscale</strong> the 8K content to fit. The number of pixels in a 4K screen isn’t enough to represent all the fine detail in an 8K image.</li>
+<li><strong>Loss of Detail</strong>: Some finer details are <strong>lost</strong> during the downscaling process, leading to a loss of <strong>sharpness</strong> or <strong>clarity</strong>, even if the image is resized well.</li>
+<li><strong>Artifacts</strong>: Poor downscaling (like using a simple nearest-neighbor resizing method) can create <strong>artifacts</strong> like <strong>aliasing</strong> — jagged edges or strange patterns that weren’t in the original image.</li>
+</ul>
+<h2 id="what-is-the-key-differences-in-spatial-and-temporal-aliasing">What is the Key Differences in Spatial and Temporal Aliasing?:</h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Aspect</strong></th>
+          <th><strong>Spatial Aliasing (Resolution)</strong></th>
+          <th><strong>Temporal Aliasing (Sampling)</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>What it affects</strong></td>
+          <td>Image <strong>clarity</strong>, <strong>sharpness</strong>, <strong>detail</strong></td>
+          <td><strong>Motion</strong>, <strong>smoothness</strong> of frames or signals</td>
+      </tr>
+      <tr>
+          <td><strong>Where it happens</strong></td>
+          <td>On displays, when content resolution exceeds screen resolution</td>
+          <td>In audio or video capture/streaming, or frame rates</td>
+      </tr>
+      <tr>
+          <td><strong>Cause</strong></td>
+          <td>Mismatch between content resolution and display resolution</td>
+          <td>Insufficient sampling frequency (below Nyquist rate)</td>
+      </tr>
+      <tr>
+          <td><strong>Example</strong></td>
+          <td>Showing 8K content on a 4K screen (downscaling issues)</td>
+          <td>Playing a high-frequency sound at too low a sample rate</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="what-is-the-frame-rate-required-for-fast-flying-object">What is the frame rate required for fast flying object?</h2>
+<h3 id="objects-motion-and-required-sampling-rate"><strong>Object’s Motion and Required Sampling Rate</strong></h3>
+<p>When capturing fast-moving objects, the <strong>motion of the object</strong> directly impacts the <strong>frame rate required to record it properly</strong>. For example:</p>
+<ul>
+<li><strong>High-speed motion</strong> (like a plane or a race car) has <strong>higher frequency motion</strong> — it moves quickly within a given time frame.</li>
+<li>If you don’t sample frequently enough (i.e., using a <strong>low frame rate</strong> camera), you miss details about the motion. This leads to something called <strong>motion blur</strong> or <strong>temporal aliasing</strong>, where the object appears smeared or jagged.</li>
+</ul>
+<p>For instance:</p>
+<ul>
+<li>A camera with <strong>30 fps</strong> won’t capture all the intricate details of a fast-moving plane. It might capture the plane at intervals that miss the in-between motion, leading to a <strong>blurry image</strong> or <strong>jittery motion</strong> when played back.</li>
+</ul>
+<p>To properly capture fast motion, you’d need a <strong>higher frame rate</strong> camera (e.g., <strong>120 fps</strong> or <strong>240 fps</strong>) to ensure that the motion is sampled at a high enough frequency to avoid these artifacts.</p>
+<h3 id="frame-rate-mismatch-between-recording-and-display"><strong>Frame Rate Mismatch Between Recording and Display</strong></h3>
+<p>Now, when it comes to <strong>displaying</strong> the recorded content:</p>
+<ul>
+<li>
+<p>If you record at a <strong>high frame rate</strong> (say, 60 fps) but play it back on a screen that supports only <strong>30 fps</strong>, you might experience <strong>stuttering</strong> or <strong>choppiness</strong>. This is because the display can’t update fast enough to show the full fluidity of the recorded video.</p>
+</li>
+<li>
+<p>On the other hand, if you record at <strong>30 fps</strong> and play it back at <strong>60 fps</strong>, the display will have to <strong>duplicate frames</strong> to match the higher refresh rate, which may make the motion look artificially smooth, but could cause <strong>judder</strong> or unnatural movements, especially with fast objects.</p>
+</li>
+</ul>
+<h3 id="screen-quality-and-frame-rate"><strong>Screen Quality and Frame Rate</strong></h3>
+<p>The <strong>quality of the display</strong> also plays a role:</p>
+<ul>
+<li>A <strong>high-quality screen</strong> (with a <strong>higher refresh rate</strong> and better motion handling) will reproduce fast-moving objects more smoothly, even at lower frame rates.</li>
+<li><strong>Low-quality screens</strong> may struggle to show smooth motion, regardless of the frame rate, due to lower refresh rates, poor motion interpolation, or lower resolution.</li>
+</ul>
+<h2 id="how-does-nyquist-work-for-stationary-objects"><strong>How Does Nyquist Work for Stationary Objects?</strong></h2>
+<p>In the case of a stationary object, the Nyquist theorem applies in a similar way to how it would for moving objects, but instead of capturing motion over time, you&rsquo;re capturing fine details in space:</p>
+<ul>
+<li><strong>f</strong>: The <strong>highest spatial frequency</strong> in the scene, representing the finest detail or texture in the object.</li>
+<li>To accurately capture these details, the camera&rsquo;s <strong>resolution</strong> (the number of pixels) should be at least <strong>twice</strong> that spatial frequency.</li>
+</ul>
+<p>So, for a stationary object, even though there&rsquo;s no movement, you&rsquo;re still sampling the <strong>spatial information</strong> in the object. The <strong>pixel grid</strong> of the camera needs to be <strong>dense enough</strong> to capture the fine details without introducing <strong>aliasing</strong> artifacts.</p>
+<p><strong>Example in the Real World:</strong></p>
+<ul>
+<li>If you take a picture of a <strong>textured wall</strong> with a low-resolution camera, you might notice that the details of the texture are not captured well. The texture could appear as blocky or have strange patterns that weren&rsquo;t there in reality.</li>
+<li>If you use a higher-resolution camera (more pixels per unit area), the texture is captured much more accurately, and those artifacts or unwanted patterns are minimized.</li>
+</ul>
+<h2 id="nyquist-in-the-context-of-image-resolution"><strong>Nyquist in the Context of Image Resolution</strong></h2>
+<p>The Nyquist theorem states that to <strong>accurately capture details</strong> in an image, the <strong>sampling frequency (pixels)</strong> must be at least <strong>twice the spatial frequency</strong> of the finest detail in the scene (in this case, the tree&rsquo;s bark, leaves, etc.).</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Imagine the <strong>tree bark</strong> has a <strong>fine texture</strong> with small, repeating patterns (spatial frequency). If the <strong>resolution of your camera</strong> (the number of pixels) is too low, you won’t capture the fine details of the bark, and you might see <strong>aliasing artifacts</strong> (e.g., jagged edges or a weird pattern instead of smooth texture).</li>
+<li>The <strong>Nyquist theorem</strong> tells us that to avoid aliasing, we need a <strong>pixel resolution</strong> that is <strong>at least twice</strong> the frequency of the smallest texture or pattern in the tree.</li>
+</ul>
+<p>In essence:</p>
+<ul>
+<li>If the tree bark’s texture has a <strong>high spatial frequency</strong>, your camera needs to have a <strong>high resolution</strong> (enough pixels to capture the details).</li>
+<li>If you use a <strong>1K camera</strong> with a low resolution, it might not capture all the fine details, and you could get a blurry or pixelated image. If you use a <strong>4K or 8K camera</strong>, you increase the <strong>sampling rate</strong>, which means you&rsquo;re able to capture finer details of the bark.</li>
+</ul>
+<h2 id="why-a-higher-resolution-camera-gives-better-image-quality"><strong>Why a Higher-Resolution Camera Gives Better Image Quality?</strong></h2>
+<p>As you mentioned, using <strong>higher resolution cameras</strong> will result in <strong>better images</strong> of the same tree. This happens because:</p>
+<ul>
+<li><strong>More pixels</strong> mean you’re capturing more <strong>spatial samples</strong> of the tree’s features.</li>
+<li>The higher the resolution, the <strong>finer</strong> the details that can be captured, and the less likely you are to get <strong>spatial aliasing</strong>.</li>
+<li>For instance, with a <strong>4K camera</strong>, you might capture a <strong>sharper, more detailed image</strong> of the tree compared to a <strong>2K camera</strong>. With <strong>8K resolution</strong>, the image would be even <strong>sharper and more detailed</strong>.</li>
+</ul>
+<h2 id="when-does-the-nyquist-theorem-matter-in-image-resolution"><strong>When Does the Nyquist Theorem Matter in Image Resolution?</strong></h2>
+<p>The <strong>Nyquist theorem</strong> becomes important when the <strong>fine details in the object</strong> you&rsquo;re photographing are at a <strong>high spatial frequency</strong>. If these details are finer than the camera’s ability to capture them (i.e., the camera&rsquo;s resolution is too low), then <strong>aliasing</strong> will occur.</p>
+<ul>
+<li><strong>Spatial Aliasing</strong>: When the camera resolution is <strong>too low</strong> relative to the details of the tree, you’ll get artifacts where the fine details <strong>can’t be captured properly</strong> (e.g., you might see a <strong>moire pattern</strong> or strange texture where the bark should look smooth).</li>
+<li><strong>Increasing Resolution</strong>: As you increase the resolution (e.g., from 1K to 2K to 4K to 8K), you <strong>sample more finely</strong> and can better represent the fine details of the tree, which <strong>reduces spatial aliasing</strong> and results in a sharper, more accurate image.</li>
+</ul>
+<h2 id="what-is-the-frequency-of-a-tree-bark"><strong>What is the Frequency of a Tree Bark?</strong></h2>
+<p>The <strong>frequency</strong> of the tree bark’s texture refers to the <strong>spatial frequency</strong>, which is how often certain patterns or textures repeat within a given space. For example, in a tree bark, the roughness, cracks, or any repetitive patterns on the surface represent spatial frequencies.</p>
+<p>In simple terms:</p>
+<ul>
+<li><strong>Spatial frequency</strong> is about how closely packed the details (like lines, cracks, or textures) are within a fixed area. The more closely spaced the details, the <strong>higher the spatial frequency</strong>.</li>
+<li><strong>Frequency</strong> refers to how many <strong>repetitive features</strong> (e.g., cracks, ridges, or knots) there are in a unit of measurement, such as millimeters or centimeters.</li>
+</ul>
+<h3 id="example-of-tree-bark">Example of Tree Bark:</h3>
+<p>Let’s consider a <strong>rough bark texture</strong> with small ridges and cracks:</p>
+<ul>
+<li>If the bark has ridges that repeat <strong>every 1 millimeter</strong>, then the spatial frequency is <strong>1 ridge per millimeter</strong>.</li>
+<li>If the bark has finer cracks that repeat <strong>every 0.5 millimeters</strong>, then the spatial frequency is <strong>2 ridges per millimeter</strong>.</li>
+</ul>
+<p>The <strong>spatial frequency</strong> is just the number of <strong>features</strong> or <strong>details</strong> (like the ridges or cracks) in a given distance on the tree&rsquo;s surface.</p>
+<h3 id="how-does-nyquist-apply"><strong>How Does Nyquist Apply?</strong></h3>
+<p>To capture the details of the bark texture accurately:</p>
+<ul>
+<li>If the ridges repeat <strong>every 1mm</strong>, the camera needs to <strong>sample</strong> (with pixels) <strong>at least twice</strong> that frequency to avoid aliasing.</li>
+<li>In this case, you’d need a <strong>camera resolution</strong> that can capture features as small as <strong>0.5mm</strong> in order to avoid distortion or aliasing.</li>
+</ul>
+<p>So, if the <strong>frequency of the tree bark texture</strong> is high (i.e., small ridges repeating closely together), a <strong>higher resolution</strong> camera is needed to accurately capture the fine details without creating artifacts.</p>
+<h3 id="why-is-this-important"><strong>Why is This Important?</strong></h3>
+<p>If the <strong>camera resolution</strong> is not high enough, then:</p>
+<ul>
+<li>The camera might <strong>miss</strong> these small textures and details, creating an image that looks <strong>blurry</strong> or <strong>blocky</strong>.</li>
+<li>You might notice <strong>distortion</strong> (like <strong>moire patterns</strong>) when the camera can&rsquo;t sample finely enough to represent the real texture of the bark.</li>
+</ul>
+<h3 id="real-world-example"><strong>Real-World Example</strong></h3>
+<ul>
+<li><strong>High spatial frequency</strong>: Bark with small, closely packed ridges or cracks.</li>
+<li><strong>Low spatial frequency</strong>: Bark with large, spaced-out features (e.g., a smooth or less-textured surface).</li>
+</ul>
+<p>For the <strong>high spatial frequency</strong> bark, you’d need a <strong>high-resolution camera</strong> to capture the details properly, which is where the <strong>Nyquist principle</strong> comes in — to avoid aliasing, your camera resolution must sample fine enough to represent the bark’s texture.</p>
+<p>Does this help make the idea of spatial frequency and the Nyquist theorem clearer in the context of tree bark?</p>
+<h2 id="spatial-frequency-vs-physical-frequency">Spatial Frequency vs physical frequency</h2>
+<p>We are discussing the <strong>spatial frequency</strong> of the bark&rsquo;s texture from a <strong>visual perspective</strong>, which is based on how light interacts with the surface of the bark. This is different from the <strong>actual frequency</strong> of the bark, which would involve the physical properties of the bark itself and how it interacts with sound or other forms of energy.</p>
+<h3 id="spatial-frequency-of-bark-visual-perspective"><strong>Spatial Frequency of Bark (Visual Perspective)</strong></h3>
+<p>When we talk about the <strong>frequency</strong> of the tree bark in the context of <strong>images</strong> or <strong>photography</strong>, we are talking about how fine or coarse the <strong>details</strong> of the bark are when we look at the <strong>image</strong>. This is related to <strong>how light</strong> from the bark interacts with your camera sensor and how <strong>fine textures</strong> are captured visually.</p>
+<ul>
+<li><strong>Light Reflection</strong>: The texture of the bark reflects light in patterns (such as ridges, cracks, or bumps). The <strong>spatial frequency</strong> in this case refers to the <strong>repetition of features</strong> (like the ridges or cracks) in the bark’s surface. The <strong>smaller the features</strong>, the <strong>higher the spatial frequency</strong>.</li>
+<li><strong>Nyquist Principle</strong>: To accurately capture the visual texture of the bark, your camera needs to sample those light reflections at least <strong>twice per feature</strong> (according to the Nyquist theorem). The more detailed the texture, the higher the camera resolution (pixel density) needed to capture the details without artifacts.</li>
+</ul>
+<h3 id="actual-frequency-of-the-bark-physical-properties"><strong>Actual Frequency of the Bark (Physical Properties)</strong></h3>
+<p>When we shift to the <strong>actual frequency</strong> of the bark in terms of its <strong>physical properties</strong>, this refers to <strong>how the bark interacts with sound or other forms of energy</strong> (like mechanical vibrations). This is a different concept.</p>
+<ul>
+<li><strong>Vibrations</strong>: The actual bark might <strong>vibrate</strong> when subjected to sound waves or other forms of mechanical energy (e.g., a drumstick tapping on the bark). The <strong>frequency</strong> of these vibrations would depend on the bark’s <strong>material properties</strong> (how stiff or flexible it is) and the energy being applied.</li>
+<li><strong>Energy Emission</strong>: If you’re thinking of <strong>emission of energy</strong>, like infrared radiation or heat, the <strong>frequency</strong> would depend on the <strong>temperature</strong> of the bark, not its texture. <strong>Warmer objects</strong> emit <strong>more infrared radiation</strong> at higher frequencies. For instance, a hot bark might emit infrared radiation at <strong>a higher frequency</strong> than a cool bark. This is different from the visual frequency we are concerned with in photography.</li>
+</ul>
+<h3 id="key-differences"><strong>Key Differences:</strong></h3>
+<ul>
+<li><strong>Visual Frequency (Spatial Frequency)</strong>: This is about <strong>how light interacts</strong> with the surface of the bark and how fine the details are in the bark’s texture (like ridges and cracks). It&rsquo;s about how we <strong>capture</strong> the texture visually (using a camera).</li>
+<li><strong>Physical Frequency</strong>: This involves the <strong>material properties</strong> of the bark, such as how it responds to sound waves, heat, or mechanical forces. This frequency is tied to the <strong>energy emitted</strong> or <strong>vibrations</strong> from the bark and is more about its <strong>physical interaction with energy</strong>.</li>
+</ul>
+<h2 id="is-the-visual-frequency-light-interaction-different-from-the-actual-frequency-energy-emission"><strong>Is the Visual Frequency (Light Interaction) Different from the Actual Frequency (Energy Emission)?</strong></h2>
+<p>Yes, the visual frequency is quite different from the actual physical frequency of the bark. They are related to <strong>different forms of interaction</strong>:</p>
+<ul>
+<li><strong>Visual frequency</strong> deals with how <strong>light is reflected</strong> from the texture of the bark, which can be captured by a camera.</li>
+<li><strong>Actual frequency</strong> deals with the <strong>material properties</strong> of the bark and how it interacts with <strong>sound waves</strong> or <strong>thermal energy</strong>, which is not related to the texture&rsquo;s visual appearance.</li>
+</ul>
+<h3 id="example-to-clarify-the-difference"><strong>Example to Clarify the Difference:</strong></h3>
+<ul>
+<li>If you <strong>tap</strong> the bark of a tree with a stick, the bark might <strong>vibrate</strong> at a certain frequency. The <strong>actual frequency</strong> of that vibration depends on how stiff or flexible the bark is.</li>
+<li>On the other hand, when you <strong>take a photo</strong> of that bark, you’re looking at the <strong>visual texture</strong> of the surface. The <strong>spatial frequency</strong> is how the texture (e.g., the ridges or cracks) looks under light, which depends on how the light reflects off those features.</li>
+</ul>
+<p>So, the <strong>actual frequency</strong> of the bark (like its vibrations when tapped or its heat emission) doesn’t directly relate to its <strong>visual frequency</strong> (how the texture appears in the image) unless you&rsquo;re considering something like <strong>infrared imaging</strong> to capture heat, or using sound waves to study its vibrations. But when we’re capturing <strong>photos</strong> of the tree bark, we care about <strong>spatial frequency</strong> and the ability of the camera to capture fine details without losing information.</p>
+<h2 id="how-many-kind-of-frequency-a-physical-object-can-represent">How many kind of frequency a physical object can represent?</h2>
+<p>A physical object can represent <strong>many types of frequencies</strong>, each related to a different form of interaction with energy. Let’s explore these various <strong>kinds of frequencies</strong> that an object can have and how they’re related to different forms of energy:</p>
+<h3 id="1-visual-frequency-light-interaction">1. <strong>Visual Frequency (Light Interaction)</strong></h3>
+<p>This is the most straightforward one when we talk about objects in photography or imaging. It refers to the <strong>spatial frequency</strong> of an object, which relates to how light interacts with the surface features of the object, like textures, shapes, and patterns.</p>
+<ul>
+<li><strong>Spatial Frequency</strong>: It’s about how fine or coarse the patterns are on the surface of an object (like a tree bark). If the object has a fine pattern, you need a high-resolution sensor to capture the detail.</li>
+<li>This can also apply to <strong>color</strong> or <strong>light waves</strong> that reflect from the object, where colors can be considered different frequencies of visible light.</li>
+</ul>
+<h3 id="2-sound-frequency-acoustic-frequency">2. <strong>Sound Frequency (Acoustic Frequency)</strong></h3>
+<p>When you <strong>tap</strong> an object, such as a tree bark or a piece of metal, the object may vibrate and produce a sound. The frequency of these vibrations determines the <strong>pitch</strong> of the sound, and this is typically measured in <strong>Hertz (Hz)</strong>.</p>
+<ul>
+<li><strong>Resonance Frequency</strong>: Every object has a certain frequency at which it naturally vibrates when disturbed (like tapping or striking it). This is its <strong>resonant frequency</strong>.</li>
+<li>For example, a <strong>wooden box</strong> might vibrate at a different frequency than a <strong>metal sheet</strong>. The <strong>tone</strong> you hear depends on the frequency of the vibrations in the object.</li>
+</ul>
+<p>This also applies to <strong>sound waves</strong> emitted by the object, like how the shape of an object influences the sound it produces when struck. <strong>High-pitched sounds</strong> correspond to <strong>higher frequencies</strong> of vibration, while <strong>low-pitched sounds</strong> correspond to <strong>lower frequencies</strong>.</p>
+<h3 id="3-thermal-frequency-energy-emission--infrared-radiation">3. <strong>Thermal Frequency (Energy Emission – Infrared Radiation)</strong></h3>
+<p>Every object emits radiation in the form of <strong>infrared light</strong> based on its <strong>temperature</strong>. The <strong>frequency</strong> of this radiation corresponds to the object&rsquo;s temperature.</p>
+<ul>
+<li><strong>Thermal Radiation Frequency</strong>: A hotter object emits <strong>higher-frequency radiation</strong> (shorter wavelengths), while a cooler object emits <strong>lower-frequency radiation</strong> (longer wavelengths).</li>
+<li>This is based on <strong>Planck’s Law</strong>, which relates the temperature of an object to the <strong>frequency</strong> (or wavelength) of radiation it emits.</li>
+<li>For example, a <strong>hot stove</strong> will emit <strong>infrared radiation</strong> at a much <strong>higher frequency</strong> than a <strong>cold piece of metal</strong>.</li>
+</ul>
+<p>This is the <strong>basis of infrared cameras</strong> that detect the frequency of heat emission and allow us to see <strong>heat signatures</strong> of objects in a scene.</p>
+<h3 id="4-electromagnetic-frequency-radio-microwaves-etc">4. <strong>Electromagnetic Frequency (Radio, Microwaves, etc.)</strong></h3>
+<p>Objects can also interact with <strong>electromagnetic waves</strong> across a wide spectrum. This includes <strong>radio waves</strong>, <strong>microwaves</strong>, <strong>infrared</strong>, <strong>visible light</strong>, <strong>ultraviolet</strong>, <strong>X-rays</strong>, and <strong>gamma rays</strong>. These are all different frequencies of electromagnetic radiation.</p>
+<ul>
+<li>For example, objects can <strong>reflect</strong> or <strong>absorb</strong> certain <strong>frequencies</strong> of electromagnetic radiation depending on their material properties. A <strong>metal object</strong> might reflect radio waves but absorb microwaves, while an <strong>object’s color</strong> determines which <strong>visible light</strong> frequencies it absorbs or reflects.</li>
+</ul>
+<h3 id="5-mechanical-vibration-frequency-oscillation">5. <strong>Mechanical Vibration Frequency (Oscillation)</strong></h3>
+<p>Objects can also undergo mechanical oscillations due to external forces (like wind, sound, or physical impact). This frequency is typically associated with <strong>vibrations</strong> in the structure of the object.</p>
+<ul>
+<li><strong>Vibrational Frequencies</strong>: These are <strong>mechanical frequencies</strong> at which parts of an object oscillate. For example, a <strong>guitar string</strong> vibrates at a certain frequency when plucked, and its vibration frequency determines the <strong>note</strong> it produces.</li>
+<li><strong>Structural Resonance</strong>: Larger objects, such as <strong>buildings</strong>, <strong>bridges</strong>, or even <strong>earthquakes</strong>, can have <strong>resonant frequencies</strong> at which they vibrate, and these vibrations can lead to catastrophic effects if the frequency matches the natural resonance frequency of the structure.</li>
+</ul>
+<h3 id="6-electrical-frequency-electronics">6. <strong>Electrical Frequency (Electronics)</strong></h3>
+<p>Some objects can also interact with <strong>electricity</strong> and generate or be affected by <strong>electrical frequencies</strong>. Electrical components can have certain <strong>resonant frequencies</strong> that impact their behavior, especially in circuits.</p>
+<ul>
+<li><strong>Electrical Signals</strong>: For example, in a <strong>radio</strong>, an antenna is tuned to a particular <strong>frequency</strong> to pick up certain <strong>radio waves</strong>. In a <strong>capacitor</strong> or <strong>inductor</strong>, the frequency of electrical current passing through them can affect how the component functions in a circuit.</li>
+</ul>
+<h3 id="7-magnetic-frequency-magnetism">7. <strong>Magnetic Frequency (Magnetism)</strong></h3>
+<p>Magnetic fields can oscillate at certain frequencies, and this concept is often explored in <strong>magnetic resonance imaging (MRI)</strong> or other magnetic studies.</p>
+<ul>
+<li><strong>Magnetic Resonance</strong>: Certain materials resonate at specific magnetic frequencies when exposed to an external magnetic field. For instance, <strong>MRI machines</strong> use the resonant frequency of <strong>hydrogen nuclei</strong> in the body to create images.</li>
+</ul>
+<h3 id="8-gravitational-frequency-gravitational-waves">8. <strong>Gravitational Frequency (Gravitational Waves)</strong></h3>
+<p>This is a more theoretical aspect of frequency, but objects with massive amounts of energy or gravitational interaction can emit <strong>gravitational waves</strong>. These waves oscillate at specific frequencies.</p>
+<ul>
+<li><strong>Gravitational Waves</strong>: These are ripples in spacetime caused by extremely energetic events, such as the collision of black holes. They propagate at <strong>specific frequencies</strong>, which can be detected by <strong>gravitational wave detectors</strong> like LIGO.</li>
+</ul>
+<h3 id="9-biological-frequencies-oscillations-in-biological-systems">9. <strong>Biological Frequencies (Oscillations in Biological Systems)</strong></h3>
+<p>In living organisms, biological processes can also have <strong>frequencies</strong>. These can range from the electrical frequencies in <strong>brain waves</strong> to the rhythmic oscillations in <strong>heartbeat</strong>.</p>
+<ul>
+<li><strong>Brain Waves</strong>: Different states of consciousness (like relaxation, deep sleep, or alertness) are associated with specific <strong>frequencies</strong> of electrical activity in the brain (measured in <strong>Hertz</strong>).</li>
+<li><strong>Heartbeats</strong>: The human heart has a specific <strong>frequency</strong> of beating, typically around <strong>60-100 beats per minute</strong>, which can be influenced by various factors like stress or physical activity.</li>
+</ul>
+<hr>
+<h3 id="in-summary-types-of-frequencies-an-object-can-represent">In Summary: <strong>Types of Frequencies an Object Can Represent</strong></h3>
+<p>An object can represent a wide range of frequencies depending on the type of energy or interaction involved:</p>
+<ol>
+<li><strong>Visual Frequency</strong> (light interaction, spatial frequency)</li>
+<li><strong>Acoustic Frequency</strong> (sound and vibration frequency)</li>
+<li><strong>Thermal Frequency</strong> (infrared radiation, energy emission)</li>
+<li><strong>Electromagnetic Frequency</strong> (radio waves, microwaves, X-rays)</li>
+<li><strong>Mechanical Vibration Frequency</strong> (resonance, oscillation)</li>
+<li><strong>Electrical Frequency</strong> (electrical circuits, signals)</li>
+<li><strong>Magnetic Frequency</strong> (resonance in magnetic fields)</li>
+<li><strong>Gravitational Frequency</strong> (gravitational waves)</li>
+<li><strong>Biological Frequencies</strong> (brain waves, heart rate)</li>
+</ol>
+<p>Each of these frequencies represents a different way an object or system can interact with the surrounding environment or with energy. They reflect the physical properties and behaviors of the object in various ways, whether it’s through light, sound, heat, or electromagnetic fields.</p>
+<div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a><a href="/categories/signal-processing" class="category-badge">signal-processing</a><a href="/categories/computer-vision" class="category-badge">computer-vision</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/nyquist-theorem" class="category-badge">Nyquist Theorem</a><a href="/tags/signals" class="category-badge">Signals</a><a href="/tags/time" class="category-badge">Time</a><a href="/tags/space" class="category-badge">Space</a><a href="/tags/sampling" class="category-badge">Sampling</a><a href="/tags/frequency" class="category-badge">Frequency</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=Frequencies%20in%20Time%20and%20Space%3a%20Understanding%20Nyquist%20Theorem%20%26amp%3b%20its%20Applications&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2ffrequencies-in-time-and-space%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2ffrequencies-in-time-and-space%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2ffrequencies-in-time-and-space%2f&title=Frequencies%20in%20Time%20and%20Space%3a%20Understanding%20Nyquist%20Theorem%20%26amp%3b%20its%20Applications" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2ffrequencies-in-time-and-space%2f&title=Frequencies%20in%20Time%20and%20Space%3a%20Understanding%20Nyquist%20Theorem%20%26amp%3b%20its%20Applications" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=Frequencies%20in%20Time%20and%20Space%3a%20Understanding%20Nyquist%20Theorem%20%26amp%3b%20its%20Applications&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2ffrequencies-in-time-and-space%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/the-real-story-of-nyquist-shannon-and-the-science-of-sampling/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">The Real Story of Nyquist, Shannon, and the Science of Sampling</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/whisper-large-scale-weak-supervision-speech-recognition/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">Whisper: Robust Speech Recognition via Large-Scale Weak Supervision</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#can-the-nyquist-shannon-sampling-theorem-applies-to-light-signals">Can <strong>the Nyquist-Shannon sampling theorem applies to light signals</strong></a>
+      <ul>
+        <li><a href="#-first-what-kind-of-light-are-we-talking-about">🌈 First: What Kind of &ldquo;Light&rdquo; Are We Talking About?</a></li>
+        <li><a href="#-1-cameras--imaging-sampling-in-space-input">📸 1. <strong>Cameras &amp; Imaging (Sampling in Space)</strong> (Input)</a></li>
+        <li><a href="#-2-fiber-optics--modulated-light-sampling-in-time-input">🔦 2. <strong>Fiber Optics &amp; Modulated Light (Sampling in Time)</strong> (Input)</a></li>
+        <li><a href="#-3-screens-and-displays-output">🖥️ 3. <strong>Screens and Displays</strong> (Output)</a></li>
+        <li><a href="#-4-scientific-light-signals-pulses-lasers-astronomy-input">🌌 4. <strong>Scientific Light Signals (Pulses, Lasers, Astronomy)</strong> (Input)</a></li>
+        <li><a href="#-summary-use-nyquist-for-light">🔑 Summary: Use Nyquist for Light!</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-is-spatial-aliasing-resolution-mismatch"><strong>What is Spatial Aliasing (Resolution Mismatch)?</strong></a></li>
+    <li><a href="#what-is-temporal-aliasing-sampling-in-time"><strong>What is Temporal Aliasing (Sampling in Time)?</strong></a></li>
+    <li><a href="#what-happens-when-show-8k-content-on-a-4k-screen">What happens When Show 8K Content on a 4K Screen?</a></li>
+    <li><a href="#what-is-the-key-differences-in-spatial-and-temporal-aliasing">What is the Key Differences in Spatial and Temporal Aliasing?:</a></li>
+    <li><a href="#what-is-the-frame-rate-required-for-fast-flying-object">What is the frame rate required for fast flying object?</a>
+      <ul>
+        <li><a href="#objects-motion-and-required-sampling-rate"><strong>Object’s Motion and Required Sampling Rate</strong></a></li>
+        <li><a href="#frame-rate-mismatch-between-recording-and-display"><strong>Frame Rate Mismatch Between Recording and Display</strong></a></li>
+        <li><a href="#screen-quality-and-frame-rate"><strong>Screen Quality and Frame Rate</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#how-does-nyquist-work-for-stationary-objects"><strong>How Does Nyquist Work for Stationary Objects?</strong></a></li>
+    <li><a href="#nyquist-in-the-context-of-image-resolution"><strong>Nyquist in the Context of Image Resolution</strong></a></li>
+    <li><a href="#why-a-higher-resolution-camera-gives-better-image-quality"><strong>Why a Higher-Resolution Camera Gives Better Image Quality?</strong></a></li>
+    <li><a href="#when-does-the-nyquist-theorem-matter-in-image-resolution"><strong>When Does the Nyquist Theorem Matter in Image Resolution?</strong></a></li>
+    <li><a href="#what-is-the-frequency-of-a-tree-bark"><strong>What is the Frequency of a Tree Bark?</strong></a>
+      <ul>
+        <li><a href="#example-of-tree-bark">Example of Tree Bark:</a></li>
+        <li><a href="#how-does-nyquist-apply"><strong>How Does Nyquist Apply?</strong></a></li>
+        <li><a href="#why-is-this-important"><strong>Why is This Important?</strong></a></li>
+        <li><a href="#real-world-example"><strong>Real-World Example</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#spatial-frequency-vs-physical-frequency">Spatial Frequency vs physical frequency</a>
+      <ul>
+        <li><a href="#spatial-frequency-of-bark-visual-perspective"><strong>Spatial Frequency of Bark (Visual Perspective)</strong></a></li>
+        <li><a href="#actual-frequency-of-the-bark-physical-properties"><strong>Actual Frequency of the Bark (Physical Properties)</strong></a></li>
+        <li><a href="#key-differences"><strong>Key Differences:</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#is-the-visual-frequency-light-interaction-different-from-the-actual-frequency-energy-emission"><strong>Is the Visual Frequency (Light Interaction) Different from the Actual Frequency (Energy Emission)?</strong></a>
+      <ul>
+        <li><a href="#example-to-clarify-the-difference"><strong>Example to Clarify the Difference:</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#how-many-kind-of-frequency-a-physical-object-can-represent">How many kind of frequency a physical object can represent?</a>
+      <ul>
+        <li><a href="#1-visual-frequency-light-interaction">1. <strong>Visual Frequency (Light Interaction)</strong></a></li>
+        <li><a href="#2-sound-frequency-acoustic-frequency">2. <strong>Sound Frequency (Acoustic Frequency)</strong></a></li>
+        <li><a href="#3-thermal-frequency-energy-emission--infrared-radiation">3. <strong>Thermal Frequency (Energy Emission – Infrared Radiation)</strong></a></li>
+        <li><a href="#4-electromagnetic-frequency-radio-microwaves-etc">4. <strong>Electromagnetic Frequency (Radio, Microwaves, etc.)</strong></a></li>
+        <li><a href="#5-mechanical-vibration-frequency-oscillation">5. <strong>Mechanical Vibration Frequency (Oscillation)</strong></a></li>
+        <li><a href="#6-electrical-frequency-electronics">6. <strong>Electrical Frequency (Electronics)</strong></a></li>
+        <li><a href="#7-magnetic-frequency-magnetism">7. <strong>Magnetic Frequency (Magnetism)</strong></a></li>
+        <li><a href="#8-gravitational-frequency-gravitational-waves">8. <strong>Gravitational Frequency (Gravitational Waves)</strong></a></li>
+        <li><a href="#9-biological-frequencies-oscillations-in-biological-systems">9. <strong>Biological Frequencies (Oscillations in Biological Systems)</strong></a></li>
+        <li><a href="#in-summary-types-of-frequencies-an-object-can-represent">In Summary: <strong>Types of Frequencies an Object Can Represent</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

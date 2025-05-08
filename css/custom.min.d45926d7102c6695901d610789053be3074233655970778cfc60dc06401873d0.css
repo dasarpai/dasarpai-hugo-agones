@@ -1,0 +1,1 @@
+.social-share{display:flex;gap:12px;margin-top:1em}.social-share a{display:inline-flex;justify-content:center;align-items:center;width:42px;height:42px;border-radius:50%;background-color:#eee;color:#333;text-decoration:none;transition:background-color .3s ease,transform .3s ease}.social-share a:hover{background-color:#ddd;transform:scale(1.1)}.social-share i{font-size:18px}

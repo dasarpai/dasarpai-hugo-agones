@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Transformer Models on Agones</title>
+    <link>http://localhost:1313/tags/transformer-models/</link>
+    <description>Recent content in Transformer Models on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/transformer-models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLM Architecture and Training</title>
+      <link>http://localhost:1313/dsblog/LLM-Architecture-and-Training/</link>
+      <pubDate>Sun, 04 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/LLM-Architecture-and-Training/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6129-LLM-Architecture-and-Training.jpg&#34; alt=&#34;LLM-Architecture-and-Training&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;understanding-llm-architectures-and-model-training&#34;&gt;&lt;strong&gt;Understanding LLM Architectures and Model Training&lt;/strong&gt;&lt;/h1&gt;&#xA;&lt;p&gt;Large Language Models (LLMs) are transforming the field of artificial intelligence by enabling machines to understand and generate human language with unprecedented accuracy. This article delves into the architecture, training methods, and practical applications of LLMs. We’ll explore the core components that make these models so powerful and explain how they are trained and fine-tuned for real-world use cases.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-introduction-to-large-language-models-llms&#34;&gt;&lt;strong&gt;1. Introduction to Large Language Models (LLMs)&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;definition-and-importance-of-llms&#34;&gt;&lt;strong&gt;Definition and Importance of LLMs&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Large Language Models are advanced deep learning models trained on massive amounts of text data. LLMs have made it possible to perform a wide variety of natural language tasks, from answering complex questions to generating human-like responses in chat applications. These models use billions (sometimes trillions) of parameters to capture intricate relationships within language, enabling them to comprehend and generate coherent responses.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

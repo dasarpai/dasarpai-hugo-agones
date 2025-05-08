@@ -1,0 +1,680 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Exploring Apache Hive | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2024-10-04-6153-exploring-apache-hive/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Exploring Apache Hive">
+  <meta property="og:description" content="Exploring Apache Hive: Capabilities and Scalability for Big Data Processing What is Hive? Apache Hive is a data warehousing and SQL-like query engine built on top of Hadoop. It provides a platform for processing large datasets stored in Hadoop Distributed File System (HDFS) and other data storage systems that integrate with Hadoop. Hive simplifies querying and managing big data with a familiar SQL-like syntax (HiveQL). Below are the key capabilities of Hive:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-10-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-04T00:00:00+00:00">
+    <meta property="article:tag" content="Apache Hive">
+    <meta property="article:tag" content="Big Data">
+    <meta property="article:tag" content="Data Warehousing">
+    <meta property="article:tag" content="Hadoop">
+    <meta property="article:tag" content="SQL">
+    <meta property="article:tag" content="Data Processing">
+
+  <meta itemprop="name" content="Exploring Apache Hive">
+  <meta itemprop="description" content="Exploring Apache Hive: Capabilities and Scalability for Big Data Processing What is Hive? Apache Hive is a data warehousing and SQL-like query engine built on top of Hadoop. It provides a platform for processing large datasets stored in Hadoop Distributed File System (HDFS) and other data storage systems that integrate with Hadoop. Hive simplifies querying and managing big data with a familiar SQL-like syntax (HiveQL). Below are the key capabilities of Hive:">
+  <meta itemprop="datePublished" content="2024-10-04T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-10-04T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2893">
+  <meta itemprop="keywords" content="Apache Hive,big data processing,data warehousing,Hadoop ecosystem,SQL querying,data analytics,ETL tools,data processing,database management">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exploring Apache Hive">
+  <meta name="twitter:description" content="Exploring Apache Hive: Capabilities and Scalability for Big Data Processing What is Hive? Apache Hive is a data warehousing and SQL-like query engine built on top of Hadoop. It provides a platform for processing large datasets stored in Hadoop Distributed File System (HDFS) and other data storage systems that integrate with Hadoop. Hive simplifies querying and managing big data with a familiar SQL-like syntax (HiveQL). Below are the key capabilities of Hive:">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6153-Exploring-Apache-Hive.jpg" alt="Exploring Apache Hive"></p>
+<h1 id="exploring-apache-hive-capabilities-and-scalability-for-big-data-processing">Exploring Apache Hive: Capabilities and Scalability for Big Data Processing</h1>
+<h2 id="what-is-hive">What is Hive?</h2>
+<p>Apache Hive is a data warehousing and SQL-like query engine built on top of Hadoop. It provides a platform for processing large datasets stored in Hadoop Distributed File System (HDFS) and other data storage systems that integrate with Hadoop. Hive simplifies querying and managing big data with a familiar SQL-like syntax (HiveQL). Below are the key capabilities of Hive:</p>
+<h3 id="1-sql-like-querying-hiveql">1. <strong>SQL-Like Querying (HiveQL)</strong></h3>
+<ul>
+<li>Hive offers a <strong>SQL-like query language</strong> called HiveQL, making it accessible for users who are already familiar with traditional SQL. You can write queries to perform operations like <strong>select, join, filter, group by</strong>, and <strong>aggregate</strong>.</li>
+<li>HiveQL supports many common SQL constructs such as:
+<ul>
+<li><code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>.</li>
+<li>Aggregate functions: <code>SUM()</code>, <code>AVG()</code>, <code>COUNT()</code>, etc.</li>
+<li>Joins: Inner joins, outer joins, and cross joins.</li>
+<li>Subqueries, views, and unions.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-schema-on-read">2. <strong>Schema on Read</strong></h3>
+<ul>
+<li>Hive follows a <strong>schema on read</strong> approach, meaning the data can be loaded in its raw form (e.g., unstructured or semi-structured), and the schema is applied when the data is read, not at the time of ingestion.</li>
+<li>This allows for flexibility in working with different types of data without enforcing strict data structure at the time of loading.</li>
+</ul>
+<h3 id="3-integration-with-hadoop-and-hdfs">3. <strong>Integration with Hadoop and HDFS</strong></h3>
+<ul>
+<li>Hive is designed to work seamlessly with <strong>Hadoop</strong> and <strong>HDFS</strong> for distributed storage and processing.</li>
+<li>It also supports other Hadoop ecosystem components like <strong>MapReduce</strong>, <strong>Apache Tez</strong>, and <strong>Apache Spark</strong> as execution engines.</li>
+</ul>
+<h3 id="4-support-for-large-scale-data">4. <strong>Support for Large-Scale Data</strong></h3>
+<ul>
+<li>Hive is capable of handling <strong>petabytes of data</strong> spread across a distributed Hadoop cluster.</li>
+<li>Data is processed in parallel across multiple nodes, making Hive scalable for very large datasets (millions or billions of records).</li>
+</ul>
+<h3 id="5-data-storage-formats">5. <strong>Data Storage Formats</strong></h3>
+<ul>
+<li>Hive supports various storage formats, including:
+<ul>
+<li><strong>TEXTFILE</strong> (plain text, e.g., CSV).</li>
+<li><strong>ORC (Optimized Row Columnar)</strong>: Optimized for high compression and fast reading.</li>
+<li><strong>Parquet</strong>: Columnar storage format optimized for big data.</li>
+<li><strong>Avro</strong>: For schema-based serialization.</li>
+<li><strong>SequenceFile</strong>: Binary format for key-value pairs.</li>
+</ul>
+</li>
+<li>Columnar formats like ORC and Parquet are recommended for better query performance and storage efficiency.</li>
+</ul>
+<h3 id="6-partitioning-and-bucketing">6. <strong>Partitioning and Bucketing</strong></h3>
+<ul>
+<li><strong>Partitioning</strong>:
+<ul>
+<li>Hive allows partitioning of tables based on specific columns (e.g., <code>Year</code>, <code>Month</code>). Partitioning helps improve query performance by scanning only the relevant subset of data.</li>
+</ul>
+</li>
+<li><strong>Bucketing</strong>:
+<ul>
+<li>Bucketing distributes data into smaller sets (buckets) within partitions. This further optimizes query execution by allowing data retrieval from specific buckets.</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-indexes">7. <strong>Indexes</strong></h3>
+<ul>
+<li>Hive provides support for creating <strong>indexes</strong> on tables, allowing faster lookups for certain queries. Although Hive&rsquo;s indexing capabilities are not as advanced as traditional RDBMS, they help with query optimization.</li>
+</ul>
+<h3 id="8-support-for-complex-data-types">8. <strong>Support for Complex Data Types</strong></h3>
+<ul>
+<li>Hive supports <strong>complex data types</strong> such as:
+<ul>
+<li><strong>ARRAY</strong>: A collection of ordered elements.</li>
+<li><strong>MAP</strong>: Key-value pairs.</li>
+<li><strong>STRUCT</strong>: Custom structures with multiple fields.</li>
+</ul>
+</li>
+<li>This allows Hive to handle semi-structured and hierarchical data formats like JSON.</li>
+</ul>
+<h3 id="9-user-defined-functions-udfs">9. <strong>User-Defined Functions (UDFs)</strong></h3>
+<ul>
+<li>Hive allows users to create their own <strong>User-Defined Functions (UDFs)</strong> in Java or Python to perform custom transformations on data that go beyond built-in functions.</li>
+<li>There are also <strong>User-Defined Aggregation Functions (UDAFs)</strong> and <strong>User-Defined Table-Generating Functions (UDTFs)</strong> for complex processing.</li>
+</ul>
+<h3 id="10-acid-transactions">10. <strong>ACID Transactions</strong></h3>
+<ul>
+<li>Hive supports <strong>ACID (Atomicity, Consistency, Isolation, Durability)</strong> transactions, allowing <strong>INSERT</strong>, <strong>UPDATE</strong>, and <strong>DELETE</strong> operations. This provides more control over data mutation and ensures data integrity.</li>
+<li>Full ACID compliance (row-level transactions) is supported for <strong>ORC</strong> tables.</li>
+</ul>
+<h3 id="11-data-warehousing-features">11. <strong>Data Warehousing Features</strong></h3>
+<ul>
+<li><strong>Views</strong>: Hive supports the creation of views, which are logical constructs for saving query results or complex query logic.</li>
+<li><strong>Materialized Views</strong>: Starting with Hive 3.x, it supports materialized views to improve performance by storing query results for future use.</li>
+<li><strong>Indexes</strong>: Basic indexing can be done to improve performance.</li>
+</ul>
+<h3 id="12-connectivity-and-integration">12. <strong>Connectivity and Integration</strong></h3>
+<ul>
+<li>Hive can be integrated with other data platforms and tools through standard interfaces such as:
+<ul>
+<li><strong>ODBC/JDBC</strong>: Allows external tools like BI platforms to connect to Hive.</li>
+<li><strong>Apache HBase</strong>: Hive can access NoSQL data in HBase.</li>
+<li><strong>Apache Spark</strong>: You can run Hive queries using Apache Spark for improved processing speed.</li>
+<li><strong>Data Warehousing Tools</strong>: Integrates well with ETL tools and big data platforms like Apache Pig, Flume, Sqoop, and more.</li>
+</ul>
+</li>
+</ul>
+<h3 id="13-support-for-machine-learning-libraries">13. <strong>Support for Machine Learning Libraries</strong></h3>
+<ul>
+<li>Hive integrates with tools like <strong>Apache Mahout</strong> and <strong>Apache Spark MLlib</strong> for machine learning tasks using Hive data.</li>
+<li>You can use data stored in Hive for training machine learning models in these libraries.</li>
+</ul>
+<h3 id="14-security-features">14. <strong>Security Features</strong></h3>
+<ul>
+<li>Hive integrates with <strong>Kerberos</strong> for authentication and supports role-based access control (RBAC).</li>
+<li>It also offers <strong>encryption</strong> for data at rest and data in transit, ensuring compliance with security policies.</li>
+</ul>
+<h3 id="15-optimized-query-processing">15. <strong>Optimized Query Processing</strong></h3>
+<ul>
+<li><strong>Cost-Based Optimizer (CBO)</strong>: Hive&rsquo;s CBO optimizes query plans based on data statistics, making queries more efficient.</li>
+<li><strong>Query Optimization Techniques</strong>: Hive uses techniques like <strong>predicate pushdown</strong>, <strong>map-side joins</strong>, <strong>vectorization</strong>, and <strong>parallel execution</strong> to optimize queries.</li>
+</ul>
+<h3 id="16-execution-engines">16. <strong>Execution Engines</strong></h3>
+<ul>
+<li>Hive supports multiple execution engines, including:
+<ul>
+<li><strong>MapReduce</strong>: The default execution engine for large-scale batch processing.</li>
+<li><strong>Apache Tez</strong>: Provides faster DAG-based execution than MapReduce.</li>
+<li><strong>Apache Spark</strong>: Available as an engine for higher performance, especially with in-memory processing.</li>
+</ul>
+</li>
+</ul>
+<h3 id="17-data-load-and-etl-processing">17. <strong>Data Load and ETL Processing</strong></h3>
+<ul>
+<li>Hive supports <strong>ETL (Extract, Transform, Load)</strong> operations and can read data from multiple sources, transform it, and load it into tables.</li>
+<li><strong>Data ingestion</strong>: You can load data from HDFS, local file systems, or other Hadoop ecosystem components.</li>
+</ul>
+<h3 id="18-scalability-and-fault-tolerance">18. <strong>Scalability and Fault Tolerance</strong></h3>
+<ul>
+<li>Hive can scale to handle massive datasets across thousands of nodes. Its fault tolerance relies on Hadoop’s underlying mechanisms like <strong>replication</strong> in HDFS and <strong>failure recovery</strong> during job execution.</li>
+</ul>
+<hr>
+<h3 id="in-summary">In Summary:</h3>
+<p>Hive&rsquo;s capabilities make it a powerful tool for querying and analyzing large datasets using an SQL-like interface. It is well-suited for batch processing, ETL tasks, and data warehousing solutions in big data environments, offering flexibility in terms of data formats, storage, and query optimization. However, for real-time or low-latency applications, other Hadoop ecosystem tools like <strong>Apache HBase</strong> or <strong>Presto</strong> might be more suitable.</p>
+<h2 id="what-are-the-components-of-hive-architecture-and-how-it-intereacts-with-hadoop">What are the components of Hive Architecture and how it intereacts with Hadoop.</h2>
+<p><img src="/assets/images/dspost/hive/hive-architecture.png" alt=""></p>
+<ul>
+<li>Hive Client: Thrift Server, JDBC driver, and ODBC driver. They interact with Hive Server and in turn it deals with Hive Driver.</li>
+<li>UI : Hive Web UI, CLI. They interact with Hive Driver directly (no need of Hive Server)</li>
+<li>Compiler: Execution plan with the help of the table in the database and partition metadata observed from the metastore are generated by the compiler. This parses queries, does semantic analysis on the different query blocks and query expression.</li>
+<li>Execution Engine: MapReduce, Apache Tez, Apache Spark</li>
+<li>MetaStore - It is a central repository that stores all the structure information of various tables and partitions in the warehouse. It also includes metadata of column and its type information, the serializers and deserializers which is used to read and write data and the corresponding HDFS files where the data is stored.</li>
+</ul>
+<h2 id="can-hive-handle-1-billion-records-of-usecase">Can Hive handle 1 billion records of usecase?</h2>
+<p>Yes, Hive can handle <strong>1 billion records</strong> and even more, as it is designed to work with very large datasets. Hive is built on top of Hadoop, which uses the distributed storage and processing capabilities of the Hadoop Distributed File System (HDFS). This architecture makes it highly scalable for big data processing. However, the performance will depend on several factors:</p>
+<h3 id="factors-affecting-hives-scalability">Factors Affecting Hive&rsquo;s Scalability:</h3>
+<ol>
+<li>
+<p><strong>Cluster Size</strong>:</p>
+<ul>
+<li>The number of nodes in your Hadoop cluster will significantly impact Hive&rsquo;s ability to handle large datasets. With more nodes, data can be partitioned and distributed effectively, leading to faster query execution.</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Storage Format</strong>:</p>
+<ul>
+<li><strong>Text format (CSV)</strong>, as used in your table (<code>STORED AS TEXTFILE</code>), is not the most efficient for big data. For better performance, consider using optimized storage formats like:
+<ul>
+<li><strong>ORC (Optimized Row Columnar)</strong> or <strong>Parquet</strong>.</li>
+<li>These formats support compression, indexing, and faster read/write operations, which are ideal for large-scale data.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Partitioning and Bucketing</strong>:</p>
+<ul>
+<li>Hive tables can be <strong>partitioned</strong> based on columns (e.g., Year, Month) to narrow down the amount of data scanned for queries.</li>
+<li><strong>Bucketing</strong> can further distribute data within partitions to optimize query execution on large datasets.</li>
+</ul>
+</li>
+<li>
+<p><strong>Query Optimization</strong>:</p>
+<ul>
+<li>Using advanced features like <strong>Hive Query Optimization (Tez engine)</strong>, <strong>predicate pushdown</strong>, and <strong>vectorization</strong> can significantly enhance query performance for large tables.</li>
+</ul>
+</li>
+<li>
+<p><strong>Resource Allocation</strong>:</p>
+<ul>
+<li>Resource allocation in terms of <strong>memory</strong>, <strong>CPU cores</strong>, and <strong>I/O bandwidth</strong> will also determine Hive&rsquo;s ability to handle large volumes of data. Proper tuning of these resources is essential for handling billion-record tables.</li>
+</ul>
+</li>
+</ol>
+<h3 id="practical-considerations">Practical Considerations:</h3>
+<ul>
+<li>Hive is used in many industry scenarios where datasets range from millions to <strong>hundreds of billions of records</strong>.</li>
+<li>For a <strong>1 billion record table</strong>, if your cluster is well-configured (e.g., has sufficient nodes and resources), Hive should be able to manage it without issues.</li>
+</ul>
+<h3 id="recommendations-for-handling-large-datasets">Recommendations for Handling Large Datasets:</h3>
+<ol>
+<li><strong>Use ORC or Parquet format</strong> instead of <code>TEXTFILE</code>.</li>
+<li><strong>Enable partitioning</strong> on columns that are commonly used for filtering (e.g., Year, Month).</li>
+<li><strong>Monitor and scale</strong> your cluster based on data growth and query performance.</li>
+</ol>
+<p>With these optimizations, Hive can handle 1 billion or more records effectively, making it a robust choice for big data processing.</p>
+<h2 id="how-to-create-hive-table-from-external-data">How to create Hive table from external data?</h2>
+<p>CREATE EXTERNAL TABLE airlines(
+SNo int,
+Year int,
+Month int,
+DayofMonth int,
+DayOfWeek int,
+DepTime int,
+CRSDepTime int,
+ArrTime int,
+CRSArrTime int,
+UniqueCarrier string,
+FlightNum int,
+TailNum string,
+ActualElapsedTime int,
+CRSElapsedTime int,
+AirTime int,
+ArrDelay int,
+DepDelay int,
+Origin string,
+Dest string,
+Distance int,
+TaxiIn int,
+TaxiOut int,
+Cancelled int,
+CancellationCode string,
+Diverted int,
+CarrierDelay int,
+WeatherDelay int,
+NASDelay int,
+SecurityDelay int,
+LateAircraftDelay int)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY &lsquo;,&rsquo;
+STORED AS TEXTFILE
+LOCATION &lsquo;/common_folder/airlines/&rsquo;
+tblproperties (&ldquo;skip.header.line.count&rdquo;=&ldquo;1&rdquo;);</p>
+<p>This Hive code creates an <strong>external table</strong> called <code>airlines</code> to store flight data with various attributes. Here&rsquo;s a breakdown of what it does:</p>
+<h3 id="key-sections-of-the-code">Key Sections of the Code:</h3>
+<ol>
+<li>
+<p><strong>CREATE EXTERNAL TABLE airlines</strong>:</p>
+<ul>
+<li>An external table is being created. An <strong>external</strong> table means the data is stored outside of Hive&rsquo;s control. Hive will not delete the data if the table is dropped.</li>
+</ul>
+</li>
+<li>
+<p><strong>Column Definitions</strong>:</p>
+<ul>
+<li>The table contains a list of columns with their data types:
+<ul>
+<li><code>SNo</code>: Serial number (int).</li>
+<li><code>Year</code>, <code>Month</code>, <code>DayofMonth</code>, <code>DayOfWeek</code>: Date-related fields (int).</li>
+<li><code>DepTime</code>, <code>CRSDepTime</code>, <code>ArrTime</code>, <code>CRSArrTime</code>: Departure and arrival times, both actual and scheduled (int).</li>
+<li><code>UniqueCarrier</code>: Carrier code (string).</li>
+<li><code>FlightNum</code>: Flight number (int).</li>
+<li><code>TailNum</code>: Aircraft tail number (string).</li>
+<li><code>ActualElapsedTime</code>, <code>CRSElapsedTime</code>, <code>AirTime</code>, <code>ArrDelay</code>, <code>DepDelay</code>: Time-related fields, like actual/scheduled elapsed times and delays (int).</li>
+<li><code>Origin</code>, <code>Dest</code>: Origin and destination airports (string).</li>
+<li><code>Distance</code>: Distance of the flight (int).</li>
+<li><code>TaxiIn</code>, <code>TaxiOut</code>: Time spent on taxiing (int).</li>
+<li><code>Cancelled</code>: Whether the flight was canceled (int).</li>
+<li><code>CancellationCode</code>: Reason for cancellation (string).</li>
+<li><code>Diverted</code>: Whether the flight was diverted (int).</li>
+<li><code>CarrierDelay</code>, <code>WeatherDelay</code>, <code>NASDelay</code>, <code>SecurityDelay</code>, <code>LateAircraftDelay</code>: Delay-related fields due to specific reasons (int).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>ROW FORMAT DELIMITED FIELDS TERMINATED BY &lsquo;,&rsquo;</strong>:</p>
+<ul>
+<li>This defines that the data in the external file is delimited by commas, meaning it is <strong>CSV format</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>STORED AS TEXTFILE</strong>:</p>
+<ul>
+<li>Specifies that the data is stored as a plain text file.</li>
+</ul>
+</li>
+<li>
+<p><strong>LOCATION &lsquo;/common_folder/airlines/&rsquo;</strong>:</p>
+<ul>
+<li>The data for this external table is stored in the specified directory <code>/common_folder/airlines/</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>tblproperties (&ldquo;skip.header.line.count&rdquo;=&ldquo;1&rdquo;)</strong>:</p>
+<ul>
+<li>This indicates that the first row in the file is a header (column names), so Hive should skip the first line when querying the table.</li>
+</ul>
+</li>
+</ol>
+<h3 id="summary">Summary:</h3>
+<p>This code creates an external table <code>airlines</code> in Hive to read CSV data from the location <code>/common_folder/airlines/</code>. It specifies the structure of the data with column names and types, and tells Hive to skip the first header line when processing the CSV file.</p>
+<h2 id="for-the-above-created-table-how-to-create-year-wise-partition">For the above created table, how to create year wise partition?</h2>
+<p>insert overwrite table airlines_partitioned partition(<code>Year</code>)
+select <code>SNo</code>,
+<code>Month</code>,
+<code>DayofMonth</code>,
+<code>DayOfWeek</code>,
+<code>DepTime</code>,
+<code>CRSDepTime</code>,
+<code>ArrTime</code>,
+<code>CRSArrTime</code>,
+<code>UniqueCarrier</code>,
+<code>FlightNum</code>,
+<code>TailNum</code>,
+<code>ActualElapsedTime</code>,
+<code>CRSElapsedTime</code>,
+<code>AirTime</code>,
+<code>ArrDelay</code>,
+<code>DepDelay</code>,
+<code>Origin</code>,
+<code>Dest</code>,
+<code>Distance</code>,
+<code>TaxiIn</code>,
+<code>TaxiOut</code>,
+<code>Cancelled</code>,
+<code>CancellationCode</code>,
+<code>Diverted</code>,
+<code>CarrierDelay</code>,
+<code>WeatherDelay</code>,
+<code>NASDelay</code>,
+<code>SecurityDelay</code>,
+<code>LateAircraftDelay</code>,
+<code>Year</code>
+from airlines;</p>
+<h2 id="how-to-perform-sql-operations-on-partitioned-hive-table">How to perform SQL operations on partitioned Hive table?</h2>
+<p>It is normal sql query, which you may have seen in mysql, oracle, tsql. You need to take care of supported functions, keywords and uppre/lower case of the keywords.</p>
+<p>Query below is performed on partitioned table, because this table is partitioned on year therefore performing &ldquo;group by&rdquo; on year is quick. This query will display average taxi-out time year-on-year basis.</p>
+<p>SELECT Year, avg(TaxiOut) as avg_TaxiOutTime from airlines_partitioned GROUP BY Year;</p>
+<h2 id="common-hive-commands">Common Hive Commands</h2>
+<pre tabindex="0"><code>hive&gt; show databases; 
+hive&gt; create database if not exists demo;  
+hive&gt; describe database extended demo;  
+hive&gt; drop database if exists demo;  
+hive&gt; drop database if exists demo cascade; 
+hive&gt; use demo;  
+hive&gt; show tables;  
+hive&gt; drop table new_employee;   
+hive&gt; Alter table emp rename to employee_data;  
+hive&gt; Alter table emp add columns(father_name string);  
+hive&gt; Alter table emp change old_column_name new_column_name  datatype;  
+</code></pre><p><strong>Internal Table</strong>, these tables are stored in a subdirectory under the directory defined by hive.metastore.warehouse.dir (i.e. /user/hive/warehouse). If we try to drop the internal table, Hive deletes both table schema and data.</p>
+<pre tabindex="0"><code>hive&gt; create table demo.employee (Id int, Name string , Salary float)  
+row format delimited  
+fields terminated by &#39;,&#39; ;   
+
+hive&gt; describe demo.employee   
+
+hive&gt; create table if not exists demo.copy_employee like demo.employee;  
+</code></pre><p><strong>External Table</strong>, The external table allows us to create and access a table and a data externally. The external keyword is used to specify the external table, whereas the location keyword is used to determine the location of loaded data.</p>
+<pre tabindex="0"><code>hive&gt; hdfs dfs -mkdir /HiveDirectory  #(create directory)  
+hive&gt; hdfs dfs -put hive/emp_details /HiveDirectory   #(copy file to this directory)  
+
+hive&gt; create external table emplist (Id int, Name string , Salary float)  
+row format delimited  
+ fields terminated by &#39;,&#39;   
+location &#39;/HiveDirectory&#39;;  
+
+hive&gt; load data local inpath &#39;/home/codegyani/hive/emp_details&#39; into table demo.employee;  
+</code></pre><p><strong>The partitioning</strong> in Hive means dividing the table into some parts based on the values of a particular column like date, course, city or country. The advantage of partitioning is that since the data is stored in slices, the query response time becomes faster.</p>
+<p><strong>Static Partitioning</strong></p>
+<pre tabindex="0"><code>hive&gt; create table student (id int, name string, age int,  institute string)   
+partitioned by (course string)  
+row format delimited  
+fields terminated by &#39;,&#39;;  
+
+Load the data of another file into the same table and pass the values of partition columns
+hive&gt; load data local inpath &#39;/home/codegyani/hive/student_details1&#39; into table students partition(course= &#34;java&#34;);  
+hive&gt; load data local inpath &#39;/home/codegyani/hive/student_details1&#39; into table students partition(course= &#34;ml&#34;);
+
+hive&gt; select * from student where course=&#34;java&#34;; 
+</code></pre><p><strong>Dynamic partioning</strong>, In dynamic partitioning, the values of partitioned columns exist within the table. So, it is not required to pass the values of partitioned columns manually.</p>
+<pre tabindex="0"><code>hive&gt; set hive.exec.dynamic.partition=true;    
+hive&gt; set hive.exec.dynamic.partition.mode=nonstrict;  
+
+hive&gt; create table stud_demo(id int, name string, age int, institute string, course string)   
+row format delimited  
+fields terminated by &#39;,&#39;;
+
+hive&gt; load data local inpath &#39;/home/codegyani/hive/student_details&#39; into table stud_demo;  
+
+hive&gt; create table student_part (id int, name string, age int, institute string)   
+partitioned by (course string)  
+row format delimited  
+fields terminated by &#39;,&#39;; 
+
+hive&gt; insert into student_part partition(course)  
+select id, name, age, institute, course from stud_demo; 
+</code></pre><h2 id="how-to-visualize-hive-query-data">How to visualize Hive query data?</h2>
+<p>Hive is not a data visualization tool, but a tool for <strong>data preparation engine</strong> for querying, transforming, and aggregating large datasets. You can integrate Hive with BI tools, notebooks, and visualization libraries to create visualizations based on its data. You can use <strong>Tableau</strong>, <strong>Power BI</strong> for visual reporting, <strong>Apache Zeppelin</strong> or <strong>Jupyter Notebooks</strong> for interactive data exploration and <strong>Apache Superset</strong> for open-source visualization. Here’s is summary of tools for visualization:</p>
+<h3 id="1-hive-as-a-data-source-for-bi-tools">1. <strong>Hive as a Data Source for BI Tools</strong></h3>
+<ul>
+<li>Hive can act as a backend for querying large datasets, and the results of those queries can then be fed into visualization tools. Many <strong>Business Intelligence (BI)</strong> and visualization tools support Hive as a data source via <strong>JDBC/ODBC</strong> connectors.</li>
+<li>Examples of BI tools that can connect to Hive include:
+<ul>
+<li><strong>Tableau</strong></li>
+<li><strong>Power BI</strong></li>
+<li><strong>QlikView</strong></li>
+<li><strong>Looker</strong></li>
+<li><strong>Google Data Studio</strong></li>
+</ul>
+</li>
+<li>These tools can directly query Hive, and you can use the query results to create visualizations like charts, graphs, dashboards, and reports.</li>
+</ul>
+<h3 id="2-hive-with-apache-zeppelin-or-jupyter-notebooks">2. <strong>Hive with Apache Zeppelin or Jupyter Notebooks</strong></h3>
+<ul>
+<li><strong>Apache Zeppelin</strong>:
+<ul>
+<li>Zeppelin is a web-based notebook that can connect to Hive. You can run Hive queries within Zeppelin and visualize the results using built-in charting capabilities (line charts, bar graphs, pie charts, etc.).</li>
+</ul>
+</li>
+<li><strong>Jupyter Notebooks</strong>:
+<ul>
+<li>You can also use Jupyter Notebooks with libraries like <strong>PyHive</strong> or <strong>Impyla</strong> to connect to Hive, execute queries, and visualize data using <strong>Matplotlib</strong>, <strong>Seaborn</strong>, or <strong>Plotly</strong>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-hive-with-data-visualization-libraries-in-spark">3. <strong>Hive with Data Visualization Libraries in Spark</strong></h3>
+<ul>
+<li>If you are using Hive with <strong>Apache Spark</strong> as the execution engine, you can load Hive data into Spark DataFrames and use Spark&rsquo;s integration with Python or Scala to create visualizations.</li>
+<li>Libraries like <strong>Matplotlib</strong>, <strong>Seaborn</strong>, <strong>Plotly</strong>, or <strong>Altair</strong> can then be used to visualize Spark DataFrames.</li>
+</ul>
+<h3 id="4-integrating-hive-with-superset">4. <strong>Integrating Hive with Superset</strong></h3>
+<ul>
+<li><strong>Apache Superset</strong> is an open-source data visualization tool that integrates with Hive. You can query data in Hive directly within Superset and create visual dashboards with charts, tables, and maps.</li>
+</ul>
+<h3 id="5-hive-as-part-of-the-etl-pipeline">5. <strong>Hive as Part of the ETL Pipeline</strong></h3>
+<ul>
+<li>Hive can be part of your <strong>ETL pipeline</strong>, transforming raw data into aggregated or structured formats that are more suitable for visualizations.</li>
+<li>After processing data in Hive, the cleaned or transformed data can be exported to another data warehouse, such as <strong>Apache Kylin</strong>, <strong>Presto</strong>, or <strong>Elasticsearch</strong>, which are often more optimized for real-time visualizations.</li>
+</ul>
+<h3 id="6-limitations-of-using-hive-directly-for-visualization">6. <strong>Limitations of Using Hive Directly for Visualization</strong></h3>
+<ul>
+<li><strong>Latency</strong>: Hive is designed for batch processing and may not provide the low-latency query performance required for real-time or interactive data visualizations.</li>
+<li><strong>Execution Speed</strong>: Depending on your execution engine (MapReduce, Tez, Spark), Hive queries can be slow, which may not be ideal for quick, interactive visualizations.</li>
+<li><strong>Real-Time Use Cases</strong>: Hive is not suitable for real-time streaming data visualizations. For real-time or near-real-time analytics, tools like <strong>Apache Kafka</strong> with <strong>Apache Druid</strong> or <strong>ClickHouse</strong> are more appropriate.</li>
+</ul>
+<h2 id="code-references">Code References</h2>
+<ul>
+<li>javatpoint.com/hive</li>
+</ul>
+<h2 id="hashtags">Hashtags</h2>
+<p>#BigData
+#ApacheHive
+#Hadoop
+#DataWarehousing
+#DistributedComputing
+#DataProcessing
+#ETL
+#HiveQL
+#DataOptimization
+#CloudComputing
+#ScalableData</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

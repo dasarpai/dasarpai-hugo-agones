@@ -1,0 +1,814 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Hunyuan3D 2.0: Scaling Diffusion Models for High Resolution Textured 3D Assets Generation | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/hunyuan3d-20/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Hunyuan3D 2.0: Scaling Diffusion Models for High Resolution Textured 3D Assets Generation">
+  <meta property="og:description" content="Hunyuan3D 2.0: High-Resolution Textured 3D Asset Generation Introduction Briefing Document: Hunyuan3D 2.0
+Source: Hunyuan3D 2.0 Hunyuan3D 2.0: Scaling Diffusion Models for High Resolution Textured 3D Assets Generation
+Purpose: This document summarizes the key aspects of the Hunyuan3D 2.0 system, a large-scale 3D synthesis system for generating high-resolution textured 3D assets.
+Authors: Hunyuan3D Team (Multiple contributors listed in the source).
+Publication Date: Appears to be January 2025, based on the arXiv identifier (2501.12202).">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-04-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="Hunyuan3D">
+    <meta property="article:tag" content="High-Resolution">
+    <meta property="article:tag" content="Textured">
+    <meta property="article:tag" content="3D">
+    <meta property="article:tag" content="Asset">
+    <meta property="article:tag" content="Generation">
+
+  <meta itemprop="name" content="Hunyuan3D 2.0: Scaling Diffusion Models for High Resolution Textured 3D Assets Generation">
+  <meta itemprop="description" content="Hunyuan3D 2.0: High-Resolution Textured 3D Asset Generation Introduction Briefing Document: Hunyuan3D 2.0
+Source: Hunyuan3D 2.0 Hunyuan3D 2.0: Scaling Diffusion Models for High Resolution Textured 3D Assets Generation
+Purpose: This document summarizes the key aspects of the Hunyuan3D 2.0 system, a large-scale 3D synthesis system for generating high-resolution textured 3D assets.
+Authors: Hunyuan3D Team (Multiple contributors listed in the source).
+Publication Date: Appears to be January 2025, based on the arXiv identifier (2501.12202).">
+  <meta itemprop="datePublished" content="2025-04-26T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="1761">
+  <meta itemprop="keywords" content="Hunyuan3D 2.0,high-resolution textured 3D assets,large-scale 3D synthesis,3D asset generation,3D graphics">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hunyuan3D 2.0: Scaling Diffusion Models for High Resolution Textured 3D Assets Generation">
+  <meta name="twitter:description" content="Hunyuan3D 2.0: High-Resolution Textured 3D Asset Generation Introduction Briefing Document: Hunyuan3D 2.0
+Source: Hunyuan3D 2.0 Hunyuan3D 2.0: Scaling Diffusion Models for High Resolution Textured 3D Assets Generation
+Purpose: This document summarizes the key aspects of the Hunyuan3D 2.0 system, a large-scale 3D synthesis system for generating high-resolution textured 3D assets.
+Authors: Hunyuan3D Team (Multiple contributors listed in the source).
+Publication Date: Appears to be January 2025, based on the arXiv identifier (2501.12202).">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p><img src="/assets/images/dspost/dsp6267-hunyuan3d-20.jpg" alt=""></p>
+<h1 id="hunyuan3d-20-high-resolution-textured-3d-asset-generation">Hunyuan3D 2.0: High-Resolution Textured 3D Asset Generation</h1>
+<h2 id="introduction">Introduction</h2>
+<p><strong>Briefing Document:</strong> Hunyuan3D 2.0</p>
+<p><strong>Source:</strong> <a href="https://arxiv.org/pdf/2501.12202">Hunyuan3D 2.0</a> Hunyuan3D 2.0: Scaling Diffusion Models for High Resolution Textured 3D Assets Generation</p>
+<p><strong>Purpose:</strong> This document summarizes the key aspects of the Hunyuan3D 2.0 system, a large-scale 3D synthesis system for generating high-resolution textured 3D assets.</p>
+<p><strong>Authors:</strong> Hunyuan3D Team (Multiple contributors listed in the source).</p>
+<p><strong>Publication Date:</strong> Appears to be January 2025, based on the arXiv identifier (2501.12202).</p>
+<p><strong>Core Mission:</strong> The Hunyuan3D Team&rsquo;s mission statement is &ldquo;Living out everyone’s imagination on creating and manipulating 3D assets.&rdquo;</p>
+<h2 id="what-problem-is-addressed">What Problem is Addressed?</h2>
+<p>Hunyuan3D 2.0 is presented as a comprehensive solution to the challenges of creating high-quality, detailed, and usable 3D assets from 2D images, improving upon previous methods through novel architectural designs and strategic pipelines, while also contributing to the open-source community.</p>
+<p>Here are the key problems addressed:</p>
+<ol>
+<li><strong>Generating High-Resolution, High-Quality Textured 3D Assets from Images:</strong> The overarching problem is the need for an advanced, large-scale system capable of reliably creating detailed 3D models with vibrant, high-resolution textures based on a single condition image.</li>
+<li><strong>Limitations of Existing 3D Generative Models:</strong> Previous state-of-the-art models, both open-source and closed-source, have limitations in terms of achieving high fidelity in geometry details, accurate alignment with the condition image, and overall texture quality. Hunyuan3D 2.0 aims to surpass these models in these key areas.</li>
+<li><strong>Capturing High-Frequency Geometric Details:</strong> In shape generation, simply using uniform sampling from a mesh surface often fails to reconstruct the intricate details of complex objects, such as edges and corners, due to variations in surface complexity. The Hunyuan3D-ShapeVAE addresses this by incorporating an <strong>importance sampling strategy</strong> to extract this high-frequency detail information.</li>
+<li><strong>Generating Seamless and Multi-View Consistent Textures:</strong> Creating texture maps that are consistent across multiple viewpoints and seamlessly cover the entire mesh is a significant challenge. Previous methods, particularly training-free approaches leveraging models like Stable Diffusion, often suffer from issues like the Janus problem and multi-view inconsistency, resulting in artifacts. Hunyuan3D-Paint tackles this through its architecture, including a <strong>multi-task attention mechanism</strong> to ensure consistency across generated views.</li>
+<li><strong>Preventing Illumination Baking in Textures:</strong> Input images often contain significant and varied illumination and shadows, which can be inadvertently baked into the generated texture maps if used directly for multi-view generation. Hunyuan3D-Paint includes an <strong>Image Delighting Module</strong> to preprocess the input image and remove illumination and shadows, enabling the synthesis of illumination-invariant texture maps.</li>
+<li><strong>Reducing the Burden of Post-Generation Texture Inpainting:</strong> Self-occlusion during the multi-view image generation stage can lead to holes in the generated textures, requiring extensive post-processing for inpainting. Hunyuan3D-Paint alleviates this &ldquo;burden&rdquo; by facilitating <strong>dense-view inference</strong> during the multi-view generation stage, which is supported by a view dropout training strategy.</li>
+<li><strong>Filling the Gap in Open-Source Large-Scale 3D Foundation Models:</strong> The field of 3D generation has lacked robust, large-scale open-source foundational models comparable to those available for image or language generation (like Stable Diffusion or LLaMA). The <strong>open-source release</strong> of Hunyuan3D 2.0, including its code and pre-trained weights, is specifically intended to address this gap and contribute a valuable resource to the community.</li>
+</ol>
+<h2 id="key-themes-and-concepts">Key Themes and Concepts:</h2>
+<ul>
+<li>
+<p>Large-Scale 3D Synthesis System: Hunyuan3D 2.0 is presented as a comprehensive system for creating 3D assets. It is designed for large-scale applications and focuses on generating high-resolution, textured assets.</p>
+</li>
+<li>
+<p>Two Foundation Components: The system is built upon two main models:</p>
+<ul>
+<li>
+<p>Hunyuan3D-DiT (Shape Generation Model): This model is responsible for generating the geometry (bare mesh) of a 3D asset based on a given condition image. It utilizes a scalable flow-based diffusion transformer architecture.</p>
+</li>
+<li>
+<p>Hunyuan3D-Paint (Texture Synthesis Model): This model focuses on creating high-resolution and vibrant texture maps for either generated or existing meshes. It leverages geometric and diffusion priors.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Hunyuan3D-Studio (Production Platform): Beyond the core models, the system includes a user-friendly platform called Hunyuan3D-Studio. This platform aims to simplify the 3D asset creation process and allows users to manipulate and animate their meshes.</p>
+</li>
+<li>
+<p>Performance and Comparison: The authors claim that Hunyuan3D 2.0 surpasses previous state-of-the-art models (both open-source and closed-source) in key areas such as geometry details, condition alignment, and texture quality. Numerical comparisons using various metrics (FIDCLIP, CMMD, CLIP-score, LPIPS for texture; V-IoU, S-IoU, ULIP-I, Uni3D-I, ULIP-T, Uni3D-T for shape) are presented to support these claims.</p>
+</li>
+<li>
+<p>Open-Source Release: A significant aspect of the project is the public release of Hunyuan3D 2.0, including the code and pre-trained weights, to contribute to the open-source 3D community. The GitHub repository is provided: <a href="https://github.com/Tencent/Hunyuan3D-2">https://github.com/Tencent/Hunyuan3D-2</a>.</p>
+</li>
+</ul>
+<h2 id="detailed-breakdown-of-key-components-and-ideas">Detailed Breakdown of Key Components and Ideas:</h2>
+<h3 id="shape-generation-hunyuan3d-dit">Shape Generation (Hunyuan3D-DiT):</h3>
+<ul>
+<li>
+<p>Employs a latent diffusion model architecture, drawing inspiration from its success in image and video generation.</p>
+</li>
+<li>
+<p>Consists of an autoencoder (Hunyuan3D-ShapeVAE) to compress 3D mesh shapes into a sequence of continuous tokens.</p>
+</li>
+<li>
+<p>Uses a flow-based diffusion model (Hunyuan3D-DiT) trained in the latent space to predict object tokens from an input image.</p>
+</li>
+<li>
+<p>The architecture utilizes both double- and single-stream transformer blocks to enhance interaction between shape and image modalities (Figure 4).</p>
+</li>
+<li>
+<p>A key innovation in the ShapeVAE is the use of importance sampling alongside uniform sampling to capture high-frequency details like edges and corners from the input mesh surface (Figure 3).</p>
+</li>
+<li>
+<p>The decoder reconstructs the 3D shape using a neural field and the marching cubes algorithm to produce a triangle mesh.</p>
+</li>
+</ul>
+<h3 id="texture-map-synthesis-hunyuan3d-paint">Texture Map Synthesis (Hunyuan3D-Paint):</h3>
+<ul>
+<li>
+<p>Aims to generate high-resolution and seamless texture maps for a given mesh and image prompt.</p>
+</li>
+<li>
+<p>Requires the texture map to align with the prompt, be multi-view consistent, and harmonize with the mesh.</p>
+</li>
+<li>
+<p>Follows a three-stage framework: pre-processing, multi-view image synthesis, and texture baking. (Figure 5)</p>
+</li>
+<li>
+<p>Pre-processing: Includes an Image Delighting Module to remove illumination and shadows from the input image, ensuring illumination-invariant texture synthesis. This is achieved by training on paired images rendered under HDRI environmental maps and even white light.</p>
+</li>
+<li>
+<p>View Selection Strategy: Employs a geometry-aware viewpoint selection strategy to efficiently generate texture with minimal viewpoints, aiming for maximum surface coverage. It starts with 4 orthogonal views and iteratively adds more using a greedy search (Algorithm 1).</p>
+</li>
+<li>
+<p>Multi-task Attention Mechanism: Introduces two additional attention modules (reference attention and multi-view attention) in parallel to the original self-attention within the diffusion model (Equation 4). * Reference attention integrates the input reference image. * Multi-view attention ensures consistency across generated views.</p>
+</li>
+<li>
+<p>Geometry and View Conditioning: Geometry conditions (canonical normal maps and canonical coordinate maps) are concatenated with noise and fed into the model. A learnable camera embedding is also used to provide viewpoint information.</p>
+</li>
+<li>
+<p>Texture Baking: Employs dense-view inference during the multi-view generation stage to reduce the need for inpainting holes caused by self-occlusion. A view dropout strategy during training helps the model generalize and support this dense inference.</p>
+</li>
+</ul>
+<h2 id="user-centric-features">User-Centric Features:</h2>
+<ul>
+<li>
+<p>Hunyuan3D-Studio: Designed to be a versatile and user-friendly platform, accessible to both professionals and amateurs for manipulating and animating 3D assets.</p>
+</li>
+<li>
+<p>Sketch-to-3D Module: The system includes a module capable of generating detailed and realistic 3D assets from simple sketches, described as a &ldquo;low-barrier creation platform for ordinary users.&rdquo;</p>
+</li>
+<li>
+<p>Low-polygon Stylization Module: A module to convert dense meshes into low-polygon meshes, crucial for many CG pipelines and reducing computational costs. This involves geometric editing and texture preservation.</p>
+</li>
+</ul>
+<h2 id="evaluation-and-results">Evaluation and Results:</h2>
+<ul>
+<li>
+<p>The paper presents quantitative results showing Hunyuan3D 2.0&rsquo;s superior performance compared to baselines across various metrics.</p>
+</li>
+<li>
+<p>A user study is mentioned (Figure 10), suggesting evaluation of the generated assets by users based on criteria like overall quality and image following.</p>
+</li>
+<li>
+<p>Visual comparisons (Figure 11) highlight the model&rsquo;s ability to synthesize detailed geometry (surface bumps, intricate structures) and vivid, correct texture maps, even for complex actions.</p>
+</li>
+</ul>
+<h2 id="key-strengths-and-contributions">Key Strengths and Contributions:</h2>
+<ul>
+<li>
+<p>Comprehensive System: Combines shape and texture generation with a user-friendly platform.</p>
+</li>
+<li>
+<p>High-Resolution Output: Focuses on generating detailed and high-resolution assets.</p>
+</li>
+<li>
+<p>Improved Geometry and Texture Quality: Demonstrates superior performance through quantitative and visual evaluations.</p>
+</li>
+<li>
+<p>Novel Architectural Designs: Includes innovations like importance sampling in ShapeVAE and the multi-task attention mechanism in Hunyuan3D-Paint.</p>
+</li>
+<li>
+<p>Illumination-Invariant Texture: The image delighting module addresses a common challenge in texture generation.</p>
+</li>
+<li>
+<p>Dense-View Inference for Texture Baking: Reduces dependence on post-generation inpainting.</p>
+</li>
+<li>
+<p>Open-Source Contribution: Provides valuable resources to the 3D generation community.</p>
+</li>
+<li>
+<p>User Accessibility: Aims to make 3D asset creation more accessible through the Studio and Sketch-to-3D features.</p>
+</li>
+</ul>
+<h2 id="important-quotes">Important Quotes:</h2>
+<ul>
+<li>
+<p>&ldquo;Living out everyone’s imagination on creating and manipulating 3D assets.&rdquo; (Hunyuan3D Team motto)</p>
+</li>
+<li>
+<p>&ldquo;We present Hunyuan3D 2.0, an advanced large-scale 3D synthesis system for generating high-resolution textured 3D assets.&rdquo;</p>
+</li>
+<li>
+<p>&ldquo;The shape generative model, built on a scalable flow-based diffusion transformer, aims to create geometry that properly aligns with a given condition image&hellip;&rdquo;</p>
+</li>
+<li>
+<p>&ldquo;The texture synthesis model, benefiting from strong geometric and diffusion priors, produces high-resolution and vibrant texture maps&hellip;&rdquo;</p>
+</li>
+<li>
+<p>&ldquo;Furthermore, we build Hunyuan3D-Studio – a versatile, user-friendly production platform that simplifies the re-creation process of 3D assets.&rdquo;</p>
+</li>
+<li>
+<p>&ldquo;Hunyuan3D 2.0 is publicly released in order to fill the gaps in the open-source 3D community for large-scale foundation generative models.&rdquo;</p>
+</li>
+<li>
+<p>&ldquo;Instead of only using uniform sampling on mesh surface, We have developed an importance sampling strategy to extract high-frequency detail information from the input mesh surface, such as edges and cor-ners.&rdquo; (Regarding ShapeVAE)</p>
+</li>
+<li>
+<p>&ldquo;To address this issue, we leverage a delighting procedure on the input image via an image-to-image approach before multi-view generation.&rdquo; (Regarding Texture Synthesis pre-processing)</p>
+</li>
+<li>
+<p>&ldquo;To mitigate potential conflicts arising from these multi-functionalities, we design the additional two distinct attention modules in a parallel structure&hellip;&rdquo; (Regarding Multi-task Attention)</p>
+</li>
+<li>
+<p>&ldquo;In our texture-map synthesis framework, we alleviate the burden on the second stage of inpainting by facilitating dense-view inference during the multi-view generation stage.&rdquo; (Regarding Texture Baking)</p>
+</li>
+</ul>
+<p>Limitations and Future Work (Not explicitly detailed in these excerpts, but common in research papers): While the document highlights strengths, a full paper would likely discuss limitations, potential biases in training data, computational requirements, and areas for future improvement.</p>
+<h2 id="evaluation-metrics">Evaluation Metrics</h2>
+<h3 id="general-text--and-image-to-texture">General Text- and Image-to-Texture</h3>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>3DShape2VecSet  [111]</th>
+          <th>Michelangelo  [118]</th>
+          <th>Direct3D [98]</th>
+          <th>Hunyuan3D-ShapeVAE (Ours)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>V-IoU(↑)</td>
+          <td>87.88%</td>
+          <td>84.93%</td>
+          <td>88.43%</td>
+          <td>93.6%</td>
+      </tr>
+      <tr>
+          <td>S-IoU(↑)</td>
+          <td>80.66%</td>
+          <td>76.27%</td>
+          <td>81.55%</td>
+          <td>89.16%</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="3d-shape-generation">3D Shape Generation</h3>
+<table>
+  <thead>
+      <tr>
+          <th>ULIP-T(↑)</th>
+          <th>ULIP-I(↑)</th>
+          <th>Uni3D-T(↑)</th>
+          <th>Uni3D-I(↑)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Michelangelo  [118]</td>
+          <td>0.0752</td>
+          <td>0.1152</td>
+          <td>0.2133</td>
+      </tr>
+      <tr>
+          <td>Craftsman</td>
+          <td>1.5</td>
+          <td>[49]</td>
+          <td>0.0745</td>
+      </tr>
+      <tr>
+          <td>Trellis  [100]</td>
+          <td>0.0769</td>
+          <td>0.1267</td>
+          <td>0.2496</td>
+      </tr>
+      <tr>
+          <td>Shape_Model</td>
+          <td>1</td>
+          <td>0.0799</td>
+          <td>0.1181</td>
+      </tr>
+      <tr>
+          <td>Shape_Model</td>
+          <td>2</td>
+          <td>0.0741</td>
+          <td>0.1308</td>
+      </tr>
+      <tr>
+          <td>Shape_Model</td>
+          <td>3</td>
+          <td>0.0746</td>
+          <td>0.1284</td>
+      </tr>
+      <tr>
+          <td>Hunyuan3D-DiT  (Ours)</td>
+          <td>0.0771</td>
+          <td>0.1303</td>
+          <td>0.2519</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="hunyuan3d-paint">Hunyuan3D-Paint</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CMMD(↓)</th>
+          <th>FIDCLIP  (↓)</th>
+          <th>CLIP-score(↑)</th>
+          <th>LPIPS(↓)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>TEXTure  [73]</td>
+          <td>3.047</td>
+          <td>35.75</td>
+          <td>0.8499</td>
+      </tr>
+      <tr>
+          <td>Text2Tex  [9]</td>
+          <td>2.811</td>
+          <td>31.72</td>
+          <td>0.8680</td>
+      </tr>
+      <tr>
+          <td>SyncMVD [59]</td>
+          <td>2.584</td>
+          <td>29.93</td>
+          <td>0.8751</td>
+      </tr>
+      <tr>
+          <td>Paint3D  [110]</td>
+          <td>2.810</td>
+          <td>30.29</td>
+          <td>0.8724</td>
+      </tr>
+      <tr>
+          <td>TexPainter  [112]</td>
+          <td>2.483</td>
+          <td>28.83</td>
+          <td>0.8789</td>
+      </tr>
+      <tr>
+          <td>Hunyuan3D-Paint  (Ours)</td>
+          <td>2.318</td>
+          <td>26.44</td>
+          <td>0.8893</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="conclusion">Conclusion:</h2>
+<p>Hunyuan3D 2.0 represents a significant advancement in the field of 3D asset generation. By combining robust shape and texture synthesis models with a user-friendly platform and releasing its components as open-source, it aims to lower the barrier to entry for 3D content creation and contribute to the broader community. The system demonstrates state-of-the-art performance and incorporates novel techniques to improve the quality and usability of generated 3D assets.</p>
+<div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a><a href="/categories/ai-and-computer-vision" class="category-badge">ai-and-computer-vision</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/hunyuan3d" class="category-badge">Hunyuan3D</a><a href="/tags/high-resolution" class="category-badge">High-Resolution</a><a href="/tags/textured" class="category-badge">Textured</a><a href="/tags/3d" class="category-badge">3D</a><a href="/tags/asset" class="category-badge">Asset</a><a href="/tags/generation" class="category-badge">Generation</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=Hunyuan3D%202.0%3a%20Scaling%20Diffusion%20Models%20for%20High%20Resolution%20Textured%203D%20Assets%20Generation&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fhunyuan3d-20%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fhunyuan3d-20%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fhunyuan3d-20%2f&title=Hunyuan3D%202.0%3a%20Scaling%20Diffusion%20Models%20for%20High%20Resolution%20Textured%203D%20Assets%20Generation" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fhunyuan3d-20%2f&title=Hunyuan3D%202.0%3a%20Scaling%20Diffusion%20Models%20for%20High%20Resolution%20Textured%203D%20Assets%20Generation" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=Hunyuan3D%202.0%3a%20Scaling%20Diffusion%20Models%20for%20High%20Resolution%20Textured%203D%20Assets%20Generation&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fhunyuan3d-20%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/whisper-large-scale-weak-supervision-speech-recognition/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">Whisper: Robust Speech Recognition via Large-Scale Weak Supervision</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/what-is-a-digital-twin/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">What is a Digital Twin?</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#what-problem-is-addressed">What Problem is Addressed?</a></li>
+    <li><a href="#key-themes-and-concepts">Key Themes and Concepts:</a></li>
+    <li><a href="#detailed-breakdown-of-key-components-and-ideas">Detailed Breakdown of Key Components and Ideas:</a>
+      <ul>
+        <li><a href="#shape-generation-hunyuan3d-dit">Shape Generation (Hunyuan3D-DiT):</a></li>
+        <li><a href="#texture-map-synthesis-hunyuan3d-paint">Texture Map Synthesis (Hunyuan3D-Paint):</a></li>
+      </ul>
+    </li>
+    <li><a href="#user-centric-features">User-Centric Features:</a></li>
+    <li><a href="#evaluation-and-results">Evaluation and Results:</a></li>
+    <li><a href="#key-strengths-and-contributions">Key Strengths and Contributions:</a></li>
+    <li><a href="#important-quotes">Important Quotes:</a></li>
+    <li><a href="#evaluation-metrics">Evaluation Metrics</a>
+      <ul>
+        <li><a href="#general-text--and-image-to-texture">General Text- and Image-to-Texture</a></li>
+        <li><a href="#3d-shape-generation">3D Shape Generation</a></li>
+        <li><a href="#hunyuan3d-paint">Hunyuan3D-Paint</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion:</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

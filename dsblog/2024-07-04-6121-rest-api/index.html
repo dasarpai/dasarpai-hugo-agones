@@ -1,0 +1,702 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>REST API | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2024-07-04-6121-rest-api/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="REST API">
+  <meta property="og:description" content="REST API An API (Application Programming Interface) is a set of rules and protocols that allows one software application to interact with another. It defines the methods and data formats that applications can use to communicate with each other, enabling them to request and exchange information.
+Here are some key aspects of an API:
+Interface: The API provides a specific set of functions and endpoints that can be used to interact with a system or service. These functions define what operations can be performed, such as retrieving data, updating information, or triggering actions.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-07-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-07-04T00:00:00+00:00">
+    <meta property="article:tag" content="REST API">
+    <meta property="article:tag" content="Web Development">
+    <meta property="article:tag" content="API Design">
+    <meta property="article:tag" content="Web Services">
+    <meta property="article:tag" content="Software Architecture">
+    <meta property="article:tag" content="Backend Development">
+
+  <meta itemprop="name" content="REST API">
+  <meta itemprop="description" content="REST API An API (Application Programming Interface) is a set of rules and protocols that allows one software application to interact with another. It defines the methods and data formats that applications can use to communicate with each other, enabling them to request and exchange information.
+Here are some key aspects of an API:
+Interface: The API provides a specific set of functions and endpoints that can be used to interact with a system or service. These functions define what operations can be performed, such as retrieving data, updating information, or triggering actions.">
+  <meta itemprop="datePublished" content="2024-07-04T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-07-04T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2369">
+  <meta itemprop="keywords" content="REST API,RESTful Services,API Development,Web Services,HTTP Methods,API Design,Backend Development,Web Architecture">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="REST API">
+  <meta name="twitter:description" content="REST API An API (Application Programming Interface) is a set of rules and protocols that allows one software application to interact with another. It defines the methods and data formats that applications can use to communicate with each other, enabling them to request and exchange information.
+Here are some key aspects of an API:
+Interface: The API provides a specific set of functions and endpoints that can be used to interact with a system or service. These functions define what operations can be performed, such as retrieving data, updating information, or triggering actions.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6121-REST-API.jpg" alt="REST-API"></p>
+<h1 id="rest-api">REST API</h1>
+<p>An API (Application Programming Interface) is a set of rules and protocols that allows one software application to interact with another. It defines the methods and data formats that applications can use to communicate with each other, enabling them to request and exchange information.</p>
+<p>Here are some key aspects of an API:</p>
+<ol>
+<li>
+<p><strong>Interface</strong>: The API provides a specific set of functions and endpoints that can be used to interact with a system or service. These functions define what operations can be performed, such as retrieving data, updating information, or triggering actions.</p>
+</li>
+<li>
+<p><strong>Abstraction</strong>: APIs abstract the underlying complexity of the system, allowing developers to use the functionality without needing to understand the inner workings of the system. This simplifies the development process.</p>
+</li>
+<li>
+<p><strong>Communication</strong>: APIs facilitate communication between different software components, systems, or services. They enable integration and interoperability, allowing disparate systems to work together seamlessly.</p>
+</li>
+<li>
+<p><strong>Standardization</strong>: APIs follow specific protocols and standards, ensuring consistent and predictable behavior. Common standards include HTTP/HTTPS for web APIs, JSON or XML for data formats, and OAuth for authentication.</p>
+</li>
+</ol>
+<h3 id="types-of-apis">Types of APIs</h3>
+<p>APIs can be categorized based on various criteria, including their design, use cases, and communication methods. Here are some common types:</p>
+<ol>
+<li>
+<p><strong>Web APIs (Web Services)</strong>:</p>
+<ul>
+<li><strong>REST (Representational State Transfer)</strong>: Uses standard HTTP methods and is designed around resources identified by URLs.</li>
+<li><strong>SOAP (Simple Object Access Protocol)</strong>: Uses XML for message formatting and relies on application layer protocols like HTTP or SMTP.</li>
+</ul>
+</li>
+<li>
+<p><strong>Library/Framework APIs</strong>: Provided by software libraries or frameworks, allowing developers to use predefined functions and methods to perform specific tasks.</p>
+</li>
+<li>
+<p><strong>Operating System APIs</strong>: Enable applications to interact with the operating system, accessing low-level services like file management, memory allocation, and process control.</p>
+</li>
+<li>
+<p><strong>Database APIs</strong>: Allow applications to interact with database management systems (DBMS), performing operations like querying, updating, and managing data.</p>
+</li>
+<li>
+<p><strong>Hardware APIs</strong>: Enable software applications to interact with hardware components, such as graphics cards, printers, or sensors.</p>
+</li>
+</ol>
+<h3 id="examples-of-api-usage">Examples of API Usage</h3>
+<ul>
+<li><strong>Social Media Integration</strong>: APIs allow applications to interact with social media platforms, enabling features like posting updates, retrieving user data, and integrating social sharing buttons.</li>
+<li><strong>Payment Processing</strong>: Payment gateways provide APIs for handling transactions, processing payments, and managing billing information.</li>
+<li><strong>Mapping Services</strong>: APIs from mapping services like Google Maps allow developers to integrate maps, geocoding, and location-based services into their applications.</li>
+<li><strong>Third-Party Services</strong>: APIs enable applications to use third-party services like email sending, SMS notifications, and cloud storage.</li>
+</ul>
+<p>APIs play a crucial role in modern software development by enabling modular, scalable, and maintainable systems, promoting code reuse, and facilitating integration between different applications and services.</p>
+<h2 id="what-is-rest-api">What is REST API</h2>
+<p>A REST API (Representational State Transfer Application Programming Interface) is a set of rules and conventions for building and interacting with web services. It uses standard HTTP methods and is designed to work with resources, which are identified by URLs.</p>
+<p>Here are some key characteristics of REST APIs:</p>
+<ol>
+<li>
+<p><strong>Statelessness</strong>: Each request from a client to a server must contain all the information needed to understand and process the request. The server does not store any state about the client session.</p>
+</li>
+<li>
+<p><strong>Client-Server Architecture</strong>: The client and server are independent; the client does not need to know the server&rsquo;s implementation details, and vice versa.</p>
+</li>
+<li>
+<p><strong>Cacheability</strong>: Responses from the server can be cached by the client or intermediaries to improve performance.</p>
+</li>
+<li>
+<p><strong>Uniform Interface</strong>: REST APIs follow a standard interface, which typically includes the following HTTP methods:</p>
+<ul>
+<li><code>GET</code>: Retrieve a resource.</li>
+<li><code>POST</code>: Create a new resource.</li>
+<li><code>PUT</code>: Update an existing resource.</li>
+<li><code>DELETE</code>: Remove a resource.</li>
+</ul>
+</li>
+<li>
+<p><strong>Layered System</strong>: A REST API can be composed of multiple layers, with each layer providing a specific functionality.</p>
+</li>
+<li>
+<p><strong>Code on Demand (optional)</strong>: Servers can extend client functionality by transferring executable code.</p>
+</li>
+</ol>
+<p>REST APIs are widely used due to their simplicity, scalability, and flexibility, making them a popular choice for web services and applications.</p>
+<h2 id="types-of-rest-api">Types of REST API</h2>
+<p>REST APIs can be categorized based on different criteria, such as the level of maturity, the architecture style, and the methods used. Here are a few ways to categorize REST APIs:</p>
+<h3 id="1-by-maturity-level-richardson-maturity-model">1. <strong>By Maturity Level (Richardson Maturity Model)</strong>:</h3>
+<p>The Richardson Maturity Model (RMM) categorizes RESTful services into four levels, from 0 to 3, based on their adherence to REST principles:</p>
+<ul>
+<li>
+<p><strong>Level 0: The Swamp of POX (Plain Old XML)</strong></p>
+<ul>
+<li>Uses HTTP as a transport mechanism, but not much else.</li>
+<li>Typically involves a single URI endpoint.</li>
+</ul>
+</li>
+<li>
+<p><strong>Level 1: Resources</strong></p>
+<ul>
+<li>Introduces the concept of resources.</li>
+<li>Uses multiple URIs to represent different resources.</li>
+</ul>
+</li>
+<li>
+<p><strong>Level 2: HTTP Verbs</strong></p>
+<ul>
+<li>Uses standard HTTP methods like GET, POST, PUT, DELETE.</li>
+<li>Each resource can be interacted with using these methods.</li>
+</ul>
+</li>
+<li>
+<p><strong>Level 3: Hypermedia Controls (HATEOAS - Hypermedia As The Engine Of Application State)</strong></p>
+<ul>
+<li>Fully utilizes hypermedia to guide the client through the application by providing relevant links with each response.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-by-functionality">2. <strong>By Functionality</strong>:</h3>
+<ul>
+<li>
+<p><strong>Public APIs (Open APIs)</strong></p>
+<ul>
+<li>Available to external developers and users.</li>
+<li>Typically have extensive documentation and usage guidelines.</li>
+</ul>
+</li>
+<li>
+<p><strong>Private APIs</strong></p>
+<ul>
+<li>Intended for use within an organization.</li>
+<li>Not exposed to external users.</li>
+</ul>
+</li>
+<li>
+<p><strong>Partner APIs</strong></p>
+<ul>
+<li>Shared with specific partners.</li>
+<li>Often used for business-to-business interactions.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-by-architectural-style">3. <strong>By Architectural Style</strong>:</h3>
+<ul>
+<li>
+<p><strong>RESTful APIs</strong></p>
+<ul>
+<li>Adhere strictly to REST principles.</li>
+</ul>
+</li>
+<li>
+<p><strong>Non-RESTful APIs</strong></p>
+<ul>
+<li>May use REST concepts but do not fully comply with REST constraints.</li>
+<li>Could include SOAP (Simple Object Access Protocol) or other RPC (Remote Procedure Call) styles.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-by-data-format">4. <strong>By Data Format</strong>:</h3>
+<ul>
+<li>
+<p><strong>JSON APIs</strong></p>
+<ul>
+<li>Use JSON (JavaScript Object Notation) for data representation.</li>
+</ul>
+</li>
+<li>
+<p><strong>XML APIs</strong></p>
+<ul>
+<li>Use XML (eXtensible Markup Language) for data representation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Other Formats</strong></p>
+<ul>
+<li>Could use formats like YAML, CSV, etc.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-by-protocol">5. <strong>By Protocol</strong>:</h3>
+<ul>
+<li>
+<p><strong>HTTP/HTTPS</strong></p>
+<ul>
+<li>The most common protocol for REST APIs.</li>
+</ul>
+</li>
+<li>
+<p><strong>Other Protocols</strong></p>
+<ul>
+<li>While less common, REST principles can be applied over other protocols like WebSockets or even FTP.</li>
+</ul>
+</li>
+</ul>
+<p>Each type of REST API serves different needs and use cases, depending on the specific requirements of the application and its ecosystem.</p>
+<h2 id="what-is-soap-api">What is SOAP API</h2>
+<p>A SOAP API (Simple Object Access Protocol API) is a protocol for exchanging structured information in the implementation of web services. It relies on XML for message formatting and typically uses other application layer protocols such as HTTP or SMTP for message negotiation and transmission.</p>
+<h3 id="key-features-of-soap-api">Key Features of SOAP API</h3>
+<ol>
+<li>
+<p><strong>Protocol-Based</strong>: SOAP is a protocol, meaning it defines a strict set of rules and standards that messages must follow. This ensures high interoperability between different systems.</p>
+</li>
+<li>
+<p><strong>XML-Based</strong>: SOAP messages are formatted in XML, which is a language-independent way to represent data. This makes SOAP APIs highly flexible and capable of supporting complex data structures.</p>
+</li>
+<li>
+<p><strong>Transport Agnostic</strong>: While SOAP most commonly uses HTTP or HTTPS as its transport protocol, it is not limited to these. SOAP can also work over other protocols such as SMTP, TCP, and more.</p>
+</li>
+<li>
+<p><strong>WS-Security</strong>: SOAP has built-in security features through the WS-Security specification, allowing for secure communication by providing authentication, integrity, and confidentiality.</p>
+</li>
+<li>
+<p><strong>WSDL (Web Services Description Language)</strong>: SOAP APIs are often defined using WSDL, which is an XML-based language for describing the functionalities offered by a web service. WSDL provides a machine-readable description of how the service can be called, what parameters it expects, and what data structures it returns.</p>
+</li>
+<li>
+<p><strong>Standardized</strong>: SOAP is a standardized protocol maintained by the World Wide Web Consortium (W3C), ensuring long-term support and stability.</p>
+</li>
+</ol>
+<h3 id="soap-api-message-structure">SOAP API Message Structure</h3>
+<p>A typical SOAP message consists of:</p>
+<ul>
+<li><strong>Envelope</strong>: The root element that defines the XML document as a SOAP message.</li>
+<li><strong>Header (optional)</strong>: Contains application-specific information like authentication and transaction management.</li>
+<li><strong>Body</strong>: Contains the actual message content intended for the recipient.</li>
+<li><strong>Fault (optional)</strong>: Provides information about errors that occurred during message processing.</li>
+</ul>
+<h3 id="advantages-of-soap-api">Advantages of SOAP API</h3>
+<ul>
+<li><strong>Standardization</strong>: SOAP is a well-defined standard with extensive documentation and tooling support.</li>
+<li><strong>Security</strong>: Built-in support for security protocols like WS-Security makes SOAP suitable for secure transactions.</li>
+<li><strong>Reliability</strong>: Features like WS-ReliableMessaging ensure reliable communication between services.</li>
+<li><strong>Complex Operations</strong>: SOAP is well-suited for operations that require complex transactions or that need ACID (Atomicity, Consistency, Isolation, Durability) compliance.</li>
+</ul>
+<h3 id="disadvantages-of-soap-api">Disadvantages of SOAP API</h3>
+<ul>
+<li><strong>Complexity</strong>: The strict standards and extensive use of XML can make SOAP APIs more complex to implement and consume.</li>
+<li><strong>Performance</strong>: The verbosity of XML and the overhead of additional SOAP-specific information can lead to larger message sizes and slower performance compared to simpler protocols like REST.</li>
+</ul>
+<h3 id="use-cases-for-soap-api">Use Cases for SOAP API</h3>
+<ul>
+<li><strong>Enterprise Applications</strong>: SOAP is commonly used in enterprise-level applications where security, transactional reliability, and standardized protocols are critical.</li>
+<li><strong>Banking and Financial Services</strong>: The robust security features of SOAP make it ideal for applications involving sensitive financial transactions.</li>
+<li><strong>Telecommunication Services</strong>: SOAP’s support for complex operations and reliability is beneficial for telecommunication services.</li>
+</ul>
+<h3 id="example-soap-request">Example SOAP Request</h3>
+<p>Here’s a basic example of a SOAP request message:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;soapenv:Envelope</span> <span style="color:#a6e22e">xmlns:soapenv=</span><span style="color:#e6db74">&#34;http://schemas.xmlsoap.org/soap/envelope/&#34;</span> <span style="color:#a6e22e">xmlns:example=</span><span style="color:#e6db74">&#34;http://www.example.com/&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;soapenv:Header/&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;soapenv:Body&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;example:GetUserDetailsRequest&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;example:UserId&gt;</span>12345<span style="color:#f92672">&lt;/example:UserId&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/example:GetUserDetailsRequest&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/soapenv:Body&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/soapenv:Envelope&gt;</span>
+</span></span></code></pre></div><p>This request is asking for details of a user with the ID 12345.</p>
+<p>SOAP APIs are a powerful tool for enabling communication between different software systems, especially in environments where security, standardization, and complex operations are necessary. However, the complexity and overhead associated with SOAP may make it less suitable for simpler use cases, where REST APIs might be a better fit.</p>
+<h2 id="types-of-soap-api">Types of SOAP API</h2>
+<p>SOAP APIs are generally categorized based on their functionality and implementation. While there aren&rsquo;t strict &ldquo;types&rdquo; of SOAP APIs in the same way you might categorize RESTful services by their architectural style, you can consider different types based on the nature of their services and the way they are described and consumed. Here are some common distinctions:</p>
+<h3 id="1-document-oriented-vs-rpc-oriented-soap-apis">1. <strong>Document-Oriented vs. RPC-Oriented SOAP APIs</strong></h3>
+<ul>
+<li>
+<p><strong>Document-Oriented</strong>:</p>
+<ul>
+<li>These SOAP APIs treat the SOAP message as a document. The message is typically a well-defined XML document that the server processes and responds to.</li>
+<li>The interaction focuses on the exchange of XML documents.</li>
+</ul>
+</li>
+<li>
+<p><strong>RPC-Oriented (Remote Procedure Call)</strong>:</p>
+<ul>
+<li>These SOAP APIs resemble traditional remote procedure calls, where the SOAP message represents a method call with parameters.</li>
+<li>The server processes the call and returns a response as if a local procedure was invoked.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-synchronous-vs-asynchronous-soap-apis">2. <strong>Synchronous vs. Asynchronous SOAP APIs</strong></h3>
+<ul>
+<li>
+<p><strong>Synchronous</strong>:</p>
+<ul>
+<li>The client sends a request and waits for the server to process and respond immediately.</li>
+<li>Common in real-time interactions where the client needs an immediate response.</li>
+</ul>
+</li>
+<li>
+<p><strong>Asynchronous</strong>:</p>
+<ul>
+<li>The client sends a request and does not wait for an immediate response. The server processes the request and sends the response later.</li>
+<li>Useful in scenarios where the operations take a long time to complete, and the client can continue other tasks in the meantime.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-public-vs-private-vs-partner-soap-apis">3. <strong>Public vs. Private vs. Partner SOAP APIs</strong></h3>
+<ul>
+<li>
+<p><strong>Public SOAP APIs</strong>:</p>
+<ul>
+<li>Available to external developers and users.</li>
+<li>Often well-documented and intended for broad use.</li>
+</ul>
+</li>
+<li>
+<p><strong>Private SOAP APIs</strong>:</p>
+<ul>
+<li>Intended for internal use within an organization.</li>
+<li>Not exposed to external users or developers.</li>
+</ul>
+</li>
+<li>
+<p><strong>Partner SOAP APIs</strong>:</p>
+<ul>
+<li>Shared with specific business partners.</li>
+<li>Often used for B2B (business-to-business) interactions and integrations.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-service-oriented-vs-resource-oriented-soap-apis">4. <strong>Service-Oriented vs. Resource-Oriented SOAP APIs</strong></h3>
+<ul>
+<li>
+<p><strong>Service-Oriented</strong>:</p>
+<ul>
+<li>Focus on performing specific operations or services.</li>
+<li>Often used in enterprise applications for complex business logic.</li>
+</ul>
+</li>
+<li>
+<p><strong>Resource-Oriented</strong>:</p>
+<ul>
+<li>Although less common with SOAP (more typical of REST), these APIs treat entities as resources that can be manipulated.</li>
+<li>Operations are performed on resources, similar to CRUD (Create, Read, Update, Delete) operations.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-one-way-request-response-and-notification-soap-apis">5. <strong>One-Way, Request-Response, and Notification SOAP APIs</strong></h3>
+<ul>
+<li>
+<p><strong>One-Way</strong>:</p>
+<ul>
+<li>The client sends a message to the server, but there is no response expected.</li>
+<li>Useful for logging or sending notifications where confirmation is not necessary.</li>
+</ul>
+</li>
+<li>
+<p><strong>Request-Response</strong>:</p>
+<ul>
+<li>The client sends a request message, and the server responds with a message.</li>
+<li>The most common interaction pattern in SOAP APIs.</li>
+</ul>
+</li>
+<li>
+<p><strong>Notification</strong>:</p>
+<ul>
+<li>The server sends messages to the client, usually without a preceding request.</li>
+<li>Used for alerting or informing clients about certain events or changes.</li>
+</ul>
+</li>
+</ul>
+<p>While SOAP itself is a standardized protocol, its applications can vary widely based on the specific use case, communication pattern, and intended audience. Understanding these distinctions helps in designing and consuming SOAP APIs effectively.</p>
+<h2 id="creating-deploying-and-using-api-for-image-recognition">Creating, Deploying and Using API for Image Recognition</h2>
+<p>To create a system that allows users to upload images from a front end and get predictions from an Azure AI cloud service, we&rsquo;ll break down the process into a few main parts:</p>
+<ol>
+<li>
+<p><strong>Setting up Azure AI Image Detection Service</strong>:</p>
+<ul>
+<li>Create an Azure account if you don&rsquo;t already have one.</li>
+<li>Set up a Computer Vision service in Azure.</li>
+<li>Get the necessary API keys and endpoint URL.</li>
+</ul>
+</li>
+<li>
+<p><strong>Creating the API to interface with Azure AI</strong>:</p>
+<ul>
+<li>Create a backend service (e.g., using Flask or FastAPI) to handle image uploads and interact with the Azure Computer Vision API.</li>
+</ul>
+</li>
+<li>
+<p><strong>Developing the Front End</strong>:</p>
+<ul>
+<li>Create a simple front end (e.g., using HTML, CSS, and JavaScript) that allows users to upload images and view the results.</li>
+</ul>
+</li>
+</ol>
+<h3 id="step-by-step-implementation">Step-by-Step Implementation</h3>
+<h4 id="1-set-up-azure-computer-vision-service">1. Set up Azure Computer Vision Service</h4>
+<ol>
+<li>Sign in to the <a href="https://portal.azure.com/">Azure portal</a>.</li>
+<li>Create a new resource: Search for &ldquo;Computer Vision&rdquo; and create the service.</li>
+<li>After the service is created, go to the resource and copy the endpoint URL and API key.</li>
+</ol>
+<p>Endpoint URL: <a href="https://dasarpai-image-detection.cognitiveservices.azure.com/">https://dasarpai-image-detection.cognitiveservices.azure.com/</a>
+API Key1: 9ca81597171742dfa7d3afd43aa7927d
+API Key2: 5bedfc880bcb4057b16ac2fb6cc38a83
+API Kind: ComputerVision</p>
+<h4 id="2-create-the-backend-service">2. Create the Backend Service</h4>
+<p><strong>Install necessary packages</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install fastapi uvicorn requests python-multipart
+</span></span></code></pre></div><p><strong>Create the FastAPI application (<code>main.py</code>)</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> fastapi <span style="color:#f92672">import</span> FastAPI, File, UploadFile
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> io
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> FastAPI()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>AZURE_VISION_ENDPOINT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR_AZURE_ENDPOINT&#34;</span>
+</span></span><span style="display:flex;"><span>AZURE_VISION_SUBSCRIPTION_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR_AZURE_KEY&#34;</span>
+</span></span><span style="display:flex;"><span>AZURE_VISION_ANALYZE_URL <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>AZURE_VISION_ENDPOINT<span style="color:#e6db74">}</span><span style="color:#e6db74">/vision/v3.2/analyze&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.post</span>(<span style="color:#e6db74">&#34;/analyze-image/&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">analyze_image</span>(file: UploadFile <span style="color:#f92672">=</span> File(<span style="color:#f92672">...</span>)):
+</span></span><span style="display:flex;"><span>    image_data <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> file<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    headers <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Ocp-Apim-Subscription-Key&#39;</span>: AZURE_VISION_SUBSCRIPTION_KEY,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Content-Type&#39;</span>: <span style="color:#e6db74">&#39;application/octet-stream&#39;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    params <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;visualFeatures&#39;</span>: <span style="color:#e6db74">&#39;Categories,Description,Color&#39;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(AZURE_VISION_ANALYZE_URL, headers<span style="color:#f92672">=</span>headers, params<span style="color:#f92672">=</span>params, data<span style="color:#f92672">=</span>image_data)
+</span></span><span style="display:flex;"><span>    response<span style="color:#f92672">.</span>raise_for_status()
+</span></span><span style="display:flex;"><span>    analysis <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>json()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> analysis
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">import</span> uvicorn
+</span></span><span style="display:flex;"><span>    uvicorn<span style="color:#f92672">.</span>run(app, host<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.0.0.0&#34;</span>, port<span style="color:#f92672">=</span><span style="color:#ae81ff">8000</span>)
+</span></span></code></pre></div><h4 id="3-create-the-front-end">3. Create the Front End</h4>
+<p><strong>HTML (<code>index.html</code>)</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;Image Analysis&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h1</span>&gt;Upload an Image for Analysis&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;uploadForm&#34;</span> <span style="color:#a6e22e">enctype</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;multipart/form-data&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fileInput&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;Upload&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">form</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">pre</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;result&#34;</span>&gt;&lt;/<span style="color:#f92672">pre</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;uploadForm&#39;</span>).<span style="color:#a6e22e">onsubmit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">preventDefault</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fileInput</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;fileInput&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">file</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fileInput</span>.<span style="color:#a6e22e">files</span>[<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;file&#39;</span>, <span style="color:#a6e22e">file</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;http://localhost:8000/analyze-image/&#39;</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;POST&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">formData</span>
+</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>();
+</span></span><span style="display:flex;"><span>            document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;result&#39;</span>).<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">result</span>, <span style="color:#66d9ef">null</span>, <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><h4 id="4-deploy-and-run-the-services">4. Deploy and Run the Services</h4>
+<ol>
+<li>
+<p><strong>Run the FastAPI application</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>uvicorn main:app --host 0.0.0.0 --port <span style="color:#ae81ff">8000</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Open the <code>index.html</code> in a browser</strong>:</p>
+<ul>
+<li>Simply open the <code>index.html</code> file in a web browser.</li>
+<li>Upload an image and see the prediction results.</li>
+</ul>
+</li>
+</ol>
+<p>This setup will allow you to upload an image via the front end, send it to the backend FastAPI service, which then calls the Azure Computer Vision API and returns the analysis results to be displayed on the front end.</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Audio Processing on Agones</title>
+    <link>http://localhost:1313/tags/audio-processing/</link>
+    <description>Recent content in Audio Processing on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/audio-processing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Audio Video Processing Concepts</title>
+      <link>http://localhost:1313/dsblog/audio-video-processing-concepts/</link>
+      <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/audio-video-processing-concepts/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6252-audio-video-processing-concepts.jpg&#34; alt=&#34;Audio Video Processing Concepts&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;foundational-concepts-of-audio-and-video-processing&#34;&gt;Foundational Concepts of Audio and Video Processing&lt;/h1&gt;&#xA;&lt;p&gt;Whether you are multimedia professional or deep learning Engineer, if you are dealing with audio and video processing, you will need to understand the core concepts of audio and video processing. My this guide is focussed on some of the key concepts of Audio Video processing.&lt;/p&gt;&#xA;&lt;p&gt;A digital microphone is a device that captures sound (air pressure variations) and converts it into digital signals. Internally, it contains an analog-to-digital converter (ADC) that performs the conversion from analog audio to digital audio.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

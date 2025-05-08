@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChatGPT on Agones</title>
+    <link>http://localhost:1313/tags/chatgpt/</link>
+    <description>Recent content in ChatGPT on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/chatgpt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Prompt Engineering</title>
+      <link>http://localhost:1313/dsblog/Introduction-to-Prompt-Engineering/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Introduction-to-Prompt-Engineering/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6080-Introduction-to-Prompt-Engineering.jpg&#34; alt=&#34;Introduction to Prompt Engineering&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction-to-prompt-best-engineering&#34;&gt;Introduction to Prompt Best Engineering&lt;/h1&gt;&#xA;&lt;p&gt;Prompts can contain questions, instructions, contextual information, examples, and partial input for the model to complete or continue. After the model receives a prompt, depending on the type of model being used, it can generate text, embeddings, code, images, videos, music, and more. Below are &lt;strong&gt;14 examples of good prompts&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;example-1-entity-input&#34;&gt;Example 1 (Entity input)&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Classify the following items as [large, small].&#xD;&#xA;Elephant&#xD;&#xA;Mouse&#xD;&#xA;Snail&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;example-2-completion-input&#34;&gt;Example 2 (completion input)&lt;/h2&gt;&#xA;&lt;p&gt;You can write a prompt like&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ChatGPT Usecases</title>
+      <link>http://localhost:1313/dsblog/chatgpt-usecases/</link>
+      <pubDate>Wed, 04 Jan 2023 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/chatgpt-usecases/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6019-ChatGPT-Usecases.jpg&#34; alt=&#34;ChatGPT Usecases&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-chatgpt&#34;&gt;What is ChatGPT?&lt;/h1&gt;&#xA;&lt;p&gt;ChatGPT is &lt;strong&gt;general purpose&lt;/strong&gt; - &amp;ldquo;chat model&amp;rdquo; from OpenAI. It is a &lt;strong&gt;language model&lt;/strong&gt;, which means if you type some text then it can understand and respond to you appropriately. At this point in time, it is not accepting voice commands, neither able to process images or videos. A &lt;strong&gt;general-purpose model&lt;/strong&gt; means it can understand the question coming from any domain of life. A domain may be vertical or horizontal. A vertical domain means where a vendor is supplying a product or service for a specific type of customer. A horizontal domain is where a vendor supplies products or services for all types of customer.  Healthcare, banking, logistic, insurance, agriculture, philosophy, history, and economics are one kind of verticals whereas&#xA;BPO, Quality Management, Software Development, Taxation, HR, IT Security, Accounting, Office Administration, Catering, and Entertainment are other kind of domains. A &lt;strong&gt;general-purpose model&lt;/strong&gt; can understand the questions from all aspects of life whether business vertical or horizontal or normal daily family or conflicts with other group members, family members, etc.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

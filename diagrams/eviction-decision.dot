@@ -1,0 +1,43 @@
+// Copyright 2024 Google LLC All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//	http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+digraph {
+    graph [fontname = "helvetica", ordering="out"];
+    node [fontname = "helvetica"];
+    edge [fontname = "helvetica", pad="0.2", penwidth="2"];
+
+    CanTerm [ label = "Supports TERM signal" ]
+    TenMinuteTermination [ label = "Terminates in < 10m after TERM?" ]
+    OneHourTermination [ label="Terminates in < 1h after TERM?" ]
+
+    SetAlways [label = <Set <font face="courier">safe: Always</font>>]
+    SetOnUpgrade [label = <Set <font face="courier">safe: OnUpgrade</font>>]
+    SetNever [label = <Set <font face="courier">safe: Never</font>>]
+
+    ConfigureTGPS [label = "Configure terminationGracePeriodSeconds\nto session or cleanup time"]
+    Special [label = "See Long Sessions below"]
+
+    CanTerm -> TenMinuteTermination [ label = "yes" ]
+    CanTerm -> SetNever [ label = "no" ]
+
+    TenMinuteTermination -> SetAlways [ label = "yes" ]
+    TenMinuteTermination -> OneHourTermination [ label="no" ]
+
+    OneHourTermination -> SetOnUpgrade [ label = "yes" ]
+    OneHourTermination -> SetNever [ label = "no" ]
+
+    SetAlways -> ConfigureTGPS [ label = "and" ]
+    SetOnUpgrade -> ConfigureTGPS [ label = "and" ]
+    SetNever -> Special [ label = "and" ]
+}

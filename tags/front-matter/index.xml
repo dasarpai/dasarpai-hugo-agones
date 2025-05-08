@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Front Matter on Agones</title>
+    <link>http://localhost:1313/tags/front-matter/</link>
+    <description>Recent content in Front Matter on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/front-matter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding Jekyll Framework</title>
+      <link>http://localhost:1313/dsblog/Understanding-Jekyll-Framework/</link>
+      <pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Understanding-Jekyll-Framework/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6168-Understanding-Jekyll-Framework.jpg&#34; alt=&#34;Understanding Jekyll Framework&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;understanding-jekyll-framework&#34;&gt;Understanding Jekyll Framework&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-jekyll&#34;&gt;What is Jekyll?&lt;/h2&gt;&#xA;&lt;p&gt;Jekyll is a popular static site generator that transforms plain text into static websites and blogs. It&amp;rsquo;s built with Ruby and designed to be simple, flexible, and blog-aware. Key features of Jekyll include:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Simplicity: Jekyll doesn&amp;rsquo;t require databases, making it easy to set up and maintain.&lt;/li&gt;&#xA;&lt;li&gt;Static output: It generates static HTML files, resulting in fast-loading websites.&lt;/li&gt;&#xA;&lt;li&gt;Markdown support: Content can be written in Markdown for easy formatting.&lt;/li&gt;&#xA;&lt;li&gt;Templating: Uses Liquid templating language for dynamic content generation.&lt;/li&gt;&#xA;&lt;li&gt;Blog-aware: Built-in support for blog-like features such as posts, categories, and permalinks.&lt;/li&gt;&#xA;&lt;li&gt;GitHub Pages integration: Seamlessly works with GitHub Pages for free hosting.&lt;/li&gt;&#xA;&lt;li&gt;Extensibility: Supports plugins and themes for added functionality and customization.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Jekyll is ideal for developers who want a lightweight, efficient solution for creating websites without the complexity of traditional content management systems.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

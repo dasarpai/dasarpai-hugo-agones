@@ -1,0 +1,651 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Cost Functions and Optimizers in Machine Learning | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2023-02-01-6045-cost-functions-and-optimizers-in-machine-learning/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Cost Functions and Optimizers in Machine Learning">
+  <meta property="og:description" content="Cost-Functions-and-Optimizers-in-Machine-Learning What is machine learning? Machine learning is a subfield of artificial intelligence that focuses on the development of algorithms and statistical models that enable computers to improve their performance on a specific task through experience.
+In machine learning, the goal is to develop models that can automatically learn patterns and relationships in data, and use that knowledge to make predictions or take actions. The models are trained on a large dataset, and the learning process involves optimizing the parameters of the model to minimize the prediction error. For this purpose every algorithms uses some cost function or loss function.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2023-02-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-02-01T00:00:00+00:00">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="Deep Learning">
+    <meta property="article:tag" content="Model Optimization">
+    <meta property="article:tag" content="Neural Networks">
+    <meta property="article:tag" content="Loss Functions">
+    <meta property="article:tag" content="Gradient Descent">
+
+  <meta itemprop="name" content="Cost Functions and Optimizers in Machine Learning">
+  <meta itemprop="description" content="Cost-Functions-and-Optimizers-in-Machine-Learning What is machine learning? Machine learning is a subfield of artificial intelligence that focuses on the development of algorithms and statistical models that enable computers to improve their performance on a specific task through experience.
+In machine learning, the goal is to develop models that can automatically learn patterns and relationships in data, and use that knowledge to make predictions or take actions. The models are trained on a large dataset, and the learning process involves optimizing the parameters of the model to minimize the prediction error. For this purpose every algorithms uses some cost function or loss function.">
+  <meta itemprop="datePublished" content="2023-02-01T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2023-02-01T00:00:00+00:00">
+  <meta itemprop="wordCount" content="3974">
+  <meta itemprop="keywords" content="cost functions,machine learning optimizers,loss functions,gradient descent,neural network training,optimization algorithms,model optimization,learning rate,training optimization,mathematical optimization">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cost Functions and Optimizers in Machine Learning">
+  <meta name="twitter:description" content="Cost-Functions-and-Optimizers-in-Machine-Learning What is machine learning? Machine learning is a subfield of artificial intelligence that focuses on the development of algorithms and statistical models that enable computers to improve their performance on a specific task through experience.
+In machine learning, the goal is to develop models that can automatically learn patterns and relationships in data, and use that knowledge to make predictions or take actions. The models are trained on a large dataset, and the learning process involves optimizing the parameters of the model to minimize the prediction error. For this purpose every algorithms uses some cost function or loss function.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6045-Cost-Functions-and-Optimizers-in-Machine-Learning.jpg" alt="Cost-Functions-and-Optimizers-in-Machine-Learning"></p>
+<h1 id="cost-functions-and-optimizers-in-machine-learning">Cost-Functions-and-Optimizers-in-Machine-Learning</h1>
+<h2 id="what-is-machine-learning">What is machine learning?</h2>
+<p>Machine learning is a subfield of artificial intelligence that focuses on the <strong>development of algorithms and statistical models</strong> that enable computers to improve their performance on a specific task through experience.</p>
+<p>In machine learning, the goal is to develop models that can <strong>automatically learn patterns and relationships in data, and use that knowledge to make predictions or take actions</strong>. The models are trained on a large dataset, and the learning process involves <strong>optimizing the parameters of the model to minimize the prediction error</strong>. For this purpose every algorithms uses some <strong>cost function or loss function</strong>.</p>
+<p>There are various types of machine learning, including supervised learning, unsupervised learning, semi-supervised learning, and reinforcement learning. These approaches are used in a wide range of applications, including image classification, speech recognition, natural language processing, recommendation systems, and predictive analytics.</p>
+<h2 id="what-is-cost-function">What is cost function?</h2>
+<p>A cost function, also known as a loss function or objective function, is a <strong>mathematical function that measures the difference between the predicted output of a model and the actual output</strong>. The cost function is used to evaluate the performance of a machine learning model and <strong>guide the optimization process during training</strong>.</p>
+<p>The goal of training a machine learning model is to minimize the value of the cost function. This is achieved by adjusting the parameters of the model to reduce the prediction error. The choice of cost function will depend on the type of problem being solved and the type of model being used.</p>
+<p>For example, in a binary classification problem, a common cost function is the cross-entropy loss, which measures the difference between the predicted probabilities and the actual class labels. In a regression problem, a common cost function is the mean squared error, which measures the average squared difference between the predicted values and the actual values.</p>
+<p>The cost function provides a measure of the model&rsquo;s performance, and the optimization process aims to find the values of the model&rsquo;s parameters that minimize the cost function. The optimization process is usually performed using gradient descent or other optimization algorithms, which iteratively update the parameters to reduce the value of the cost function.</p>
+<h2 id="what-is-the-difference-between-loss-function-and-cost-function">What is the difference between loss function and cost function?</h2>
+<p>The terms &ldquo;cost function&rdquo; and &ldquo;loss function&rdquo; are often used interchangeably, but they do have subtle differences depending on the context:</p>
+<h3 id="1-loss-function">1. <strong>Loss Function:</strong></h3>
+<ul>
+<li><strong>Definition</strong>: A loss function measures the error for a single training example. It quantifies how well the model&rsquo;s prediction matches the actual target value for that particular example.</li>
+<li><strong>Use Case</strong>: Typically used in contexts where you&rsquo;re evaluating or updating the model on a per-example basis.</li>
+<li><strong>Example</strong>: In a binary classification task, if your model predicts the probability of a sample belonging to the positive class, the loss function might be binary cross-entropy, which compares this prediction to the actual class label.</li>
+</ul>
+<h3 id="2-cost-function">2. <strong>Cost Function:</strong></h3>
+<ul>
+<li><strong>Definition</strong>: A cost function is generally the average (or sum) of the loss functions over an entire dataset. It provides a measure of the overall model performance across all training examples.</li>
+<li><strong>Use Case</strong>: Used during the training process to evaluate and minimize the overall error of the model.</li>
+<li><strong>Example</strong>: The cost function could be the Mean Squared Error (MSE) for a regression task, which is the average of the squared errors (individual losses) over all the training examples.</li>
+</ul>
+<h3 id="summary-of-differences">Summary of Differences:</h3>
+<ul>
+<li>
+<p><strong>Scope</strong>:</p>
+<ul>
+<li><strong>Loss function</strong> is usually focused on a single data point.</li>
+<li><strong>Cost function</strong> aggregates the loss across all data points in the dataset.</li>
+</ul>
+</li>
+<li>
+<p><strong>Usage</strong>:</p>
+<ul>
+<li>The term &ldquo;loss function&rdquo; is more commonly used when referring to the error for individual predictions.</li>
+<li>The term &ldquo;cost function&rdquo; is often used when referring to the total error used to train the model (e.g., in optimization algorithms).</li>
+</ul>
+</li>
+</ul>
+<h3 id="example-in-practice">Example in Practice:</h3>
+<ul>
+<li><strong>Loss Function</strong>: If you&rsquo;re using Mean Squared Error as your loss function, then for each training example, the loss might be calculated as:
+$$
+\text{Loss} = (y_{\text{true}} - y_{\text{pred}})^2
+$$</li>
+<li><strong>Cost Function</strong>: The cost function would then be the average of these losses across all examples:
+$$
+\text{Cost} = \frac{1}{n} \sum_{i=1}^{n} (y_{\text{true, i}} - y_{\text{pred, i}})^2
+$$</li>
+</ul>
+<p>In summary, the loss function is a measure of error on a single data point, while the cost function is a measure of error across the entire dataset.</p>
+<p>The specific form of the cost function will depend on the type of problem being solved and the nature of the output variables. For example, in regression problems, the mean squared error (MSE) is often used as the cost function, while in classification problems, the cross-entropy loss is commonly used.</p>
+<h2 id="what-are-different-cost-functions">What are different cost functions?</h2>
+<p>Cost functions, also known as loss functions, are mathematical functions used in machine learning to quantify the difference between the predicted output of a model and the actual target values. The goal of training a model is to minimize this cost function, thereby improving the model&rsquo;s performance. Common Cost Functions:</p>
+<ol>
+<li>
+<p><strong>Mean Squared Error (MSE)</strong></p>
+<ul>
+<li><strong>Description</strong>: Measures the average squared difference between predicted values and actual values.</li>
+<li><strong>Formula</strong>:
+$$
+\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+$$
+where $$ y_i $$ is the actual value, $$ \hat{y}_i $$ is the predicted value, and $$ n $$ is the number of data points.</li>
+<li><strong>Use Case</strong>: Commonly used in regression tasks.</li>
+</ul>
+</li>
+<li>
+<p><strong>Mean Absolute Error (MAE)</strong></p>
+<ul>
+<li><strong>Description</strong>: Measures the average absolute difference between predicted values and actual values.</li>
+<li><strong>Formula</strong>:
+$$
+\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+$$</li>
+<li><strong>Use Case</strong>: Used in regression tasks, particularly when outliers are less influential.</li>
+</ul>
+</li>
+<li>
+<p><strong>Binary Cross-Entropy (Log Loss)</strong></p>
+<ul>
+<li><strong>Description</strong>: Measures the difference between predicted probabilities and actual binary labels. It penalizes incorrect predictions more heavily.</li>
+<li><strong>Formula</strong>:
+$$
+\text{Binary Cross-Entropy} = -\frac{1}{n} \sum_{i=1}^{n} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]
+$$</li>
+<li><strong>Use Case</strong>: Used in binary classification tasks.</li>
+</ul>
+</li>
+<li>
+<p><strong>Categorical Cross-Entropy</strong></p>
+<ul>
+<li><strong>Description</strong>: Measures the difference between the predicted probability distribution and the actual one-hot encoded target distribution.</li>
+<li><strong>Formula</strong>:
+$$
+\text{Categorical Cross-Entropy} = -\sum_{i=1}^{n} \sum_{j=1}^{k} y_{ij} \log(\hat{y}<em>{ij})
+$$
+where $$ k $$ is the number of classes, and $$ y</em>{ij} $$ is the actual one-hot encoded value.</li>
+<li><strong>Use Case</strong>: Used in multi-class classification tasks.</li>
+</ul>
+</li>
+<li>
+<p><strong>Huber Loss</strong></p>
+<ul>
+<li><strong>Description</strong>: Combines MSE and MAE, offering a balance between the two. It is less sensitive to outliers than MSE.</li>
+<li><strong>Formula</strong>:
+$$
+\text{Huber Loss} =
+\begin{cases}
+\frac{1}{2}(y_i - \hat{y}_i)^2 &amp; \text{for } |y_i - \hat{y}_i| \leq \delta \
+\delta \cdot |y_i - \hat{y}_i| - \frac{1}{2} \delta^2 &amp; \text{otherwise}
+\end{cases}
+$$
+where $$ \delta $$ is a threshold.</li>
+<li><strong>Use Case</strong>: Used in regression tasks, especially when dealing with outliers.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hinge Loss</strong></p>
+<ul>
+<li><strong>Description</strong>: Used for &ldquo;maximum-margin&rdquo; classification, such as SVMs. It penalizes predictions that are on the wrong side of the decision boundary or within a margin.</li>
+<li><strong>Formula</strong>:
+$$
+\text{Hinge Loss} = \frac{1}{n} \sum_{i=1}^{n} \max(0, 1 - y_i \cdot \hat{y}_i)
+$$
+where $$ y_i $$ is the true label (-1 or 1) and $$ \hat{y}_i $$ is the predicted output.</li>
+<li><strong>Use Case</strong>: Used in Support Vector Machines (SVM) for binary classification.</li>
+</ul>
+</li>
+<li>
+<p><strong>Kullback-Leibler (KL) Divergence</strong></p>
+<ul>
+<li><strong>Description</strong>: Measures the divergence between two probability distributions, often used as a regularization term in models like VAEs.</li>
+<li><strong>Formula</strong>:
+$$
+\text{KL Divergence} = \sum_{i} P(x_i) \log \frac{P(x_i)}{Q(x_i)}
+$$</li>
+<li><strong>Use Case</strong>: Used in probabilistic models, VAEs, and reinforcement learning.</li>
+</ul>
+</li>
+<li>
+<p><strong>Poisson Loss</strong></p>
+<ul>
+<li><strong>Description</strong>: Used for count data and assumes that the target variable follows a Poisson distribution.</li>
+<li><strong>Formula</strong>:
+$$
+\text{Poisson Loss} = \hat{y}_i - y_i \log(\hat{y}_i)
+$$</li>
+<li><strong>Use Case</strong>: Used in models where the target variable represents counts.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cosine Similarity Loss</strong></p>
+<ul>
+<li><strong>Description</strong>: Measures the cosine of the angle between two non-zero vectors, indicating their similarity.</li>
+<li><strong>Formula</strong>:
+$$
+\text{Cosine Similarity Loss} = 1 - \frac{\sum_{i=1}^{n} y_i \hat{y}<em>i}{\sqrt{\sum</em>{i=1}^{n} y_i^2} \cdot \sqrt{\sum_{i=1}^{n} \hat{y}_i^2}}
+$$</li>
+<li><strong>Use Case</strong>: Used in tasks like text similarity, recommendation systems, and face recognition.</li>
+</ul>
+</li>
+<li>
+<p><strong>Wasserstein Loss</strong></p>
+<ul>
+<li><strong>Description</strong>: Used in Wasserstein GANs (WGANs) to measure the distance between the real data distribution and the generated data distribution.</li>
+<li><strong>Formula</strong>: Depends on the specific WGAN implementation but generally involves the Earth Mover&rsquo;s Distance (EMD).</li>
+<li><strong>Use Case</strong>: Used in GANs to improve training stability and address issues like mode collapse.</li>
+</ul>
+</li>
+</ol>
+<p>Different cost functions are chosen based on the type of problem (regression, classification, etc.) and the specific characteristics of the data (e.g., presence of outliers). The goal is to find a cost function that aligns well with the task and helps the model converge to an optimal solution during training.</p>
+<h2 id="what-are-different-cost-functions-for-different-machine-learning-goals">What are different cost functions for different Machine learning goals?</h2>
+<h3 id="cost-function-for-regression">Cost Function for Regression</h3>
+<p>If the goal is Regression, we want to predict a continuous number, then we can use use these cost/loss functions.</p>
+<ul>
+<li>Mean Squared Error (MSE): used for regression problems, measures the average squared difference between the predicted output and the actual output.</li>
+<li>Mean Absolute Error (MAE): also used for regression problems, measures the average absolute difference between the predicted output and the actual output.</li>
+<li>Huber Loss: a combination of mean squared error and mean absolute error, used for robust regression.</li>
+<li>Smooth L1 Loss: also known as the Huber Loss, a combination of mean squared error and mean absolute error, used for object detection in computer vision.</li>
+<li>Log-Cosh Loss: a smooth approximation of the mean absolute error, used for regression problems.</li>
+</ul>
+<h3 id="cost-function-for-classification">Cost Function for Classification</h3>
+<p>If the goal is Classification, we want to predict a class/category, then we can use use these cost/loss functions.</p>
+<ul>
+<li>Binary Cross-Entropy Loss: a variation of cross-entropy loss, used for binary classification problems.</li>
+<li>Cross-Entropy Loss: measures the difference between the predicted class probabilities and the actual class label, used for multi-class classification problems.</li>
+<li>Hinge Loss: used for maximum-margin classification problems, measures the margin between the predicted class and the incorrect class.</li>
+<li>Squared Hinge Loss: a variation of hinge loss, used for maximum-margin classification problems.</li>
+<li>Multi-Class Logarithmic Loss: used for multi-class classification problems, measures the average log loss across all classes.</li>
+<li>Focal Loss: used for object detection in computer vision, adds a term that modulates the cross-entropy loss based on the prediction confidence.</li>
+<li>Categorical Cross-Entropy Loss: another variation of cross-entropy loss for multi-class classification problems.</li>
+</ul>
+<h3 id="cost-function-for-clustering">Cost Function for Clustering</h3>
+<p>If the goal is Clustering, we want to group samples/records/examples, then we can use use these cost/loss functions.</p>
+<ul>
+<li>Sum of Squared Errors (SSE): measures the sum of squared differences between each data point and its nearest cluster center.</li>
+<li>Within-Cluster Sum of Squared Errors (WCSS): similar to SSE, but measures the sum of squared differences between each data point and its nearest cluster center, averaged across all clusters.</li>
+<li>Davies-Bouldin Index: measures the similarity between each pair of clusters, based on the distance between their cluster centers and the size of their cluster.</li>
+<li>Silhouette Score: measures the similarity between each data point and its own cluster compared to other clusters.</li>
+<li>Calinski-Harabasz Index: measures the ratio of between-cluster variance to within-cluster variance, based on the sum of squared differences from the cluster centers.</li>
+</ul>
+<h3 id="cost-function-for-sementic-segmenration">Cost Function for Sementic Segmenration</h3>
+<p>If the goal is Semantic Segmentation (a type of image analysis task in computer vision where the goal is to classify each pixel in an image into a predefined category or class.), then we can use use these cost/loss functions.</p>
+<ul>
+<li>Cross-Entropy Loss: measures the difference between the predicted class probabilities and the actual class label.</li>
+<li>Dice Loss: measures the overlap between the predicted and ground-truth segmentation masks.</li>
+<li>Intersection over Union (IoU) Loss: similar to Dice loss, measures the overlap between the predicted and ground-truth segmentation masks, but normalizes the overlap based on the size of the masks.</li>
+<li>Jaccard Loss: a variant of IoU loss, which measures the overlap between the predicted and ground-truth segmentation masks.</li>
+<li>Focal Loss: adds a term that modulates the cross-entropy loss based on the prediction confidence, which can improve the performance of the model on the hard examples.</li>
+</ul>
+<h2 id="cost-function-for-text-genration">Cost Function for Text Genration</h2>
+<p>Can you tell what different loss functions are available to update the parameters during learning in Text Generation models?</p>
+<p>In text generation models, various loss functions are used to update the model&rsquo;s parameters and improve performance. The choice of loss function depends on the model architecture and the specific text generation task. Here are some common loss functions used in text generation:</p>
+<h3 id="1-cross-entropy-loss-negative-log-likelihood-loss">1. <strong>Cross-Entropy Loss (Negative Log-Likelihood Loss)</strong></h3>
+<ul>
+<li><strong>Description</strong>: Measures the difference between the predicted probability distribution over the vocabulary and the actual target distribution (one-hot encoded vector).</li>
+<li><strong>Use Case</strong>: Used extensively in sequence-to-sequence models, language models, and other text generation tasks where the goal is to predict the next token in a sequence.</li>
+<li><strong>Formula</strong>:
+$$
+\text{Cross-Entropy Loss} = -\sum_{i=1}^{N} \log P(y_i | x)
+$$
+where $$ y_i $$ is the actual token and $$ P(y_i | x) $$ is the predicted probability of the token given the input $$ x $$.</li>
+</ul>
+<h3 id="2-reinforcement-learning-based-loss-policy-gradient">2. <strong>Reinforcement Learning-Based Loss (Policy Gradient)</strong></h3>
+<ul>
+<li><strong>Description</strong>: Used when the text generation model is trained using reinforcement learning techniques, such as the REINFORCE algorithm. The loss is based on the reward signal received from the environment or from a discriminator in GANs.</li>
+<li><strong>Use Case</strong>: Used in models like SeqGAN, where text is generated in sequence and evaluated based on a reward function rather than direct supervised labels.</li>
+<li><strong>Formula</strong>:
+$$
+\text{Policy Gradient Loss} = - \mathbb{E}[R(\tau) \log \pi_\theta(\tau)]
+$$
+where $$ R(\tau) $$ is the reward associated with the generated sequence $$ \tau $$, and $$ \pi_\theta $$ is the policy (model) with parameters $$ \theta $$.</li>
+</ul>
+<h3 id="3-maximum-likelihood-estimation-mle-loss">3. <strong>Maximum Likelihood Estimation (MLE) Loss</strong></h3>
+<ul>
+<li><strong>Description</strong>: A loss function that maximizes the likelihood of the observed data given the model parameters. It’s closely related to cross-entropy loss in the context of text generation.</li>
+<li><strong>Use Case</strong>: Common in sequence generation tasks where the objective is to maximize the probability of the training sequences.</li>
+<li><strong>Formula</strong>:
+$$
+\text{MLE Loss} = -\sum_{t=1}^{T} \log P(y_t | y_{&lt;t}, x)
+$$
+where $$ y_t $$ is the target token at time step $$ t $$, and $$ y_{&lt;t} $$ represents the previous tokens.</li>
+</ul>
+<h3 id="4-perplexity">4. <strong>Perplexity</strong></h3>
+<ul>
+<li><strong>Description</strong>: Perplexity is not a direct loss function but a metric derived from cross-entropy loss. It measures how well a probability distribution or probability model predicts a sample.</li>
+<li><strong>Use Case</strong>: Used as an evaluation metric for language models, lower perplexity indicates a better model.</li>
+<li><strong>Formula</strong>:
+$$
+\text{Perplexity} = 2^{\text{Cross-Entropy Loss}}
+$$</li>
+</ul>
+<h3 id="5-kl-divergence-kullback-leibler-divergence">5. <strong>KL Divergence (Kullback-Leibler Divergence)</strong></h3>
+<ul>
+<li><strong>Description</strong>: Measures the divergence between the predicted distribution and a target distribution. It’s often used in variational autoencoders (VAEs) for text generation.</li>
+<li><strong>Use Case</strong>: Regularizes models to ensure that the generated distribution doesn’t diverge too far from a prior distribution.</li>
+<li><strong>Formula</strong>:
+$$
+\text{KL Divergence} = \sum_{i=1}^{N} P(y_i | x) \log \frac{P(y_i | x)}{Q(y_i)}
+$$
+where $$ P(y_i | x) $$ is the predicted probability and $$ Q(y_i) $$ is the target probability.</li>
+</ul>
+<h3 id="6-bleu-score-based-loss">6. <strong>BLEU Score-Based Loss</strong></h3>
+<ul>
+<li><strong>Description</strong>: BLEU (Bilingual Evaluation Understudy) is a metric used to evaluate the quality of text generated by comparing it with reference texts. Some approaches involve directly optimizing BLEU or using it as a reward in reinforcement learning.</li>
+<li><strong>Use Case</strong>: Used in machine translation and other generation tasks where the quality of the generated text relative to reference text is important.</li>
+<li><strong>Formula</strong>: BLEU is not directly a loss function, but can be used as a reward signal:
+$$
+\text{BLEU} = \text{exp} \left( \min \left( 1 - \frac{\text{length of reference}}{\text{length of hypothesis}}, 0 \right) + \sum_{n=1}^{N} w_n \log p_n \right)
+$$
+where $$ p_n $$ is the precision of n-grams and $$ w_n $$ is the weight for the n-gram order.</li>
+</ul>
+<h3 id="7-gan-discriminator-loss">7. <strong>GAN Discriminator Loss</strong></h3>
+<ul>
+<li><strong>Description</strong>: In GANs like SeqGAN or TextGAN, the discriminator provides a loss signal that reflects how well the generator’s text resembles real text. The generator’s loss is typically the inverse of the discriminator’s success.</li>
+<li><strong>Use Case</strong>: Used in GAN-based text generation models to refine the generator&rsquo;s output to be more realistic.</li>
+<li><strong>Formula</strong>:
+$$
+\text{Generator Loss} = -\log(D(G(z)))
+$$
+where $$ D(G(z)) $$ is the discriminator&rsquo;s probability that the generated text $$ G(z) $$ is real.</li>
+</ul>
+<h3 id="summary">Summary:</h3>
+<p>Different loss functions serve different purposes in updating the parameters of text generation models. Cross-Entropy Loss and MLE Loss are standard for sequence modeling, while reinforcement learning-based losses and GAN discriminator losses are used for more advanced techniques like GANs and policy gradient methods. Each loss function is chosen based on the specific needs of the text generation task and the model architecture.</p>
+<h2 id="can-you-explain-with-example-how-kl-divergence-loss-function-works">Can you explain with example how KL Divergence loss function works?</h2>
+<p>When we say &ldquo;measures the divergence between the predicted distribution and a target distribution,&rdquo; we&rsquo;re referring to how different or similar two probability distributions are from each other. Specifically, it’s about comparing the distribution of the model&rsquo;s predictions (the predicted distribution) with the actual or expected distribution (the target distribution).</p>
+<h3 id="what-is-a-probability-distribution">What is a Probability Distribution?</h3>
+<p>A probability distribution assigns probabilities to different outcomes or events. For example, in the context of text generation, a probability distribution might tell us the likelihood of each word or token being the next in a sequence.</p>
+<h3 id="kl-divergence-explained">KL Divergence Explained:</h3>
+<p><strong>Kullback-Leibler (KL) Divergence</strong> is a measure of how one probability distribution diverges from a second, expected probability distribution. It&rsquo;s not symmetric, meaning $$ (\text{KL}P | Q) $$ is not necessarily the same as $$ \text{KL}(Q | P) $$. The KL divergence is used to quantify how much information is lost when we use the predicted distribution instead of the target distribution.</p>
+<h3 id="example">Example:</h3>
+<p>Let&rsquo;s consider a simple example where we have a model that is predicting the next word in a sentence.</p>
+<h4 id="scenario">Scenario:</h4>
+<p>Suppose we&rsquo;re trying to predict the next word after &ldquo;The cat is&rdquo;. The target distribution might look like this based on real-world data:</p>
+<ul>
+<li>Target distribution $$ Q $$:
+<ul>
+<li>&ldquo;sleeping&rdquo;: 0.7</li>
+<li>&ldquo;running&rdquo;: 0.2</li>
+<li>&ldquo;eating&rdquo;: 0.1</li>
+</ul>
+</li>
+</ul>
+<p>This distribution reflects the true probabilities of each word occurring next based on our training data.</p>
+<p>Now, suppose our model predicts the following distribution:</p>
+<ul>
+<li>Predicted distribution $$ P $$:
+<ul>
+<li>&ldquo;sleeping&rdquo;: 0.5</li>
+<li>&ldquo;running&rdquo;: 0.3</li>
+<li>&ldquo;eating&rdquo;: 0.2</li>
+</ul>
+</li>
+</ul>
+<h3 id="kl-divergence-calculation">KL Divergence Calculation:</h3>
+<p>The KL divergence between the target distribution $$ Q $$ and the predicted distribution $$ P $$ can be calculated as:</p>
+<p>$$
+\text{KL}(Q | P) = \sum_{i} Q(i) \log \frac{Q(i)}{P(i)}
+$$</p>
+<p>For our example:</p>
+<p>$$
+\text{KL}(Q | P) = (0.7) \log \frac{0.7}{0.5} + (0.2) \log \frac{0.2}{0.3} + (0.1) \log \frac{0.1}{0.2}
+$$</p>
+<p>Let&rsquo;s compute this step by step:</p>
+<ol>
+<li>
+<p>For &ldquo;sleeping&rdquo;:
+$$
+0.7 \log \frac{0.7}{0.5} = 0.7 \times \log(1.4) \approx 0.7 \times 0.3365 = 0.2356
+$$</p>
+</li>
+<li>
+<p>For &ldquo;running&rdquo;:
+$$
+0.2 \log \frac{0.2}{0.3} = 0.2 \times \log(0.6667) \approx 0.2 \times (-0.1761) = -0.0352
+$$</p>
+</li>
+<li>
+<p>For &ldquo;eating&rdquo;:
+$$
+0.1 \log \frac{0.1}{0.2} = 0.1 \times \log(0.5) \approx 0.1 \times (-0.3010) = -0.0301
+$$</p>
+</li>
+</ol>
+<p>Finally, summing these values gives us:</p>
+<p>$$
+\text{KL}(Q | P) = 0.2356 - 0.0352 - 0.0301 = 0.1703
+$$</p>
+<h3 id="interpretation">Interpretation:</h3>
+<ul>
+<li><strong>KL Divergence Value</strong>: The KL divergence value of 0.1703 indicates that there&rsquo;s some divergence between the predicted and target distributions. If the predicted distribution $$ P $$ were exactly the same as the target distribution $$ Q $$, the KL divergence would be 0, indicating no divergence.</li>
+<li><strong>Minimizing KL Divergence</strong>: In practice, during training, we try to minimize the KL divergence to make the model’s predictions as close as possible to the target distribution.</li>
+</ul>
+<h3 id="summary-1">Summary:</h3>
+<p>KL Divergence measures how much the predicted probability distribution diverges from the actual, expected distribution. In the context of our example, it quantifies how different the model’s predicted probabilities for the next word in a sentence are from the true probabilities based on training data. Minimizing KL divergence during training helps improve the model’s accuracy in making predictions.</p>
+<h2 id="what-is-optimizer">What is Optimizer?</h2>
+<p>Optimizers play a crucial role in deep neural network training. They are responsible for updating the model&rsquo;s parameters in order to minimise the loss function, and ultimately improve the performance of the model. There are many different optimisers available, each with their own strengths and weaknesses, and choosing the right optimiser can make a significant impact on the training process.</p>
+<h2 id="what-are-the-various-optimization-algorithms">What are the various optimization algorithms?</h2>
+<p>Some popular optimisers include stochastic gradient descent (SGD), momentum, Adagrad, Adadelta, RProp, RMSprop, Adam, AMSGrad, and Nadam. These optimisers differ in how they calculate the updates to the model&rsquo;s parameters, with some taking into account the historical gradient information, others using momentum to smooth out updates, and others adapting the learning rate based on the magnitude of the gradients. It&rsquo;s important to carefully consider the properties of the cost function and the structure of the model when selecting an optimiser, as this can have a significant impact on the speed and stability of the training process.</p>
+<h2 id="can-you-explain-with-example-how-these-optimizers-update-the-model-parameters">Can you explain with example how these optimizers update the model parameters?</h2>
+<ul>
+<li>
+<p>Stochastic Gradient Descent (SGD) - It updates the model parameters by taking the gradient of the loss function with respect to the parameters and subtracting it from the parameters.<br>
+$$\theta = \theta - \alpha \frac{\partial J(\theta)}{\partial \theta}$$</p>
+<p>where  $$\theta$$ is the model parameter,  $$\alpha$$ is the learning rate, and $$J(\theta)$$ is the cost function.</p>
+</li>
+<li>
+<p>Momentum - It accumulates the gradient of the previous steps to avoid oscillation and converge faster.<br>
+$v = \beta v - \alpha \frac{\partial J(\theta)}{\partial \theta}$</p>
+<p>$$\theta = \theta + v$$</p>
+<p>where $v$ is the velocity term,  $$\beta$$ is the momentum hyperparameter.</p>
+</li>
+<li>
+<p>Nesterov Accelerated Gradient (NAG) - It is an improved version of Momentum that takes into account the future position of the parameters based on the estimated gradient.<br>
+$v = \beta v - \alpha \frac{\partial J(\theta + \beta v)}{\partial \theta}$</p>
+<p>$$\theta = \theta + v$$</p>
+</li>
+<li>
+<p>Adagrad - It adapts the learning rate to the parameters, performing larger updates for infrequent parameters and smaller updates for frequent parameters.<br>
+$$G = G + \left(\frac{\partial J(\theta)}{\partial \theta}\right)^2$$</p>
+<p>$$\theta = \theta - \frac{\alpha}{\sqrt{G + \epsilon}} \frac{\partial J(\theta)}{\partial \theta}$$</p>
+<p>where $$G$$ is the sum of squares of past gradients, and $$\epsilon$$ is a small value to prevent division by zero.</p>
+</li>
+<li>
+<p>Adadelta - It is an extension of Adagrad that reduces its aggressive, monotonically decreasing learning rate.
+$E[g^2]t = \gamma E[g^2]{t-1} + (1 - \gamma)\left(\frac{\partial J(\theta)}{\partial \theta}\right)^2$</p>
+<p>$$\Delta \theta_t = -\frac{\sqrt{E[\Delta \theta^2]_{t-1} + \epsilon}}{\sqrt{E[g^2]_t + \epsilon}} \frac{\partial J(\theta)}{\partial \theta}$$</p>
+<p>$$\theta = \theta + \Delta \theta_t$$</p>
+<p>where $E[g^2]$ and $E[\Delta \theta^2]$ are the moving average of the square of gradients and the square of parameter updates, respectively, and  $$\gamma$$ is the decay rate.</p>
+</li>
+<li>
+<p>RProp - It uses the sign of the gradient to determine the direction of the update, with a dynamically adjusted step size for each parameter.</p>
+<p>$$\Delta \theta_i = \text{sign}(\frac{\partial J(\theta)}{\partial \theta_i})\Delta \theta_{i,prev}$$</p>
+<p>$$\theta_i = \theta_i - \Delta \theta_i$$</p>
+<p>where  $$\theta_i$$ is the current value of a model parameter,  $$\frac{\partial J(\theta)}{\partial \theta_i}$$ is the gradient of the loss function with respect to the parameter,  $$\Delta \theta_{i,prev}$$ is the previous update to the parameter, and  $$\text{sign}(\cdot)$$ is the sign function. The step size  $$\Delta \theta_i$$ is determined dynamically based on the magnitude of the gradient.</p>
+</li>
+<li>
+<p>Adam (Adaptive Moment Estimation) - It combines the advantages of Momentum and Adagrad, by considering both the average and the variance of the gradient for parameter updates.<br>
+$$m = \beta_1 m + (1 - \beta_1) \frac{\partial J(\theta)}{\partial \theta}$$</p>
+<p>$$v = \beta_2 v + (1 - \beta_2) \left(\frac{\partial J(\theta)}{\partial \theta}\right)^2$$</p>
+<p>$$\hat{m} = \frac{m}{1 - \beta_1^t}$$</p>
+<p>$$\hat{v} = \frac{v}{1 - \beta_2^t}$$</p>
+<p>$$\theta = \theta - \frac{\alpha}{\sqrt{\hat{v}} + \epsilon} \hat{m}$$</p>
+<p>where $$m$$ and $$v$$ are the first and second moment estimates, respectively,  $$\beta_1$$ and  $$\beta_2$$ are hyperparameters, and the rest of the terms are as defined above.</p>
+</li>
+<li>
+<p>AMSGrad - It is an extension of Adam that ensures the learning rate does not get too small, even if the gradient is small.<br>
+$m = \beta_1 m + (1 - \beta_1) \frac{\partial J(\theta)}{\partial \theta}$</p>
+<p>$$v = \max(\beta_2 v + (1 - \beta_2) \left(\frac{\partial J(\theta)}{\partial \theta}\right)^2, v_{t-1})$$</p>
+<p>$$\hat{m} = \frac{m}{1 - \beta_1^t}$$</p>
+<p>$$\hat{v} = \frac{v}{1 - \beta_2^t}$$</p>
+<p>$$\theta = \theta - \frac{\alpha}{\sqrt{\hat{v}} + \epsilon} \hat{m}$$</p>
+</li>
+<li>
+<p>Nadam (Nesterov-Accelerated Adaptive Moment Estimation) - It combines NAG and Adam to take advantage of the rapid convergence of NAG and the adaptive learning rate of Adam.<br>
+$$m = \beta_1 m + (1 - \beta_1) \frac{\partial J(\theta)}{\partial \theta}$$</p>
+<p>$$v = \beta_2 v + (1 - \beta_2) \left(\frac{\partial J(\theta)}{\partial \theta}\right)^2$$</p>
+<p>$$\hat{m} = \frac{m}{1 - \beta_1^t}$$</p>
+<p>$$\hat{v} = \frac{v}{1 - \beta_2^t}$$</p>
+<p>$$\theta = \theta - \frac{\alpha}{\sqrt{\hat{v}} + \epsilon} \left(\beta_1 \hat{m} + (1 - \beta_1) \frac{\partial J(\theta)}{\partial \theta}\right)$$</p>
+</li>
+</ul>
+<p><strong>Author</strong><br>
+Dr Hari Thapliyal<br>
+<a href="https://linkedin.com/in/harithapliyal">https://linkedin.com/in/harithapliyal</a><br>
+<a href="https://dasarpai.com">https://dasarpai.com</a></p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

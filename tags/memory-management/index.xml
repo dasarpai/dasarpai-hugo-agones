@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Memory Management on Agones</title>
+    <link>http://localhost:1313/tags/memory-management/</link>
+    <description>Recent content in Memory Management on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/memory-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How Much Memory Needed for LLM</title>
+      <link>http://localhost:1313/dsblog/How-Much-Memory-Needed-for-LLM/</link>
+      <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/How-Much-Memory-Needed-for-LLM/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6133-How-Much-Memory-Needed-for-LLM.jpg&#34; alt=&#34;How-Much-Memory-Needed-for-LLM&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;how-much-memory-needed-for-llm&#34;&gt;How Much Memory Needed for LLM?&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-is-llm&#34;&gt;What is LLM?&lt;/h2&gt;&#xA;&lt;p&gt;LLM stands for &lt;strong&gt;Large Language Model&lt;/strong&gt;. These are machine learning models that are trained on massive amounts of text data to understand, generate, and work with human language in a way that mimics natural language understanding. They are called &amp;ldquo;large&amp;rdquo; because of the significant number of parameters they contain, often numbering in the billions or even trillions.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-defines-a-large-language-model&#34;&gt;What Defines a Large Language Model?&lt;/h3&gt;&#xA;&lt;p&gt;There is no strict or universally accepted benchmark to define what constitutes an LLM purely based on the number of parameters. The term &amp;ldquo;large&amp;rdquo; is relative and depends on the current state of technology and the size of models being developed. As technology progresses, what is considered &amp;ldquo;large&amp;rdquo; may continue to grow. However, some general guidelines have emerged:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,366 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Exploring Types of Models | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2025-01-25-6209-exploring-types-of-models/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Exploring Types of Models">
+  <meta property="og:description" content="Understanding Different Types of Models Introduction A model is a simplified representation or abstraction of a system, concept, or phenomenon around us. It is used to analyze, understand, predict, or simulate real-world behavior. Models can take many forms, depending on the context in which they are used. For example you also say that I have created a Data Model, Functional Model, UI Model, Simulation Model etc.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2025-01-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-25T00:00:00+00:00">
+    <meta property="article:tag" content="Models">
+    <meta property="article:tag" content="Software Design">
+    <meta property="article:tag" content="AI">
+
+  <meta itemprop="name" content="Exploring Types of Models">
+  <meta itemprop="description" content="Understanding Different Types of Models Introduction A model is a simplified representation or abstraction of a system, concept, or phenomenon around us. It is used to analyze, understand, predict, or simulate real-world behavior. Models can take many forms, depending on the context in which they are used. For example you also say that I have created a Data Model, Functional Model, UI Model, Simulation Model etc.">
+  <meta itemprop="datePublished" content="2025-01-25T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-01-25T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1823">
+  <meta itemprop="keywords" content="Types of Models in Software Development,What are Models in AI,System Analysis and Modeling,Classification of Models,Applications of Models,Different Types of Models in AI,Modeling in Software Design">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exploring Types of Models">
+  <meta name="twitter:description" content="Understanding Different Types of Models Introduction A model is a simplified representation or abstraction of a system, concept, or phenomenon around us. It is used to analyze, understand, predict, or simulate real-world behavior. Models can take many forms, depending on the context in which they are used. For example you also say that I have created a Data Model, Functional Model, UI Model, Simulation Model etc.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6209-Exploring-Types-of-Models.jpg" alt="Exploring Types of Models"></p>
+<h1 id="understanding-different-types-of-models">Understanding Different Types of Models</h1>
+<h2 id="introduction">Introduction</h2>
+<p>A model is a simplified representation or abstraction of a system, concept, or phenomenon around us. It is used to analyze, understand, predict, or simulate real-world behavior. Models can take many forms, depending on the context in which they are used. For example you also say that I have created a Data Model, Functional Model, UI Model, Simulation Model etc.</p>
+<p>Models can be classified in various ways based on their purpose, structure, and the domains they serve. Each classification helps in understanding the application, functioning, and scope of these models. In this article we are diving into categories or buckets in which we can place these models.</p>
+<p>A model can be an AI Model or non-AI model. The diversity in AI model types reflects the expansive scope of artificial intelligence. From solving domain-specific challenges to providing generalizable solutions, these models showcase the flexibility of AI technologies in addressing a wide range of problems. Understanding these classifications helps researchers, developers, and businesses select the right model type for their specific needs. These classifications highlight even more nuanced ways to think about AI models, depending on factors like adaptability, fairness, ethics, or human interaction.</p>
+<p>Based on your need you ask yourself which kind of model you need. If you are working on some software solution and you need AI model then
+based on your business requirment you need to ask yourself which model you need for your agentic work or the product which you are building. New age AI models, (after 2020), often called LLM are very powerful and capable and they have multiple features and capabilities. Keep in mind that these classification of models is not exclusive.</p>
+<h2 id="1-reasoning-models"><strong>1. Reasoning Models</strong></h2>
+<ul>
+<li><strong>Model-Based Reasoning</strong>: These models utilize a pre-defined understanding of the physical world to make inferences or predictions. They are frequently used in expert systems, where a structured model derives logical conclusions from observed data. Example applications include diagnostic systems and simulation-based decision-making tools.</li>
+</ul>
+<h2 id="2-predictive-models"><strong>2. Predictive Models</strong></h2>
+<ul>
+<li>
+<p><strong>Classification Models</strong>: These models are designed to categorize data into predefined classes based on input features. Classification tasks can be further subdivided into:</p>
+<ul>
+<li><strong>Binary Classification</strong>: Predicts one of two outcomes (e.g., spam vs. not spam, pass vs. fail).</li>
+<li><strong>Multiclass Classification</strong>: Predicts one of multiple possible outcomes (e.g., identifying plant species, categorizing news articles).</li>
+<li><strong>Multilabel Classification</strong>: A news article can be classified as bollywood, entertainment, romantic etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>Regression Models</strong>: Unlike classification, regression models predict continuous outcomes based on input variables. Examples include predicting stock prices, weather forecasts, or real estate valuations.</p>
+</li>
+</ul>
+<h2 id="3-mathematical-models"><strong>3. Mathematical Models</strong></h2>
+<ul>
+<li><strong>Theoretical Models</strong>: Based on well-established theories and equations, these models are primarily used in domains like physics, chemistry, and economics.</li>
+<li><strong>Empirical Models</strong>: Developed purely from observed data without relying on underlying theoretical frameworks. They are highly adaptable but may lack generalizability.</li>
+<li><strong>Semi-Empirical Models</strong>: Combine empirical data with theoretical insights to provide a balanced approach, offering both accuracy and interpretability.</li>
+</ul>
+<h2 id="4-machine-learning-models"><strong>4. Machine Learning Models</strong></h2>
+<ul>
+<li><strong>Supervised Learning</strong>: Requires labeled input-output pairs for training. It is widely used for tasks like image recognition (classification) and sales prediction (regression).</li>
+<li><strong>Unsupervised Learning</strong>: Works with unlabeled data to identify patterns, clusters, or associations. Examples include customer segmentation and anomaly detection.</li>
+<li><strong>Reinforcement Learning</strong>: Focuses on decision-making by training agents to take actions in an environment to maximize cumulative rewards. Applications include robotics, game playing, and autonomous driving.</li>
+</ul>
+<h2 id="5-domain-specific-models"><strong>5. Domain-Specific Models</strong></h2>
+<ul>
+<li><strong>Engineering Models</strong>: Focused on system performance, reliability, and design. Examples include structural models in civil engineering and thermodynamic models in mechanical engineering.</li>
+<li><strong>Business Process Models</strong>: Represent workflows and organizational behavior, often used in enterprise resource planning (ERP) and supply chain optimization.</li>
+</ul>
+<h2 id="6-behavioral-models"><strong>6. Behavioral Models</strong></h2>
+<ul>
+<li>These models simulate how systems behave over time, including representations of normal or abnormal behaviors. Common in diagnostics, these models help in identifying faults or predicting failures in mechanical systems or networks. Like anomaly detection, these models are widely used in health care, manufacturing, and finance.</li>
+</ul>
+<h2 id="7-by-learning-approach"><strong>7. By Learning Approach</strong></h2>
+<ul>
+<li><strong>Transfer Learning Models</strong>: These models leverage knowledge from one domain or task and apply it to another. Commonly used in NLP and computer vision (e.g., fine-tuning BERT or ResNet for specific tasks).</li>
+<li><strong>Online Learning Models</strong>: Designed to learn continuously as new data arrives, making them suitable for real-time systems like recommendation engines or financial market predictions.</li>
+<li><strong>Few-Shot or Zero-Shot Learning Models</strong>: Models that generalize from a small number of examples (few-shot) or even none (zero-shot), useful for tasks where labeled data is scarce.</li>
+</ul>
+<h2 id="8-by-architecture"><strong>8. By Architecture</strong></h2>
+<ul>
+<li><strong>Neural Network Models</strong>: These are highly flexible architectures inspired by the human brain and include:
+<ul>
+<li><strong>Convolutional Neural Networks (CNNs)</strong>: Used primarily for image processing tasks like object detection and segmentation.</li>
+<li><strong>Recurrent Neural Networks (RNNs)</strong>: Designed for sequential data such as time series or natural language, with variants like LSTMs and GRUs.</li>
+<li><strong>Transformer Models</strong>: Revolutionized NLP with architectures like BERT, GPT, and T5, offering exceptional performance in text understanding and generation.</li>
+</ul>
+</li>
+<li><strong>Bayesian Models</strong>: These probabilistic models incorporate uncertainty into predictions, making them ideal for risk assessment and decision-making.</li>
+<li><strong>Ensemble Models</strong>: Combine multiple models to improve performance, including methods like bagging (e.g., Random Forests) and boosting (e.g., XGBoost).</li>
+</ul>
+<h3 id="9-by-training-methodology"><strong>9. By Training Methodology</strong></h3>
+<ul>
+<li><strong>Supervised Learning Models:</strong> These models are trained on labeled data, where the input-output pairs are provided. The goal is to learn a mapping from inputs to output</li>
+<li><strong>Unsupervised Learning Models:</strong> These models are trained on unlabeled data, aiming to discover hidden patterns or structures in the data.</li>
+<li><strong>Semi-Supervised Learning Models:</strong> These models leverage both labeled and unlabeled data, often to improve performance when labeled data is scarce.</li>
+<li><strong>Reinforcement Learning Models:</strong> These models learn by interacting with an environment and receiving feedback in the form of rewards or penalties. The goal is to maximize cumulative rewards.</li>
+<li><strong>Self-Supervised Learning Models:</strong> These models generate their own labels from the input data, often by predicting missing parts of the input or solving pretext tasks.</li>
+</ul>
+<h3 id="10-by-data-handling"><strong>10. By Data Handling</strong></h3>
+<ul>
+<li><strong>Big Data Models</strong>: Optimized to handle massive datasets, often distributed across multiple machines (e.g., Spark MLlib, TensorFlow with TPU clusters).</li>
+<li><strong>Small Data Models</strong>: Focus on learning effectively from limited data, using techniques like data augmentation, regularization, and few-shot learning.</li>
+</ul>
+<h3 id="11-by-output-type"><strong>11. By Output Type</strong></h3>
+<ul>
+<li><strong>Generative Models</strong>: These models generate new data samples that resemble the training data. They learn the underlying distribution of the data and can create new outputs, such as text, images, or audio.</li>
+<li><strong>Discriminative Models</strong>: These models focus on distinguishing between different classes or categories in the data. They learn the decision boundary between classes rather than the data distribution itself. Classification models (e.g., logistic regression, support vector machines). Object detection models (e.g., YOLO, Faster R-CNN).</li>
+<li><strong>Descriptive Models</strong>: These models summarize or describe patterns and structures in the data without making explicit predictions. They are often used for exploratory data analysis. Clustering algorithms (e.g., k-means, hierarchical clustering). Dimensionality reduction techniques (e.g., PCA, t-SNE).</li>
+<li><strong>Predictive Models</strong>: These models forecast future outcomes or values based on historical data. They are widely used in applications requiring predictions. Regression models (e.g., linear regression, random forests), Time series forecasting models (e.g., ARIMA, LSTM).</li>
+<li><strong>Prescriptive Models</strong>: These models go beyond prediction by recommending specific actions or decisions. They often incorporate optimization techniques to suggest the best course of action. Recommendation systems (e.g., Netflix, Amazon).Supply chain optimization models, Decision support systems in healthcare.</li>
+</ul>
+<h3 id="12-by-explainability"><strong>12. By Explainability</strong></h3>
+<ul>
+<li><strong>Black-Box Models</strong>: Complex and difficult to interpret, like deep learning models or LLM, but highly effective for many tasks.</li>
+<li><strong>White-Box Models</strong>: Transparent and interpretable models, such as decision trees or linear regression, often preferred in regulated industries like healthcare and finance.</li>
+</ul>
+<h3 id="13-by-deployment-environment"><strong>13. By Deployment Environment</strong></h3>
+<ul>
+<li><strong>Edge AI Models</strong>: Optimized for deployment on edge devices like smartphones, IoT devices, and embedded systems.</li>
+<li><strong>Cloud-Based Models</strong>: Deployed and accessed via cloud platforms, suitable for high-computation tasks requiring scalability.</li>
+<li><strong>On Prem or Local Models</strong>: Like, Ollama models which are running on your local machine.</li>
+</ul>
+<h3 id="14-by-temporal-dimension"><strong>14. By Temporal Dimension</strong></h3>
+<ul>
+<li><strong>Static Models</strong>: These models operate on fixed data without considering temporal dependencies (e.g., logistic regression for classification tasks).</li>
+<li><strong>Dynamic Models</strong>: Consider the element of time, making them suitable for sequential or time-series data. Examples include RNNs, temporal convolutional networks, and time-series models.</li>
+</ul>
+<h3 id="15-by-decision-making-paradigm"><strong>15. By Decision-Making Paradigm</strong></h3>
+<ul>
+<li><strong>Deterministic Models</strong>: Provide a single output for a given input, with no randomness involved. Common in rule-based systems and linear regression models.</li>
+<li><strong>Stochastic Models</strong>: Incorporate randomness or uncertainty in their predictions, often used in probabilistic models like Hidden Markov Models or Monte Carlo simulations.</li>
+</ul>
+<h3 id="16-by-functional-scope"><strong>16. By Functional Scope</strong></h3>
+<ul>
+<li><strong>General-Purpose Models</strong>: Can adapt to multiple tasks with minimal modifications (e.g., transformers like GPT, which are used for translation, summarization, and more).</li>
+<li><strong>Task-Specific Models</strong>: Designed for highly specific tasks, such as AlphaFold for protein folding or DeepMind&rsquo;s AlphaZero for playing games like chess and Go.</li>
+</ul>
+<h3 id="17-by-energy-efficiency"><strong>17. By Energy Efficiency</strong></h3>
+<ul>
+<li><strong>High-Compute Models</strong>: Require significant computational resources, such as large neural networks trained on GPUs/TPUs.- <strong>Low-Power Models</strong>: Optimized for energy efficiency and often used in resource-constrained environments like mobile devices or embedded systems (e.g., MobileNet, TinyML), they may be quantized models.</li>
+</ul>
+<h3 id="18-by-ethical-and-fairness-considerations"><strong>18. By Ethical and Fairness Considerations</strong></h3>
+<ul>
+<li><strong>Fairness-Aware Models</strong>: Designed to mitigate biases in decision-making processes, often used in sensitive domains like hiring, lending, or healthcare.</li>
+<li><strong>Unbiased Models</strong>: Models that are intentionally trained on diverse datasets to reduce the risk of skewed predictions.</li>
+</ul>
+<h3 id="19-by-interaction-with-humans"><strong>19. By Interaction with Humans</strong></h3>
+<ul>
+<li><strong>Human-in-the-Loop Models</strong>: Require human intervention during training or inference to improve accuracy or make decisions (e.g., active learning systems). Sometimes you may note ChatGPT gives you two answers and ask you to select one. Based one what you select they update their model&rsquo;s behaviour.</li>
+<li><strong>Fully Autonomous Models</strong>: Operate independently without human input, such as self-driving car models.</li>
+</ul>
+<h3 id="20-by-data-accessibility"><strong>20. By Data Accessibility</strong></h3>
+<ul>
+<li><strong>Federated Learning Models</strong>: Trained across decentralized devices or servers holding local data, ensuring privacy by not sharing raw data (e.g., AI models used in mobile keyboards like Gboard).</li>
+<li><strong>Centralized Learning Models</strong>: Trained using a single centralized dataset stored on a server or cloud.</li>
+</ul>
+<h3 id="21-by-adaptability"><strong>21. By Adaptability</strong></h3>
+<ul>
+<li><strong>Adaptive Models</strong>: Continuously adjust themselves to changes in the data or environment, useful in dynamic conditions like stock markets or real-time fraud detection.</li>
+<li><strong>Non-Adaptive Models</strong>: Fixed after training and do not evolve with new data unless retrained.</li>
+</ul>
+<h3 id="22-by-social-and-contextual-awareness"><strong>22. By Social and Contextual Awareness</strong></h3>
+<ul>
+<li><strong>Context-Aware Models</strong>: Take into account the context of the input, such as location, time, or social factors (e.g., recommendation systems, a navigation app suggesting a faster route based on real-time traffic conditions, a sarcasm identifier is predicting sarcasm based on context something is said). More context you know better the prediction.</li>
+<li><strong>Context-Free Models</strong>: Treat input independently, without incorporating surrounding context.</li>
+</ul>
+<h3 id="23-by-training-objective"><strong>23. By Training Objective</strong></h3>
+<ul>
+<li><strong>Optimization-Based Models</strong>: Focus on optimizing a specific metric, such as minimizing mean squared error or maximizing accuracy or recall.</li>
+<li><strong>Simulation-Based Models</strong>: Use simulations to explore potential outcomes, common in agent-based modeling or reinforcement learning.</li>
+</ul>
+<h3 id="24-by-accessibility-of-code-and-data"><strong>24. By Accessibility of Code and Data</strong></h3>
+<ul>
+<li><strong>Open Models</strong>: Built with open-source tools and often accompanied by publicly available datasets, such as Hugging Face models or TensorFlow examples.</li>
+<li><strong>Proprietary Models</strong>: Developed and controlled by organizations, often inaccessible to the public, like OpenAI&rsquo;s GPT-4 or Google&rsquo;s Gemini or Anthropic&rsquo;s Claude.</li>
+</ul>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

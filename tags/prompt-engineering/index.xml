@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prompt Engineering on Agones</title>
+    <link>http://localhost:1313/tags/prompt-engineering/</link>
+    <description>Recent content in Prompt Engineering on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/prompt-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unlocking the Power of Prompts: A Comprehensive Guide to Prompt Engineering</title>
+      <link>http://localhost:1313/dsblog/unlocking-the-power-of-prompts/</link>
+      <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/unlocking-the-power-of-prompts/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6226-Unlocking-the-Power-of-Prompting.jpg&#34; alt=&#34;Unlocking the Power of Prompts&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;unlocking-the-power-of-prompts&#34;&gt;Unlocking the Power of Prompts&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;What can you do with Art of Prompting and powerful AI Models? You can use prompts to accomplish almost any task that requires human intelligence. However, prompting is just one part of the process—you also need a powerful model to execute these prompts effectively.&lt;/p&gt;&#xA;&lt;p&gt;The models can be:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cloud-based proprietary models&lt;/strong&gt; like ChatGPT, Gemini, and Sonnet.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Open-source models hosted on the cloud&lt;/strong&gt; like LLaMa, DeepSeek, and Qwen.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Proprietary models deployed on your organization&amp;rsquo;s internal infrastructure.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Open-source models running on your organization&amp;rsquo;s infrastructure.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;For general personal use, these models are often available with limited usage and warranty. However, for commercial applications requiring higher reliability and guarantees, paid plans are necessary. The cost of these models is decreasing by a factor of 10 each year. In the near future, we will have even more powerful models available for free or at a nominal cost.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Transfer Learning Key AI Techniques Explained</title>
+      <link>http://localhost:1313/dsblog/Transfer-Learning-Key-AI-Techniques-Explained/</link>
+      <pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Transfer-Learning-Key-AI-Techniques-Explained/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6172-Transfer-Learning-Key-AI-Techniques-Explained.jpg&#34; alt=&#34;Transfer Learning Key AI Techniques Explained&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;transfer-learning-key-ai-techniques-explained&#34;&gt;Transfer Learning Key AI Techniques Explained&lt;/h1&gt;&#xA;&lt;p&gt;In this article we will understand some important concepts used within machine learning.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;What is in-context Learning?&lt;/li&gt;&#xA;&lt;li&gt;What is Prompt-Engineering?&lt;/li&gt;&#xA;&lt;li&gt;What is the relationship between Prompt Engineering and In-Context Learning?&lt;/li&gt;&#xA;&lt;li&gt;What is Zero-shot learning?&lt;/li&gt;&#xA;&lt;li&gt;How Zero-shot learning is different from In-context Learning?&lt;/li&gt;&#xA;&lt;li&gt;What is Meta-Learning?&lt;/li&gt;&#xA;&lt;li&gt;What is Few-shot learning?&lt;/li&gt;&#xA;&lt;li&gt;Do we need foundational models for Meta-learning and Few-shot learning?&lt;/li&gt;&#xA;&lt;li&gt;What is transfer learning?&lt;/li&gt;&#xA;&lt;li&gt;How do we do transfer learning from existing model?&lt;/li&gt;&#xA;&lt;li&gt;What is finetuning?&lt;/li&gt;&#xA;&lt;li&gt;Which layers to update, what weight to update during finetuning?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;prompt-engineering-in-context-learning-and-zero-shot-learning&#34;&gt;Prompt Engineering, In Context Learning and Zero-shot Learning&lt;/h2&gt;&#xA;&lt;h3 id=&#34;what-is-in-context-learning&#34;&gt;What is in-context Learning?&lt;/h3&gt;&#xA;&lt;p&gt;In-Context Learning refers to a model&amp;rsquo;s ability to adapt its responses based on the context provided in the input prompt without updating its parameters or undergoing explicit training. The model uses the examples, instructions, or context given in the input to influence its behavior during inference.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Introduction to Prompt Engineering</title>
+      <link>http://localhost:1313/dsblog/Introduction-to-Prompt-Engineering/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Introduction-to-Prompt-Engineering/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6080-Introduction-to-Prompt-Engineering.jpg&#34; alt=&#34;Introduction to Prompt Engineering&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction-to-prompt-best-engineering&#34;&gt;Introduction to Prompt Best Engineering&lt;/h1&gt;&#xA;&lt;p&gt;Prompts can contain questions, instructions, contextual information, examples, and partial input for the model to complete or continue. After the model receives a prompt, depending on the type of model being used, it can generate text, embeddings, code, images, videos, music, and more. Below are &lt;strong&gt;14 examples of good prompts&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;example-1-entity-input&#34;&gt;Example 1 (Entity input)&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Classify the following items as [large, small].&#xD;&#xA;Elephant&#xD;&#xA;Mouse&#xD;&#xA;Snail&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;example-2-completion-input&#34;&gt;Example 2 (completion input)&lt;/h2&gt;&#xA;&lt;p&gt;You can write a prompt like&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

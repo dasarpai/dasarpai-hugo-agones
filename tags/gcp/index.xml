@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GCP on Agones</title>
+    <link>http://localhost:1313/tags/gcp/</link>
+    <description>Recent content in GCP on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Everything About Developer Console</title>
+      <link>http://localhost:1313/dsblog/Everything-About-Developer-Console/</link>
+      <pubDate>Sun, 29 Sep 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Everything-About-Developer-Console/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6148-Everything-About-Developer-Console.jpg&#34; alt=&#34;Everything About Developer Console&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;console-types-every-programmer-should-know&#34;&gt;Console Types Every Programmer Should Know&lt;/h1&gt;&#xA;&lt;h2 id=&#34;is-this-article-for-me&#34;&gt;Is this article for me?&lt;/h2&gt;&#xA;&lt;p&gt;If you are you confused about a term &amp;ldquo;console&amp;rdquo; which you heard at many places and in many context, and you want to know the following answers, then continue reading.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;What is console?&lt;/li&gt;&#xA;&lt;li&gt;What are different types of consoles?&lt;/li&gt;&#xA;&lt;li&gt;What are popular consoles?&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In computer programming, a &lt;strong&gt;console&lt;/strong&gt; is an interface that allows interaction between the user and the computer system. It is typically used for text-based input/output operations, where commands or instructions can be entered, and responses or feedback are displayed. The console is widely used for debugging, monitoring system operations, or running command-line programs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Navigating Google Cloud Security: Key Components, Roles, and Best Practices</title>
+      <link>http://localhost:1313/dsblog/Google-Cloud-Security-Components/</link>
+      <pubDate>Sat, 28 Sep 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Google-Cloud-Security-Components/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6147-Google-Cloud-Security-Components.jpg&#34; alt=&#34;Navigating Google Cloud Security&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;navigating-google-cloud-security&#34;&gt;Navigating Google Cloud Security&lt;/h1&gt;&#xA;&lt;h2 id=&#34;is-this-article-for-me&#34;&gt;Is this article for me?&lt;/h2&gt;&#xA;&lt;p&gt;If you are looking answers of these questions then continue reading.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;What are various components of GCP security architecture?&lt;/li&gt;&#xA;&lt;li&gt;What is overall hierarchy of GCP Security Components?&lt;/li&gt;&#xA;&lt;li&gt;What are Principal, Permission, Roles and Policies in GCP and how are they interconnected?&lt;/li&gt;&#xA;&lt;li&gt;Can you give examples of Permissions in GCP Security architecture?&lt;/li&gt;&#xA;&lt;li&gt;What are different types of resources available on GCP?&lt;/li&gt;&#xA;&lt;li&gt;Can you help me visualizing organization, folders and project of GCP?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;question-what-are-various-components-of-gcp-security-architecture&#34;&gt;Question: What are various components of GCP security architecture?&lt;/h2&gt;&#xA;&lt;p&gt;Google Cloud Platform (GCP) has a complex security architecture that consists of various components. Here’s a list of key components and their hierarchy in GCP&amp;rsquo;s security model:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Google Cloud Service Catalog - A Comprehensive Overview of 250&#43; Google Cloud Services</title>
+      <link>http://localhost:1313/dsblog/Google-Cloud-Service-Catalog/</link>
+      <pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Google-Cloud-Service-Catalog/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6061-Google-Cloud-Service-Catalog.jpg&#34; alt=&#34;Google Cloud Service Catalog&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;google-cloud-service-catalog&#34;&gt;Google Cloud Service Catalog&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;A Comprehensive Overview of 250+ Google Cloud Services&lt;/strong&gt;&lt;br&gt;&#xA;All these services are availalbe at &lt;a href=&#34;https://cloud.google.com&#34;&gt;Link&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In the ever-evolving landscape of cloud computing, Google Cloud entered recently compare to AWS and Azure. But it stands out as a prominent player, offering a vast array of services and solutions to empower businesses and developers. With over 250+ services available, navigating the expansive Google Cloud ecosystem can be a daunting task. However, understanding these services and their functionalities is crucial for harnessing the full potential of the platform and provide the right technical solution of any business problem. In this comprehensive guide, I will take you through the diverse landscape of Google Cloud services, shedding light on their purposes. Whether you are a seasoned cloud professional or new to the Google Cloud environment, this article aims to demystify the complexity and provide you with valuable insights into the extensive toolkit Google Cloud has to offer. You can bookmark this page for future reference.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

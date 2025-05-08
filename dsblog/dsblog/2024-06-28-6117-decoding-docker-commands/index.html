@@ -1,0 +1,1102 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Decoding docker commands | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2024-06-28-6117-decoding-docker-commands/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Decoding docker commands">
+  <meta property="og:description" content="Decoding docker commands Is this article for me? If you are coming from IT Infrastructure background and have solid experience in containerization you can skip this. But if you are seeking to learn any of the following topic then keep reading.
+What is docker image, what is docker container, what is docker? How to create docker image and docker container? What is the use of docker compose? What is the meaning of code written inside Dockerfile? How to create a new python code and put inside the docker? How to ensure my docker uses my GPU? How to access my host machine’s local drive within the docker? How to send data out from docker to local host machine’s folder? How to execute command inside docker shell? How to install python packages inside docker? What are the common docker commands? Introduction: Why this article? Coming from a non-infrastructure background, I found working with Docker frustrating at first. The commands seemed cryptic, and complex environments often required downloading large images, creating custom ones, or modifying existing ones—only to face disappointing results. Investing so much time without clear success, or not knowing if Docker is the right solution from the start, can be disheartening. This article aims to demystify Docker, making it easier to understand and use effectively. After you learn the docker you will find that docker is the simplest thing in computer world to make development, testing and deployment more simple. Experts may be laughing at me. :)">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-06-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-06-28T00:00:00+00:00">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="Containerization">
+    <meta property="article:tag" content="DevOps">
+    <meta property="article:tag" content="Software Development">
+    <meta property="article:tag" content="Container Management">
+    <meta property="article:tag" content="Development Tools">
+
+  <meta itemprop="name" content="Decoding docker commands">
+  <meta itemprop="description" content="Decoding docker commands Is this article for me? If you are coming from IT Infrastructure background and have solid experience in containerization you can skip this. But if you are seeking to learn any of the following topic then keep reading.
+What is docker image, what is docker container, what is docker? How to create docker image and docker container? What is the use of docker compose? What is the meaning of code written inside Dockerfile? How to create a new python code and put inside the docker? How to ensure my docker uses my GPU? How to access my host machine’s local drive within the docker? How to send data out from docker to local host machine’s folder? How to execute command inside docker shell? How to install python packages inside docker? What are the common docker commands? Introduction: Why this article? Coming from a non-infrastructure background, I found working with Docker frustrating at first. The commands seemed cryptic, and complex environments often required downloading large images, creating custom ones, or modifying existing ones—only to face disappointing results. Investing so much time without clear success, or not knowing if Docker is the right solution from the start, can be disheartening. This article aims to demystify Docker, making it easier to understand and use effectively. After you learn the docker you will find that docker is the simplest thing in computer world to make development, testing and deployment more simple. Experts may be laughing at me. :)">
+  <meta itemprop="datePublished" content="2024-06-28T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-06-28T00:00:00+00:00">
+  <meta itemprop="wordCount" content="4433">
+  <meta itemprop="keywords" content="Docker Commands,Container Management,DevOps Tools,Docker Images,Containerization,Docker Compose,Container Deployment,Docker Configuration">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Decoding docker commands">
+  <meta name="twitter:description" content="Decoding docker commands Is this article for me? If you are coming from IT Infrastructure background and have solid experience in containerization you can skip this. But if you are seeking to learn any of the following topic then keep reading.
+What is docker image, what is docker container, what is docker? How to create docker image and docker container? What is the use of docker compose? What is the meaning of code written inside Dockerfile? How to create a new python code and put inside the docker? How to ensure my docker uses my GPU? How to access my host machine’s local drive within the docker? How to send data out from docker to local host machine’s folder? How to execute command inside docker shell? How to install python packages inside docker? What are the common docker commands? Introduction: Why this article? Coming from a non-infrastructure background, I found working with Docker frustrating at first. The commands seemed cryptic, and complex environments often required downloading large images, creating custom ones, or modifying existing ones—only to face disappointing results. Investing so much time without clear success, or not knowing if Docker is the right solution from the start, can be disheartening. This article aims to demystify Docker, making it easier to understand and use effectively. After you learn the docker you will find that docker is the simplest thing in computer world to make development, testing and deployment more simple. Experts may be laughing at me. :)">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6117-Decoding-docker-commands.jpg" alt="Decoding-docker-commands"></p>
+<h1 id="decoding-docker-commands">Decoding docker commands</h1>
+<h2 id="is-this-article-for-me">Is this article for me?</h2>
+<p>If you are coming from IT Infrastructure background and have solid experience in containerization you can skip this. But if you are seeking to learn any of the following topic then keep reading.</p>
+<ol>
+<li>What is docker image, what is docker container, what is docker?</li>
+<li>How to create docker image and docker container?</li>
+<li>What is the use of docker compose?</li>
+<li>What is the meaning of code written inside Dockerfile?</li>
+<li>How to create a new python code and put inside the docker?</li>
+<li>How to ensure my docker uses my GPU?</li>
+<li>How to access my host machine&rsquo;s local drive within the docker?</li>
+<li>How to send data out from docker to local host machine&rsquo;s folder?</li>
+<li>How to execute command inside docker shell?</li>
+<li>How to install python packages inside docker?</li>
+<li>What are the common docker commands?</li>
+</ol>
+<h2 id="introduction-why-this-article">Introduction: Why this article?</h2>
+<p>Coming from a non-infrastructure background, I found working with Docker frustrating at first. The commands seemed cryptic, and complex environments often required downloading large images, creating custom ones, or modifying existing ones—only to face disappointing results. Investing so much time without clear success, or not knowing if Docker is the right solution from the start, can be disheartening. This article aims to demystify Docker, making it easier to understand and use effectively. After you learn the docker you will find that docker is the simplest thing in computer world to make development, testing and deployment more simple. Experts may be laughing at me. :)</p>
+<h2 id="what-is-docker">What is docker?</h2>
+<p>Docker is a platform that allows developers to automate the deployment, scaling, and management of applications inside lightweight, portable containers. Containers bundle the application code along with its dependencies, libraries, and configurations, ensuring that the application runs consistently across different computing environments. Docker helps in isolating applications from their environments, making development, testing, and deployment more efficient. It uses a client-server architecture, where the Docker client communicates with the Docker daemon, which performs the heavy lifting of building, running, and distributing containers.</p>
+<p>Docker can be highly beneficial during development. Here are some ways it can be used:</p>
+<ol>
+<li>
+<p><strong>Environment Consistency</strong>: Docker ensures that the application runs the same way in all environments (development, testing, production) by packaging it with its dependencies.</p>
+</li>
+<li>
+<p><strong>Isolation</strong>: It allows you to run multiple applications and services with different dependencies on the same machine without conflict.</p>
+</li>
+<li>
+<p><strong>Collaboration</strong>: Developers can share their development environments easily, ensuring that everyone works with the same setup.</p>
+</li>
+<li>
+<p><strong>Scalability</strong>: Docker makes it easy to scale applications by replicating containers.</p>
+</li>
+</ol>
+<p>Using Docker in development helps streamline workflows, reduces &ldquo;it works on my machine&rdquo; issues, and speeds up the deployment process. Manytime when it is difficult or time consuming to setup a develop environment that too on every developer&rsquo;s machine we can create one docker image and use that image to setup the development environment.</p>
+<h2 id="image-vs-container">Image vs Container</h2>
+<p>In Docker, an image is a lightweight, standalone, and executable package that includes everything needed to run a piece of software: the code, runtime, libraries, environment variables, and configurations. An image is immutable, meaning it cannot be changed once created.</p>
+<p>A container is a running instance of an image. It encapsulates the application and its environment in a way that isolates it from other containers and the host system. Containers can be started, stopped, and modified independently, and they provide a consistent environment across different platforms.</p>
+<p>In the language of OOPs if image is class then container is object. But container can be modified and then published back (in dockerhub) as a different image. After updating a container, you can create a new image based on the changes made within that container. Here’s how you can do it:</p>
+<ol>
+<li>
+<p><strong>Start a Container</strong>: First, run a container from an existing image.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -it &lt;image-name&gt; /bin/bash
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Make Changes</strong>: Inside the running container, make the necessary changes, such as installing new software or modifying configurations.</p>
+</li>
+<li>
+<p><strong>Commit the Changes</strong>: Once the changes are made, you can create a new image from the updated container using the <code>docker commit</code> command.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker commit &lt;container-id&gt; &lt;new-image-name&gt;
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Save the New Image</strong>: This creates a new image with the changes you&rsquo;ve made, which can then be used to run new containers with the updated setup.</p>
+</li>
+</ol>
+<p>Using the <code>docker commit</code> command allows you to capture the current state of a container as a new image. This process is useful for saving updates, configurations, or changes made to a container for future use.</p>
+<h2 id="decoding-dockerfile">Decoding Dockerfile</h2>
+<p>All the instruction to create a docker are writting in a Dockerfile. You need to create a project folder, say &ldquo;My-Awesome-Project&rdquo;. Within this your need to create a file &ldquo;Dockerfile&rdquo;, exactly same name without change in lower or capital letters. A example code is below.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#000">FROM</span> <span style="color:#ce5c00;font-weight:bold">--</span><span style="color:#000">platform</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">amd64</span> <span style="color:#000">nvcr</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">io</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">nvidia</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">cuda</span><span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">12.1.0</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">devel</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">ubuntu22</span><span style="color:#0000cf;font-weight:bold">.04</span> <span style="color:#204a87;font-weight:bold">as</span> <span style="color:#000">base</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">WORKDIR</span> <span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">workspace</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">RUN</span> <span style="color:#000">apt</span> <span style="color:#000">update</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> \
+</span></span><span style="display:flex;"><span>    <span style="color:#000">apt</span> <span style="color:#000">install</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">y</span> <span style="color:#000">python3</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">pip</span> <span style="color:#000">python3</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">packaging</span> \
+</span></span><span style="display:flex;"><span>    <span style="color:#000">git</span> <span style="color:#000">ninja</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">build</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> \
+</span></span><span style="display:flex;"><span>    <span style="color:#000">pip3</span> <span style="color:#000">install</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">U</span> <span style="color:#000">pip</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Tweak this list to reduce build time</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># https://developer.nvidia.com/cuda-gpus</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">ENV</span> <span style="color:#000">TORCH_CUDA_ARCH_LIST</span> <span style="color:#4e9a06">&#34;7.0;7.2;7.5;8.0;8.6;8.9;9.0&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">RUN</span> <span style="color:#000">pip3</span> <span style="color:#000">install</span> <span style="color:#4e9a06">&#34;torch==2.1.1&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># This build is slow but NVIDIA does not provide binaries. Increase MAX_JOBS as needed.</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">RUN</span> <span style="color:#000">pip3</span> <span style="color:#000">install</span> <span style="color:#4e9a06">&#34;git+https://github.com/stanford-futuredata/megablocks.git&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">RUN</span> <span style="color:#000">pip3</span> <span style="color:#000">install</span> <span style="color:#4e9a06">&#34;git+https://github.com/vllm-project/vllm.git&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">RUN</span> <span style="color:#000">pip3</span> <span style="color:#000">install</span> <span style="color:#4e9a06">&#34;xformers==0.0.23&#34;</span> <span style="color:#4e9a06">&#34;transformers==4.36.0&#34;</span> <span style="color:#4e9a06">&#34;fschat[model_worker]==0.2.34&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">RUN</span> <span style="color:#000">git</span> <span style="color:#000">clone</span> <span style="color:#000">https</span><span style="color:#000;font-weight:bold">:</span><span style="color:#ce5c00;font-weight:bold">//</span><span style="color:#000">github</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">com</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">NVIDIA</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">apex</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> \
+</span></span><span style="display:flex;"><span>    <span style="color:#000">cd</span> <span style="color:#000">apex</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">git</span> <span style="color:#000">checkout</span> <span style="color:#0000cf;font-weight:bold">2386</span><span style="color:#000">a912164b0c5cfcd8be7a2b890fbac5607c82</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> \
+</span></span><span style="display:flex;"><span>    <span style="color:#000">sed</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">i</span> <span style="color:#4e9a06">&#39;/check_cuda_torch_binary_vs_bare_metal(CUDA_HOME)/d&#39;</span> <span style="color:#000">setup</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">py</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> \
+</span></span><span style="display:flex;"><span>    <span style="color:#000">python3</span> <span style="color:#000">setup</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">py</span> <span style="color:#000">install</span> <span style="color:#ce5c00;font-weight:bold">--</span><span style="color:#000">cpp_ext</span> <span style="color:#ce5c00;font-weight:bold">--</span><span style="color:#000">cuda_ext</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">COPY</span> <span style="color:#000">entrypoint</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">sh</span> <span style="color:#ce5c00;font-weight:bold">.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">RUN</span> <span style="color:#000">chmod</span> <span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">workspace</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">entrypoint</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">ENTRYPOINT</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#34;/workspace/entrypoint.sh&#34;</span><span style="color:#000;font-weight:bold">]</span>
+</span></span></code></pre></div><p>Let&rsquo;s understand each line of the provided Dockerfile:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#4e9a06"> --platform=amd64 nvcr.io/nvidia/cuda:12.1.0-devel-ubuntu22.04 as base</span><span style="color:#a40000">
+</span></span></span></code></pre></div><ul>
+<li><strong>FROM</strong>: Specifies the base image for the Docker image. This one is using the <code>cuda:12.1.0-devel-ubuntu22.04</code> image from NVIDIA&rsquo;s container registry (<code>nvcr.io</code>), targeting the AMD64 platform.</li>
+<li><strong>as base</strong>: This part names the stage &ldquo;base&rdquo;. This is useful for multi-stage builds, but here it just labels the stage.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">WORKDIR</span><span style="color:#4e9a06"> /workspace</span><span style="color:#a40000">
+</span></span></span></code></pre></div><ul>
+<li><strong>WORKDIR</strong>: Sets the working directory for subsequent instructions to <code>/workspace</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">RUN</span> apt update <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#4e9a06">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06"></span>    apt install -y python3-pip python3-packaging <span style="color:#4e9a06">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06"></span>    git ninja-build <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#4e9a06">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06"></span>    pip3 install -U pip<span style="color:#a40000">
+</span></span></span></code></pre></div><ul>
+<li><strong>RUN</strong>: Executes commands in a new layer on top of the current image. Here, it:
+<ol>
+<li>Updates the package lists.</li>
+<li>Installs <code>python3-pip</code>, <code>python3-packaging</code>, <code>git</code>, and <code>ninja-build</code> packages.</li>
+<li>Upgrades <code>pip</code> using <code>pip3 install -U pip</code>.</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Tweak this list to reduce build time</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#8f5902;font-style:italic"># https://developer.nvidia.com/cuda-gpus</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">ENV</span> TORCH_CUDA_ARCH_LIST <span style="color:#4e9a06">&#34;7.0;7.2;7.5;8.0;8.6;8.9;9.0&#34;</span><span style="color:#a40000">
+</span></span></span></code></pre></div><ul>
+<li><strong>ENV</strong>: Sets environment variables. <code>TORCH_CUDA_ARCH_LIST</code> specifies the CUDA compute capabilities for PyTorch. This can reduce build time by limiting the architectures for which code is generated.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">RUN</span> pip3 install <span style="color:#4e9a06">&#34;torch==2.1.1&#34;</span><span style="color:#a40000">
+</span></span></span></code></pre></div><ul>
+<li><strong>RUN</strong>: Installs a specific version of PyTorch (<code>2.1.1</code>) using <code>pip3</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># This build is slow but NVIDIA does not provide binaries. Increase MAX_JOBS as needed.</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">RUN</span> pip3 install <span style="color:#4e9a06">&#34;git+https://github.com/stanford-futuredata/megablocks.git&#34;</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">RUN</span> pip3 install <span style="color:#4e9a06">&#34;git+https://github.com/vllm-project/vllm.git&#34;</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">RUN</span> pip3 install <span style="color:#4e9a06">&#34;xformers==0.0.23&#34;</span> <span style="color:#4e9a06">&#34;transformers==4.36.0&#34;</span> <span style="color:#4e9a06">&#34;fschat[model_worker]==0.2.34&#34;</span><span style="color:#a40000">
+</span></span></span></code></pre></div><ul>
+<li><strong>RUN</strong>: Executes multiple <code>pip3 install</code> commands to install packages from GitHub repositories and specific versions of packages from PyPI:
+<ol>
+<li>Installs <code>megablocks</code> from a GitHub repository.</li>
+<li>Installs <code>vllm</code> from a GitHub repository.</li>
+<li>Installs specific versions of <code>xformers</code>, <code>transformers</code>, and <code>fschat</code> with the <code>model_worker</code> extra.</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">RUN</span> git clone https://github.com/NVIDIA/apex <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#4e9a06">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06"></span>    <span style="color:#204a87">cd</span> apex <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> git checkout 2386a912164b0c5cfcd8be7a2b890fbac5607c82 <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#4e9a06">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06"></span>    sed -i <span style="color:#4e9a06">&#39;/check_cuda_torch_binary_vs_bare_metal(CUDA_HOME)/d&#39;</span> setup.py <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#4e9a06">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06"></span>    python3 setup.py install --cpp_ext --cuda_ext<span style="color:#a40000">
+</span></span></span></code></pre></div><ul>
+<li><strong>RUN</strong>: Clones the NVIDIA Apex repository, checks out a specific commit, modifies the <code>setup.py</code> to remove a line, and installs Apex with CUDA and C++ extensions.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">COPY</span> entrypoint.sh .<span style="color:#a40000">
+</span></span></span></code></pre></div><ul>
+<li><strong>COPY</strong>: Copies the <code>entrypoint.sh</code> script from the local filesystem to the working directory (<code>/workspace</code>) in the Docker image.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">RUN</span> chmod +x /workspace/entrypoint.sh<span style="color:#a40000">
+</span></span></span></code></pre></div><ul>
+<li><strong>RUN</strong>: Makes the <code>entrypoint.sh</code> script executable.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">ENTRYPOINT</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#34;/workspace/entrypoint.sh&#34;</span><span style="color:#000;font-weight:bold">]</span><span style="color:#a40000">
+</span></span></span></code></pre></div><ul>
+<li><strong>ENTRYPOINT</strong>: Sets the default command to be run when the container starts, specifying the executable <code>entrypoint.sh</code> script.</li>
+</ul>
+<p>In summary, this Dockerfile sets up an environment with NVIDIA&rsquo;s CUDA development tools, installs Python and necessary packages, clones and builds specific repositories, and sets up an entry point script to run when the container starts.</p>
+<h2 id="how-to-create-a-docker-of-a-demo-python-program-and-publish-to-docker-hub">How to create a docker of a demo python program and publish to docker hub?</h2>
+<h3 id="demo-program">Demo Program</h3>
+<ol>
+<li>Create Environment</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#Create folder</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">mkdir</span> <span style="color:#000">docker_demo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#REM Create virtual environment with Python 3.9</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">##This create a local folder envhouse in this folder</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">python</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">m</span> <span style="color:#000">venv</span> <span style="color:#000">envhouse</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#REM Activate the virtual environment</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">envhouse</span>\<span style="color:#000">Scripts</span>\<span style="color:#000">activate</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#REM Install required packages</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">pip</span> <span style="color:#000">install</span> <span style="color:#000">pandas</span> <span style="color:#000">numpy</span> <span style="color:#000">streamlit</span> <span style="color:#000">flask</span>
+</span></span></code></pre></div><ol start="2">
+<li>Create print_numbers.py Script:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">def</span> <span style="color:#000">print_numbers</span><span style="color:#000;font-weight:bold">():</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">i</span> <span style="color:#204a87;font-weight:bold">in</span> <span style="color:#204a87">range</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">11</span><span style="color:#000;font-weight:bold">):</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#204a87">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">__name__</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#4e9a06">&#34;__main__&#34;</span><span style="color:#000;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#000">print_numbers</span><span style="color:#000;font-weight:bold">()</span>
+</span></span></code></pre></div><ol start="3">
+<li>Create readme.md file</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># This is Docker demo Main Heading</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">## This is Subheading.</span>
+</span></span></code></pre></div><h3 id="create-docker-image">Create Docker Image</h3>
+<ol start="4">
+<li>
+<p><strong>Create <code>Dockerfile</code>:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#4e9a06"> python:3.9-slim</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">WORKDIR</span><span style="color:#4e9a06"> /app</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">COPY</span> print_numbers.py /<span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">copy</span> readme.md /<span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">CMD</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#34;python&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;print_numbers.py&#34;</span><span style="color:#000;font-weight:bold">]</span><span style="color:#a40000">
+</span></span></span></code></pre></div></li>
+<li>
+<p><strong>Log in to Docker Hub (if not already logged in):</strong>
+Ensure you are logged in to Docker Hub on your machine.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker login
+</span></span></code></pre></div><p>Enter your Docker Hub credentials when prompted.</p>
+</li>
+<li>
+<p><strong>Build and Tag the Docker Image:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker build -t harithapliyal/print_numbers:may2024 .
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Verify Local Image:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker images
+</span></span></code></pre></div><p>Example output:</p>
+<pre tabindex="0"><code>REPOSITORY                     TAG        IMAGE ID       CREATED          SIZE
+harithapliyal/print_numbers    may2024    abcdef123456   2 minutes ago    123MB
+</code></pre></li>
+<li>
+<p><strong>Push the Docker Image:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker push harithapliyal/print_numbers:may2024
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="how-to-download-a-docker-image-and-run-on-local-machine">How to download a docker Image and run on local machine</h2>
+<p>To download and use the Docker image you&rsquo;ve pushed to Docker Hub on another machine, follow these steps:</p>
+<ol>
+<li>
+<p><strong>Log in to Docker Hub (if not already logged in):</strong>
+Ensure you are logged in to Docker Hub on your machine.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker login
+</span></span></code></pre></div><p>Enter your Docker Hub credentials when prompted.</p>
+</li>
+<li>
+<p><strong>Pull the Docker Image:</strong>
+Download the Docker image from Docker Hub to your local machine.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker pull harithapliyal/print_numbers:may2024
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Run the Docker Image:</strong>
+Once the image is downloaded, you can run it.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker run --rm harithapliyal/print_numbers:may2024
+</span></span></code></pre></div><p>The <code>--rm</code> flag ensures that the container is removed after it stops. This helps in keeping your system clean.</p>
+<p>&lsquo;### Verification</p>
+</li>
+</ol>
+<p>To verify that everything is working correctly, you should see the output of the print_numbers.py script:</p>
+<pre tabindex="0"><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</code></pre><h2 id="i-have-a-gpu-machine-with-windows-11-and-wsl-installed-i-want-to-install-a-docker-where-i-can-run-colab-notebooks-locally-from-visual-code-can-you-please-help-me-step-by-step">I have a gpu machine with windows 11 and wsl installed. I want to install a docker where I can run colab notebooks locally from visual code. can you please help me step by step.</h2>
+<p>Certainly! Here’s a step-by-step guide to setting up Docker on a Windows 11 machine with WSL (Windows Subsystem for Linux) to run Colab notebooks locally through Visual Studio Code.</p>
+<h3 id="1-install-docker-desktop-for-windows">1. <strong>Install Docker Desktop for Windows</strong></h3>
+<ol>
+<li>
+<p><strong>Download Docker Desktop</strong>:</p>
+<ul>
+<li>Visit <a href="https://www.docker.com/products/docker-desktop">Docker&rsquo;s official website</a> and download the Docker Desktop installer for Windows.</li>
+</ul>
+</li>
+<li>
+<p><strong>Install Docker Desktop</strong>:</p>
+<ul>
+<li>Run the installer and follow the on-screen instructions.</li>
+<li>During installation, ensure that you enable the WSL 2 backend option.</li>
+</ul>
+</li>
+<li>
+<p><strong>Start Docker Desktop</strong>:</p>
+<ul>
+<li>Open Docker Desktop after installation. Ensure that Docker is running and that you can see the Docker icon in the system tray.</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-set-up-wsl-2">2. <strong>Set Up WSL 2</strong></h3>
+<ol>
+<li>
+<p><strong>Install WSL 2</strong>:</p>
+<ul>
+<li>Open PowerShell as an administrator and run:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#000">wsl</span> <span style="color:#000;font-weight:bold">-</span><span style="color:#000">-install</span>
+</span></span></code></pre></div></li>
+<li>If you have WSL 1, you can upgrade to WSL 2 by following <a href="https://docs.microsoft.com/en-us/windows/wsl/install">Microsoft&rsquo;s guide</a>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Install a Linux Distribution</strong>:</p>
+<ul>
+<li>From the Microsoft Store, install a Linux distribution such as Ubuntu.</li>
+</ul>
+</li>
+<li>
+<p><strong>Set WSL 2 as Default</strong>:</p>
+<ul>
+<li>In PowerShell, run:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#000">wsl</span> <span style="color:#000;font-weight:bold">-</span><span style="color:#000">-set-default-version</span> <span style="color:#0000cf;font-weight:bold">2</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<h3 id="3-configure-docker-to-use-wsl-2">3. <strong>Configure Docker to Use WSL 2</strong></h3>
+<ol>
+<li>
+<p><strong>Open Docker Settings</strong>:</p>
+<ul>
+<li>In Docker Desktop, go to <code>Settings</code> &gt; <code>Resources</code> &gt; <code>WSL Integration</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Enable Integration</strong>:</p>
+<ul>
+<li>Enable integration with your WSL 2 distributions by toggling the switch next to the installed distributions.</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-install-docker-in-wsl-2">4. <strong>Install Docker in WSL 2</strong></h3>
+<ol>
+<li>
+<p><strong>Open your WSL 2 Terminal</strong> (e.g., Ubuntu).</p>
+</li>
+<li>
+<p><strong>Install Docker</strong>:</p>
+<ul>
+<li>Follow the official <a href="https://docs.docker.com/engine/install/ubuntu/">Docker installation guide for Ubuntu</a> inside WSL. Here’s a summarized version:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+</span></span><span style="display:flex;"><span>curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span style="color:#000;font-weight:bold">|</span> sudo apt-key add -
+</span></span><span style="display:flex;"><span>sudo add-apt-repository <span style="color:#4e9a06">&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span style="color:#204a87;font-weight:bold">$(</span>lsb_release -cs<span style="color:#204a87;font-weight:bold">)</span><span style="color:#4e9a06"> stable&#34;</span>
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install docker-ce
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Start and Enable Docker Service</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo service docker start
+</span></span><span style="display:flex;"><span>sudo systemctl <span style="color:#204a87">enable</span> docker
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="5-set-up-visual-studio-code">5. <strong>Set Up Visual Studio Code</strong></h3>
+<ol>
+<li>
+<p><strong>Install Visual Studio Code</strong>:</p>
+<ul>
+<li>Download and install <a href="https://code.visualstudio.com/">Visual Studio Code</a> if you haven&rsquo;t already.</li>
+</ul>
+</li>
+<li>
+<p><strong>Install Docker Extension</strong>:</p>
+<ul>
+<li>Open Visual Studio Code and go to the Extensions view (Ctrl+Shift+X).</li>
+<li>Search for “Docker” and install the Docker extension by Microsoft.</li>
+</ul>
+</li>
+<li>
+<p><strong>Install Remote - WSL Extension</strong>:</p>
+<ul>
+<li>In the Extensions view, search for “Remote - WSL” and install it.</li>
+</ul>
+</li>
+</ol>
+<h3 id="6-create-a-docker-container-for-colab-notebooks">6. <strong>Create a Docker Container for Colab Notebooks</strong></h3>
+<ol>
+<li>
+<p><strong>Create a Dockerfile</strong>:</p>
+<ul>
+<li>Create a new folder for your project.</li>
+<li>Inside this folder, create a <code>Dockerfile</code> with the following content:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#4e9a06"> python:3.8</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#8f5902;font-style:italic"># Install required packages</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">RUN</span> pip install jupyterlab tensorflow torch<span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#8f5902;font-style:italic"># Set the working directory</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">WORKDIR</span><span style="color:#4e9a06"> /app</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#8f5902;font-style:italic"># Expose the port for JupyterLab</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">EXPOSE</span><span style="color:#4e9a06"> 8888</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#8f5902;font-style:italic"># Start JupyterLab</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">CMD</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#34;jupyter&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;lab&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;--ip=0.0.0.0&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;--no-browser&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;--allow-root&#34;</span><span style="color:#000;font-weight:bold">]</span><span style="color:#a40000">
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Build the Docker Image</strong>:</p>
+<ul>
+<li>Open a terminal in the folder containing the <code>Dockerfile</code> and run:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker build -t colab-local .
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Run the Docker Container</strong>:</p>
+<ul>
+<li>Start a container from the image:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -p 8888:8888 -v <span style="color:#204a87;font-weight:bold">$(</span><span style="color:#204a87">pwd</span><span style="color:#204a87;font-weight:bold">)</span>:/app -it colab-local
+</span></span></code></pre></div></li>
+<li>This maps port 8888 in the container to port 8888 on your host and mounts the current directory to <code>/app</code> in the container.</li>
+</ul>
+</li>
+</ol>
+<h3 id="7-access-jupyterlab-and-work-with-notebooks">7. <strong>Access JupyterLab and Work with Notebooks</strong></h3>
+<ol>
+<li>
+<p><strong>Open JupyterLab</strong>:</p>
+<ul>
+<li>Open your browser and navigate to <code>http://localhost:8888</code>. You should see the JupyterLab interface.</li>
+</ul>
+</li>
+<li>
+<p><strong>Open Notebooks</strong>:</p>
+<ul>
+<li>You can now create or upload Colab notebooks and work with them locally.</li>
+</ul>
+</li>
+</ol>
+<h3 id="8-using-visual-studio-code">8. <strong>Using Visual Studio Code</strong></h3>
+<ol>
+<li>
+<p><strong>Open Your Project</strong>:</p>
+<ul>
+<li>Open Visual Studio Code and navigate to the folder where your Dockerfile is located.</li>
+</ul>
+</li>
+<li>
+<p><strong>Use Remote - WSL Extension</strong>:</p>
+<ul>
+<li>Click on the green bottom-left corner of Visual Studio Code and select “Remote-WSL: New Window”.</li>
+<li>Open a terminal within Visual Studio Code and use Docker commands directly from there.</li>
+</ul>
+</li>
+</ol>
+<h2 id="if-i-want-docker-should-access-my-local-gpu-then-what-should-i-do">If I want docker should access my local GPU then what should I do?</h2>
+<p>Docker can access the GPU, but you&rsquo;ll need to set up a few additional things to make it work properly with WSL 2. Here&rsquo;s how you can enable GPU access in Docker on Windows 11 with WSL 2:</p>
+<h3 id="1-install-nvidia-drivers-and-cuda-toolkit">1. <strong>Install NVIDIA Drivers and CUDA Toolkit</strong></h3>
+<ol>
+<li>
+<p><strong>Install NVIDIA Drivers</strong>:</p>
+<ul>
+<li>Make sure you have the latest NVIDIA drivers installed on your Windows machine. You can download them from the <a href="https://www.nvidia.com/Download/index.aspx">NVIDIA website</a>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Install CUDA Toolkit</strong>:</p>
+<ul>
+<li>Download and install the CUDA Toolkit from the <a href="https://developer.nvidia.com/cuda-toolkit-archive">NVIDIA CUDA Toolkit website</a>. This is necessary for CUDA-based applications.</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-install-nvidia-container-toolkit">2. <strong>Install NVIDIA Container Toolkit</strong></h3>
+<ol>
+<li>
+<p><strong>Open your WSL 2 Terminal</strong> (e.g., Ubuntu).</p>
+</li>
+<li>
+<p><strong>Set up the NVIDIA package repository</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir -p /etc/systemd/system/docker.service.d
+</span></span><span style="display:flex;"><span>sudo tee /etc/systemd/system/docker.service.d/override.conf <span style="color:#4e9a06">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">[Service]
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">ExecStart=
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">ExecStart=/usr/bin/dockerd --host=fd:// --add-runtime=nvidia=/usr/bin/nvidia-container-runtime
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">EOF</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Install NVIDIA Docker dependencies</strong>:</p>
+<ul>
+<li>Add the NVIDIA package repositories:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install -y gnupg2 curl
+</span></span><span style="display:flex;"><span>curl -fsSL https://nvidia.github.io/nvidia-docker/gpgkey <span style="color:#000;font-weight:bold">|</span> sudo apt-key add -
+</span></span><span style="display:flex;"><span>curl -fsSL https://nvidia.github.io/nvidia-docker/debian9/nvidia-docker.list <span style="color:#000;font-weight:bold">|</span> sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Install NVIDIA Docker Toolkit</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -y nvidia-docker2
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Restart Docker</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo service docker restart
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="3-create-a-dockerfile-with-gpu-support">3. <strong>Create a Dockerfile with GPU Support</strong></h3>
+<ol>
+<li><strong>Update your Dockerfile</strong>:
+<ul>
+<li>Use a base image that supports GPU, such as one provided by NVIDIA. Here’s an updated <code>Dockerfile</code> example:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#4e9a06"> nvidia/cuda:11.8.0-base-ubuntu20.04</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#8f5902;font-style:italic"># Install required packages</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">RUN</span> apt-get update <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> apt-get install -y <span style="color:#4e9a06">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06"></span>    python3-pip <span style="color:#4e9a06">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06"></span>    python3-dev <span style="color:#4e9a06">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06"></span>    python3-tk <span style="color:#4e9a06">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06"></span>    libgl1-mesa-glx<span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#8f5902;font-style:italic"># Install Python packages</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">RUN</span> pip3 install jupyterlab tensorflow torch<span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#8f5902;font-style:italic"># Set the working directory</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">WORKDIR</span><span style="color:#4e9a06"> /app</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#8f5902;font-style:italic"># Expose the port for JupyterLab</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">EXPOSE</span><span style="color:#4e9a06"> 8888</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#8f5902;font-style:italic"># Start JupyterLab</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">CMD</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#34;jupyter&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;lab&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;--ip=0.0.0.0&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;--no-browser&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;--allow-root&#34;</span><span style="color:#000;font-weight:bold">]</span><span style="color:#a40000">
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<h3 id="4-run-docker-container-with-gpu-access">4. <strong>Run Docker Container with GPU Access</strong></h3>
+<ol>
+<li><strong>Run the Docker Container</strong>:
+<ul>
+<li>Use the <code>--gpus</code> flag to allocate GPU resources:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --gpus all -p 8888:8888 -v <span style="color:#204a87;font-weight:bold">$(</span><span style="color:#204a87">pwd</span><span style="color:#204a87;font-weight:bold">)</span>:/app -it colab-local
+</span></span></code></pre></div></li>
+<li>This command starts the container with access to all available GPUs.</li>
+</ul>
+</li>
+</ol>
+<h3 id="5-verify-gpu-access">5. <strong>Verify GPU Access</strong></h3>
+<ol>
+<li><strong>Check GPU Availability</strong>:
+<ul>
+<li>Inside the running container, you can check if the GPU is available by running:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 -c <span style="color:#4e9a06">&#34;import tensorflow as tf; print(tf.config.list_physical_devices(&#39;GPU&#39;))&#34;</span>
+</span></span></code></pre></div></li>
+<li>For PyTorch, you can check with:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 -c <span style="color:#4e9a06">&#34;import torch; print(torch.cuda.is_available())&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<p>These steps should help you set up Docker to access your GPU through WSL 2 on Windows 11. Let me know if you encounter any issues or need further assistance!</p>
+<h2 id="running-docker-with-gpu">Running docker with gpu</h2>
+<p>The command below will expose docker&rsquo;s port 8081 to host machine&rsquo;s port 8082. It will launch the colab on http://localhost:8082. You will get a complete url along with the token. You can use that complete url in goolge colab to connect to the local gpu machine.</p>
+<p>By doing so you need not to depend upon google&rsquo;s ephimeral machine with limited resources. You can access data files from the local machine to run the experiments.</p>
+<p>docker run &ndash;gpus all -it &ndash;rm -p 8082:8081 -v &ldquo;$PWD&rdquo;:/opt/colab -v $HOME/.cache/torch:/root/.cache/torch sorokine/docker-colab-local:10.1</p>
+<h2 id="question-what-is-the-difference-between-docker-build-and-docker-compose-commands">Question: What is the difference between &ldquo;docker build&rdquo; and &ldquo;docker-compose&rdquo; commands?</h2>
+<p>The <code>docker build</code> and <code>docker-compose</code> commands are both used in the Docker ecosystem but serve different purposes and are used in different contexts. Here&rsquo;s a breakdown of their differences and uses:</p>
+<h3 id="docker-build"><code>docker build</code></h3>
+<p>The <code>docker build</code> command is used to build a Docker image from a Dockerfile. A Dockerfile contains a series of instructions that Docker reads to build an image. The resulting image can then be used to run containers.</p>
+<h4 id="key-points">Key Points:</h4>
+<ul>
+<li>
+<p><strong>Usage</strong>: Building Docker images.</p>
+</li>
+<li>
+<p><strong>Command</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker build -t &lt;image-name&gt; &lt;path-to-Dockerfile&gt;
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker build -t my-app:latest .
+</span></span></code></pre></div><p>This command builds an image named <code>my-app</code> with the tag <code>latest</code> from the Dockerfile in the current directory (<code>.</code>).</p>
+</li>
+<li>
+<p><strong>Purpose</strong>: It is used to create an image with all the dependencies, libraries, and code needed to run an application.</p>
+</li>
+<li>
+<p><strong>Workflow</strong>: After building the image with <code>docker build</code>, you typically run it using the <code>docker run</code> command.</p>
+</li>
+</ul>
+<h3 id="docker-compose"><code>docker-compose</code></h3>
+<p>The <code>docker-compose</code> command is used to define and run multi-container Docker applications. <code>docker-compose</code> uses a YAML file (<code>docker-compose.yml</code>) to configure the application&rsquo;s services, networks, and volumes.</p>
+<h4 id="key-points-1">Key Points:</h4>
+<ul>
+<li>
+<p><strong>Usage</strong>: Managing multi-container Docker applications.</p>
+</li>
+<li>
+<p><strong>Command</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">version</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;3.8&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">services</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">web</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">build</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">.</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">ports</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">      </span>- <span style="color:#4e9a06">&#34;5000:5000&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">volumes</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">      </span>- <span style="color:#000">.:/code</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">depends_on</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">      </span>- <span style="color:#000">redis</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">redis</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;redis:alpine&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span></code></pre></div><p>This <code>docker-compose.yml</code> file defines two services: <code>web</code> and <code>redis</code>. The <code>web</code> service builds an image from the current directory and maps port 5000 of the container to port 5000 on the host. It also depends on the <code>redis</code> service, which uses the <code>redis:alpine</code> image.</p>
+</li>
+<li>
+<p><strong>Purpose</strong>: It is used to run, configure, and manage multi-container applications. This can include linking containers, setting up networks, and managing volumes.</p>
+</li>
+<li>
+<p><strong>Workflow</strong>: With <code>docker-compose</code>, you typically use the <code>docker-compose up</code> command to start all the services defined in the <code>docker-compose.yml</code> file. This command will build the images if they do not exist, create the containers, and start the services.</p>
+</li>
+</ul>
+<h3 id="when-to-use-each">When to Use Each</h3>
+<ul>
+<li>
+<p><strong>Use <code>docker build</code></strong>: When you need to build a single Docker image from a Dockerfile. This is often the first step in your Docker workflow, creating an image that you can then run or push to a Docker registry.</p>
+</li>
+<li>
+<p><strong>Use <code>docker-compose</code></strong>: When you need to orchestrate multiple containers that work together as part of a single application. <code>docker-compose</code> is ideal for development environments, CI/CD pipelines, and local testing of applications that consist of multiple services (e.g., a web server, database, and cache).</p>
+</li>
+</ul>
+<h3 id="example-workflow">Example Workflow</h3>
+<ol>
+<li>
+<p><strong>Building an Image with <code>docker build</code></strong>:</p>
+<ul>
+<li>Create a <code>Dockerfile</code>:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">FROM</span><span style="color:#4e9a06"> python:3.8-slim</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">WORKDIR</span><span style="color:#4e9a06"> /app</span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">COPY</span> . .<span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">RUN</span> pip install -r requirements.txt<span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000">
+</span></span></span><span style="display:flex;"><span><span style="color:#a40000"></span><span style="color:#204a87;font-weight:bold">CMD</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#34;python&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;app.py&#34;</span><span style="color:#000;font-weight:bold">]</span><span style="color:#a40000">
+</span></span></span></code></pre></div></li>
+<li>Build the image:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker build -t my-python-app .
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Running a Multi-Container Application with <code>docker-compose</code></strong>:</p>
+<ul>
+<li>Create a <code>docker-compose.yml</code>:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">version</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#39;3.8&#39;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">services</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">web</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">build</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">.</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">ports</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">      </span>- <span style="color:#4e9a06">&#34;5000:5000&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">volumes</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">      </span>- <span style="color:#000">.:/app</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">db</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">image</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">postgres</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">environment</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">POSTGRES_USER</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">user</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">POSTGRES_PASSWORD</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">password</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span><span style="display:flex;"><span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">POSTGRES_DB</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">mydb</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></span></span></code></pre></div></li>
+<li>Start the application:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<p>In summary, use <code>docker build</code> to create Docker images from a Dockerfile, and use <code>docker-compose</code> to manage and run multi-container Docker applications using a <code>docker-compose.yml</code> file.</p>
+<h2 id="in-docker-run-command-sometime-we-write-gpus-all-and-other-times-we-say-runtimenvidia-what-is-the-difference-and-usage">In docker run command sometime we write &ldquo;&ndash;gpus all&rdquo; and other times we say &ldquo;&ndash;runtime=nvidia&rdquo;. what is the difference and usage?</h2>
+<p>The flags <code>--gpus all</code> and <code>--runtime=nvidia</code> are both used to enable GPU access for Docker containers, but they are used in slightly different contexts and configurations. Here&rsquo;s a detailed explanation of each and their usage:</p>
+<h3 id="--gpus-all"><code>--gpus all</code></h3>
+<p>The <code>--gpus</code> flag is a more recent addition to Docker and provides a simpler and more flexible way to allocate GPU resources to containers.</p>
+<ul>
+<li>
+<p><strong>Usage</strong>: The <code>--gpus all</code> flag is used to allocate all available GPUs to the Docker container.</p>
+</li>
+<li>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --gpus all -p 8888:8888 -v <span style="color:#204a87;font-weight:bold">$(</span><span style="color:#204a87">pwd</span><span style="color:#204a87;font-weight:bold">)</span>:/app -it colab-local
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Granularity</strong>: This flag allows for fine-grained control over GPU resources. You can specify how many GPUs you want to allocate or even assign specific GPU devices. For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --gpus <span style="color:#0000cf;font-weight:bold">1</span> -p 8888:8888 -v <span style="color:#204a87;font-weight:bold">$(</span><span style="color:#204a87">pwd</span><span style="color:#204a87;font-weight:bold">)</span>:/app -it colab-local
+</span></span></code></pre></div><p>Or for a specific GPU:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --gpus <span style="color:#4e9a06">&#39;&#34;device=0&#34;&#39;</span> -p 8888:8888 -v <span style="color:#204a87;font-weight:bold">$(</span><span style="color:#204a87">pwd</span><span style="color:#204a87;font-weight:bold">)</span>:/app -it colab-local
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Simpler Syntax</strong>: The <code>--gpus</code> flag simplifies the syntax for running GPU-accelerated containers compared to the older <code>--runtime=nvidia</code> method.</p>
+</li>
+</ul>
+<h3 id="--runtimenvidia"><code>--runtime=nvidia</code></h3>
+<p>The <code>--runtime=nvidia</code> flag was the original method to enable GPU support in Docker containers using NVIDIA&rsquo;s container runtime.</p>
+<ul>
+<li>
+<p><strong>Usage</strong>: The <code>--runtime=nvidia</code> flag is used to specify that the container should use the NVIDIA container runtime, which is necessary for GPU acceleration.</p>
+</li>
+<li>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --runtime<span style="color:#ce5c00;font-weight:bold">=</span>nvidia -p 8888:8888 -v <span style="color:#204a87;font-weight:bold">$(</span><span style="color:#204a87">pwd</span><span style="color:#204a87;font-weight:bold">)</span>:/app -it colab-local
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Configuration</strong>: This method requires additional configuration, such as setting up the NVIDIA container runtime and ensuring that the Docker daemon is configured to use it. This is typically done by creating a configuration file as follows:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo tee /etc/docker/daemon.json <span style="color:#4e9a06">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">{
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">    &#34;default-runtime&#34;: &#34;nvidia&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">    &#34;runtimes&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">        &#34;nvidia&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">            &#34;path&#34;: &#34;nvidia-container-runtime&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">            &#34;runtimeArgs&#34;: []
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">}
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">EOF</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Legacy</strong>: The <code>--runtime=nvidia</code> method is considered the legacy approach. While it is still supported, it is generally recommended to use the <code>--gpus</code> flag for new projects.</p>
+</li>
+</ul>
+<h3 id="when-to-use-each-1">When to Use Each</h3>
+<ul>
+<li><strong>Use <code>--gpus</code></strong>: For most modern setups, especially if you&rsquo;re starting a new project or updating an existing one. It&rsquo;s simpler, more flexible, and requires less configuration.</li>
+<li><strong>Use <code>--runtime=nvidia</code></strong>: If you are working with an older setup or using specific images or configurations that still rely on this method.</li>
+</ul>
+<h3 id="practical-examples">Practical Examples</h3>
+<h4 id="using---gpus-all">Using <code>--gpus all</code></h4>
+<ol>
+<li>
+<p><strong>Pull the Docker image</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull nvidia/cuda:11.8.0-base-ubuntu20.04
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Run the container with GPU access</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --gpus all -p 8888:8888 -v <span style="color:#204a87;font-weight:bold">$(</span><span style="color:#204a87">pwd</span><span style="color:#204a87;font-weight:bold">)</span>:/app -it nvidia/cuda:11.8.0-base-ubuntu20.04
+</span></span></code></pre></div></li>
+</ol>
+<h4 id="using---runtimenvidia">Using <code>--runtime=nvidia</code></h4>
+<ol>
+<li>
+<p><strong>Configure Docker Daemon</strong>:</p>
+<ul>
+<li>Create or modify the Docker daemon configuration file:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo tee /etc/docker/daemon.json <span style="color:#4e9a06">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">{
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">    &#34;default-runtime&#34;: &#34;nvidia&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">    &#34;runtimes&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">        &#34;nvidia&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">            &#34;path&#34;: &#34;nvidia-container-runtime&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">            &#34;runtimeArgs&#34;: []
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">}
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">EOF</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Restart Docker</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart docker
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Run the container with GPU access</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --runtime<span style="color:#ce5c00;font-weight:bold">=</span>nvidia -p 8888:8888 -v <span style="color:#204a87;font-weight:bold">$(</span><span style="color:#204a87">pwd</span><span style="color:#204a87;font-weight:bold">)</span>:/app -it nvidia/cuda:11.8.0-base-ubuntu20.04
+</span></span></code></pre></div></li>
+</ol>
+<p>Choosing between <code>--gpus</code> and <code>--runtime=nvidia</code> depends on your specific requirements and setup. However, for most modern applications, the <code>--gpus</code> flag is recommended due to its simplicity and flexibility.</p>
+<h2 id="there-is-existing-google-colab-image-on-docker-from-someone-why-should-i-create-my-own">There is existing google colab image on docker from someone. Why should I create my own?</h2>
+<p>Using an existing Google Colab Docker image can be a great way to save time and effort, especially if it&rsquo;s well-maintained and meets your needs. However, creating your own Docker image has several advantages:</p>
+<h3 id="advantages-of-using-an-existing-image"><strong>Advantages of Using an Existing Image</strong></h3>
+<ol>
+<li><strong>Convenience</strong>: Pre-built images are ready to use, saving you the time and effort of setting up the environment yourself.</li>
+<li><strong>Community Support</strong>: Popular images may have community support and regular updates.</li>
+<li><strong>Standardization</strong>: Using a well-known image ensures that your environment is consistent with other users who use the same image.</li>
+</ol>
+<h3 id="advantages-of-creating-your-own-image"><strong>Advantages of Creating Your Own Image</strong></h3>
+<ol>
+<li><strong>Customization</strong>: Creating your own image allows you to customize the environment to fit your specific needs. You can include or exclude libraries, tools, and configurations according to your requirements.</li>
+<li><strong>Control</strong>: You have full control over the versions of libraries and tools, ensuring compatibility with your projects.</li>
+<li><strong>Optimization</strong>: You can optimize the image for performance, such as using specific versions of CUDA or TensorFlow that are best suited for your hardware.</li>
+<li><strong>Security</strong>: By building your own image, you can ensure that it is free of vulnerabilities and has only the dependencies you trust.</li>
+<li><strong>Learning Experience</strong>: Building and maintaining your own Docker image provides a learning opportunity and deepens your understanding of Docker and containerization.</li>
+</ol>
+<h3 id="how-to-choose"><strong>How to Choose</strong></h3>
+<ul>
+<li><strong>Existing Image</strong>: If you find an existing image that fits your needs and is actively maintained, it’s often a good starting point. You can pull the image, test it, and use it directly.</li>
+<li><strong>Custom Image</strong>: If you need specific configurations, want to ensure compatibility with your environment, or have particular performance or security requirements, creating a custom image is beneficial.</li>
+</ul>
+<h3 id="using-an-existing-google-colab-docker-image"><strong>Using an Existing Google Colab Docker Image</strong></h3>
+<p>If you decide to use an existing image, here’s a general guide:</p>
+<ol>
+<li>
+<p><strong>Search for the Image</strong>:</p>
+<ul>
+<li>Look for a Colab Docker image on Docker Hub or other Docker repositories. For example, you might find images by searching for &ldquo;google colab&rdquo; or related terms.</li>
+</ul>
+</li>
+<li>
+<p><strong>Pull the Image</strong>:</p>
+<ul>
+<li>Use Docker to pull the image:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull &lt;image-name&gt;
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Run the Container</strong>:</p>
+<ul>
+<li>Start a container from the image:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -p 8888:8888 -v <span style="color:#204a87;font-weight:bold">$(</span><span style="color:#204a87">pwd</span><span style="color:#204a87;font-weight:bold">)</span>:/app -it &lt;image-name&gt;
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Access JupyterLab or Colab</strong>:</p>
+<ul>
+<li>Open your browser and navigate to <code>http://localhost:8888</code> to access JupyterLab or Colab running inside the container.</li>
+</ul>
+</li>
+</ol>
+<h2 id="how-to-access-docker-shell">How to access docker shell?</h2>
+<p>docker exec -it container-id-or-name /bin/bash</p>
+<h2 id="what-are-available-commands-in-docker">What are available commands in Docker?</h2>
+<h3 id="common-commands">Common Commands:</h3>
+<pre tabindex="0"><code>  run         Create and run a new container from an image
+  exec        Execute a command in a running container
+  ps          List containers
+  build       Build an image from a Dockerfile
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  images      List images
+  login       Log in to a registry
+  logout      Log out from a registry
+  search      Search Docker Hub for images
+  version     Show the Docker version information
+  info        Display system-wide information
+</code></pre><h3 id="management-commands">Management Commands:</h3>
+<pre tabindex="0"><code>  builder     Manage builds
+  buildx*     Docker Buildx
+  compose*    Docker Compose
+  container   Manage containers
+  context     Manage contexts
+  debug*      Get a shell into any image or container
+  dev*        Docker Dev Environments
+  extension*  Manages Docker extensions
+  feedback*   Provide feedback, right in your terminal!
+  image       Manage images
+  init*       Creates Docker-related starter files for your project
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  plugin      Manage plugins
+  sbom*       View the packaged-based Software Bill Of Materials (SBOM) for an image
+  scout*      Docker Scout
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+</code></pre><h3 id="swarm-commands">Swarm Commands:</h3>
+<pre tabindex="0"><code>  swarm       Manage Swarm
+</code></pre><h3 id="commands">Commands:</h3>
+<pre tabindex="0"><code>  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container&#39;s changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container&#39;s filesystem
+  events      Get real time events from the server
+  export      Export a container&#39;s filesystem as a tar archive
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+</code></pre>
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

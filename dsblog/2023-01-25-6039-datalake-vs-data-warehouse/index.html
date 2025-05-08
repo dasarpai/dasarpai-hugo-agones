@@ -1,0 +1,319 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Data Lake vs Data Warehouse vs Data Mart | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2023-01-25-6039-datalake-vs-data-warehouse/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Data Lake vs Data Warehouse vs Data Mart">
+  <meta property="og:description" content="What is the difference between Data Lake and Data Warehouse? Introduction A data warehouse is a system used for reporting and data analysis, and is considered a “single version of the truth.” It typically includes a subset of an organization’s data that is specifically structured for querying and reporting. A data lake, on the other hand, is a more flexible and general-purpose system for storing raw, unstructured data. Data in a lake can be stored in its original format and can be used for a variety of purposes, including reporting and analysis. Data warehouse is more structured while data lake is unstructured. Data warehouse is optimized for reporting and analytics while data lake is optimized for storing and processing large amount of raw data.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2023-01-25T08:33:00+05:30">
+    <meta property="article:modified_time" content="2023-01-25T08:33:00+05:30">
+    <meta property="article:tag" content="Data Architecture">
+    <meta property="article:tag" content="Data Warehouse">
+    <meta property="article:tag" content="Data Lake">
+    <meta property="article:tag" content="Data Management">
+    <meta property="article:tag" content="Big Data">
+    <meta property="article:tag" content="Data Storage">
+
+  <meta itemprop="name" content="Data Lake vs Data Warehouse vs Data Mart">
+  <meta itemprop="description" content="What is the difference between Data Lake and Data Warehouse? Introduction A data warehouse is a system used for reporting and data analysis, and is considered a “single version of the truth.” It typically includes a subset of an organization’s data that is specifically structured for querying and reporting. A data lake, on the other hand, is a more flexible and general-purpose system for storing raw, unstructured data. Data in a lake can be stored in its original format and can be used for a variety of purposes, including reporting and analysis. Data warehouse is more structured while data lake is unstructured. Data warehouse is optimized for reporting and analytics while data lake is optimized for storing and processing large amount of raw data.">
+  <meta itemprop="datePublished" content="2023-01-25T08:33:00+05:30">
+  <meta itemprop="dateModified" content="2023-01-25T08:33:00+05:30">
+  <meta itemprop="wordCount" content="1216">
+  <meta itemprop="keywords" content="data lake vs data warehouse,data storage solutions,enterprise data management,data architecture comparison,data infrastructure,big data storage,data mart implementation,data organization strategies,database systems">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Data Lake vs Data Warehouse vs Data Mart">
+  <meta name="twitter:description" content="What is the difference between Data Lake and Data Warehouse? Introduction A data warehouse is a system used for reporting and data analysis, and is considered a “single version of the truth.” It typically includes a subset of an organization’s data that is specifically structured for querying and reporting. A data lake, on the other hand, is a more flexible and general-purpose system for storing raw, unstructured data. Data in a lake can be stored in its original format and can be used for a variety of purposes, including reporting and analysis. Data warehouse is more structured while data lake is unstructured. Data warehouse is optimized for reporting and analytics while data lake is optimized for storing and processing large amount of raw data.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6040-Datalake-vs-Data-Warehouse.jpg" alt="Datalake vs Data Warehouse"></p>
+<h1 id="what-is-the-difference-between-data-lake-and-data-warehouse">What is the difference between Data Lake and Data Warehouse?</h1>
+<h2 id="introduction">Introduction</h2>
+<p>A data warehouse is a system used for reporting and data analysis, and is considered a &ldquo;single version of the truth.&rdquo; It typically includes a subset of an organization&rsquo;s data that is specifically structured for querying and reporting. A data lake, on the other hand, is a more flexible and general-purpose system for storing raw, unstructured data. Data in a lake can be stored in its original format and can be used for a variety of purposes, including reporting and analysis. Data warehouse is more structured while data lake is unstructured. Data warehouse is optimized for reporting and analytics while data lake is optimized for storing and processing large amount of raw data.</p>
+<h2 id="datalake-vs-data-warehouse">Datalake vs Data Warehouse</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Characteristics</th>
+          <th>Data Warehouse</th>
+          <th>Data Lake</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>What kind of Data?</td>
+          <td>Relational from transactional systems, operational databases, and line of business applications</td>
+          <td>Non-relational and relational from IoT devices, web sites, mobile apps, social media, and corporate applications</td>
+      </tr>
+      <tr>
+          <td>When Schema is created?</td>
+          <td>Designed prior to the DW implementation (schema-on-write)</td>
+          <td>Written at the time of analysis (schema-on-read)</td>
+      </tr>
+      <tr>
+          <td>Price/Performance</td>
+          <td>Fastest query results using higher cost storage</td>
+          <td>Query results getting faster using low-cost storage</td>
+      </tr>
+      <tr>
+          <td>Data Quality</td>
+          <td>Highly curated data that serves as the central version of the truth</td>
+          <td>Any data that may or may not be curated (ie. raw data)</td>
+      </tr>
+      <tr>
+          <td>Who are the Users?</td>
+          <td>Business analysts</td>
+          <td>Data scientists, Data developers, and Business analysts (using curated data)</td>
+      </tr>
+      <tr>
+          <td>Usage</td>
+          <td>Analytics, Batch reporting, BI and visualizations</td>
+          <td>Machine Learning, Predictive analytics, data discovery and profiling</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="software-tools-for-data-lake">Software Tools for Data Lake</h2>
+<p>There are several software options available for setting up and managing a data lake. Some of the most popular include:</p>
+<ul>
+<li>Apache Hadoop: An open-source framework that allows for distributed processing of large data sets. It includes the Hadoop Distributed File System (HDFS) for storing data and the MapReduce programming model for processing data.</li>
+<li>Apache Spark: An open-source, distributed computing system that can process large amounts of data quickly. It can be used in conjunction with Hadoop or as a standalone system.</li>
+<li>Amazon S3: A scalable, object-based storage service offered by Amazon Web Services (AWS). It can be used to store data in a data lake and is integrated with other AWS services such as Amazon Redshift and Amazon EMR.</li>
+<li>Azure Data Lake Storage: A scalable, secure, and cost-effective data lake solution offered by Microsoft Azure. It provides a single repository for big data analytics and is integrated with Azure HDInsight, Azure Data Factory, and Power BI.</li>
+<li>Google Cloud Storage: A scalable and cost-effective object storage service offered by Google Cloud. It can be used to store data in a data lake and is integrated with other Google Cloud services such as BigQuery and Cloud Dataflow.</li>
+<li>Cloudera Data Platform : is a data management platform that provides a comprehensive solution for data lakes, data warehousing, and data science. It offers a wide range of tools for data processing, storage, and management.</li>
+<li>Hortonworks Data Platform : is another open-source platform that provides a comprehensive solution for data lakes, data warehousing, and data science. It is built on Apache Hadoop and offers a wide range of tools for data processing, storage, and management.</li>
+<li>Talend: An open-source data integration software that allows for the extraction, transformation, and loading (ETL) of data into a data lake. It also supports data quality, master data management, and big data integration.</li>
+<li>Databricks: A cloud-based data engineering, machine learning and analytics platform built on top of Apache Spark that allows for easy and collaborative data processing, storage and management of large data sets.</li>
+<li>Snowflake: A cloud-based data warehousing and analytics platform that allows for the storage and querying of structured and semi-structured data in a data lake. It provides a SQL-based query language and integration with other tools like Tableau, Power BI, and Looker.</li>
+</ul>
+<h2 id="software-tools-for-data-warehouse">Software Tools for Data Warehouse</h2>
+<p>There are several software options available for setting up and managing a data warehouse. Some of the most popular include:</p>
+<ul>
+<li>IBM DB2: A relational database management system that can be used for data warehousing and business intelligence.</li>
+<li>Microsoft SQL Server: A relational database management system that includes tools for data warehousing and business intelligence.</li>
+<li>Oracle Database: A relational database management system that offers a wide range of tools for data warehousing and business intelligence.</li>
+<li>Teradata: A relational database management system that is optimized for data warehousing and business intelligence.</li>
+<li>MySQL: An open-source relational database management system that can be used for data warehousing and business intelligence.</li>
+<li>PostgreSQL: An open-source relational database management system that can be used for data warehousing and business intelligence.</li>
+<li>Amazon Redshift: A cloud-based data warehousing service offered by Amazon Web Services (AWS).</li>
+<li>Google BigQuery: A cloud-based data warehousing service offered by Google Cloud.</li>
+<li>Snowflake: A cloud-based data warehousing and analytics platform that allows for the storage and querying of structured and semi-structured data.</li>
+<li>SAP HANA: An in-memory data warehousing platform that allows for real-time data processing and analytics.</li>
+<li>Greenplum: A data warehousing platform that is based on the open-source PostgreSQL database.</li>
+<li>Vertica: A columnar database management system.</li>
+<li>Exasol: A columnar database management system.</li>
+<li>Sybase IQ: A columnar database management system.</li>
+<li>Infobright: A columnar database management system.</li>
+</ul>
+<h2 id="why-data-lake">Why Data Lake?</h2>
+<p>Data Lakes are an ideal workload to be deployed in the cloud, because the cloud provides <strong>performance, scalability, reliability, availability, a diverse set of analytic engines, and massive economies of scale</strong>. ESG research found that 39% of respondents considering cloud as their primary <strong>deployment for analytics</strong>, 41% for <strong>data warehouses</strong>, and 43% for <strong>Spark/Processing</strong>.</p>
+<p>Data Lakes allow you to store relational data like <strong>operational databases / OLTP</strong> and data from line of business applications, and non-relational data like mobile apps, IoT devices, and social media. They also give you the ability to understand what data is in the lake through crawling, cataloging, and indexing of data.</p>
+<p>The main challenge with a data lake architecture is that raw data is stored with no oversight of the contents. For a data lake to make data usable, it needs to have defined mechanisms to catalog, and secure data. Without these elements, data cannot be found, or trusted resulting in a <strong>data swamp.</strong> Meeting the needs of wider audiences require data lakes to have governance, semantic consistency, and access controls.</p>
+<h2 id="what-is-data-mart">What is Data Mart</h2>
+<p>A Data Mart is a filtered (and sometimes aggregated) subsection of a Data Warehouse to make it easier for a particular group to query data. It provides a smaller schema with only the relevant tables for the group. For example, you would like to build data mart for sales, accounts, marketing, security, infrastrcture data of your organization.</p>
+<h2 id="why-you-do-you-build-data-mart">Why you do you build data mart?</h2>
+<ul>
+<li>Relevance to use cases. Due to performance and relevance reasons you want limit the schema to the limited tables.</li>
+<li>Accessible to a variety of people and teams. Data marts allow you to expose more people to data without overwhelming them with lots of data.</li>
+<li>Customized architecture for different use cases. Aggregations, metric calculations, around the same data may be different by different consumer of the data. So let them do this in their respective mart.</li>
+<li>Maintainable with less time and effort. Having the data monitored by team leads makes it easier to identify data issues.</li>
+<li>Access Management. Easily protect sensitive data by limiting what teams can see in their data marts.</li>
+</ul>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

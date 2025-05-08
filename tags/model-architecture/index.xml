@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Model Architecture on Agones</title>
+    <link>http://localhost:1313/tags/model-architecture/</link>
+    <description>Recent content in Model Architecture on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/model-architecture/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Variations of Language Model in Huggingface</title>
+      <link>http://localhost:1313/dsblog/Variations-of-Language-Model-in-Huggingface/</link>
+      <pubDate>Thu, 22 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Variations-of-Language-Model-in-Huggingface/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6138-Variations-of-Language-Model-in-Huggingface.jpg&#34; alt=&#34;Variations-of-LanguageModel&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;variations-of-language-model-in-huggingface&#34;&gt;Variations of Language Model in Huggingface&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-the-model-variable-in-huggingface&#34;&gt;What the Model variable in Huggingface?&lt;/h2&gt;&#xA;&lt;p&gt;We know base moels like BERT, T5, GPT2, GPT3 etc are developed by researchers working with different companies. But when we look into huggingface model repository we see other models like GPT2LMHeadModel, GPT2ForSequenceClassification, etc what are these?&lt;/p&gt;&#xA;&lt;p&gt;Huggingface picks up base moel like GPT2, BERT, T5 etc and tune these for specific tasks. Therefore these are different variations of GPT-2 models, such as &lt;code&gt;GPT2LMHeadModel&lt;/code&gt;, &lt;code&gt;GPT2DoubleHeadsModel&lt;/code&gt;, &lt;code&gt;GPT2ForSequenceClassification&lt;/code&gt;, etc., were primarily created by Hugging Face. These are adaptations of the original GPT-2 model released by OpenAI, tailored to fit specific tasks in natural language processing (NLP).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Compressing Large Language Model</title>
+      <link>http://localhost:1313/dsblog/compressing-llm/</link>
+      <pubDate>Tue, 07 Nov 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/compressing-llm/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6099-Compressing-LLM.jpg&#34; alt=&#34;Compressing Large Language Model&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;compressing-large-language-model&#34;&gt;Compressing Large Language Model&lt;/h1&gt;&#xA;&lt;h2 id=&#34;is-this-article-for-me&#34;&gt;Is this article for me?&lt;/h2&gt;&#xA;&lt;p&gt;If you are looking answers to following question then &amp;ldquo;Yes&amp;rdquo;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;What is LLM compression?&lt;/li&gt;&#xA;&lt;li&gt;Why is LLM compression necessary?&lt;/li&gt;&#xA;&lt;li&gt;What are the different techniques for LLM compression?&lt;/li&gt;&#xA;&lt;li&gt;How does quantization work in LLM compression?&lt;/li&gt;&#xA;&lt;li&gt;What is pruning, and how does it help in compressing LLMs?&lt;/li&gt;&#xA;&lt;li&gt;Can you explain knowledge distillation in the context of LLMs?&lt;/li&gt;&#xA;&lt;li&gt;What is low-rank factorization and its role in LLM compression?&lt;/li&gt;&#xA;&lt;li&gt;How effective are weight sharing techniques in compressing LLMs?&lt;/li&gt;&#xA;&lt;li&gt;What are the trade-offs involved in LLM compression?&lt;/li&gt;&#xA;&lt;li&gt;How does fine-tuning work in the context of compressed LLMs?&lt;/li&gt;&#xA;&lt;li&gt;What are the benefits of fine-tuning in compressed LLMs?&lt;/li&gt;&#xA;&lt;li&gt;What role does hardware play in LLM compression?&lt;/li&gt;&#xA;&lt;li&gt;What are the ethical considerations in LLM compression?&lt;/li&gt;&#xA;&lt;li&gt;What are the future directions in LLM compression?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;1-what-is-llm-compression&#34;&gt;1. &lt;strong&gt;What is LLM Compression?&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;LLM (Large Language Model) compression refers to a set of techniques and methodologies aimed at reducing the size of large language models while maintaining their performance as much as possible. Large language models, such as GPT, BERT, and their variants, often contain hundreds of millions to billions of parameters, making them resource-intensive to deploy and run. The sheer size of these models poses challenges in terms of storage, computation, and real-time inference, especially when deploying on devices with limited hardware resources like mobile phones or edge devices.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ML Model Development Framework</title>
+      <link>http://localhost:1313/dsblog/ML-Model-Development-Framework/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/ML-Model-Development-Framework/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6096-ML-Model-Development-Framework.jpg&#34; alt=&#34;ML Model Development Framework&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;ml-model-development-framework--model-repositories&#34;&gt;ML Model Development Framework &amp;amp; Model Repositories&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;There are hundreds of &lt;a href=&#34;http://localhost:1313/dsblog/nlp-tasks&#34;&gt;machine learning tasks&lt;/a&gt;. To do these tasks there are &lt;a href=&#34;http://localhost:1313/dsblog/Type-of-Databases&#34;&gt;thousands of datasets&lt;/a&gt; created by individuals, governments, and corporations. We need to develop AI models using these datasets. There are thousands of models &lt;a href=&#34;dsblog/ML-Model-Repository-from-Pinto0309&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/dsblog/paperwithcode-resources&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/dsblog/What-Are-Transformers-in-AI&#34;&gt;3&lt;/a&gt; and many model development frameworks. It is practically mind-blowing to track this whole body of work and understand all this work in its entirety. But if you dive deeper into the following frameworks you will get a fair idea about the overall direction of the work. These frameworks are used to maintain pre-trained model repositories and download pre-trained models. You can develop your own finetuned model using those pre-trained models.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Introduction to Neural Network</title>
+      <link>http://localhost:1313/dsblog/Introduction-to-Neural-Network/</link>
+      <pubDate>Tue, 17 Jan 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Introduction-to-Neural-Network/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6034-Introduction-to-Neural-Network.jpg&#34; alt=&#34;Introduction to Neural Network&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction-to-neural-network&#34;&gt;Introduction to Neural Network&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction-to-a-perceptron&#34;&gt;Introduction to a Perceptron&lt;/h2&gt;&#xA;&lt;p&gt;A perceptron is a type of artificial neural network that can be used for binary classification. It is a simple model that consists of a single layer of artificial neurons and is used to classify input data into one of two categories. The perceptron algorithm learns the weights of the artificial neurons by adjusting them based on the input data and the desired output. The perceptron is considered a basic building block for more complex neural networks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What Are Transformers in AI</title>
+      <link>http://localhost:1313/dsblog/What-Are-Transformers-in-AI/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/What-Are-Transformers-in-AI/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6031-What-are-Transformers-in-AI.jpg&#34; alt=&#34;What-are-Transformers-in-AI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-are-transformers-in-ai&#34;&gt;What Are Transformers in AI&lt;/h1&gt;&#xA;&lt;h2 id=&#34;transformer-architecture&#34;&gt;Transformer Architecture&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/transformer/transformer-arch.jpg&#34; alt=&#34;Transformer&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;&#xA;&lt;p&gt;Whether GPT, ChatGPT, DALL-E, Whisper, Satablity AI or whatever significant you see in the AI worlds nowdays it is because of Transformer Architecture. Transformers are a type of neural network architecture that have several properties that make them effective for modeling data with long-range dependencies. They generally feature a combination of multi-headed attention mechanisms, residual connections, layer normalization, feedforward connections, and positional embeddings.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

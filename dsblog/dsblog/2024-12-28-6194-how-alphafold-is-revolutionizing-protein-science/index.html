@@ -1,0 +1,328 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>How AlphaFold is Revolutionizing Protein Science | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/dsblog/2024-12-28-6194-how-alphafold-is-revolutionizing-protein-science/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="How AlphaFold is Revolutionizing Protein Science">
+  <meta property="og:description" content="How AlphaFold is Revolutionizing Protein Science: Answering Big Questions with AI Introduction What are proteins, and why are they important for life? 🧬 Proteins are the workhorses of life. Found in every cell, they perform vital roles such as providing structural support, enabling biochemical reactions, and defending the body against pathogens. Without proteins, life as we know it would not exist.
+How do amino acids form proteins? 🧩 Proteins are composed of amino acids, the building blocks of life. These 20 amino acids combine in specific sequences to create unique proteins. The sequence determines a protein’s structure and function, much like letters in words.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-12-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-28T00:00:00+00:00">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Protein Science">
+    <meta property="article:tag" content="AlphaFold">
+
+  <meta itemprop="name" content="How AlphaFold is Revolutionizing Protein Science">
+  <meta itemprop="description" content="How AlphaFold is Revolutionizing Protein Science: Answering Big Questions with AI Introduction What are proteins, and why are they important for life? 🧬 Proteins are the workhorses of life. Found in every cell, they perform vital roles such as providing structural support, enabling biochemical reactions, and defending the body against pathogens. Without proteins, life as we know it would not exist.
+How do amino acids form proteins? 🧩 Proteins are composed of amino acids, the building blocks of life. These 20 amino acids combine in specific sequences to create unique proteins. The sequence determines a protein’s structure and function, much like letters in words.">
+  <meta itemprop="datePublished" content="2024-12-28T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-12-28T00:00:00+00:00">
+  <meta itemprop="wordCount" content="857">
+  <meta itemprop="keywords" content="What is protein folding and how does it work,How is AlphaFold revolutionizing protein science,What are the implications of AlphaFold for chemistry,What is the chemistry Nobel Prize 2024,How does AlphaFold use AI to solve the protein folding problem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How AlphaFold is Revolutionizing Protein Science">
+  <meta name="twitter:description" content="How AlphaFold is Revolutionizing Protein Science: Answering Big Questions with AI Introduction What are proteins, and why are they important for life? 🧬 Proteins are the workhorses of life. Found in every cell, they perform vital roles such as providing structural support, enabling biochemical reactions, and defending the body against pathogens. Without proteins, life as we know it would not exist.
+How do amino acids form proteins? 🧩 Proteins are composed of amino acids, the building blocks of life. These 20 amino acids combine in specific sequences to create unique proteins. The sequence determines a protein’s structure and function, much like letters in words.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6194-How-AlphaFold-is-Revolutionizing-Protein-Science.jpg" alt=" Answering Big Questions with AI"></p>
+<h1 id="how-alphafold-is-revolutionizing-protein-science-answering-big-questions-with-ai">How AlphaFold is Revolutionizing Protein Science: Answering Big Questions with AI</h1>
+<h2 id="introduction">Introduction</h2>
+<h3 id="what-are-proteins-and-why-are-they-important-for-life-">What are proteins, and why are they important for life? 🧬</h3>
+<p>Proteins are the workhorses of life. Found in every cell, they perform vital roles such as providing structural support, enabling biochemical reactions, and defending the body against pathogens. Without proteins, life as we know it would not exist.</p>
+<hr>
+<h3 id="how-do-amino-acids-form-proteins-">How do amino acids form proteins? 🧩</h3>
+<p>Proteins are composed of amino acids, the building blocks of life. These 20 amino acids combine in specific sequences to create unique proteins. The sequence determines a protein&rsquo;s structure and function, much like letters in words.</p>
+<hr>
+<h3 id="what-is-protein-folding-and-why-does-it-matter-">What is protein folding, and why does it matter? 🔄</h3>
+<p>Protein folding is the process where a protein assumes its functional 3D structure. Misfolding can lead to diseases such as Alzheimer’s and cystic fibrosis. Understanding folding helps us design drugs and predict how proteins interact.</p>
+<hr>
+<h2 id="understanding-proteins">Understanding Proteins</h2>
+<h3 id="how-are-proteins-structured-primary-secondary-tertiary-quaternary-">How are proteins structured (primary, secondary, tertiary, quaternary)? 🧬</h3>
+<p>Proteins have four levels of structure:</p>
+<ul>
+<li><strong>Primary</strong>: The sequence of amino acids.</li>
+<li><strong>Secondary</strong>: Localized shapes like alpha-helices and beta-sheets.</li>
+<li><strong>Tertiary</strong>: The overall 3D structure of a single protein molecule.</li>
+<li><strong>Quaternary</strong>: Complexes formed by multiple protein molecules.</li>
+</ul>
+<hr>
+<h3 id="why-is-it-so-hard-to-predict-protein-structures-">Why is it so hard to predict protein structures? 🧐</h3>
+<p>The difficulty lies in the astronomical number of possible conformations. Proteins fold in milliseconds, but computationally predicting this from amino acid sequences has been a challenge due to the vast complexity.</p>
+<hr>
+<h3 id="what-are-the-different-types-of-proteins-and-their-functions-">What are the different types of proteins and their functions? 🧬</h3>
+<p>Proteins are classified based on their functions:</p>
+<ul>
+<li><strong>Enzymes</strong>: Speed up chemical reactions (e.g., lactase).</li>
+<li><strong>Structural proteins</strong>: Provide support (e.g., collagen).</li>
+<li><strong>Transport proteins</strong>: Move molecules (e.g., hemoglobin).</li>
+<li><strong>Defense proteins</strong>: Protect the body (e.g., antibodies).</li>
+</ul>
+<hr>
+<h3 id="how-many-proteins-are-possible-and-how-many-are-known-to-humans-">How many proteins are possible, and how many are known to humans? 🌍</h3>
+<p>With 20 amino acids forming sequences of various lengths, billions of protein combinations are possible. Humans have around <strong>20,000-25,000 proteins</strong> identified, but there’s still much to explore in other organisms.</p>
+<hr>
+<h3 id="whats-the-connection-between-human-plant-and-animal-proteins-">What’s the connection between human, plant, and animal proteins? 🌱</h3>
+<p>All life shares a genetic code, so proteins across humans, plants, and animals often have similar amino acid sequences and structures. This connection helps in using plant-based or animal-derived proteins to meet dietary needs or model human biology.</p>
+<hr>
+<h2 id="alphafold-and-the-nobel-worthy-breakthrough">AlphaFold and the Nobel-Worthy Breakthrough</h2>
+<h3 id="what-is-alphafold-and-why-is-it-revolutionary-">What is AlphaFold, and why is it revolutionary? 🏆</h3>
+<p>AlphaFold, developed by DeepMind, uses AI to predict protein structures with remarkable accuracy. It solved a 50-year-old challenge by reliably determining 3D structures from amino acid sequences, earning acclaim globally.</p>
+<hr>
+<h3 id="how-does-alphafold-work-what-data-does-it-use-">How does AlphaFold work? What data does it use? 📊</h3>
+<p>AlphaFold uses neural networks trained on protein sequences and their experimentally determined structures. By analyzing patterns, it predicts 3D conformations with atomic-level accuracy. Inputs include amino acid sequences, while outputs are the protein’s folded structure.</p>
+<hr>
+<h3 id="did-alphafold-win-a-nobel-prize-whats-the-story-behind-it-">Did AlphaFold win a Nobel Prize? What’s the story behind it? 🎉</h3>
+<p>While AlphaFold itself alone didn&rsquo;t won a Nobel, it is one of the 3 receipients of Chemistry Nobel prize of 2024. The 2024 Nobel Prize in Chemistry highlighted advancements in protein research, and AlphaFold’s innovations played a significant role in the broader recognition of AI in science.</p>
+<hr>
+<h2 id="applications-in-science-and-medicine">Applications in Science and Medicine</h2>
+<h3 id="how-is-alphafold-transforming-drug-discovery-">How is AlphaFold transforming drug discovery? 💊</h3>
+<p>AlphaFold accelerates drug discovery by:</p>
+<ul>
+<li>Predicting protein targets for diseases.</li>
+<li>Simulating how drugs bind to these targets.</li>
+<li>Reducing the time and cost of traditional drug research.</li>
+</ul>
+<hr>
+<h3 id="can-alphafold-help-cure-diseases-like-kidney-failure-">Can AlphaFold help cure diseases like kidney failure? 🩺</h3>
+<p>By identifying misfolded or dysfunctional proteins in kidneys, AlphaFold can guide the design of therapies to restore function or replace damaged proteins, offering hope for curing diseases like kidney failure.</p>
+<hr>
+<h3 id="what-other-applications-does-alphafold-have-in-biology-">What other applications does AlphaFold have in biology? 🔬</h3>
+<p>Beyond medicine, AlphaFold aids:</p>
+<ul>
+<li><strong>Agriculture</strong>: Improving crop resistance.</li>
+<li><strong>Enzyme engineering</strong>: Designing better industrial catalysts.</li>
+<li><strong>Environmental science</strong>: Understanding proteins in microbes for waste breakdown.</li>
+</ul>
+<hr>
+<h2 id="ai-and-alphafolds-place-in-it">AI and AlphaFold’s Place in It</h2>
+<h3 id="what-is-the-connection-between-alphafold-and-alphago-">What is the connection between AlphaFold and AlphaGo? 🎮</h3>
+<p>AlphaFold and AlphaGo both originate from DeepMind. While AlphaGo mastered the game of Go, AlphaFold applied similar reinforcement learning and deep learning techniques to solve protein structure prediction challenges.</p>
+<hr>
+<h3 id="how-is-alphafold-different-from-other-ai-models-">How is AlphaFold different from other AI models? 🤖</h3>
+<p>Unlike typical AI models, AlphaFold focuses on a specific scientific problem. It integrates domain knowledge, physics-based principles, and AI, setting it apart from general-purpose models like GPT or BERT.</p>
+<hr>
+<h2 id="bridging-ai-proteins-and-health">Bridging AI, Proteins, and Health</h2>
+<h3 id="how-does-lifestyle-and-diet-affect-protein-folding-">How does lifestyle and diet affect protein folding? 🥗</h3>
+<p>Proper diet ensures proteins fold correctly:</p>
+<ul>
+<li><strong>Essential nutrients</strong>: Provide building blocks for amino acids.</li>
+<li><strong>Antioxidants</strong>: Protect against folding errors.</li>
+<li><strong>Hydration and exercise</strong>: Maintain cellular health for optimal protein activity.</li>
+</ul>
+<hr>
+<h3 id="whats-the-future-of-alphafold-and-ai-in-biology-">What’s the future of AlphaFold and AI in biology? 🌟</h3>
+<p>The future promises:</p>
+<ul>
+<li>Real-time protein interaction modeling.</li>
+<li>Personalized medicine tailored to individual protein structures.</li>
+<li>New AI models for understanding complex biological systems.</li>
+</ul>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<h3 id="what-have-we-learned-about-ai-proteins-and-health-">What have we learned about AI, proteins, and health? 💡</h3>
+<p>We’ve explored:</p>
+<ul>
+<li>The essential role of proteins.</li>
+<li>How AlphaFold revolutionizes protein folding prediction.</li>
+<li>Real-world applications in medicine, biology, and beyond.</li>
+</ul>
+<hr>
+<h3 id="where-can-i-learn-more-about-alphafold-and-protein-science-">Where can I learn more about AlphaFold and protein science? 📚</h3>
+<ul>
+<li><a href="https://deepmind.google/discover/blog/a-glimpse-of-the-next-generation-of-alphafold/">A glimpse of the next generation of AlphaFold</a></li>
+<li><a href="https://blog.google/technology/ai/google-deepmind-isomorphic-alphafold-3-ai-model/">AlphaFold 3 predicts the structure and interactions of all of life’s molecules</a></li>
+<li><a href="https://www.rcsb.org/">The Protein Data Bank</a></li>
+<li><a href="https://www.nobelprize.org/prizes/chemistry/2023/summary/">Nobel Prize in Chemistry 2023</a></li>
+</ul>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

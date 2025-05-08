@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web-Based Coding on Agones</title>
+    <link>http://localhost:1313/tags/web-based-coding/</link>
+    <description>Recent content in Web-Based Coding on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/web-based-coding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Online Coding Tools: Choosing the Right IDE for Your Project</title>
+      <link>http://localhost:1313/dsblog/online-coding-tools/</link>
+      <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/online-coding-tools/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6232-Online-Coding-Tools.jpg&#34; alt=&#34;Online Coding Tools&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;online-coding-tools&#34;&gt;Online Coding Tools&lt;/h1&gt;&#xA;&lt;p&gt;The main difference between various online coding tools lies in how these tools function and what they are optimized for. Without wasting much time around let&amp;rsquo;s get into it.&lt;/p&gt;&#xA;&lt;h3 id=&#34;vscodedev--similar-web-based-ides&#34;&gt;VSCode.dev &amp;amp; Similar Web-Based IDEs&lt;/h3&gt;&#xA;&lt;p&gt;These are for full-fledged coding with local and remote integration&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Examples:&lt;/strong&gt; &lt;a href=&#34;https://vscode.dev/&#34;&gt;VSCode.dev&lt;/a&gt;, &lt;a href=&#34;https://github.com/features/codespaces&#34;&gt;GitHub Codespaces&lt;/a&gt;, &lt;a href=&#34;https://www.gitpod.io/&#34;&gt;Gitpod&lt;/a&gt;, &lt;a href=&#34;https://stackblitz.com/&#34;&gt;StackBlitz&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Use Case:&lt;/strong&gt; Writing and editing code with a full development environment in the browser.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Key Features:&lt;/strong&gt;&lt;br&gt;&#xA;✅ Looks and feels like VS Code or JetBrains IDEs&lt;br&gt;&#xA;✅ Supports &lt;strong&gt;GitHub/GitLab integration&lt;/strong&gt;&lt;br&gt;&#xA;✅ Can run &lt;strong&gt;remote containers/VMs&lt;/strong&gt; for coding&lt;br&gt;&#xA;✅ Some offer &lt;strong&gt;SSH connections&lt;/strong&gt; to remote servers&lt;br&gt;&#xA;✅ &lt;strong&gt;Customizable&lt;/strong&gt; with extensions, themes, etc.&lt;br&gt;&#xA;❌ Some lack full terminal/compilation support (e.g., VSCode.dev is read-only for some languages)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Best for:&lt;/strong&gt; Cloud-based development, remote work, and projects stored on GitHub/GitLab.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

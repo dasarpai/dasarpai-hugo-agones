@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RDBMS on Agones</title>
+    <link>http://localhost:1313/tags/rdbms/</link>
+    <description>Recent content in RDBMS on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/rdbms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL and Relational Algebra</title>
+      <link>http://localhost:1313/dsblog/relational-algebra/</link>
+      <pubDate>Mon, 14 Aug 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/relational-algebra/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6084-Relational-Algebra.jpg&#34; alt=&#34;Relational Algebra&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;sql-and-relational-algebra&#34;&gt;SQL and Relational Algebra&lt;/h1&gt;&#xA;&lt;p&gt;Relational algebra (RA) is considered as a procedural query language where the user tells the system to carry out a set of operations to obtain the desired results. i.e. The user tells what data should be retrieved from the database and how to retrieve it.&lt;/p&gt;&#xA;&lt;p&gt;Relational algebra notions can be implemtned via any any SQL language like PL/SQL, TSQL, SQLite SQL, DB2 SQL, MariaDB SQL, FireBird SQL, PSQL, ANSI SQL commands in any databases like MySQL, PostgreSQL, Oracle, SQLServer SQL server.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

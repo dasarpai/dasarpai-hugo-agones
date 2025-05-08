@@ -1,0 +1,1322 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Transformers Demystified A Step-by-Step Guide | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2024-07-25-6113-transformers_demystified_a_step-by-step_guide/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Transformers Demystified A Step-by-Step Guide">
+  <meta property="og:description" content="Transformers Demystified A Step-by-Step Guide All modern Transformers are based on a paper “Attention is all you need”
+Introduction This was the mother paper of all the transformer architectures we see today around NLP, Multimodal, Deep Learning. It was presented by Ashish Vaswani et al from Deep Learning / Google in 2017. We will discuss following and anything whatever question/observation/idea I have.
+The need Why this paper was needed? What problem it solved? What is transformer? What is encoder transformer? What is decoder transformer? What is encoder-decoder transformer? What is embedding? What is need for embedding? What are different types of embedding? What embeddingg is proposed in this work What benchmark dataset was used, what metrics were used and what was the performance of this model? Finally we will looks all the calculations with one illustration. Encourage all to read this original paper.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-07-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-07-25T00:00:00+00:00">
+    <meta property="article:tag" content="Transformers">
+    <meta property="article:tag" content="Deep Learning">
+    <meta property="article:tag" content="Natural Language Processing">
+    <meta property="article:tag" content="Neural Networks">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="AI Architecture">
+
+  <meta itemprop="name" content="Transformers Demystified A Step-by-Step Guide">
+  <meta itemprop="description" content="Transformers Demystified A Step-by-Step Guide All modern Transformers are based on a paper “Attention is all you need”
+Introduction This was the mother paper of all the transformer architectures we see today around NLP, Multimodal, Deep Learning. It was presented by Ashish Vaswani et al from Deep Learning / Google in 2017. We will discuss following and anything whatever question/observation/idea I have.
+The need Why this paper was needed? What problem it solved? What is transformer? What is encoder transformer? What is decoder transformer? What is encoder-decoder transformer? What is embedding? What is need for embedding? What are different types of embedding? What embeddingg is proposed in this work What benchmark dataset was used, what metrics were used and what was the performance of this model? Finally we will looks all the calculations with one illustration. Encourage all to read this original paper.">
+  <meta itemprop="datePublished" content="2024-07-25T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-07-25T00:00:00+00:00">
+  <meta itemprop="wordCount" content="7248">
+  <meta itemprop="keywords" content="Transformer Architecture,Neural Networks,Attention Mechanism,Deep Learning Models,NLP Architecture,Machine Learning Models,AI Model Design,Language Processing">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Transformers Demystified A Step-by-Step Guide">
+  <meta name="twitter:description" content="Transformers Demystified A Step-by-Step Guide All modern Transformers are based on a paper “Attention is all you need”
+Introduction This was the mother paper of all the transformer architectures we see today around NLP, Multimodal, Deep Learning. It was presented by Ashish Vaswani et al from Deep Learning / Google in 2017. We will discuss following and anything whatever question/observation/idea I have.
+The need Why this paper was needed? What problem it solved? What is transformer? What is encoder transformer? What is decoder transformer? What is encoder-decoder transformer? What is embedding? What is need for embedding? What are different types of embedding? What embeddingg is proposed in this work What benchmark dataset was used, what metrics were used and what was the performance of this model? Finally we will looks all the calculations with one illustration. Encourage all to read this original paper.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6113-transformers-demystified-a-step-by-step-guide.jpg" alt="Transformers Demystified A Step-by-Step Guide"></p>
+<h1 id="transformers-demystified-a-step-by-step-guide">Transformers Demystified A Step-by-Step Guide</h1>
+<p>All modern Transformers are based on a paper &ldquo;Attention is all you need&rdquo;</p>
+<h2 id="introduction">Introduction</h2>
+<p>This was the mother paper of all the transformer architectures we see today around NLP, Multimodal, Deep Learning. It was presented by Ashish Vaswani et al from Deep Learning / Google in 2017. We will discuss following and anything whatever question/observation/idea I have.</p>
+<ul>
+<li>The need
+Why this paper was needed? What problem it solved?</li>
+<li>What is transformer? What is encoder transformer? What is decoder transformer? What is encoder-decoder transformer?</li>
+<li>What is embedding? What is need for embedding? What are different types of embedding? What embeddingg is proposed in this work</li>
+<li>What benchmark dataset was used, what metrics were used and what was the performance of this model?</li>
+<li>Finally we will looks all the calculations with one illustration.</li>
+</ul>
+<p>Encourage all to read this <a href="https://arxiv.org/abs/1706.03762">original paper</a>.</p>
+<h2 id="what-was-need-of-this-work">What was need of this work?</h2>
+<p>This paper addressed several limitations of previous sequence-to-sequence models used for tasks such as machine translation, text summarization, and other natural language processing (NLP) applications. The need for this paper arose from various challenges and limitations in existing models:</p>
+<h3 id="limitations-of-previous-models">Limitations of Previous Models</h3>
+<ol>
+<li>
+<p><strong>Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTM) Networks</strong>:</p>
+<ul>
+<li><strong>Sequential Computation</strong>: RNNs and LSTMs process sequences step-by-step, which makes it difficult to parallelize computations and slows down training and inference.</li>
+<li><strong>Long-Range Dependencies</strong>: RNNs and LSTMs struggle to capture dependencies in long sequences, leading to difficulties in understanding context over long distances.</li>
+<li><strong>Gradient Issues</strong>: These models can suffer from vanishing or exploding gradient problems, particularly with long sequences.</li>
+</ul>
+</li>
+<li>
+<p><strong>Convolutional Neural Networks (CNNs)</strong>:</p>
+<ul>
+<li><strong>Fixed Context Size</strong>: CNNs have a fixed receptive field, which can limit their ability to capture long-range dependencies effectively.</li>
+<li><strong>Complexity</strong>: Extending CNNs to capture longer contexts can significantly increase the model&rsquo;s complexity and computational cost.</li>
+</ul>
+</li>
+</ol>
+<p>The introduction of the Transformer architecture had a profound impact on the field of NLP and beyond. It paved the way for the development of large-scale pre-trained language models like BERT, GPT, and others, which have since become the foundation for many state-of-the-art AI applications. The principles of the Transformer architecture have also been adapted for other domains, such as image processing and reinforcement learning.</p>
+<h2 id="nlp-tasks">NLP Tasks</h2>
+<ol>
+<li>
+<p><strong>Text Classification</strong>:</p>
+<ul>
+<li><strong>Spam Detection</strong>: Classifying messages as spam or non-spam.</li>
+<li><strong>Topic Classification</strong>: Categorizing text into predefined topics or categories.</li>
+<li><strong>Sarcasm Detection</strong></li>
+<li><strong>Offensive Language Detection</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Sentiment and Emotion Analysis</strong>: Determining the sentiment or emotional tone expressed in a text.</p>
+</li>
+<li>
+<p><strong>Named Entity Recognition (NER)</strong>: Identifying and classifying named entities (e.g., people, organizations, locations) within a text.</p>
+</li>
+<li>
+<p><strong>Part-of-Speech Tagging (POS Tagging)</strong>: Assigning parts of speech (e.g., nouns, verbs, adjectives) to each word in a text.</p>
+</li>
+<li>
+<p><strong>Machine Translation</strong>: Translating text from one language to another (e.g., English to French).</p>
+</li>
+<li>
+<p><strong>Language Modeling</strong>: Predicting the next word or character in a sequence, often used in generating text or improving other NLP tasks.</p>
+</li>
+<li>
+<p><strong>Text Summarization</strong>:</p>
+<ul>
+<li><strong>Extractive Summarization</strong>: Extracting key sentences from a text to create a summary.</li>
+<li><strong>Abstractive Summarization</strong>: Generating a concise summary that captures the main ideas of the text.</li>
+</ul>
+</li>
+<li>
+<p><strong>Question Answering</strong>: Providing answers to questions based on a given text or dataset.</p>
+</li>
+<li>
+<p><strong>Text Generation</strong>: Generating coherent and contextually relevant text, such as in chatbots or story generation.</p>
+</li>
+<li>
+<p><strong>Text Similarity</strong>: Measuring how similar two pieces of text are, which can be used in tasks like duplicate detection or paraphrase identification.</p>
+</li>
+<li>
+<p><strong>Coreference Resolution</strong>: Identifying when different expressions in a text refer to the same entity.</p>
+</li>
+<li>
+<p><strong>Speech Recognition</strong>: Converting spoken language into text.</p>
+</li>
+<li>
+<p><strong>Speech Synthesis (Text-to-Speech)</strong>: Converting text into spoken language.</p>
+</li>
+<li>
+<p><strong>Dialogue Systems</strong>:</p>
+<ul>
+<li><strong>Chatbots</strong>: Engaging in conversation with users.</li>
+<li><strong>Virtual Assistants</strong>: Assisting users with tasks through natural language interactions.</li>
+</ul>
+</li>
+<li>
+<p><strong>Information Retrieval</strong>: Finding relevant information within large datasets or the web, such as search engines.</p>
+</li>
+<li>
+<p><strong>Dependency Parsing</strong>: Analyzing the grammatical structure of a sentence to establish relationships between words.</p>
+</li>
+<li>
+<p><strong>Grammar and Spelling Correction</strong>: Identifying and correcting grammatical errors and typos in text.</p>
+</li>
+<li>
+<p><strong>Textual Entailment</strong>: Determining if one sentence logically follows from another.</p>
+</li>
+<li>
+<p><strong>Word Sense Disambiguation</strong>: Identifying which sense of a word is used in a given context.</p>
+</li>
+<li>
+<p><strong>Natural Language Inference (NLI)</strong>: Determining if a premise logically entails a hypothesis.</p>
+</li>
+</ol>
+<p>Each of these tasks involves different techniques and models, often leveraging machine learning and deep learning to achieve state-of-the-art performance.</p>
+<h2 id="background">Background</h2>
+<p>Google Translate was launched on April 28, 2006. Initially, it was a statistical machine translation service that used United Nations and European Parliament transcripts to gather linguistic data.</p>
+<p>It used a statistical machine translation (SMT) approach. This method relied on statistical models to translate text based on patterns found in large volumes of bilingual text corpora. The SMT system analyzed these patterns to make educated guesses about the most likely translations.</p>
+<p>In 2016, Google Translate transitioned to using a neural machine translation (NMT) system, specifically the Google Neural Machine Translation (GNMT) system. This system uses deep learning techniques and neural networks to provide more accurate and natural translations by considering the entire sentence as a whole, rather than translating piece by piece.</p>
+<h3 id="metrics">Metrics</h3>
+<p>BLEU (Bilingual Evaluation Understudy) score, which measures the quality of machine-translated text against reference translations.</p>
+<p>Google reported that the new NMT system achieved improvements ranging from 55% to 85% across various language pairs in terms of BLEU scores compared to their previous SMT system. This was a substantial leap in translation quality.</p>
+<ul>
+<li>For Chinese to English translations, the BLEU score improvement was reported to be around 24.2, a significant increase from the previous SMT system.</li>
+<li>For English to French, the BLEU score improvement was noted as being around 5-8 points higher than the SMT system.</li>
+</ul>
+<h3 id="benchmarks">Benchmarks</h3>
+<ol>
+<li>
+<p><strong>WMT 2014 English-to-German (En-De) Translation Task</strong>:</p>
+<ul>
+<li><strong>Dataset</strong>: The dataset consisted of 4.5 million sentence pairs.</li>
+<li><strong>Performance</strong>: The Transformer model achieved a BLEU score of 28.4, which was a significant improvement over the previous state-of-the-art models.</li>
+</ul>
+</li>
+<li>
+<p><strong>WMT 2014 English-to-French (En-Fr) Translation Task</strong>:</p>
+<ul>
+<li><strong>Dataset</strong>: The dataset consisted of 36 million sentence pairs.</li>
+<li><strong>Performance</strong>: The Transformer model achieved a BLEU score of 41.8, which also outperformed previous models.</li>
+</ul>
+</li>
+</ol>
+<h2 id="key-terms">Key terms</h2>
+<ol>
+<li>
+<p><strong>Transformer Architecture</strong>: The paper introduces the Transformer, a novel architecture solely based on attention mechanisms, dispensing with recurrence and convolutions entirely.</p>
+</li>
+<li>
+<p><strong>Attention Mechanism</strong>: The core idea is the use of self-attention, allowing the model to weigh the importance of different words in a sentence when forming a representation of each word.</p>
+</li>
+<li>
+<p><strong>Self-Attention</strong>: Self-attention allows each word to focus on different parts of the input sentence, making it easier for the model to understand context and relationships between words.</p>
+</li>
+<li>
+<p><strong>Multi-Head Attention</strong>: Instead of performing a single attention function, the Transformer employs multiple attention heads, each focusing on different parts of the sentence, capturing diverse aspects of the information.</p>
+</li>
+<li>
+<p><strong>Positional Encoding</strong>: Since the Transformer does not have recurrence, it uses positional encodings to give the model information about the position of each word in the sentence.</p>
+</li>
+<li>
+<p><strong>Layer Normalization and Residual Connections</strong>: Each sub-layer (multi-head attention and feed-forward) is followed by layer normalization and residual connections, aiding in training deep networks.</p>
+</li>
+<li>
+<p><strong>Encoder-Decoder Structure</strong>: The Transformer is composed of an encoder (which processes the input) and a decoder (which generates the output). Each consists of multiple layers of self-attention and feed-forward networks.</p>
+</li>
+<li>
+<p><strong>Performance</strong>: The Transformer achieves state-of-the-art performance on several NLP tasks while being more parallelizable and faster to train than recurrent architectures like LSTMs and GRUs.</p>
+</li>
+<li>
+<p><strong>Scalability</strong>: Due to its architecture, the Transformer scales well with the amount of available data and computational power, making it suitable for large-scale tasks.</p>
+</li>
+</ol>
+<h2 id="with-encoder-only-architecture-we-can-do">With &ldquo;Encoder Only&rdquo; Architecture we can do.</h2>
+<p>An encoder-only architecture, such as BERT (Bidirectional Encoder Representations from Transformers), is typically used for tasks that require understanding and representing input sequences without generating sequences. Here are some common NLP tasks that can be effectively handled using an encoder-only architecture:</p>
+<ol>
+<li>
+<p><strong>Text Classification</strong>:</p>
+<ul>
+<li><strong>Sentiment Analysis</strong>: Determining the sentiment (positive, negative, neutral) expressed in a piece of text.</li>
+<li><strong>Spam Detection</strong>: Classifying messages as spam or not spam.</li>
+<li><strong>Topic Classification</strong>: Categorizing text into predefined topics or categories.</li>
+</ul>
+</li>
+<li>
+<p><strong>Named Entity Recognition (NER)</strong>: Identifying and classifying named entities (e.g., persons, organizations, locations) within the text.</p>
+</li>
+<li>
+<p><strong>Part-of-Speech Tagging (POS Tagging)</strong>: Assigning parts of speech (e.g., nouns, verbs, adjectives) to each word in the text.</p>
+</li>
+<li>
+<p><strong>Question Answering (Extractive)</strong>: Extracting an answer from a given context based on a query. For instance, answering questions from a passage of text.</p>
+</li>
+<li>
+<p><strong>Textual Entailment</strong>: Determining whether a given hypothesis logically follows from a premise (also known as Natural Language Inference, NLI).</p>
+</li>
+<li>
+<p><strong>Sentence Pair Classification</strong>:</p>
+<ul>
+<li><strong>Paraphrase Detection</strong>: Identifying whether two sentences are paraphrases of each other.</li>
+<li><strong>Semantic Similarity</strong>: Measuring how similar two sentences or phrases are in meaning.</li>
+</ul>
+</li>
+<li>
+<p><strong>Coreference Resolution</strong>: Determining which expressions in a text refer to the same entity.</p>
+</li>
+<li>
+<p><strong>Text Summarization (Extractive)</strong>: Selecting the most important sentences from a document to create a summary.</p>
+</li>
+<li>
+<p><strong>Grammar and Spelling Correction</strong>: Identifying and correcting grammatical errors and typos in text.</p>
+</li>
+<li>
+<p><strong>Information Retrieval</strong>: Ranking and retrieving relevant documents based on a query.</p>
+</li>
+<li>
+<p><strong>Document Classification</strong>: Categorizing entire documents into classes or categories.</p>
+</li>
+<li>
+<p><strong>Named Entity Disambiguation</strong>: Resolving ambiguities in named entities to identify the correct entity among potential candidates.</p>
+</li>
+<li>
+<p><strong>Feature Extraction for Downstream Tasks</strong>: Generating contextualized embeddings from text to be used as features in other machine learning models.</p>
+</li>
+</ol>
+<p>Encoder-only models are particularly effective in tasks that benefit from understanding the context and semantics of the input text, as they are designed to capture rich, contextual representations of the input data.</p>
+<h2 id="with-decoder-only-architecture-we-can-do">With &ldquo;Decoder only&rdquo; Architecture we can do.</h2>
+<p>Decoder-only architectures, such as GPT (Generative Pre-trained Transformer), are primarily designed for tasks involving text generation. These models are well-suited for autoregressive tasks where the goal is to predict or generate text based on a given context. Here are some common NLP tasks that can be effectively handled using a decoder-only architecture:</p>
+<ol>
+<li>
+<p><strong>Text Generation</strong>:</p>
+<ul>
+<li><strong>Creative Writing</strong>: Generating coherent and contextually relevant creative content, such as stories, poems, or dialogues.</li>
+<li><strong>Content Generation</strong>: Creating blog posts, articles, or other types of written content.</li>
+</ul>
+</li>
+<li>
+<p><strong>Language Modeling</strong>:</p>
+<ul>
+<li><strong>Next Word Prediction</strong>: Predicting the next word or token in a sequence given the preceding context.</li>
+<li><strong>Completion</strong>: Providing completion for a partially written sentence or text.</li>
+</ul>
+</li>
+<li>
+<p><strong>Conversational AI</strong>:</p>
+<ul>
+<li><strong>Chatbots</strong>: Engaging in conversation with users, generating responses to user inputs.</li>
+<li><strong>Virtual Assistants</strong>: Assisting with tasks through natural language interactions.</li>
+</ul>
+</li>
+<li>
+<p><strong>Text Summarization (Abstractive)</strong>: Generating a concise summary of a text that captures the main ideas, potentially rephrasing and reorganizing information.</p>
+</li>
+<li>
+<p><strong>Machine Translation</strong>: Translating text from one language to another in an autoregressive manner, generating translated sentences token by token.</p>
+</li>
+<li>
+<p><strong>Dialogue Generation</strong>:</p>
+<ul>
+<li><strong>Interactive Fiction</strong>: Generating dialogues in interactive fiction or role-playing scenarios.</li>
+<li><strong>Conversational Agents</strong>: Generating responses in a conversation based on the context of the dialogue.</li>
+</ul>
+</li>
+<li>
+<p><strong>Storytelling</strong>: Creating narratives or expanding on a given prompt to generate a complete story or narrative.</p>
+</li>
+<li>
+<p><strong>Autoregressive Text Editing</strong>: Modifying or editing text based on a given context, such as rewriting or expanding text.</p>
+</li>
+<li>
+<p><strong>Text-based Games</strong>: Generating responses and interactions in text-based games or interactive storytelling environments.</p>
+</li>
+</ol>
+<p>Decoder-only architectures excel in generating text sequences and modeling complex language patterns due to their autoregressive nature. They predict the next token in a sequence based on the previous tokens, which makes them ideal for tasks that involve creating or completing text.</p>
+<h2 id="with-encoder-decoder-architecture-we-can-do-following-task">With Encoder-Decoder Architecture we can do following task.</h2>
+<p>Encoder-decoder architectures, like those used in the original Transformer model and its derivatives (e.g., T5, BART), are particularly well-suited for tasks that involve transforming one sequence into another. These models leverage the encoder to process and understand the input sequence and the decoder to generate the output sequence. Here are some key tasks that benefit from an encoder-decoder architecture:</p>
+<ol>
+<li>
+<p><strong>Machine Translation</strong>: Translating text from one language to another. The encoder processes the source language text, while the decoder generates the translated text in the target language.</p>
+</li>
+<li>
+<p><strong>Text Summarization</strong>:</p>
+<ul>
+<li><strong>Abstractive Summarization</strong>: Generating a concise and coherent summary of a document, potentially rephrasing and synthesizing information from the source text.</li>
+</ul>
+</li>
+<li>
+<p><strong>Text-to-Text Tasks</strong>: Treating various NLP tasks as text-to-text problems, where both the input and output are sequences of text. Examples include:</p>
+<ul>
+<li><strong>Question Answering</strong>: Generating answers to questions based on a provided context or passage.</li>
+<li><strong>Text Generation with Constraints</strong>: Generating text based on specific constraints or instructions.</li>
+</ul>
+</li>
+<li>
+<p><strong>Image Captioning</strong>: Generating a textual description of an image. The encoder processes features extracted from the image, and the decoder generates a descriptive sentence.</p>
+</li>
+<li>
+<p><strong>Speech-to-Text</strong>: Converting spoken language (speech) into written text. The encoder processes the audio features, while the decoder generates the corresponding text.</p>
+</li>
+<li>
+<p><strong>Text-Based Conversational Systems</strong>:</p>
+<ul>
+<li><strong>Dialogue Generation</strong>: Generating responses in a conversation where the input may be a previous dialogue context or user query, and the output is a coherent response.</li>
+</ul>
+</li>
+<li>
+<p><strong>Paraphrase Generation</strong>: Rewriting or generating paraphrased versions of a given text while preserving its meaning.</p>
+</li>
+<li>
+<p><strong>Story Generation</strong>: Generating complete stories or narratives based on a prompt or initial context.</p>
+</li>
+<li>
+<p><strong>Semantic Parsing</strong>: Converting natural language into a structured format or query (e.g., converting a sentence into a SQL query).</p>
+</li>
+<li>
+<p><strong>Text Style Transfer</strong>: Transforming the style of a given text while preserving its original meaning (e.g., changing a formal text into an informal one).</p>
+</li>
+<li>
+<p><strong>Multi-Modal Tasks</strong>: Combining multiple types of input (e.g., text and images) to generate output in one modality (e.g., generating text from images or audio).</p>
+</li>
+</ol>
+<p>Encoder-decoder architectures are versatile and powerful for tasks that require generating output sequences based on complex input sequences, making them suitable for a wide range of applications in natural language processing and beyond.</p>
+<h2 id="why-do-we-need-encoder-decoder-architectures">Why do we need encoder-decoder architectures?</h2>
+<p>Both encoder-only and decoder-only architectures have their own strengths and are suited to different types of tasks. The choice between them often depends on the specific requirements of the task and the trade-offs in terms of computational resources, complexity, and performance. Here&rsquo;s a comparison of why you might choose an encoder-decoder architecture over a decoder-only one, and considerations about resource usage:</p>
+<ol>
+<li>
+<p><strong>Handling Complex Input-Output Relationships</strong>:</p>
+<ul>
+<li><strong>Task Complexity</strong>: Encoder-decoder models excel at tasks where the input and output are significantly different in structure or length, such as machine translation or summarization. The encoder captures the complex relationships in the input sequence, and the decoder generates a well-formed output sequence.</li>
+<li><strong>Contextual Encoding</strong>: The encoder can effectively represent the entire input sequence in a structured way, allowing the decoder to generate a sequence that reflects the input&rsquo;s context accurately.</li>
+</ul>
+</li>
+<li>
+<p><strong>Improved Performance on Sequence-to-Sequence Tasks</strong>:</p>
+<ul>
+<li><strong>Attention Mechanism</strong>: The encoder-decoder framework allows for sophisticated attention mechanisms that can focus on different parts of the input sequence while generating the output. This is crucial for tasks where the output needs to reference specific parts of the input.</li>
+</ul>
+</li>
+<li>
+<p><strong>Versatility</strong>:</p>
+<ul>
+<li><strong>Generalization</strong>: Encoder-decoder models can be adapted for a variety of tasks beyond just sequence generation, including text-to-text transformations and multi-modal tasks (e.g., generating text from images).</li>
+</ul>
+</li>
+<li>
+<p><strong>Decoupling of Representation and Generation</strong>:</p>
+<ul>
+<li><strong>Modularity</strong>: The separation of encoding and decoding processes allows for specialized models and training procedures. This can be advantageous when tuning models for specific tasks.</li>
+</ul>
+</li>
+</ol>
+<h3 id="resource-considerations">Resource Considerations</h3>
+<ol>
+<li>
+<p><strong>Computational Resources</strong>:</p>
+<ul>
+<li><strong>Encoder-Decoder Models</strong>: Typically require more resources compared to decoder-only models because they need to handle both encoding and decoding processes. This involves more parameters and more complex computations, particularly for tasks with long input sequences.</li>
+<li><strong>Decoder-Only Models</strong>: Can be more resource-efficient for tasks that involve generating text based on a fixed context, as they focus solely on the generation process.</li>
+</ul>
+</li>
+<li>
+<p><strong>Training and Inference</strong>:</p>
+<ul>
+<li><strong>Encoder-Decoder Models</strong>: Training can be more resource-intensive due to the dual structure (encoder and decoder). Inference can also be slower because it involves both encoding the input and generating the output.</li>
+<li><strong>Decoder-Only Models</strong>: Training might be less complex since there is only one component involved, and inference can be faster for generation tasks due to the lack of a separate encoding step.</li>
+</ul>
+</li>
+</ol>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><strong>Encoder-Decoder Models</strong>: Best suited for tasks where the input and output sequences are complex and need sophisticated handling. They provide a structured approach to managing different sequence transformations and can handle a wide range of sequence-to-sequence tasks.</li>
+<li><strong>Decoder-Only Models</strong>: More efficient for tasks focused solely on text generation or autoregressive modeling, where the context is provided, and the focus is on generating a continuation or response.</li>
+</ul>
+<p>Choosing between encoder-decoder and decoder-only architectures depends on the specific task requirements and the trade-offs between performance and computational efficiency. For tasks involving intricate input-output relationships, an encoder-decoder model is often preferred despite the higher resource demands. For tasks centered on generating sequences based on a fixed context, a decoder-only model may be more resource-efficient.</p>
+<h2 id="popular-transformer-architectures">Popular Transformer Architectures</h2>
+<p>Transformer architecture has evolved significantly since the original &ldquo;Attention Is All You Need&rdquo; paper. Here are some notable variations and advancements:</p>
+<ol>
+<li>
+<p><strong>Original Transformer (Vaswani et al., 2017)</strong>:</p>
+<ul>
+<li><strong>Structure</strong>: Comprises an encoder-decoder architecture with self-attention and multi-head attention mechanisms.</li>
+<li><strong>Use Case</strong>: Initially designed for machine translation.</li>
+</ul>
+</li>
+<li>
+<p><strong>BERT (Bidirectional Encoder Representations from Transformers)</strong>:</p>
+<ul>
+<li><strong>Structure</strong>: Uses only the encoder part of the Transformer.</li>
+<li><strong>Training</strong>: Pre-trained using a masked language model (MLM) and next sentence prediction (NSP) objectives.</li>
+<li><strong>Use Case</strong>: Effective for various NLP tasks like question answering, sentiment analysis, and named entity recognition.</li>
+</ul>
+</li>
+<li>
+<p><strong>GPT (Generative Pre-trained Transformer)</strong>:</p>
+<ul>
+<li><strong>Structure</strong>: Uses only the decoder part of the Transformer.</li>
+<li><strong>Training</strong>: Pre-trained using a unidirectional (left-to-right) language model objective.</li>
+<li><strong>Variants</strong>: GPT-2 and GPT-3, with GPT-4 being the latest, have scaled up the number of parameters and improved performance significantly.</li>
+<li><strong>Use Case</strong>: Text generation, language translation, and more.</li>
+</ul>
+</li>
+<li>
+<p><strong>T5 (Text-to-Text Transfer Transformer)</strong>:</p>
+<ul>
+<li><strong>Structure</strong>: Converts all NLP tasks into a text-to-text format.</li>
+<li><strong>Training</strong>: Pre-trained on a diverse mixture of tasks and fine-tuned for specific tasks.</li>
+<li><strong>Use Case</strong>: Versatile across different NLP tasks.</li>
+</ul>
+</li>
+<li>
+<p><strong>RoBERTa (A Robustly Optimized BERT Pretraining Approach)</strong>:</p>
+<ul>
+<li><strong>Structure</strong>: An optimized version of BERT with more training data and longer training times.</li>
+<li><strong>Use Case</strong>: Improved performance on various NLP benchmarks compared to BERT.</li>
+</ul>
+</li>
+<li>
+<p><strong>ALBERT (A Lite BERT)</strong>:</p>
+<ul>
+<li><strong>Structure</strong>: Reduces the number of parameters using factorized embedding parameterization and cross-layer parameter sharing.</li>
+<li><strong>Use Case</strong>: Efficient and lightweight version of BERT for various NLP tasks.</li>
+</ul>
+</li>
+<li>
+<p><strong>DistilBERT</strong>:</p>
+<ul>
+<li><strong>Structure</strong>: A smaller, faster, and cheaper version of BERT.</li>
+<li><strong>Training</strong>: Uses knowledge distillation during pre-training.</li>
+<li><strong>Use Case</strong>: Suitable for environments with limited computational resources.</li>
+</ul>
+</li>
+<li>
+<p><strong>XLNet</strong>:</p>
+<ul>
+<li><strong>Structure</strong>: Integrates autoregressive and autoencoding approaches.</li>
+<li><strong>Training</strong>: Uses permutation-based training to capture bidirectional context.</li>
+<li><strong>Use Case</strong>: Effective for language modeling and various downstream NLP tasks.</li>
+</ul>
+</li>
+<li>
+<p><strong>Transformer-XL</strong>:</p>
+<ul>
+<li><strong>Structure</strong>: Introduces a segment-level recurrence mechanism.</li>
+<li><strong>Training</strong>: Handles long-term dependencies better than traditional Transformers.</li>
+<li><strong>Use Case</strong>: Suitable for tasks requiring long context understanding, like document modeling.</li>
+</ul>
+</li>
+<li>
+<p><strong>Vision Transformer (ViT)</strong>:</p>
+<ul>
+<li><strong>Structure</strong>: Applies Transformer architecture to image classification tasks.</li>
+<li><strong>Training</strong>: Treats image patches as tokens and processes them similarly to text.</li>
+<li><strong>Use Case</strong>: Effective for various computer vision tasks.</li>
+</ul>
+</li>
+<li>
+<p><strong>DeBERTa (Decoding-enhanced BERT with disentangled attention)</strong>:</p>
+<ul>
+<li><strong>Structure</strong>: Enhances BERT with disentangled attention and improved position embeddings.</li>
+<li><strong>Use Case</strong>: Achieves state-of-the-art results on various NLP benchmarks.</li>
+</ul>
+</li>
+<li>
+<p><strong>Swin Transformer</strong>:</p>
+<ul>
+<li><strong>Structure</strong>: Applies hierarchical vision Transformer architecture with shifted windows.</li>
+<li><strong>Training</strong>: Designed for image classification and dense prediction tasks.</li>
+<li><strong>Use Case</strong>: Effective for object detection, semantic segmentation, and more.</li>
+</ul>
+</li>
+</ol>
+<p>These variations demonstrate the versatility and adaptability of Transformer architectures across a wide range of applications in both natural language processing and computer vision.</p>
+<h2 id="why-multi-headed-attention">Why Multi headed attention?</h2>
+<p>The multi-head attention mechanism in Transformers enables the model to focus on different aspects of the input data simultaneously. Here are examples of various aspects that attention mechanisms can capture:</p>
+<h3 id="syntactic-relationships">Syntactic Relationships:</h3>
+<p>Example: In the sentence &ldquo;The cat sat on the mat,&rdquo; different heads might focus on different parts of speech relationships, such as subject-verb (&ldquo;cat&rdquo; and &ldquo;sat&rdquo;) and preposition-object (&ldquo;on&rdquo; and &ldquo;mat&rdquo;).</p>
+<h3 id="semantic-relationships">Semantic Relationships:</h3>
+<p>Example: In the sentence &ldquo;He played the piano beautifully,&rdquo; one head might focus on the verb &ldquo;played&rdquo; and its direct object &ldquo;piano,&rdquo; while another head focuses on the adverb &ldquo;beautifully&rdquo; modifying &ldquo;played.&rdquo;</p>
+<h3 id="coreference-resolution">Coreference Resolution:</h3>
+<p>Example: In the text &ldquo;Alice went to the market. She bought apples,&rdquo; one head might track the coreference between &ldquo;Alice&rdquo; and &ldquo;She.&rdquo;</p>
+<h3 id="long-range-dependencies">Long-Range Dependencies:</h3>
+<p>Example: In the sentence &ldquo;The book that you recommended to me last week was fascinating,&rdquo; one head might focus on the relationship between &ldquo;book&rdquo; and &ldquo;fascinating,&rdquo; which are far apart in the sentence.</p>
+<h3 id="positional-information">Positional Information:</h3>
+<p>Example: Different heads can capture relative positional information, such as the beginning, middle, and end of a sentence, which is crucial for understanding the structure.</p>
+<h3 id="named-entity-recognition">Named Entity Recognition:</h3>
+<p>Example: In the sentence &ldquo;Barack Obama was born in Hawaii,&rdquo; one head might focus on identifying &ldquo;Barack Obama&rdquo; as a person.</p>
+<h3 id="polarity-and-sentiment">Polarity and Sentiment:</h3>
+<ul>
+<li>Could capture positive or negative sentiment associated with different parts of the text.</li>
+<li>May focus on identifying subjective vs. objective statements. Ho</li>
+</ul>
+<h2 id="how-attention-works">How attention works?</h2>
+<p>The input embedding is linearly projected into three different spaces to generate queries (𝑄), keys (𝐾), and values (𝑉).</p>
+<p>$${Attention}(Q, K, V) = {softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V$$</p>
+<p>Where:</p>
+<ul>
+<li>Q is the query matrix.</li>
+<li>K is the key matrix.</li>
+<li>V is the value matrix.</li>
+<li>$d_k$ is the dimension of the keys.</li>
+</ul>
+<h2 id="how-multihead-attention-works">How multihead attention works.</h2>
+<ul>
+<li>Base model has 512 dim embedding vector, large model has 1024 dim embedding vector.</li>
+<li>Position vector of the same size is used.</li>
+<li>Both vectors are pair wise added.</li>
+<li>Base model has 8 heads and large model has 16 heads. Thus each head has 512/8 or 1024/16 i.e. 64 dim vector.</li>
+</ul>
+<h2 id="how-q-k-v-calculated">How Q, K, V Calculated?</h2>
+<ol>
+<li>
+<p><strong>Input Embedding Dimension for Base Model</strong>: 512</p>
+</li>
+<li>
+<p><strong>Number of Heads</strong>: 8</p>
+</li>
+<li>
+<p><strong>Dimension per Head</strong>: Each head will handle $$\frac{512}{8} = 64$$ dimensions.</p>
+</li>
+</ol>
+<h3 id="steps-for-multi-head-attention">Steps for Multi-Head Attention:</h3>
+<ol>
+<li>
+<p><strong>Linear Projections</strong>:</p>
+<ul>
+<li>The input embedding (of dimension 512) is linearly projected into three different spaces to generate queries ($$Q$$), keys ($K$), and values ($V$).</li>
+<li>Each projection is typically done using separate learned weight matrices.</li>
+<li>These projections result in three vectors: $Q$, $K$, and $V$, each of dimension 512.</li>
+<li>Example: <strong>Linear Projections</strong>:
+<ul>
+<li>For the input $X$ of shape $$[ batch_size, sequence_length, 512 ]$:</li>
+<li>$Q = XW_Q$, where $W_Q$ is a weight matrix of shape $[512, 512]$.</li>
+<li>$K = XW_K$, where $W_K$ is a weight matrix of shape $[512, 512]$.</li>
+<li>$V = XW_V$, where $W_V$ is a weight matrix of shape $[512, 512]$.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Splitting into Heads</strong>:</p>
+<ul>
+<li>After the projection, the $$Q$$, $$K$$, and $$V$$ vectors are split into 8 parts (heads).</li>
+<li>Each part will have $$ \frac{512}{8} = 64 $$ dimensions.</li>
+<li>This means each head gets a 64-dimensional sub-vector from $$Q$$, $$K$$, and $$V$$.</li>
+<li>Example: <strong>Splitting into Heads</strong>:
+<ul>
+<li>Each of the $$Q$$, $$K$$, and $$V$$ matrices (of shape $$ {batch_size}, {sequence_length}, 512 $$ is reshaped and split into 8 heads.</li>
+<li>For each matrix, this reshaping results in shape $$ batch_size, sequence_length, 8, 64 $$.</li>
+<li>The 8 heads mean we now have 8 sets of $$Q$$, $$K$$, and $$V$$ vectors, each of dimension 64.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="scaled-dot-product-attention-per-head">Scaled Dot-Product Attention (Per Head):</h3>
+<p>Each of the 8 heads performs scaled dot-product attention independently:
+$$ {Attention}(Q_i, K_i, V_i) = {softmax}\left(\frac{Q_i K_i^T}{\sqrt{d_k}}\right) V_i $$
+where $$ d_k = 64 $$ is the dimension of each head.</p>
+<h3 id="concatenation-and-final-linear-layer">Concatenation and Final Linear Layer:</h3>
+<ol>
+<li>
+<p>The outputs from all 8 heads are concatenated:</p>
+<ul>
+<li>Concatenated output shape: $$batch_size, sequence_length, 8 \times 64  =  batch_size, sequence_length, 512$$ .</li>
+</ul>
+</li>
+<li>
+<p>This concatenated vector is then passed through a final linear layer (with weight matrix of shape $$[512, 512]$$) to produce the final output of the multi-head attention mechanism.</p>
+</li>
+</ol>
+<p>This process ensures that each head independently attends to different parts of the input, capturing diverse aspects of the data.</p>
+<h2 id="floating-point-value-range">Floating Point Value Range</h2>
+<p>These embedding vectors holds floating point numbers. These numbers may be 64bit, 32bit, 16bit, 8bit, 4bit. What will be the range of value if we use these different bit size to hold floating number. This is useful when you are doing quantization.</p>
+<p>Embedding vectors in many deep learning frameworks typically use IEEE 754 double-precision floating-point format (64-bit) for representing values, but there are also other precision formats used depending on the specific requirements and hardware capabilities.</p>
+<p>Apart from number of parameters these floating point precision also make model bulky. To reduce the model size we reduce these floating point precision. This process is called quantization. For edge devices or making model run on low graded machine we can choose quantization of the model to 4bit or 8bit floating points, off course we suffer the quality of output due to this.</p>
+<h3 id="common-precision-formats-for-embeddings">Common Precision Formats for Embeddings</h3>
+<ol>
+<li>
+<p><strong>Double Precision (64-bit)</strong>:</p>
+<ul>
+<li><strong>Format</strong>: IEEE 754 double-precision floating-point.</li>
+<li><strong>Precision</strong>: Provides about 15-17 significant decimal digits of precision.</li>
+<li><strong>Range</strong>: Can represent values from approximately $$ \pm 5 \times 10^{-324} $$ to $$ \pm 1.79 \times 10^{308} $$.</li>
+<li><strong>Use Case</strong>: Often used when high precision is required, but it&rsquo;s less common in practice for embeddings due to the increased computational and memory overhead.</li>
+</ul>
+</li>
+<li>
+<p><strong>Single Precision (32-bit)</strong>:</p>
+<ul>
+<li><strong>Format</strong>: IEEE 754 single-precision floating-point.</li>
+<li><strong>Precision</strong>: Provides about 6-9 significant decimal digits of precision.</li>
+<li><strong>Range</strong>: Can represent values from approximately $$ \pm 1.18 \times 10^{-38} $$ to $$ \pm 3.4 \times 10^{38} $$.</li>
+<li><strong>Use Case</strong>: More common for embeddings due to a good balance between precision and computational efficiency.</li>
+</ul>
+</li>
+<li>
+<p><strong>Half Precision (16-bit)</strong>:</p>
+<ul>
+<li><strong>Format</strong>: IEEE 754 half-precision floating-point.</li>
+<li><strong>Precision</strong>: Provides about 3-4 significant decimal digits of precision.</li>
+<li><strong>Range</strong>: Can represent values from approximately $$ \pm 6.1 \times 10^{-5} $$ to $$ \pm 6.5 \times 10^{4} $$.</li>
+<li><strong>Use Case</strong>: Used to reduce memory usage and increase computational efficiency, especially during training with GPUs that support mixed precision.</li>
+</ul>
+</li>
+<li>
+<p><strong>BFloat16 (16-bit)</strong>:</p>
+<ul>
+<li><strong>Format</strong>: A variant of 16-bit floating-point with a different exponent and mantissa configuration, designed to be more efficient for certain computations.</li>
+<li><strong>Precision</strong>: Similar to half precision but with a larger exponent range.</li>
+<li><strong>Use Case</strong>: Used in some TensorFlow models and other frameworks to optimize performance while maintaining acceptable precision.</li>
+</ul>
+</li>
+</ol>
+<h3 id="in-summary">In Summary</h3>
+<ul>
+<li><strong>IEEE 754 Double Precision</strong> is used when high precision is crucial, but it is less common for embeddings due to the larger memory footprint and computation requirements.</li>
+<li><strong>IEEE 754 Single Precision</strong> is the most common format for embeddings in many deep learning applications due to its efficiency and sufficient precision.</li>
+<li><strong>Half Precision</strong> and <strong>BFloat16</strong> are used for further optimization, particularly in training scenarios where memory and computational efficiency are critical.</li>
+</ul>
+<p>The choice of precision format depends on the trade-offs between precision, memory usage, and computational efficiency.</p>
+<h2 id="illustration-of-working-of-transformer">Illustration of Working of Transformer</h2>
+<p>For the sake of simplicity, let&rsquo;s walk through an example of how a ChatGPT-like architecture generates text, using an 8-dimensional word embedding, a vocabulary size of 100, and a multi-headed attention mechanism with 2 heads and 3 layers. We will also perform the computations for the self-attention using the Query (Q), Key (K), and Value (V) matrices.</p>
+<h3 id="step-1-tokenization-and-embedding">Step 1: Tokenization and Embedding</h3>
+<p><strong>Vocabulary</strong>: 100 unique tokens.</p>
+<p><strong>Input Sentence</strong>: &ldquo;Hello world&rdquo;</p>
+<p><strong>Token IDs</strong>:</p>
+<ul>
+<li>&ldquo;Hello&rdquo; might be token ID 42.</li>
+<li>&ldquo;world&rdquo; might be token ID 85.</li>
+</ul>
+<p><strong>Embedding</strong>: Each token ID is mapped to an 8-dimensional vector.</p>
+<ul>
+<li>Embedding for &ldquo;Hello&rdquo; (token ID 42): [0.1, -0.2, 0.3, 0.4, -0.5, 0.2, -0.1, 0.0]</li>
+<li>Embedding for &ldquo;world&rdquo; (token ID 85): [-0.3, 0.1, 0.2, -0.4, 0.5, -0.2, 0.3, -0.1]</li>
+</ul>
+<p>We also need to compute position embedding. Refer <a href="/site/dsblog/2024-07-25-6113-transformers_demystified_a_step-by-step_guide/#position-embedding-mechanism">Position Embedding Mechanism</a></p>
+<h3 id="step-2-input-to-the-transformer-model">Step 2: Input to the Transformer Model</h3>
+<p>These embeddings are passed as input to the model.</p>
+<p><strong>Input Matrix</strong>:</p>
+<p>$$
+\begin{bmatrix}
+0.1 &amp; -0.2 &amp; 0.3 &amp; 0.4 &amp; -0.5 &amp; 0.2 &amp; -0.1 &amp; 0.0 \
+-0.3 &amp; 0.1 &amp; 0.2 &amp; -0.4 &amp; 0.5 &amp; -0.2 &amp; 0.3 &amp; -0.1 \
+\end{bmatrix}
+$$</p>
+<h3 id="step-3-self-attention">Step 3: <a href="/site/dsblog/2024-07-25-6113-transformers_demystified_a_step-by-step_guide/#self-attention-mechanism">Self Attention</a></h3>
+<ul>
+<li><strong>Multi-Head Self-Attention</strong></li>
+<li><strong>Combining Multi-Head Attention</strong></li>
+</ul>
+<p>For Head 2, similar computations will be performed to obtain $$ Q_2 $$, $$ K_2 $$, $$ V_2 $$, and the attention output. The outputs from both heads will be concatenated and then projected back into the original embedding dimension using a weight matrix $$ W^O $$.</p>
+<h3 id="step-4-processing-through-transformer-layers">Step 4. <strong>Processing Through Transformer Layers</strong></h3>
+<p>The output of the multi-head attention layer will then pass through the feed-forward neural network (FFNN) and normalization layers, completing the processing for one layer of the transformer. This process is repeated for the remaining layers, in our example 3 layers.</p>
+<ul>
+<li><strong>Feedforward Neural Networks</strong></li>
+<li><strong>Layer Normalization</strong></li>
+<li><strong>Residual Connections</strong></li>
+</ul>
+<p>Each layer refines the embeddings based on the input context.</p>
+<h3 id="step-5-output-logits">Step 5. <strong>Output Logits</strong></h3>
+<p>After processing through the Transformer layers, we get output vectors (logits) for each token position.</p>
+<p><strong>Output Logits for the Next Token</strong>:
+Let&rsquo;s assume our logits for the next token are a 100-dimensional vector (one value per token in the vocabulary). For simplicity:</p>
+<p>$$
+\begin{bmatrix}
+1.5, &amp; -0.3, &amp; \dots, &amp; 0.8 \
+\end{bmatrix}
+$$</p>
+<h3 id="step-6-softmax-function">Step 6. <strong>Softmax Function</strong></h3>
+<p>The logits are converted to probabilities using the softmax function.</p>
+<p><strong>Softmax Output</strong>:</p>
+<p>$$
+\begin{bmatrix}
+0.1, &amp; 0.05, &amp; \dots, &amp; 0.15 \
+\end{bmatrix}
+$$</p>
+<h3 id="step-7-token-selection">Step 7. <strong>Token Selection</strong></h3>
+<p>A token is selected based on the probabilities. Using sampling, top-k, or greedy decoding:</p>
+<ul>
+<li>Let&rsquo;s say token ID 75 is selected, corresponding to the token &ldquo;everyone&rdquo;.</li>
+</ul>
+<h3 id="step-8-generating-the-next-token">Step 8. <strong>Generating the Next Token</strong></h3>
+<p>The process repeats. The input now includes the previous tokens &ldquo;Hello world&rdquo; and the new token &ldquo;everyone&rdquo;. The model generates the next token based on this updated context.</p>
+<h3 id="generating-text">Generating Text</h3>
+<p>To generate text, the model uses these layers iteratively, predicting the next token in the sequence based on the previously generated tokens and the context provided by the input sequence. The output is passed through a final linear layer and softmax to produce probabilities for the next token, from which the next token is sampled or chosen.</p>
+<p>By repeating this process, the model generates text token by token until a specified end condition is met.</p>
+<h2 id="what-different-parameters-are-learned-during-transformer-training">What different parameters are learned during transformer training?</h2>
+<p>Transformer models like GPT3, GPT3.5, GPT4.0, Gemma, PaLM, Llama etc has billions of parameters. What are these parameters which are learned during training?</p>
+<p>In large language models like ChatGPT, weights and biases are integral to the model&rsquo;s operation, especially within the transformer architecture. Here’s a detailed breakdown of different weights and biases used in such models, including those related to attention mechanisms:</p>
+<h3 id="1-weights-and-biases-in-transformer-architecture">1. <strong>Weights and Biases in Transformer Architecture</strong></h3>
+<h4 id="attention-mechanism-weights"><strong>Attention Mechanism Weights</strong></h4>
+<ul>
+<li>
+<p><strong>Query Weights (W_q)</strong>: These weights transform the input embeddings or hidden states into query vectors. In the attention mechanism, the query vector is compared against keys to compute attention scores.</p>
+</li>
+<li>
+<p><strong>Key Weights (W_k)</strong>: These weights transform the input embeddings or hidden states into key vectors. The attention scores are computed by comparing these keys with the query vectors.</p>
+</li>
+<li>
+<p><strong>Value Weights (W_v)</strong>: These weights transform the input embeddings or hidden states into value vectors. The output of the attention mechanism is a weighted sum of these value vectors, based on the attention scores.</p>
+</li>
+<li>
+<p><strong>Output Weights (W_o)</strong>: After applying the attention mechanism, the output vectors are transformed by these weights before being passed to subsequent layers.</p>
+</li>
+</ul>
+<h4 id="feed-forward-network-weights"><strong>Feed-Forward Network Weights</strong></h4>
+<ul>
+<li>
+<p><strong>Weights (W_ff)</strong>: The feed-forward network within each transformer block has its own set of weights for transforming the hidden states. This usually includes two sets of weights:</p>
+<ul>
+<li><strong>Weight Matrices for Linear Transformations</strong>: These weights perform linear transformations in the feed-forward network, often involving two layers with an activation function (e.g., ReLU) in between.</li>
+</ul>
+</li>
+<li>
+<p><strong>Biases (b_ff)</strong>: Biases are used along with the weights in the feed-forward network to adjust the activation values.</p>
+</li>
+</ul>
+<h4 id="layer-normalization-weights"><strong>Layer Normalization Weights</strong></h4>
+<ul>
+<li><strong>Gamma (γ)</strong>: Scaling parameter used in layer normalization to adjust the normalized output.</li>
+<li><strong>Beta (β)</strong>: Shifting parameter used in layer normalization to adjust the mean of the normalized output.</li>
+</ul>
+<h3 id="2-overall-model-weights-and-biases">2. <strong>Overall Model Weights and Biases</strong></h3>
+<h4 id="embedding-weights"><strong>Embedding Weights</strong></h4>
+<ul>
+<li>
+<p><strong>Token Embedding Weights</strong>: These weights map input tokens (words or subwords) to continuous vector representations (embeddings).</p>
+</li>
+<li>
+<p><strong>Position Embedding Weights</strong>: These weights add positional information to the embeddings to encode the order of tokens in the sequence.</p>
+</li>
+</ul>
+<h4 id="layer-weights"><strong>Layer Weights</strong></h4>
+<ul>
+<li>
+<p><strong>Weights in Each Transformer Layer</strong>: Each layer of the transformer model has its own set of weights and biases for both the attention mechanism and the feed-forward network.</p>
+</li>
+<li>
+<p><strong>Residual Connection Weights</strong>: Residual connections (or skip connections) within each transformer layer often involve weights for combining the input and output of the layer.</p>
+</li>
+</ul>
+<h3 id="summary-1">Summary</h3>
+<p>In summary, the different weights and biases in a model like ChatGPT are:</p>
+<ul>
+<li>
+<p><strong>Attention Mechanism</strong>:</p>
+<ul>
+<li>Query Weights (W_q)</li>
+<li>Key Weights (W_k)</li>
+<li>Value Weights (W_v)</li>
+<li>Output Weights (W_o)</li>
+</ul>
+</li>
+<li>
+<p><strong>Feed-Forward Network</strong>:</p>
+<ul>
+<li>Weights (W_ff)</li>
+<li>Biases (b_ff)</li>
+</ul>
+</li>
+<li>
+<p><strong>Layer Normalization</strong>:</p>
+<ul>
+<li>Gamma (γ)</li>
+<li>Beta (β)</li>
+</ul>
+</li>
+<li>
+<p><strong>Embedding Weights</strong>:</p>
+<ul>
+<li>Token Embedding Weights</li>
+<li>Position Embedding Weights</li>
+</ul>
+</li>
+</ul>
+<p>These weights and biases are learned during the training phase and are used during inference to generate responses based on the input data. Each component of the model contributes to its ability to understand and generate human-like text.</p>
+<h2 id="self-attention-mechanism">Self Attention Mechanism</h2>
+<h3 id="compute-q-k-v-matrices-for-multi-head-attention-2-heads">Compute Q, K, V Matrices for Multi-Head Attention (2 heads)</h3>
+<p>We&rsquo;ll compute Q, K, and V matrices for each head.</p>
+<p><strong>Weight Matrices for Q, K, V for Head 1</strong>:</p>
+<p>$$
+W^Q_1, W^K_1, W^V_1 \in \mathbb{R}^{8 \times 4}$$</p>
+<p><strong>Weight Matrices for Q, K, V for Head 2</strong>:</p>
+<p>$$W^Q_2, W^K_2, W^V_2 \in \mathbb{R}^{8 \times 4}
+$$</p>
+<p>For simplicity, let&rsquo;s use random matrices. In practice, these are learned during training.</p>
+<p><strong>Embeddings</strong>:</p>
+<p>$$
+X = \begin{bmatrix}
+0.1 &amp; -0.2 &amp; 0.3 &amp; 0.4 &amp; -0.5 &amp; 0.2 &amp; -0.1 &amp; 0.0 \
+-0.3 &amp; 0.1 &amp; 0.2 &amp; -0.4 &amp; 0.5 &amp; -0.2 &amp; 0.3 &amp; -0.1 \
+\end{bmatrix}
+$$</p>
+<p><strong>Weight Matrices</strong> (randomly initialized for this example):</p>
+<p>Head 1:</p>
+<p>$$
+W^Q_1 = \begin{bmatrix}
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+\end{bmatrix}</p>
+<p>W^K_1 = \begin{bmatrix}
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+\end{bmatrix}</p>
+<p>W^V_1 = \begin{bmatrix}
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+\end{bmatrix}
+$$</p>
+<p>Head 2:</p>
+<p>$$
+W^Q_2 = \begin{bmatrix}
+0.4 &amp; 0.3 &amp; 0.2 &amp; 0.1 \
+0.4 &amp; 0.3 &amp; 0.2 &amp; 0.1 \
+0.4 &amp; 0.3 &amp; 0.2 &amp; 0.1 \
+0.4 &amp; 0.3 &amp; 0.2 &amp; 0.1 \
+0.4 &amp; 0.3 &amp; 0.2 &amp; 0.1 \
+0.4 &amp; 0.3 &amp; 0.2 &amp; 0.1 \
+0.4 &amp; 0.3 &amp; 0.2 &amp; 0.1 \
+0.4 &amp; 0.3 &amp; 0.2 &amp; 0.1 \
+\end{bmatrix}</p>
+<p>W^K_2 = \begin{bmatrix}
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+\end{bmatrix}</p>
+<p>W^V_2 = \begin{bmatrix}
+0.2 &amp; 0.1 &amp; 0.3 &amp; 0.4 \
+0.2 &amp; 0.1 &amp; 0.3 &amp; 0.4 \
+0.2 &amp; 0.1 &amp; 0.3 &amp; 0.4 \
+0.2 &amp; 0.1 &amp; 0.3 &amp; 0.4 \
+0.2 &amp; 0.1 &amp; 0.3 &amp; 0.4 \
+0.2 &amp; 0.1 &amp; 0.3 &amp; 0.4 \
+0.2 &amp; 0.1 &amp; 0.3 &amp; 0.4 \
+0.2 &amp; 0.1 &amp; 0.3 &amp; 0.4 \
+\end{bmatrix}
+$$</p>
+<p><strong>Compute Q, K, V for each token for each head</strong>:</p>
+<p><strong>Head 1</strong>:</p>
+<p>$$
+Q_1 = X \cdot W^Q_1 = \begin{bmatrix}
+0.1 &amp; -0.2 &amp; 0.3 &amp; 0.4 &amp; -0.5 &amp; 0.2 &amp; -0.1 &amp; 0.0 \
+-0.3 &amp; 0.1 &amp; 0.2 &amp; -0.4 &amp; 0.5 &amp; -0.2 &amp; 0.3 &amp; -0.1 \
+\end{bmatrix} \cdot W^Q_1</p>
+<p>K_1 = X \cdot W^K_1</p>
+<p>V_1 = X \cdot W^V_1
+$$</p>
+<p><strong>Head 2</strong>:</p>
+<p>$$
+Q_2 = X \cdot W^Q_2</p>
+<p>K_2 = X \cdot W^K_2</p>
+<p>V_2 = X \cdot W^V_2
+$$</p>
+<p>Let&rsquo;s compute these step by step.</p>
+<h3 id="compute-q-k-v-for-head-1">Compute Q, K, V for Head 1</h3>
+<p><strong>Input Embeddings</strong>:</p>
+<p>$$
+X = \begin{bmatrix}
+0.1 &amp; -0.2 &amp; 0.3 &amp; 0.4 &amp; -0.5 &amp; 0.2 &amp; -0.1 &amp; 0.0 \
+-0.3 &amp; 0.1 &amp; 0.2 &amp; -0.4 &amp; 0.5 &amp; -0.2 &amp; 0.3 &amp; -0.1 \
+\end{bmatrix}
+$$</p>
+<p><strong>Weight Matrices for Head 1</strong>:</p>
+<p>$$
+W^Q_1 = \begin{bmatrix}
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+\end{bmatrix}</p>
+<p>W^K_1 = \begin{bmatrix}
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+0.2 &amp; 0.1 &amp; 0.4 &amp; 0.3 \
+\end{bmatrix}</p>
+<p>W^V_1 = \begin{bmatrix}
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+0.3 &amp; 0.4 &amp; 0.1 &amp; 0.2 \
+\end{bmatrix}
+$$</p>
+<h4 id="compute-q-k-v-for-each-token-for-head-1">Compute Q, K, V for each token for Head 1:</h4>
+<p>$$
+Q_1 = X \cdot W^Q_1 = \begin{bmatrix}
+0.1 &amp; -0.2 &amp; 0.3 &amp; 0.4 &amp; -0.5 &amp; 0.2 &amp; -0.1 &amp; 0.0 \
+-0.3 &amp; 0.1 &amp; 0.2 &amp; -0.4 &amp; 0.5 &amp; -0.2 &amp; 0.3 &amp; -0.1 \
+\end{bmatrix} \cdot \begin{bmatrix}
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+0.1 &amp; 0.2 &amp; 0.3 &amp; 0.4 \
+\end{bmatrix}
+$$</p>
+<p>Performing the matrix multiplication:</p>
+<p>$$
+Q_1 = \begin{bmatrix}
+(0.1 \times 0.1) + (-0.2 \times 0.1) + (0.3 \times 0.1) + (0.4 \times 0.1) + (-0.5 \times 0.1) + (0.2 \times 0.1) + (-0.1 \times 0.1) + (0 \times 0.1) &amp; \dots &amp; \
+(-0.3 \times 0.1) + (0.1 \times 0.1) + (0.2 \times 0.1) + (-0.4 \times 0.1) + (0.5 \times 0.1) + (-0.2 \times 0.1) + (0.3 \times 0.1) + (-0.1 \times 0.1) &amp; \dots &amp; \
+\end{bmatrix}
+$$</p>
+<p>Simplifying:</p>
+<p>$$
+Q_1 = \begin{bmatrix}
+-0.01 &amp; -0.02 &amp; -0.03 &amp; -0.04 \
+0.02 &amp; 0.04 &amp; 0.06 &amp; 0.08 \
+\end{bmatrix}
+$$</p>
+<p>Following the same steps for $$ K_1 $$ and $$ V_1 $$:</p>
+<p>$$
+K_1 = X \cdot W^K_1</p>
+<p>= \begin{bmatrix}
+0.15 &amp; 0.30 &amp; 0.45 &amp; 0.60 \
+0.10 &amp; 0.20 &amp; 0.30 &amp; 0.40 \
+\end{bmatrix}</p>
+<p>V_1 = X \cdot W^V_1</p>
+<p>= \begin{bmatrix}
+0.28 &amp; 0.56 &amp; 0.84 &amp; 1.12 \
+0.24 &amp; 0.48 &amp; 0.72 &amp; 0.96 \
+\end{bmatrix}
+$$</p>
+<p><strong>Similarly you compute for head 2. Finally you concatenate both vectors and get 2x8 size matrix (same size which was input for the self attention)</strong></p>
+<h3 id="step-3-self-attention-calculation">Step 3: Self-Attention Calculation</h3>
+<h4 id="compute-attention-scores">Compute attention scores:</h4>
+<p>$$
+\text{Scores} = Q_1 \cdot K_1^T = \begin{bmatrix}
+-0.01 &amp; -0.02 &amp; -0.03 &amp; -0.04 \
+0.02 &amp; 0.04 &amp; 0.06 &amp; 0.08 \
+\end{bmatrix} \cdot \begin{bmatrix}
+0.15 &amp; 0.10 \
+0.30 &amp; 0.20 \
+0.45 &amp; 0.30 \
+0.60 &amp; 0.40 \
+\end{bmatrix}
+$$</p>
+<p>Performing the matrix multiplication:</p>
+<p>$$
+\text{Scores} = \begin{bmatrix}
+-0.01 \times 0.15 + -0.02 \times 0.30 + -0.03 \times 0.45 + -0.04 \times 0.60 &amp; -0.01 \times 0.10 + -0.02 \times 0.20 + -0.03 \times 0.30 + -0.04 \times 0.40 \
+0.02 \times 0.15 + 0.04 \times 0.30 + 0.06 \times 0.45 + 0.08 \times 0.60 &amp; 0.02 \times 0.10 + 0.04 \times 0.20 + 0.06 \times 0.30 + 0.08 \times 0.40 \
+\end{bmatrix}
+$$</p>
+<p>Simplifying:</p>
+<p>$$
+\text{Scores} = \begin{bmatrix}
+-0.015 - 0.006 - 0.0135 - 0.024 &amp; -0.01 - 0.004 - 0.009 - 0.016 \
+0.03 + 0.012 + 0.027 + 0.048 &amp; 0.02 + 0.008 + 0.018 + 0.032 \
+\end{bmatrix}</p>
+<p>\text{Scores} = \begin{bmatrix}
+-0.0585 &amp; -0.039 \
+0.117 &amp; 0.078 \
+\end{bmatrix}
+$$</p>
+<h4 id="apply-softmax-to-obtain-attention-weights">Apply softmax to obtain attention weights:</h4>
+<p>$$
+\text{Attention Weights} = \text{softmax}(\text{Scores})</p>
+<p>\text{Attention Weights} = \begin{bmatrix}
+\frac{e^{-0.0585}}{e^{-0.0585} + e^{-0.039}} &amp; \frac{e^{-0.039}}{e^{-0.0585} + e^{-0.039}} \
+\frac{e^{0.117}}{e^{0.117} + e^{0.078}} &amp; \frac{e^{0.078}}{e^{0.117} + e^{0.078}} \
+\end{bmatrix}
+$$</p>
+<p>Simplifying:</p>
+<p>$$
+\text{Attention Weights} = \begin{bmatrix}
+\frac{1}{1 + e^{0.0195}} &amp; \frac{e^{0.0195}}{1 + e^{0.0195}} \
+\frac{1}{1 + e^{-0.039}} &amp; \frac{e^{-0.039}}{1 + e^{-0.039}} \
+\end{bmatrix}
+$$</p>
+<p>Approximating the values:</p>
+<p>$$
+\text{Attention Weights} = \begin{bmatrix}
+0.495 &amp; 0.505 \
+0.510 &amp; 0.490 \
+\end{bmatrix}
+$$</p>
+<h4 id="compute-the-weighted-sum-of-the-values">Compute the weighted sum of the values:</h4>
+<p>$$
+\text{Output} = \text{Attention Weights} \cdot V_1 = \begin{bmatrix}
+0.495 &amp; 0.505 \
+0.510 &amp; 0.490 \
+\end{bmatrix} \cdot \begin{bmatrix}
+0.28 &amp; 0.56 &amp; 0.84 &amp; 1.12 \
+0.24 &amp; 0.48 &amp; 0.72 &amp; 0.96 \
+\end{bmatrix}
+$$</p>
+<p>Performing the matrix multiplication:</p>
+<p>$$
+\text{Output} = \begin{bmatrix}
+0.495 \times 0.28 + 0.505 \times 0.24 &amp; 0.495 \times 0.56 + 0.505 \times 0.48 &amp; 0.495 \times 0.84 + 0.505 \times 0.72 &amp; 0.495 \times 1.12 + 0.505 \times 0.96 \
+0.510 \times 0.28 + 0.490 \times 0.24 &amp; 0.510 \times 0.56 + 0.490 \times 0.48 &amp; 0.510 \times 0.84 + 0.490 \times 0.72 &amp; 0.510 \times 1.12 + 0.490 \times 0.96 \
+\end{bmatrix}
+$$</p>
+<p>Simplifying:</p>
+<p>$$
+\text{Output} = \begin{bmatrix}
+0.1386 + 0.1212 &amp; 0.2772 + 0.2424 &amp; 0.4158 + 0.3636 &amp; 0.5544 + 0.4848 \
+0.1428 + 0.1176 &amp; 0.2856 + 0.2304 &amp; 0.4284 + 0.3432 &amp; 0.5712 + 0.456 \
+\end{bmatrix}</p>
+<p>\text{Output} = \begin{bmatrix}
+0.2598 &amp; 0.5196 &amp; 0.7794 &amp; 1.0392 \
+0.2604 &amp; 0.516 &amp; 0.7716 &amp; 1.0272 \
+\end{bmatrix}
+$$</p>
+<h2 id="position-embedding-mechanism">Position Embedding Mechanism</h2>
+<p>Position embeddings are used in transformers to provide information about the order of tokens in a sequence. The most common method for computing position embeddings is using sine and cosine functions of different frequencies. This method was introduced in the original transformer paper &ldquo;Attention Is All You Need&rdquo;. The formulas for the position embeddings are as follows:</p>
+<h3 id="formulas-for-position-embedding">Formulas for Position Embedding</h3>
+<p>For a given position $$ pos $$ and embedding dimension $$ i $$:</p>
+<ol>
+<li><strong>Sine Function for Even Indices:</strong></li>
+</ol>
+<p>$$
+PE(pos, 2i) = \sin\left(\frac{pos}{10000^{\frac{2i}{d_{\text{model}}}}}\right)
+$$</p>
+<ol start="2">
+<li><strong>Cosine Function for Odd Indices:</strong></li>
+</ol>
+<p>$$ PE(pos, 2i+1) = \cos\left(\frac{pos}{10000^{\frac{2i}{d_{\text{model}}}}}\right) $$</p>
+<p>Where:</p>
+<ul>
+<li>pos is the position of the token in the sequence (starting from 0).</li>
+<li>i is the dimension index (also starting from 0).</li>
+<li>$$d_{\text{model}}$$ is the dimensionality of the embeddings.</li>
+</ul>
+<h3 id="explanation">Explanation</h3>
+<ul>
+<li><strong>Even Index:</strong> For even values of i, the position embedding is computed using the sine function.</li>
+<li><strong>Odd Index:</strong> For odd values of i, the position embedding is computed using the cosine function.</li>
+<li><strong>Frequency:</strong> The denominator $$10000^{\frac{2i}{d_{\text{model}}}}$$ ensures that different dimensions have different frequencies. The values for sine and cosine vary more slowly for larger dimensions, capturing different levels of granularity.</li>
+</ul>
+<h3 id="example">Example</h3>
+<p>Let&rsquo;s assume $$ d_{\text{model}} = 8 $$ (for simplicity), and calculate the position embeddings for $$ pos = 1 $$.</p>
+<p>For $$ i = 0 $$:
+$$ PE(1, 0) = \sin\left(\frac{1}{10000^{\frac{0}{8}}}\right) = \sin\left(1\right) $$</p>
+<p>For $$ i = 1 $$:
+$$ PE(1, 1) = \cos\left(\frac{1}{10000^{\frac{0}{8}}}\right) = \cos\left(1\right) $$</p>
+<p>For $$ i = 2 $$:
+$$ PE(1, 2) = \sin\left(\frac{1}{10000^{\frac{2}{8}}}\right) = \sin\left(\frac{1}{10}\right) $$</p>
+<p>For $$ i = 3 $$:
+$$ PE(1, 3) = \cos\left(\frac{1}{10000^{\frac{2}{8}}}\right) = \cos\left(\frac{1}{10}\right) $$</p>
+<p>For $$ i = 4 $$:
+$$ PE(1, 4) = \sin\left(\frac{1}{10000^{\frac{4}{8}}}\right) = \sin\left(\frac{1}{100}\right) $$</p>
+<p>For $$ i = 5 $$:
+$$ PE(1, 5) = \cos\left(\frac{1}{10000^{\frac{4}{8}}}\right) = \cos\left(\frac{1}{100}\right) $$</p>
+<p>For $$ i = 6 $$:
+$$ PE(1, 6) = \sin\left(\frac{1}{10000^{\frac{6}{8}}}\right) = \sin\left(\frac{1}{1000}\right) $$</p>
+<p>For $$ i = 7 $$:
+$$ PE(1, 7) = \cos\left(\frac{1}{10000^{\frac{6}{8}}}\right) = \cos\left(\frac{1}{1000}\right) $$</p>
+<p>These values are then added to the corresponding token embeddings to provide the model with information about the position of each token in the sequence.</p>
+<p><strong>Author</strong><br>
+Dr Hari Thapliyaal<br>
+dasarpai.com <br>
+linkedin.com/in/harithapliyal</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

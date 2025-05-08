@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Ethics on Agones</title>
+    <link>http://localhost:1313/tags/data-ethics/</link>
+    <description>Recent content in Data Ethics on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/data-ethics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Responsible AI</title>
+      <link>http://localhost:1313/dsblog/Responsible-AI/</link>
+      <pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Responsible-AI/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6047-Responsible-AI.jpg&#34; alt=&#34;Responsible-AI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;responsible-ai&#34;&gt;Responsible AI&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction:&lt;/h2&gt;&#xA;&lt;p&gt;Artificial Intelligence (AI) is rapidly transforming the way we live, work, and interact with the world around us. As AI systems become increasingly sophisticated and ubiquitous, it is more important than ever to ensure that they are developed and deployed in a responsible and ethical manner. Responsible AI refers to the principles and practices of developing and using AI in a way that is safe, transparent, accountable, and aligned with human values. In this blog post, we will explore the different aspects of responsible AI, including ethics, safety, transparency, accountability, and societal impact.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

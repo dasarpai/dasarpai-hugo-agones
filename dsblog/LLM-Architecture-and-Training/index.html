@@ -1,0 +1,723 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>LLM Architecture and Training | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/LLM-Architecture-and-Training/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="LLM Architecture and Training">
+  <meta property="og:description" content="Understanding LLM Architectures and Model Training Large Language Models (LLMs) are transforming the field of artificial intelligence by enabling machines to understand and generate human language with unprecedented accuracy. This article delves into the architecture, training methods, and practical applications of LLMs. We’ll explore the core components that make these models so powerful and explain how they are trained and fine-tuned for real-world use cases.
+1. Introduction to Large Language Models (LLMs) Definition and Importance of LLMs Large Language Models are advanced deep learning models trained on massive amounts of text data. LLMs have made it possible to perform a wide variety of natural language tasks, from answering complex questions to generating human-like responses in chat applications. These models use billions (sometimes trillions) of parameters to capture intricate relationships within language, enabling them to comprehend and generate coherent responses.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-08-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="LLM Architecture">
+    <meta property="article:tag" content="Deep Learning">
+    <meta property="article:tag" content="Model Training">
+    <meta property="article:tag" content="Neural Networks">
+    <meta property="article:tag" content="AI Development">
+    <meta property="article:tag" content="Machine Learning">
+
+  <meta itemprop="name" content="LLM Architecture and Training">
+  <meta itemprop="description" content="Understanding LLM Architectures and Model Training Large Language Models (LLMs) are transforming the field of artificial intelligence by enabling machines to understand and generate human language with unprecedented accuracy. This article delves into the architecture, training methods, and practical applications of LLMs. We’ll explore the core components that make these models so powerful and explain how they are trained and fine-tuned for real-world use cases.
+1. Introduction to Large Language Models (LLMs) Definition and Importance of LLMs Large Language Models are advanced deep learning models trained on massive amounts of text data. LLMs have made it possible to perform a wide variety of natural language tasks, from answering complex questions to generating human-like responses in chat applications. These models use billions (sometimes trillions) of parameters to capture intricate relationships within language, enabling them to comprehend and generate coherent responses.">
+  <meta itemprop="datePublished" content="2024-08-04T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="2750">
+  <meta itemprop="keywords" content="LLM Training,Model Architecture,Neural Network Design,AI Model Development,Deep Learning Training,Language Model Architecture,Transformer Networks,Model Optimization">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="LLM Architecture and Training">
+  <meta name="twitter:description" content="Understanding LLM Architectures and Model Training Large Language Models (LLMs) are transforming the field of artificial intelligence by enabling machines to understand and generate human language with unprecedented accuracy. This article delves into the architecture, training methods, and practical applications of LLMs. We’ll explore the core components that make these models so powerful and explain how they are trained and fine-tuned for real-world use cases.
+1. Introduction to Large Language Models (LLMs) Definition and Importance of LLMs Large Language Models are advanced deep learning models trained on massive amounts of text data. LLMs have made it possible to perform a wide variety of natural language tasks, from answering complex questions to generating human-like responses in chat applications. These models use billions (sometimes trillions) of parameters to capture intricate relationships within language, enabling them to comprehend and generate coherent responses.">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p><img src="/assets/images/dspost/dsp6129-LLM-Architecture-and-Training.jpg" alt="LLM-Architecture-and-Training"></p>
+<h1 id="understanding-llm-architectures-and-model-training"><strong>Understanding LLM Architectures and Model Training</strong></h1>
+<p>Large Language Models (LLMs) are transforming the field of artificial intelligence by enabling machines to understand and generate human language with unprecedented accuracy. This article delves into the architecture, training methods, and practical applications of LLMs. We’ll explore the core components that make these models so powerful and explain how they are trained and fine-tuned for real-world use cases.</p>
+<h2 id="1-introduction-to-large-language-models-llms"><strong>1. Introduction to Large Language Models (LLMs)</strong></h2>
+<h3 id="definition-and-importance-of-llms"><strong>Definition and Importance of LLMs</strong></h3>
+<p>Large Language Models are advanced deep learning models trained on massive amounts of text data. LLMs have made it possible to perform a wide variety of natural language tasks, from answering complex questions to generating human-like responses in chat applications. These models use billions (sometimes trillions) of parameters to capture intricate relationships within language, enabling them to comprehend and generate coherent responses.</p>
+<p>LLMs play an instrumental role across diverse applications, such as content creation, automated customer support, and scientific research. The sheer size and training complexity of these models equip them with a nuanced understanding of language, transforming how we interact with machines.</p>
+<h3 id="evolution-and-milestones-in-llm-development"><strong>Evolution and Milestones in LLM Development</strong></h3>
+<p>The development of LLMs has advanced rapidly, with some key milestones including:</p>
+<ul>
+<li><strong>Word Embeddings</strong>: Early models like <strong>Word2Vec</strong> and <strong>GloVe</strong> introduced word embeddings, which assign each word a continuous vector, allowing models to capture relationships between words.</li>
+<li><strong>Transformers and Attention</strong>: The release of the <strong>Transformer</strong> model by Vaswani et al. in 2017 revolutionized LLM architecture, leading to bidirectional and autoregressive models capable of nuanced text understanding and generation.</li>
+<li><strong>Pre-trained Transformers</strong>: Models such as <strong>BERT</strong> (Bidirectional Encoder Representations from Transformers) and <strong>GPT</strong> (Generative Pre-trained Transformer) expanded LLM applications, marking major advances in natural language processing.</li>
+</ul>
+<p>The latest models like <strong>GPT-4</strong> and <strong>Claude</strong> continue this trend, with billions of parameters enabling them to tackle more complex tasks across domains like healthcare, finance, and scientific discovery.</p>
+<h3 id="significance-of-llms-in-modern-ai-applications"><strong>Significance of LLMs in Modern AI Applications</strong></h3>
+<p>LLMs power many applications across industries. For example, in healthcare, LLMs assist in summarizing medical records and providing insights into patient data. In customer service, they enable chatbots to handle inquiries with a human-like response. Such applications demonstrate how LLMs reshape business processes by enhancing efficiency and improving user experiences.</p>
+<hr>
+<h2 id="2-core-architectures-of-llms"><strong>2. Core Architectures of LLMs</strong></h2>
+<h3 id="transformers-the-foundation-of-llms"><strong>Transformers: The Foundation of LLMs</strong></h3>
+<p>The <strong>Transformer</strong> architecture, introduced in 2017, underpins most modern LLMs. Its defining feature is the <strong>self-attention mechanism</strong>, which allows the model to focus on different parts of the input sequence when predicting the next token. This mechanism provides the model with a global context for each word, allowing it to make connections across long text sequences efficiently.</p>
+<p>Transformers are structured around <strong>multi-head attention</strong>, <strong>position-wise feed-forward networks</strong>, and <strong>residual connections</strong>, which enable them to capture complex dependencies between words. This structure allows LLMs to process large amounts of text data efficiently and effectively.</p>
+<h3 id="key-models-and-differences-bert-gpt-and-t5"><strong>Key Models and Differences (BERT, GPT, and T5)</strong></h3>
+<p>Each of these models brings unique strengths to NLP tasks:</p>
+<ul>
+<li><strong>BERT (Bidirectional Encoder Representations from Transformers)</strong>: BERT is trained to understand the full context of words by looking at both the left and right context simultaneously (bidirectionally). This is particularly useful for tasks like text classification and question-answering, where deep comprehension is required.</li>
+<li><strong>GPT (Generative Pre-trained Transformer)</strong>: GPT models are autoregressive, meaning they generate text from left to right by predicting the next word based on prior words. This makes them ideal for generative tasks, such as text completion and storytelling.</li>
+<li><strong>T5 (Text-To-Text Transfer Transformer)</strong>: T5 redefines tasks as a text-to-text problem, enabling the model to tackle various tasks by framing inputs and outputs as sequences of text. This flexibility makes T5 effective across a wide range of NLP applications.</li>
+</ul>
+<h3 id="attention-mechanisms"><strong>Attention Mechanisms</strong></h3>
+<p>At the heart of Transformer-based models is the <strong>attention mechanism</strong>, which enables models to focus on specific words that are contextually relevant. The <strong>self-attention</strong> process allows each word to attend to every other word in a sentence, building richer representations of language.</p>
+<p><strong>Multi-head attention</strong> extends this process by allowing multiple attention mechanisms to operate in parallel, with each head focusing on different aspects of the context. This is especially useful for complex, nuanced tasks requiring long-range dependencies, like summarizing lengthy documents.</p>
+<h3 id="encoder-decoder-architectures-vs-autoregressive-models"><strong>Encoder-Decoder Architectures vs. Autoregressive Models</strong></h3>
+<p>Two main architectures dominate LLM design:</p>
+<ul>
+<li><strong>Encoder-Decoder Models</strong>: Common in tasks like translation, encoder-decoder models (e.g., T5) take in a full sequence via the encoder and generate a new sequence with the decoder. This setup is useful for tasks that require transforming one sequence to another.</li>
+<li><strong>Autoregressive Models</strong>: Models like GPT generate text sequentially, predicting one token at a time based on previous tokens. This approach is efficient for text generation tasks, where maintaining coherence over multiple sentences is crucial.</li>
+</ul>
+<hr>
+<h2 id="3-components-of-llm-training"><strong>3. Components of LLM Training</strong></h2>
+<h3 id="data-collection-and-preprocessing"><strong>Data Collection and Preprocessing</strong></h3>
+<p>Training LLMs requires vast, high-quality datasets sourced from books, websites, academic papers, and other text-rich sources. Key steps include:</p>
+<ul>
+<li><strong>Data Cleaning</strong>: Removing noisy, duplicate, or low-quality data ensures the model learns relevant and accurate information.</li>
+<li><strong>Data Filtering</strong>: Additional steps might involve removing biased or inappropriate content, particularly in sensitive applications.</li>
+<li><strong>Deduplication</strong>: Redundant information can degrade model performance, so datasets are often deduplicated to prevent repeated exposure to identical content.</li>
+</ul>
+<h3 id="tokenization-vocabulary-choices-and-byte-pair-encoding"><strong>Tokenization: Vocabulary Choices and Byte-Pair Encoding</strong></h3>
+<p>Tokenization divides text into smaller units, or tokens, for model processing. In LLMs, <strong>subword tokenization</strong> is widely used, enabling models to handle rare or complex words by breaking them into meaningful parts. Methods like <strong>Byte-Pair Encoding (BPE)</strong> or <strong>SentencePiece</strong> balance vocabulary size with flexibility, allowing LLMs to work effectively across languages or specialized domains.</p>
+<h3 id="training-objectives-masked-and-causal-language-modeling"><strong>Training Objectives: Masked and Causal Language Modeling</strong></h3>
+<p>LLMs are typically trained with one of two objectives:</p>
+<ul>
+<li><strong>Masked Language Modeling (MLM)</strong>: Used in bidirectional models like BERT, MLM involves masking certain tokens and training the model to predict them based on the surrounding context. This enables a deeper understanding of the full sentence context.</li>
+<li><strong>Causal Language Modeling (CLM)</strong>: Autoregressive models like GPT are trained to predict the next token based only on prior tokens, making them suitable for generative tasks like text completion and storytelling.</li>
+</ul>
+<p>These objectives help the model learn to understand and generate language effectively for different types of tasks.</p>
+<hr>
+<h2 id="4-llm-fine-tuning-approaches"><strong>4. LLM Fine-tuning Approaches</strong></h2>
+<p>Fine-tuning is a critical step in adapting pre-trained models to specific tasks or domains. Rather than training a model from scratch, which is resource-intensive, fine-tuning leverages the extensive, pre-trained knowledge base of a model and adapts it for specialized needs. Here, we explore popular approaches to fine-tuning LLMs.</p>
+<h3 id="approaches-to-fine-tuning-llms"><strong>Approaches to Fine-tuning LLMs</strong></h3>
+<ul>
+<li>
+<p><strong>Full Model Fine-tuning</strong>: All layers and parameters are updated during the fine-tuning process. This approach is effective for highly specialized tasks but requires significant computational resources, as each layer is adjusted to the new task’s data.</p>
+</li>
+<li>
+<p><strong>Feature-Based Fine-tuning</strong>: Here, the model’s pre-trained layers act as feature extractors, and only the final layer (or a few layers) is fine-tuned. This approach is less resource-intensive and is useful when the downstream task is relatively similar to the original training data.</p>
+</li>
+<li>
+<p><strong>Parameter-Efficient Fine-tuning</strong>: Techniques like <strong>Adapter Layers</strong> and <strong>Low-Rank Adaptation (LoRA)</strong> add smaller, task-specific parameters to the model while freezing most of the original weights. This method is more efficient, as only the new parameters are updated during training, making it suitable for tasks with limited data or computational resources.</p>
+</li>
+<li>
+<p><strong>Prompt Tuning</strong>: Also known as <strong>prompt-based fine-tuning</strong>, this approach involves prepending specific prompts to inputs without modifying the model’s architecture or weights. The model’s responses are adapted to the task based on these engineered prompts, providing a lightweight alternative to traditional fine-tuning methods.</p>
+</li>
+</ul>
+<h3 id="modern-fine-tuning-approaches">Modern fine-tuning approaches</h3>
+<ul>
+<li>
+<p><strong>Quantization</strong>: Reduces model size by using lower-precision formats for weights and activations, such as 8-bit or even 4-bit representations. This reduces memory footprint and can speed up inference significantly without major accuracy losses.</p>
+</li>
+<li>
+<p><strong>Parameter-Efficient Fine-Tuning (PEFT)</strong>: Focuses on tuning only a small subset of parameters, leaving the majority of the model’s parameters untouched. This approach helps make fine-tuning more accessible and computationally efficient, especially for large models.</p>
+</li>
+<li>
+<p><strong>Low-Rank Adaptation (LoRA)</strong>: Inserts low-rank matrices into the model&rsquo;s architecture to adapt it without modifying the main parameters. LoRA effectively introduces additional trainable parameters that can learn task-specific features, making it highly efficient for fine-tuning.</p>
+</li>
+</ul>
+<h3 id="selecting-layers-to-update"><strong>Selecting Layers to Update</strong></h3>
+<p>The decision of which layers to fine-tune depends on the specific task and available resources:</p>
+<ul>
+<li><strong>Early Layers</strong>: Capture lower-level patterns and linguistic features, making them effective for broad language understanding but less specific to complex tasks.</li>
+<li><strong>Intermediate Layers</strong>: Often capture domain-specific knowledge and nuanced patterns, providing a balance between general language understanding and specialized adaptation.</li>
+<li><strong>Last Layers</strong>: Contain highly task-specific information, and fine-tuning these layers can quickly adapt the model to a new task with minimal training.</li>
+</ul>
+<h3 id="weight-adjustments-during-fine-tuning"><strong>Weight Adjustments During Fine-tuning</strong></h3>
+<p>Updating weights during fine-tuning requires a balance to prevent <strong>catastrophic forgetting</strong> (whereby the model “forgets” its pre-trained knowledge). Techniques like <strong>learning rate scheduling</strong> and <strong>gradient clipping</strong> can help maintain the model’s pre-existing strengths while learning new information.</p>
+<hr>
+<h2 id="5-training-infrastructure-for-large-language-models"><strong>5. Training Infrastructure for Large Language Models</strong></h2>
+<p>LLMs require extensive computational resources, often involving complex infrastructures that include GPUs, TPUs, and specialized cloud-based platforms.</p>
+<h3 id="distributed-computing-for-large-scale-training"><strong>Distributed Computing for Large-scale Training</strong></h3>
+<p>Large models cannot fit in the memory of a single machine. <strong>Distributed training</strong> splits the model across multiple GPUs or TPUs, allowing parallel processing of data and gradient updates across machines. Techniques like <strong>model parallelism</strong> and <strong>data parallelism</strong> help accelerate training by efficiently dividing work across systems.</p>
+<h3 id="specialized-hardware-gpus-and-tpus"><strong>Specialized Hardware: GPUs and TPUs</strong></h3>
+<p>GPUs (Graphics Processing Units) and TPUs (Tensor Processing Units) are specialized hardware for handling large matrix operations efficiently, which are common in neural network training. TPUs, designed by Google specifically for machine learning, can achieve high performance in training and inferencing tasks, especially with larger LLMs.</p>
+<h3 id="efficient-training-methods"><strong>Efficient Training Methods</strong></h3>
+<p>To optimize training, methods such as <strong>mixed-precision training</strong> (which uses lower-precision floats for computations) and <strong>gradient checkpointing</strong> (saving memory by only storing essential gradient data) reduce resource consumption without sacrificing accuracy.</p>
+<h3 id="scalable-and-cost-effective-cloud-solutions"><strong>Scalable and Cost-effective Cloud Solutions</strong></h3>
+<p>Public cloud platforms (e.g., AWS, Google Cloud, Azure) provide scalable solutions to train LLMs cost-effectively. Cloud-based solutions offer flexibility to scale resources up or down, making them suitable for organizations of all sizes and facilitating collaboration among distributed teams.</p>
+<hr>
+<h2 id="6-evaluation-and-benchmarking"><strong>6. Evaluation and Benchmarking</strong></h2>
+<p>Benchmarks provide standard measures for evaluating model performance on various tasks, guiding model development and helping compare different LLMs on a common scale.</p>
+<h3 id="what-are-benchmarks-in-ai"><strong>What Are Benchmarks in AI?</strong></h3>
+<p>Benchmarks are curated datasets and tasks used to measure a model’s abilities across specific challenges (e.g., reasoning, knowledge retrieval, translation). They ensure models meet the quality and capability standards required for real-world deployment.</p>
+<h3 id="key-components-of-ai-benchmarks"><strong>Key Components of AI Benchmarks</strong></h3>
+<p>A robust benchmark typically includes:</p>
+<ul>
+<li><strong>Task Diversity</strong>: Benchmarks assess multiple aspects of language understanding (e.g., comprehension, logical reasoning, multilingual abilities).</li>
+<li><strong>Evaluation Metrics</strong>: Metrics like accuracy, F1-score, BLEU, and ROUGE evaluate model responses and performance across tasks.</li>
+<li><strong>Data Quality and Coverage</strong>: The benchmark dataset should have high-quality, representative data across different domains to avoid bias and ensure generalizability.</li>
+</ul>
+<h3 id="importance-of-benchmarks"><strong>Importance of Benchmarks</strong></h3>
+<p>Benchmarks provide a structured approach to evaluating progress in LLM development, ensuring models improve in areas of practical importance, such as accuracy, speed, and robustness. They help users select models suited to their needs and guide model development in industry and academia.</p>
+<h3 id="example-benchmarks-in-practice"><strong>Example Benchmarks in Practice</strong></h3>
+<p>Popular LLM benchmarks include:</p>
+<ul>
+<li><strong>GLUE and SuperGLUE</strong>: Evaluate models on linguistic and logical reasoning tasks.</li>
+<li><strong>MMLU (Massive Multitask Language Understanding)</strong>: Tests model performance across a diverse range of topics (e.g., humanities, STEM), often in a few-shot setting.</li>
+<li><strong>Big-Bench (BBH)</strong>: A collaborative benchmark project assessing model performance on creative and high-level reasoning tasks across multiple domains.</li>
+<li><strong>WinoGrande</strong>: Designed to evaluate commonsense reasoning in a more challenging setup, requiring nuanced understanding of context to make accurate predictions.</li>
+</ul>
+<hr>
+<h2 id="7-popular-llm-benchmarks-and-n-shot-learning"><strong>7. Popular LLM Benchmarks and n-shot Learning</strong></h2>
+<p>n-shot learning assesses how well a model adapts to new tasks with limited training data, typically in settings like zero-shot, one-shot, and few-shot learning.</p>
+<h3 id="what-is-n-shot-learning"><strong>What Is n-shot Learning?</strong></h3>
+<p>n-shot learning is an evaluation paradigm in which models are provided with <strong>n</strong> examples to help them understand the target task:</p>
+<ul>
+<li><strong>Zero-shot learning</strong>: The model receives no examples and must perform based on its pre-trained knowledge alone.</li>
+<li><strong>One-shot learning</strong>: The model is given one example to generalize from.</li>
+<li><strong>Few-shot learning</strong>: The model is given a small number of examples (usually between 2-10) to help it adapt to a task.</li>
+</ul>
+<h3 id="applications-of-n-shot-learning-in-llm-benchmarks"><strong>Applications of n-shot Learning in LLM Benchmarks</strong></h3>
+<p>n-shot settings, particularly <strong>few-shot</strong>, are commonly used in LLM benchmarks like MMLU and Big-Bench. These benchmarks assess a model’s flexibility and its ability to generalize with minimal information, which is crucial for applications where annotated data is scarce.</p>
+<hr>
+<h3 id="8-llm-fine-tuning-approaches">8. <strong>LLM Fine-tuning Approaches</strong></h3>
+<p>Fine-tuning large language models (LLMs) involves adjusting specific model parameters to tailor the LLM to a particular task or domain. The goal is to refine the model without the heavy computational cost of training all parameters from scratch. Here are some of the key fine-tuning techniques:</p>
+<ul>
+<li>
+<p><strong>Standard Fine-Tuning</strong>: This approach involves updating all or most model parameters using labeled data relevant to the target task. While highly effective, it requires significant computational resources, especially for large models.</p>
+</li>
+<li>
+<p><strong>Parameter-Efficient Fine-Tuning (PEFT)</strong>: This technique updates only a subset of parameters, reducing memory and processing needs. PEFT is particularly advantageous in low-resource or low-power environments, where tuning a full LLM isn’t feasible.</p>
+</li>
+<li>
+<p><strong>Quantization</strong>: Quantization compresses model weights to lower-precision formats, such as 8-bit or even 4-bit, to reduce memory usage and improve inference speed. While initially popular for inference, quantization is now also being used in fine-tuning, making it possible to train large models on less powerful hardware.</p>
+</li>
+<li>
+<p><strong>Low-Rank Adaptation (LoRA)</strong>: LoRA is a method that inserts additional low-rank matrices into transformer layers. This allows the model to learn task-specific changes while leaving the original model parameters mostly untouched. LoRA is particularly useful in transfer learning, as it maintains model integrity while achieving effective fine-tuning.</p>
+</li>
+<li>
+<p><strong>Adapters</strong>: Adapters are lightweight layers added to each layer of the transformer. By training only the adapter layers and keeping the core model frozen, we save time and computational resources. This method is highly modular, allowing a single model to be adapted to various tasks by simply switching adapters.</p>
+</li>
+</ul>
+<hr>
+<h3 id="9-evaluation-metrics-for-llms">9. <strong>Evaluation Metrics for LLMs</strong></h3>
+<p>Evaluating large language models (LLMs) accurately is crucial to ensure they perform well across diverse use cases. The right metrics offer insight into the model’s accuracy, coherence, relevance, and ethical implications. Here are some key metrics used to evaluate LLMs:</p>
+<ul>
+<li>
+<p><strong>Perplexity</strong>: Measures how well the model predicts a sample of text. Lower perplexity indicates better model performance, showing that the model generates fluent, plausible sequences.</p>
+</li>
+<li>
+<p><strong>BLEU (Bilingual Evaluation Understudy)</strong> and <strong>ROUGE (Recall-Oriented Understudy for Gisting Evaluation)</strong>: Commonly used in text generation and summarization, these metrics compare generated text with human references to determine closeness in terms of wording and structure.</p>
+</li>
+<li>
+<p><strong>Accuracy &amp; F1 Score</strong>: For tasks like classification and QA, accuracy and F1 scores measure the model’s precision and recall. These are often employed when the model output has a right/wrong answer, such as fact-based questions.</p>
+</li>
+<li>
+<p><strong>Human Evaluation</strong>: Human assessments are vital for subjective attributes like coherence, appropriateness, and sentiment. Evaluators rate model outputs based on these qualitative aspects, often forming a critical component of LLM evaluation.</p>
+</li>
+<li>
+<p><strong>Ethical and Bias Metrics</strong>: These metrics evaluate the model’s tendency to reinforce harmful stereotypes, generate offensive content, or exhibit undesirable biases. Fairness metrics like demographic parity and bias amplification are used to assess the ethical implications of a model’s outputs.</p>
+</li>
+</ul>
+<hr>
+<h3 id="10-challenges-and-limitations-in-llm-training">10. <strong>Challenges and Limitations in LLM Training</strong></h3>
+<p>Despite their transformative potential, LLMs come with several challenges and limitations. Here are some of the most significant:</p>
+<ul>
+<li>
+<p><strong>Computational Costs</strong>: Training LLMs requires significant computational resources, particularly when dealing with very large models or massive datasets. The hardware, energy, and storage demands can be prohibitive, often limiting LLM training to organizations with substantial resources.</p>
+</li>
+<li>
+<p><strong>Data Privacy and Security</strong>: Training on massive, diverse datasets raises concerns about privacy and security. Models can unintentionally memorize sensitive information from training data, leading to potential privacy violations. Ensuring data integrity and anonymization in training data is critical.</p>
+</li>
+<li>
+<p><strong>Bias and Fairness</strong>: LLMs trained on unfiltered internet data often reflect societal biases, as they learn from a vast array of human-generated content. Addressing bias requires careful curation of training datasets, post-processing techniques, and ongoing monitoring of outputs.</p>
+</li>
+<li>
+<p><strong>Interpretability and Explainability</strong>: As models become larger and more complex, interpreting their predictions and explaining decision-making becomes increasingly difficult. Explainability is especially crucial for applications in high-stakes fields like healthcare, law, and finance.</p>
+</li>
+<li>
+<p><strong>Generalization vs. Overfitting</strong>: Striking the right balance between generalization (performing well on diverse inputs) and overfitting (memorizing training data) is difficult with LLMs. While more data can reduce overfitting, it requires careful validation to ensure the model doesn’t simply “remember” data.</p>
+</li>
+</ul>
+<div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/llm-architecture" class="category-badge">LLM Architecture</a><a href="/tags/deep-learning" class="category-badge">Deep Learning</a><a href="/tags/model-training" class="category-badge">Model Training</a><a href="/tags/neural-networks" class="category-badge">Neural Networks</a><a href="/tags/ai-development" class="category-badge">AI Development</a><a href="/tags/machine-learning" class="category-badge">Machine Learning</a><a href="/tags/transformer-models" class="category-badge">Transformer Models</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=LLM%20Architecture%20and%20Training&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fLLM-Architecture-and-Training%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fLLM-Architecture-and-Training%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fLLM-Architecture-and-Training%2f&title=LLM%20Architecture%20and%20Training" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fLLM-Architecture-and-Training%2f&title=LLM%20Architecture%20and%20Training" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=LLM%20Architecture%20and%20Training&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fLLM-Architecture-and-Training%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/LLM-Skills-and-Human-Skills/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">LLM Skills and Human Skills</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/How-Much-Memory-Needed-for-LLM/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">How Much Memory Needed for LLM</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-introduction-to-large-language-models-llms"><strong>1. Introduction to Large Language Models (LLMs)</strong></a>
+      <ul>
+        <li><a href="#definition-and-importance-of-llms"><strong>Definition and Importance of LLMs</strong></a></li>
+        <li><a href="#evolution-and-milestones-in-llm-development"><strong>Evolution and Milestones in LLM Development</strong></a></li>
+        <li><a href="#significance-of-llms-in-modern-ai-applications"><strong>Significance of LLMs in Modern AI Applications</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#2-core-architectures-of-llms"><strong>2. Core Architectures of LLMs</strong></a>
+      <ul>
+        <li><a href="#transformers-the-foundation-of-llms"><strong>Transformers: The Foundation of LLMs</strong></a></li>
+        <li><a href="#key-models-and-differences-bert-gpt-and-t5"><strong>Key Models and Differences (BERT, GPT, and T5)</strong></a></li>
+        <li><a href="#attention-mechanisms"><strong>Attention Mechanisms</strong></a></li>
+        <li><a href="#encoder-decoder-architectures-vs-autoregressive-models"><strong>Encoder-Decoder Architectures vs. Autoregressive Models</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#3-components-of-llm-training"><strong>3. Components of LLM Training</strong></a>
+      <ul>
+        <li><a href="#data-collection-and-preprocessing"><strong>Data Collection and Preprocessing</strong></a></li>
+        <li><a href="#tokenization-vocabulary-choices-and-byte-pair-encoding"><strong>Tokenization: Vocabulary Choices and Byte-Pair Encoding</strong></a></li>
+        <li><a href="#training-objectives-masked-and-causal-language-modeling"><strong>Training Objectives: Masked and Causal Language Modeling</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#4-llm-fine-tuning-approaches"><strong>4. LLM Fine-tuning Approaches</strong></a>
+      <ul>
+        <li><a href="#approaches-to-fine-tuning-llms"><strong>Approaches to Fine-tuning LLMs</strong></a></li>
+        <li><a href="#modern-fine-tuning-approaches">Modern fine-tuning approaches</a></li>
+        <li><a href="#selecting-layers-to-update"><strong>Selecting Layers to Update</strong></a></li>
+        <li><a href="#weight-adjustments-during-fine-tuning"><strong>Weight Adjustments During Fine-tuning</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#5-training-infrastructure-for-large-language-models"><strong>5. Training Infrastructure for Large Language Models</strong></a>
+      <ul>
+        <li><a href="#distributed-computing-for-large-scale-training"><strong>Distributed Computing for Large-scale Training</strong></a></li>
+        <li><a href="#specialized-hardware-gpus-and-tpus"><strong>Specialized Hardware: GPUs and TPUs</strong></a></li>
+        <li><a href="#efficient-training-methods"><strong>Efficient Training Methods</strong></a></li>
+        <li><a href="#scalable-and-cost-effective-cloud-solutions"><strong>Scalable and Cost-effective Cloud Solutions</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#6-evaluation-and-benchmarking"><strong>6. Evaluation and Benchmarking</strong></a>
+      <ul>
+        <li><a href="#what-are-benchmarks-in-ai"><strong>What Are Benchmarks in AI?</strong></a></li>
+        <li><a href="#key-components-of-ai-benchmarks"><strong>Key Components of AI Benchmarks</strong></a></li>
+        <li><a href="#importance-of-benchmarks"><strong>Importance of Benchmarks</strong></a></li>
+        <li><a href="#example-benchmarks-in-practice"><strong>Example Benchmarks in Practice</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#7-popular-llm-benchmarks-and-n-shot-learning"><strong>7. Popular LLM Benchmarks and n-shot Learning</strong></a>
+      <ul>
+        <li><a href="#what-is-n-shot-learning"><strong>What Is n-shot Learning?</strong></a></li>
+        <li><a href="#applications-of-n-shot-learning-in-llm-benchmarks"><strong>Applications of n-shot Learning in LLM Benchmarks</strong></a></li>
+        <li><a href="#8-llm-fine-tuning-approaches">8. <strong>LLM Fine-tuning Approaches</strong></a></li>
+        <li><a href="#9-evaluation-metrics-for-llms">9. <strong>Evaluation Metrics for LLMs</strong></a></li>
+        <li><a href="#10-challenges-and-limitations-in-llm-training">10. <strong>Challenges and Limitations in LLM Training</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

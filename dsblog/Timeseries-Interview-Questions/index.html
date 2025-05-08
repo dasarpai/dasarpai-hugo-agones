@@ -1,0 +1,825 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Timeseries Interview Questions | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/Timeseries-Interview-Questions/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Timeseries Interview Questions">
+  <meta property="og:description" content="Timeseries Interview Questions What are the characterstics of time series data? Time series data is a series of data points collected over time. Some characteristics of time series data include:
+Time dependence: Time series data is typically collected at regular time intervals, and the values of the time series are often dependent on the time at which they were collected. Equal duration gap between samples/ records No missing record in between Trend: Many time series exhibit a long-term trend, either upward or downward. This trend may be influenced by a variety of factors such as economic conditions, population growth, or technological changes. Seasonality: Many time series exhibit regular fluctuations due to seasonal factors such as weather, holidays, or other events. For example, retail sales may be higher in the months leading up to Christmas due to holiday shopping. Cyclicity: Time series may exhibit cyclical pattern. Like sales is highest in month start, body temprature is high at 6am, traffic is least on weekends etc. Noise: Time series data may also be affected by random noise or error, which can make it difficult to accurately forecast future values. Autocorrelation: Time series data may exhibit autocorrelation, which is the phenomenon of a value at a particular time being correlated with values at nearby times. This can make it challenging to model the time series, as the value at a given time may depend on the values at nearby times. Example of time series data Date Sales (y) 2020-01-01 1000 2020-02-01 1100 2020-03-01 1200 2020-04-01 1100 2020-05-01 1000 2020-06-01 900 2020-07-01 1200 2020-08-01 1400 2020-09-01 1300 2020-10-01 1500 This first column can be date or date or datetime. Interval between two rows must be equal. The unit of date or time or datetime may be milliosecond, or second, or minute, or hour, or day, week, month, quarter, year or dacade. This should be continuous without any gap.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2023-01-08T15:50:00+05:30">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="Time Series Analysis">
+    <meta property="article:tag" content="Data Science Interview">
+    <meta property="article:tag" content="ARIMA Models">
+    <meta property="article:tag" content="Statistical Analysis">
+    <meta property="article:tag" content="Forecasting">
+    <meta property="article:tag" content="Machine Learning">
+
+  <meta itemprop="name" content="Timeseries Interview Questions">
+  <meta itemprop="description" content="Timeseries Interview Questions What are the characterstics of time series data? Time series data is a series of data points collected over time. Some characteristics of time series data include:
+Time dependence: Time series data is typically collected at regular time intervals, and the values of the time series are often dependent on the time at which they were collected. Equal duration gap between samples/ records No missing record in between Trend: Many time series exhibit a long-term trend, either upward or downward. This trend may be influenced by a variety of factors such as economic conditions, population growth, or technological changes. Seasonality: Many time series exhibit regular fluctuations due to seasonal factors such as weather, holidays, or other events. For example, retail sales may be higher in the months leading up to Christmas due to holiday shopping. Cyclicity: Time series may exhibit cyclical pattern. Like sales is highest in month start, body temprature is high at 6am, traffic is least on weekends etc. Noise: Time series data may also be affected by random noise or error, which can make it difficult to accurately forecast future values. Autocorrelation: Time series data may exhibit autocorrelation, which is the phenomenon of a value at a particular time being correlated with values at nearby times. This can make it challenging to model the time series, as the value at a given time may depend on the values at nearby times. Example of time series data Date Sales (y) 2020-01-01 1000 2020-02-01 1100 2020-03-01 1200 2020-04-01 1100 2020-05-01 1000 2020-06-01 900 2020-07-01 1200 2020-08-01 1400 2020-09-01 1300 2020-10-01 1500 This first column can be date or date or datetime. Interval between two rows must be equal. The unit of date or time or datetime may be milliosecond, or second, or minute, or hour, or day, week, month, quarter, year or dacade. This should be continuous without any gap.">
+  <meta itemprop="datePublished" content="2023-01-08T15:50:00+05:30">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="4811">
+  <meta itemprop="keywords" content="time series analysis,ARIMA models,time series forecasting,stationarity testing,autocorrelation,seasonal decomposition,time series modeling,statistical forecasting,predictive analytics,python time series,interview preparation,data science questions,time series components,trend analysis,seasonality detection,time series statistics,forecasting methods,time series visualization,machine learning for time series,temporal data analysis">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Timeseries Interview Questions">
+  <meta name="twitter:description" content="Timeseries Interview Questions What are the characterstics of time series data? Time series data is a series of data points collected over time. Some characteristics of time series data include:
+Time dependence: Time series data is typically collected at regular time intervals, and the values of the time series are often dependent on the time at which they were collected. Equal duration gap between samples/ records No missing record in between Trend: Many time series exhibit a long-term trend, either upward or downward. This trend may be influenced by a variety of factors such as economic conditions, population growth, or technological changes. Seasonality: Many time series exhibit regular fluctuations due to seasonal factors such as weather, holidays, or other events. For example, retail sales may be higher in the months leading up to Christmas due to holiday shopping. Cyclicity: Time series may exhibit cyclical pattern. Like sales is highest in month start, body temprature is high at 6am, traffic is least on weekends etc. Noise: Time series data may also be affected by random noise or error, which can make it difficult to accurately forecast future values. Autocorrelation: Time series data may exhibit autocorrelation, which is the phenomenon of a value at a particular time being correlated with values at nearby times. This can make it challenging to model the time series, as the value at a given time may depend on the values at nearby times. Example of time series data Date Sales (y) 2020-01-01 1000 2020-02-01 1100 2020-03-01 1200 2020-04-01 1100 2020-05-01 1000 2020-06-01 900 2020-07-01 1200 2020-08-01 1400 2020-09-01 1300 2020-10-01 1500 This first column can be date or date or datetime. Interval between two rows must be equal. The unit of date or time or datetime may be milliosecond, or second, or minute, or hour, or day, week, month, quarter, year or dacade. This should be continuous without any gap.">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p><img src="/assets/images/dspost/dsp6023-Timeseries-Interview-Questions.jpg" alt="Timeseries Interview Questions"></p>
+<h1 id="timeseries-interview-questions">Timeseries Interview Questions</h1>
+<h2 id="what-are-the-characterstics-of--time-series-data">What are the characterstics of  time series data?</h2>
+<p>Time series data is a series of data points collected over time. Some characteristics of time series data include:</p>
+<ul>
+<li>Time dependence: Time series data is typically collected at regular time intervals, and the values of the time series are often dependent on the time at which they were collected.</li>
+<li>Equal duration gap between samples/ records</li>
+<li>No missing record in between</li>
+<li>Trend: Many time series exhibit a long-term trend, either upward or downward. This trend may be influenced by a variety of factors such as economic conditions, population growth, or technological changes.</li>
+<li>Seasonality: Many time series exhibit regular fluctuations due to seasonal factors such as weather, holidays, or other events. For example, retail sales may be higher in the months leading up to Christmas due to holiday shopping.</li>
+<li>Cyclicity: Time series may exhibit cyclical pattern. Like sales is highest in month start, body temprature is high at 6am, traffic is least on weekends etc.</li>
+<li>Noise: Time series data may also be affected by random noise or error, which can make it difficult to accurately forecast future values.</li>
+<li>Autocorrelation: Time series data may exhibit autocorrelation, which is the phenomenon of a value at a particular time being correlated with values at nearby times. This can make it challenging to model the time series, as the value at a given time may depend on the values at nearby times.</li>
+</ul>
+<hr>
+<h2 id="example-of-time-series-data">Example of time series data</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Date</th>
+          <th>Sales (y)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>2020-01-01</td>
+          <td>1000</td>
+      </tr>
+      <tr>
+          <td>2020-02-01</td>
+          <td>1100</td>
+      </tr>
+      <tr>
+          <td>2020-03-01</td>
+          <td>1200</td>
+      </tr>
+      <tr>
+          <td>2020-04-01</td>
+          <td>1100</td>
+      </tr>
+      <tr>
+          <td>2020-05-01</td>
+          <td>1000</td>
+      </tr>
+      <tr>
+          <td>2020-06-01</td>
+          <td>900</td>
+      </tr>
+      <tr>
+          <td>2020-07-01</td>
+          <td>1200</td>
+      </tr>
+      <tr>
+          <td>2020-08-01</td>
+          <td>1400</td>
+      </tr>
+      <tr>
+          <td>2020-09-01</td>
+          <td>1300</td>
+      </tr>
+      <tr>
+          <td>2020-10-01</td>
+          <td>1500</td>
+      </tr>
+  </tbody>
+</table>
+<p>This first column can be date or date or datetime. Interval between two rows must be equal. The unit of date or time or datetime may be milliosecond, or second, or minute, or hour, or day, week, month, quarter, year or dacade. This should be continuous without any gap.</p>
+<p>Second column can be any measurment like sales, temprature, purchase, railfall, production, infections, number of infections, etc.</p>
+<h2 id="what-is-the-difference-between-noise-and-stationarity">What is the difference between noise and stationarity?</h2>
+<p>Noise and stationarity are two different concepts in time series analysis.</p>
+<p>Noise refers to random fluctuations in a time series data that <strong>do not follow a specific pattern</strong>. Noise can be caused by various factors such as measurement errors, random variations in the data, or external factors that are not related to the underlying process being measured. Noise can make it <strong>difficult to identify patterns and trends in the data</strong>, and can also cause problems when trying to make predictions based on the data.</p>
+<p>Stationarity, on the other hand, refers to the property of a time series data where the <strong>statistical properties (such as mean and variance) do not change over time</strong>. A stationary time series is one that has a constant mean and variance over time, and is <strong>characterized by the presence of random fluctuations around the mean</strong>. Stationary time series are <strong>easier to model and predict</strong> because the statistical properties of the data do not change over time.</p>
+<h2 id="what-do-you-mean-by--statistical-properties">What do you mean by  statistical properties</h2>
+<p>Various statistical properties of data include the mean, median, mode, standard deviation, variance, skewness, kurtosis, correlation coefficient, coefficient of determination, and regression analysis. These properties are used to describe, analyze, and interpret quantitative data. They can also be used to make predictions and draw conclusions about data.</p>
+<h2 id="what-are-the-assumptions-of-a-stationary-time-series">What are the assumptions of a stationary time series?</h2>
+<p>A stationary time series is a time series that has constant statistical properties over time. In other words, the mean, variance, and autocovariance of the time series do not depend on the time index.</p>
+<p>There are several assumptions that are typically made about stationary time series:</p>
+<ul>
+<li>The mean of the time series is constant over time.</li>
+<li>The variance of the time series is constant over time. (Don&rsquo;t confuse this is zero variance)</li>
+<li>The autocovariance of the time series depends only on the time lag between observations, and not on the time at which the observations are made.</li>
+<li>A time series is &ldquo;weakly stationary,&rdquo; meaning that the statistical properties of the time series are unchanged under time shifts.</li>
+</ul>
+<p>It is important to check for stationarity before performing certain types of time series analysis, as many time series models and techniques are based on the assumption of stationarity.</p>
+<hr>
+<h2 id="what-is-a-statitionary-time-series">What is a Statitionary Time Series</h2>
+<p>A stationary time series is a time series that has constant statistical properties over time. In other words, the mean, variance, and autocovariance of the time series do not depend on the time index.</p>
+<p>A stationary time series is said to be &ldquo;strictly stationary&rdquo; if the statistical properties of the time series are completely constant over time. This means that the mean, variance, and autocovariance of the time series are all constant.</p>
+<p>A stationary time series is said to be &ldquo;weakly stationary&rdquo; if the statistical properties of the time series are unchanged under time shifts. This means that the mean, variance, and autocovariance of the time series are all constant, but the time series may have a non-zero mean.</p>
+<p>It is important to check for stationarity before performing certain types of time series analysis, as many time series models and techniques are based on the assumption of stationarity.</p>
+<hr>
+<h2 id="what-is-the-difference-between-variance-covariance-and-autocovariance">What is the difference between variance, covariance and autocovariance?</h2>
+<p>Variance, covariance, and autocovariance are all measures of the dispersion of a set of data. However, they are used to measure different types of dispersion.</p>
+<ul>
+<li>Variance: Variance is a measure of the dispersion of a single set of data. It is calculated as the sum of the squared differences between each data point and the mean of the data, divided by the number of data points. For example variance of age data.</li>
+<li>Covariance: Covariance is a measure of the dispersion of two sets of data. It is calculated as the sum of the products of the differences between each data point in one set and the mean of that set, and the differences between the corresponding data points in the other set and the mean of that set, divided by the number of data points. Covariance can be used to determine the relationship between two sets of data. For example, covariance between age and experience.</li>
+<li>Autocovariance: Autocovariance is a measure of the dispersion of a single time series at different time lags. It is calculated as the covariance between observations at time $t$ and observations at time $t+k$, where $k$ is the time lag between the observations. Autocovariance can be used to determine the relationship between observations in a time series at different points in time. For example, autocovarince of sales date at monthly interval.</li>
+</ul>
+<h2 id="what-is-additive-model-in-time-series">What is Additive Model in time series?</h2>
+<p>In a time series, an additive model is one where the overall effect of the various factors (such as trend, seasonality, and noise) is simply the sum of their individual effects.</p>
+<p>For example, if we have a time series that is influenced by trend, seasonality, and noise, an additive model would express the time series as:</p>
+<p>y(t) = trend(t) + seasonality(t) + noise(t)</p>
+<p>where y(t) is the value of the time series at time t, trend(t) is the trend component at time t, seasonality(t) is the seasonality component at time t, and noise(t) is the noise or error component at time t.</p>
+<p>In an additive model, the individual components can be estimated independently and then summed to produce a model for the time series. This can make it relatively simple to build and interpret the model, especially if the individual components are easy to identify and separate. However, additive models may not always be the best choice, especially if the various factors are not truly independent or if the relationship between the time series and the factors is more complex than a simple sum.</p>
+<p>Examples:</p>
+<ul>
+<li>Monthly sales of a retail store</li>
+<li>Quarterly earnings of a public company</li>
+<li>Daily temperature in a particular city</li>
+<li>Hourly traffic on a specific stretch of road</li>
+<li>Monthly unemployment rate in a country</li>
+</ul>
+<h2 id="what-is-multiplicative-model-in-time-series">What is multiplicative Model in time series?</h2>
+<p>In a time series, a multiplicative model is one where the overall effect of the various factors (such as trend, seasonality, and noise) is the product of their individual effects.</p>
+<p>For example, if we have a time series that is influenced by trend, seasonality, and noise, a multiplicative model would express the time series as:</p>
+<p>y(t) = trend(t) * seasonality(t) * noise(t)</p>
+<p>where y(t) is the value of the time series at time t, trend(t) is the trend component at time t, seasonality(t) is the seasonality component at time t, and noise(t) is the noise or error component at time t.</p>
+<p>In a multiplicative model, the individual components can be estimated independently and then multiplied to produce a model for the time series. This can be a useful approach if the time series exhibits exponential growth or decay, or if the relationship between the time series and the various factors is more complex than a simple sum. However, multiplicative models may be more difficult to interpret than additive models, and they may not always be the best choice, especially if the various factors are not truly independent.</p>
+<p>Examples</p>
+<ul>
+<li>Daily stock price of a public company</li>
+<li>Annual population growth rate of a country</li>
+<li>Monthly revenue of a subscription-based business</li>
+<li>Virus growth</li>
+<li>Weekly sales of a product with a limited lifespan (such as a food product with a short shelf life)</li>
+</ul>
+<h2 id="what-are-the-test-of-stationarity">What are the test of Stationarity</h2>
+<p>A stationary time series is one whose statistical properties (such as the mean, variance, and autocorrelation) are constant over time. Stationarity is an important assumption for many time series analysis techniques, as it implies that the statistical properties of the time series do not change over time. This makes it easier to model the time series and make forecasts about future values.</p>
+<p>There are several tests that can be used to determine whether a time series is stationary or not. Some common tests include:</p>
+<ul>
+<li>Augmented Dickey-Fuller (ADF) test: This test looks at the difference between the time series and a lagged version of itself to determine whether the time series is stationary.</li>
+<li>Kwiatkowski-Phillips-Schmidt-Shin (KPSS) test: This test looks at the level of trend and seasonality in the time series to determine whether it is stationary.</li>
+<li>Philips-Perron (PP) test: This test is similar to the ADF test, but it is more robust to the presence of autocorrelation in the time series.</li>
+<li>Median absolute deviation (MAD) test: This test looks at the dispersion of the time series around its median value to determine whether it is stationary.</li>
+</ul>
+<p>It&rsquo;s worth noting that these tests are statistical in nature, and they can only provide a certain level of confidence in whether a time series is stationary or not. In some cases, further analysis may be needed to determine whether a time series is truly stationary.</p>
+<h2 id="how-regression-is-different-from-correlation">How regression is different from correlation?</h2>
+<p>In regression we predict a number (dependent variable) with the help of predictor (independent variables)
+$$ y = \beta_0 + \beta_1*x$$</p>
+<p>In correlation we check degeree and magnitude of relationship between two variables. It&rsquo;s value can be between -1 to +1. 0 Means there is no relationship. There are several statistical tests that can be used to measure the correlation between two variables. Some common tests include:</p>
+<ul>
+<li>Pearson&rsquo;s correlation coefficient: This is the most well-known measure of correlation, and it measures the linear relationship between two variables. The Pearson correlation coefficient is calculated as:
+$$ \rho_{(x,y)} = \frac { Cov(x, y)} {(Std(x) * Std(y)) }$$</li>
+<li>Spearman&rsquo;s rank correlation coefficient: This measure of correlation is based on the ranks of the data rather than the raw data values, and it can be used to measure the strength of a monotonic relationship between two variables. The Spearman rank correlation coefficient is calculated as:
+$$ \rho_{(x,y)} = 1 - \frac {6 ∑d^2}  {n(n^2 - 1)}$$</li>
+</ul>
+<blockquote>
+<p>where d is the difference in ranks between the two variables, and n is the number of data points.</p></blockquote>
+<ul>
+<li>Kendall&rsquo;s tau: This measure of correlation is similar to the Spearman rank correlation coefficient, but it is based on the number of concordant and discordant pairs of data rather than the ranks of the data. The Kendall tau correlation coefficient is calculated as:
+$$ \tau = \frac {(c - d)} { \sqrt(c + d)}$$</li>
+</ul>
+<blockquote>
+<p>where c is the number of concordant pairs and d is the number of discordant pairs.</p></blockquote>
+<p>It&rsquo;s worth noting that these correlation tests are statistical in nature, and they can only provide a certain level of confidence in the strength of the relationship between two variables. In some cases, further analysis may be needed to fully understand the nature of the relationship.</p>
+<h2 id="what-is-autoregression-ar-model">What is Autoregression (AR) Model?</h2>
+<p>When we can predict value at k time period from the value available at time t. If we can predict sales for next week (k=7 days ahead) from the sales of today (t) then this autoregression.</p>
+<p>Autoregression (AR) is a statistical model that describes a time series as a linear function of its own past values. For example, an autoregressive model of order 1 (AR(1)) can be written as:</p>
+<p>y(t) = c + φ1*y(t-1) + ε(t)</p>
+<p>where y(t) is the value of the time series at time t, c is a constant, φ1 is the autoregressive coefficient, y(t-1) is the value of the time series at the previous time step (t-1), and ε(t) is the error term.</p>
+<h2 id="what-is-autocorrelation">What is Autocorrelation?</h2>
+<p>Autocorrelation (also known as serial correlation or lagged correlation) is the statistical dependence between a time series and a lagged version of itself. For example, the autocorrelation between a time series y(t) and a lagged version of itself y(t-k) can be measured using the Pearson correlation coefficient:</p>
+<p>When value at t time period has some relationship with a value at t+k time then we say there is autocorrelation. Like coorelation value of this can be between -1 to 1.</p>
+<h2 id="what-is-the-importance-of-acf-and-pacf-plots">What is the importance of ACF and PACF plots</h2>
+<p>Autocorrelation function (ACF) and partial autocorrelation function (PACF) plots are graphical tools used to examine the autocorrelation of a time series.</p>
+<p>ACF plots show the autocorrelation of a time series with itself at different lag values. For example, an ACF plot for a time series y(t) might show the autocorrelation between y(t) and y(t-1), y(t) and y(t-2), and so on. The ACF plot can help identify patterns in the autocorrelation of the time series, such as whether the autocorrelation decays exponentially or exhibits a more complex pattern.</p>
+<p>PACF plots show the partial autocorrelation of a time series with itself at different lag values. Partial autocorrelation measures the correlation between a time series and a lagged version of itself, controlling for the effects of all other lagged values. The PACF plot can help identify the number of autoregressive (AR) terms that are needed to model the time series.</p>
+<p>ACF and PACF plots are useful tools for understanding the autocorrelation structure of a time series, and they can help inform the choice of statistical models and forecasting methods. For example, if the ACF plot of a time series exhibits a strong decay at a particular lag value, an autoregressive model with a single lag (AR(1)) may be sufficient to model the time series. On the other hand, if the ACF plot exhibits a more complex pattern, a higher-order autoregressive model (such as AR(2) or AR(3)) may be needed.</p>
+<p><img src="/assets/images/dspost/timeseries/lolipot-plot-acf-pacf.png" alt="acf-pacf curve"></p>
+<p>Estimating AR terms
+The lollipop plot that you see above is the ACF and PACF results. To estimate the amount of AR terms, you need to look at the PACF plot. First, ignore the value at lag 0. It will always show a perfect correlation, since we are estimating the correlation between today’s value with itself. Note that there is a blue area in the plot, representing the confidence interval. To estimate how much AR terms you should use, start counting how many “lollipop” are above or below the confidence interval before the next one enter the blue area.</p>
+<p>So, looking at the PACF plot above, we can estimate to use 3 AR terms for our model, since lag 1, 2 and 3 are out of the confidence interval, and lag 4 is in the blue area.</p>
+<h2 id="what-are-different-smoothing-techniques-for-timeseries-data">What are different smoothing techniques for timeseries data?</h2>
+<p>There are several smoothing techniques that can be used for time series data. Some common techniques include:</p>
+<ul>
+<li>
+<p>Moving average: This method involves replacing each data point with the average of a certain number of preceding and following points. This can help to smooth out short-term fluctuations and highlight longer-term trends.</p>
+</li>
+<li>
+<p>Exponential smoothing: This method assigns a higher weight to more recent observations and a lower weight to older observations. This can help the model to better capture the underlying trend in the data.</p>
+</li>
+<li>
+<p>Lowess: This method fits a smooth curve to the data using locally weighted linear regression. It can effectively smooth out noise and highlight the underlying trend in the data.</p>
+</li>
+<li>
+<p>Seasonal decomposition: This method involves separating the data into three components: trend, seasonality, and residual. The trend component can then be smoothed to better understand the long-term behavior of the data.</p>
+</li>
+<li>
+<p>Savitzky-Golay filter: This method fits a polynomial to a window of data points and then uses the polynomial to predict the value of the center point in the window. This can help to smooth out short-term fluctuations while preserving important features in the data.</p>
+</li>
+</ul>
+<h2 id="what-is-maximum-likelihood-expectation-mle-how-to-calculate-mle">What is Maximum Likelihood Expectation (MLE), how to calculate MLE?</h2>
+<p>The &ldquo;likelihood function&rdquo; is used to estimate the parameters of a model that best fit the data. Given a set of parameters for a statistical model, &ldquo;Likelihood Function&rdquo; is a function that describes the probability of obtaining a set of observations.</p>
+<p>θ for ARIMA model is values of p,d,q parameters which we want to know. The meaning of L(θ;x) function is given x (data) what is the value of likelihood with different parameters values or different θ(p,d,q).</p>
+<p>The &ldquo;maximum likelihood estimation&rdquo; (MLE) is a method to find the set of parameters that maximize the likelihood function. The MLE method searches for the set of parameters that makes the observed data most probable. In other words, it maximizes the likelihood function.</p>
+<p>maximum likelihood estimation (MLE) method is given by:</p>
+<p>$$\hat{\theta} = argmax_{\theta} L(\theta;x)$$</p>
+<p>Means maximum values of θ(p,d,q) parameters for the given data.</p>
+<p>Where:</p>
+<p>$$\hat{\theta}$$ is the maximum likelihood estimate of the parameter vector
+$$\theta$$ is the parameter vector
+$$L(\theta;x)$$ is the likelihood function, which is a function of the parameters and the data
+$$x$$ is the data
+The likelihood function is typically defined as the product of the probability densities of the observations, given the parameters of the model:</p>
+<p>$$L(\theta;x) = f(x|\theta) = \prod_{i=1}^{n} f(x_i|\theta)$$</p>
+<p>where:</p>
+<p>$$f(x_i|\theta)$$ is the probability density function of the i-th observation given the parameters
+$$n$$ is the number of observations
+Note that logarithm of the likelihood function is taken in practice as the product of large number of small numbers can cause floating point underflow.</p>
+<p>$$log (L(\theta;x)) = log(\prod_{i=1}^{n} f(x_i|\theta)) = \sum_{i=1}^{n} log(f(x_i|\theta))$$</p>
+<p>And then maximizing the logarithm of the likelihood function is the same as maximizing the likelihood function.</p>
+<p>Let&rsquo;s say we have a time series data of profit  for a retail store, and we want to fit one ARIMA model to it. The likelihood function for the ARIMA model would be a function of the parameters of the model (p,d,q) and the data.</p>
+<p>To find the maximum likelihood estimation of the parameter θ, we would need to differentiate the likelihood function with respect to θ and set it equal to zero. Then, we would solve for the value of θ that maximizes the likelihood function.</p>
+<p>∂L/∂θ = 0</p>
+<p>Solving for θ, we get the maximum likelihood estimate for the parameter.</p>
+<p>&ldquo;L&rdquo; is the maximum value of the likelihood function for the model, which is the probability of obtaining the observed data given the parameters of the model.</p>
+<p>ARIMA(1,0,0) likelihood function:
+$$L = (2πσ^2)^{-n/2} e^{-\frac{1}{2σ^2}\sum_{t=2}^n(y_t - μ - φ(y_{t-1} - μ))^2}$$</p>
+<p>ARIMA(1,1,1) likelihood function:
+$$L = (2πσ^2)^{-n/2} e^{-\frac{1}{2σ^2}\sum_{t=2}^n(y_t - μ - φ(y_{t-1} - μ) - \theta(y_{t-1} - y_{t-2} - μ))^2}$$</p>
+<p>ARIMA(1,2,1) likelihood function:
+$$L = (2πσ^2)^{-n/2} e^{-\frac{1}{2σ^2}\sum_{t=3}^n(y_t - μ - φ(y_{t-1} - μ) - \theta(y_{t-1} - 2*y_{t-2}+y_{t-3} - μ))^2}$$</p>
+<p>ARIMA(2,2,2) likelihood function:
+$$L = (2πσ^2)^{-n/2} e^{-\frac{1}{2σ^2}\sum_{t=3}^n(y_t - μ - φ_1(y_{t-1} - μ) - \phi_2(y_{t-2} - μ) - \theta_1(y_{t-1} - y_{t-2} - μ) - \theta_2(y_{t-2} - y_{t-3} - μ))^2}$$</p>
+<p>ARIMA(1,2,3) likelihood function:
+$$L = (2πσ^2)^{-n/2} e^{-\frac{1}{2σ^2}\sum_{t=4}^n(y_t - μ - φ(y_{t-1} - μ) - \theta_1(y_{t-1} - 2y_{t-2}+y_{t-3} - μ) - \theta_2(y_{t-2} - 3y_{t-3}+3y_{t-4}-y_{t-5} - μ) - \theta_3(y_{t-3} - 4y_{t-4}+6y_{t-5}-4y_{t-6}+y_{t-7} - μ))^2}$$</p>
+<p>where y(t) is the observed data, μ is the mean of the data, σ^2 is the variance of the data, n is the number of observations, and φ is the parameter of the model.</p>
+<h2 id="what-is-aic-bic">What is AIC, BIC?</h2>
+<p>AIC (Akaike Information Criterion) and BIC (Bayesian Information Criterion) are both <strong>measures of the relative quality of statistical models</strong>. They are used to compare different models and select the one that best fits the data.</p>
+<p>AIC is defined as:</p>
+<p>AIC = 2k - 2ln(L)</p>
+<p>where k is the number of parameters in the model and L is the maximum value of the likelihood function for the model. AIC is a measure of the relative quality of a statistical model, with <strong>lower values of AIC indicating a better model</strong>. It is used to compare different models and select the one that best fits the data.</p>
+<p>BIC function is defined as:</p>
+<p>BIC = kln(n) - 2ln(L)</p>
+<p>where k is the number of parameters in the model, n is the number of observations and L is the maximum value of the likelihood function for the model. BIC is also a measure of the relative quality of a statistical model, with <strong>lower values of BIC indicating a better model</strong>. It is used to compare different models and select the one that best fits the data.</p>
+<p>For example, let&rsquo;s say we have two models, Model A and Model B, that we want to compare. Model A has 5 parameters and Model B has 10 parameters. We can use AIC or BIC to determine which model is the better fit for the data.</p>
+<p>Let&rsquo;s say, the AIC and BIC values for Model A are 100 and 150 respectively, and the AIC and BIC values for Model B are 150 and 200 respectively.</p>
+<p>In this case, Model A would be a better fit for the data as it has lower AIC and BIC values than Model B.</p>
+<p>It&rsquo;s worth noting that AIC and BIC are based on different assumptions and have different properties, <strong>AIC is known to be less conservative than BIC, and it tends to favor models with more parameters</strong>. On the other hand, BIC is more conservative and tends to favor models with fewer parameters, which is more suitable for cases where the sample size is large.</p>
+<h2 id="what-is-arima">What is ARIMA</h2>
+<p>ARIMA (AutoRegressive Integrated Moving Average) is a statistical method for time series forecasting. It is a combination of three components:</p>
+<p>AutoRegression (AR): The AR component represents the relationship between an observation and a number of lagged observations. It models the dependence between an observation and a number of lagged observations of the same variable. For example at lag 1, AR is .5, and at lag=2 AR is .6, at lag=3 AR is .7 etc.</p>
+<p>Integration (I): The I component represents the difference between the raw observation and the observation after being differenced. It is used to make the time series stationary. For example at lag=3 where AR is highest we take difference between acutual observation and lagged observation and get the difference for all the observations. This is called error.</p>
+<p>Moving Average (MA): The MA component represents the relationship between the observation and the error term. It models the dependence between an observation and a moving average of error terms. For example we take MA for above error terms when we average 2 observation, or we can take MA 3 observation or 4 observation. We do this for all the observation.</p>
+<p>ARIMA models are used to predict future values of a time series based on its past values and the error term. The model is trained on historical data and is then used to make predictions on new data. The model parameters are chosen through a process called model selection which involves estimating the model parameters using statistical methods and selecting the best set of parameters based on some criteria like AIC, BIC.</p>
+<p>ARIMA models are used in timeseries forecasting, and are particularly useful for modeling and forecasting time series with a seasonal component.</p>
+<h2 id="what-is-arimax">What is ARIMAX</h2>
+<hr>
+<h2 id="what-is-sarimax-model">What is SARIMAX model?</h2>
+<p>SARIMA stands for Seasonal Autoregressive Integrated Moving Average. It incorporates the seasonal component in addition to the autoregressive and moving average components that are present in the basic ARIMA model. The SARIMA model also includes a seasonal differencing component, which is used to account for the repeating patterns in the data that occur at regular intervals (e.g. monthly or quarterly data). The model is specified using three parameters: (p,d,q) for the autoregressive component, (P,D,Q) for the seasonal component, and m for the number of seasons. The notation SARIMA(p,d,q)(P,D,Q)m is used to represent a SARIMA model.</p>
+<h2 id="what-is-the-difference-between-white-noise-and-a-stationary-time-series">What is the difference between white noise and a stationary time series.</h2>
+<hr>
+<h2 id="what-are-some-common-drawbacks-of-the-arima-set-of-methods-what-are-the-different-ways-to-overcome-them">What are some common drawbacks of the ARIMA set of methods? What are the different ways to overcome them?</h2>
+<hr>
+<h2 id="explain-the-importance-of-parameter-choosing-for-every-technique-in-smoothing-methods-and-the-arima-set-of-methods-and-how-they-can-choose-the-best-working-parameter">Explain the importance of parameter choosing for every technique in smoothing methods and the ARIMA set of methods and how they can choose the best working parameter.</h2>
+<hr>
+<h2 id="what-are-the-common-mistakes-people-make-while-using-the-arima-set-of-methods">What are the common mistakes people make while using the ARIMA set of methods?</h2>
+<hr>
+<h2 id="how-to-identify-the-best-working-model-for-time-series-analysis">How to identify the best working model for time series analysis.</h2>
+<hr>
+<h2 id="important-libraries-for-timeseries-model-building">Important Libraries for Timeseries Model Building</h2>
+<h3 id="common-libraries-supporting-timeseries-model-or-visulzation-or-task">Common Libraries supporting Timeseries model or visulzation or task</h3>
+<ol>
+<li>Numpy</li>
+<li>Pandas</li>
+<li>Matplotlib</li>
+<li>Seaborn</li>
+<li>Scikit-learn</li>
+<li>TensorFlow</li>
+<li>Keras</li>
+<li>PyTorch</li>
+<li>XGBoost</li>
+<li>LightGBM</li>
+<li>CatBoost</li>
+</ol>
+<h3 id="libraries-supporting-timeseries-model">Libraries supporting Timeseries model</h3>
+<ol>
+<li>sktime</li>
+<li>Prophet</li>
+<li>Statsmodels</li>
+<li>Fbprophet</li>
+<li>GluonTS</li>
+<li>TimeSeriesNet</li>
+<li>LSTNet</li>
+<li>DeepST</li>
+<li>tsfresh</li>
+<li>pmdarima</li>
+<li>minisom</li>
+</ol>
+<h3 id="libraries-supporting-timeseries-other-work">Libraries Supporting Timeseries Other Work</h3>
+<ol>
+<li>TimeSeriesSplit</li>
+<li>TimeSeriesGenerator</li>
+<li>TimeSeriesForecast</li>
+<li>TimeSeriesAnalysis</li>
+<li>TimeSeriesClustering</li>
+<li>TimeSeriesClassification</li>
+<li>TimeSeriesRegression</li>
+<li>TimeSeriesDeepLearning</li>
+<li>TimeSeriesNLP</li>
+</ol>
+<h2 id="what-are-different-types-of-timeseries-data">What are different types of timeseries data?</h2>
+<p>There are several types of time series data, including:</p>
+<ul>
+<li>Univariate time series: This type of data consists of a single variable measured over time. Examples include stock prices, temperature, and rainfall.</li>
+<li>Multivariate time series: This type of data consists of multiple variables measured over time. Examples include weather data with multiple variables such as temperature, humidity, and wind speed.</li>
+<li>Panel data: Also known as <strong>cross-sectional</strong> time series data, this type of data consists of multiple observations of multiple variables over time. Examples include data on individuals, households, or firms, collected at different time points.</li>
+<li>Hierarchical time series: This type of data consists of multiple levels of observations, such as data collected at different geographic locations or different subpopulations.</li>
+<li>Spatial-temporal data: This type of data consists of observations of variables at different locations and times. Examples include data on air pollution or crime rates.</li>
+<li>Time series with exogenous variables: This type of data includes additional variables that are not measured over time, but may influence the time series.</li>
+<li>Irregular time series: This type of data has observations that are not evenly spaced in time, such as data collected at irregular intervals or with missing observations.</li>
+<li>Time series with trend: This type of data has a long term upward or downward trend, which can make it difficult to predict future values.</li>
+<li>Cyclical time series: This type of data has repeating patterns, such as seasonal data with a regular pattern of ups and downs.</li>
+<li>Stochastic time series: This type of data has random fluctuations that are not explained by any underlying patterns or trends.</li>
+<li>Time series with seasonality: This type of data has regular patterns that repeat over a specific period of time, such as daily, weekly, or yearly. For example, retail sales tend to be higher during holidays, or energy consumption tends to be higher during weekdays than weekends.</li>
+<li>Time series with multiple seasonality: This type of data has more than one seasonality, such as daily and weekly patterns.</li>
+<li>Non-stationary time series: This type of data has a mean or variance that changes over time, making it difficult to predict future values.</li>
+<li>Stationary time series: This type of data has a constant mean and variance over time, and is characterized by the presence of random fluctuations around the mean.</li>
+<li>Cointegrated time series: This type of data has two or more time series that have a long-term relationship, such as stock prices and interest rates.</li>
+<li>Causal time series: This type of data is affected by one or more external variables, known as explanatory or predictor variables, that can be used to predict future values.</li>
+<li>Non-causal time series: This type of data is not affected by any external variables, and can only be predicted using past values of the same time series.</li>
+<li>Event-based time series: This type of data is affected by specific events, such as product launches, natural disasters, or political changes.</li>
+</ul>
+<p>These time series types can also be combined in certain scenarios. They are not mutually exclusive.</p>
+<div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/time-series-analysis" class="category-badge">Time Series Analysis</a><a href="/tags/data-science-interview" class="category-badge">Data Science Interview</a><a href="/tags/arima-models" class="category-badge">ARIMA Models</a><a href="/tags/statistical-analysis" class="category-badge">Statistical Analysis</a><a href="/tags/forecasting" class="category-badge">Forecasting</a><a href="/tags/machine-learning" class="category-badge">Machine Learning</a><a href="/tags/data-science" class="category-badge">Data Science</a><a href="/tags/predictive-analytics" class="category-badge">Predictive Analytics</a><a href="/tags/statistical-methods" class="category-badge">Statistical Methods</a><a href="/tags/python-programming" class="category-badge">Python Programming</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=Timeseries%20Interview%20Questions&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fTimeseries-Interview-Questions%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fTimeseries-Interview-Questions%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fTimeseries-Interview-Questions%2f&title=Timeseries%20Interview%20Questions" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fTimeseries-Interview-Questions%2f&title=Timeseries%20Interview%20Questions" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=Timeseries%20Interview%20Questions&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fTimeseries-Interview-Questions%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/Linear-Regression-Interview-Questions/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">Linear Regression Interview Questions</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/What-is-GAN/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">What is GAN?</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-are-the-characterstics-of--time-series-data">What are the characterstics of  time series data?</a></li>
+    <li><a href="#example-of-time-series-data">Example of time series data</a></li>
+    <li><a href="#what-is-the-difference-between-noise-and-stationarity">What is the difference between noise and stationarity?</a></li>
+    <li><a href="#what-do-you-mean-by--statistical-properties">What do you mean by  statistical properties</a></li>
+    <li><a href="#what-are-the-assumptions-of-a-stationary-time-series">What are the assumptions of a stationary time series?</a></li>
+    <li><a href="#what-is-a-statitionary-time-series">What is a Statitionary Time Series</a></li>
+    <li><a href="#what-is-the-difference-between-variance-covariance-and-autocovariance">What is the difference between variance, covariance and autocovariance?</a></li>
+    <li><a href="#what-is-additive-model-in-time-series">What is Additive Model in time series?</a></li>
+    <li><a href="#what-is-multiplicative-model-in-time-series">What is multiplicative Model in time series?</a></li>
+    <li><a href="#what-are-the-test-of-stationarity">What are the test of Stationarity</a></li>
+    <li><a href="#how-regression-is-different-from-correlation">How regression is different from correlation?</a></li>
+    <li><a href="#what-is-autoregression-ar-model">What is Autoregression (AR) Model?</a></li>
+    <li><a href="#what-is-autocorrelation">What is Autocorrelation?</a></li>
+    <li><a href="#what-is-the-importance-of-acf-and-pacf-plots">What is the importance of ACF and PACF plots</a></li>
+    <li><a href="#what-are-different-smoothing-techniques-for-timeseries-data">What are different smoothing techniques for timeseries data?</a></li>
+    <li><a href="#what-is-maximum-likelihood-expectation-mle-how-to-calculate-mle">What is Maximum Likelihood Expectation (MLE), how to calculate MLE?</a></li>
+    <li><a href="#what-is-aic-bic">What is AIC, BIC?</a></li>
+    <li><a href="#what-is-arima">What is ARIMA</a></li>
+    <li><a href="#what-is-arimax">What is ARIMAX</a></li>
+    <li><a href="#what-is-sarimax-model">What is SARIMAX model?</a></li>
+    <li><a href="#what-is-the-difference-between-white-noise-and-a-stationary-time-series">What is the difference between white noise and a stationary time series.</a></li>
+    <li><a href="#what-are-some-common-drawbacks-of-the-arima-set-of-methods-what-are-the-different-ways-to-overcome-them">What are some common drawbacks of the ARIMA set of methods? What are the different ways to overcome them?</a></li>
+    <li><a href="#explain-the-importance-of-parameter-choosing-for-every-technique-in-smoothing-methods-and-the-arima-set-of-methods-and-how-they-can-choose-the-best-working-parameter">Explain the importance of parameter choosing for every technique in smoothing methods and the ARIMA set of methods and how they can choose the best working parameter.</a></li>
+    <li><a href="#what-are-the-common-mistakes-people-make-while-using-the-arima-set-of-methods">What are the common mistakes people make while using the ARIMA set of methods?</a></li>
+    <li><a href="#how-to-identify-the-best-working-model-for-time-series-analysis">How to identify the best working model for time series analysis.</a></li>
+    <li><a href="#important-libraries-for-timeseries-model-building">Important Libraries for Timeseries Model Building</a>
+      <ul>
+        <li><a href="#common-libraries-supporting-timeseries-model-or-visulzation-or-task">Common Libraries supporting Timeseries model or visulzation or task</a></li>
+        <li><a href="#libraries-supporting-timeseries-model">Libraries supporting Timeseries model</a></li>
+        <li><a href="#libraries-supporting-timeseries-other-work">Libraries Supporting Timeseries Other Work</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-are-different-types-of-timeseries-data">What are different types of timeseries data?</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

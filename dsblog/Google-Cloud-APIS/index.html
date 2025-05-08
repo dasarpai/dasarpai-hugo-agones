@@ -1,0 +1,1238 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Google Cloud APIs | Agones</title><meta property="og:url" content="http://localhost:1313/dsblog/Google-Cloud-APIS/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Google Cloud APIs">
+  <meta property="og:description" content="Google Cloud APIs Introduction Hundreds of services from Google are available to consumers as API. Every API has a specific purpose. Over a period of time, google keeps clubbing these API endpoints (a url/place where a service is available), cleaning their code and improving the capabilities of these services. Therefore, sometimes it looks endpoint or pip package is the same, but its API name is different. Recently when google clubbed their many AI APIs they are moved under VertexAI and API endpoint changed to aiplatform.googleapi.com. To bring some clarity for my own sake and some of you may like this, I wrote this article.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2023-07-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:tag" content="Google Cloud">
+    <meta property="article:tag" content="APIs">
+    <meta property="article:tag" content="Cloud Computing">
+    <meta property="article:tag" content="Cloud Services">
+    <meta property="article:tag" content="Developer Tools">
+    <meta property="article:tag" content="Cloud Integration">
+
+  <meta itemprop="name" content="Google Cloud APIs">
+  <meta itemprop="description" content="Google Cloud APIs Introduction Hundreds of services from Google are available to consumers as API. Every API has a specific purpose. Over a period of time, google keeps clubbing these API endpoints (a url/place where a service is available), cleaning their code and improving the capabilities of these services. Therefore, sometimes it looks endpoint or pip package is the same, but its API name is different. Recently when google clubbed their many AI APIs they are moved under VertexAI and API endpoint changed to aiplatform.googleapi.com. To bring some clarity for my own sake and some of you may like this, I wrote this article.">
+  <meta itemprop="datePublished" content="2023-07-28T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="wordCount" content="2518">
+  <meta itemprop="keywords" content="Google Cloud APIs,Cloud Services,API Integration,Google Cloud Platform,Cloud Development,GCP APIs,Cloud Computing,Developer Tools">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Google Cloud APIs">
+  <meta name="twitter:description" content="Google Cloud APIs Introduction Hundreds of services from Google are available to consumers as API. Every API has a specific purpose. Over a period of time, google keeps clubbing these API endpoints (a url/place where a service is available), cleaning their code and improving the capabilities of these services. Therefore, sometimes it looks endpoint or pip package is the same, but its API name is different. Recently when google clubbed their many AI APIs they are moved under VertexAI and API endpoint changed to aiplatform.googleapi.com. To bring some clarity for my own sake and some of you may like this, I wrote this article.">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+    <style>
+       
+      .td-main img {
+        max-width: 100%;
+        height: auto;
+      }
+      .td-main {
+        padding-top: 60px;  
+      }
+       
+      .td-sidebar-right {
+          padding-left: 20px;  
+      }
+    </style>
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <div class="row">
+        <div class="col-md-3">
+          
+        </div>
+        <main role="main" class="col-md-6 td-main">
+          <p><img src="/assets/images/dspost/dsp6082-Google-API-Services.jpg" alt="Google Cloud APIs"></p>
+<h1 id="google-cloud-apis">Google Cloud APIs</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Hundreds of services from Google are available to consumers as API. Every API has a specific purpose. Over a period of time, google keeps clubbing these API endpoints (a url/place where a service is available), cleaning their code and improving the capabilities of these services. Therefore, sometimes it looks endpoint or pip package is the same, but its API name is different. Recently when google clubbed their many AI APIs they are moved under VertexAI and API endpoint changed to aiplatform.googleapi.com. To bring some clarity for my own sake and some of you may like this, I wrote this article.</p>
+<p>Suppose you want to try these API services from your local machine or on premise machine. You need to do the following.</p>
+<ol>
+<li>You need to install google cloud SDK on the machine.</li>
+<li>Use gcloud command to connect google project. Because when you use google cloud API, Google will charge you for that. And all the charges are against some resources (service API, virtual machine, storage, processing etc). These resources are managed under a Google project. You can set budget for these services at project level. Thus, it becomes easy to track your expenses and budget.</li>
+<li>Create virtual environment using python virtualenv command or conda command</li>
+<li>Activate the virtual environment.</li>
+<li>pip install the package in that environment (for this you can refer the table below)</li>
+<li>Write your code in python to consume the API service.</li>
+<li>Execute the code on the command prompt.</li>
+</ol>
+<p>At the GCP (cloud.google.com) end, you need to</p>
+<ol>
+<li>Enable the corresponding API.</li>
+<li>Create the API key. Sometimes you may access the service with API key.</li>
+<li>Create a service user and authorize this service user to access that API service.</li>
+</ol>
+<h2 id="google-api-list-and-endpoints">Google API List and Endpoints</h2>
+<table>
+  <thead>
+      <tr>
+          <th>No.</th>
+          <th>API Name</th>
+          <th>API Endpoint</th>
+          <th>PIP Installation Command</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1.</td>
+          <td>Cloud AI Hub API</td>
+          <td>aiplatform.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Provides sharing and discovering of machine learning pipelines, models, and more.</td>
+      </tr>
+      <tr>
+          <td>2.</td>
+          <td>Cloud AI Platform (Unified) API</td>
+          <td>aiplatform.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Provides unified access to Vertex AI services, including AutoML, Pipelines, data labeling and model deployment.</td>
+      </tr>
+      <tr>
+          <td>3.</td>
+          <td>Cloud Vertex AI API</td>
+          <td>aiplatform.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Provides unified access to Vertex AI services, including AutoML, Pipelines, and more.</td>
+      </tr>
+      <tr>
+          <td>4.</td>
+          <td>Cloud Vertex AI Data Labeling API</td>
+          <td>aiplatform.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Enables data labeling for machine learning datasets.</td>
+      </tr>
+      <tr>
+          <td>5.</td>
+          <td>Cloud Vertex AI Dataset API</td>
+          <td>aiplatform.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Manages datasets for machine learning models in Vertex AI.</td>
+      </tr>
+      <tr>
+          <td>6.</td>
+          <td>Cloud Vertex AI Endpoint API</td>
+          <td>aiplatform.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Manages machine learning model endpoints in Vertex AI.</td>
+      </tr>
+      <tr>
+          <td>7.</td>
+          <td>Cloud Vertex AI Image Annotation API</td>
+          <td>aiplatform.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Offers image annotation services for custom machine learning datasets.</td>
+      </tr>
+      <tr>
+          <td>8.</td>
+          <td>Cloud Vertex AI Job API</td>
+          <td>aiplatform.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Manages training and batch prediction jobs in Vertex AI.</td>
+      </tr>
+      <tr>
+          <td>9.</td>
+          <td>Cloud Vertex AI Model API</td>
+          <td>aiplatform.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Manages machine learning models in Vertex AI.</td>
+      </tr>
+      <tr>
+          <td>10.</td>
+          <td>Cloud Vertex AI Pipeline API</td>
+          <td>aiplatform.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Enables building and deploying machine learning pipelines in Vertex AI.</td>
+      </tr>
+      <tr>
+          <td>11.</td>
+          <td>Cloud Vertex AI Prediction API</td>
+          <td>aiplatform.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Offers online and batch prediction services in Vertex AI.</td>
+      </tr>
+      <tr>
+          <td>12.</td>
+          <td>Cloud Vertex AI Specialist Search API</td>
+          <td>aiplatform.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Allows searching for AI specialists and experts in Vertex AI.</td>
+      </tr>
+      <tr>
+          <td>13.</td>
+          <td>Cloud API Gateway API</td>
+          <td>apigateway.googleapis.com</td>
+          <td>pip install google-cloud-apigateway</td>
+          <td>Provides a fully managed API gateway for serverless applications.</td>
+      </tr>
+      <tr>
+          <td>14.</td>
+          <td>Cloud App Engine Admin API</td>
+          <td>appengine.googleapis.com</td>
+          <td>pip install google-cloud-appengine</td>
+          <td>Enables the management of App Engine applications.</td>
+      </tr>
+      <tr>
+          <td>15.</td>
+          <td>Cloud AutoML Natural Language API</td>
+          <td>automl.googleapis.com</td>
+          <td>pip install google-cloud-automl</td>
+          <td>Provides custom machine learning models for natural language processing.</td>
+      </tr>
+      <tr>
+          <td>16.</td>
+          <td>Cloud AutoML Translation API</td>
+          <td>automl.googleapis.com</td>
+          <td>pip install google-cloud-automl</td>
+          <td>Enables building custom machine learning models for translation tasks.</td>
+      </tr>
+      <tr>
+          <td>17.</td>
+          <td>Cloud AutoML Vision API</td>
+          <td>automl.googleapis.com</td>
+          <td>pip install google-cloud-automl</td>
+          <td>Offers custom machine learning models for image recognition.</td>
+      </tr>
+      <tr>
+          <td>18.</td>
+          <td>Cloud AI Platform Jobs API</td>
+          <td>ml.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Manages training and batch prediction jobs for machine learning models.</td>
+      </tr>
+      <tr>
+          <td>19.</td>
+          <td>Cloud AI Platform Model Builder API</td>
+          <td>ml.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Allows building custom machine learning models using a simple UI.</td>
+      </tr>
+      <tr>
+          <td>20.</td>
+          <td>Cloud AI Platform Prediction API</td>
+          <td>ml.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Offers online and batch prediction services for machine learning models.</td>
+      </tr>
+      <tr>
+          <td>21.</td>
+          <td>Cloud AI Platform Training API</td>
+          <td>ml.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Enables training and serving machine learning models on Google Cloud.</td>
+      </tr>
+      <tr>
+          <td>22.</td>
+          <td>Cloud AI Platform Vizier API</td>
+          <td>ml.googleapis.com</td>
+          <td>pip install google-cloud-aiplatform</td>
+          <td>Provides hyperparameter tuning for machine learning models.</td>
+      </tr>
+      <tr>
+          <td>23.</td>
+          <td>Cloud Machine Learning Engine API</td>
+          <td>ml.googleapis.com</td>
+          <td>pip install google-cloud-ml</td>
+          <td>Allows for training and deploying machine learning models using TensorFlow.</td>
+      </tr>
+      <tr>
+          <td>24.</td>
+          <td>Cloud Speech-to-Text API</td>
+          <td>speech.googleapis.com</td>
+          <td>pip install google-cloud-speech</td>
+          <td>Allows converting audio to text using machine learning.</td>
+      </tr>
+      <tr>
+          <td>25.</td>
+          <td>Cloud Text-to-Speech API</td>
+          <td>texttospeech.googleapis.com</td>
+          <td>pip install google-cloud-texttospeech</td>
+          <td>Enables converting text into natural-sounding speech.</td>
+      </tr>
+      <tr>
+          <td>26.</td>
+          <td>Cloud Translation API</td>
+          <td>translate.googleapis.com</td>
+          <td>pip install google-cloud-translate</td>
+          <td>Provides translation capabilities for Google Cloud Platform resources.</td>
+      </tr>
+      <tr>
+          <td>27.</td>
+          <td>Cloud Video Intelligence API</td>
+          <td>videointelligence.googleapis.com</td>
+          <td>pip install google-cloud-videointelligence</td>
+          <td>Extracts insights from videos using machine learning.</td>
+      </tr>
+      <tr>
+          <td>28.</td>
+          <td>Cloud Vision API</td>
+          <td>vision.googleapis.com</td>
+          <td>pip install google-cloud-vision</td>
+          <td>Provides image recognition capabilities for Google Cloud Platform resources.</td>
+      </tr>
+      <tr>
+          <td>29.</td>
+          <td>Cloud BigQuery API</td>
+          <td>bigquery.googleapis.com</td>
+          <td>pip install google-cloud-bigquery</td>
+          <td>Enables super-fast SQL queries using the processing power of Google&rsquo;s infrastructure.</td>
+      </tr>
+      <tr>
+          <td>30.</td>
+          <td>Cloud Bigtable API</td>
+          <td>bigtable.googleapis.com</td>
+          <td>pip install google-cloud-bigtable</td>
+          <td>Provides a fully managed, scalable NoSQL database service.</td>
+      </tr>
+      <tr>
+          <td>31.</td>
+          <td>Cloud Billing Budget API</td>
+          <td>billingbudgets.googleapis.com</td>
+          <td>pip install google-cloud-billing-budget</td>
+          <td>Manages budget notifications for Google Cloud billing.</td>
+      </tr>
+      <tr>
+          <td>32.</td>
+          <td>Cloud Asset API</td>
+          <td>cloudasset.googleapis.com</td>
+          <td>pip install google-cloud-asset</td>
+          <td>Offers access to the resource inventory for Google Cloud Platform.</td>
+      </tr>
+      <tr>
+          <td>33.</td>
+          <td>Cloud Billing API</td>
+          <td>cloudbilling.googleapis.com</td>
+          <td>pip install google-cloud-billing</td>
+          <td>Allows for the management of Google Cloud billing accounts and budgets.</td>
+      </tr>
+      <tr>
+          <td>34.</td>
+          <td>Cloud Build API</td>
+          <td>cloudbuild.googleapis.com</td>
+          <td>pip install google-cloud-build</td>
+          <td>Enables building and testing applications in the cloud using containers.</td>
+      </tr>
+      <tr>
+          <td>35.</td>
+          <td>Cloud Debugger API</td>
+          <td>clouddebugger.googleapis.com</td>
+          <td>pip install google-cloud-debugger</td>
+          <td>Offers debugging capabilities for cloud applications.</td>
+      </tr>
+      <tr>
+          <td>36.</td>
+          <td>Cloud Error Reporting API</td>
+          <td>clouderrorreporting.googleapis.com</td>
+          <td>pip install google-cloud-error-reporting</td>
+          <td>Automatically reports errors raised by running cloud services.</td>
+      </tr>
+      <tr>
+          <td>37.</td>
+          <td>Cloud Functions API</td>
+          <td>cloudfunctions.googleapis.com</td>
+          <td>pip install google-cloud-functions</td>
+          <td>Enables the deployment and management of event-driven serverless functions.</td>
+      </tr>
+      <tr>
+          <td>38.</td>
+          <td>Cloud IoT Core API</td>
+          <td>cloudiot.googleapis.com</td>
+          <td>pip install google-cloud-iot</td>
+          <td>Offers IoT device management and data ingestion for IoT applications.</td>
+      </tr>
+      <tr>
+          <td>39.</td>
+          <td>Cloud Key Management Service API</td>
+          <td>cloudkms.googleapis.com</td>
+          <td>pip install google-cloud-kms</td>
+          <td>Enables the management of cryptographic keys for Google Cloud resources.</td>
+      </tr>
+      <tr>
+          <td>40.</td>
+          <td>Cloud Profiler API</td>
+          <td>cloudprofiler.googleapis.com</td>
+          <td>pip install google-cloud-profiler</td>
+          <td>Provides application performance profiling for cloud applications.</td>
+      </tr>
+      <tr>
+          <td>41.</td>
+          <td>Cloud Resource Manager API</td>
+          <td>cloudresourcemanager.googleapis.com</td>
+          <td>pip install google-cloud-resource-manager</td>
+          <td>Manages Google Cloud resources and IAM policies programmatically.</td>
+      </tr>
+      <tr>
+          <td>42.</td>
+          <td>Cloud Resource Manager API (Folders)</td>
+          <td>cloudresourcemanager.googleapis.com</td>
+          <td>pip install google-cloud-resource-manager</td>
+          <td>Manages and organizes resources into folders programmatically.</td>
+      </tr>
+      <tr>
+          <td>43.</td>
+          <td>Cloud Resource Manager API (Tagging)</td>
+          <td>cloudresourcemanager.googleapis.com</td>
+          <td>pip install google-cloud-resource-manager</td>
+          <td>Enables adding and managing labels (tags) for Google Cloud resources.</td>
+      </tr>
+      <tr>
+          <td>44.</td>
+          <td>Cloud Scheduler API</td>
+          <td>cloudscheduler.googleapis.com</td>
+          <td>pip install google-cloud-scheduler</td>
+          <td>Provides job scheduling for Google Cloud resources.</td>
+      </tr>
+      <tr>
+          <td>45.</td>
+          <td>Cloud Shell API</td>
+          <td>cloudshell.googleapis.com</td>
+          <td>pip install google-cloud-shell</td>
+          <td>Provides authenticated access to Cloud Shell sessions.</td>
+      </tr>
+      <tr>
+          <td>46.</td>
+          <td>Cloud Shell API (Public)</td>
+          <td>cloudshell.googleapis.com</td>
+          <td>pip install google-cloud-shell</td>
+          <td>Offers public access to Cloud Shell sessions.</td>
+      </tr>
+      <tr>
+          <td>47.</td>
+          <td>Cloud Tasks API</td>
+          <td>cloudtasks.googleapis.com</td>
+          <td>pip install google-cloud-tasks</td>
+          <td>Allows for managing and executing tasks asynchronously.</td>
+      </tr>
+      <tr>
+          <td>48.</td>
+          <td>Cloud Tasks Queue API</td>
+          <td>cloudtasks.googleapis.com</td>
+          <td>pip install google-cloud-tasks</td>
+          <td>Allows for creating and managing queues to run tasks in the background.</td>
+      </tr>
+      <tr>
+          <td>49.</td>
+          <td>Cloud Trace API</td>
+          <td>cloudtrace.googleapis.com</td>
+          <td>pip install google-cloud-trace</td>
+          <td>Captures, analyzes, and displays the latency data for applications.</td>
+      </tr>
+      <tr>
+          <td>50.</td>
+          <td>Cloud Composer API</td>
+          <td>composer.googleapis.com</td>
+          <td>pip install google-cloud-composer</td>
+          <td>Offers workflow orchestration for managing complex pipelines.</td>
+      </tr>
+      <tr>
+          <td>51.</td>
+          <td>Cloud Compute Engine API</td>
+          <td>compute.googleapis.com</td>
+          <td>pip install google-cloud-compute</td>
+          <td>Allows for the management of virtual machine instances in Google Compute Engine.</td>
+      </tr>
+      <tr>
+          <td>52.</td>
+          <td>Cloud Kubernetes Engine API</td>
+          <td>container.googleapis.com</td>
+          <td>pip install google-cloud-container</td>
+          <td>Provides a managed Kubernetes service for containerized applications.</td>
+      </tr>
+      <tr>
+          <td>53.</td>
+          <td>Cloud Container Registry API</td>
+          <td>containerregistry.googleapis.com</td>
+          <td>pip install google-cloud-containerregistry</td>
+          <td>Provides secure, private Docker container image storage and management.</td>
+      </tr>
+      <tr>
+          <td>54.</td>
+          <td>Cloud Data Catalog API</td>
+          <td>datacatalog.googleapis.com</td>
+          <td>pip install google-cloud-datacatalog</td>
+          <td>Offers metadata management and data discovery for enterprise data assets.</td>
+      </tr>
+      <tr>
+          <td>55.</td>
+          <td>Cloud Dataflow API</td>
+          <td>dataflow.googleapis.com</td>
+          <td>pip install google-cloud-dataflow</td>
+          <td>Enables the processing of large-scale data in real-time or batch mode using Apache Beam.</td>
+      </tr>
+      <tr>
+          <td>56.</td>
+          <td>Cloud Dataprep API</td>
+          <td>dataprep.googleapis.com</td>
+          <td>pip install google-cloud-dataprep</td>
+          <td>Offers intelligent data preparation and cleaning to simplify analytics workflows.</td>
+      </tr>
+      <tr>
+          <td>57.</td>
+          <td>Cloud Dataproc API</td>
+          <td>dataproc.googleapis.com</td>
+          <td>pip install google-cloud-dataproc</td>
+          <td>Provides fast, easy-to-use, fully managed cloud services for running Apache Spark and Hadoop.</td>
+      </tr>
+      <tr>
+          <td>58.</td>
+          <td>Cloud Datastore API</td>
+          <td>datastore.googleapis.com</td>
+          <td>pip install google-cloud-datastore</td>
+          <td>A highly scalable NoSQL database service.</td>
+      </tr>
+      <tr>
+          <td>59.</td>
+          <td>Cloud Deployment Manager API</td>
+          <td>deploymentmanager.googleapis.com</td>
+          <td>pip install google-cloud-deployment-manager</td>
+          <td>Automates the deployment and management of Google Cloud resources.</td>
+      </tr>
+      <tr>
+          <td>60.</td>
+          <td>Cloud Data Loss Prevention (DLP) API</td>
+          <td>dlp.googleapis.com</td>
+          <td>pip install google-cloud-dlp</td>
+          <td>Provides data loss prevention (DLP) capabilities for sensitive data detection and redaction.</td>
+      </tr>
+      <tr>
+          <td>61.</td>
+          <td>Cloud DLP API</td>
+          <td>dlp.googleapis.com</td>
+          <td>pip install google-cloud-dlp</td>
+          <td>Provides data loss prevention (DLP) capabilities for sensitive data detection and redaction.</td>
+      </tr>
+      <tr>
+          <td>62.</td>
+          <td>Cloud Document AI API</td>
+          <td>documentai.googleapis.com</td>
+          <td>pip install google-cloud-documentai</td>
+          <td>Enables intelligent document processing and understanding.</td>
+      </tr>
+      <tr>
+          <td>63.</td>
+          <td>Cloud Endpoints API</td>
+          <td>endpoints.googleapis.com</td>
+          <td>pip install google-cloud-endpoints</td>
+          <td>Offers development, deployment, and management of APIs on Google Cloud.</td>
+      </tr>
+      <tr>
+          <td>64.</td>
+          <td>Cloud Firestore API</td>
+          <td>firestore.googleapis.com</td>
+          <td>pip install google-cloud-firestore</td>
+          <td>A flexible, scalable NoSQL database for web and mobile applications.</td>
+      </tr>
+      <tr>
+          <td>65.</td>
+          <td>Cloud Game Servers Management API</td>
+          <td>gameservices.googleapis.com</td>
+          <td>pip install google-cloud-gameservices</td>
+          <td>Provides game server management for multiplayer game developers.</td>
+      </tr>
+      <tr>
+          <td>66.</td>
+          <td>Cloud Healthcare API</td>
+          <td>healthcare.googleapis.com</td>
+          <td>pip install google-cloud-healthcare</td>
+          <td>Offers healthcare-specific data storage and processing capabilities.</td>
+      </tr>
+      <tr>
+          <td>67.</td>
+          <td>Cloud Identity and Access Management API</td>
+          <td>iam.googleapis.com</td>
+          <td>pip install google-cloud-iam</td>
+          <td>Offers identity and access management for Google Cloud resources.</td>
+      </tr>
+      <tr>
+          <td>68.</td>
+          <td>Cloud Identity-Aware Proxy API</td>
+          <td>iap.googleapis.com</td>
+          <td>pip install google-cloud-iap</td>
+          <td>Provides identity-aware access control for applications deployed on Google Cloud.</td>
+      </tr>
+      <tr>
+          <td>69.</td>
+          <td>Cloud Identity Platform API</td>
+          <td>identitytoolkit.googleapis.com</td>
+          <td>pip install google-cloud-identity-toolkit</td>
+          <td>Provides identity and authentication for Google Cloud applications.</td>
+      </tr>
+      <tr>
+          <td>70.</td>
+          <td>Cloud Talent Solution API</td>
+          <td>jobs.googleapis.com</td>
+          <td>pip install google-cloud-talent</td>
+          <td>Provides talent management solutions such as job search and matching.</td>
+      </tr>
+      <tr>
+          <td>71.</td>
+          <td>Cloud Talent Solution Client API</td>
+          <td>jobs.googleapis.com</td>
+          <td>pip install google-cloud-talent</td>
+          <td>Enables search and match functionality for Cloud Talent Solution.</td>
+      </tr>
+      <tr>
+          <td>72.</td>
+          <td>Cloud Natural Language API</td>
+          <td>language.googleapis.com</td>
+          <td>pip install google-cloud-language</td>
+          <td>Offers natural language understanding for text analysis.</td>
+      </tr>
+      <tr>
+          <td>73.</td>
+          <td>Cloud Life Sciences API</td>
+          <td>lifesciences.googleapis.com</td>
+          <td>pip install google-cloud-life-sciences</td>
+          <td>Provides services for genomics and life science data processing.</td>
+      </tr>
+      <tr>
+          <td>74.</td>
+          <td>Cloud Logging API</td>
+          <td>logging.googleapis.com</td>
+          <td>pip install google-cloud-logging</td>
+          <td>Allows for collecting and viewing logs, monitoring application performance, and debugging.</td>
+      </tr>
+      <tr>
+          <td>75.</td>
+          <td>Cloud Memorystore for Memcached API</td>
+          <td>memcache.googleapis.com</td>
+          <td>pip install google-cloud-memcache</td>
+          <td>Offers fully managed Memcached instances for in-memory caching.</td>
+      </tr>
+      <tr>
+          <td>76.</td>
+          <td>Cloud Monitoring API</td>
+          <td>monitoring.googleapis.com</td>
+          <td>pip install google-cloud-monitoring</td>
+          <td>Provides monitoring and alerting services for Google Cloud resources.</td>
+      </tr>
+      <tr>
+          <td>77.</td>
+          <td>Cloud AI Platform Notebooks API</td>
+          <td>notebooks.googleapis.com</td>
+          <td>pip install google-cloud-notebooks</td>
+          <td>Provides managed Jupyter Notebook instances for data analysis and machine learning.</td>
+      </tr>
+      <tr>
+          <td>78.</td>
+          <td>Cloud OS Config API</td>
+          <td>osconfig.googleapis.com</td>
+          <td>pip install google-cloud-os-config</td>
+          <td>Manages package installations and configurations for VM instances.</td>
+      </tr>
+      <tr>
+          <td>79.</td>
+          <td>Cloud OS Login API</td>
+          <td>oslogin.googleapis.com</td>
+          <td>pip install google-cloud-os-login</td>
+          <td>Enables programmatic access to Google Cloud VM instances using OS Login.</td>
+      </tr>
+      <tr>
+          <td>80.</td>
+          <td>Cloud Pub/Sub API</td>
+          <td>pubsub.googleapis.com</td>
+          <td>pip install google-cloud-pubsub</td>
+          <td>Allows for message-oriented communication between independent applications.</td>
+      </tr>
+      <tr>
+          <td>81.</td>
+          <td>Cloud Memorystore API</td>
+          <td>redis.googleapis.com</td>
+          <td>pip install google-cloud-redis</td>
+          <td>Offers fully managed Redis instances for in-memory caching.</td>
+      </tr>
+      <tr>
+          <td>82.</td>
+          <td>Cloud Memorystore for Redis API</td>
+          <td>redis.googleapis.com</td>
+          <td>pip install google-cloud-redis</td>
+          <td>Provides fully managed Redis instances for in-memory caching.</td>
+      </tr>
+      <tr>
+          <td>83.</td>
+          <td>Cloud Retail API</td>
+          <td>retail.googleapis.com</td>
+          <td>pip install google-cloud-retail</td>
+          <td>Provides retail-specific AI and data analytics solutions.</td>
+      </tr>
+      <tr>
+          <td>84.</td>
+          <td>Cloud Runtime Configuration API</td>
+          <td>runtimeconfig.googleapis.com</td>
+          <td>pip install google-cloud-runtimeconfig</td>
+          <td>Provides access to runtime configuration for cloud services.</td>
+      </tr>
+      <tr>
+          <td>85.</td>
+          <td>Cloud Secret Manager API</td>
+          <td>secretmanager.googleapis.com</td>
+          <td>pip install google-cloud-secret-manager</td>
+          <td>Offers secure storage, access, and management of secrets.</td>
+      </tr>
+      <tr>
+          <td>86.</td>
+          <td>Cloud Security Command Center API</td>
+          <td>securitycenter.googleapis.com</td>
+          <td>pip install google-cloud-security-center</td>
+          <td>Provides security and data risk insights for Google Cloud resources.</td>
+      </tr>
+      <tr>
+          <td>87.</td>
+          <td>Cloud Service Directory API</td>
+          <td>service-directory.googleapis.com</td>
+          <td>pip install google-cloud-servicedirectory</td>
+          <td>Enables management and discovery of services for microservices architectures.</td>
+      </tr>
+      <tr>
+          <td>88.</td>
+          <td>Cloud Service Usage API</td>
+          <td>serviceusage.googleapis.com</td>
+          <td>pip install google-cloud-service-usage</td>
+          <td>Allows managing API enablement and usage for Google Cloud services.</td>
+      </tr>
+      <tr>
+          <td>89.</td>
+          <td>Cloud Source Repositories API</td>
+          <td>sourcerepo.googleapis.com</td>
+          <td>pip install google-cloud-sourcerepo</td>
+          <td>Offers Git version control for code hosted on Google Cloud.</td>
+      </tr>
+      <tr>
+          <td>90.</td>
+          <td>Cloud Spanner API</td>
+          <td>spanner.googleapis.com</td>
+          <td>pip install google-cloud-spanner</td>
+          <td>Offers a globally distributed, horizontally scalable, and strongly consistent database service.</td>
+      </tr>
+      <tr>
+          <td>91.</td>
+          <td>Cloud SQL API</td>
+          <td>sqladmin.googleapis.com</td>
+          <td>pip install google-cloud-sql</td>
+          <td>Enables the management and administration of relational databases on Google Cloud.</td>
+      </tr>
+      <tr>
+          <td>92.</td>
+          <td>Cloud SSL Certificates API</td>
+          <td>sslcertificates.googleapis.com</td>
+          <td>pip install google-cloud-ssl-certificates</td>
+          <td>Manages SSL certificates for Google Cloud resources.</td>
+      </tr>
+      <tr>
+          <td>93.</td>
+          <td>Cloud Storage API</td>
+          <td>storage.googleapis.com</td>
+          <td>pip install google-cloud-storage</td>
+          <td>Enables interaction with Google Cloud Storage, a scalable object storage service.</td>
+      </tr>
+      <tr>
+          <td>94.</td>
+          <td>Cloud Video Intelligence (Unified) API</td>
+          <td>videointelligence.googleapis.com</td>
+          <td>pip install google-cloud-videointelligence</td>
+          <td>Offers video analysis and recognition services with improved accuracy.</td>
+      </tr>
+      <tr>
+          <td>95.</td>
+          <td>Cloud Workflows API</td>
+          <td>workflows.googleapis.com</td>
+          <td>pip install google-cloud-workflows</td>
+          <td>Allows building, deploying, and managing workflows.</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="price-of-the-api-services">Price of the API Services</h2>
+<p>The price for each of these API services is different. You can know that using the following link.
+<a href="https://console.cloud.google.com/apis/library/%7BAPI-Endpoint%7D">https://console.cloud.google.com/apis/library/{API-Endpoint}</a> API-Endpoint you can refer to the table below. Then you can get the price information from the price tab. For example <a href="https://console.cloud.google.com/apis/library/vision.googleapis.com">https://console.cloud.google.com/apis/library/vision.googleapis.com</a> you can the price of the vision service.</p>
+<ul>
+<li><a href="https://cloud.google.com/pricing/list">cloud.google.com/pricing/list</a></li>
+</ul>
+<p>If you are using AI API services, then the price depends on what specific AI service you are using. For example.</p>
+<ul>
+<li>AutoML Human Labeled Images With 1 Rater</li>
+<li>AutoML Human Labeled Images With 3 Raters</li>
+<li>AutoML Image Classification Batch Prediction for AutoML Vision or Vertex AI</li>
+<li>AutoML Image Classification Model Training Compute Hours</li>
+<li>AutoML Image Classification Model Training First Compute Hours</li>
+<li>AutoML Image Classification On-Device Model Training for AutoML Vision or Vertex AI</li>
+<li>AutoML Image Classification Model Online Predictions</li>
+<li>AutoML Image Classification Model Deployment for AutoML Vision or Vertex AI</li>
+<li>AutoML Image Classification Model Training for AutoML Vision or Vertex AI</li>
+<li>AutoML Image Object Detection Batch Prediction for AutoML Vision or Vertex AI</li>
+<li>AutoML Object Detection On-Device Model Training for AutoML Vision or Vertex AI</li>
+<li>AutoML Image Object Detection Model Deployment for AutoML Vision or Vertex AI</li>
+<li>AutoML Image Object Detection Model Training for AutoML Vision or Vertex AI</li>
+<li>Crop Hints Operations</li>
+<li>Document Text Detection Operations</li>
+<li>Face Detection Operations</li>
+<li>Image Properties Operations</li>
+<li>Label Detection Operations</li>
+<li>Landmark Detection Operations</li>
+<li>Logo Detection Operations</li>
+<li>Object Localization Operations</li>
+<li>Safe Search Detection Operations</li>
+<li>Text Detection Operations</li>
+<li>Web Detection Operations</li>
+<li>Product Search Metadata Storage</li>
+</ul>
+<h2 id="important-google-cloud-commands">Important Google Cloud Commands</h2>
+<ul>
+<li>$gcloud help - Displays help for a specific gcloud command.</li>
+<li>$gcloud &ndash;help - Displays a list of all available gcloud commands.</li>
+<li>$gcloud &ndash;version - Displays the version of the gcloud CLI.</li>
+<li>$gcloud init - Initializes the gcloud CLI and sets your default project.</li>
+<li>$gcloud projects list - Lists all of your Google Cloud projects.</li>
+<li>$gcloud compute instances create - Creates a new Compute Engine virtual machine instance.</li>
+<li>$gcloud compute instances list - Lists all of your Compute Engine virtual machine instances.</li>
+<li>$gcloud compute instances start - Starts a Compute Engine virtual machine instance.</li>
+<li>$gcloud compute instances stop - Stops a Compute Engine virtual machine instance.</li>
+<li>$gcloud compute instances delete - Deletes a Compute Engine virtual machine instance.</li>
+<li>$gcloud compute firewall-rules create - Creates a new Compute Engine firewall rule.</li>
+<li>$gcloud compute firewall-rules list - Lists all of your Compute Engine firewall rules.</li>
+<li>$gcloud compute firewall-rules delete - Deletes a Compute Engine firewall rule.</li>
+<li>$ gcloud iam service-accounts create SERVICE_ACCOUNT_NAME</li>
+<li>$ gcloud projects add-iam-policy-binding PROJECT_ID</li>
+<li>$ gcloud auth application-default login</li>
+<li>$ gcloud services enable pubsub.googleapis.com</li>
+<li>$ gcloud services disable pubsub.googleapis.com</li>
+</ul>
+<h2 id="google-cloud-sdk-tools-for-all-languages">Google Cloud SDK: Tools for all languages</h2>
+<ul>
+<li><a href="https://cloud.google.com/sdk/docs/cheatsheet">Cheatsheet of Google Cloud Commands</a></li>
+<li>&ldquo;Google Cloud CLI&rdquo; lets you manage resources and services from the command line. It also contains service and data emulators to speed up local development.</li>
+<li>&ldquo;Cloud Shell&rdquo; lets you code or use a terminal directly in the web-browser.</li>
+<li>&ldquo;Cloud Code&rdquo; provides IDE extensions for VSCode and IntelliJ.</li>
+</ul>
+<h2 id="google-cloud-libraries">Google Cloud Libraries</h2>
+<ul>
+<li><a href="https://cloud.google.com/apis/docs/cloud-client-libraries">Google Cloud API Libraries in Different Languages</a></li>
+<li><a href="https://github.com/googleapis/google-cloud-python">Google Cloud Python Library of API on Github</a></li>
+<li><a href="https://cloud.google.com/python/docs/reference">API Library List</a></li>
+</ul>
+<div class="category-section">
+    <h4 class="category-section__title">Categories:</h4>
+    <div class="category-badges"><a href="/categories/dsblog" class="category-badge">dsblog</a></div>
+  </div><div class="td-tags">
+    <h4 class="td-tags__title">Tags:</h4>
+    <div class="category-badges"><a href="/tags/google-cloud" class="category-badge">Google Cloud</a><a href="/tags/apis" class="category-badge">APIs</a><a href="/tags/cloud-computing" class="category-badge">Cloud Computing</a><a href="/tags/cloud-services" class="category-badge">Cloud Services</a><a href="/tags/developer-tools" class="category-badge">Developer Tools</a><a href="/tags/cloud-integration" class="category-badge">Cloud Integration</a><a href="/tags/cloud-development" class="category-badge">Cloud Development</a></div>
+  </div><div class="td-author-box"><div class="td-author-box__avatar">
+        <img src="/assets/images/myphotos/Profilephoto1.jpg" alt="Hari Thapliyaal's avatar" class="author-image" >
+      </div><div class="td-author-box__info">
+      <h4 class="td-author-box__name">Hari Thapliyaal</h4><p class="td-author-box__bio">Dr. Hari Thapliyal is a seasoned professional and prolific blogger with a multifaceted background that spans the realms of Data Science, Project Management, and Advait-Vedanta Philosophy. Holding a Doctorate in AI/NLP from SSBM (Geneva, Switzerland), Hari has earned Master&#39;s degrees in Computers, Business Management, Data Science, and Economics, reflecting his dedication to continuous learning and a diverse skill set.
+
+With over three decades of experience in management and leadership, Hari has proven expertise in training, consulting, and coaching within the technology sector. His extensive 16&#43; years in all phases of software product development are complemented by a decade-long focus on course design, training, coaching, and consulting in Project Management.
+
+ In the dynamic field of Data Science, Hari stands out with more than three years of hands-on experience in software development, training course development, training, and mentoring professionals. His areas of specialization include Data Science, AI, Computer Vision, NLP, complex machine learning algorithms, statistical modeling, pattern identification, and extraction of valuable insights.
+
+Hari&#39;s professional journey showcases his diverse experience in planning and executing multiple types of projects. He excels in driving stakeholders to identify and resolve business problems, consistently delivering excellent results. Beyond the professional sphere, Hari finds solace in long meditation, often seeking secluded places or immersing himself in the embrace of nature.</p></div>
+  </div>
+
+<div class="td-social-share">
+  <h4 class="td-social-share__title">Share this article:</h4>
+  <ul class="td-social-share__list"><div class="social-share">
+        <a href="https://twitter.com/intent/tweet?text=Google%20Cloud%20APIs&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fGoogle-Cloud-APIS%2f" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fGoogle-Cloud-APIS%2f" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fGoogle-Cloud-APIS%2f&title=Google%20Cloud%20APIs" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fGoogle-Cloud-APIS%2f&title=Google%20Cloud%20APIs" target="_blank" rel="noopener" aria-label="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+        <a href="mailto:?subject=Google%20Cloud%20APIs&body=http%3a%2f%2flocalhost%3a1313%2fdsblog%2fGoogle-Cloud-APIS%2f" aria-label="Share via Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div></ul>
+</div>
+
+
+<div class="td-comments">
+      <h4 class="td-comments__title">Comments:</h4>
+      <script src="https://giscus.app/client.js"
+              data-repo="dasarpai/dasarpai-comments"
+              data-repo-id="R_kgDOOGVFpA"
+              data-category="General"
+              data-category-id="DIC_kwDOOGVFpM4CnzHR"
+              data-mapping="url"
+              data-reactions-enabled="1"
+              data-theme="light"
+              data-strict="1"
+              data-input-position="top"
+              data-emit-metadata="1"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5"><a class="td-pager__link td-pager__link--prev" href="/dsblog/Introduction-to-Prompt-Engineering/" aria-label="Previous page">
+            
+            <div class="td-pager__meta">
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="td-pager__meta-label"><b>Previous:</b></span>
+              <span class="td-pager__meta-title">Introduction to Prompt Engineering</span>
+            </div>
+          </a><a class="td-pager__link td-pager__link--next" href="/dsblog/types-of-questions/" aria-label="Next page">
+            <div class="td-pager__meta">
+              <span class="td-pager__meta-label"><b>Next:</b></span>
+              <span class="td-pager__meta-title">Types of Questions</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </a></ul>
+
+        </main>
+        <div class="col-md-3">
+          
+          
+            <aside class="td-sidebar-right td-sidebar--flush">
+              <div class="td-sidebar__inner">
+                <div class="custom-toc">
+                  <h5 class="custom-toc__heading">On This Page</h5>
+                  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#google-api-list-and-endpoints">Google API List and Endpoints</a></li>
+    <li><a href="#price-of-the-api-services">Price of the API Services</a></li>
+    <li><a href="#important-google-cloud-commands">Important Google Cloud Commands</a></li>
+    <li><a href="#google-cloud-sdk-tools-for-all-languages">Google Cloud SDK: Tools for all languages</a></li>
+    <li><a href="#google-cloud-libraries">Google Cloud Libraries</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </aside>
+          
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

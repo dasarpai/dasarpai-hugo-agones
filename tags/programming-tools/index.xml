@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming Tools on Agones</title>
+    <link>http://localhost:1313/tags/programming-tools/</link>
+    <description>Recent content in Programming Tools on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/programming-tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring and Evaluating Integrated Development Environments (IDEs)</title>
+      <link>http://localhost:1313/dsblog/exploring-and-evaluating-ides/</link>
+      <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-and-evaluating-ides/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6235-Exploring-and-Evaluating-IDEs.jpg&#34; alt=&#34;Explroring IDEs&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-and-evaluating-integrated-development-environments-ides&#34;&gt;Exploring and Evaluating Integrated Development Environments (IDEs)&lt;/h1&gt;&#xA;&lt;p&gt;In this article we will explore the history of IDEs and how they have evolved over time. Apart from this we will see how to evalute the best IDE for your needs and what are IDE in AI era.&lt;/p&gt;&#xA;&lt;h2 id=&#34;a-broad-timeline-of-ide-development&#34;&gt;A Broad Timeline of IDE Development&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Efficiency (1970s–1980s)&lt;/strong&gt;: Focus on minimalism and raw functionality for basic coding tasks.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Enhancement (1980s–1990s)&lt;/strong&gt;: Adding productivity tools and integration for growing complexity.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Integration (1990s–2000s)&lt;/strong&gt;: Combining editing, debugging, and building into a cohesive environment.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Collaboration (2000s–2010s)&lt;/strong&gt;: Expanding accessibility and teamwork via cloud and networks.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Intelligence (2010s–Early 2020s)&lt;/strong&gt;: Leveraging AI for smarter, reactive assistance.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Agency (Mid-2020s)&lt;/strong&gt;: Shifting to proactive, context-aware systems that act as co-developers.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;features-to-evaluate-ide&#34;&gt;Features to Evaluate IDE&lt;/h2&gt;&#xA;&lt;p&gt;To compare any Integrated Development Environment (IDE) we need a structured set of features that capture both traditional IDE capabilities and the advanced AI-driven functionalities. These features span core IDE functionality, AI-specific enhancements, usability, and integration, allowing for a fair evaluation competitors like windsurf, Cursor, VS Code with Copilot, JetBrains, or others. Currently I am using windsurf heavily so this feature list is influenced by windsurf.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>All Resources to Learn Data Science</title>
+      <link>http://localhost:1313/dsblog/all-resources-to-learn-data-science/</link>
+      <pubDate>Thu, 08 Jun 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/all-resources-to-learn-data-science/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6064-Resources-to-Learn-Everything-About-AI.jpg&#34; alt=&#34;All Resources to Learn Data Science&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;all-resources-to-learn-data-science&#34;&gt;All Resources to Learn Data Science&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Welcome to the AI ML Resources category page, where you&amp;rsquo;ll find a wealth of knowledge on various topics related to Artificial Intelligence (AI), Machine Learning (ML), Deep Learning (DL), Natural Language Processing (NLP), Mathematics and statistics required to learn Data Science. Each of the pages mentioned below brings together a wide range of articles, tutorials, and guides that delve into the fascinating world of AI and ML. Whether you&amp;rsquo;re a beginner seeking foundational knowledge or an experienced practitioner looking to expand your skills, these resources offer valuable insights and practical guidance. You need to go through these links one at time. As a master page you can book mark this page.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Digital Signal Processing on Agones</title>
+    <link>http://localhost:1313/tags/digital-signal-processing/</link>
+    <description>Recent content in Digital Signal Processing on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/digital-signal-processing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Audio Video Processing Concepts</title>
+      <link>http://localhost:1313/dsblog/audio-video-processing-concepts/</link>
+      <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/audio-video-processing-concepts/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6252-audio-video-processing-concepts.jpg&#34; alt=&#34;Audio Video Processing Concepts&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;foundational-concepts-of-audio-and-video-processing&#34;&gt;Foundational Concepts of Audio and Video Processing&lt;/h1&gt;&#xA;&lt;p&gt;Whether you are multimedia professional or deep learning Engineer, if you are dealing with audio and video processing, you will need to understand the core concepts of audio and video processing. My this guide is focussed on some of the key concepts of Audio Video processing.&lt;/p&gt;&#xA;&lt;p&gt;A digital microphone is a device that captures sound (air pressure variations) and converts it into digital signals. Internally, it contains an analog-to-digital converter (ADC) that performs the conversion from analog audio to digital audio.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding Electronics Chips</title>
+      <link>http://localhost:1313/dsblog/understanding-electronics-chips/</link>
+      <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/understanding-electronics-chips/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6254-understanding-electronics-chips.jpg&#34; alt=&#34;Understanding Electronics Chips&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;understanding-electronics-chips&#34;&gt;Understanding Electronics Chips&lt;/h1&gt;&#xA;&lt;h2 id=&#34;how-0-1-is-represented-in-digital-system&#34;&gt;How 0, 1 is represented in digital system?&lt;/h2&gt;&#xA;&lt;p&gt;In digital computing, the value 1 is often represented by a higher voltage level, and 0 is represented by a lower voltage level. For example:&lt;/p&gt;&#xA;&lt;p&gt;1: Typically represented by a voltage near the maximum supply voltage (e.g., 5V, 3.3V, or another system-defined &amp;ldquo;high&amp;rdquo; level).&lt;/p&gt;&#xA;&lt;p&gt;0: Typically represented by a voltage close to ground (e.g., 0V or a very low voltage).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AlphaFold on Agones</title>
+    <link>http://localhost:1313/tags/alphafold/</link>
+    <description>Recent content in AlphaFold on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/alphafold/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How AlphaFold is Revolutionizing Protein Science</title>
+      <link>http://localhost:1313/dsblog/How-AlphaFold-is-Revolutionizing-Protein-Science/</link>
+      <pubDate>Sat, 28 Dec 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/How-AlphaFold-is-Revolutionizing-Protein-Science/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6194-How-AlphaFold-is-Revolutionizing-Protein-Science.jpg&#34; alt=&#34; Answering Big Questions with AI&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;how-alphafold-is-revolutionizing-protein-science-answering-big-questions-with-ai&#34;&gt;How AlphaFold is Revolutionizing Protein Science: Answering Big Questions with AI&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h3 id=&#34;what-are-proteins-and-why-are-they-important-for-life-&#34;&gt;What are proteins, and why are they important for life? 🧬&lt;/h3&gt;&#xA;&lt;p&gt;Proteins are the workhorses of life. Found in every cell, they perform vital roles such as providing structural support, enabling biochemical reactions, and defending the body against pathogens. Without proteins, life as we know it would not exist.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;how-do-amino-acids-form-proteins-&#34;&gt;How do amino acids form proteins? 🧩&lt;/h3&gt;&#xA;&lt;p&gt;Proteins are composed of amino acids, the building blocks of life. These 20 amino acids combine in specific sequences to create unique proteins. The sequence determines a protein&amp;rsquo;s structure and function, much like letters in words.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

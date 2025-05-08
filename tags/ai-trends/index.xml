@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Trends on Agones</title>
+    <link>http://localhost:1313/tags/ai-trends/</link>
+    <description>Recent content in AI Trends on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai-trends/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>All About AI Hype</title>
+      <link>http://localhost:1313/dsblog/All-About-ai-Hype/</link>
+      <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/All-About-ai-Hype/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6139-All-About-ai-Hype.jpg&#34; alt=&#34;All About AI Hype&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;all-about-ai-hype&#34;&gt;All About AI Hype&lt;/h1&gt;&#xA;&lt;p&gt;Artificial Intelligence (AI) is a buzzword that has permeated almost every aspect of modern life. From the way we work and communicate to how we manage our environment and interact with animals, AI&amp;rsquo;s impact is being felt far and wide. But how deep is this impact, really? Is it truly revolutionary, or is it just another over-hyped trend that will fade with time?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

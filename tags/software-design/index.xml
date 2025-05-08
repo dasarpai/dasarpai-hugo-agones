@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Design on Agones</title>
+    <link>http://localhost:1313/tags/software-design/</link>
+    <description>Recent content in Software Design on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/software-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Designer Roles and Their Favorite Free Tools</title>
+      <link>http://localhost:1313/dsblog/exploring-designer-roles-and-their-favorite-free-tools/</link>
+      <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-designer-roles-and-their-favorite-free-tools/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6250-exploring-designer-roles.jpg&#34; alt=&#34;Exploring Designer Roles and Their Favorite Free Tools&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;exploring-designer-roles-and-their-favorite-free-tools&#34;&gt;Exploring Designer Roles and Their Favorite Free Tools&lt;/h1&gt;&#xA;&lt;p&gt;In the software business, design plays a huge role, and there are different kinds of designers, each with their own focus areas, responsibilities, and specialized tools.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-different-types-of-designer-roles&#34;&gt;What are Different Types of Designer Roles?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-ui-designer-user-interface-designer&#34;&gt;&lt;strong&gt;1. UI Designer (User Interface Designer)&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Focus:&lt;/strong&gt; Visual design of interfaces (buttons, icons, layout, colors, typography)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Common Tools:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Figma&lt;/li&gt;&#xA;&lt;li&gt;Adobe XD&lt;/li&gt;&#xA;&lt;li&gt;Sketch (macOS)&lt;/li&gt;&#xA;&lt;li&gt;Framer&lt;/li&gt;&#xA;&lt;li&gt;Zeplin (for handoff)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;2-ux-designer-user-experience-designer&#34;&gt;&lt;strong&gt;2. UX Designer (User Experience Designer)&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Focus:&lt;/strong&gt; User journeys, flows, wireframes, usability, research&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exploring Types of Models</title>
+      <link>http://localhost:1313/dsblog/exploring-types-of-models/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/exploring-types-of-models/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6209-Exploring-Types-of-Models.jpg&#34; alt=&#34;Exploring Types of Models&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;understanding-different-types-of-models&#34;&gt;Understanding Different Types of Models&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;A model is a simplified representation or abstraction of a system, concept, or phenomenon around us. It is used to analyze, understand, predict, or simulate real-world behavior. Models can take many forms, depending on the context in which they are used. For example you also say that I have created a Data Model, Functional Model, UI Model, Simulation Model etc.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding Callbacks</title>
+      <link>http://localhost:1313/dsblog/understanding-callbacks/</link>
+      <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/understanding-callbacks/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6208-Understanding-Callbacks.jpg&#34; alt=&#34;Understanding Callbacks&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;understanding-callbacks&#34;&gt;Understanding Callbacks&lt;/h1&gt;&#xA;&lt;p&gt;In the software solution design sometime people find callback confusing and this article is about helping developers and architects understanding this. We will discuss what is callback? What is the use of this? How it workds?&lt;/p&gt;&#xA;&lt;h2 id=&#34;context-setting-for-understanding-callbacks&#34;&gt;Context Setting for Understanding Callbacks&lt;/h2&gt;&#xA;&lt;p&gt;Assume you want to create a travel website. It has a feature of book ticket. For this you need to create frontend (UI page). But you don&amp;rsquo;t want to create ticket for any unauthorized person and you don&amp;rsquo;t want to implement the authentication and authorization on your website.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

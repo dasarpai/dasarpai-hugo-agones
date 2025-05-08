@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Analysis on Agones</title>
+    <link>http://localhost:1313/tags/data-analysis/</link>
+    <description>Recent content in Data Analysis on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dimensionality Reduction and Visualization</title>
+      <link>http://localhost:1313/dsblog/Dimensionality-Reduction-and-Visualization/</link>
+      <pubDate>Wed, 24 Jul 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Dimensionality-Reduction-and-Visualization/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6126-Dimensionality-Reduction-and-Visualization.jpg&#34; alt=&#34;Dimensionality-Reduction-and-Visualization&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;dimensionality-reduction-and-visualization&#34;&gt;Dimensionality Reduction and Visualization&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-are-the-popular-methods-of-dimensionality-reduction&#34;&gt;What are the popular methods of dimensionality reduction?&lt;/h2&gt;&#xA;&lt;p&gt;Dimensionality reduction is a crucial step in data preprocessing, particularly when dealing with high-dimensional datasets. It helps in reducing the number of features while retaining the essential information, improving computational efficiency, and facilitating data visualization. Here are some popular methods of dimensionality reduction:&lt;/p&gt;&#xA;&lt;h3 id=&#34;linear-methods&#34;&gt;Linear Methods&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Principal Component Analysis (PCA)&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Description&lt;/strong&gt;: PCA transforms the data into a set of linearly uncorrelated components, ordered by the amount of variance they explain.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Use Case&lt;/strong&gt;: Useful for datasets where the directions of maximum variance are important.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Implementation&lt;/strong&gt;: &lt;code&gt;sklearn.decomposition.PCA&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Linear Discriminant Analysis (LDA)&lt;/strong&gt;:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Distances in Machine Learning</title>
+      <link>http://localhost:1313/dsblog/Distances-in-Machine-Learning/</link>
+      <pubDate>Sun, 27 Aug 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Distances-in-Machine-Learning/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6093-Distances-in-Machine-Learning.jpg&#34; alt=&#34;Distances in Machine Learning&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;distances-in-machine-learning&#34;&gt;Distances in Machine Learning&lt;/h1&gt;&#xA;&lt;p&gt;Every sample, record, word, sentence, object, image etc in the Machine learning language is called vector. If we want to measure the similarity or dissimilarity between two data points then we need distance function.&lt;/p&gt;&#xA;&lt;p&gt;Distance metrics play a crucial role in various machine learning algorithms, including clustering, classification, and anomaly detection. Different distance measures capture different types of relationships between data points.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Statistics Interview Question for Data Scientist</title>
+      <link>http://localhost:1313/dsblog/Statistics-Interview-Question-for-Data-Scientist/</link>
+      <pubDate>Fri, 06 Jan 2023 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Statistics-Interview-Question-for-Data-Scientist/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6025-Statistics-Interview-Question-for-Data-Scientist.jpg&#34; alt=&#34;Statistics Interview Question for Data Scientist&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;statistics-interview-question-for-data-scientist&#34;&gt;Statistics Interview Question for Data Scientist&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;In this question-answer blog, I will try to answer that every question starts with an example rather than a theory or definition (some unavoidable variation may be possible). I firmly believe if examples are clear, then a human mind is smart enough in generalizing, creating theories and definitions.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The purpose of this blog is not to give you clear-cut definitions of important concepts of statistics but help you in visualizing the ideas in your mind. So that even without the definitions you understand what a particular idea means.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>EDA &amp; Feature Engineering 101</title>
+      <link>http://localhost:1313/dsblog/EDA-Feature-Engineering-101/</link>
+      <pubDate>Mon, 24 Aug 2020 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/EDA-Feature-Engineering-101/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6008-EDA101.jpg&#34; alt=&#34;EDA &amp;amp; Feature Engineering&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-eda&#34;&gt;What is EDA?&lt;/h2&gt;&#xA;&lt;p&gt;EDA means Exploratory Data Analysis. The purpose of data analysis is to explore. Exploration means try to understand what kind of data I have in my hand. Using EDA we try to get the answer to the following questions.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;What kind of data is this? (file format, volume of data, number of columns, metadata data of image/video/audio or some feedback in English or other languages, or tabular data, etc)&lt;/li&gt;&#xA;&lt;li&gt;How complex is this data? (How many files are there? primary key? how these files are connected to each other? is nested data in some files? is some field having nested data, etc.)&lt;/li&gt;&#xA;&lt;li&gt;Is this data sufficient for meeting our ultimate goal, i.e. Model building?&lt;/li&gt;&#xA;&lt;li&gt;Is there any missing data? Data needed but not given by the business or not available at all or costly to get that data etc.&lt;/li&gt;&#xA;&lt;li&gt;Are there any missing values? In the given dataset do we have complete information or some values are missing for some records or some columns?&lt;/li&gt;&#xA;&lt;li&gt;What are different independent and dependent fields?&lt;/li&gt;&#xA;&lt;li&gt;Is there any relationship between different independent variables of the dataset? If yes then how strong is that relationship?&lt;/li&gt;&#xA;&lt;li&gt;Are observations independent or tightly coupled like we see in time-series data?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;In the data scient project lifecycle, EDA is not a sequential, one-time, isolated process. Till the time data is not ready for modeling we keep doing EDA and cleaning the data. So, EDA is followed by a list of decisions taken to clean the dataset, and finally, data cleaning steps are implemented. If the dataset is not in the good shape after the first iteration of EDA we continue EDA in the next cycle. In this article, I am not referring to EDA as just visualizing and understanding the dataset but all the steps required till the dataset is not ready for modeling.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

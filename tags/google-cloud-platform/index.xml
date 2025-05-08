@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Cloud Platform on Agones</title>
+    <link>http://localhost:1313/tags/google-cloud-platform/</link>
+    <description>Recent content in Google Cloud Platform on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/google-cloud-platform/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Cloud Service Catalog - A Comprehensive Overview of 250&#43; Google Cloud Services</title>
+      <link>http://localhost:1313/dsblog/Google-Cloud-Service-Catalog/</link>
+      <pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Google-Cloud-Service-Catalog/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6061-Google-Cloud-Service-Catalog.jpg&#34; alt=&#34;Google Cloud Service Catalog&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;google-cloud-service-catalog&#34;&gt;Google Cloud Service Catalog&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;A Comprehensive Overview of 250+ Google Cloud Services&lt;/strong&gt;&lt;br&gt;&#xA;All these services are availalbe at &lt;a href=&#34;https://cloud.google.com&#34;&gt;Link&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In the ever-evolving landscape of cloud computing, Google Cloud entered recently compare to AWS and Azure. But it stands out as a prominent player, offering a vast array of services and solutions to empower businesses and developers. With over 250+ services available, navigating the expansive Google Cloud ecosystem can be a daunting task. However, understanding these services and their functionalities is crucial for harnessing the full potential of the platform and provide the right technical solution of any business problem. In this comprehensive guide, I will take you through the diverse landscape of Google Cloud services, shedding light on their purposes. Whether you are a seasoned cloud professional or new to the Google Cloud environment, this article aims to demystify the complexity and provide you with valuable insights into the extensive toolkit Google Cloud has to offer. You can bookmark this page for future reference.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

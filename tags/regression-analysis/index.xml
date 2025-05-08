@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Regression Analysis on Agones</title>
+    <link>http://localhost:1313/tags/regression-analysis/</link>
+    <description>Recent content in Regression Analysis on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/regression-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linear Regression Interview Questions</title>
+      <link>http://localhost:1313/dsblog/Linear-Regression-Interview-Questions/</link>
+      <pubDate>Sat, 07 Jan 2023 15:50:00 +0530</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/Linear-Regression-Interview-Questions/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6022-Linear-Regression-Interview-Questions.jpg&#34; alt=&#34;Prompt Engineering for GPT4&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;linear-regression-interview-questions-and-answers&#34;&gt;Linear Regression Interview Questions and Answers&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;In this question-answer article, I will try that the start of every answer from example rather than theory (some unavoidable variation may be possible). I firmly believe if examples are clear, human mind is smart enough in generlization and creating theories.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;question-1-what-is-linear-regression-what-is-the-difference-between-simple-linear-regression-and-multiple-linear-regression&#34;&gt;Question 1: What is linear regression? What is the difference between simple linear regression and multiple linear regression?&lt;/h2&gt;&#xA;&lt;p&gt;Linear regression is a statistical method used to model the linear relationship between a dependent variable and one or more independent variables. It is used to predict the value of the dependent variable based on the values of the independent variables.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

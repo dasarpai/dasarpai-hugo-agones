@@ -1,0 +1,637 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/site/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=site/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+
+<link rel="shortcut icon" href="/site/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/site/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/site/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Exploring Google Firebase | Agones</title><meta property="og:url" content="http://localhost:1313/site/dsblog/2024-10-12-6159-exploring-firebase/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Exploring Google Firebase">
+  <meta property="og:description" content="Exploring Firebase What is Firebase? Originally, Firebase started as a product called Envolve in 2011, which was a real-time chat service. It was co-founded by James Tamplin and Andrew Lee. While developing Envolve, they realized that developers were using its real-time system to sync application data, not just chat messages. This led them to pivot and create Firebase as a real-time database product in 2012. Google acquired Firebase in 2014 and integrated it into its broader ecosystem, expanding it into a full-fledged platform for app development.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dsblog">
+    <meta property="article:published_time" content="2024-10-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-12T00:00:00+00:00">
+    <meta property="article:tag" content="Google Cloud">
+    <meta property="article:tag" content="Application Integration">
+    <meta property="article:tag" content="Programming">
+
+  <meta itemprop="name" content="Exploring Google Firebase">
+  <meta itemprop="description" content="Exploring Firebase What is Firebase? Originally, Firebase started as a product called Envolve in 2011, which was a real-time chat service. It was co-founded by James Tamplin and Andrew Lee. While developing Envolve, they realized that developers were using its real-time system to sync application data, not just chat messages. This led them to pivot and create Firebase as a real-time database product in 2012. Google acquired Firebase in 2014 and integrated it into its broader ecosystem, expanding it into a full-fledged platform for app development.">
+  <meta itemprop="datePublished" content="2024-10-12T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-10-12T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2375">
+  <meta itemprop="keywords" content="Firebase integration,Python Firebase,Firebase Admin SDK,Firebase for Python,LLM and Firebase,Firebase Authentication,Firestore Python integration,Firebase Cloud Storage,Cloud Messaging Python,Firebase Cloud Functions,Firebase REST API,Real-time database integration">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exploring Google Firebase">
+  <meta name="twitter:description" content="Exploring Firebase What is Firebase? Originally, Firebase started as a product called Envolve in 2011, which was a real-time chat service. It was co-founded by James Tamplin and Andrew Lee. While developing Envolve, they realized that developers were using its real-time system to sync application data, not just chat messages. This led them to pivot and create Firebase as a real-time database product in 2012. Google acquired Firebase in 2014 and integrated it into its broader ecosystem, expanding it into a full-fledged platform for app development.">
+
+
+
+<link rel="stylesheet" href="/site/css/prism.css"/>
+
+<link href="/site/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/site/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/site/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link active" href="/site/dsblog/"><span class="active">Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/site/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search">
+  <div class="td-search__icon"></div>
+  <input id="agones-search" type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p><img src="/assets/images/dspost/dsp6159-Exploring-Firebase.jpg" alt="Exploring Firebase"></p>
+<h1 id="exploring-firebase">Exploring Firebase</h1>
+<h2 id="what-is-firebase">What is Firebase?</h2>
+<p>Originally, Firebase started as a product called <strong>Envolve</strong> in 2011, which was a real-time chat service. It was co-founded by <strong>James Tamplin</strong> and <strong>Andrew Lee</strong>. While developing Envolve, they realized that developers were using its real-time system to sync application data, not just chat messages. This led them to pivot and create Firebase as a real-time database product in 2012. Google acquired Firebase in <strong>2014</strong> and integrated it into its broader ecosystem, expanding it into a full-fledged platform for app development.</p>
+<p>As of 2024, Firebase is a platform developed by <strong>Google</strong> that provides tools for building and managing web and mobile applications. It offers various services like databases, authentication, analytics, cloud storage, and serverless computing, allowing developers to quickly integrate backend functionalities into their apps without needing to manage their own infrastructure.</p>
+<h2 id="key-features-of-firebase">Key features of Firebase</h2>
+<p>Firebase offers a wide range of features for building and managing web and mobile applications. Here’s a line-by-line description of its key features:</p>
+<ol>
+<li><strong>Firebase Authentication</strong>: Provides easy sign-in options with email, password, phone number, Google, Facebook, and more.</li>
+<li><strong>Firebase Realtime Database</strong>: Stores and syncs data in real-time across all clients connected to the application.</li>
+<li><strong>Cloud Firestore</strong>: A scalable, flexible NoSQL database for storing, querying, and syncing data across multiple devices in real-time.</li>
+<li><strong>Firebase Cloud Storage</strong>: Securely stores and serves user-generated content like images, videos, and audio.</li>
+<li><strong>Firebase Hosting</strong>: A fast and secure static web hosting service for modern web apps with built-in SSL and CDN.</li>
+<li><strong>Firebase Cloud Functions</strong>: Serverless functions that run backend code in response to events triggered by Firebase features or HTTPS requests.</li>
+<li><strong>Firebase Cloud Messaging (FCM)</strong>: Enables sending notifications and messages to users across platforms like iOS, Android, and the web.</li>
+<li><strong>Firebase Analytics</strong>: Provides free, unlimited analytics for monitoring user engagement and app usage patterns.</li>
+<li><strong>Firebase Crashlytics</strong>: Helps track, prioritize, and fix stability issues and crashes in real-time.</li>
+<li><strong>Firebase Performance Monitoring</strong>: Monitors app performance in real-time, highlighting any issues with latency or crashes.</li>
+<li><strong>Firebase Test Lab</strong>: Allows testing your apps on physical and virtual devices hosted by Google’s data centers.</li>
+<li><strong>Firebase Remote Config</strong>: Dynamically updates and configures your app without needing to publish a new version.</li>
+<li><strong>Firebase App Distribution</strong>: Distributes pre-release versions of your app to testers seamlessly.</li>
+<li><strong>Firebase Dynamic Links</strong>: Provides deep linking capabilities that work across different platforms, ensuring users are directed to the right content.</li>
+<li><strong>Firebase ML Kit</strong>: Offers machine learning capabilities such as text recognition, image labeling, and face detection, integrated into your app.</li>
+</ol>
+<p>Each of these features helps streamline app development and improve the user experience while offloading backend infrastructure management to Firebase. Whatever application you are building you can focus on the key features of that and integrate that application with Firebase for the above features. You will save a lot of time in developing, testing, maintainting, upgrading, securing these features. Yes, there will integration cost and firebase API call but that you need to incur even for your own developed apps.</p>
+<h2 id="what-are-they-firebase-commands">What are they Firebase commands?</h2>
+<p>Here’s a grouped version of the Firebase CLI commands based on their functionality:</p>
+<h3 id="project-setup--management"><strong>Project Setup &amp; Management</strong></h3>
+<ol>
+<li><strong>firebase init</strong>: Initializes a new Firebase project and configures the current directory for Firebase services.</li>
+<li><strong>firebase login</strong>: Logs you into your Firebase account.</li>
+<li><strong>firebase logout</strong>: Logs you out of your Firebase account.</li>
+<li><strong>firebase use</strong>: Switches between different Firebase projects within the current directory.</li>
+<li><strong>firebase projects:list</strong>: Lists all Firebase projects in your account.</li>
+</ol>
+<h3 id="deployment"><strong>Deployment</strong></h3>
+<ol start="6">
+<li><strong>firebase deploy</strong>: Deploys your Firebase project to Firebase Hosting, Functions, Firestore, or Realtime Database.</li>
+<li><strong>firebase deploy &ndash;only functions</strong>: Deploys only Firebase Functions from your project.</li>
+<li><strong>firebase deploy &ndash;only hosting</strong>: Deploys only Firebase Hosting resources from your project.</li>
+<li><strong>firebase deploy &ndash;only firestore</strong>: Deploys only Firestore rules and indexes from your project.</li>
+<li><strong>firebase deploy &ndash;only database</strong>: Deploys only Realtime Database rules from your project.</li>
+<li><strong>firebase deploy &ndash;only storage</strong>: Deploys only Cloud Storage rules from your project.</li>
+<li><strong>firebase deploy &ndash;only firestore:indexes</strong>: Deploys only Firestore indexes defined in the <code>firestore.indexes.json</code> file.</li>
+<li><strong>firebase deploy &ndash;only storage:rules</strong>: Deploys only Cloud Storage security rules.</li>
+</ol>
+<h3 id="emulators--local-development"><strong>Emulators &amp; Local Development</strong></h3>
+<ol start="14">
+<li><strong>firebase serve</strong>: Starts a local development server to preview your Firebase project.</li>
+<li><strong>firebase emulators:start</strong>: Starts local Firebase emulators for services like Firestore, Realtime Database, and Functions.</li>
+<li><strong>firebase emulators:exec</strong>: Runs a script with Firebase emulators and stops them after execution.</li>
+<li><strong>firebase emulators:export</strong>: Exports emulator data to a specified directory.</li>
+<li><strong>firebase emulators:import</strong>: Imports previously exported emulator data.</li>
+<li><strong>firebase functions:shell</strong>: Starts an interactive shell for testing Firebase Functions locally.</li>
+</ol>
+<h3 id="hosting"><strong>Hosting</strong></h3>
+<ol start="20">
+<li><strong>firebase hosting:disable</strong>: Disables Firebase Hosting for the current project.</li>
+<li><strong>firebase hosting:channel:deploy</strong>: Deploys to a preview channel for Firebase Hosting.</li>
+<li><strong>firebase hosting:channel:list</strong>: Lists all preview channels for Firebase Hosting.</li>
+<li><strong>firebase hosting:channel:delete</strong>: Deletes a preview channel from Firebase Hosting.</li>
+<li><strong>firebase hosting:clone</strong>: Clones Firebase Hosting site content from one project to another.</li>
+</ol>
+<h3 id="functions"><strong>Functions</strong></h3>
+<ol start="25">
+<li><strong>firebase deploy &ndash;only functions</strong>: Deploys only Firebase Functions.</li>
+<li><strong>firebase functions:shell</strong>: Starts an interactive shell for testing Functions locally.</li>
+<li><strong>firebase functions:log</strong>: Displays logs from Firebase Functions.</li>
+</ol>
+<h3 id="realtime-database"><strong>Realtime Database</strong></h3>
+<ol start="28">
+<li><strong>firebase database:get</strong>: Fetches data from the Firebase Realtime Database.</li>
+<li><strong>firebase database:set</strong>: Sets data in the Firebase Realtime Database.</li>
+<li><strong>firebase database:push</strong>: Pushes new data to the Firebase Realtime Database.</li>
+<li><strong>firebase database:remove</strong>: Deletes data from the Firebase Realtime Database.</li>
+</ol>
+<h3 id="firestore"><strong>Firestore</strong></h3>
+<ol start="32">
+<li><strong>firebase firestore:delete</strong>: Deletes documents or collections in Firestore.</li>
+<li><strong>firebase deploy &ndash;only firestore</strong>: Deploys only Firestore rules and indexes.</li>
+<li><strong>firebase deploy &ndash;only firestore:indexes</strong>: Deploys only Firestore indexes.</li>
+</ol>
+<h3 id="cloud-storage"><strong>Cloud Storage</strong></h3>
+<ol start="35">
+<li><strong>firebase deploy &ndash;only storage</strong>: Deploys only Cloud Storage rules.</li>
+<li><strong>firebase deploy &ndash;only storage:rules</strong>: Deploys only Cloud Storage security rules.</li>
+</ol>
+<h3 id="extensions"><strong>Extensions</strong></h3>
+<ol start="37">
+<li><strong>firebase ext:install</strong>: Installs an official Firebase extension.</li>
+<li><strong>firebase ext:uninstall</strong>: Uninstalls a previously installed Firebase extension.</li>
+<li><strong>firebase ext:update</strong>: Updates a Firebase extension to the latest version.</li>
+</ol>
+<h3 id="other-utilities"><strong>Other Utilities</strong></h3>
+<ol start="40">
+<li><strong>firebase open</strong>: Opens Firebase Console in your browser for the active project.</li>
+<li><strong>firebase apps:list</strong>: Lists all Firebase apps (iOS, Android, Web) in the current project.</li>
+</ol>
+<h2 id="how-to-integrate-firebase-into-my-project">How to integrate Firebase into my project?</h2>
+<p>To integrate Firebase into your project, you can follow these steps depending on the type of project (web, Android, iOS, etc.). Here&rsquo;s a general guide, focusing on web and mobile projects:</p>
+<h3 id="1-set-up-a-firebase-project"><strong>1. Set Up a Firebase Project</strong></h3>
+<ol>
+<li><strong>Go to the Firebase Console</strong>: Visit <a href="https://console.firebase.google.com">Firebase Console</a>.</li>
+<li><strong>Create a New Project</strong>:
+<ul>
+<li>Click &ldquo;Add Project&rdquo; and follow the steps to create a new Firebase project.</li>
+<li>Optionally enable Google Analytics if you need it.</li>
+</ul>
+</li>
+<li><strong>Add an App to Your Project</strong>: In the Firebase project dashboard, click on the platform you&rsquo;re using (Web, Android, or iOS) to add the respective app.</li>
+</ol>
+<hr>
+<h3 id="2-for-web-integration"><strong>2. For Web Integration</strong></h3>
+<h4 id="step-by-step-guide"><strong>Step-by-Step Guide:</strong></h4>
+<ol>
+<li>
+<p><strong>Install Firebase in Your Project</strong>:</p>
+<ul>
+<li>If you&rsquo;re using npm for a JavaScript/TypeScript project, install Firebase with:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install firebase
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Add Firebase SDK</strong>:</p>
+<ul>
+<li>Alternatively, include the Firebase SDK in your HTML if you&rsquo;re working with a plain HTML/JS project:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Add other Firebase SDKs as needed --&gt;</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Initialize Firebase</strong>:</p>
+<ul>
+<li>After setting up Firebase, initialize it in your code by copying the configuration snippet provided in the Firebase Console:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// Import Firebase
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">initializeApp</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;firebase/app&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Firebase config (replace with your actual config)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">firebaseConfig</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;YOUR_API_KEY&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">authDomain</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;YOUR_PROJECT_ID.firebaseapp.com&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">projectdraft</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<p>id: &ldquo;YOUR_PROJECT_ID&rdquo;,
+storageBucket: &ldquo;YOUR_PROJECT_ID.appspot.com&rdquo;,
+messagingSenderdraft: false
+id: &ldquo;YOUR_MESSAGING_SENDER_ID&rdquo;,
+appdraft: false
+id: &ldquo;YOUR_APP_ID&rdquo;
+};</p>
+<pre><code> // Initialize Firebase
+ const app = initializeApp(firebaseConfig);
+ ```
+</code></pre>
+<ol start="4">
+<li><strong>Use Firebase Services</strong>:
+<ul>
+<li>Import and use the Firebase services you need (like Firestore, Authentication, etc.). For example:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">getFirestore</span>, <span style="color:#a6e22e">doc</span>, <span style="color:#a6e22e">setDoc</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;firebase/firestore&#34;</span>; 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">db</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getFirestore</span>(<span style="color:#a6e22e">app</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Example of setting data in Firestore
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">setDoc</span>(<span style="color:#a6e22e">doc</span>(<span style="color:#a6e22e">db</span>, <span style="color:#e6db74">&#34;users&#34;</span>, <span style="color:#e6db74">&#34;userID&#34;</span>), { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">25</span> });
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="3-for-android-integration"><strong>3. For Android Integration</strong></h3>
+<h4 id="step-by-step-guide-1"><strong>Step-by-Step Guide:</strong></h4>
+<ol>
+<li>
+<p><strong>Add Firebase SDK</strong>:</p>
+<ul>
+<li>In your Firebase project, select &ldquo;Add App&rdquo; and choose <strong>Android</strong>.</li>
+<li>Follow the steps to register your Android app (you&rsquo;ll need your app&rsquo;s package name).</li>
+<li>Download the <code>google-services.json</code> file and place it in the <code>app/</code> directory of your Android project.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure Firebase SDK in Android Studio</strong>:</p>
+<ul>
+<li>Open your <code>android/build.gradle</code> (Project-level) and add:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>classpath <span style="color:#e6db74">&#39;com.google.gms:google-services:4.3.10&#39;</span>
+</span></span></code></pre></div></li>
+<li>Open <code>android/app/build.gradle</code> (App-level) and add:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>apply plugin: <span style="color:#e6db74">&#39;com.google.gms.google-services&#39;</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Add Dependencies</strong>:</p>
+<ul>
+<li>In <code>android/app/build.gradle</code>, add Firebase dependencies for the services you want to use. For example, for Firebase Authentication and Firestore:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gradle" data-lang="gradle"><span style="display:flex;"><span>implementation <span style="color:#e6db74">&#39;com.google.firebase:firebase-auth:21.0.1&#39;</span>
+</span></span><span style="display:flex;"><span>implementation <span style="color:#e6db74">&#39;com.google.firebase:firebase-firestore:24.0.0&#39;</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Sync the Project</strong>: Run &ldquo;Sync Project with Gradle Files&rdquo; in Android Studio.</p>
+</li>
+<li>
+<p><strong>Initialize Firebase</strong>:</p>
+<ul>
+<li>Firebase is automatically initialized in Android, but you can manually do so in your <code>MainActivity.java</code> or <code>MainActivity.kt</code>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>FirebaseApp.<span style="color:#a6e22e">initializeApp</span>(<span style="color:#66d9ef">this</span>);
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="4-for-ios-integration"><strong>4. For iOS Integration</strong></h3>
+<h4 id="step-by-step-guide-2"><strong>Step-by-Step Guide:</strong></h4>
+<ol>
+<li>
+<p><strong>Add Firebase SDK</strong>:</p>
+<ul>
+<li>In your Firebase project, select &ldquo;Add App&rdquo; and choose <strong>iOS</strong>.</li>
+<li>Follow the steps to register your iOS app (you&rsquo;ll need your app&rsquo;s bundle identifier).</li>
+<li>Download the <code>GoogleService-Info.plist</code> file and add it to your Xcode project.</li>
+</ul>
+</li>
+<li>
+<p><strong>Install Firebase via CocoaPods</strong>:</p>
+<ul>
+<li>Open the terminal and navigate to your iOS project directory.</li>
+<li>Create or open a <code>Podfile</code> and add Firebase dependencies. For example:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>platform <span style="color:#e6db74">:ios</span>, <span style="color:#e6db74">&#39;10.0&#39;</span>
+</span></span><span style="display:flex;"><span>pod <span style="color:#e6db74">&#39;Firebase/Auth&#39;</span>
+</span></span><span style="display:flex;"><span>pod <span style="color:#e6db74">&#39;Firebase/Firestore&#39;</span>
+</span></span></code></pre></div></li>
+<li>Run <code>pod install</code> to install Firebase pods.</li>
+</ul>
+</li>
+<li>
+<p><strong>Initialize Firebase</strong>:</p>
+<ul>
+<li>In your <code>AppDelegate.swift</code> file, initialize Firebase:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Firebase</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@UIApplicationMain</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppDelegate</span>: UIResponder, UIApplicationDelegate {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">application</span>(<span style="color:#66d9ef">_</span> application: UIApplication, 
+</span></span><span style="display:flex;"><span>  didFinishLaunchingWithOptions launchOptions: [
+</span></span><span style="display:flex;"><span>  UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
+</span></span><span style="display:flex;"><span>    FirebaseApp.configure()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="5-enable-and-configure-firebase-services"><strong>5. Enable and Configure Firebase Services</strong></h3>
+<p>After integrating Firebase, configure the specific services you need:</p>
+<ol>
+<li><strong>Firebase Authentication</strong>: Set up email/password, social logins, or phone authentication in Firebase Console, and integrate it using Firebase SDK in your app.</li>
+<li><strong>Firestore/Realtime Database</strong>: Create databases in the Firebase Console, and access them through the SDK with appropriate rules.</li>
+<li><strong>Firebase Cloud Messaging (FCM)</strong>: Set up notifications by configuring FCM in Firebase Console and integrating it with your app.</li>
+<li><strong>Cloud Functions</strong>: Deploy serverless functions with Firebase Functions CLI.</li>
+</ol>
+<hr>
+<h3 id="6-firebase-cli-for-hosting-and-functions"><strong>6. Firebase CLI for Hosting and Functions</strong></h3>
+<ol>
+<li>
+<p><strong>Install Firebase CLI</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g firebase-tools
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Login to Firebase</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>firebase login
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Initialize Firebase in Your Project</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>firebase init
+</span></span></code></pre></div><ul>
+<li>Choose the services (Hosting, Functions, Firestore, etc.) during initialization.</li>
+</ul>
+</li>
+<li>
+<p><strong>Deploy Firebase Services</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>firebase deploy
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="how-to-do-firebase-integration-with-existing-application">How to do Firebase Integration with existing application?</h2>
+<p>Let&rsquo;s assume we already have a python application. This is using LLM for summarising inputs given by the user. There are features in this app. We want this app should be integrated with firebase how to do that?</p>
+<p>To integrate Firebase with your Python application that uses a large language model (LLM) for summarization, you can use Firebase&rsquo;s REST APIs and/or Firebase Admin SDK for Python. This integration would allow you to add features like authentication, database management, cloud storage, and other Firebase services. Here’s how you can integrate Firebase into your Python app:</p>
+<h3 id="1-install-firebase-admin-sdk"><strong>1. Install Firebase Admin SDK</strong></h3>
+<p>First, install the Firebase Admin SDK for Python, which allows server-side interactions with Firebase.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install firebase-admin
+</span></span></code></pre></div><h3 id="2-set-up-firebase-project"><strong>2. Set Up Firebase Project</strong></h3>
+<p>If you haven&rsquo;t set up a Firebase project yet, follow these steps:</p>
+<ul>
+<li>Go to the <a href="https://console.firebase.google.com/">Firebase Console</a>, create a new project, and add the necessary services (Firestore, Authentication, etc.).</li>
+<li>Generate the <code>serviceAccountKey.json</code> file (Settings → Service Accounts → Generate New Private Key) and save it in your project directory.</li>
+</ul>
+<h3 id="3-initialize-firebase-in-python"><strong>3. Initialize Firebase in Python</strong></h3>
+<p>You need to initialize Firebase in your Python app using the Admin SDK and the service account key.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> firebase_admin
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> firebase_admin <span style="color:#f92672">import</span> credentials, firestore
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use the service account key to initialize the app</span>
+</span></span><span style="display:flex;"><span>cred <span style="color:#f92672">=</span> credentials<span style="color:#f92672">.</span>Certificate(<span style="color:#e6db74">&#39;path/to/serviceAccountKey.json&#39;</span>)
+</span></span><span style="display:flex;"><span>firebase_admin<span style="color:#f92672">.</span>initialize_app(cred)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initialize Firestore database (if you want to use Firestore)</span>
+</span></span><span style="display:flex;"><span>db <span style="color:#f92672">=</span> firestore<span style="color:#f92672">.</span>client()
+</span></span></code></pre></div><h3 id="4-firebase-authentication-integration"><strong>4. Firebase Authentication Integration</strong></h3>
+<p>If you want to add user authentication to your Python app (e.g., sign-up, login), you can use Firebase Authentication. You’ll typically interact with Firebase Authentication on the client side (via web or mobile), but you can verify authentication tokens on the server using Python.</p>
+<p>Example of verifying an ID token:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> firebase_admin <span style="color:#f92672">import</span> auth
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">verify_token</span>(id_token):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        decoded_token <span style="color:#f92672">=</span> auth<span style="color:#f92672">.</span>verify_id_token(id_token)
+</span></span><span style="display:flex;"><span>        uid <span style="color:#f92672">=</span> decoded_token[<span style="color:#e6db74">&#39;uid&#39;</span>]
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;User draft: false</span>
+</span></span><span style="display:flex;"><span>id: {uid}<span style="color:#e6db74">&#39;)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Error verifying token: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><p>You can pass the user’s ID token from the client (where the user signed in) to the server for verification.</p>
+<h3 id="5-using-firestore-or-realtime-database"><strong>5. Using Firestore (or Realtime Database)</strong></h3>
+<p>You can use Firestore or Realtime Database to store and retrieve data related to the summarization inputs, user data, or any other features of your application.</p>
+<p><strong>Example: Storing Summarization Results in Firestore</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">save_summary_to_firestore</span>(user_id, summary_text):
+</span></span><span style="display:flex;"><span>    doc_ref <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>collection(<span style="color:#e6db74">&#39;summaries&#39;</span>)<span style="color:#f92672">.</span>document(user_id)
+</span></span><span style="display:flex;"><span>    doc_ref<span style="color:#f92672">.</span>set({
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;summary&#39;</span>: summary_text,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;timestamp&#39;</span>: firestore<span style="color:#f92672">.</span>SERVER_TIMESTAMP
+</span></span><span style="display:flex;"><span>    })
+</span></span></code></pre></div><p>You can retrieve data from Firestore as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_summary</span>(user_id):
+</span></span><span style="display:flex;"><span>    doc_ref <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>collection(<span style="color:#e6db74">&#39;summaries&#39;</span>)<span style="color:#f92672">.</span>document(user_id)
+</span></span><span style="display:flex;"><span>    doc <span style="color:#f92672">=</span> doc_ref<span style="color:#f92672">.</span>get()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> doc<span style="color:#f92672">.</span>exists:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Summary: </span><span style="color:#e6db74">{</span>doc<span style="color:#f92672">.</span>to_dict()[<span style="color:#e6db74">&#39;summary&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#39;No summary found&#39;</span>)
+</span></span></code></pre></div><h3 id="6-firebase-cloud-storage"><strong>6. Firebase Cloud Storage</strong></h3>
+<p>If you need to upload files (e.g., user inputs in files, summaries as text files), you can integrate Firebase Storage.</p>
+<p>First, add the <code>google-cloud-storage</code> package:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install google-cloud-storage
+</span></span></code></pre></div><p>Next, set up Firebase Storage:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> google.cloud <span style="color:#f92672">import</span> storage
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload_file</span>(file_path, storage_bucket_name, destination_blob_name):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Initialize storage client</span>
+</span></span><span style="display:flex;"><span>    client <span style="color:#f92672">=</span> storage<span style="color:#f92672">.</span>Client()
+</span></span><span style="display:flex;"><span>    bucket <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>get_bucket(storage_bucket_name)
+</span></span><span style="display:flex;"><span>    blob <span style="color:#f92672">=</span> bucket<span style="color:#f92672">.</span>blob(destination_blob_name)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Upload file to Firebase Storage</span>
+</span></span><span style="display:flex;"><span>    blob<span style="color:#f92672">.</span>upload_from_filename(file_path)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;File </span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74"> uploaded to </span><span style="color:#e6db74">{</span>destination_blob_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><h3 id="7-integrating-firebase-cloud-messaging-fcm"><strong>7. Integrating Firebase Cloud Messaging (FCM)</strong></h3>
+<p>If you want to send notifications to your users about their summarization results or other updates, you can use Firebase Cloud Messaging.</p>
+<p>First, install <code>requests</code> if not already installed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install requests
+</span></span></code></pre></div><p>Send notifications via Firebase FCM:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">send_fcm_notification</span>(device_token, title, body):
+</span></span><span style="display:flex;"><span>    url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://fcm.googleapis.com/fcm/send&#34;</span>
+</span></span><span style="display:flex;"><span>    headers <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Authorization&#34;</span>: <span style="color:#e6db74">&#34;key=YOUR_SERVER_KEY&#34;</span>,  
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># Found in Firebase Console -&gt; Project Settings -&gt; Cloud Messaging</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Content-Type&#34;</span>: <span style="color:#e6db74">&#34;application/json&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    payload <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;to&#34;</span>: device_token,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;notification&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;title&#34;</span>: title,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;body&#34;</span>: body
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(url, json<span style="color:#f92672">=</span>payload, headers<span style="color:#f92672">=</span>headers)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Notification sent: </span><span style="color:#e6db74">{</span>response<span style="color:#f92672">.</span>status_code<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><h3 id="8-deploy-firebase-cloud-functions-optional"><strong>8. Deploy Firebase Cloud Functions (Optional)</strong></h3>
+<p>You can also offload certain functions (e.g., heavy computations or event-based triggers) to Firebase Cloud Functions.</p>
+<ul>
+<li>First, write your Cloud Function logic using JavaScript/TypeScript.</li>
+<li>Deploy it via Firebase CLI (<code>firebase deploy --only functions</code>).</li>
+<li>Call this function from your Python app using REST APIs.</li>
+</ul>
+<h3 id="9-hosting-if-you-want-to-build-a-web-interface"><strong>9. Hosting (If You Want to Build a Web Interface)</strong></h3>
+<p>If your Python application has a front-end or dashboard, you can deploy it using Firebase Hosting.</p>
+<ul>
+<li>Use Firebase CLI to deploy static websites (HTML, CSS, JavaScript):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>firebase deploy --only hosting
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="10-firebase-analytics-optional"><strong>10. Firebase Analytics (Optional)</strong></h3>
+<p>If you want to track user interactions, behavior, or performance of your app, you can use Firebase Analytics. This is mainly client-side, but server-side events can be sent as well.</p>
+<hr>
+<h3 id="overall-integration-flow"><strong>Overall Integration Flow:</strong></h3>
+<ul>
+<li><strong>User Authentication</strong>: Secure user login and registration (Firebase Authentication).</li>
+<li><strong>Data Storage</strong>: Store and retrieve user input, summaries, and preferences (Firestore/Realtime Database).</li>
+<li><strong>Notifications</strong>: Notify users of summaries or updates (Firebase Cloud Messaging).</li>
+<li><strong>Cloud Storage</strong>: Upload and store any files (Firebase Storage).</li>
+<li><strong>Cloud Functions</strong>: Offload event-based logic if needed (e.g., sending emails, background processes).</li>
+</ul>
+<p>This setup will allow your Python application to integrate with Firebase’s various services, adding real-time capabilities, authentication, cloud storage, and more.</p>
+<h2 id="hashtags">Hashtags:</h2>
+<p>#FirebaseIntegration #PythonDevelopment #LLM #CloudServices #BackendDevelopment #FirebaseAdminSDK #Firestore #CloudStorage #AppDevelopment #FirebaseAuth #RealTimeData #CloudMessaging #Serverless</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/site/js/main.js"></script>
+<script src='/site/js/prism.js'></script>
+<script src='/site/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/site/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>

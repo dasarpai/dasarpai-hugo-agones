@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Center on Agones</title>
+    <link>http://localhost:1313/tags/data-center/</link>
+    <description>Recent content in Data Center on Agones</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>hari@dasarpai.com (Hari Thapliyaal)</managingEditor>
+    <webMaster>hari@dasarpai.com (Hari Thapliyaal)</webMaster>
+    <lastBuildDate>Thu, 08 May 2025 11:34:17 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/data-center/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to NVIDIA and Products</title>
+      <link>http://localhost:1313/dsblog/introduction-nvidia-products/</link>
+      <pubDate>Thu, 05 Dec 2024 00:00:00 +0000</pubDate><author>hari@dasarpai.com (Hari Thapliyaal)</author>
+      <guid>http://localhost:1313/dsblog/introduction-nvidia-products/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/assets/images/dspost/dsp6182-Introduction-NVIDIA-Products.jpg&#34; alt=&#34;Introduction-NVIDIA-Products&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;nvidia-timeline&#34;&gt;NVIDIA Timeline&lt;/h2&gt;&#xA;&lt;p&gt;NVIDIA Corporation has an illustrious history since its founding in 1993. It started as a graphics processing pioneer and has grown into a global leader in AI, gaming, data center technologies, and more. Here&amp;rsquo;s a timeline of key milestones and activities:&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;1993-1999-founding-and-early-innovations&#34;&gt;&lt;strong&gt;1993-1999: Founding and Early Innovations&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;1993:&lt;/strong&gt; NVIDIA was founded by Jensen Huang, Chris Malachowsky, and Curtis Priem in Santa Clara, California, with a focus on graphics processing.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;1995:&lt;/strong&gt; Launched the &lt;strong&gt;NV1&lt;/strong&gt;, the company’s first graphics chip, which supported both 2D and 3D graphics.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;1999:&lt;/strong&gt; Introduced the &lt;strong&gt;GeForce 256&lt;/strong&gt;, the world&amp;rsquo;s first GPU, which revolutionized graphics processing by offloading 3D rendering tasks from the CPU.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;2000-2009-expanding-into-gaming-and-professional-graphics&#34;&gt;&lt;strong&gt;2000-2009: Expanding into Gaming and Professional Graphics&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;2000:&lt;/strong&gt; NVIDIA acquired 3dfx, a leading graphics company, consolidating its dominance in the GPU market.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;2002:&lt;/strong&gt; Released the &lt;strong&gt;GeForce4&lt;/strong&gt; series, establishing itself as a leader in gaming GPUs.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;2004:&lt;/strong&gt; Entered the professional graphics market with the &lt;strong&gt;Quadro FX&lt;/strong&gt; series.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;2006:&lt;/strong&gt; Launched &lt;strong&gt;CUDA&lt;/strong&gt;, a parallel computing platform enabling developers to use NVIDIA GPUs for general-purpose computing.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;2008:&lt;/strong&gt; Introduced the &lt;strong&gt;Tesla series&lt;/strong&gt;, targeting high-performance computing (HPC) and AI research.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;fun-fact&#34;&gt;Fun Fact:&lt;/h4&gt;&#xA;&lt;p&gt;Tesla, Inc. (originally Tesla Motors), founded in 2003, is named after Nikola Tesla as well, acknowledging his contributions to electrical systems. Interestingly, NVIDIA and Tesla, Inc. later had a professional relationship. NVIDIA GPUs were used in Tesla&amp;rsquo;s early Autopilot systems, although Tesla later transitioned to building its own custom AI chips.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

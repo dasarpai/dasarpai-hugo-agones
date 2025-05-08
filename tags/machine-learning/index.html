@@ -1,0 +1,2613 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.147.0">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/tags/machine-learning/index.xml">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico?v=1" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png?v=1" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=1" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png?v=1" sizes="180x180">
+<title>Machine Learning | Agones</title><meta property="og:url" content="http://localhost:1313/tags/machine-learning/">
+  <meta property="og:site_name" content="Agones">
+  <meta property="og:title" content="Machine Learning">
+  <meta property="og:description" content="Agones is a library for hosting, running and scaling dedicated game servers on Kubernetes.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Machine Learning">
+  <meta itemprop="description" content="Agones is a library for hosting, running and scaling dedicated game servers on Kubernetes.">
+  <meta itemprop="datePublished" content="2025-03-28T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Machine Learning">
+  <meta name="twitter:description" content="Agones is a library for hosting, running and scaling dedicated game servers on Kubernetes.">
+
+
+
+<link rel="stylesheet" href="/css/prism.css"/>
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href=http://localhost:1313/css/asciinema-player.css />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+<script src="/js/lunr.js"></script>
+
+
+  </head>
+  <body class="td-term">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-light  nav-shadow flex-column flex-md-row td-navbar">
+
+	<a id="agones-top"  class="navbar-brand" href="/">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 276 276" height="30" width="30" id="svg2"><defs id="defs6"><clipPath id="clipPath18" clipPathUnits="userSpaceOnUse"><path id="path16" d="M0 8e2H8e2V0H0z"/></clipPath></defs><g transform="matrix(1.3333333,0,0,-1.3333333,-398.3522,928.28029)" id="g10"><g transform="translate(2.5702576,82.614887)" id="g12"><circle transform="scale(1,-1)" r="102.69205" cy="-510.09534" cx="399.71484" id="path930" style="opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;stroke:none;stroke-width:.65861601;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"/><g id="g40" transform="translate(239.9974,355.2515)"/><g transform="translate(4.931459e-6,39.355242)" id="g917"><g transform="translate(386.7049,451.9248)" id="g44"><path id="path46" style="fill:#2d70de;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c.087-2.62-1.634-4.953-4.163-5.646-7.609-2.083-14.615-5.497-21.089-10.181-5.102-3.691-10.224-7.371-15.52-10.769-3.718-2.385-7.711-4.257-12.438-3.601-6.255.868-10.629 4.828-12.313 11.575-.619 2.478-1.169 4.997-1.457 7.53-.47 4.135-.699 8.297-1.031 12.448.32 18.264 5.042 35.123 15.47 50.223 6.695 9.693 16.067 14.894 27.708 16.085 4.103.419 8.134.365 12.108-.059 3.313-.353 5.413-3.475 5.034-6.785-.039-.337-.059-.682-.059-1.033.0-.2.008-.396.021-.593-.03-1.164-.051-1.823-.487-3.253-.356-1.17-1.37-3.116-4.045-3.504h-10.267c-3.264.0-5.91-3.291-5.91-7.35.0-4.059 2.646-7.35 5.91-7.35H4.303C6.98 37.35 7.996 35.403 8.352 34.232 8.81 32.726 8.809 32.076 8.843 30.787 8.837 30.655 8.834 30.521 8.834 30.387c0-4.059 2.646-7.349 5.911-7.349h3.7c3.264.0 5.911-3.292 5.911-7.35.0-4.06-2.647-7.351-5.911-7.351H5.878c-3.264.0-5.911-3.291-5.911-7.35z"/></g><g transform="translate(467.9637,499.8276)" id="g48"><path id="path50" style="fill:#17252e;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m0 0c-8.346 13.973-20.665 20.377-36.728 20.045-1.862-.038-3.708-.16-5.539-.356-1.637-.175-2.591-2.02-1.739-3.428.736-1.219 1.173-2.732 1.173-4.377.0-4.059-2.646-7.35-5.912-7.35h-17.733c-3.264.0-5.911-3.291-5.911-7.35.0-4.059 2.647-7.35 5.911-7.35h13.628c3.142.0 5.71-3.048 5.899-6.895l.013.015c.082-1.94-.032-2.51.52-4.321.354-1.165 1.359-3.095 4.001-3.498h14.69c3.265.0 5.911-3.292 5.911-7.35.0-4.06-2.646-7.351-5.911-7.351h-23.349c-2.838-.311-3.897-2.33-4.263-3.532-.434-1.426-.456-2.085-.485-3.246.011-.189.019-.379.019-.572.0-.341-.019-.677-.055-1.006-.281-2.535 1.584-4.771 4.057-5.396 8.245-2.084 15.933-5.839 23.112-11.209 5.216-3.901 10.678-7.497 16.219-10.922 2.152-1.331 4.782-2.351 7.279-2.578 8.033-.731 13.657 3.531 15.686 11.437 1.442 5.615 2.093 11.343 2.244 17.134C13.198-31.758 9.121-15.269.0.0"/></g></g></g></g></svg> <span class="text-uppercase fw-bold">Agones</span>
+	</a>
+
+	<div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/dsblog/"><span>Data Science Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/samskrutyatra/"><span>Samskrut Yatra Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/"><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/"><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/community/"><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				<a class="nav-link" href="https://github.com/googleforgames/agones">GitHub</a>
+			</li>
+			<li class="nav-item dropdown d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Release
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://development.agones.dev">Development</a>
+					<a class="dropdown-item" href="https://agones.dev">1.48.0</a>
+					<a class="dropdown-item" href="https://1-47-0.agones.dev">1.47.0</a>
+					<a class="dropdown-item" href="https://1-46-0.agones.dev">1.46.0</a>
+					<a class="dropdown-item" href="https://1-45-0.agones.dev">1.45.0</a>
+					<a class="dropdown-item" href="https://1-44-0.agones.dev">1.44.0</a>
+					<a class="dropdown-item" href="https://1-43-0.agones.dev">1.43.0</a>
+					<a class="dropdown-item" href="https://1-42-0.agones.dev">1.42.0</a>
+					<a class="dropdown-item" href="https://1-41-0.agones.dev">1.41.0</a>
+					<a class="dropdown-item" href="https://1-40-0.agones.dev">1.40.0</a>
+					<a class="dropdown-item" href="https://1-39-0.agones.dev">1.39.0</a>
+					<a class="dropdown-item" href="https://1-38-0.agones.dev">1.38.0</a>
+					<a class="dropdown-item" href="https://1-37-0.agones.dev">1.37.0</a>
+					<a class="dropdown-item" href="https://1-36-0.agones.dev">1.36.0</a>
+					<a class="dropdown-item" href="https://1-35-0.agones.dev">1.35.0</a>
+					<a class="dropdown-item" href="https://1-34-0.agones.dev">1.34.0</a>
+					<a class="dropdown-item" href="https://1-33-0.agones.dev">1.33.0</a>
+					<a class="dropdown-item" href="https://1-32-0.agones.dev">1.32.0</a>
+					<a class="dropdown-item" href="https://1-31-0.agones.dev">1.31.0</a>
+				</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav mx-lg-2 d-none d-lg-block"><div class="td-search position-relative">
+  <div class="td-search__icon"></div>
+  <input
+    id="agones-search"
+    type="search"
+    class="td-search__input form-control td-search-input"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+  >
+  <ul id="agones-search-results" class="list-group position-absolute w-100" style="z-index:1000; top:100%; left:0;"></ul>
+</div>
+
+<script>
+let lunrIndex, pagesIndex;
+
+async function initLunr() {
+  const response = await fetch('/index.json');
+  pagesIndex = await response.json();
+  lunrIndex = lunr(function () {
+    this.ref('url');
+    this.field('title', { boost: 10 });
+    this.field('content');
+    pagesIndex.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+}
+
+function search(query) {
+  if (!lunrIndex || !query) return [];
+  return lunrIndex.search(query).map(result =>
+    pagesIndex.find(page => page.url === result.ref)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initLunr();
+  const input = document.getElementById('agones-search');
+  const resultsList = document.getElementById('agones-search-results');
+  input.addEventListener('input', function (e) {
+    const query = e.target.value.trim();
+    if (!query) {
+      resultsList.innerHTML = '';
+      resultsList.style.display = 'none';
+      return;
+    }
+    const results = search(query);
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="list-group-item">No results found.</li>';
+      resultsList.style.display = 'block';
+      return;
+    }
+    resultsList.innerHTML = results.map(page =>
+      `<li class="list-group-item"><a href="${page.url}">${page.title}</a></li>`
+    ).join('');
+    resultsList.style.display = 'block';
+  });
+  
+  input.addEventListener('blur', function() {
+    setTimeout(() => { resultsList.style.display = 'none'; }, 200);
+  });
+  
+  input.addEventListener('focus', function() {
+    if (input.value.trim()) resultsList.style.display = 'block';
+  });
+});
+</script></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        
+<div class="td-content">
+  <main class="taxonomy-taxonomy-page">
+    <h1>Tag: <span>Machine Learning</span></h1>
+    <div>
+      
+    </div>
+    <div>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/audio-video-processing-concepts/">Audio Video Processing Concepts</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Audio Video Processing Concepts</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/technology/" data-taxonomy-term="technology"><span class="taxonomy-label">Technology</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/audio-processing/" data-taxonomy-term="audio-processing"><span class="taxonomy-label">Audio Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/video-processing/" data-taxonomy-term="video-processing"><span class="taxonomy-label">Video Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/digital-signal-processing/" data-taxonomy-term="digital-signal-processing"><span class="taxonomy-label">Digital Signal Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/image-processing/" data-taxonomy-term="image-processing"><span class="taxonomy-label">Image Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/computer-vision/" data-taxonomy-term="computer-vision"><span class="taxonomy-label">Computer Vision</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/quantum-physics-with-deeper-questions/">Quantum Physics with Deeper Questions with ChatGPT</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Quantum Physics with Deeper Questions with ChatGPT</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/technology/" data-taxonomy-term="technology"><span class="taxonomy-label">Technology</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/quantum-physics/" data-taxonomy-term="quantum-physics"><span class="taxonomy-label">Quantum Physics</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/quantum-mechanics/" data-taxonomy-term="quantum-mechanics"><span class="taxonomy-label">Quantum Mechanics</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/large-language-model/" data-taxonomy-term="large-language-model"><span class="taxonomy-label">Large Language Model</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/artificial-intelligence/" data-taxonomy-term="artificial-intelligence"><span class="taxonomy-label">Artificial Intelligence</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/exploring-gguf-and-other-model-formats/">Exploring GGUF and Other Model Formats</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Exploring GGUF and Other Model Formats</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/gguf/" data-taxonomy-term="gguf"><span class="taxonomy-label">GGUF</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-formats/" data-taxonomy-term="model-formats"><span class="taxonomy-label">Model Formats</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/onnx/" data-taxonomy-term="onnx"><span class="taxonomy-label">ONNX</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/tensorflow/" data-taxonomy-term="tensorflow"><span class="taxonomy-label">TensorFlow</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/pytorch/" data-taxonomy-term="pytorch"><span class="taxonomy-label">PyTorch</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-optimization/" data-taxonomy-term="model-optimization"><span class="taxonomy-label">Model Optimization</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai/" data-taxonomy-term="ai"><span class="taxonomy-label">AI</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/exploring-anythingllm/">Exploring AnythingLLM</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Exploring AnythingLLM</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/llm/" data-taxonomy-term="llm"><span class="taxonomy-label">LLM</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai/" data-taxonomy-term="ai"><span class="taxonomy-label">AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/vector-databases/" data-taxonomy-term="vector-databases"><span class="taxonomy-label">Vector Databases</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/rag/" data-taxonomy-term="rag"><span class="taxonomy-label">RAG</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/natural-language-processing/" data-taxonomy-term="natural-language-processing"><span class="taxonomy-label">Natural Language Processing</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Types-of-LLM/">Types of Large Language Models (LLM)</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Types of Large Language Models (LLM)</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/large-language-models/" data-taxonomy-term="large-language-models"><span class="taxonomy-label">Large Language Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/artificial-intelligence/" data-taxonomy-term="artificial-intelligence"><span class="taxonomy-label">Artificial Intelligence</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/natural-language-processing/" data-taxonomy-term="natural-language-processing"><span class="taxonomy-label">Natural Language Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-models/" data-taxonomy-term="ai-models"><span class="taxonomy-label">AI Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-ai/" data-taxonomy-term="language-ai"><span class="taxonomy-label">Language AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/text-generation/" data-taxonomy-term="text-generation"><span class="taxonomy-label">Text Generation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-technology/" data-taxonomy-term="ai-technology"><span class="taxonomy-label">AI Technology</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/AI-ML-With-Oracle-Cloud/">AI/ML with Oracle Cloud</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    AI/ML with Oracle Cloud</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai/" data-taxonomy-term="ai"><span class="taxonomy-label">AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ml/" data-taxonomy-term="ml"><span class="taxonomy-label">ML</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/oracle-cloud/" data-taxonomy-term="oracle-cloud"><span class="taxonomy-label">Oracle Cloud</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/artificial-intelligence/" data-taxonomy-term="artificial-intelligence"><span class="taxonomy-label">Artificial Intelligence</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Machine-Learning-Key-Concepts/">Machine Learning Key Concepts</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Machine Learning Key Concepts</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-evaluation/" data-taxonomy-term="model-evaluation"><span class="taxonomy-label">Model Evaluation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/cross-validation/" data-taxonomy-term="cross-validation"><span class="taxonomy-label">Cross Validation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/hyperparameter-tuning/" data-taxonomy-term="hyperparameter-tuning"><span class="taxonomy-label">Hyperparameter Tuning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/feature-engineering/" data-taxonomy-term="feature-engineering"><span class="taxonomy-label">Feature Engineering</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-optimization/" data-taxonomy-term="model-optimization"><span class="taxonomy-label">Model Optimization</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/regularization/" data-taxonomy-term="regularization"><span class="taxonomy-label">Regularization</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ensemble-methods/" data-taxonomy-term="ensemble-methods"><span class="taxonomy-label">Ensemble Methods</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/dimensionality-reduction/" data-taxonomy-term="dimensionality-reduction"><span class="taxonomy-label">Dimensionality Reduction</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/explainable-ai/" data-taxonomy-term="explainable-ai"><span class="taxonomy-label">Explainable AI</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/AutoML-Tools/">Automated Machine Learning</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Automated Machine Learning</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/automl/" data-taxonomy-term="automl"><span class="taxonomy-label">AutoML</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-automation/" data-taxonomy-term="ai-automation"><span class="taxonomy-label">AI Automation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/cloud-automl/" data-taxonomy-term="cloud-automl"><span class="taxonomy-label">Cloud AutoML</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ml-tools/" data-taxonomy-term="ml-tools"><span class="taxonomy-label">ML Tools</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-science/" data-taxonomy-term="data-science"><span class="taxonomy-label">Data Science</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-development/" data-taxonomy-term="model-development"><span class="taxonomy-label">Model Development</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-platform/" data-taxonomy-term="ai-platform"><span class="taxonomy-label">AI Platform</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ml-automation/" data-taxonomy-term="ml-automation"><span class="taxonomy-label">ML Automation</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Everything-About-Developer-Console/">Everything About Developer Console</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Everything About Developer Console</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/gcp/" data-taxonomy-term="gcp"><span class="taxonomy-label">GCP</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/it-infrastructure/" data-taxonomy-term="it-infrastructure"><span class="taxonomy-label">IT Infrastructure</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/it-security/" data-taxonomy-term="it-security"><span class="taxonomy-label">IT Security</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Google-Cloud-Security-Components/">Navigating Google Cloud Security: Key Components, Roles, and Best Practices</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Navigating Google Cloud Security: Key Components, Roles, and Best Practices</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/gcp/" data-taxonomy-term="gcp"><span class="taxonomy-label">GCP</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/it-infrastructure/" data-taxonomy-term="it-infrastructure"><span class="taxonomy-label">IT Infrastructure</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/it-security/" data-taxonomy-term="it-security"><span class="taxonomy-label">IT Security</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Variations-of-Language-Model-in-Huggingface/">Variations of Language Model in Huggingface</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Variations of Language Model in Huggingface</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/hugging-face/" data-taxonomy-term="hugging-face"><span class="taxonomy-label">Hugging Face</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-models/" data-taxonomy-term="language-models"><span class="taxonomy-label">Language Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/natural-language-processing/" data-taxonomy-term="natural-language-processing"><span class="taxonomy-label">Natural Language Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/gpt/" data-taxonomy-term="gpt"><span class="taxonomy-label">GPT</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/bert/" data-taxonomy-term="bert"><span class="taxonomy-label">BERT</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-architecture/" data-taxonomy-term="model-architecture"><span class="taxonomy-label">Model Architecture</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/MLOps-Tools/">MLOps Tools</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    MLOps Tools</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/mlops/" data-taxonomy-term="mlops"><span class="taxonomy-label">MLOps</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/devops/" data-taxonomy-term="devops"><span class="taxonomy-label">DevOps</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ci/cd/" data-taxonomy-term="ci/cd"><span class="taxonomy-label">CI/CD</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-deployment/" data-taxonomy-term="model-deployment"><span class="taxonomy-label">Model Deployment</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-monitoring/" data-taxonomy-term="model-monitoring"><span class="taxonomy-label">Model Monitoring</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/automation/" data-taxonomy-term="automation"><span class="taxonomy-label">Automation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/pipeline-orchestration/" data-taxonomy-term="pipeline-orchestration"><span class="taxonomy-label">Pipeline Orchestration</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-management/" data-taxonomy-term="model-management"><span class="taxonomy-label">Model Management</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/production-ml/" data-taxonomy-term="production-ml"><span class="taxonomy-label">Production ML</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/AI-Usecases-in-Cybersecurity/">AI Usecases in Cybersecurity</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    AI Usecases in Cybersecurity</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai/" data-taxonomy-term="ai"><span class="taxonomy-label">AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/cybersecurity/" data-taxonomy-term="cybersecurity"><span class="taxonomy-label">Cybersecurity</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/threat-detection/" data-taxonomy-term="threat-detection"><span class="taxonomy-label">Threat Detection</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/network-security/" data-taxonomy-term="network-security"><span class="taxonomy-label">Network Security</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/security-analytics/" data-taxonomy-term="security-analytics"><span class="taxonomy-label">Security Analytics</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ethical-ai/" data-taxonomy-term="ethical-ai"><span class="taxonomy-label">Ethical AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-protection/" data-taxonomy-term="data-protection"><span class="taxonomy-label">Data Protection</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/risk-management/" data-taxonomy-term="risk-management"><span class="taxonomy-label">Risk Management</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/security-automation/" data-taxonomy-term="security-automation"><span class="taxonomy-label">Security Automation</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Open-Source-vs-Closed-Source-AI/">Open Source vs Closed Source AI</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Open Source vs Closed Source AI</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai/" data-taxonomy-term="ai"><span class="taxonomy-label">AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/open-source/" data-taxonomy-term="open-source"><span class="taxonomy-label">Open Source</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/closed-source/" data-taxonomy-term="closed-source"><span class="taxonomy-label">Closed Source</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-development/" data-taxonomy-term="ai-development"><span class="taxonomy-label">AI Development</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/technology-ethics/" data-taxonomy-term="technology-ethics"><span class="taxonomy-label">Technology Ethics</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-deployment/" data-taxonomy-term="model-deployment"><span class="taxonomy-label">Model Deployment</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-infrastructure/" data-taxonomy-term="ai-infrastructure"><span class="taxonomy-label">AI Infrastructure</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-democratization/" data-taxonomy-term="ai-democratization"><span class="taxonomy-label">AI Democratization</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-transparency/" data-taxonomy-term="ai-transparency"><span class="taxonomy-label">AI Transparency</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/LLM-Architecture-and-Training/">LLM Architecture and Training</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    LLM Architecture and Training</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/llm-architecture/" data-taxonomy-term="llm-architecture"><span class="taxonomy-label">LLM Architecture</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-training/" data-taxonomy-term="model-training"><span class="taxonomy-label">Model Training</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/neural-networks/" data-taxonomy-term="neural-networks"><span class="taxonomy-label">Neural Networks</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-development/" data-taxonomy-term="ai-development"><span class="taxonomy-label">AI Development</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/transformer-models/" data-taxonomy-term="transformer-models"><span class="taxonomy-label">Transformer Models</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/why-to-finetune-llm/">Why to Finetune LLM?</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Why to Finetune LLM?</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/llm-fine-tuning/" data-taxonomy-term="llm-fine-tuning"><span class="taxonomy-label">LLM Fine-Tuning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-training/" data-taxonomy-term="model-training"><span class="taxonomy-label">Model Training</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-customization/" data-taxonomy-term="ai-customization"><span class="taxonomy-label">AI Customization</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-models/" data-taxonomy-term="language-models"><span class="taxonomy-label">Language Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/transfer-learning/" data-taxonomy-term="transfer-learning"><span class="taxonomy-label">Transfer Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/neural-networks/" data-taxonomy-term="neural-networks"><span class="taxonomy-label">Neural Networks</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Stanford-Alpaca/">Stanford Alpaca</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Stanford Alpaca</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/llm/" data-taxonomy-term="llm"><span class="taxonomy-label">LLM</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/stanford-alpaca/" data-taxonomy-term="stanford-alpaca"><span class="taxonomy-label">Stanford Alpaca</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-models/" data-taxonomy-term="ai-models"><span class="taxonomy-label">AI Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-models/" data-taxonomy-term="language-models"><span class="taxonomy-label">Language Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-training/" data-taxonomy-term="model-training"><span class="taxonomy-label">Model Training</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/open-source-ai/" data-taxonomy-term="open-source-ai"><span class="taxonomy-label">Open Source AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Understanding-LLM-GAN-and-Transformers/">Understanding LLM GAN and Transformers</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Understanding LLM GAN and Transformers</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/large-language-models/" data-taxonomy-term="large-language-models"><span class="taxonomy-label">Large Language Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/gans/" data-taxonomy-term="gans"><span class="taxonomy-label">GANs</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/transformers/" data-taxonomy-term="transformers"><span class="taxonomy-label">Transformers</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-architecture/" data-taxonomy-term="ai-architecture"><span class="taxonomy-label">AI Architecture</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/neural-networks/" data-taxonomy-term="neural-networks"><span class="taxonomy-label">Neural Networks</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/transformers-demystified-a-step-by-step-guide/">Transformers Demystified A Step-by-Step Guide</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Transformers Demystified A Step-by-Step Guide</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/transformers/" data-taxonomy-term="transformers"><span class="taxonomy-label">Transformers</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/natural-language-processing/" data-taxonomy-term="natural-language-processing"><span class="taxonomy-label">Natural Language Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/neural-networks/" data-taxonomy-term="neural-networks"><span class="taxonomy-label">Neural Networks</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-architecture/" data-taxonomy-term="ai-architecture"><span class="taxonomy-label">AI Architecture</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/attention-mechanism/" data-taxonomy-term="attention-mechanism"><span class="taxonomy-label">Attention Mechanism</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Dimensionality-Reduction-and-Visualization/">Dimensionality Reduction and Visualization</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Dimensionality Reduction and Visualization</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-science/" data-taxonomy-term="data-science"><span class="taxonomy-label">Data Science</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-visualization/" data-taxonomy-term="data-visualization"><span class="taxonomy-label">Data Visualization</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/dimensionality-reduction/" data-taxonomy-term="dimensionality-reduction"><span class="taxonomy-label">Dimensionality Reduction</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/pca/" data-taxonomy-term="pca"><span class="taxonomy-label">PCA</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/t-sne/" data-taxonomy-term="t-sne"><span class="taxonomy-label">T-SNE</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-analysis/" data-taxonomy-term="data-analysis"><span class="taxonomy-label">Data Analysis</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/NLP-BenchMarks1/">NLP BenchMarks</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    NLP BenchMarks</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/natural-language-processing/" data-taxonomy-term="natural-language-processing"><span class="taxonomy-label">Natural Language Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-benchmarks/" data-taxonomy-term="ai-benchmarks"><span class="taxonomy-label">AI Benchmarks</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-models/" data-taxonomy-term="language-models"><span class="taxonomy-label">Language Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/performance-evaluation/" data-taxonomy-term="performance-evaluation"><span class="taxonomy-label">Performance Evaluation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/nlp-testing/" data-taxonomy-term="nlp-testing"><span class="taxonomy-label">NLP Testing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-assessment/" data-taxonomy-term="model-assessment"><span class="taxonomy-label">Model Assessment</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/empowering-language-with-ainlp-capabilities/">Empowering Language with AI NLP Capabilities</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Empowering Language with AI NLP Capabilities</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/natural-language-processing/" data-taxonomy-term="natural-language-processing"><span class="taxonomy-label">Natural Language Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-language-models/" data-taxonomy-term="ai-language-models"><span class="taxonomy-label">AI Language Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/text-analysis/" data-taxonomy-term="text-analysis"><span class="taxonomy-label">Text Analysis</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-understanding/" data-taxonomy-term="language-understanding"><span class="taxonomy-label">Language Understanding</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/speech-recognition/" data-taxonomy-term="speech-recognition"><span class="taxonomy-label">Speech Recognition</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/text-processing/" data-taxonomy-term="text-processing"><span class="taxonomy-label">Text Processing</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/topic-modeling-with-bert/">Topic Modeling with BERT</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Topic Modeling with BERT</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/bert/" data-taxonomy-term="bert"><span class="taxonomy-label">BERT</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/topic-modeling/" data-taxonomy-term="topic-modeling"><span class="taxonomy-label">Topic Modeling</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/text-analysis/" data-taxonomy-term="text-analysis"><span class="taxonomy-label">Text Analysis</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/natural-language-processing/" data-taxonomy-term="natural-language-processing"><span class="taxonomy-label">Natural Language Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/document-clustering/" data-taxonomy-term="document-clustering"><span class="taxonomy-label">Document Clustering</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/text-mining/" data-taxonomy-term="text-mining"><span class="taxonomy-label">Text Mining</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/basics-of-word-embedding/">Basics of Word Embedding</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Basics of Word Embedding</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/word-embedding/" data-taxonomy-term="word-embedding"><span class="taxonomy-label">Word Embedding</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/nlp/" data-taxonomy-term="nlp"><span class="taxonomy-label">NLP</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/vector-representation/" data-taxonomy-term="vector-representation"><span class="taxonomy-label">Vector Representation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/text-processing/" data-taxonomy-term="text-processing"><span class="taxonomy-label">Text Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/neural-networks/" data-taxonomy-term="neural-networks"><span class="taxonomy-label">Neural Networks</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-models/" data-taxonomy-term="language-models"><span class="taxonomy-label">Language Models</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/graph-of-thoughts/">Graph of Thoughts</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Graph of Thoughts</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/graph-of-thoughts/" data-taxonomy-term="graph-of-thoughts"><span class="taxonomy-label">Graph of Thoughts</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/llm-architecture/" data-taxonomy-term="llm-architecture"><span class="taxonomy-label">LLM Architecture</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-reasoning/" data-taxonomy-term="ai-reasoning"><span class="taxonomy-label">AI Reasoning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/neural-networks/" data-taxonomy-term="neural-networks"><span class="taxonomy-label">Neural Networks</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/cognitive-computing/" data-taxonomy-term="cognitive-computing"><span class="taxonomy-label">Cognitive Computing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/knowledge-representation/" data-taxonomy-term="knowledge-representation"><span class="taxonomy-label">Knowledge Representation</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/What-is-Pinecone/">What is Pinecone</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    What is Pinecone</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/vector-database/" data-taxonomy-term="vector-database"><span class="taxonomy-label">Vector Database</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/pinecone/" data-taxonomy-term="pinecone"><span class="taxonomy-label">Pinecone</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/vector-embedding/" data-taxonomy-term="vector-embedding"><span class="taxonomy-label">Vector Embedding</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/vector-search/" data-taxonomy-term="vector-search"><span class="taxonomy-label">Vector Search</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/llm/" data-taxonomy-term="llm"><span class="taxonomy-label">LLM</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-storage/" data-taxonomy-term="data-storage"><span class="taxonomy-label">Data Storage</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/similarity-search/" data-taxonomy-term="similarity-search"><span class="taxonomy-label">Similarity Search</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Distances-in-Machine-Learning/">Distances in Machine Learning</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Distances in Machine Learning</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/maths-in-ai/" data-taxonomy-term="maths-in-ai"><span class="taxonomy-label">Maths in AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/distance-metrics/" data-taxonomy-term="distance-metrics"><span class="taxonomy-label">Distance Metrics</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/mathematical-concepts/" data-taxonomy-term="mathematical-concepts"><span class="taxonomy-label">Mathematical Concepts</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-analysis/" data-taxonomy-term="data-analysis"><span class="taxonomy-label">Data Analysis</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/similarity-measures/" data-taxonomy-term="similarity-measures"><span class="taxonomy-label">Similarity Measures</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ml-algorithms/" data-taxonomy-term="ml-algorithms"><span class="taxonomy-label">ML Algorithms</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/statistical-methods/" data-taxonomy-term="statistical-methods"><span class="taxonomy-label">Statistical Methods</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/select-ai-papers/">Important AI Paper List</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Important AI Paper List</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsresources/" data-taxonomy-term="dsresources"><span class="taxonomy-label">Dsresources</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/llm/" data-taxonomy-term="llm"><span class="taxonomy-label">LLM</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/transformer/" data-taxonomy-term="transformer"><span class="taxonomy-label">Transformer</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/encoder/" data-taxonomy-term="encoder"><span class="taxonomy-label">Encoder</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/decoder/" data-taxonomy-term="decoder"><span class="taxonomy-label">Decoder</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/research-papers/" data-taxonomy-term="research-papers"><span class="taxonomy-label">Research Papers</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-research/" data-taxonomy-term="ai-research"><span class="taxonomy-label">AI Research</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/academic-resources/" data-taxonomy-term="academic-resources"><span class="taxonomy-label">Academic Resources</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-development/" data-taxonomy-term="ai-development"><span class="taxonomy-label">AI Development</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/research-collection/" data-taxonomy-term="research-collection"><span class="taxonomy-label">Research Collection</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/paperwithcode-resources/">Paper with Code Resources</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Paper with Code Resources</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/research-implementation/" data-taxonomy-term="research-implementation"><span class="taxonomy-label">Research Implementation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ml-libraries/" data-taxonomy-term="ml-libraries"><span class="taxonomy-label">ML Libraries</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/code-resources/" data-taxonomy-term="code-resources"><span class="taxonomy-label">Code Resources</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-development/" data-taxonomy-term="ai-development"><span class="taxonomy-label">AI Development</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/computer-vision/" data-taxonomy-term="computer-vision"><span class="taxonomy-label">Computer Vision</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/research-papers/" data-taxonomy-term="research-papers"><span class="taxonomy-label">Research Papers</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Comprehensive-Glossary-of-LLM/">Comprehensive Glossary of LLM, Deep Learning, NLP, and CV Terminology</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Comprehensive Glossary of LLM, Deep Learning, NLP, and CV Terminology</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/llm/" data-taxonomy-term="llm"><span class="taxonomy-label">LLM</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/nlp/" data-taxonomy-term="nlp"><span class="taxonomy-label">NLP</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/computer-vision/" data-taxonomy-term="computer-vision"><span class="taxonomy-label">Computer Vision</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-terminology/" data-taxonomy-term="ai-terminology"><span class="taxonomy-label">AI Terminology</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/technical-glossary/" data-taxonomy-term="technical-glossary"><span class="taxonomy-label">Technical Glossary</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Machine-Learning-Metrics/">Machine Learning Metrics</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Machine Learning Metrics</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-evaluation/" data-taxonomy-term="model-evaluation"><span class="taxonomy-label">Model Evaluation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/performance-metrics/" data-taxonomy-term="performance-metrics"><span class="taxonomy-label">Performance Metrics</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-science/" data-taxonomy-term="data-science"><span class="taxonomy-label">Data Science</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ml-metrics/" data-taxonomy-term="ml-metrics"><span class="taxonomy-label">ML Metrics</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-assessment/" data-taxonomy-term="model-assessment"><span class="taxonomy-label">Model Assessment</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/statistical-analysis/" data-taxonomy-term="statistical-analysis"><span class="taxonomy-label">Statistical Analysis</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/rps-Pretrained-Language-Models-for-Text-Generation/">Paper-Summary- A Survey Paper# Pretrained Language Models for Text Generation</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Paper-Summary- A Survey Paper# Pretrained Language Models for Text Generation</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-paper/" data-taxonomy-term="ai-paper"><span class="taxonomy-label">AI Paper</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/research-paper/" data-taxonomy-term="research-paper"><span class="taxonomy-label">Research Paper</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/text-generation/" data-taxonomy-term="text-generation"><span class="taxonomy-label">Text Generation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/pretrained-models/" data-taxonomy-term="pretrained-models"><span class="taxonomy-label">Pretrained Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/nlp/" data-taxonomy-term="nlp"><span class="taxonomy-label">NLP</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-models/" data-taxonomy-term="language-models"><span class="taxonomy-label">Language Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-research/" data-taxonomy-term="ai-research"><span class="taxonomy-label">AI Research</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/what-is-llm/">What is LLM</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    What is LLM</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/llm/" data-taxonomy-term="llm"><span class="taxonomy-label">LLM</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/gpt/" data-taxonomy-term="gpt"><span class="taxonomy-label">GPT</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/bert/" data-taxonomy-term="bert"><span class="taxonomy-label">BERT</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/natural-language-processing/" data-taxonomy-term="natural-language-processing"><span class="taxonomy-label">Natural Language Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-models/" data-taxonomy-term="ai-models"><span class="taxonomy-label">AI Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/transformer-architecture/" data-taxonomy-term="transformer-architecture"><span class="taxonomy-label">Transformer Architecture</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-models/" data-taxonomy-term="language-models"><span class="taxonomy-label">Language Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/nlp-tasks/">NLP Tasks</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    NLP Tasks</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/nlp/" data-taxonomy-term="nlp"><span class="taxonomy-label">NLP</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/natural-language-processing/" data-taxonomy-term="natural-language-processing"><span class="taxonomy-label">Natural Language Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/text-analysis/" data-taxonomy-term="text-analysis"><span class="taxonomy-label">Text Analysis</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-models/" data-taxonomy-term="language-models"><span class="taxonomy-label">Language Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/computational-linguistics/" data-taxonomy-term="computational-linguistics"><span class="taxonomy-label">Computational Linguistics</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai/" data-taxonomy-term="ai"><span class="taxonomy-label">AI</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Model-Tuning-with-VertexAI/">Model Tuning with VertexAI</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Model Tuning with VertexAI</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/google-cloud/" data-taxonomy-term="google-cloud"><span class="taxonomy-label">Google Cloud</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/vertexai/" data-taxonomy-term="vertexai"><span class="taxonomy-label">VertexAI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-tuning/" data-taxonomy-term="model-tuning"><span class="taxonomy-label">Model Tuning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/cloud-ai/" data-taxonomy-term="cloud-ai"><span class="taxonomy-label">Cloud AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/mlops/" data-taxonomy-term="mlops"><span class="taxonomy-label">MLOps</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-optimization/" data-taxonomy-term="model-optimization"><span class="taxonomy-label">Model Optimization</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/AI-Product-and-Services-from-Google-Azure-and-AWS/">AI Product and Services from Google, Azure and AWS</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    AI Product and Services from Google, Azure and AWS</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/aws/" data-taxonomy-term="aws"><span class="taxonomy-label">AWS</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/google-cloud/" data-taxonomy-term="google-cloud"><span class="taxonomy-label">Google Cloud</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/azure/" data-taxonomy-term="azure"><span class="taxonomy-label">Azure</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/cloud-computing/" data-taxonomy-term="cloud-computing"><span class="taxonomy-label">Cloud Computing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-services/" data-taxonomy-term="ai-services"><span class="taxonomy-label">AI Services</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/cloud-ai/" data-taxonomy-term="cloud-ai"><span class="taxonomy-label">Cloud AI</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Introduction-to-ML-Model-deployment/">Introduction to ML Model Deployment</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Introduction to ML Model Deployment</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/mlops/" data-taxonomy-term="mlops"><span class="taxonomy-label">MLOps</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-deployment/" data-taxonomy-term="model-deployment"><span class="taxonomy-label">Model Deployment</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/devops/" data-taxonomy-term="devops"><span class="taxonomy-label">DevOps</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/production-ai/" data-taxonomy-term="production-ai"><span class="taxonomy-label">Production AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/cloud-computing/" data-taxonomy-term="cloud-computing"><span class="taxonomy-label">Cloud Computing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-serving/" data-taxonomy-term="model-serving"><span class="taxonomy-label">Model Serving</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Embedding-with-FastText/">Embedding with FastText</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Embedding with FastText</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/nlp/" data-taxonomy-term="nlp"><span class="taxonomy-label">NLP</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/word-embeddings/" data-taxonomy-term="word-embeddings"><span class="taxonomy-label">Word Embeddings</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/fasttext/" data-taxonomy-term="fasttext"><span class="taxonomy-label">FastText</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/text-processing/" data-taxonomy-term="text-processing"><span class="taxonomy-label">Text Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Major-LLM-Developers-Reshaping-NLP-Advancements/">Major LLM Developers Shaping the AI Landscape</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Major LLM Developers Shaping the AI Landscape</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/llm/" data-taxonomy-term="llm"><span class="taxonomy-label">LLM</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/nlp/" data-taxonomy-term="nlp"><span class="taxonomy-label">NLP</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-companies/" data-taxonomy-term="ai-companies"><span class="taxonomy-label">AI Companies</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-models/" data-taxonomy-term="language-models"><span class="taxonomy-label">Language Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-research/" data-taxonomy-term="ai-research"><span class="taxonomy-label">AI Research</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/What-is-GAN-Architecture/">What is GAN Architecture?</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    What is GAN Architecture?</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/gan/" data-taxonomy-term="gan"><span class="taxonomy-label">GAN</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/neural-networks/" data-taxonomy-term="neural-networks"><span class="taxonomy-label">Neural Networks</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/computer-vision/" data-taxonomy-term="computer-vision"><span class="taxonomy-label">Computer Vision</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/image-generation/" data-taxonomy-term="image-generation"><span class="taxonomy-label">Image Generation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Capabilities-of-AI-Transformers/">Capabilities of AI Transformers</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Capabilities of AI Transformers</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/nlp/" data-taxonomy-term="nlp"><span class="taxonomy-label">NLP</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-transformers/" data-taxonomy-term="ai-transformers"><span class="taxonomy-label">AI Transformers</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/neural-networks/" data-taxonomy-term="neural-networks"><span class="taxonomy-label">Neural Networks</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-models/" data-taxonomy-term="language-models"><span class="taxonomy-label">Language Models</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Model-Garden-of-VertexAI/">Model Garden of VertexAI</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Model Garden of VertexAI</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/vertex-ai/" data-taxonomy-term="vertex-ai"><span class="taxonomy-label">Vertex AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/google-cloud/" data-taxonomy-term="google-cloud"><span class="taxonomy-label">Google Cloud</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-models/" data-taxonomy-term="ai-models"><span class="taxonomy-label">AI Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-repository/" data-taxonomy-term="model-repository"><span class="taxonomy-label">Model Repository</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/cloud-ai/" data-taxonomy-term="cloud-ai"><span class="taxonomy-label">Cloud AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ml-models/" data-taxonomy-term="ml-models"><span class="taxonomy-label">ML Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-development/" data-taxonomy-term="ai-development"><span class="taxonomy-label">AI Development</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/cloud-computing/" data-taxonomy-term="cloud-computing"><span class="taxonomy-label">Cloud Computing</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/all-resources-to-learn-data-science/">All Resources to Learn Data Science</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    All Resources to Learn Data Science</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-science/" data-taxonomy-term="data-science"><span class="taxonomy-label">Data Science</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/learning-resources/" data-taxonomy-term="learning-resources"><span class="taxonomy-label">Learning Resources</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-education/" data-taxonomy-term="ai-education"><span class="taxonomy-label">AI Education</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/educational-tools/" data-taxonomy-term="educational-tools"><span class="taxonomy-label">Educational Tools</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/technical-resources/" data-taxonomy-term="technical-resources"><span class="taxonomy-label">Technical Resources</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/programming-tools/" data-taxonomy-term="programming-tools"><span class="taxonomy-label">Programming Tools</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-science-learning/" data-taxonomy-term="data-science-learning"><span class="taxonomy-label">Data Science Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/study-materials/" data-taxonomy-term="study-materials"><span class="taxonomy-label">Study Materials</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Demystifying-DevOps-MLOps-and-DataOps/">Demystifying DevOps, MLOps, and DataOps</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Demystifying DevOps, MLOps, and DataOps</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/devops/" data-taxonomy-term="devops"><span class="taxonomy-label">DevOps</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/mlops/" data-taxonomy-term="mlops"><span class="taxonomy-label">MLOps</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/dataops/" data-taxonomy-term="dataops"><span class="taxonomy-label">DataOps</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/software-development/" data-taxonomy-term="software-development"><span class="taxonomy-label">Software Development</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-engineering/" data-taxonomy-term="data-engineering"><span class="taxonomy-label">Data Engineering</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/continuous-integration/" data-taxonomy-term="continuous-integration"><span class="taxonomy-label">Continuous Integration</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/automation/" data-taxonomy-term="automation"><span class="taxonomy-label">Automation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/best-practices/" data-taxonomy-term="best-practices"><span class="taxonomy-label">Best Practices</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/God-Fathers-of-AI/">God Fathers of AI</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    God Fathers of AI</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/artificial-intelligence/" data-taxonomy-term="artificial-intelligence"><span class="taxonomy-label">Artificial Intelligence</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-history/" data-taxonomy-term="ai-history"><span class="taxonomy-label">AI History</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/computer-science/" data-taxonomy-term="computer-science"><span class="taxonomy-label">Computer Science</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-pioneers/" data-taxonomy-term="ai-pioneers"><span class="taxonomy-label">AI Pioneers</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-research/" data-taxonomy-term="ai-research"><span class="taxonomy-label">AI Research</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/technology-innovation/" data-taxonomy-term="technology-innovation"><span class="taxonomy-label">Technology Innovation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-development/" data-taxonomy-term="ai-development"><span class="taxonomy-label">AI Development</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Types-of-Machine-Learning/">Types of Machine Learning</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Types of Machine Learning</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/artificial-intelligence/" data-taxonomy-term="artificial-intelligence"><span class="taxonomy-label">Artificial Intelligence</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/neural-networks/" data-taxonomy-term="neural-networks"><span class="taxonomy-label">Neural Networks</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-science/" data-taxonomy-term="data-science"><span class="taxonomy-label">Data Science</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/supervised-learning/" data-taxonomy-term="supervised-learning"><span class="taxonomy-label">Supervised Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/unsupervised-learning/" data-taxonomy-term="unsupervised-learning"><span class="taxonomy-label">Unsupervised Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/reinforcement-learning/" data-taxonomy-term="reinforcement-learning"><span class="taxonomy-label">Reinforcement Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-algorithms/" data-taxonomy-term="ai-algorithms"><span class="taxonomy-label">AI Algorithms</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Cost-Functions-and-Optimizers-in-Machine-Learning/">Cost Functions and Optimizers in Machine Learning</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Cost Functions and Optimizers in Machine Learning</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-optimization/" data-taxonomy-term="model-optimization"><span class="taxonomy-label">Model Optimization</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/neural-networks/" data-taxonomy-term="neural-networks"><span class="taxonomy-label">Neural Networks</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/loss-functions/" data-taxonomy-term="loss-functions"><span class="taxonomy-label">Loss Functions</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/gradient-descent/" data-taxonomy-term="gradient-descent"><span class="taxonomy-label">Gradient Descent</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-training/" data-taxonomy-term="model-training"><span class="taxonomy-label">Model Training</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/mathematical-optimization/" data-taxonomy-term="mathematical-optimization"><span class="taxonomy-label">Mathematical Optimization</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/algorithm-design/" data-taxonomy-term="algorithm-design"><span class="taxonomy-label">Algorithm Design</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/GPU-for-Data-Science-Work/">GPU for Data Science Work</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    GPU for Data Science Work</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/gpu-computing/" data-taxonomy-term="gpu-computing"><span class="taxonomy-label">GPU Computing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-science/" data-taxonomy-term="data-science"><span class="taxonomy-label">Data Science</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/hardware-acceleration/" data-taxonomy-term="hardware-acceleration"><span class="taxonomy-label">Hardware Acceleration</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/parallel-processing/" data-taxonomy-term="parallel-processing"><span class="taxonomy-label">Parallel Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/computing-infrastructure/" data-taxonomy-term="computing-infrastructure"><span class="taxonomy-label">Computing Infrastructure</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-hardware/" data-taxonomy-term="ai-hardware"><span class="taxonomy-label">AI Hardware</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/high-performance-computing/" data-taxonomy-term="high-performance-computing"><span class="taxonomy-label">High Performance Computing</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/AI-usecases-in-Agriculture-Industry/">AI Usecases in Agriculture Industry</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    AI Usecases in Agriculture Industry</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/agriculture-technology/" data-taxonomy-term="agriculture-technology"><span class="taxonomy-label">Agriculture Technology</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-applications/" data-taxonomy-term="ai-applications"><span class="taxonomy-label">AI Applications</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/smart-farming/" data-taxonomy-term="smart-farming"><span class="taxonomy-label">Smart Farming</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/precision-agriculture/" data-taxonomy-term="precision-agriculture"><span class="taxonomy-label">Precision Agriculture</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/computer-vision/" data-taxonomy-term="computer-vision"><span class="taxonomy-label">Computer Vision</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/crop-management/" data-taxonomy-term="crop-management"><span class="taxonomy-label">Crop Management</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/agricultural-innovation/" data-taxonomy-term="agricultural-innovation"><span class="taxonomy-label">Agricultural Innovation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/farm-automation/" data-taxonomy-term="farm-automation"><span class="taxonomy-label">Farm Automation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/sustainable-agriculture/" data-taxonomy-term="sustainable-agriculture"><span class="taxonomy-label">Sustainable Agriculture</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/AI-Use-Cases-in-Food-Processing/">AI Use Cases in Food Processing</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    AI Use Cases in Food Processing</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-applications/" data-taxonomy-term="ai-applications"><span class="taxonomy-label">AI Applications</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/food-processing/" data-taxonomy-term="food-processing"><span class="taxonomy-label">Food Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/computer-vision/" data-taxonomy-term="computer-vision"><span class="taxonomy-label">Computer Vision</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/quality-control/" data-taxonomy-term="quality-control"><span class="taxonomy-label">Quality Control</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/process-automation/" data-taxonomy-term="process-automation"><span class="taxonomy-label">Process Automation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/food-safety/" data-taxonomy-term="food-safety"><span class="taxonomy-label">Food Safety</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/industrial-ai/" data-taxonomy-term="industrial-ai"><span class="taxonomy-label">Industrial AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/smart-manufacturing/" data-taxonomy-term="smart-manufacturing"><span class="taxonomy-label">Smart Manufacturing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/food-technology/" data-taxonomy-term="food-technology"><span class="taxonomy-label">Food Technology</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Introduction-to-Neural-Network/">Introduction to Neural Network</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Introduction to Neural Network</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/neural-networks/" data-taxonomy-term="neural-networks"><span class="taxonomy-label">Neural Networks</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/artificial-intelligence/" data-taxonomy-term="artificial-intelligence"><span class="taxonomy-label">Artificial Intelligence</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-architecture/" data-taxonomy-term="model-architecture"><span class="taxonomy-label">Model Architecture</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-science/" data-taxonomy-term="data-science"><span class="taxonomy-label">Data Science</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-fundamentals/" data-taxonomy-term="ai-fundamentals"><span class="taxonomy-label">AI Fundamentals</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/neural-network-types/" data-taxonomy-term="neural-network-types"><span class="taxonomy-label">Neural Network Types</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-training/" data-taxonomy-term="model-training"><span class="taxonomy-label">Model Training</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-algorithms/" data-taxonomy-term="ai-algorithms"><span class="taxonomy-label">AI Algorithms</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/What-is-GAN/">What is GAN?</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    What is GAN?</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/generative-ai/" data-taxonomy-term="generative-ai"><span class="taxonomy-label">Generative AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/neural-networks/" data-taxonomy-term="neural-networks"><span class="taxonomy-label">Neural Networks</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/computer-vision/" data-taxonomy-term="computer-vision"><span class="taxonomy-label">Computer Vision</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/image-generation/" data-taxonomy-term="image-generation"><span class="taxonomy-label">Image Generation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-models/" data-taxonomy-term="ai-models"><span class="taxonomy-label">AI Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/image-synthesis/" data-taxonomy-term="image-synthesis"><span class="taxonomy-label">Image Synthesis</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/gan-architecture/" data-taxonomy-term="gan-architecture"><span class="taxonomy-label">GAN Architecture</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Timeseries-Interview-Questions/">Timeseries Interview Questions</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Timeseries Interview Questions</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/time-series-analysis/" data-taxonomy-term="time-series-analysis"><span class="taxonomy-label">Time Series Analysis</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-science-interview/" data-taxonomy-term="data-science-interview"><span class="taxonomy-label">Data Science Interview</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/arima-models/" data-taxonomy-term="arima-models"><span class="taxonomy-label">ARIMA Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/statistical-analysis/" data-taxonomy-term="statistical-analysis"><span class="taxonomy-label">Statistical Analysis</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/forecasting/" data-taxonomy-term="forecasting"><span class="taxonomy-label">Forecasting</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-science/" data-taxonomy-term="data-science"><span class="taxonomy-label">Data Science</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/predictive-analytics/" data-taxonomy-term="predictive-analytics"><span class="taxonomy-label">Predictive Analytics</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/statistical-methods/" data-taxonomy-term="statistical-methods"><span class="taxonomy-label">Statistical Methods</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/python-programming/" data-taxonomy-term="python-programming"><span class="taxonomy-label">Python Programming</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Linear-Regression-Interview-Questions/">Linear Regression Interview Questions</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Linear Regression Interview Questions</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/linear-regression/" data-taxonomy-term="linear-regression"><span class="taxonomy-label">Linear Regression</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/statistical-analysis/" data-taxonomy-term="statistical-analysis"><span class="taxonomy-label">Statistical Analysis</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-evaluation/" data-taxonomy-term="model-evaluation"><span class="taxonomy-label">Model Evaluation</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-science/" data-taxonomy-term="data-science"><span class="taxonomy-label">Data Science</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/predictive-modeling/" data-taxonomy-term="predictive-modeling"><span class="taxonomy-label">Predictive Modeling</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/regression-analysis/" data-taxonomy-term="regression-analysis"><span class="taxonomy-label">Regression Analysis</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/gpt-usecases/">GPT Usecases</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    GPT Usecases</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/openai/" data-taxonomy-term="openai"><span class="taxonomy-label">OpenAI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/nlp/" data-taxonomy-term="nlp"><span class="taxonomy-label">NLP</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/natural-language-processing/" data-taxonomy-term="natural-language-processing"><span class="taxonomy-label">Natural Language Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/gpt3/" data-taxonomy-term="gpt3"><span class="taxonomy-label">GPT3</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-models/" data-taxonomy-term="language-models"><span class="taxonomy-label">Language Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-technology/" data-taxonomy-term="ai-technology"><span class="taxonomy-label">AI Technology</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/transformer-architecture/" data-taxonomy-term="transformer-architecture"><span class="taxonomy-label">Transformer Architecture</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/chatgpt-usecases/">ChatGPT Usecases</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    ChatGPT Usecases</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/nlp/" data-taxonomy-term="nlp"><span class="taxonomy-label">NLP</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/natural-language-processing/" data-taxonomy-term="natural-language-processing"><span class="taxonomy-label">Natural Language Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/chatgpt/" data-taxonomy-term="chatgpt"><span class="taxonomy-label">ChatGPT</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/gpt3/" data-taxonomy-term="gpt3"><span class="taxonomy-label">GPT3</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/openai/" data-taxonomy-term="openai"><span class="taxonomy-label">OpenAI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-applications/" data-taxonomy-term="ai-applications"><span class="taxonomy-label">AI Applications</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-models/" data-taxonomy-term="language-models"><span class="taxonomy-label">Language Models</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/what-is-computer-vision/">What is Computer Vision</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    What is Computer Vision</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/computer-vision/" data-taxonomy-term="computer-vision"><span class="taxonomy-label">Computer Vision</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/image-processing/" data-taxonomy-term="image-processing"><span class="taxonomy-label">Image Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/neural-networks/" data-taxonomy-term="neural-networks"><span class="taxonomy-label">Neural Networks</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-applications/" data-taxonomy-term="ai-applications"><span class="taxonomy-label">AI Applications</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/what-is-nlp/">What is NLP?</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    What is NLP?</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/natural-language-processing/" data-taxonomy-term="natural-language-processing"><span class="taxonomy-label">Natural Language Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/text-analysis/" data-taxonomy-term="text-analysis"><span class="taxonomy-label">Text Analysis</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-models/" data-taxonomy-term="language-models"><span class="taxonomy-label">Language Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/nlp-applications/" data-taxonomy-term="nlp-applications"><span class="taxonomy-label">NLP Applications</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/text-mining/" data-taxonomy-term="text-mining"><span class="taxonomy-label">Text Mining</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/Domain-Knowledge-in-Machine-Learning/">Domain Knowledge in Machine Learning</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Domain Knowledge in Machine Learning</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/domain-expertise/" data-taxonomy-term="domain-expertise"><span class="taxonomy-label">Domain Expertise</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/industry-knowledge/" data-taxonomy-term="industry-knowledge"><span class="taxonomy-label">Industry Knowledge</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ml-applications/" data-taxonomy-term="ml-applications"><span class="taxonomy-label">ML Applications</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/feature-engineering/" data-taxonomy-term="feature-engineering"><span class="taxonomy-label">Feature Engineering</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-development/" data-taxonomy-term="model-development"><span class="taxonomy-label">Model Development</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/ds-ai-ml-books/">Data Science, AI, ML, eBooks, PDF Books</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Data Science, AI, ML, eBooks, PDF Books</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsresources/" data-taxonomy-term="dsresources"><span class="taxonomy-label">Dsresources</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ds-resources/" data-taxonomy-term="ds-resources"><span class="taxonomy-label">DS Resources</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai/" data-taxonomy-term="ai"><span class="taxonomy-label">AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-science/" data-taxonomy-term="data-science"><span class="taxonomy-label">Data Science</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ebook/" data-taxonomy-term="ebook"><span class="taxonomy-label">EBook</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-science-books/" data-taxonomy-term="data-science-books"><span class="taxonomy-label">Data Science Books</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/What-Are-Transformers-in-AI/">What Are Transformers in AI</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    What Are Transformers in AI</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/natural-language-processing/" data-taxonomy-term="natural-language-processing"><span class="taxonomy-label">Natural Language Processing</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/transformer-architecture/" data-taxonomy-term="transformer-architecture"><span class="taxonomy-label">Transformer Architecture</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/neural-networks/" data-taxonomy-term="neural-networks"><span class="taxonomy-label">Neural Networks</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/language-models/" data-taxonomy-term="language-models"><span class="taxonomy-label">Language Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-models/" data-taxonomy-term="ai-models"><span class="taxonomy-label">AI Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/model-architecture/" data-taxonomy-term="model-architecture"><span class="taxonomy-label">Model Architecture</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/attention-mechanism/" data-taxonomy-term="attention-mechanism"><span class="taxonomy-label">Attention Mechanism</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-research/" data-taxonomy-term="ai-research"><span class="taxonomy-label">AI Research</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/How-Naive-Bayes-Classifier-Works/">How Naive Bayes Classifier Works</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    How Naive Bayes Classifier Works</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/naive-bayes-classifier/" data-taxonomy-term="naive-bayes-classifier"><span class="taxonomy-label">Naive Bayes Classifier</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/classification-algorithms/" data-taxonomy-term="classification-algorithms"><span class="taxonomy-label">Classification Algorithms</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/probabilistic-models/" data-taxonomy-term="probabilistic-models"><span class="taxonomy-label">Probabilistic Models</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-science/" data-taxonomy-term="data-science"><span class="taxonomy-label">Data Science</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/statistical-learning/" data-taxonomy-term="statistical-learning"><span class="taxonomy-label">Statistical Learning</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/EDA-Feature-Engineering-101/">EDA &amp; Feature Engineering 101</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    EDA &amp; Feature Engineering 101</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/feature-engineering/" data-taxonomy-term="feature-engineering"><span class="taxonomy-label">Feature Engineering</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/eda/" data-taxonomy-term="eda"><span class="taxonomy-label">EDA</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/exploratory-data-analysis/" data-taxonomy-term="exploratory-data-analysis"><span class="taxonomy-label">Exploratory Data Analysis</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-analysis/" data-taxonomy-term="data-analysis"><span class="taxonomy-label">Data Analysis</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/data-science-tutorial-video-resources/">DS, AI, ML Online Course, Tutorial, Videos</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    DS, AI, ML Online Course, Tutorial, Videos</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsresources/" data-taxonomy-term="dsresources"><span class="taxonomy-label">Dsresources</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ds-resources/" data-taxonomy-term="ds-resources"><span class="taxonomy-label">DS Resources</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai/" data-taxonomy-term="ai"><span class="taxonomy-label">AI</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/data-science/" data-taxonomy-term="data-science"><span class="taxonomy-label">Data Science</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/online-tutorial/" data-taxonomy-term="online-tutorial"><span class="taxonomy-label">Online Tutorial</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/online-video/" data-taxonomy-term="online-video"><span class="taxonomy-label">Online Video</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-dsblog">
+          <h3><a href="/dsblog/rl-git-repo/">Reinforcement Learning Git Repositories</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/dsblog/">Data Science Blog</a></li>
+  <li class="breadcrumb-item">
+    Reinforcement Learning Git Repositories</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsblog/" data-taxonomy-term="dsblog"><span class="taxonomy-label">Dsblog</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/categories/dsresources/" data-taxonomy-term="dsresources"><span class="taxonomy-label">Dsresources</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/reinforcement-learning/" data-taxonomy-term="reinforcement-learning"><span class="taxonomy-label">Reinforcement Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/machine-learning/" data-taxonomy-term="machine-learning"><span class="taxonomy-label">Machine Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/github-resources/" data-taxonomy-term="github-resources"><span class="taxonomy-label">GitHub Resources</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-learning/" data-taxonomy-term="deep-learning"><span class="taxonomy-label">Deep Learning</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/ai-development/" data-taxonomy-term="ai-development"><span class="taxonomy-label">AI Development</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/open-source/" data-taxonomy-term="open-source"><span class="taxonomy-label">Open Source</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/python-libraries/" data-taxonomy-term="python-libraries"><span class="taxonomy-label">Python Libraries</span></a></li>
+    <li><a class="taxonomy-term" href="http://localhost:1313/tags/deep-rl/" data-taxonomy-term="deep-rl"><span class="taxonomy-label">Deep RL</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+    </div>
+    <a href="" class="all-taxonomy-terms">All Tags</a>
+  </main>
+</div>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      
+      <div class="col-2">
+        <a href="https://dasarpai.com" target="_blank" rel="noopener">
+          <img src="http://localhost:1313/assets/images/site-logo.png" alt="dasarpAI" width="100" style="border-radius: 12px;">
+        </a>
+      </div>
+      <div class="col-8"><div class="row"><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Key Links</h4>
+                    <ul><li><a href="/aboutme">About Me</a></li><li><a href="/dscourses">My Data Science Courses/Services</a></li><li><a href="/summary-of-al-ml-projects">MyWork by Business Domain</a></li><li><a href="/summary-of-my-technology-stacks">MyWork by Tech Stack</a></li><li><a href="/summary-of-management-projects">MyWork in Project Management</a></li><li><a href="/clients">Clients</a></li><li><a href="/testimonials">Testimonial</a></li><li><a href="/terms-of-service">Terms &amp; Condition</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/comment-policy">Comment Policy</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>My Blogs</h4>
+                    <ul><li><a href="/dsblog">Data Science Blog</a></li><li><a href="/booksumary">Books/Interviews Blog</a></li><li><a href="/news">AI and Business News</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li><li><a href="/wiaposts">Wisdom in Awareness Blog</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/mychanting">My Chantings</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>All Resources</h4>
+                    <ul><li><a href="/datascience-tags#ds-resources">DS Resources</a></li><li><a href="https://aibenchmark-explorer.dasarpai.com">AI Benchmark Explorer</a></li><li><a href="/dsblog/ds-ai-ml-books">Data Science-Books</a></li><li><a href="/dsblog/data-science-cheatsheets">Data Science/AI Cheatsheets</a></li><li><a href="/dsblog/best-youtube-channels-for-ds">Video Channels to Learn DS/AI</a></li><li><a href="/dsblog/ds-ai-ml-interview-resources">DS/AI Interview Questions</a></li><li><a href="https://github.com/dasarpai/DAI-Datasets">GitHub DAI-Datasets</a></li><li><a href="/pmi-templates">PMBOK6 Templates</a></li><li><a href="/prince2-templates">PRINCE2 Templates</a></li><li><a href="/microsoft-pm-templates">Microsoft PM Templates</a></li></ul>
+                  </div>
+                </div><div class="col-md-3">
+                  <div class="td-footer__menu">
+                    <h4>Project Management</h4>
+                    <ul><li><a href="/pmlogy-home">PMLOGY Home</a></li><li><a href="/pmblog">PMLOGY Blog</a></li><li><a href="/pmglossary">PM Glossary</a></li><li><a href="/pmlogy-tags">PM Topics</a></li><li><a href="/pmbok6-tags">PMBOK6 Topics</a></li><li><a href="/pmbok6-summary">PMBOK6</a></li><li><a href="/pmbok6">PMBOK6 Explorer</a></li><li><a href="/pmbok6hi-tags">PMBOK6 Hindi Topics</a></li><li><a href="/pmbok6hi-summary">PMBoK6 Hindi</a></li><li><a href="/pmbok6hi">PMBOK6 Hindi Explorer</a></li></ul>
+                  </div>
+                </div></div>
+      
+
+
+      <div class="row"><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Wisdom in Awareness</h4>
+                  <ul><li><a href="/wia-home">WIA Home</a></li><li><a href="/wiaposts">WIA Blog</a></li><li><a href="/wia-tags">WIA Topics</a></li><li><a href="/quotations-blog">WIA Quotes</a></li><li><a href="/gk">GK Blog</a></li><li><a href="/gk-tags">GK Topic</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>Samskrutyatra</h4>
+                  <ul><li><a href="/samskrutyatra-home">SamskrutYatra Home</a></li><li><a href="/samskrutyatra">Samskrut Blog</a></li><li><a href="/samskrutyatra-tags">Samskrut Topics</a></li><li><a href="/mychanting">My Vedic Chantings</a></li></ul>
+                </div>
+              </div><div class="col-md-3">
+                <div class="td-footer__menu">
+                  <h4>My Gallery</h4>
+                  <ul><li><a href="/gallary/slider-online-sessions1">Online AI Classes 1</a></li><li><a href="/gallary/slider-online-sessions2">Online AI Classes 2</a></li><li><a href="/gallary/slider-online-sessions3">Online AI Classes 3</a></li><li><a href="/gallary/slider-online-sessions4">Online AI Classes 4</a></li><li><a href="/gallary/slider-pm-selected-photos">Management Classes</a></li><li><a href="/gallary/slider-pm-workshops">PM &amp; DS Workshop</a></li></ul>
+                </div>
+              </div></div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+      
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://groups.google.com/forum/#!forum/agones-discuss" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://twitter.com/agonesdev" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/googleforgames/agones" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://join.slack.com/t/agones/shared_invite/zt-2mg1j7ddw-0QYA9IAvFFRKw51ZBK6mkQ" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Community Meetings" aria-label="Community Meetings">
+    <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLhkWKwFGACw2dFpdmwxOyUCzlGP2-n7uF" aria-label="Community Meetings">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">Copyright Google LLC All Rights Reserved.</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script src='/js/prism.js'></script>
+<script src='/js/tabpane-persist.js'></script>
+<script src=http://localhost:1313/js/asciinema-player.js></script>
+
+
+<script > 
+    (function() {
+      var a = document.querySelector("#td-section-nav");
+      addEventListener("beforeunload", function(b) {
+          localStorage.setItem("menu.scrollTop", a.scrollTop)
+      }), a.scrollTop = localStorage.getItem("menu.scrollTop")
+    })()
+  </script>
+  
+
+  </body>
+</html>
