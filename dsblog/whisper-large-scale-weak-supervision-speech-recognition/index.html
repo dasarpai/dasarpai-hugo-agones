@@ -28,7 +28,7 @@ Existing automatic speech recognition (ASR) models lack robustness and generaliz
   <meta property="og:type" content="article">
     <meta property="article:section" content="dsblog">
     <meta property="article:published_time" content="2025-04-25T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-05-08T11:34:17+05:30">
+    <meta property="article:modified_time" content="2025-05-08T15:25:42+05:30">
     <meta property="article:tag" content="Whisper">
     <meta property="article:tag" content="Weak Supervision">
     <meta property="article:tag" content="Speech Recognition">
@@ -44,7 +44,7 @@ Organization: OpenAI
 What Problem is Addressed? This paper is about Speech to text transcription.
 Existing automatic speech recognition (ASR) models lack robustness and generalization. They perform well on data similar to their training data but struggle on different datasets or conditions (out-of-distribution data), even showing “superhuman” performance on specific benchmarks. Many state-of-the-art ASR systems require fine-tuning on specific datasets to achieve high quality. Whisper aims to work well zero-shot, without needing dataset-specific fine-tuning. There is a limited amount of easily available, high-quality supervised speech data. Whisper tackles this by using a much larger scale of weakly supervised data (680,000 hours). Traditional speech processing often involves multiple separate components for tasks like voice activity detection or translation. The paper seeks to create a single model that can perform the entire pipeline, handling transcription, translation, language identification, and voice activity detection. Transcribing long audio recordings is challenging for models trained on short segments. The paper develops strategies for buffered transcription of long audio to make it practical for real-world use. Executive Summary: This paper introduces Whisper, a speech processing system trained on a massive dataset of 680,000 hours of diverse, weakly supervised audio and their transcripts from the internet. The core finding is that simple scaling of weakly supervised pre-training has been significantly underappreciated for speech recognition. Unlike many recent large-scale speech recognition models that rely heavily on unsupervised pre-training or self-training, Whisper achieves strong performance across various tasks (multilingual speech recognition, speech translation, language identification, voice activity detection) and generalizes remarkably well to standard benchmarks in a zero-shot setting, without the need for fine-tuning. When compared to humans, the models approach their accuracy and robustness, particularly in out-of-distribution scenarios where traditional supervised models struggle. The authors release models and inference code to promote further research in robust speech processing.">
   <meta itemprop="datePublished" content="2025-04-25T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-05-08T11:34:17+05:30">
+  <meta itemprop="dateModified" content="2025-05-08T15:25:42+05:30">
   <meta itemprop="wordCount" content="1517">
   <meta itemprop="keywords" content="whisper,weak supervision,speech recognition,robust ai,large scale speech recognition,zero-shot speech recognition">
   <meta name="twitter:card" content="summary">
