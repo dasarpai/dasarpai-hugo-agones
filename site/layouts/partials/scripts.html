@@ -50,6 +50,7 @@ window.markmap = {
         crossorigin="anonymous">
 </script>
   {{ end -}}
+  {{ partial "mermaid.html" . }}
   {{/* To automatically render math in text elements, include the auto-render extension: */ -}}
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.19/dist/contrib/auto-render.min.js"
        integrity="sha512-6bKDPShiPRjAcdeO8T6cedaVEi0pavPbzue/G/ZRiwVlurWZOSZ/vI9fr2lhk8IPXK7z51AZac+zBvZzgDJzDQ==" crossorigin="anonymous"

@@ -1,0 +1,12 @@
+{{- $pages := .Site.Pages -}}
+{{- $result := slice -}}
+{{- range $pages -}}
+    {{- if and (not .Draft) (not .Params.private) -}}
+        {{- $result = $result | append (dict 
+            "url" .Permalink 
+            "title" .Title 
+            "content" (.Plain | htmlUnescape | plainify)
+        ) -}}
+    {{- end -}}
+{{- end -}}
+{{- $result | jsonify -}}
